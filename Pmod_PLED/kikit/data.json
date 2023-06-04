@@ -1,22 +1,25 @@
 {
     "layout": {
-        "hspace": "2mm",
-        "vspace": "2mm",
-        "rows": "4"
+        "hspace": "2.2mm",
+        "vspace": "2.2mm",
+        "rows": "4",
+        "vbonecut": "False"
     },
     "tabs": {
         "type": "fixed",
-        "vwidth": "5mm",
-        "hwidth": "5mm"
+        "vwidth": "7mm",
+        "hwidth": "7mm"
     },
     "cuts": {
         "type": "mousebites",
+        "drill": "1mm",
+        "spacing": "1.4mm",
         "offset": "-0.25mm",
         "prolong": "1mm"
     },
     "framing": {
         "type": "frame",
-        "width": "4mm",
+        "width": "3mm",
         "fillet": "5mm"
     },
     "text": {
