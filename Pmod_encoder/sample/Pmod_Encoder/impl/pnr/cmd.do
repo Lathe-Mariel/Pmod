@@ -1,0 +1,11 @@
+-d H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\impl\gwsynthesis\Pmod_Encoder.vg
+-p GW2A-18C-PBGA256-8
+-pn GW2A-LV18PG256C8/I7
+-cst H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\7seg.cst
+-cfg H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\impl\pnr\device.cfg
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-route_maxfan 23

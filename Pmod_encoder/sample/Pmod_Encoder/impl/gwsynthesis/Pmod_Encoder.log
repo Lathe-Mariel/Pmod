@@ -1,0 +1,46 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\segment_led.sv'
+Analyzing Verilog file 'H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\seven_segment_with_dp.sv'
+Analyzing Verilog file 'H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\timer.sv'
+Analyzing Verilog file 'H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv'
+Compiling module 'top'("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":1)
+Compiling module 'timer1'("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":70)
+WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":84)
+WARN  (EX3771) : Module instantiation should have an instance name("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":21)
+Compiling module 'seven_segment_with_dp'("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\seven_segment_with_dp.sv":11)
+Compiling module 'segment_led(CATHODE_COMMON=1'b0)'("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\segment_led.sv":11)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'reset'("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":21)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'next_segment'("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":21)
+WARN  (EX3670) : Actual bit length 8 differs from formal bit length 6 for port 'digit_selector_out'("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":21)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 24("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":32)
+WARN  (EX3791) : Expression size 25 truncated to fit in target size 24("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":34)
+WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":39)
+WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":45)
+NOTE  (EX0101) : Current top module is "top"
+WARN  (EX0211) : The output port "onboard_led[5]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":11)
+WARN  (EX0211) : The output port "onboard_led[4]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":11)
+WARN  (EX0211) : The output port "onboard_led[3]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":11)
+WARN  (EX0211) : The output port "onboard_led[2]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":11)
+WARN  (EX0211) : The output port "onboard_led[1]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":11)
+WARN  (EX0211) : The output port "onboard_led[0]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":11)
+[5%] Running netlist conversion ...
+WARN  (CV0016) : Input sw is unused("H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv":3)
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\impl\gwsynthesis\Pmod_Encoder.vg" completed
+[100%] Generate report file "H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\impl\gwsynthesis\Pmod_Encoder_syn.rpt.html" completed
+GowinSynthesis finish

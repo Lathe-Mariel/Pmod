@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW2A-18C" package="PBGA256" speed="8" partNumber="GW2A-LV18PG256C8/I7"/>
+    <FileList>
+        <File path="H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\segment_led.sv" type="verilog"/>
+        <File path="H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\seven_segment_with_dp.sv" type="verilog"/>
+        <File path="H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\timer.sv" type="verilog"/>
+        <File path="H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\src\top.sv" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="0"/>
+        <Option type="dsp_balance" value="0"/>
+        <Option type="looplimit" value="2000"/>
+        <Option type="output_file" value="H:\git\Pmod\Pmod_encoder\sample\Pmod_Encoder\impl\gwsynthesis\Pmod_Encoder.vg"/>
+        <Option type="print_all_synthesis_warning" value="0"/>
+        <Option type="ram_rw_check" value="1"/>
+        <Option type="verilog_language" value="sysv-2017"/>
+        <Option type="vhdl_language" value="vhdl-1993"/>
+    </OptionList>
+</Project>
