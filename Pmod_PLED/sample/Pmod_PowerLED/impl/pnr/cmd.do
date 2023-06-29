@@ -1,0 +1,13 @@
+-d H:\git\Pmod\Pmod_PLED\sample\Pmod_PowerLED\impl\gwsynthesis\Pmod_PowerLED.vg
+-p GW2A-18C-PBGA256-8
+-pn GW2A-LV18PG256C8/I7
+-cst H:\git\Pmod\Pmod_PLED\sample\Pmod_PowerLED\src\7seg.cst
+-cfg H:\git\Pmod\Pmod_PLED\sample\Pmod_PowerLED\impl\pnr\device.cfg
+-gao_crc 0000001101001001
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-route_maxfan 23
+-rtl_gao
