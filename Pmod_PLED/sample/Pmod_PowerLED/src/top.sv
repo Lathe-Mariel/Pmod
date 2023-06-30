@@ -1,9 +1,9 @@
 module top(
 input wire clk,
 input wire sw,
-input wire red,
-input wire blue,
-input wire green
+output logic red,
+output logic blue,
+output logic green
 
 );
 
@@ -11,28 +11,37 @@ logic overflow;
 
 //reg red=0;
 //reg blue=0;
-//reg  green=0;
+//reg green=0;
 //reg printf;
 
 timer1 timer_instance(clk, overflow);
-reg[3:0] pwm_counter;
-assign red = 1;
-assign blue = 1;
-assign green = 0;
+reg[7:0] pwm_counter;
+reg[7:0] max=8'd128;
+reg inc = 0;
 
 always @(posedge overflow)begin
-//    if(pwm_counter == 0)begin
-//        printf <= 1;
-//        red <= 1'd1;
-//        green <= 1'd1;
-//        blue <= 1'd1;
-//    end else begin
-//        printf <= 0;
-//        red <= 1'd0;
-//        green <= 1'd1;
-//        blue <= 1'd1;
-//    end
-    pwm_counter <= pwm_counter + 4'd1;
+    if(pwm_counter == max)begin
+        red <= 1'd1;
+        green <= 1'd1;
+        blue <= 1'd1;
+        pwm_counter <= 8'd0;
+        if(inc == 0)begin
+            max = max - 8'd1;
+            if(max == 8'd0)begin
+                inc <= 1;
+            end
+        end else begin
+            max = max + 8'd1;
+            if(max == 8'd128)begin
+                inc <= -1;
+            end
+        end
+    end else begin
+        red <= 1'd0;
+        green <= 1'd0;
+        blue <= 1'd0;
+        pwm_counter <= pwm_counter + 'd1;
+    end
 
 end
 
