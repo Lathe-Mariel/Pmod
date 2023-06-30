@@ -36,7 +36,7 @@ always @(posedge overflow)begin
     if(change_pwm == 0)begin
         if(inc == 0)begin
             max <= max - 'd1;
-            if(max <= 'd30)begin
+            if(max <= 'd16)begin
                 inc <= 1;
             end
         end else begin
