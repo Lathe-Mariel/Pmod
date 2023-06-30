@@ -29,4 +29,4 @@ DCレギュレータです．
 # サンプルプログラム
 Tang Primer 20Kに接続して使うサンプルプログラムです．  
 Gowin EDAのプロジェクトになっています．  
-![全体](powerl.png)
+![全体](powerl.jpg)
