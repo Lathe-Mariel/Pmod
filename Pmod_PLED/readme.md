@@ -1,3 +1,5 @@
+![基板](board.jpg)
+
 # Pmod Power_ColorLED
 　Pmod規格に準拠したマイコン/FPGAボード用拡張基板です．  
  KiCADのプロジェクトになっています．  
