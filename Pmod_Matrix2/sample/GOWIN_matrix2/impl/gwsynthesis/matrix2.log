@@ -1,0 +1,42 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\debounce.sv'
+WARN  (EX3628) : Redeclaration of ANSI port 'sw_out' is not allowed("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\debounce.sv":6)
+Analyzing Verilog file 'D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv'
+WARN  (EX3628) : Redeclaration of ANSI port 'onboard_led' is not allowed("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":17)
+WARN  (EX3628) : Redeclaration of ANSI port 'mat_CLOCK' is not allowed("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":18)
+WARN  (EX3628) : Redeclaration of ANSI port 'mat_RCLOCK' is not allowed("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":19)
+WARN  (EX3628) : Redeclaration of ANSI port 'ROW' is not allowed("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":20)
+WARN  (EX3628) : Redeclaration of ANSI port 'COL_Red' is not allowed("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":21)
+WARN  (EX3628) : Redeclaration of ANSI port 'COL_Green' is not allowed("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":22)
+Compiling module 'top'("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":1)
+Extracting RAM for identifier 'ledFrameBuffer'("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":24)
+Compiling module 'timer1'("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":96)
+WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":110)
+NOTE  (EX0101) : Current top module is "top"
+WARN  (EX0211) : The output port "onboard_led[5]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":12)
+WARN  (EX0211) : The output port "onboard_led[4]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":12)
+WARN  (EX0211) : The output port "onboard_led[3]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":12)
+WARN  (EX0211) : The output port "onboard_led[2]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":12)
+WARN  (EX0211) : The output port "onboard_led[1]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":12)
+WARN  (EX0211) : The output port "onboard_led[0]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":12)
+[5%] Running netlist conversion ...
+WARN  (CV0016) : Input sw is unused("D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\top.sv":3)
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\impl\gwsynthesis\matrix2.vg" completed
+[100%] Generate report file "D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\impl\gwsynthesis\matrix2_syn.rpt.html" completed
+GowinSynthesis finish
