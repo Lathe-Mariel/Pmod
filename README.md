@@ -7,4 +7,4 @@
 <img src="Pmod_encoder/re.jpg" height="120"> | Pmod_encoder | ロータリエンコーダ | Digilent互換
 <img src="" height="120"> | Pmod_PLED | パワーLED | 片面アルミ基板
 <img src="Pmod_Matrix2/matrix.jpg" height="120"> | Sugamod_Matrix2 | 2色8x8マトリクスLED | Pmod規格外，6層基板
-<img src="Pmod_A4988/Pmod_a4988.jpg" height="120"> | Pmod_A4988 | ステッピングモータドライバA4988
+<img src="Pmod_A4988/pmod_a4988.jpg" height="120"> | Pmod_A4988 | ステッピングモータドライバA4988
