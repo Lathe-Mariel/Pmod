@@ -15,12 +15,17 @@ logic overflow;
 //reg printf;
 
 timer1 timer_instance(clk, overflow);
-reg[8:0] pwm_counter;
-reg[8:0] max='d256;
+reg[10:0] pwm_counter;
+reg[10:0] max='d1024;
 reg[7:0] change_pwm=0;
 reg inc = 0;
 
 always @(posedge overflow)begin
+if(!sw)begin
+    red <= 1'd1;
+    green <= 1'd1;
+    blue <= 1'd1;
+end else begin
     if(pwm_counter >= max)begin
         red <= 1'd1;
         green <= 1'd1;
@@ -35,25 +40,33 @@ always @(posedge overflow)begin
     end
     if(change_pwm == 0)begin
         if(inc == 0)begin
-            max <= max - 'd1;
-            if(max <= 'd16)begin
+            if(max < 'd256)begin
+                max <= max - 'd1;
+            end else begin
+                max <= max - 'd4;
+            end
+            if(max <= 'd32)begin
                 inc <= 1;
             end
         end else begin
-            max <= max + 'd1;
-            if(max >= 'd400)begin
+            if(max < 'd256)begin
+                max <= max + 'd1;
+            end else begin
+                max <= max + 'd4;
+            end
+            if(max >= 'd1024)begin
                 inc <= 0;
             end
         end
     end
     change_pwm <= change_pwm + 'd1;
-
+end
 end
 
 endmodule
 
 module timer1 #(
-  parameter COUNT_MAX = 1000
+  parameter COUNT_MAX = 500
 ) (
   input  wire  clk,
   output logic overflow
