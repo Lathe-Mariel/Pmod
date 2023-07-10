@@ -1,0 +1,46 @@
+[
+ {
+  "InstFile" : "H:/git/Pmod/fuga/Pmod_LED_fuga/src/seven_segment_with_dp.sv",
+  "InstLine" : 11,
+  "InstName" : "seven_segment_with_dp",
+  "ModuleFile" : "H:/git/Pmod/fuga/Pmod_LED_fuga/src/seven_segment_with_dp.sv",
+  "ModuleLine" : 11,
+  "ModuleName" : "seven_segment_with_dp",
+  "SubInsts" : [
+   {
+    "InstFile" : "H:/git/Pmod/fuga/Pmod_LED_fuga/src/seven_segment_with_dp.sv",
+    "InstLine" : 33,
+    "InstName" : "segment_led_inst",
+    "ModuleFile" : "H:/git/Pmod/fuga/Pmod_LED_fuga/src/segment_led.sv",
+    "ModuleLine" : 11,
+    "ModuleName" : "segment_led"
+   }
+  ]
+ },
+ {
+  "InstFile" : "H:/git/Pmod/fuga/Pmod_LED_fuga/src/timer.sv",
+  "InstLine" : 1,
+  "InstName" : "timer",
+  "ModuleFile" : "H:/git/Pmod/fuga/Pmod_LED_fuga/src/timer.sv",
+  "ModuleLine" : 1,
+  "ModuleName" : "timer"
+ },
+ {
+  "InstFile" : "H:/git/Pmod/fuga/Pmod_LED_fuga/src/top.sv",
+  "InstLine" : 1,
+  "InstName" : "top",
+  "ModuleFile" : "H:/git/Pmod/fuga/Pmod_LED_fuga/src/top.sv",
+  "ModuleLine" : 1,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "H:/git/Pmod/fuga/Pmod_LED_fuga/src/top.sv",
+    "InstLine" : 22,
+    "InstName" : "timer_instance",
+    "ModuleFile" : "H:/git/Pmod/fuga/Pmod_LED_fuga/src/top.sv",
+    "ModuleLine" : 47,
+    "ModuleName" : "timer1"
+   }
+  ]
+ }
+]

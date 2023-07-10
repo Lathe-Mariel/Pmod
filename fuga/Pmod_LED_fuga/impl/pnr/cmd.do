@@ -1,0 +1,11 @@
+-d H:\git\Pmod\fuga\Pmod_LED_fuga\impl\gwsynthesis\Pmod_LED_fuga.vg
+-p GW2A-18C-PBGA256-8
+-pn GW2A-LV18PG256C8/I7
+-cst H:\git\Pmod\fuga\Pmod_LED_fuga\src\fuga_led.cst
+-cfg H:\git\Pmod\fuga\Pmod_LED_fuga\impl\pnr\device.cfg
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-route_maxfan 23
