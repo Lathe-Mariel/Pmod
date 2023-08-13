@@ -24,16 +24,22 @@ end
 
 always @(posedge line_counter)begin
   line_data[31:16] <= 16'd1 << line_counter[3:0];
-  line_data[15:0] <= fb[16'd1 << line_counter[3:0]];
+  for(int i=0; i<16; i++)begin
+    if(fb[16'd1 << line_counter[3:0]][i] > line_counter[5:4])begin
+      line_data[i] <= 1'b1;
+    end
+  end
+
 //density process
 end
 
 endmodule
 
 assign sclk = m_clk;
+assign serial_data = line_data[s_counter];
 
 module timer #(
-  prameter COUNT_MAX = 2700000
+  prameter COUNT_MAX = 100
 )(
   input wire clk,
   output logic m_clk
