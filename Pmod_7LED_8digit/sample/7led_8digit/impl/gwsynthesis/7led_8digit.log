@@ -1,0 +1,32 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv'
+Undeclared symbol 'm_clk', assumed default net type 'wire'("C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":15)
+Compiling module 'frameBuffer_16x16'("C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":1)
+Extracting RAM for identifier 'fb'("C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":10)
+WARN  (EX3771) : Module instantiation should have an instance name("C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":15)
+Compiling module 'timer'("C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":51)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":65)
+WARN  (EX3778) : Edge of vector 'line_counter' is only sensitive to the least significant bit("C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":33)
+NOTE  (EX0101) : Current top module is "frameBuffer_16x16"
+WARN  (EX0211) : The output port "rclk" of module "frameBuffer_16x16" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":5)
+[5%] Running netlist conversion ...
+WARN  (CV0016) : Input sw is unused("C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":3)
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\impl\gwsynthesis\7led_8digit.vg" completed
+[100%] Generate report file "C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\impl\gwsynthesis\7led_8digit_syn.rpt.html" completed
+GowinSynthesis finish
