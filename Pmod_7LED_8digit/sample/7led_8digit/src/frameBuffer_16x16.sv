@@ -7,7 +7,18 @@ output wire _srclr,
 output wire serial_data
 );
 
-logic [7:0][7:0][1:0] fb;       //[row][column][density]
+
+//[row][column][density]
+logic [1:0] fb[7:0][7:0] = {
+                            {2,2,2,2,2,2,2,0},
+                            {0,0,0,0,0,0,0,0},
+                            {2,2,2,2,2,2,2,0},
+                            {2,0,2,2,2,2,2,0},
+                            {2,2,2,2,2,2,2,0},
+                            {0,0,0,0,0,0,0,0},
+                            {2,2,2,2,2,2,2,0},
+                            {2,2,2,0,0,0,0,0}}
+;
 logic [5:0] s_counter;    //serial counter  for 32bit serial data
 logic [4:0] line_counter; //  4density(2bit) + 8row(3bit)
 logic [15:0] line_data;   // data for this time
