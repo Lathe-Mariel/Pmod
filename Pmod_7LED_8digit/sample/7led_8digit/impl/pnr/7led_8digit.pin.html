@@ -50,11 +50,11 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Design File</td>
-<td>C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\impl\gwsynthesis\7led_8digit.vg</td>
+<td>H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\impl\gwsynthesis\7led_8digit.vg</td>
 </tr>
 <tr>
 <td class="label">Physical Constraints File</td>
-<td>C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\7led_8digit.cst</td>
+<td>H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\7led_8digit.cst</td>
 </tr>
 <tr>
 <td class="label">Timing Constraints File</td>
@@ -62,7 +62,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Version</td>
-<td>V1.9.8.11 Education</td>
+<td>V1.9.8.09 Education</td>
 </tr>
 <tr>
 <td class="label">Part Number</td>
@@ -70,20 +70,16 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Device</td>
-<td>GW1NR-9</td>
-</tr>
-<tr>
-<td class="label">Device Version</td>
-<td>C</td>
+<td>GW1NR-9C</td>
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Fri Aug 18 18:41:00 2023
+<td>Sat Aug 19 19:38:03 2023
 </td>
 </tr>
 <tr>
 <td class="label">Legal Announcement</td>
-<td>Copyright (C)2014-2023 Gowin Semiconductor Corporation. All rights reserved.</td>
+<td>Copyright (C)2014-2022 Gowin Semiconductor Corporation. All rights reserved.</td>
 </tr>
 </table>
 <h1><a name="Pin_Details">Pin Details</a></h1>
@@ -102,6 +98,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td><b>PCI Clamp</b></td>
 <td><b>Hysteresis</b></td>
 <td><b>Open Drain</b></td>
+<td><b>Slew Rate</b></td>
 <td><b>Vref</b></td>
 <td><b>Single Resistor</b></td>
 <td><b>Diff Resistor</b></td>
@@ -119,6 +116,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
@@ -139,6 +137,64 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td class="label">tms_pad_i</td>
+<td></td>
+<td>5/3</td>
+<td>N</td>
+<td>in</td>
+<td>IOL11[A]</td>
+<td>LVCMOS18</td>
+<td>NA</td>
+<td>UP</td>
+<td>ON</td>
+<td>NONE</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td class="label">tck_pad_i</td>
+<td></td>
+<td>6/3</td>
+<td>N</td>
+<td>in</td>
+<td>IOL11[B]</td>
+<td>LVCMOS18</td>
+<td>NA</td>
+<td>UP</td>
+<td>ON</td>
+<td>NONE</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td class="label">tdi_pad_i</td>
+<td></td>
+<td>7/3</td>
+<td>N</td>
+<td>in</td>
+<td>IOL12[B]</td>
+<td>LVCMOS18</td>
+<td>NA</td>
+<td>UP</td>
+<td>ON</td>
+<td>NONE</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
 <td>OFF</td>
 <td>NA</td>
 <td>1.8</td>
@@ -156,6 +212,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
+<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -174,6 +231,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
+<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -192,6 +250,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
+<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -210,10 +269,30 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
+<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
 <td>3.3</td>
+</tr>
+<tr>
+<td class="label">tdo_pad_o</td>
+<td></td>
+<td>8/3</td>
+<td>N</td>
+<td>out</td>
+<td>IOL13[A]</td>
+<td>LVCMOS18</td>
+<td>8</td>
+<td>UP</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>FAST</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>1.8</td>
 </tr>
 </table>
 <br/>
@@ -230,6 +309,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td><b>PCI Clamp</b></td>
 <td><b>Hysteresis</b></td>
 <td><b>Open Drain</b></td>
+<td><b>Slew Rate</b></td>
 <td><b>Vref</b></td>
 <td><b>Single Resistor</b></td>
 <td><b>Diff Resistor</b></td>
@@ -245,6 +325,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -265,6 +346,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>1.8</td>
 </tr>
 <tr>
@@ -277,6 +359,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -297,6 +380,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>1.8</td>
 </tr>
 <tr>
@@ -309,6 +393,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -329,6 +414,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>1.8</td>
 </tr>
 <tr>
@@ -341,6 +427,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -361,6 +448,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>1.8</td>
 </tr>
 <tr>
@@ -373,6 +461,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -393,6 +482,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>1.8</td>
 </tr>
 <tr>
@@ -405,6 +495,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -425,6 +516,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -437,6 +529,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -457,6 +550,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -469,6 +563,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -489,6 +584,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -501,6 +597,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -521,6 +618,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -533,6 +631,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -553,6 +652,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -565,6 +665,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -585,6 +686,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -597,6 +699,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -617,6 +720,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -629,6 +733,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -649,6 +754,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -661,6 +767,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -681,6 +788,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -693,6 +801,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -713,6 +822,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -725,6 +835,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -742,6 +853,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
+<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -757,6 +869,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -777,6 +890,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -789,6 +903,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -809,6 +924,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -821,6 +937,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -841,6 +958,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -853,6 +971,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -873,6 +992,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -885,6 +1005,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -905,6 +1026,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -917,6 +1039,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -937,6 +1060,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -951,13 +1075,14 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>OFF</td>
 <td>NA</td>
 <td>1.8</td>
 </tr>
 <tr>
 <td class="label">5/3</td>
-<td>-</td>
+<td>tms_pad_i</td>
 <td>in</td>
 <td>IOL11[A]</td>
 <td>LVCMOS18</td>
@@ -968,12 +1093,13 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>1.8</td>
 </tr>
 <tr>
 <td class="label">6/3</td>
-<td>-</td>
+<td>tck_pad_i</td>
 <td>in</td>
 <td>IOL11[B]</td>
 <td>LVCMOS18</td>
@@ -984,12 +1110,13 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>1.8</td>
 </tr>
 <tr>
 <td class="label">7/3</td>
-<td>-</td>
+<td>tdi_pad_i</td>
 <td>in</td>
 <td>IOL12[B]</td>
 <td>LVCMOS18</td>
@@ -1000,12 +1127,13 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>1.8</td>
 </tr>
 <tr>
 <td class="label">8/3</td>
-<td>-</td>
+<td>tdo_pad_o</td>
 <td>out</td>
 <td>IOL13[A]</td>
 <td>LVCMOS18</td>
@@ -1014,8 +1142,9 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
+<td>FAST</td>
 <td>NA</td>
-<td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>1.8</td>
 </tr>
@@ -1029,6 +1158,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1049,6 +1179,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>1.8</td>
 </tr>
 <tr>
@@ -1061,6 +1192,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1081,6 +1213,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>1.8</td>
 </tr>
 <tr>
@@ -1093,6 +1226,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1113,6 +1247,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>1.8</td>
 </tr>
 <tr>
@@ -1125,6 +1260,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1145,6 +1281,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -1157,6 +1294,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1177,6 +1315,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -1189,6 +1328,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1209,6 +1349,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -1221,6 +1362,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1238,6 +1380,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
+<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1257,6 +1400,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -1270,6 +1414,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
+<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1289,6 +1434,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -1301,6 +1447,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
@@ -1318,6 +1465,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
+<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1333,6 +1481,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1353,6 +1502,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
+<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -1365,6 +1515,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
+<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>

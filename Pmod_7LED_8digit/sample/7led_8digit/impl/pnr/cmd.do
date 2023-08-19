@@ -1,12 +1,13 @@
--d C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\impl\gwsynthesis\7led_8digit.vg
+-d H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\impl\gwsynthesis\7led_8digit.vg
 -p GW1NR-9C-QFN88P-6
 -pn GW1NR-LV9QN88PC6/I5
--cst C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\7led_8digit.cst
--cfg C:\Git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\impl\pnr\device.cfg
+-cst H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\7led_8digit.cst
+-cfg H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\impl\pnr\device.cfg
+-gao_crc 0101100001100000
 -bit
 -tr
 -ph
 -timing
 -cst_error
--correct_hold 1
 -route_maxfan 23
+-rtl_gao
