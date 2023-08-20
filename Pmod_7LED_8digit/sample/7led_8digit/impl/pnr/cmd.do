@@ -3,7 +3,7 @@
 -pn GW1NR-LV9QN88PC6/I5
 -cst H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\7led_8digit.cst
 -cfg H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\impl\pnr\device.cfg
--gao_crc 0101100001100000
+-gao_crc 0101101110110111
 -bit
 -tr
 -ph

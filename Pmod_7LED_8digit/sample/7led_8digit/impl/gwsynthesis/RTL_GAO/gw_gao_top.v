@@ -1,4 +1,17 @@
 module gw_gao(
+    sclk,
+    serial_data,
+    \line_counter[4] ,
+    \line_counter[3] ,
+    \line_counter[2] ,
+    \line_counter[1] ,
+    \line_counter[0] ,
+    rclk,
+    \s_counter[4] ,
+    \s_counter[3] ,
+    \s_counter[2] ,
+    \s_counter[1] ,
+    \s_counter[0] ,
     \line_data[15] ,
     \line_data[14] ,
     \line_data[13] ,
@@ -15,27 +28,26 @@ module gw_gao(
     \line_data[2] ,
     \line_data[1] ,
     \line_data[0] ,
-    sclk,
-    \s_counter[5] ,
-    \s_counter[4] ,
-    \s_counter[3] ,
-    \s_counter[2] ,
-    \s_counter[1] ,
-    \s_counter[0] ,
-    serial_data,
-    \line_counter[4] ,
-    \line_counter[3] ,
-    \line_counter[2] ,
-    \line_counter[1] ,
-    \line_counter[0] ,
-    rclk,
-    \ti/counter[8] ,
+    \ti/counter[7] ,
     tms_pad_i,
     tck_pad_i,
     tdi_pad_i,
     tdo_pad_o
 );
 
+input sclk;
+input serial_data;
+input \line_counter[4] ;
+input \line_counter[3] ;
+input \line_counter[2] ;
+input \line_counter[1] ;
+input \line_counter[0] ;
+input rclk;
+input \s_counter[4] ;
+input \s_counter[3] ;
+input \s_counter[2] ;
+input \s_counter[1] ;
+input \s_counter[0] ;
 input \line_data[15] ;
 input \line_data[14] ;
 input \line_data[13] ;
@@ -52,26 +64,25 @@ input \line_data[3] ;
 input \line_data[2] ;
 input \line_data[1] ;
 input \line_data[0] ;
-input sclk;
-input \s_counter[5] ;
-input \s_counter[4] ;
-input \s_counter[3] ;
-input \s_counter[2] ;
-input \s_counter[1] ;
-input \s_counter[0] ;
-input serial_data;
-input \line_counter[4] ;
-input \line_counter[3] ;
-input \line_counter[2] ;
-input \line_counter[1] ;
-input \line_counter[0] ;
-input rclk;
-input \ti/counter[8] ;
+input \ti/counter[7] ;
 input tms_pad_i;
 input tck_pad_i;
 input tdi_pad_i;
 output tdo_pad_o;
 
+wire sclk;
+wire serial_data;
+wire \line_counter[4] ;
+wire \line_counter[3] ;
+wire \line_counter[2] ;
+wire \line_counter[1] ;
+wire \line_counter[0] ;
+wire rclk;
+wire \s_counter[4] ;
+wire \s_counter[3] ;
+wire \s_counter[2] ;
+wire \s_counter[1] ;
+wire \s_counter[0] ;
 wire \line_data[15] ;
 wire \line_data[14] ;
 wire \line_data[13] ;
@@ -88,21 +99,7 @@ wire \line_data[3] ;
 wire \line_data[2] ;
 wire \line_data[1] ;
 wire \line_data[0] ;
-wire sclk;
-wire \s_counter[5] ;
-wire \s_counter[4] ;
-wire \s_counter[3] ;
-wire \s_counter[2] ;
-wire \s_counter[1] ;
-wire \s_counter[0] ;
-wire serial_data;
-wire \line_counter[4] ;
-wire \line_counter[3] ;
-wire \line_counter[2] ;
-wire \line_counter[1] ;
-wire \line_counter[0] ;
-wire rclk;
-wire \ti/counter[8] ;
+wire \ti/counter[7] ;
 wire tms_pad_i;
 wire tck_pad_i;
 wire tdi_pad_i;
@@ -176,8 +173,8 @@ gw_con_top  u_icon_top(
 
 ao_top u_ao_top(
     .control(control0[9:0]),
-    .data_i({\line_data[15] ,\line_data[14] ,\line_data[13] ,\line_data[12] ,\line_data[11] ,\line_data[10] ,\line_data[9] ,\line_data[8] ,\line_data[7] ,\line_data[6] ,\line_data[5] ,\line_data[4] ,\line_data[3] ,\line_data[2] ,\line_data[1] ,\line_data[0] ,sclk,\s_counter[5] ,\s_counter[4] ,\s_counter[3] ,\s_counter[2] ,\s_counter[1] ,\s_counter[0] ,serial_data,\line_counter[4] ,\line_counter[3] ,\line_counter[2] ,\line_counter[1] ,\line_counter[0] ,rclk}),
-    .clk_i(\ti/counter[8] )
+    .data_i({sclk,serial_data,\line_counter[4] ,\line_counter[3] ,\line_counter[2] ,\line_counter[1] ,\line_counter[0] ,rclk,\s_counter[4] ,\s_counter[3] ,\s_counter[2] ,\s_counter[1] ,\s_counter[0] ,\line_data[15] ,\line_data[14] ,\line_data[13] ,\line_data[12] ,\line_data[11] ,\line_data[10] ,\line_data[9] ,\line_data[8] ,\line_data[7] ,\line_data[6] ,\line_data[5] ,\line_data[4] ,\line_data[3] ,\line_data[2] ,\line_data[1] ,\line_data[0] }),
+    .clk_i(\ti/counter[7] )
 );
 
 endmodule
