@@ -1,10 +1,12 @@
 module frameBuffer_16x16(
-input wire clk;
-output wire serial_clk;
-output wire serial_data;
+input wire clk,
+output wire serial_clk,
+output logic serial_data,
+output logic rclk,
+output logic clear,
+input sw
 );
 
-logic [16:0][16:0][1:0] fb;       //[row][column][density]
 logic [4:0] serial_count;    // serial counter  for 32bit serial data
 logic [5:0] column_count; // 4density(2bit) + 16row(4bit)
 
@@ -12,6 +14,9 @@ logic [5:0] column_count; // 4density(2bit) + 16row(4bit)
 // serial_count; 
 // column_count(16 x4) ; number for column that is procecced at now
 // serial_data ; data bit to send at this clock
+
+logic m_clk;
+logic serial_clk;
 
 logic [1:0] fb[15:0][15:0] = {
                             '{'d3,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d1},  //0
@@ -29,7 +34,7 @@ logic [1:0] fb[15:0][15:0] = {
                             '{'d0,'d0,'d0,'d1,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d3,'d0,'d0,'d0},  //12
                             '{'d0,'d0,'d1,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d3,'d0,'d0},  //13
                             '{'d0,'d1,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d3,'d0},  //14
-                            '{'d1,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d3}}  //15
+                            '{'d1,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d3}};  //15
 
 always @(posedge m_clk)begin
   serial_clk <= ~serial_clk;
@@ -37,9 +42,11 @@ end
 
 always @(posedge serial_clk)begin
   if(serial_count == 'd31)begin
+    rclk <= 1'b1;
     serial_count <= 'd0;
     column_count <= column_count + 'd1;
   end else begin
+    rclk <= 1'b0;
     serial_count <= serial_count + 'b1;
   end
 
@@ -58,11 +65,13 @@ always @(posedge serial_clk)begin
   end
 end
 
+assign clear = 1'b1;
+
 endmodule
 
 
 module timer #(
-  prameter COUNT_MAX = 1200
+  parameter COUNT_MAX = 1200
 )(
   input wire clk,
   output logic m_clk
