@@ -2,38 +2,10 @@ GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv'
 WARN  (EX3095) : Converting concatenation to assignment pattern("H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":20)
-Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'
-Analyzing included file 'H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
-Back to file 'H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
-Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'
-Analyzing included file 'H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_define.v'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Back to file 'H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Analyzing included file 'H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Back to file 'H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Analyzing included file 'H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_parameter.v'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Back to file 'H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'
-Analyzing included file 'H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\impl\gwsynthesis\RTL_GAO\ao_control\gw_con_top_define.v'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Back to file 'H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Analyzing included file 'H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_parameter.v'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Back to file 'H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\gw_jtag.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\impl\gwsynthesis\RTL_GAO\gw_gao_top.v'
 Compiling module 'frameBuffer_16x16'("H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":1)
 Extracting RAM for identifier 'fb'("H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":12)
-Compiling module 'timer'("H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":74)
-WARN  (EX3791) : Expression size 12 truncated to fit in target size 11("H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":88)
-WARN  (EX3779) : 'fb' should be on the sensitivity list("H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":59)
-Compiling module '**'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":0)
-Extracting RAM for identifier '**'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":0)
-Compiling module '**'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":0)
-WARN  (EX3791) : Expression size ** truncated to fit in target size **("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":0)
-Compiling module '**'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":0)
-Extracting RAM for identifier '**'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":0)
-Compiling module '**'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":0)
-Compiling module 'GW_JTAG'("H:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\gw_jtag.v":1)
-Compiling module 'gw_gao'("H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\impl\gwsynthesis\RTL_GAO\gw_gao_top.v":1)
-Trying to combine GAO to RTL design
+Compiling module 'timer'("H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":71)
+WARN  (EX3791) : Expression size 12 truncated to fit in target size 11("H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":85)
 NOTE  (EX0101) : Current top module is "frameBuffer_16x16"
 [5%] Running netlist conversion ...
 WARN  (CV0016) : Input sw is unused("H:\git\Pmod\Pmod_7LED_8digit\sample\7led_8digit\src\frameBuffer_16x16.sv":3)

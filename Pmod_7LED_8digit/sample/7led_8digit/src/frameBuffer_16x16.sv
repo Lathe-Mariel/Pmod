@@ -10,14 +10,14 @@ output logic serial_data
 
 //[row][column][density]
 logic [1:0] fb[7:0][7:0] = {
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //0
-                            '{'d3,'d3,'d3,'d3,'d0,'d0,'d0,'d0},  //1
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //2
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //3
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //4
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //5
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //6
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0}}; //7
+                            '{'d0,'d3,'d3,'d3,'d3,'d3,'d0,'d3},  //6
+                            '{'d0,'d3,'d3,'d3,'d3,'d3,'d3,'d3},  //8
+                            '{'d0,'d0,'d3,'d3,'d3,'d3,'d3,'d3},  //0
+                            '{'d0,'d3,'d3,'d3,'d3,'d3,'d3,'d3},  //8
+                            '{'d0,'d0,'d0,'d0,'d0,'d3,'d3,'d3},  //6
+                            '{'d0,'d3,'d3,'d3,'d3,'d3,'d3,'d3},  //8
+                            '{'d0,'d0,'d3,'d3,'d3,'d3,'d3,'d3},  //0
+                            '{'d0,'d3,'d3,'d3,'d3,'d3,'d3,'d3}}; //8
 
 logic [4:0] s_counter;    //serial counter  for serial data
 logic [4:0] line_counter; //  4density(2bit) + 8row(3bit)
@@ -32,18 +32,27 @@ always @(posedge m_clk)begin
 end
 
 always @(posedge signal_clk)begin
-  if(s_counter == 'd14)begin
-    line_counter <= line_counter + 5'd1;
-    rclk <= 'd0;
-  end else if(s_counter == 'd15)begin
+  if(s_counter == 'd0)begin
     rclk <= 'd1;
   end else begin
     rclk <= 'd0;
   end
 
-  if(s_counter == 'd16)begin
+  if(s_counter == 'd15)begin
+    line_counter = line_counter + 5'd1;
+//    line_data[15:8] <= 8'b00000011;
+    line_data[15:8] <= ~{8'b00000001 << line_counter[2:0]};
+
+    for(int i=0; i<8; i=i+1)begin
+    if(fb[line_counter[2:0]][i] > line_counter[4:3])begin
+      line_data[i] <= 1'b1;
+    end else begin
+      line_data[i] <= 1'b0;
+    end
+  end
+
     s_counter <= 'd0;
-    serial_data <= 'd0;
+    serial_data <= line_data['d15 - s_counter];
   end else begin
     s_counter <= s_counter + 4'd1;
     serial_data <= line_data['d15 - s_counter];
@@ -51,18 +60,6 @@ always @(posedge signal_clk)begin
 end
 
 //  fb[16'd1 << main_counter[9:6]]
-
-always @(line_counter)begin
-//  line_data[15:8] <= ~{8'd1 << line_counter[2:0]};  //cathode
-line_data[15:8] <= 8'b00000000;
-  for(int i=0; i<8; i=i+1)begin
-    if(fb[line_counter[2:0]][i] > line_counter[4:3])begin
-      line_data[i] <= 1'b1;
-    end else begin
-      line_data[i] <= 1'b0;
-    end
-  end
-end
 
 //assign serial_data = line_data[s_counter];
 assign sclk = signal_clk;
@@ -72,7 +69,7 @@ endmodule
 
 
 module timer #(
-  parameter COUNT_MAX = 1200
+  parameter COUNT_MAX = 1600
 )(
   input wire clk,
   output logic m_clk
