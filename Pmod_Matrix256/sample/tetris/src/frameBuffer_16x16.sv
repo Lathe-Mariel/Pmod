@@ -1,6 +1,6 @@
 module frameBuffer_16x16(
 input wire clk,
-output wire serial_clk,
+output logic serial_clk,
 output logic serial_data,
 output logic rclk,
 output logic clear,
@@ -16,7 +16,6 @@ logic [5:0] column_count; // 4density(2bit) + 16row(4bit)
 // serial_data ; data bit to send at this clock
 
 logic m_clk;
-logic serial_clk;
 
 logic [1:0] fb[15:0][15:0] = {
                             '{'d3,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d1},  //0
@@ -36,31 +35,36 @@ logic [1:0] fb[15:0][15:0] = {
                             '{'d0,'d1,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d3,'d0},  //14
                             '{'d1,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d3}};  //15
 
+timer ti(clk, m_clk);
+
 always @(posedge m_clk)begin
   serial_clk <= ~serial_clk;
 end
 
 always @(posedge serial_clk)begin
   if(serial_count == 'd31)begin
-    rclk <= 1'b1;
+    rclk <= 1'b0;
     serial_count <= 'd0;
     column_count <= column_count + 'd1;
+  end else if (serial_count == 'd0)begin
+    rclk <= 1'b1;
+    serial_count <= serial_count + 'b1;
   end else begin
     rclk <= 1'b0;
     serial_count <= serial_count + 'b1;
   end
 
-  if(serial_count < 'd16)begin  //for column data(cathode)
-    if(serial_count - column_count)begin
+  if(serial_count < 'd16)begin  //for row data(anode)
+    if((serial_count - column_count) == 0)begin
       serial_data <= 'b1;
     end else begin
       serial_data <= 'b0;
     end
-  end else begin  //for row data(anode)
+  end else begin  //for row data(cathode)
     if((fb[column_count[3:0]][serial_count - 'd16]) > column_count[5:4])begin
-      serial_data <= 'b1;
-    end else begin
       serial_data <= 'b0;
+    end else begin
+      serial_data <= 'b1;
     end
   end
 end
@@ -71,7 +75,7 @@ endmodule
 
 
 module timer #(
-  parameter COUNT_MAX = 1200
+  parameter COUNT_MAX = 100
 )(
   input wire clk,
   output logic m_clk
