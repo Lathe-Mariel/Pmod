@@ -1,45 +1,68 @@
 module frameBuffer_16x16(
 input wire clk;
-output wire sclk;
+output wire serial_clk;
 output wire serial_data;
 );
 
 logic [16:0][16:0][1:0] fb;       //[row][column][density]
-logic [5:0] s_counter;    //serial counter  for 32bit serial data
-logic [5:0] line_counter; //  4density(2bit) + 16row(4bit)
-logic [31:0] line_data;   // data for this time
+logic [4:0] serial_count;    // serial counter  for 32bit serial data
+logic [5:0] column_count; // 4density(2bit) + 16row(4bit)
+
+// serial_clk ;clock for serial data that is be sending
+// serial_count; 
+// column_count(16 x4) ; number for column that is procecced at now
+// serial_data ; data bit to send at this clock
+
+logic [1:0] fb[15:0][15:0] = {
+                            '{'d3,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d1},  //0
+                            '{'d0,'d3,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d1,'d0},  //1
+                            '{'d0,'d0,'d3,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d1,'d0,'d0},  //2
+                            '{'d0,'d0,'d0,'d3,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d1,'d0,'d0,'d0},  //3
+                            '{'d0,'d0,'d0,'d0,'d3,'d0,'d0,'d0,  'd0,'d0,'d0,'d1,'d0,'d0,'d0,'d0},  //4
+                            '{'d0,'d0,'d0,'d0,'d0,'d3,'d0,'d0,  'd0,'d0,'d1,'d0,'d0,'d0,'d0,'d0},  //5
+                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d3,'d0,  'd0,'d1,'d0,'d0,'d0,'d0,'d0,'d0},  //6
+                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d3,  'd1,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //7
+                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d1,  'd3,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //8
+                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d1,'d0,  'd0,'d3,'d0,'d0,'d0,'d0,'d0,'d0},  //9
+                            '{'d0,'d0,'d0,'d0,'d0,'d1,'d0,'d0,  'd0,'d0,'d3,'d0,'d0,'d0,'d0,'d0},  //10
+                            '{'d0,'d0,'d0,'d0,'d1,'d0,'d0,'d0,  'd0,'d0,'d0,'d3,'d0,'d0,'d0,'d0},  //11
+                            '{'d0,'d0,'d0,'d1,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d3,'d0,'d0,'d0},  //12
+                            '{'d0,'d0,'d1,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d3,'d0,'d0},  //13
+                            '{'d0,'d1,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d3,'d0},  //14
+                            '{'d1,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d3}}  //15
 
 always @(posedge m_clk)begin
-  if(s_counter == 5'd31)begin
-    s_counter <= 5'd0;
-    line_counter <= line_counter + 6'd1;
-  end else begin
-    s_counter <= s_counter + 5'd1;
-  end
-
-  serial_data <= line_data[s_counter];
+  serial_clk <= ~serial_clk;
 end
 
-//  fb[16'd1 << main_counter[9:6]]
-
-always @(posedge line_counter)begin
-  line_data[31:16] <= 16'd1 << line_counter[3:0];
-  for(int i=0; i<16; i++)begin
-    if(fb[16'd1 << line_counter[3:0]][i] > line_counter[5:4])begin
-      line_data[i] <= 1'b1;
-    end
+always @(posedge serial_clk)begin
+  if(serial_count == 'd31)begin
+    serial_count <= 'd0;
+    column_count <= column_count + 'd1;
+  end else begin
+    serial_count <= serial_count + 'b1;
   end
 
-//density process
+  if(serial_count < 'd16)begin  //for column data(cathode)
+    if(serial_count - column_count)begin
+      serial_data <= 'b1;
+    end else begin
+      serial_data <= 'b0;
+    end
+  end else begin  //for row data(anode)
+    if((fb[column_count[3:0]][serial_count - 'd16]) > column_count[5:4])begin
+      serial_data <= 'b1;
+    end else begin
+      serial_data <= 'b0;
+    end
+  end
 end
 
 endmodule
 
-assign sclk = m_clk;
-assign serial_data = line_data[s_counter];
 
 module timer #(
-  prameter COUNT_MAX = 100
+  prameter COUNT_MAX = 1200
 )(
   input wire clk,
   output logic m_clk
@@ -56,6 +79,4 @@ module timer #(
       m_clk <= 'd0;
     end
   end
-  
-
 endmodule
