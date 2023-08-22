@@ -18,22 +18,22 @@ logic [5:0] column_count; // 4density(2bit) + 16row(4bit)
 logic m_clk;
 
 logic [1:0] fb[15:0][15:0] = {
-                            '{'d3,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d1},  //0
-                            '{'d0,'d3,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d1,'d0},  //1
-                            '{'d0,'d0,'d3,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d1,'d0,'d0},  //2
-                            '{'d0,'d0,'d0,'d3,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d1,'d0,'d0,'d0},  //3
-                            '{'d0,'d0,'d0,'d0,'d3,'d0,'d0,'d0,  'd0,'d0,'d0,'d1,'d0,'d0,'d0,'d0},  //4
-                            '{'d0,'d0,'d0,'d0,'d0,'d3,'d0,'d0,  'd0,'d0,'d1,'d0,'d0,'d0,'d0,'d0},  //5
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d3,'d0,  'd0,'d1,'d0,'d0,'d0,'d0,'d0,'d0},  //6
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d3,  'd1,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //7
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d1,  'd3,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //8
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d1,'d0,  'd0,'d3,'d0,'d0,'d0,'d0,'d0,'d0},  //9
-                            '{'d0,'d0,'d0,'d0,'d0,'d1,'d0,'d0,  'd0,'d0,'d3,'d0,'d0,'d0,'d0,'d0},  //10
-                            '{'d0,'d0,'d0,'d0,'d1,'d0,'d0,'d0,  'd0,'d0,'d0,'d3,'d0,'d0,'d0,'d0},  //11
-                            '{'d0,'d0,'d0,'d2,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d3,'d0,'d0,'d0},  //12
-                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d3,'d0,'d0},  //13
-                            '{'d0,'d2,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d3,'d0},  //14
-                            '{'d2,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d3}};  //15
+                            '{'d0,'d0,'d3,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d3,'d0,'d0,'d0,'d0,'d0},  //0
+                            '{'d3,'d3,'d3,'d3,'d3,'d0,'d0,'d0,  'd0,'d0,'d3,'d0,'d0,'d0,'d0,'d0},  //1
+                            '{'d0,'d0,'d3,'d0,'d3,'d0,'d0,'d0,  'd0,'d0,'d3,'d0,'d0,'d0,'d0,'d0},  //2
+                            '{'d0,'d0,'d3,'d0,'d3,'d0,'d0,'d0,  'd0,'d3,'d0,'d3,'d0,'d0,'d0,'d0},  //3
+                            '{'d0,'d3,'d0,'d0,'d3,'d0,'d0,'d0,  'd0,'d3,'d0,'d3,'d0,'d0,'d0,'d0},  //4
+                            '{'d0,'d3,'d0,'d0,'d3,'d0,'d0,'d0,  'd0,'d3,'d0,'d3,'d0,'d0,'d0,'d0},  //5
+                            '{'d3,'d0,'d0,'d3,'d0,'d0,'d0,'d0,  'd3,'d0,'d0,'d0,'d3,'d0,'d0,'d0},  //6
+                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd3,'d0,'d0,'d0,'d3,'d0,'d0,'d0},  //7
+                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d3,'d3,'d3,'d0,'d3,'d3,'d3},  //8
+                            '{'d0,'d0,'d3,'d3,'d3,'d3,'d3,'d0,  'd0,'d3,'d0,'d3,'d0,'d3,'d0,'d3},  //9
+                            '{'d0,'d0,'d0,'d0,'d3,'d0,'d0,'d0,  'd0,'d3,'d3,'d3,'d0,'d3,'d3,'d3},  //10
+                            '{'d0,'d0,'d0,'d0,'d3,'d0,'d0,'d0,  'd0,'d3,'d0,'d3,'d0,'d3,'d0,'d3},  //11
+                            '{'d0,'d0,'d3,'d3,'d3,'d3,'d3,'d0,  'd0,'d3,'d3,'d3,'d0,'d3,'d3,'d3},  //12
+                            '{'d0,'d0,'d0,'d0,'d3,'d0,'d0,'d0,  'd0,'d3,'d0,'d0,'d0,'d0,'d0,'d3},  //13
+                            '{'d0,'d0,'d0,'d0,'d3,'d0,'d0,'d0,  'd0,'d3,'d0,'d0,'d0,'d0,'d0,'d3},  //14
+                            '{'d0,'d0,'d0,'d0,'d3,'d3,'d3,'d0,  'd0,'d3,'d0,'d0,'d0,'d0,'d0,'d3}};  //15
 
 timer ti(clk, m_clk);
 
@@ -55,13 +55,13 @@ always @(posedge serial_clk)begin
   end
 
   if(serial_count < 'd16)begin  //for row data(anode)
-    if((fb[column_count[3:0]][serial_count]) > column_count[5:4])begin
+    if((serial_count - column_count[3:0]) == 0)begin
       serial_data <= 'b1;
     end else begin
       serial_data <= 'b0;
     end
   end else begin  //for row data(cathode)
-    if((serial_count - column_count[3:0] - 'd16) == 0)begin
+    if((fb[column_count[3:0]][serial_count]) > column_count[5:4])begin
       serial_data <= 'b0;
     end else begin
       serial_data <= 'b1;
