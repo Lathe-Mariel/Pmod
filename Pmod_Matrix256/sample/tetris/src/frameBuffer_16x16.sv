@@ -47,7 +47,7 @@ always @(posedge m_clk)begin
   serial_clk <= ~serial_clk;
 end
 
-always @(posedge down_flag)begin
+always @(down_flag)begin
   if(fb[block_y - 4'd1][block_x] == 2'd3)begin
     block_y <= 4'd15;
   end else begin
@@ -60,9 +60,8 @@ end
 always @(posedge serial_clk)begin
   if(scroll_count > 800000)begin
     scroll_count <= 'd0;
-    down_flag <= 'b1;
+    down_flag <= ~down_flag;
   end else begin
-    down_flag <= 'b0;
     scroll_count <= scroll_count + 'd1;
   end
 
