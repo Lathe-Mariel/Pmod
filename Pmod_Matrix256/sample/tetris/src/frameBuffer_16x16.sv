@@ -10,6 +10,9 @@ input sw
 logic [4:0] serial_count;    // serial counter  for 32bit serial data
 logic [5:0] column_count; // 4density(2bit) + 16row(4bit)
 
+logic [24:0] scroll_count;
+logic [3:0] scroll_shift;
+
 // serial_clk ;clock for serial data that is be sending
 // serial_count; 
 // column_count(16 x4) ; number for column that is procecced at now
@@ -42,6 +45,13 @@ always @(posedge m_clk)begin
 end
 
 always @(posedge serial_clk)begin
+  if(scroll_count > 60000)begin
+    scroll_count <= 'd0;
+    scroll_shift <= scroll_shift - 'b1;
+  end else begin
+    scroll_count <= scroll_count + 'd1;
+  end
+
   if(serial_count == 'd31)begin
     rclk <= 1'b0;
     serial_count <= 'd0;
@@ -61,7 +71,7 @@ always @(posedge serial_clk)begin
       serial_data <= 'b0;
     end
   end else begin  //for row data(cathode)
-    if((fb[column_count[3:0]][serial_count]) > column_count[5:4])begin
+    if((fb[column_count[3:0]][serial_count + scroll_shift]) > column_count[5:4])begin
       serial_data <= 'b0;
     end else begin
       serial_data <= 'b1;
