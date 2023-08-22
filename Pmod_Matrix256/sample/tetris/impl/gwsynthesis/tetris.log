@@ -1,15 +1,16 @@
 GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv'
-WARN  (EX3095) : Converting concatenation to assignment pattern("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":39)
+WARN  (EX3095) : Converting concatenation to assignment pattern("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":38)
 Compiling module 'frameBuffer_16x16'("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":1)
-Extracting RAM for identifier 'fb'("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":23)
-Compiling module 'timer'("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":87)
-WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":101)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 4("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":50)
-WARN  (EX3791) : Expression size 26 truncated to fit in target size 25("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":52)
-WARN  (EX3791) : Expression size 7 truncated to fit in target size 6("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":58)
-WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":64)
+Extracting RAM for identifier 'fb'("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":22)
+WARN  (EX3780) : Using initial value of 'block_x' since it is never assigned("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":40)
+Compiling module 'timer'("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":103)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":117)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 4("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":55)
+WARN  (EX3791) : Expression size 26 truncated to fit in target size 25("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":66)
+WARN  (EX3791) : Expression size 7 truncated to fit in target size 6("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":72)
+WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":78)
 NOTE  (EX0101) : Current top module is "frameBuffer_16x16"
 [5%] Running netlist conversion ...
 WARN  (CV0016) : Input sw is unused("C:\Git\Pmod\Pmod_Matrix256\sample\tetris\src\frameBuffer_16x16.sv":7)

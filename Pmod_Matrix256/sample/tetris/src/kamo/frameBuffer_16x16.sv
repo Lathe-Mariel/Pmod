@@ -11,6 +11,7 @@ logic [4:0] serial_count;    // serial counter  for 32bit serial data
 logic [5:0] column_count; // 4density(2bit) + 16row(4bit)
 
 logic [24:0] scroll_count;
+logic [3:0] scroll_shift;
 
 // serial_clk ;clock for serial data that is be sending
 // serial_count; 
@@ -20,13 +21,13 @@ logic [24:0] scroll_count;
 logic m_clk;
 
 logic [1:0] fb[15:0][15:0] = {
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //0
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //1
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //2
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //3
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //4
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //5
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //6
+                            '{'d0,'d0,'d3,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d3,'d0,'d0,'d0,'d0,'d0},  //0
+                            '{'d3,'d3,'d3,'d3,'d3,'d0,'d0,'d0,  'd0,'d0,'d3,'d0,'d0,'d0,'d0,'d0},  //1
+                            '{'d0,'d0,'d3,'d0,'d3,'d0,'d0,'d0,  'd0,'d0,'d3,'d0,'d0,'d0,'d0,'d0},  //2
+                            '{'d0,'d0,'d3,'d0,'d3,'d0,'d0,'d0,  'd0,'d3,'d0,'d3,'d0,'d0,'d0,'d0},  //3
+                            '{'d0,'d3,'d0,'d0,'d3,'d0,'d0,'d0,  'd0,'d3,'d0,'d3,'d0,'d0,'d0,'d0},  //4
+                            '{'d0,'d3,'d0,'d0,'d3,'d0,'d0,'d0,  'd0,'d3,'d0,'d3,'d0,'d0,'d0,'d0},  //5
+                            '{'d3,'d0,'d0,'d3,'d0,'d0,'d0,'d0,  'd3,'d0,'d0,'d0,'d3,'d0,'d0,'d0},  //6
                             '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd3,'d0,'d0,'d0,'d3,'d0,'d0,'d0},  //7
                             '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d3,'d3,'d3,'d0,'d3,'d3,'d3},  //8
                             '{'d0,'d0,'d3,'d3,'d3,'d3,'d3,'d0,  'd0,'d3,'d0,'d3,'d0,'d3,'d0,'d3},  //9
@@ -37,32 +38,17 @@ logic [1:0] fb[15:0][15:0] = {
                             '{'d0,'d0,'d0,'d0,'d3,'d0,'d0,'d0,  'd0,'d3,'d0,'d0,'d0,'d0,'d0,'d3},  //14
                             '{'d0,'d0,'d0,'d0,'d3,'d3,'d3,'d0,  'd0,'d3,'d0,'d0,'d0,'d0,'d0,'d3}};  //15
 
-logic [2:0] block_x = 3'd3;
-logic [3:0] block_y = 4'd15;
-logic down_flag = 'b0;
-
 timer ti(clk, m_clk);
 
 always @(posedge m_clk)begin
   serial_clk <= ~serial_clk;
 end
 
-always @(posedge down_flag)begin
-  if(fb[block_y - 4'd1][block_x] == 2'd3)begin
-    block_y <= 4'd15;
-  end else begin
-    fb[block_y][block_x] <= 'd0;
-    block_y <= block_y - 'd1;
-    fb[block_y - 4'd1][block_x] <= 'd3;
-  end
-end
-
 always @(posedge serial_clk)begin
-  if(scroll_count > 800000)begin
+  if(scroll_count > 60000)begin
     scroll_count <= 'd0;
-    down_flag <= 'b1;
+    scroll_shift <= scroll_shift - 'b1;
   end else begin
-    down_flag <= 'b0;
     scroll_count <= scroll_count + 'd1;
   end
 
@@ -78,16 +64,14 @@ always @(posedge serial_clk)begin
     serial_count <= serial_count + 'b1;
   end
 
-  if(serial_count < 'd16)begin
-  //for row data(anode)
-    if((fb[column_count[3:0]]['d15 - (serial_count)]) > column_count[5:4])begin
+  if(serial_count < 'd16)begin  //for row data(anode)
+    if((serial_count - column_count[3:0]) == 0)begin
       serial_data <= 'b1;
     end else begin
       serial_data <= 'b0;
     end
-  end else begin
-  //for column data(cathode)
-    if((serial_count - column_count[3:0] - 'd16) == 0)begin
+  end else begin  //for row data(cathode)
+    if((fb[column_count[3:0]][serial_count + scroll_shift]) > column_count[5:4])begin
       serial_data <= 'b0;
     end else begin
       serial_data <= 'b1;
