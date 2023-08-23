@@ -50,6 +50,8 @@ end
 always @(down_flag)begin
   if(fb[block_y - 4'd1][block_x] == 2'd3)begin
     block_y <= 4'd15;
+    fb[block_y][block_x] <= 'd3;
+    fb[block_y - 4'd1][block_x] <= 'd3;
   end else begin
     fb[block_y][block_x] <= 'd0;
     block_y <= block_y - 'd1;
