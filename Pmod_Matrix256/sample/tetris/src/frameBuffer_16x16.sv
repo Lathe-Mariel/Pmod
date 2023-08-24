@@ -1,6 +1,6 @@
 module frameBuffer_16x16(
 input wire clk,
-output logic serial_clk,
+output logic sclk,
 output logic serial_data,
 output logic rclk,
 output logic clear,
@@ -20,7 +20,7 @@ logic [24:0] scroll_count;
 logic m_clk;
 
 logic [1:0] fb[15:0][15:0] = {
-                            '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //0
+                            '{'d3,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //0
                             '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //1
                             '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //2
                             '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //3
@@ -40,32 +40,33 @@ logic [1:0] fb[15:0][15:0] = {
 logic [2:0] block_x = 3'd3;
 logic [3:0] block_y = 4'd15;
 logic down_flag = 'b0;
+logic serial_clk;
 
-timer ti(clk, m_clk);
+//timer ti(clk, m_clk);
+timer ti(clk, serial_clk);
 
-always @(posedge m_clk)begin
-  serial_clk <= ~serial_clk;
-end
+//always @(posedge m_clk)begin
+//  serial_clk <= ~serial_clk;
+//end
 
-always @(down_flag)begin
-  if(fb[block_y - 4'd1][block_x] == 2'd3)begin
-    block_y <= 4'd15;
-    fb[block_y][block_x] <= 'd3;
-    fb[block_y - 4'd1][block_x] <= 'd3;
-  end else begin
-    fb[block_y][block_x] <= 'd0;
-    block_y <= block_y - 'd1;
-    fb[block_y - 4'd1][block_x] <= 'd3;
-  end
-end
+//always @(down_flag)begin
+//  if(fb[block_y - 4'd1][block_x] == 2'd3)begin
+//    block_y <= 4'd15;
+//    fb[block_y][block_x] <= 'd3;
+//  end else begin
+//    fb[block_y][block_x] <= 'd0;
+//    block_y <= block_y - 'd1;
+//  end
+//  fb[block_y - 4'd1][block_x] <= 'd3;
+//end
 
 always @(posedge serial_clk)begin
-  if(scroll_count > 800000)begin
-    scroll_count <= 'd0;
-    down_flag <= ~down_flag;
-  end else begin
-    scroll_count <= scroll_count + 'd1;
-  end
+//  if(scroll_count > 800000)begin
+//    scroll_count <= 'd0;
+//    down_flag <= ~down_flag;
+//  end else begin
+//    scroll_count <= scroll_count + 'd1;
+//  end
 
   if(serial_count == 'd31)begin
     rclk <= 1'b0;
@@ -97,7 +98,7 @@ always @(posedge serial_clk)begin
 end
 
 assign clear = 1'b1;
-
+assign sclk = serial_clk;
 endmodule
 
 
@@ -113,7 +114,7 @@ module timer #(
   always @(posedge clk)begin
     if(counter == COUNT_MAX)begin
       counter <= 'd0;
-      m_clk <= 'd1;
+      m_clk <= ~m_clk;
     end else begin
       counter <= counter + 'd1;
       m_clk <= 'd0;
