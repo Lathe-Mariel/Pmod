@@ -1,11 +1,12 @@
--d D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\impl\gwsynthesis\matrix2.vg
+-d C:\Git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\impl\gwsynthesis\matrix2.vg
 -p GW2A-18C-PBGA256-8
 -pn GW2A-LV18PG256C8/I7
--cst D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\matrix2.cst
--cfg D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\impl\pnr\device.cfg
+-cst C:\Git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\src\matrix2.cst
+-cfg C:\Git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\impl\pnr\device.cfg
 -bit
 -tr
 -ph
 -timing
 -cst_error
+-correct_hold 1
 -route_maxfan 23

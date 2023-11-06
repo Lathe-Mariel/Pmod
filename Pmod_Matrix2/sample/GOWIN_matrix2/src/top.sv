@@ -6,8 +6,8 @@ output wire CLR2,
 output wire CLR3,
 output wire COL_Red,
 output wire COL_Green,
-output wire ROW,
-output wire mat_RCLOCK,
+output wire ROW,         //serial data
+output wire mat_RCLOCK,  //transfering value of shift register to storage register
 output wire mat_CLOCK,
 output wire [5:0] onboard_led
 );
@@ -22,21 +22,21 @@ reg COL_Red;
 reg COL_Green;
 
 reg [7:0] ledFrameBuffer [1:0][7:0] = '{
-                                      '{8'b00001111,
-                                       8'b00001111,
-                                       8'b00001111,
-                                       8'b00001111,
-                                       8'b00001111,
-                                       8'b00001111,
-                                       8'b00001111,
-                                       8'b00001111},
-                                      '{8'b11110000,
+                                      '{8'b00001011,
+                                       8'b00001011,
+                                       8'b00001011,
+                                       8'b00001011,
+                                       8'b00001011,
+                                       8'b00001011,
+                                       8'b00001011,
+                                       8'b00001011},
+                                      '{8'b10101010,
                                        8'b11110000,
                                        8'b11110000,
                                        8'b11110000,
                                        8'b11110000,
                                        8'b11110000,
-                                       8'b11110000,
+                                       8'b00000000,
                                        8'b11110000}};
 
 //parameter FULL_STROKE_STEP = 16'd32768;
@@ -55,31 +55,46 @@ end
 reg [2:0] rowCounter;
 reg [2:0] currentStep;
 
-//reg [2:0] colRed_step;
-//reg [7:0] rowBuffer;
-//reg [7:0] colRedBuffer;
-//reg [7:0] colGreenBuffer;
 reg [7:0] cycleCounter;
-//reg transitionBit;
+logic colorSelector;
 
 always @(posedge overflow)begin
     mat_CLOCK <= ~mat_CLOCK;
     if(mat_CLOCK == 1)begin
+
         if(currentStep == 7)begin
-            rowCounter <= rowCounter + 3'b1;
+            colorSelector <= colorSelector + 1;
+            if(colorSelector == 0)begin
+                rowCounter <= rowCounter + 3'b1;
+            end
+            mat_RCLOCK <= 1'b0;
+        end else if(currentStep == 0) begin
             mat_RCLOCK <= 1'b1;
         end else begin
             mat_RCLOCK <= 1'b0;
         end
 
-        if(rowCounter == currentStep)begin
+        if(ledFrameBuffer[colorSelector][rowCounter][currentStep] == 1)begin
             ROW <= 1'b1;
         end else begin
             ROW <= 1'b0;
         end
+
         currentStep <= currentStep + 3'b1;
-        COL_Red <= ~ledFrameBuffer[0][rowCounter][currentStep];
-        COL_Green <= ~ledFrameBuffer[1][rowCounter][currentStep];
+
+
+        if(currentStep == rowCounter)begin
+           if(colorSelector)begin
+              COL_Red <= 0;
+              COL_Green <= 1;
+           end else begin
+              COL_Red <= 1;
+              COL_Green <= 0;
+           end
+        end else begin
+              COL_Red <= 1;
+              COL_Green <= 1;
+        end
 
     end else begin
 
@@ -94,7 +109,7 @@ assign CLR3 = 1;
 endmodule
 
 module timer1 #(
-  parameter COUNT_MAX = 2700
+  parameter COUNT_MAX = 1350
 ) (
   input  wire  clk,
   output logic overflow

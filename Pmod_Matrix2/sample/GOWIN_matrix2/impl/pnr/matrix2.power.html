@@ -59,11 +59,11 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Design File</td>
-<td>D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\impl\gwsynthesis\matrix2.vg</td>
+<td>C:\Git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\impl\gwsynthesis\matrix2.vg</td>
 </tr>
 <tr>
 <td class="label">Physical Constraints File</td>
-<td>D:\Git\Pmod_Matrix2\sample\GOWIN_matrix2\src\matrix2.cst</td>
+<td>C:\Git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\src\matrix2.cst</td>
 </tr>
 <tr>
 <td class="label">Timing Constraints File</td>
@@ -71,7 +71,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Version</td>
-<td>V1.9.8.09 Education</td>
+<td>V1.9.8.11 Education</td>
 </tr>
 <tr>
 <td class="label">Part Number</td>
@@ -79,16 +79,20 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Device</td>
-<td>GW2A-18C</td>
+<td>GW2A-18</td>
+</tr>
+<tr>
+<td class="label">Device Version</td>
+<td>C</td>
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Fri Mar 24 02:01:28 2023
+<td>Mon Nov 06 21:42:58 2023
 </td>
 </tr>
 <tr>
 <td class="label">Legal Announcement</td>
-<td>Copyright (C)2014-2022 Gowin Semiconductor Corporation. All rights reserved.</td>
+<td>Copyright (C)2014-2023 Gowin Semiconductor Corporation. All rights reserved.</td>
 </tr>
 </table>
 <h1><a name="Summary">Power Summary</a></h1>
@@ -96,7 +100,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <table class="summary_table">
 <tr>
 <td class="label">Total Power (mW)</td>
-<td>168.271</td>
+<td>169.289</td>
 </tr>
 <tr>
 <td class="label">Quiescent Power (mW)</td>
@@ -104,14 +108,14 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Dynamic Power (mW)</td>
-<td>5.238</td>
+<td>6.256</td>
 </tr>
 </table>
 <h2><a name="Thermal_Info">Thermal Information:</a></h2>
 <table class="summary_table">
 <tr>
 <td class="label">Junction Temperature</td>
-<td>30.388</td>
+<td>30.421</td>
 </tr>
 <tr>
 <td class="label">Theta JA</td>
@@ -119,7 +123,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Max Allowed Ambient Temperature</td>
-<td>79.612</td>
+<td>79.579</td>
 </tr>
 </table>
 <h2><a name="Configure_Info">Configure Information:</a></h2>
@@ -188,9 +192,9 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td>VCC</td>
 <td>1.000</td>
-<td>0.998</td>
+<td>2.017</td>
 <td>102.352</td>
-<td>103.350</td>
+<td>104.369</td>
 </tr>
 <tr>
 <td>VCCX</td>
@@ -200,14 +204,14 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>60.527</td>
 </tr>
 <tr>
-<td>VCCO12</td>
+<td>VCCIO12</td>
 <td>1.200</td>
 <td>0.315</td>
 <td>0.012</td>
 <td>0.393</td>
 </tr>
 <tr>
-<td>VCCO33</td>
+<td>VCCIO33</td>
 <td>3.300</td>
 <td>0.530</td>
 <td>0.683</td>
@@ -225,15 +229,21 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td>Logic</td>
-<td>0.123</td>
+<td>0.115</td>
 <td>NA</td>
-<td>13.889</td>
+<td>13.934</td>
 </tr>
 <tr>
 <td>IO</td>
 <td>9.787
 <td>4.699
 <td>10.833
+</tr>
+<tr>
+<td>BSRAM</td>
+<td>1.026
+<td>NA</td>
+<td>NA</td>
 </tr>
 </table>
 <h2><a name="By_Hierarchy">Power By Hierarchy:</a></h2>
@@ -245,12 +255,12 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td>top</td>
-<td>0.123</td>
-<td>0.123(0.098)</td>
+<td>1.141</td>
+<td>1.141(0.090)</td>
 <tr>
 <td>top/timer_instance/</td>
-<td>0.098</td>
-<td>0.098(0.000)</td>
+<td>0.090</td>
+<td>0.090(0.000)</td>
 </table>
 <h2><a name="By_Clock_Domain">Power By Clock Domain:</a></h2>
 <table class="detail_table">
@@ -260,14 +270,14 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <th class="label">Total Dynamic Power(mW)</th>
 </tr>
 <tr>
-<td>clk</td>
-<td>100.000</td>
-<td>0.101</td>
-</tr>
-<tr>
 <td>overflow_Z</td>
 <td>100.000</td>
-<td>0.049</td>
+<td>1.076</td>
+</tr>
+<tr>
+<td>clk</td>
+<td>100.000</td>
+<td>0.092</td>
 </tr>
 </table>
 </div><!-- content -->
