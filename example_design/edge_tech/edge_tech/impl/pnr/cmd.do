@@ -1,0 +1,12 @@
+-d C:\Git\Pmod\example_design\edge_tech\edge_tech\impl\gwsynthesis\edge_tech.vg
+-p GW1NR-9C-QFN88P-6
+-pn GW1NR-LV9QN88PC6/I5
+-cst C:\Git\Pmod\example_design\edge_tech\edge_tech\src\matrix2.cst
+-cfg C:\Git\Pmod\example_design\edge_tech\edge_tech\impl\pnr\device.cfg
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-correct_hold 1
+-route_maxfan 23

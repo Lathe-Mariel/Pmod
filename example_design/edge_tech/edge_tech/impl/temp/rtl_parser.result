@@ -1,0 +1,28 @@
+[
+ {
+  "InstFile" : "C:/Git/Pmod/example_design/edge_tech/edge_tech/src/timer.sv",
+  "InstLine" : 1,
+  "InstName" : "timer",
+  "ModuleFile" : "C:/Git/Pmod/example_design/edge_tech/edge_tech/src/timer.sv",
+  "ModuleLine" : 1,
+  "ModuleName" : "timer"
+ },
+ {
+  "InstFile" : "C:/Git/Pmod/example_design/edge_tech/edge_tech/src/top.sv",
+  "InstLine" : 1,
+  "InstName" : "top",
+  "ModuleFile" : "C:/Git/Pmod/example_design/edge_tech/edge_tech/src/top.sv",
+  "ModuleLine" : 1,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Git/Pmod/example_design/edge_tech/edge_tech/src/top.sv",
+    "InstLine" : 45,
+    "InstName" : "timer_instance",
+    "ModuleFile" : "C:/Git/Pmod/example_design/edge_tech/edge_tech/src/top.sv",
+    "ModuleLine" : 110,
+    "ModuleName" : "timer1"
+   }
+  ]
+ }
+]
