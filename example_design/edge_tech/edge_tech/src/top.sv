@@ -9,7 +9,11 @@ output wire COL_Green,
 output wire ROW,         //serial data
 output wire mat_RCLOCK,  //transfering value of shift register to storage register
 output wire mat_CLOCK,
-output wire [5:0] onboard_led
+output wire [5:0] onboard_led,
+output logic sclk,
+output logic serial_data,
+output logic rclk,
+output logic clear
 );
 
 logic overflow;
@@ -20,6 +24,10 @@ reg mat_RCLOCK;
 reg ROW;
 reg COL_Red;
 reg COL_Green;
+
+logic [4:0] serial_count;    // serial counter  for 32bit serial data
+logic [5:0] column_count; // 4density(2bit) + 16row(4bit)
+logic [24:0] scroll_count;
 
 reg [7:0] ledFrameBuffer [1:0][7:0] = '{
                                       '{8'b01110000,
@@ -57,6 +65,63 @@ reg [2:0] currentStep;
 
 reg [7:0] cycleCounter;
 logic colorSelector;
+
+logic m_clk;
+
+logic [1:0] fb[15:0][15:0] = {
+                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d2,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d2,'d0},  //0
+                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d2,'d2,  'd0,'d0,'d0,'d0,'d0,'d0,'d2,'d0},  //1
+                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d2,'d2,  'd0,'d0,'d0,'d0,'d0,'d0,'d2,'d0},  //2
+                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d2,'d0,  'd2,'d0,'d0,'d0,'d0,'d0,'d2,'d0},  //3
+                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d2,'d0,  'd2,'d0,'d0,'d0,'d0,'d0,'d2,'d0},  //4
+                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d2,'d0,  'd0,'d2,'d0,'d0,'d0,'d0,'d2,'d0},  //5
+                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d2,'d0,  'd0,'d2,'d0,'d0,'d0,'d0,'d2,'d0},  //6
+                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d2,'d0,  'd0,'d0,'d2,'d0,'d0,'d0,'d2,'d0},  //7
+                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d2,'d0,  'd0,'d0,'d2,'d0,'d0,'d0,'d2,'d0},  //8
+                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d2,'d0,  'd0,'d0,'d0,'d2,'d0,'d0,'d2,'d0},  //9
+                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d2,'d0,  'd0,'d0,'d0,'d2,'d0,'d0,'d2,'d0},  //10
+                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d2,'d0,  'd0,'d0,'d0,'d0,'d2,'d0,'d2,'d0},  //11
+                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d2,'d0,  'd0,'d0,'d0,'d0,'d2,'d0,'d2,'d0},  //12
+                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d2,'d0,  'd0,'d0,'d0,'d0,'d0,'d2,'d2,'d0},  //13
+                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d2,'d0,  'd0,'d0,'d0,'d0,'d0,'d2,'d2,'d0},  //14
+                            '{'d0,'d0,'d2,'d0,'d0,'d0,'d2,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d2,'d0}};  //15
+
+logic [2:0] block_x = 3'd3;
+logic [3:0] block_y = 4'd15;
+logic down_flag = 'b0;
+
+always @(posedge overflow)begin
+  if(serial_count == 'd31)begin
+    rclk <= 1'b0;
+    serial_count <= 'd0;
+    column_count <= column_count + 'd1;
+  end else if (serial_count == 'd0)begin
+    rclk <= 1'b1;
+    serial_count <= serial_count + 'b1;
+  end else begin
+    rclk <= 1'b0;
+    serial_count <= serial_count + 'b1;
+  end
+
+  if(serial_count < 'd16)begin
+  //for row data(anode)
+    if((fb[column_count[3:0]]['d15 - (serial_count)]) > column_count[5:4])begin
+      serial_data <= 'b1;
+    end else begin
+      serial_data <= 'b0;
+    end
+  end else begin
+  //for column data(cathode)
+    if((serial_count - column_count[3:0] - 'd16) == 0)begin
+      serial_data <= 'b0;
+    end else begin
+      serial_data <= 'b1;
+    end
+  end
+end
+
+assign clear = 1'b1;
+assign sclk = overflow;
 
 always @(posedge overflow)begin
     mat_CLOCK <= ~mat_CLOCK;
@@ -108,7 +173,7 @@ assign CLR3 = 1;
 endmodule
 
 module timer1 #(
-  parameter COUNT_MAX = 1350
+  parameter COUNT_MAX = 100
 ) (
   input  wire  clk,
   output logic overflow
