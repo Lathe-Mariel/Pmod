@@ -1,11 +1,5 @@
 module gw_gao(
-    COL_Red,
-    ROW,
-    mat_RCLOCK,
-    mat_CLOCK,
-    \step[2] ,
-    \step[1] ,
-    \step[0] ,
+    F10,
     overflow,
     tms_pad_i,
     tck_pad_i,
@@ -13,26 +7,14 @@ module gw_gao(
     tdo_pad_o
 );
 
-input COL_Red;
-input ROW;
-input mat_RCLOCK;
-input mat_CLOCK;
-input \step[2] ;
-input \step[1] ;
-input \step[0] ;
+input F10;
 input overflow;
 input tms_pad_i;
 input tck_pad_i;
 input tdi_pad_i;
 output tdo_pad_o;
 
-wire COL_Red;
-wire ROW;
-wire mat_RCLOCK;
-wire mat_CLOCK;
-wire \step[2] ;
-wire \step[1] ;
-wire \step[0] ;
+wire F10;
 wire overflow;
 wire tms_pad_i;
 wire tck_pad_i;
@@ -107,7 +89,7 @@ gw_con_top  u_icon_top(
 
 ao_top u_ao_top(
     .control(control0[9:0]),
-    .data_i({COL_Red,ROW,mat_RCLOCK,mat_CLOCK,\step[2] ,\step[1] ,\step[0] }),
+    .data_i(F10),
     .clk_i(overflow)
 );
 
