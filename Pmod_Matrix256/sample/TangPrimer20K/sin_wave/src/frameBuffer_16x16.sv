@@ -19,7 +19,7 @@ logic [24:0] scroll_count;
 
 logic m_clk;
 
-logic [3:0] sin[7:0] = '{'d1,'d6,'d10,'d12,'d13,'d14,'d15,'d15};
+logic [3:0] sin[7:0] = {4'd1, 4'd6, 4'd10, 4'd12, 4'd13, 4'd14, 4'd15, 4'd15};
                             
 logic [2:0] block_x = 3'd3;
 logic [3:0] block_y = 4'd15;
@@ -45,8 +45,8 @@ timer ti(clk, serial_clk);
 //end
 
 function [1:0] sin_shader_1bit(
-    input x,
-    input y
+    logic[3:0] x,
+    logic[3:0] y
 );
     if(x>7)begin
         x = 15 - x;
@@ -54,11 +54,11 @@ function [1:0] sin_shader_1bit(
         x = x;
     end
     if(y < sin[x])begin 
-        sin_shader_1bit <= 'd3;
+        sin_shader_1bit = 2'd3;
     end if(y == sin[x])begin
-        sin_shader_1bit <= 'd1;
+        sin_shader_1bit = 2'd1;
     end else begin
-        sin_shader_1bit <= 'd0;
+        sin_shader_1bit = 2'd0;
     end
 endfunction
 
@@ -103,6 +103,7 @@ end
 
 assign clear = 1'b1;
 assign sclk = serial_clk;
+
 endmodule
 
 
