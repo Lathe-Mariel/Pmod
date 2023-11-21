@@ -1,0 +1,31 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Git\Pmod\Pmod_Matrix256\sample\TangPrimer20K\sin_wave\src\frameBuffer_16x16.sv'
+Compiling module 'frameBuffer_16x16'("C:\Git\Pmod\Pmod_Matrix256\sample\TangPrimer20K\sin_wave\src\frameBuffer_16x16.sv":1)
+WARN  (EX3780) : Using initial value of 'sin' since it is never assigned("C:\Git\Pmod\Pmod_Matrix256\sample\TangPrimer20K\sin_wave\src\frameBuffer_16x16.sv":22)
+Compiling module 'timer'("C:\Git\Pmod\Pmod_Matrix256\sample\TangPrimer20K\sin_wave\src\frameBuffer_16x16.sv":109)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("C:\Git\Pmod\Pmod_Matrix256\sample\TangPrimer20K\sin_wave\src\frameBuffer_16x16.sv":123)
+WARN  (EX3791) : Expression size 7 truncated to fit in target size 6("C:\Git\Pmod\Pmod_Matrix256\sample\TangPrimer20K\sin_wave\src\frameBuffer_16x16.sv":77)
+WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("C:\Git\Pmod\Pmod_Matrix256\sample\TangPrimer20K\sin_wave\src\frameBuffer_16x16.sv":83)
+WARN  (EX3696) : Use of 'sin_shader_1bit' without initialization in static subprogram 'sin_shader_1bit' may create unintended latch behavior("C:\Git\Pmod\Pmod_Matrix256\sample\TangPrimer20K\sin_wave\src\frameBuffer_16x16.sv":47)
+NOTE  (EX0101) : Current top module is "frameBuffer_16x16"
+[5%] Running netlist conversion ...
+WARN  (CV0016) : Input sw is unused("C:\Git\Pmod\Pmod_Matrix256\sample\TangPrimer20K\sin_wave\src\frameBuffer_16x16.sv":7)
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "C:\Git\Pmod\Pmod_Matrix256\sample\TangPrimer20K\sin_wave\impl\gwsynthesis\sine_wave.vg" completed
+[100%] Generate report file "C:\Git\Pmod\Pmod_Matrix256\sample\TangPrimer20K\sin_wave\impl\gwsynthesis\sine_wave_syn.rpt.html" completed
+GowinSynthesis finish

@@ -1,0 +1,13 @@
+-d C:\Git\Pmod\Pmod_Matrix256\sample\TangPrimer20K\sin_wave\impl\gwsynthesis\sine_wave.vg
+-p GW2A-18C-PBGA256-8
+-pn GW2A-LV18PG256C8/I7
+-cst C:\Git\Pmod\Pmod_Matrix256\sample\TangPrimer20K\sin_wave\src\top.cst
+-cfg C:\Git\Pmod\Pmod_Matrix256\sample\TangPrimer20K\sin_wave\impl\pnr\device.cfg
+-sdc C:\Git\Pmod\Pmod_Matrix256\sample\TangPrimer20K\sin_wave\src\top.sdc
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-correct_hold 1
+-route_maxfan 23
