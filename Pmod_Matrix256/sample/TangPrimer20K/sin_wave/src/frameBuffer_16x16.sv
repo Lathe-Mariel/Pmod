@@ -19,11 +19,12 @@ logic [24:0] scroll_count;
 
 logic m_clk;
 
-logic [3:0] sin[7:0] = {4'd1, 4'd6, 4'd10, 4'd12, 4'd13, 4'd14, 4'd15, 4'd15};
+logic [7:0][3:0] sin;
+assign sin = {4'd1, 4'd4, 4'd6, 4'd7, 4'd7, 4'd6, 4'd4, 4'd1};
                             
 logic [2:0] block_x = 3'd3;
 logic [3:0] block_y = 4'd15;
-logic down_flag = 'b0;
+//logic down_flag = 'b0;
 logic serial_clk;
 
 //timer ti(clk, m_clk);
@@ -48,15 +49,20 @@ function [1:0] sin_shader_1bit(
     logic[3:0] x,
     logic[3:0] y
 );
-    if(x>7)begin
+    x = x + scroll_count[18:15];
+
+    if(x > 7)begin
         x = 15 - x;
+        y = 8 - y;
     end else begin
         x = x;
+        y = y + 8;
     end
+
     if(y < sin[x])begin 
-        sin_shader_1bit = 2'd3;
-    end if(y == sin[x])begin
         sin_shader_1bit = 2'd1;
+    end else if(y == sin[x])begin
+        sin_shader_1bit = 2'd3;
     end else begin
         sin_shader_1bit = 2'd0;
     end
@@ -64,12 +70,8 @@ endfunction
 
 
 always @(posedge serial_clk)begin
-//  if(scroll_count > 800000)begin
-//    scroll_count <= 'd0;
-//    down_flag <= ~down_flag;
-//  end else begin
-//    scroll_count <= scroll_count + 'd1;
-//  end
+
+  scroll_count <= scroll_count + 'd1;
 
   if(serial_count == 'd31)begin
     rclk <= 1'b0;
@@ -86,7 +88,7 @@ always @(posedge serial_clk)begin
   if(serial_count < 'd16)begin
   //for row data(anode)
 //    if((fb[column_count[3:0]]['d15 - (serial_count)]) > column_count[5:4])begin  //column_count[5:4] represents brightness
-    if(sin_shader_1bit(('d15 - serial_count), column_count[3:0]) > column_count[5:4])begin
+    if(sin_shader_1bit(column_count[3:0], serial_count) > column_count[5:4])begin
       serial_data <= 'b1;
     end else begin
       serial_data <= 'b0;
