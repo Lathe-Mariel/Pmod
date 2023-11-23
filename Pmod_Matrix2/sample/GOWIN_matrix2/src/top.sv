@@ -9,10 +9,27 @@ output wire COL_Green,
 output wire ROW,         //serial data
 output wire mat_RCLOCK,  //transfering value of shift register to storage register
 output wire mat_CLOCK,
+output wire ch2_CLR1,
+output wire ch2_CLR2,
+output wire ch2_CLR3,
+output wire ch2_COL_Red,
+output wire ch2_COL_Green,
+output wire ch2_ROW,         //serial data
+output wire ch2_mat_RCLOCK,  //transfering value of shift register to storage register
+output wire ch2_mat_CLOCK,
 output wire [5:0] onboard_led
 );
 
 //assign F10 = 'b1;
+
+assign ch2_CLR1 = CLR1;
+assign ch2_CLR2 = CLR2;
+assign ch2_CLR3 = CLR3;
+assign ch2_COL_Red = COL_Red;
+assign ch2_COL_Green = COL_Green;
+assign ch2_ROW = ROW;
+assign ch2_mat_RCLOCK = mat_RCLOCK;
+assign ch2_mat_CLOCK = mat_CLOCK;
 
 logic overflow;
 
