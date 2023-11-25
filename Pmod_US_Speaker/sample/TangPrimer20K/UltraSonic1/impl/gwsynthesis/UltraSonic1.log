@@ -2,12 +2,9 @@ GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv'
 Compiling module 'top'("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":1)
-Compiling module 'timer1'("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":34)
-WARN  (EX3791) : Expression size 16 truncated to fit in target size 15("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":48)
+Compiling module 'timer1'("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":37)
+WARN  (EX3791) : Expression size 7 truncated to fit in target size 6("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":51)
 NOTE  (EX0101) : Current top module is "top"
-WARN  (EX0211) : The output port "ch1b" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":5)
-WARN  (EX0211) : The output port "ch2b" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":7)
-WARN  (EX0211) : The output port "ch3b" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":9)
 [5%] Running netlist conversion ...
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed

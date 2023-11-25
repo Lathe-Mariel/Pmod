@@ -22,6 +22,9 @@ timer1 timer_instance(clk, overflow);
 assign led0 = ch1a;
 assign ch2a = ch1a;
 assign ch3a = ch1a;
+assign ch1b = ch1a;
+assign ch2b = ch1a;
+assign ch3b = ch1a;
 
 always @(posedge overflow)begin
   if(!s4)begin
@@ -32,7 +35,7 @@ end
 endmodule
 
 module timer1 #(
-  parameter COUNT_MAX = 27000
+  parameter COUNT_MAX = 35
 ) (
   input  wire  clk,
   output logic overflow
