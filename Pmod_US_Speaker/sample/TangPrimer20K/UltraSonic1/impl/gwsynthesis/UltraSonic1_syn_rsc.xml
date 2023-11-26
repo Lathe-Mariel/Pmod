@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="1" Lut="1">
-    <SubModule name="timer_instance" Register="7" Alu="5" Lut="3"/>
+<Module name="top" Register="27" Alu="15" Lut="42">
+    <SubModule name="timer_instance" Register="17" Alu="30" Lut="7"/>
+    <SubModule name="timer_keypolling" Register="17" Alu="15" Lut="9"/>
+    <SubModule name="timer_instance3" Register="17" Alu="15" Lut="9"/>
+    <SubModule name="nanaseg">
+        <SubModule name="segment_led_inst" Register="13" Lut="48"/>
+    </SubModule>
 </Module>

@@ -69,7 +69,7 @@ endmodule
 
 
 module timer #(
-  parameter COUNT_MAX = 1600
+  parameter COUNT_MAX = 800
 )(
   input wire clk,
   output logic m_clk

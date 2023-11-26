@@ -4,6 +4,8 @@
     <Version>beta</Version>
     <Device id="GW2A-18C" package="PBGA256" speed="8" partNumber="GW2A-LV18PG256C8/I7"/>
     <FileList>
+        <File path="H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\segment_led.sv" type="verilog"/>
+        <File path="H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\seven_segment_with_dp.sv" type="verilog"/>
         <File path="H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv" type="verilog"/>
     </FileList>
     <OptionList>
@@ -13,6 +15,7 @@
         <Option type="output_file" value="H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\gwsynthesis\UltraSonic1.vg"/>
         <Option type="print_all_synthesis_warning" value="0"/>
         <Option type="ram_rw_check" value="1"/>
+        <Option type="top_module" value="top"/>
         <Option type="verilog_language" value="sysv-2017"/>
         <Option type="vhdl_language" value="vhdl-1993"/>
     </OptionList>

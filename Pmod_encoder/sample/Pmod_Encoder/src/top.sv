@@ -18,7 +18,7 @@ reg [5:0] reg_numbers [5:0];
 reg [23:0] value = 24'h0;
 
 timer1 timer_instance(clk, overflow);
-seven_segment_with_dp(overflow, 0, 1, reg_numbers, COL2, ROW2);
+seven_segment_with_dp dp(overflow, 0, 1, reg_numbers, COL2, ROW2);
 
 reg[4:0] antiChatter_rotary1 = 0;
 reg[4:0] antiChatter_slide = 0;

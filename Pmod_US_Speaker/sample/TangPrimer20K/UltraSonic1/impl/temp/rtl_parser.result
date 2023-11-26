@@ -9,11 +9,45 @@
   "SubInsts" : [
    {
     "InstFile" : "H:/git/Pmod/Pmod_US_Speaker/sample/TangPrimer20K/UltraSonic1/src/ultrasonic1.sv",
-    "InstLine" : 20,
+    "InstLine" : 24,
     "InstName" : "timer_instance",
     "ModuleFile" : "H:/git/Pmod/Pmod_US_Speaker/sample/TangPrimer20K/UltraSonic1/src/ultrasonic1.sv",
-    "ModuleLine" : 37,
+    "ModuleLine" : 95,
     "ModuleName" : "timer1"
+   },
+   {
+    "InstFile" : "H:/git/Pmod/Pmod_US_Speaker/sample/TangPrimer20K/UltraSonic1/src/ultrasonic1.sv",
+    "InstLine" : 25,
+    "InstName" : "timer_keypolling",
+    "ModuleFile" : "H:/git/Pmod/Pmod_US_Speaker/sample/TangPrimer20K/UltraSonic1/src/ultrasonic1.sv",
+    "ModuleLine" : 95,
+    "ModuleName" : "timer1"
+   },
+   {
+    "InstFile" : "H:/git/Pmod/Pmod_US_Speaker/sample/TangPrimer20K/UltraSonic1/src/ultrasonic1.sv",
+    "InstLine" : 26,
+    "InstName" : "timer_instance3",
+    "ModuleFile" : "H:/git/Pmod/Pmod_US_Speaker/sample/TangPrimer20K/UltraSonic1/src/ultrasonic1.sv",
+    "ModuleLine" : 95,
+    "ModuleName" : "timer1"
+   },
+   {
+    "InstFile" : "H:/git/Pmod/Pmod_US_Speaker/sample/TangPrimer20K/UltraSonic1/src/ultrasonic1.sv",
+    "InstLine" : 28,
+    "InstName" : "nanaseg",
+    "ModuleFile" : "H:/git/Pmod/Pmod_US_Speaker/sample/TangPrimer20K/UltraSonic1/src/seven_segment_with_dp.sv",
+    "ModuleLine" : 11,
+    "ModuleName" : "seven_segment_with_dp",
+    "SubInsts" : [
+     {
+      "InstFile" : "H:/git/Pmod/Pmod_US_Speaker/sample/TangPrimer20K/UltraSonic1/src/seven_segment_with_dp.sv",
+      "InstLine" : 33,
+      "InstName" : "segment_led_inst",
+      "ModuleFile" : "H:/git/Pmod/Pmod_US_Speaker/sample/TangPrimer20K/UltraSonic1/src/segment_led.sv",
+      "ModuleLine" : 11,
+      "ModuleName" : "segment_led"
+     }
+    ]
    }
   ]
  }
