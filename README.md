@@ -1,5 +1,9 @@
 # Pmod
  Pmod boards
+# KiCADのプロジェクト
+各ボードは，KiCADのプロジェクトを含みます．  
+ガーバーデータは 'output' ディレクトリに入っています．  
+Each Pmod board directory has KiCAD project file and garber data.
 
 写真 | ボード | 説明 | その他
 ---|---|---|---
@@ -10,3 +14,4 @@
 <img src="Pmod_A4988/pmod_a4988.jpg" height="120"> | Pmod_A4988 | ステッピングモータドライバA4988
 <img src="Pmod_7LED_8digit/7seg8digit.jpg" height="120"> | Pmod_7LED_8digit | 7セグLED8桁 | 4桁7セグモジュール×2個使用
 <img src="Pmod_US_Speaker/us.jpg" height="120"> | Pmod_US_Speaker | 超音波浮揚 | 超音波トランスジューサ×6モジュール
+<img src="Pmod_Matrix256/matrix256.jpg" height="120"> | Pmod_Matrix256 | 16x16マトリクスLED | 秋月横長マトリクスLED
