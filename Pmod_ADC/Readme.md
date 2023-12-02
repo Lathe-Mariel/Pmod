@@ -1,6 +1,8 @@
 KiCADで作ったPCBデータです．
 Pmodに対応したA-Dコンバータ基板です．  
 
+![Gerber data](kikit/Pmod_ADC.zip)
+
 # Pmod_ADC
 8チャネルのADコンバータ・チップ MCP3008/3208をPmodで使うボード．  
 8チャネルのアナログ信号を入力できます．  

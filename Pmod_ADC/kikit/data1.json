@@ -1,0 +1,32 @@
+{
+    "layout": {
+        "hspace": "2mm",
+        "vspace": "2mm",
+        "rows": "4",
+        "vbonecut": "False",
+        "hbonecut": "False"
+    },
+    "source": {
+        "stack": "2layer"
+    },
+    "tabs": {
+        "type": "fixed",
+        "vwidth": "5mm",
+        "hwidth": "5mm",
+        "mindistance": "20mm",
+        "vcount": "2"
+    },
+    "cuts": {
+        "type": "mousebites",
+        "offset": "-0.2mm",
+        "prolong": "1mm"
+    },
+    "framing": {
+        "type": "railstb",
+        "width": "4mm",
+        "fillet": "5mm"
+    },
+    "text": {
+        "type": "simple"
+    }
+}
