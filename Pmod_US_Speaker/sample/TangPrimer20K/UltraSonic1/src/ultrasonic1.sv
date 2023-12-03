@@ -2,6 +2,7 @@ module top(
 input wire clk,
 input wire t5,
 input wire sw1,
+input wire sw2,
 output logic ch1a,
 output logic ch1b,
 output logic ch2a,
@@ -16,31 +17,53 @@ output logic[5:0] ROW2,
 output logic[7:0] COL2
 );
 
-logic overflow;
-logic overflow2;
+logic lower_speaker;
+logic upper_speaker;
+logic keypolling;
+logic swpolling;
 
 reg [5:0] reg_numbers [5:0];
-reg [15:0] value = 16'd0;
-timer1 timer_instance(338, clk, value, overflow);
-timer1 timer_keypolling(2700, clk, 16'd0, keypolling);
-timer1 timer_instance3(338, clk, 16'd0, overflow3);
+reg [23:0] value;
+timer1 timer_instance(338, clk, value, lower_speaker);
+timer1 timer_keypolling(54000, clk, 16'd0, keypolling);
+timer1 timer_swpolling(84000, clk, 16'd0, swpolling);
+timer1 timer_instance3(338, clk, 16'd0, upper_speaker);
+
+logic [3:0] upper_duty = 4'd4;
+logic [3:0] lower_duty = 4'd4;
+logic [3:0] upper_counter;
+logic [3:0] lower_counter;
 
 seven_segment_with_dp nanaseg(keypolling, 1'b0, 1'b1, reg_numbers, COL2, ROW2);
 
 reg[4:0] antiChatter_rotary1 = 0;
 reg[4:0] antiChatter_slide = 0;
 
+logic [15:0] key_value;
+logic [15:0] rotary_value;
+
+assign value = (key_value + rotary_value) % 338;
+
+always @(posedge swpolling)begin
+  if(sw1 == 0)begin
+    key_value <= key_value - 16'b1;
+  end else if(sw2 == 0)begin
+    key_value <= key_value + 16'b1;
+  end
+end
+
 always @(posedge keypolling)begin
+
     if(rotary1_a == 0)begin
-      if(antiChatter_rotary1 == 10)begin
+      if(antiChatter_rotary1 == 2)begin
 
         antiChatter_rotary1 <= antiChatter_rotary1 + 5'b1;
         if(rotary1_b == 0)begin
-          value <= value - 16'b1;
+          rotary_value <= rotary_value - 16'b1;
         end else begin
-          value <= value + 16'b1;
+          rotary_value <= rotary_value + 16'b1;
         end
-      end else if(antiChatter_rotary1 == 11)begin
+      end else if(antiChatter_rotary1 == 3)begin
         //
       end else begin
         antiChatter_rotary1 <= antiChatter_rotary1 + 5'b1;
@@ -51,7 +74,7 @@ always @(posedge keypolling)begin
         if(antiChatter_slide < 10)begin
           antiChatter_slide <= antiChatter_slide + 5'b1;
         end else if(antiChatter_slide == 10)begin
-          value <= 0;
+          rotary_value <= 0;
           antiChatter_slide <= antiChatter_slide + 5'b1;
         end
       end else begin
@@ -72,29 +95,50 @@ end
 
 
 assign led0 = ch1a;
-assign ch2a = ch1a;
+//assign ch2a = ch1a;
 assign ch3a = ch1a;
 
-assign ch2b = ch1b;
+//assign ch2b = ch1b;
 assign ch3b = ch1b;
 
-always @(posedge overflow)begin
-  if(!t5)begin
+always @(posedge lower_speaker)begin
+  if(t5)begin
     ch1a <= ~ch1a;
+  end else begin
+    if(lower_counter > 4'd9)begin
+      lower_counter <= 4'd0;
+    end else begin
+      lower_counter <= lower_counter + 4'b1;
+    end
+    if(lower_duty < lower_counter)begin
+      ch1a <= 1;
+    end else begin
+      ch1a <= 0;
+    end
   end
 end
 
-always @(posedge overflow3)begin
-  if(!t5)begin
+always @(posedge upper_speaker)begin
+  if(t5)begin
     ch1b <= ~ch1b;
+  end else begin
+    if(upper_counter > 4'd9)begin
+      upper_counter <= 4'd0;
+    end else begin
+      upper_counter <= upper_counter + 4'b1;
+    end
+    if(upper_duty < upper_counter)begin
+      ch1b <= 1;
+    end else begin
+      ch1b <= 0;
+    end
   end
 end
-
 endmodule
 
 module timer1 #(
 ) (
-  input [15:0]COUNT_MAX,
+  input [23:0]COUNT_MAX,
   input  wire  clk,
   input logic[15:0] value,
   output logic overflow
