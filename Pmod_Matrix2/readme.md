@@ -10,6 +10,9 @@
 ![裏面](back.jpg)
 ![完品](matrix.jpg)
 
+# Schematics
+![](schematics.png)
+
 # BOM
 アイテム（Item）|個数（Quantity）
 ---|---
