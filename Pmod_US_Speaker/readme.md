@@ -5,6 +5,7 @@
 
 ![実装例](complete.jpg)
 ![組み立て例](us.jpg)
+![部品](item.jpg)
 
 # BoM
 
