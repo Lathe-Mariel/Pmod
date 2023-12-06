@@ -1,4 +1,16 @@
-## BOM
+# Pmod_MatrixLED2
+8×8　2色マトリクスLEDのモジュールです．
+コネクタのピン配置はPmod互換ですが，
+基板の幅がPmodの規格に入っていないので，なんちゃってPmodです．
+
+
+![生基板](blank.jpg)
+![部品](parts.jpg)
+![実装例](assempled.jpg)
+![裏面](back.jpg)
+![完品](matrix.jpg)
+
+# BOM
 アイテム（Item）|個数（Quantity）
 ---|---
 74HC595 | 3
