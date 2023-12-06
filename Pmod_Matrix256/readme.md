@@ -1,4 +1,4 @@
-![表示例](sine.jpg)
+![表示例](sine.png)
 
 
 # BOM
