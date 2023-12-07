@@ -1,29 +1,27 @@
 GowinSynthesis start
 Running parser ...
-Analyzing Verilog file 'H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\segment_led.sv'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\seven_segment_with_dp.sv'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv'
-Undeclared symbol 'led0', assumed default net type 'wire'("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":97)
-Compiling module 'top'("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":1)
-WARN  (EX3780) : Using initial value of 'upper_duty' since it is never assigned("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":32)
-WARN  (EX3780) : Using initial value of 'lower_duty' since it is never assigned("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":33)
-Compiling module 'timer1'("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":139)
-WARN  (EX3670) : Actual bit length 32 differs from formal bit length 24 for port 'COUNT_MAX'("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":27)
-WARN  (EX3670) : Actual bit length 24 differs from formal bit length 16 for port 'value'("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":27)
-WARN  (EX3670) : Actual bit length 32 differs from formal bit length 24 for port 'COUNT_MAX'("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":28)
-WARN  (EX3670) : Actual bit length 32 differs from formal bit length 24 for port 'COUNT_MAX'("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":29)
-WARN  (EX3670) : Actual bit length 32 differs from formal bit length 24 for port 'COUNT_MAX'("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":30)
-Compiling module 'seven_segment_with_dp'("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\seven_segment_with_dp.sv":11)
-Compiling module 'segment_led(CATHODE_COMMON=1'b0)'("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\segment_led.sv":11)
+Analyzing Verilog file 'C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\segment_led.sv'
+Analyzing Verilog file 'C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\seven_segment_with_dp.sv'
+Analyzing Verilog file 'C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv'
+Undeclared symbol 'led0', assumed default net type 'wire'("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":97)
+Compiling module 'top'("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":1)
+WARN  (EX3780) : Using initial value of 'upper_duty' since it is never assigned("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":32)
+WARN  (EX3780) : Using initial value of 'lower_duty' since it is never assigned("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":33)
+Compiling module 'timer1'("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":139)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 24 for port 'COUNT_MAX'("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":27)
+WARN  (EX3670) : Actual bit length 24 differs from formal bit length 16 for port 'value'("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":27)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 24 for port 'COUNT_MAX'("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":28)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 24 for port 'COUNT_MAX'("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":29)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 24 for port 'COUNT_MAX'("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":30)
+Compiling module 'seven_segment_with_dp'("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\seven_segment_with_dp.sv":11)
+Compiling module 'segment_led(CATHODE_COMMON=1'b0)'("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\segment_led.sv":11)
 NOTE  (EX0101) : Current top module is "top"
-WARN  (EX0211) : The output port "ch2a" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":8)
-WARN  (EX0211) : The output port "ch2b" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":9)
-WARN  (EX0211) : The output port "onboard_led[5]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":12)
-WARN  (EX0211) : The output port "onboard_led[4]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":12)
-WARN  (EX0211) : The output port "onboard_led[3]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":12)
-WARN  (EX0211) : The output port "onboard_led[2]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":12)
-WARN  (EX0211) : The output port "onboard_led[1]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":12)
-WARN  (EX0211) : The output port "onboard_led[0]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":12)
+WARN  (EX0211) : The output port "onboard_led[5]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":12)
+WARN  (EX0211) : The output port "onboard_led[4]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":12)
+WARN  (EX0211) : The output port "onboard_led[3]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":12)
+WARN  (EX0211) : The output port "onboard_led[2]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":12)
+WARN  (EX0211) : The output port "onboard_led[1]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":12)
+WARN  (EX0211) : The output port "onboard_led[0]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\ultrasonic1.sv":12)
 [5%] Running netlist conversion ...
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
@@ -40,6 +38,6 @@ Running technical mapping ...
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
-[95%] Generate netlist file "H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\gwsynthesis\UltraSonic1.vg" completed
-[100%] Generate report file "H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\gwsynthesis\UltraSonic1_syn.rpt.html" completed
+[95%] Generate netlist file "C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\gwsynthesis\UltraSonic1.vg" completed
+[100%] Generate report file "C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\gwsynthesis\UltraSonic1_syn.rpt.html" completed
 GowinSynthesis finish

@@ -95,10 +95,10 @@ end
 
 
 assign led0 = ch1a;
-//assign ch2a = ch1a;
+assign ch2a = ch1a;
 assign ch3a = ch1a;
 
-//assign ch2b = ch1b;
+assign ch2b = ch1b;
 assign ch3b = ch1b;
 
 always @(posedge lower_speaker)begin

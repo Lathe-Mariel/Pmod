@@ -1,7 +1,8 @@
-Reading netlist file: "H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\gwsynthesis\UltraSonic1.vg"
-Parsing netlist file "H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\gwsynthesis\UltraSonic1.vg" completed
+Reading netlist file: "C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\gwsynthesis\UltraSonic1.vg"
+Parsing netlist file "C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\gwsynthesis\UltraSonic1.vg" completed
 Processing netlist completed
-Reading constraint file: "H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\top.cst"
+Reading constraint file: "C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\top.cst"
+WARN  (CT1019) : Buf('t5_ibuf') IO type is 'LVCMOS18', but bank vccio is '3.3'
 Physical Constraint parsed completed
 Running placement......
 [10%] Placement Phase 0 completed
@@ -20,10 +21,10 @@ Bitstream generation in progress......
 Bitstream generation completed
 Running power analysis......
 [100%] Power analysis completed
-Generate file "H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\pnr\UltraSonic1.power.html" completed
-Generate file "H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\pnr\UltraSonic1.pin.html" completed
-Generate file "H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\pnr\UltraSonic1.rpt.html" completed
-Generate file "H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\pnr\UltraSonic1.rpt.txt" completed
-Generate file "H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\pnr\UltraSonic1.tr.html" completed
-Mon Dec 04 00:38:07 2023
+Generate file "C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\pnr\UltraSonic1.power.html" completed
+Generate file "C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\pnr\UltraSonic1.pin.html" completed
+Generate file "C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\pnr\UltraSonic1.rpt.html" completed
+Generate file "C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\pnr\UltraSonic1.rpt.txt" completed
+Generate file "C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\pnr\UltraSonic1.tr.html" completed
+Thu Dec 07 12:49:42 2023
 

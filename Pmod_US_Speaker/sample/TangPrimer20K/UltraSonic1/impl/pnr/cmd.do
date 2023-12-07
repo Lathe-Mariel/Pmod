@@ -1,9 +1,9 @@
--d H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\gwsynthesis\UltraSonic1.vg
+-d C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\gwsynthesis\UltraSonic1.vg
 -p GW2A-18C-PBGA256-8
 -pn GW2A-LV18PG256C8/I7
--cst H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\top.cst
--cfg H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\pnr\device.cfg
--sdc H:\git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\top.sdc
+-cst C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\top.cst
+-cfg C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\impl\pnr\device.cfg
+-sdc C:\Git\Pmod\Pmod_US_Speaker\sample\TangPrimer20K\UltraSonic1\src\top.sdc
 -bit
 -tr
 -ph

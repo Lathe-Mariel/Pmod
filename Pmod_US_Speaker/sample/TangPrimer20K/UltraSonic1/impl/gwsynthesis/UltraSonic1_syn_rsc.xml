@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module name="top" Register="51" Alu="47" Lut="56">
-    <SubModule name="timer_instance" Register="17" Alu="15" Lut="206"/>
-    <SubModule name="timer_keypolling" Register="17" Alu="15" Lut="9"/>
+    <SubModule name="timer_instance" Register="17" Alu="15" Lut="186"/>
+    <SubModule name="timer_keypolling" Register="17" Alu="15" Lut="10"/>
     <SubModule name="timer_swpolling" Register="17" Alu="15" Lut="6"/>
     <SubModule name="timer_instance3" Register="17" Alu="15" Lut="8"/>
     <SubModule name="nanaseg">
-        <SubModule name="segment_led_inst" Register="13" Lut="77"/>
+        <SubModule name="segment_led_inst" Register="13" Lut="61"/>
     </SubModule>
 </Module>
