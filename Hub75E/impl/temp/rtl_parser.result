@@ -1,0 +1,36 @@
+[
+ {
+  "InstFile" : "H:/git/Pmod/Hub75E/src/gowin_clkdiv/gowin_clkdiv.v",
+  "InstLine" : 10,
+  "InstName" : "Gowin_CLKDIV",
+  "ModuleFile" : "H:/git/Pmod/Hub75E/src/gowin_clkdiv/gowin_clkdiv.v",
+  "ModuleLine" : 10,
+  "ModuleName" : "Gowin_CLKDIV"
+ },
+ {
+  "InstFile" : "H:/git/Pmod/Hub75E/src/top.v.v",
+  "InstLine" : 34,
+  "InstName" : "TOP",
+  "ModuleFile" : "H:/git/Pmod/Hub75E/src/top.v.v",
+  "ModuleLine" : 34,
+  "ModuleName" : "TOP",
+  "SubInsts" : [
+   {
+    "InstFile" : "H:/git/Pmod/Hub75E/src/top.v.v",
+    "InstLine" : 98,
+    "InstName" : "logo_rom",
+    "ModuleFile" : "H:/git/Pmod/Hub75E/src/gowin_prom/gowin_prom.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "Gowin_pROM"
+   },
+   {
+    "InstFile" : "H:/git/Pmod/Hub75E/src/top.v.v",
+    "InstLine" : 110,
+    "InstName" : "hubif",
+    "ModuleFile" : "H:/git/Pmod/Hub75E/src/top.v.v",
+    "ModuleLine" : 215,
+    "ModuleName" : "hub75e_if"
+   }
+  ]
+ }
+]
