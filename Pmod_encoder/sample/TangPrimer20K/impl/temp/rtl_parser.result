@@ -1,0 +1,46 @@
+[
+ {
+  "InstFile" : "C:/Git/Pmod/Pmod_encoder/sample/Pmod_Encoder/src/timer.sv",
+  "InstLine" : 1,
+  "InstName" : "timer",
+  "ModuleFile" : "C:/Git/Pmod/Pmod_encoder/sample/Pmod_Encoder/src/timer.sv",
+  "ModuleLine" : 1,
+  "ModuleName" : "timer"
+ },
+ {
+  "InstFile" : "C:/Git/Pmod/Pmod_encoder/sample/Pmod_Encoder/src/top.sv",
+  "InstLine" : 1,
+  "InstName" : "top",
+  "ModuleFile" : "C:/Git/Pmod/Pmod_encoder/sample/Pmod_Encoder/src/top.sv",
+  "ModuleLine" : 1,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Git/Pmod/Pmod_encoder/sample/Pmod_Encoder/src/top.sv",
+    "InstLine" : 20,
+    "InstName" : "timer_instance",
+    "ModuleFile" : "C:/Git/Pmod/Pmod_encoder/sample/Pmod_Encoder/src/top.sv",
+    "ModuleLine" : 70,
+    "ModuleName" : "timer1"
+   },
+   {
+    "InstFile" : "C:/Git/Pmod/Pmod_encoder/sample/Pmod_Encoder/src/top.sv",
+    "InstLine" : 21,
+    "InstName" : "dp",
+    "ModuleFile" : "C:/Git/Pmod/Pmod_encoder/sample/Pmod_Encoder/src/seven_segment_with_dp.sv",
+    "ModuleLine" : 11,
+    "ModuleName" : "seven_segment_with_dp",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Git/Pmod/Pmod_encoder/sample/Pmod_Encoder/src/seven_segment_with_dp.sv",
+      "InstLine" : 33,
+      "InstName" : "segment_led_inst",
+      "ModuleFile" : "C:/Git/Pmod/Pmod_encoder/sample/Pmod_Encoder/src/segment_led.sv",
+      "ModuleLine" : 11,
+      "ModuleName" : "segment_led"
+     }
+    ]
+   }
+  ]
+ }
+]
