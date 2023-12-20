@@ -10,7 +10,15 @@ module top (
   output logic CS,
   output logic DIN,
   input reg DOUT,
-  output wire[5:0] boardLED
+  output wire[5:0] boardLED,
+  output wire P3_SEG_SER,
+  output wire P9_SEG_SRCLK,
+  output wire P4_SEG_RCLK,
+  output wire P10_SEG_OE,
+  output wire P1_COM_SER,
+  output wire P7_COM_SRCLK,
+  output wire P2_COM_RCLK,
+  output wire P8_COM_OE
 );
 
   logic  controlCLK;
@@ -18,20 +26,14 @@ module top (
 
   logic[15:0] processCounter;  // general counter 
 
-  logic[15:0] display7seg; //0000-9999
-  logic[1:0] disp_digit;  // display digit of 7seg LED
-  logic[1:0] disp_state;  //0:volume, 1:duty, 2:HS speed, 3:
-  logic sw1pushed;
+  logic[5:0] display7seg[5]; //0000-9999
 
   logic[9:0] recieveADC;
   logic[9:0] accel;
   logic[9:0] disp_speed;  // store rotation speed for display
 
-  seven_segment_with_dp display_inst(
-    .clock(controlCLK),
-    .reset(0),
-    .next_segment(0),
-    
+  logic[8:0] anode_data=9'b000000001;
+
 
   timer #(
     .COUNT_MAX()
@@ -84,8 +86,24 @@ module top (
       CS <= 1;
     end
 
+//7seg cathode
+
+//7seg anode
+    if(processCounter[3] == 1)begin
+      anode_data <= {anode_data[7:0],anode_data[8]};
+    end
+      
   end
 
+  assign P3_SEG_SER = 1'b0;
+  assign P9_SEG_SRCLK = processCounter[0];
+  assign P4_SEG_RCLK = P9_SEG_SRCLK;
+  assign P10_SEG_OE = 1'b0;
+
+  assign P1_COM_SER = anode_data[0];
+  assign P7_COM_SRCLK = processCounter[2];
+  assign P2_COM_RCLK = ~P7_COM_SRCLK;
+  assign P8_COM_OE = 1'b0;
 
   assign AD_CLK = controlCLK;
 
@@ -114,7 +132,7 @@ module top (
 endmodule
 
 module timer #(
-  parameter COUNT_MAX = 1350  //100us
+  parameter COUNT_MAX = 27000  //1000us
 ) (
   input  wire  clk,
   output logic overflow
@@ -125,12 +143,9 @@ module timer #(
   always_ff @ (posedge clk) begin
     if(counter == COUNT_MAX)begin
       counter  <= 'd0;
-    end else if (counter < COUNT_MAX/2) begin
-      overflow <= 'd1;
-      counter  <= counter + 'd1;
     end else begin
       counter  <= counter + 'd1;
-      overflow <= 'd0;
+      overflow <= 'd1;
     end
   end
 
