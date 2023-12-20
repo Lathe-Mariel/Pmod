@@ -1,0 +1,139 @@
+`default_nettype none
+
+module top (
+  input  wire       clk,
+
+  input  wire sw1,
+  input  wire sw2,
+  input wire[3:0] tacSW,
+  output wire AD_CLK,
+  output logic CS,
+  output logic DIN,
+  input reg DOUT,
+  output wire[5:0] boardLED
+);
+
+  logic  controlCLK;
+  logic rotateCLK;
+
+  logic[15:0] processCounter;  // general counter 
+
+  logic[15:0] display7seg; //0000-9999
+  logic[1:0] disp_digit;  // display digit of 7seg LED
+  logic[1:0] disp_state;  //0:volume, 1:duty, 2:HS speed, 3:
+  logic sw1pushed;
+
+  logic[9:0] recieveADC;
+  logic[9:0] accel;
+  logic[9:0] disp_speed;  // store rotation speed for display
+
+  seven_segment_with_dp display_inst(
+    .clock(controlCLK),
+    .reset(0),
+    .next_segment(0),
+    
+
+  timer #(
+    .COUNT_MAX()
+  ) inst_1 (
+    .clk (clk),
+    .overflow(controlCLK)
+  );
+
+  always @(posedge controlCLK)begin
+
+    processCounter <= processCounter + 1;
+
+//ADC
+    if(processCounter[4:0] == 5'd0)begin
+      CS <= 0;
+      DIN <= 0;
+    end else if(processCounter[4:0] < 5'd8)begin
+      CS <=0;
+    end else if(processCounter[4:0] == 5'd8)begin  // START(always: 1)
+      DIN <= 1;
+      CS <= 0;
+    end else if(processCounter[4:0] == 5'd9)begin  //SINGLE or DIFFERENTIAL(SGL: 1)
+      DIN <= 1;
+      CS <= 0;
+    end else if(processCounter[4:0] == 5'd10)begin  // D2
+      DIN <= 1;
+      CS <= 0;
+    end else if(processCounter[4:0] == 5'd11)begin  // D1
+      DIN <= 0;
+      CS <= 0;
+    end else if(processCounter[4:0] == 5'd12)begin  // D0
+      DIN <= 0;
+      CS <= 0;
+    end else if(processCounter[4:0] < 5'd15)begin  // 0
+      CS <= 0;
+    end else if(processCounter[4:0] > 5'd14 && processCounter[4:0] < 25)begin  // recieve data
+      recieveADC[24 - processCounter[4:0]] <= DOUT;
+      DIN <= 0;
+      CS <= 0;
+    end else begin
+      if(recieveADC < 'd280)begin
+        accel <= 'd0;
+      end else if(recieveADC > 'd780) begin
+        accel <= 'd1000;
+      end else begin
+        accel <= (recieveADC - 'd280) * 2;  // for Mini Cart Accel     //origin 270 - 780  to 0 - 16
+      end
+
+      DIN <= 0;
+      CS <= 1;
+    end
+
+  end
+
+
+  assign AD_CLK = controlCLK;
+
+  function [7:0] decode7seg;
+  input [3:0] in;
+    case(in)
+      4'h0:  decode7seg = 8'b00000011;
+      4'h1:  decode7seg = 8'b10011111;
+      4'h2:  decode7seg = 8'b00100101;
+      4'h3:  decode7seg = 8'b00001101;
+      4'h4:  decode7seg = 8'b10011001;
+      4'h5:  decode7seg = 8'b01001001;
+      4'h6:  decode7seg = 8'b01000001;
+      4'h7:  decode7seg = 8'b00011111;
+      4'h8:  decode7seg = 8'b00000001;
+      4'h9:  decode7seg = 8'b00001001;
+      4'ha:  decode7seg = 8'b00010001;
+      4'hb:  decode7seg = 8'b11000001;
+      4'hc:  decode7seg = 8'b01100011;
+      4'hd:  decode7seg = 8'b10000101;
+      4'he:  decode7seg = 8'b01100001;
+      4'hf:  decode7seg = 8'b01110001;
+      default:decode7seg = 8'b11111111;
+    endcase
+  endfunction
+endmodule
+
+module timer #(
+  parameter COUNT_MAX = 1350  //100us
+) (
+  input  wire  clk,
+  output logic overflow
+);
+
+  logic [$clog2(COUNT_MAX+1)-1:0] counter = 'd0;
+
+  always_ff @ (posedge clk) begin
+    if(counter == COUNT_MAX)begin
+      counter  <= 'd0;
+    end else if (counter < COUNT_MAX/2) begin
+      overflow <= 'd1;
+      counter  <= counter + 'd1;
+    end else begin
+      counter  <= counter + 'd1;
+      overflow <= 'd0;
+    end
+  end
+
+endmodule
+
+`default_nettype wire

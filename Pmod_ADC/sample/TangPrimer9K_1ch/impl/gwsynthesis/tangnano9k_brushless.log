@@ -1,0 +1,39 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv'
+Compiling module 'top'("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":3)
+Compiling module 'timer'("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":124)
+WARN  (EX3791) : Expression size 12 truncated to fit in target size 11("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":138)
+WARN  (EX3791) : Expression size 12 truncated to fit in target size 11("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":140)
+WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":45)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":80)
+NOTE  (EX0101) : Current top module is "top"
+WARN  (EX0211) : The output port "boardLED[5]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":13)
+WARN  (EX0211) : The output port "boardLED[4]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":13)
+WARN  (EX0211) : The output port "boardLED[3]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":13)
+WARN  (EX0211) : The output port "boardLED[2]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":13)
+WARN  (EX0211) : The output port "boardLED[1]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":13)
+WARN  (EX0211) : The output port "boardLED[0]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":13)
+[5%] Running netlist conversion ...
+WARN  (CV0016) : Input sw1 is unused("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":6)
+WARN  (CV0016) : Input sw2 is unused("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":7)
+WARN  (CV0016) : Input tacSW is unused("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":8)
+WARN  (CV0016) : Input DOUT is unused("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\tangnano9k_brushless.vg" completed
+[100%] Generate report file "C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\tangnano9k_brushless_syn.rpt.html" completed
+GowinSynthesis finish
