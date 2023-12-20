@@ -1,147 +1,671 @@
 //
 //Written by GowinSynthesis
-//Product Version "V1.9.8.11 Education"
-//Wed Dec 20 20:04:31 2023
+//Product Version "V1.9.9 Beta-6"
+//Thu Dec 21 01:47:12 2023
 
 //Source file index table:
-//file0 "\C:/Git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/top.sv"
-`pragma protect begin_protected
-`pragma protect version="2.2"
-`pragma protect author="default"
-`pragma protect author_info="default"
-`pragma protect encrypt_agent="GOWIN"
-`pragma protect encrypt_agent_info="GOWIN Encrypt Version 2.2"
-
-`pragma protect encoding=(enctype="base64", line_length=76, bytes=256)
-`pragma protect key_keyowner="GOWIN",key_keyname="GWK2022-10",key_method="rsa"
-`pragma protect key_block
-mfD4InA0vbAakWbxWCeKOn2/G9floyjCXGGenbodP/hoKeHYrlHk/A/M4lHzMu8slO9RTqOBDgTM
-0CaROQXuTjykJeDSng16iMWHWOfX/zxFjxfQl1IgrDBJZUC9tDVhb3zZV1vdtWrZbPaihymoQHDp
-qfGxK3DhvQZUKjaOSc5B/LVKLeWIpJrAIST4Lum7ch7anU+Xh+oU54rBTzb60t8RRrf5JJSAoZMS
-G6x5BFM+ijju3bA2PifTPmA/IqZrIRXl3DiJq4oEB/Vi6vlYdaMxFBxp2GGixFUiieCbnBNc54z5
-0OKBKjP6GPpIeZ1bW8mt/FxaAInukcnF7phZLg==
-
-`pragma protect encoding=(enctype="base64", line_length=76, bytes=6688)
-`pragma protect data_keyowner="default-ip-vendor"
-`pragma protect data_keyname="default-ip-key"
-`pragma protect data_method="aes128-cbc"
-`pragma protect data_block
-D/ZQBM8kuDY+EIs2DXUnPvyre0OoDGCpJG4nY/TD1I0hvTohcC/u/9KxDd3YPG2ABMhnWMN5961X
-Zh2MbUi/1/UNb8nho3VzUP5vj0LlfjS5GL+MWBHxyOE0VobpVie9ZFmoW+kzNcpdz0kxUSJgIvWK
-stA1kIipDmtsUdb8OYzNd390FNTNP3wvDcOBWbugMvg22DoWztBF3Bz/bCETckasyaTWchSZEfgS
-gGCGUNX11QE3hyY4wfR3iDpg2tKMNfiIVDOkgazyXWra1DRDQrOU3puCaXaSCeLE5TD3j9Xf5YGD
-/TA31HcZf5B48dxiQBj3DaT1L34nXxekdGbP7cGZMxzmGJRXpB8QQQTXCZgj18z1DJZA9GlxnCFD
-KCJ1ZglXl801aiC4nFQr0ejQYJsVK6jCWUs48fCk3EhG+g9+hpdHpe2MyXpVCRZICVXmoJcGj6qn
-P7ep+6YXrd5hj1ltEzVaEEPebgdf4qs3iXF5GAbIITHhv0Kv0s32QvzZ3ZqvsPW8ccggRxcCuX0E
-04rVi4W3TVvB8yQz4apPCd8dVdVxMlg8XHTt42Bx3tkVTIFCIZwJnLAhEkfqXdZcxNtQNslVl7zo
-QQfsbhqPKxrHL+4VGszNdV7dqWxCUEYI5D64rc2CfCK6Bl1h53OqPbRqJqDpy439jHn73lI/RfEb
-kI1hfLZKDdEu4BUT5IMGPp1HACBSXoqRRts5uiVMyLL/ie4VKgpHqaX3v0o3SSe21sS3KabIhYeU
-y7eMloIgZLo0VIUBEIGLo//pExhpp0v/eQvnZjRpDwfRo0wLJgp5Q3yOnb8cu5JuItL1uC2KbjfN
-BxFUEafpr6NAr1RJnK7j7mh2qTmAmmlUFWwTL57TEG4rVyM0XADNSVah2vVHNElJKpB6VNS0qrJu
-eL4fNTxR22+mb4OpIVStfCIGJ/3zOKLsnj5kTZEitvJ9AqUUFBSQgP3aMbf7WWY1U6PaG3cqgkXs
-Wo6KecQ+gaykIfY18BSC9Xfc0D4B6iwRAOnjg+ES4nKmH+U3JxPICvTf6o/ZVuD+qwuzpTNN0ZeB
-q35s/xSG5cilvQdPdErPBAeXPBfCdEdFfUVySG/5tfH9CPTU2uTQVMKe/2Guk5pYBQFn7pQzunkY
-l4sw6ObUyhB5ky48bw63AH976t7yQCA41TcacyfhGcc8j/PBjGWxK8XpxpEDG0VvkY0Vm9/AczNL
-A8BM67AaA4TCRxFdZJF1zTsbJVncEa1DP2HR1qNh8znzIJtjtzMYKbq9Cy1jHvnu8fTwDQcV7U0p
-KTj+Rz6YxgOyHpTOzaqsqmXHusjgn2t8RaoTVhGBlIUs/HBq3CrCV44yxDLPv5A31yqOKM8jxDRl
-cNIhFZxyl4DkVq5r8fxXIFIc0RLtgbDWzCCsaMnEzq7tTMdRL1xRtCRNCnAL31JrnKOSia4NkOo0
-MvfTpy6vlBQnGwAEhTUMmuNTRqeE+/qffEAnVA1FtGRU6V5njAs/B5MWsRw61ks2phSt91A3E/PT
-F7UmWmRcZf/S/BnHcV5XEXn5Ngq/V7hPqBzD5+SXaKGPUINahz+3uQfVyMdGgbWT7+Pm1UBqAc2L
-q17RLLCsAUsP5JCRa86tmbFz7Ei8vU3jWhepMahW9RZr5uQJNQL2VIrTAcl5rWyKbc5TKQcmriEG
-2JWGgQ5vpFsgak63mevOf/tZ1LUF6M7C+cXqev/CeA333xoIrGKqqoBevm4PTSeMSsMZ1I6VV19J
-cZX+fZf9lhs/vI/s18WA4ZtShk/NnuIfnsw78rFUUykFXvkHkJJf4GM1vYzEULGbNQ34Bm3D8r86
-zI79IkkRgdu+uZAPn/r5P5uiFKtsqMeDMhnKomZGKqPyMKJyFkOsu40Ycx3mjvDmB38dq05tJWRa
-lU+j34oghLaAkpc14nrsGrzeC5dUFXVyzefFKcZUmAlXXcBB9QyzwPRH/fK1ICmBoP67DW/daudp
-imqeRbUIVOXjdNHD+eGdCHyBeexe8qZEERQJo68o/K0rXwkwNA75jJa4IdaNJO7DL+1sCWMbjm72
-hfk8UZRcEY6TbKT5rG9NJdpdYKIwj5e62aorEZx7R7vXwyzAeK7RoJwi9Yzzi2xb92IgJPE1YrRi
-n2HPAuBsbI1v1B525np7vQOJVr5oAEX6wK4r8JAaQCNeXdWCTwkYauWRflyzO1F38SBD0KH79IvR
-q4qdrZcRCFxjT9TGxMPtB9avE2Wut5aYP8fpUsslvAKhv1i4gfKnrI0XOtHKPsJ4wHMHcQLju0t2
-oOF8Y7WCmJKG5By9G/GvBIMrZF6ITRAg/KvX2QWviGZncVylhjzKkjAnwGIikcp8EJQE1AYXSZgf
-XEFm+UIztLvnhWkvRTI+zmu4Ldx566RRdxjjda1iKK3tBRapBPDE55A9dmPPTXq+HfvIUXmImXKn
-Dwaq7Rm1ar3scuKUcOlkIoRVj+1a2eFP/qPzTRxfACCp0X2Vny4xQkb6D4eCRYfpBNGAPi+D6DXL
-OsOlhSfV2Pxqd0F/PfzxfZZebNba2Zr7FfThGx1iFcf9HFLSYkUSP0mfE+kEnSuMDluMPsSJSPWr
-Ud6niLlVDNAa5EO34b6Gh/PiF6kkuxi/N0k1wvs32kRnbhT8I5LQpa60ZtLQwgU+qL2FXlPhq1ix
-0gXellT481xP2szSovGgmWafUZGumeIp7Ko/cOAXxpNnSxlEcClMTBxQ9Qsi9AfP7h4bvHB5j0ud
-4OdtCR3a3xRKDwMppPsZ/8GeahOLGeMOrgwzYlLijERtOaquGgfBv23Qdnd+Shj8oZ9rfmmcckMI
-0pIO+3fZpUIEyzhx1pn7cs4bBIf1qwumL5k6HxEk2Nx/3hKJBerI972PD5kAND0O1ijXAulMrCvT
-G+kgnTAANw0pBE+wHqgewjNy+1eKrl7derqZOVgVU37PsbWYd0tH7KjKxdjZ9RKJl9lQ5sB7Ngkm
-D0ytJWuM+e5zo+qz/3ay/EvEOL1+dfRhsP9C9Y3mShaQb8zHb9fA2SZKGi4L+hBK4hOTVLA7VhFV
-KEb9mH3njD0FCIg5StvsMmrq19LxUOKY7m4GHtsLvlrK+CIp9mD0HCqjfmroLuFE8YtiZif/a2Xi
-pqIgafRxNFK6QbaJM/8F9w3ahwk2H60oVsf9P3rBTT0SH6hHmTGOQjpWKhJ6Q7kqyMKa22/X2bUx
-LbGMMtwiU8OGECx+P6/DKqOa+MMC1CwIF9RZcdTydcSYSPd83f4JmfmHsjzqFOOmc57oZE0t57wO
-U+VSqQ5SagntdTQ3/P1+ptT9C5AgczjbXYGpbu+Py7xSCdHYKGF+rzm+sRS0gqd0mtBDi0vMdHx9
-pljjJXffumjMHBG9Dw5FfphAOJFuvk7/wcbc+YJepOtm5yM2s4VacU3MBy7902QWzTk+6UDekZLO
-QmSvfu2oLb0ctOR5SEwALqkKGglgCxJzAfukOGum361VaozJZQTOLb0QLh8pW6DK6BZeaHCF8Iyp
-n8xZtz+b+4xl4qVbu4H6zM+yt5Np+seqv8+NqSG5TJofaz4hDxg3tRPPJ5GuIO2V6ot26BjELjXO
-yG8pnJ7UvWRdhQrKMl8hk2zy1ak/TZ9u5A8LFYRv9kNQjWe3X2YbUTwo5qI0JgR928vjig9P+Tr9
-b6w7xABUTGYfgHlq51mf51bvn2kq4hrDgiBFS58zomw/QzvgoYevIT6R0grn0O+MW7O9ioJr6h1n
-6eIaAWvu9RdlUCo9NoD6mAncdkphl+RAQFhUJW5dxPXQj/38rMUAsaJsM536Y+gth7/s6D/nnSSp
-r6wMIyp0RUzNHvk30EBFRw7I5kFRQVVPD3VNL5knObwhqe7cLVA7znjhH1vY0k2OxByfVvgTmMHj
-5wXddyQiy39umu2uv2g3CMss5G83BNs5//4zM2LVED9nOlhbjjkGnJC397f9OBEBgb4sqP/ya+zh
-vmlrQAiWHZuiVKQoilCwr+emXnL+1Zl+KOh1CEY/QSONgRTBLgiX0TzXSp0Cbbi53S5FSTXtQVn3
-m6RoXzOljh+2rhLCP/IfxCHuWvRebwuNw0AKr9sq5WL5dY9/hbZpgbwfGc/aKwjicve8aEFqtXFS
-2PZg31KKp85Bqv75r3zStvIqgeL8S768QVLfoS2Gsifz4NCzdRQTqvtk4JJf+X/Dd/OOxuC5TMqp
-sy3uJJJlXg93RGQMNw+H9WcCp0dhI7CGCF4YhhKHOrha0xB0wajwJ1IX6tpjPH4cd64CB/g4Y81O
-vRYQZpPnv9VdyL1rGw2ye2rT4qZp/84GmeQ1maBjZUIrSlRVhy9e2Skm/X4atINpjsy/cH0icPDi
-TxCMGeK+luzp9arlMfhyphSysPqMlg6nZI9AeUTO4AIH5pCVcx3k64LACOwnQof+FBsHUpBbp9Xc
-c3Ts4zY7cbX7rojG8yRw8k/yjC+ncGWUM4dsGBN7/XaiL0+4/1YntFN9Ny7sRhBFoBKVidPlGt6A
-fG8EgM3Ah6qsT1f+Mr7UKI2V1pzrdVxOj0+NBE9y5l9s1pKtF9ifbXSnwc+21f75VuBRkogY6YUj
-FtIV/7x7XjVkQRJ41rea5ITzH935zyBJqb/o+hZ/PoSdnb1U4w9hgyNjlgIXqZObrJQr+nEOR9S7
-FUkJnWDCda0u1huJa+Kx4X21dSmRGDXbs6Btm1V7M/6OZQxpCergb+/1dQWezKZO8wgxchFuVheS
-sla/BAY009rEYRCOJe7L/JrS708/9DYWyWdWWh/13GOX2lKLNVTSBst8InY/Jb7gpFAQ76N/YV2X
-1ETCx5tW6yqhcO/cghh2qpT1k1xcW8IcJviq1Udah2jv2w0qujG6FSlPymbR7qQEWz8pXpehU1QB
-k4J2E2h9fpJtJ6YQijQRdALQ2yRJNkL+8XsTRaV+Xc7g7/vuEVHkxrTKxgx2rPGFumGz6ODMfYol
-C8RNm/OZBByXtm3f2IMekpnAFzYmQUuIEZ6PrkBO27gjX6lXWs7B42gWpHlnpL7hO9LTZjPAzjoZ
-z4ujWPIdUz6ufPjHMA4Y84fMRu1vKgBTi2KY+gnuq3anMlbmLlWIgIkTpyQFUpO1NnaIt5MNSQkA
-qhxcqAdXzVuELYCBuuKol+jZOYgp6r0+YLXmTK7zvvzS7qgsssk0sbkZwL8ztXqmDQKhkbdykLSG
-bMUpjhJWnNggiqB+9PUbql+sYHoX9hO3bMSOyH3+U5WcARdmlMxsElnJGLY+z318GkNzv72u96x4
-D+GjEABRegrS+2LhxIhy/7/ss+qE2JLmTPGyVBejrSr3ireRAvcJktQMgqxTQbgXw731X0DAavJ0
-xmDqgWhGsUjbBaTIO6isdp25chUrIDBo74eRV84fJVNwKIYhtNzJnzVUo3g+tWm87xvFP0DWWcKQ
-Z0KOvND1BdotdrupwUzRnyxgwgpTxcY3s9M/pk5sIJuk+1/g4ny4GGxnFWnH66uEvdVDoFg4u4Ln
-N93Kz7FRlUdrie6r7MhiJAOm0m1v58Yg6cjBxXAV2TDMpQSeiI0WZsos7AY06SBZcegaPkHLwYma
-gttOjf1nGiUZoPZkt7vyLVHu7ogxFIStjkeaiVXRPKk2qCBg9P5cfbGL858H77z5TUdAPAEYL1qN
-+v0aIKpVifTkjDXRQRTDY72AWSwKg5e3041EV+Kv2X0S4OXhnAwQCOoKM4UwJw1YMG/DrI+ffUDc
-O/h2a87Pw0h02A7oVsfQo8ODQFSBDdKSomN+GmomDNOlpIE06OEk5luB76o9Gru9W8v8nhc7tsI6
-Uw/2EfnH25zv6m78A2aX3ofbDmV6zVZOrHPEdETQl+Ko+oa84jWvQWzTkYcd3tWNiHzV3Eot7TCy
-DaI9aEjLju62aGw1+NTxD0YqaRc7igZ9EoHHi0A5bjrgiRCfphHpOLWz8cKBANdz/5Dh50k/qLxG
-LTSYMeDWG926mXM5YGZ0nKawQh4qPh4QaamLjgDlNt8hXOVZCuHrWrsfDLQ/uVHqlF4ZJJe0Hba8
-3Ax72p4ZEqenXmYWU/jR2LpVRYt32GivEuYvdmC8SWiOMvkQ1YRlnhXW1jGoMcYKXTwzvgQd/9dp
-8Z7AL7mWPJpuAvoMzDSiqOD/ZpxhyG9+tPuUTopf9xNHN9FhK7/Hn1QgWpT+vC7+rhX5TA7Vok63
-0aVOMCdX+ds3yiPEqIZd/aaOQkdoF1Z4R9I8EzYxW540DzSaB5F39pSwa7GPL1TOgAY39Dp+jA36
-tT2d8czHbNkMr4vTaMZiITe1CxU+GihxObClZcu9ZtgluxcWWEbiWLoGIKIve/xEv5xly/3Kjq59
-OZvpDmJcSv1w/ORAX6vsqUb0a0X1BC0lEn6kJIyHGZmu0+aprAr5G1gfLJyjaIJDHHOfYZiv0Nvj
-+SmvoO0IdZRduqoM2ZzdVRBwkyz55kRTeslCuQAVTPbX8CAcfhDdQ/kIZljgN9eFbwgwtzf6NCHa
-NVbcSLLzYXhjy0Qzx/2NNIkGBSH71RiCzWcIBAayCxHbM0KAlq4cZlW8M5NrJZI8VAgzZvrzOZTR
-NaCTE7YpvqHIxsFQmwnCYq1OjkybFNAFKabgSAYtifZjVj6PFr/f4GGoGb9eM1cx5Jzsmq7YNE3Q
-Bz1/13S55Sov/Rz6gOkCeFN7VJVV9/4ChHClutVN7rR610SoIdRESAJY5HHSHBgZSlyDYM0iPAqq
-byjBMucETKpQQ4nweI0DuHx5cnyMX2dgilWYOo7jib0SxvvRmmK4h0KUzJafhCtRxjpL9dW6i+AQ
-aSxAZVl3l5Df5e4jm193Q/Dp8e++x5w6ECtZzsB4H5lTI/KIyIHiuBH0RrL/jXS4kBC91Acea25F
-umjBrEIMc/H2LSv1emXGXy35YWVd4dGr32BdcouQkLxE4LNT8L4vOv7PoSD9sLnd8zgUh74hz9pN
-DcChGymPh3V1kNYsIRqrUsKE6OUtMg/cTS0Q7GnMNZM8nWhm4LZBIxOZz8vdFGAq7exbrrmLvbIC
-t30Zbcc7/b32nX4AhjMpwE9jwqfDV9zxCAHHa7HXr3xrIwuTN+jnXqLWroiW5x0UQfqrv2srpDn7
-BnKfKghhxDdl6AcjXowZq9K+tsMPiLpcmpF+6l2soO3xvV6LrXwBRUtztXlifPcy9fIUC4HlkWTg
-rEWksBCQnNK0X9Yr81fxYsH97ktNc29M7cfr0q44DCI3bTkTFgy5aw/enipKXQxzJML/5HNaZmEw
-79o1JAs5F1xQN4q712azQMqYMnFrGNp+RmuIvk6ijCky4BSwEddJtMVKwy79GFhHA1seoBVJcWAJ
-euWr16jjsmlhGPxP4B88YTbaCGLXrRjl9usxLCp03/EDG9FStrKrVyaBN7zKdKRBFtDizl9nU0l3
-ThGixXL03ttWR/m1GnR7ToEjUGiNfBG5ogzlaSMg/IbZZpTvd2v/4b2D8S3lv0Jip2WOBQKX8U2E
-mspgPx4RIfJhCcEmlICI8kzFWbzIf4bp7VPSLw6Pkp5yaL5gtEy2PMzQo2L+UbxWP1uVOyhXsojr
-cKFDzWByt26Y5e3D/0fNyGAKxNbosWDpMwxasKaGxPhZYQS8kEdERhirbBNDc7/+wRDQHOyr/HY+
-CKnkoBIeVBugLOfYtTEwU2DQY3RwEHjxnbU8pv0b86zmaY3BSRgR3iMTXvfLAo1sz22y5Iv33B0U
-SdFjN223VNJY+1tHIacBCb1h9X+BQPoGNjgg8/F6ronJxCGpJw5bN7kSmLih+4HL59n9c6uNUXKT
-e/XR9ImiG0Oo6wecfwWAs2eZNR9BvvhKVG+WUtLQq+U8QBV72vFfKerWxqv6FMDnvmi+lwyLz8l6
-wjk0AQsXte4bgYxmEimd0No+uucSuiuvHykt3I7gwROpLOBsMeGgGLNUEfTsgHbKRgtCAD8qlE7R
-4m92mhoIfp9cRw9uKZJWqqJs4uYK/OhrThwe6Di0jfeFaQA5R+GZYDHjZCPwis0V4gVJTSOg/8Rx
-JGwu/6MHP/zRTflbqNUJwEGZQ50/cKS6/hKcwk8vSuQtjAQ+SBA18kDggUcrvsJ2wtFRlwoqHa3/
-sbZNkdhWMwxul6RIiy3OTzm1xHYgcAmq8geQQU6DT6Io/sxZNaL8nYfwQK7AjSvdCP+q46RIuKNp
-y/punP/go5mjCIGoNyDo7UdeHuF2m2MUykpXeqbhdMUoifjyML7rCNveRAfZI/VyrFZcM7EPje1y
-rnfAxe7L4IWoS9DTJ8CNVObsD07/yWDNqIddxaW7E6zaFTbP5Ur1hEQpmuRj1CccKPegQcQ3Mzs/
-vEP6/Gk3U9SuqiV0AWmcszN4GUWBtrakXq1xskFlYo5d/rgVQKl2fcAUB4IoRjQc7RfdIJ7slaQh
-ynfG42Js/5etscTM+gaepW/4KvZ9Ywi3QsoQgMpyc8ZVmYlvA1qAE9bg5N9NcSHPSb5IJ+xqZ2hv
-YsjtWOfjpu+TJarlpSq0i7JHmuNINlAVKZ0gD6PfM/YL+9y3Xx8Q+Ov5TuAc0zan4b7gJKURmx/h
-mjjv1e7BV3RVFEC0cBaayI5At1gQ9iulY1P6vuxrAHbGiJn2F0GptaeZBqB/lLZADThh2hYheZpv
-SmVq89M9dfOcDFmNUkWGdUUkB46qPVBgB75FdYTfOe3n0sAltgS0H9cIunOqfGc92fAQlfwQGEAm
-kCy+rF7Vg87j2bdgTL5A6lKUrT3Ge8I8492YQCWktsYScqCCJ5RcDwP9sHitTw+9u1LNfI0n5lQx
-3+EpS0EFtFVkYgYaswtC2DMFnvV4izhr9gqjixeJUmK8lX7+i53RSJ8vLFdGRcoXrgljCjGZwJVI
-Lxv5GzstGZLcv09XT062CXHOxFAyr/tWJtS8CrapADKt9PZrSaJse2wtnURuuAOrqJwuwAQgSm06
-7qc3y8eyUw9/ByEWPQrQ0l+48g==
-`pragma protect end_protected
+//file0 "\H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/top.sv"
+`timescale 100 ps/100 ps
+module timer (
+  clk_d,
+  AD_CLK_d
+)
+;
+input clk_d;
+output AD_CLK_d;
+wire n10_3;
+wire n10_4;
+wire n10_5;
+wire n10_6;
+wire n22_1;
+wire n22_2;
+wire n21_1;
+wire n21_2;
+wire n20_1;
+wire n20_2;
+wire n19_1;
+wire n19_2;
+wire n18_1;
+wire n18_2;
+wire n17_1;
+wire n17_2;
+wire n16_1;
+wire n16_2;
+wire n15_1;
+wire n15_2;
+wire n14_1;
+wire n14_2;
+wire n13_1;
+wire n13_2;
+wire n12_1;
+wire n12_0_COUT;
+wire n23_6;
+wire [11:0] counter;
+wire VCC;
+wire GND;
+  LUT3 n10_s0 (
+    .F(n10_3),
+    .I0(n10_4),
+    .I1(n10_5),
+    .I2(n10_6) 
+);
+defparam n10_s0.INIT=8'h80;
+  LUT4 n10_s1 (
+    .F(n10_4),
+    .I0(counter[8]),
+    .I1(counter[10]),
+    .I2(counter[9]),
+    .I3(counter[11]) 
+);
+defparam n10_s1.INIT=16'h1000;
+  LUT4 n10_s2 (
+    .F(n10_5),
+    .I0(counter[4]),
+    .I1(counter[5]),
+    .I2(counter[6]),
+    .I3(counter[7]) 
+);
+defparam n10_s2.INIT=16'h0100;
+  LUT4 n10_s3 (
+    .F(n10_6),
+    .I0(counter[0]),
+    .I1(counter[1]),
+    .I2(counter[2]),
+    .I3(counter[3]) 
+);
+defparam n10_s3.INIT=16'h1000;
+  DFFR counter_10_s0 (
+    .Q(counter[10]),
+    .D(n13_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_10_s0.INIT=1'b0;
+  DFFR counter_9_s0 (
+    .Q(counter[9]),
+    .D(n14_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_9_s0.INIT=1'b0;
+  DFFR counter_8_s0 (
+    .Q(counter[8]),
+    .D(n15_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_8_s0.INIT=1'b0;
+  DFFR counter_7_s0 (
+    .Q(counter[7]),
+    .D(n16_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_7_s0.INIT=1'b0;
+  DFFR counter_6_s0 (
+    .Q(counter[6]),
+    .D(n17_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_6_s0.INIT=1'b0;
+  DFFR counter_5_s0 (
+    .Q(counter[5]),
+    .D(n18_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_5_s0.INIT=1'b0;
+  DFFR counter_4_s0 (
+    .Q(counter[4]),
+    .D(n19_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_4_s0.INIT=1'b0;
+  DFFR counter_3_s0 (
+    .Q(counter[3]),
+    .D(n20_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_3_s0.INIT=1'b0;
+  DFFR counter_2_s0 (
+    .Q(counter[2]),
+    .D(n21_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_2_s0.INIT=1'b0;
+  DFFR counter_1_s0 (
+    .Q(counter[1]),
+    .D(n22_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_1_s0.INIT=1'b0;
+  DFFR counter_0_s0 (
+    .Q(counter[0]),
+    .D(n23_6),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_0_s0.INIT=1'b0;
+  DFF overflow_s0 (
+    .Q(AD_CLK_d),
+    .D(n10_3),
+    .CLK(clk_d) 
+);
+  DFFR counter_11_s0 (
+    .Q(counter[11]),
+    .D(n12_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_11_s0.INIT=1'b0;
+  ALU n22_s (
+    .SUM(n22_1),
+    .COUT(n22_2),
+    .I0(counter[1]),
+    .I1(counter[0]),
+    .I3(GND),
+    .CIN(GND) 
+);
+defparam n22_s.ALU_MODE=0;
+  ALU n21_s (
+    .SUM(n21_1),
+    .COUT(n21_2),
+    .I0(counter[2]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n22_2) 
+);
+defparam n21_s.ALU_MODE=0;
+  ALU n20_s (
+    .SUM(n20_1),
+    .COUT(n20_2),
+    .I0(counter[3]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n21_2) 
+);
+defparam n20_s.ALU_MODE=0;
+  ALU n19_s (
+    .SUM(n19_1),
+    .COUT(n19_2),
+    .I0(counter[4]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n20_2) 
+);
+defparam n19_s.ALU_MODE=0;
+  ALU n18_s (
+    .SUM(n18_1),
+    .COUT(n18_2),
+    .I0(counter[5]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n19_2) 
+);
+defparam n18_s.ALU_MODE=0;
+  ALU n17_s (
+    .SUM(n17_1),
+    .COUT(n17_2),
+    .I0(counter[6]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n18_2) 
+);
+defparam n17_s.ALU_MODE=0;
+  ALU n16_s (
+    .SUM(n16_1),
+    .COUT(n16_2),
+    .I0(counter[7]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n17_2) 
+);
+defparam n16_s.ALU_MODE=0;
+  ALU n15_s (
+    .SUM(n15_1),
+    .COUT(n15_2),
+    .I0(counter[8]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n16_2) 
+);
+defparam n15_s.ALU_MODE=0;
+  ALU n14_s (
+    .SUM(n14_1),
+    .COUT(n14_2),
+    .I0(counter[9]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n15_2) 
+);
+defparam n14_s.ALU_MODE=0;
+  ALU n13_s (
+    .SUM(n13_1),
+    .COUT(n13_2),
+    .I0(counter[10]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n14_2) 
+);
+defparam n13_s.ALU_MODE=0;
+  ALU n12_s (
+    .SUM(n12_1),
+    .COUT(n12_0_COUT),
+    .I0(counter[11]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n13_2) 
+);
+defparam n12_s.ALU_MODE=0;
+  INV n23_s2 (
+    .O(n23_6),
+    .I(counter[0]) 
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+endmodule /* timer */
+module top (
+  clk,
+  sw1,
+  sw2,
+  tacSW,
+  AD_CLK,
+  CS,
+  DIN,
+  DOUT,
+  boardLED,
+  P3_SEG_SER,
+  P9_SEG_SRCLK,
+  P4_SEG_RCLK,
+  P10_SEG_OE,
+  P1_COM_SER,
+  P7_COM_SRCLK,
+  P2_COM_RCLK,
+  P8_COM_OE
+)
+;
+input clk;
+input sw1;
+input sw2;
+input [3:0] tacSW;
+output AD_CLK;
+output CS;
+output DIN;
+input DOUT;
+output [5:0] boardLED;
+output P3_SEG_SER;
+output P9_SEG_SRCLK;
+output P4_SEG_RCLK;
+output P10_SEG_OE;
+output P1_COM_SER;
+output P7_COM_SRCLK;
+output P2_COM_RCLK;
+output P8_COM_OE;
+wire clk_d;
+wire n23_4;
+wire n653_3;
+wire n716_3;
+wire n344_4;
+wire DIN_7;
+wire anode_data_addr_tmp_14;
+wire anode_data_addr_tmp_15;
+wire anode_data_1_32;
+wire n23_5;
+wire n653_4;
+wire n716_4;
+wire DIN_8;
+wire anode_data_addr_tmp_19;
+wire anode_data_1_40;
+wire n367_6;
+wire P7_COM_SRCLK_d;
+wire P9_SEG_SRCLK_d;
+wire CS_d;
+wire DIN_d;
+wire anode_data_1_12;
+wire anode_data_1_16;
+wire anode_data_1_20;
+wire anode_data_1_34;
+wire P1_COM_SER_d;
+wire n21_1;
+wire n21_2;
+wire n20_1;
+wire n20_2;
+wire n19_1;
+wire n19_2;
+wire n18_1;
+wire n18_0_COUT;
+wire P4_SEG_RCLK_d_4;
+wire P2_COM_RCLK_d_4;
+wire anode_data_1_41;
+wire AD_CLK_d;
+wire [3:1] processCounter;
+wire VCC;
+wire GND;
+  IBUF clk_ibuf (
+    .O(clk_d),
+    .I(clk) 
+);
+  OBUF AD_CLK_obuf (
+    .O(AD_CLK),
+    .I(AD_CLK_d) 
+);
+  OBUF CS_obuf (
+    .O(CS),
+    .I(CS_d) 
+);
+  OBUF DIN_obuf (
+    .O(DIN),
+    .I(DIN_d) 
+);
+  TBUF boardLED_5_s0 (
+    .O(boardLED[0]),
+    .I(GND),
+    .OEN(VCC) 
+);
+  TBUF boardLED_5_s1 (
+    .O(boardLED[1]),
+    .I(GND),
+    .OEN(VCC) 
+);
+  TBUF boardLED_5_s2 (
+    .O(boardLED[2]),
+    .I(GND),
+    .OEN(VCC) 
+);
+  TBUF boardLED_5_s3 (
+    .O(boardLED[3]),
+    .I(GND),
+    .OEN(VCC) 
+);
+  TBUF boardLED_5_s4 (
+    .O(boardLED[4]),
+    .I(GND),
+    .OEN(VCC) 
+);
+  TBUF boardLED_5_s5 (
+    .O(boardLED[5]),
+    .I(GND),
+    .OEN(VCC) 
+);
+  OBUF P3_SEG_SER_obuf (
+    .O(P3_SEG_SER),
+    .I(VCC) 
+);
+  OBUF P9_SEG_SRCLK_obuf (
+    .O(P9_SEG_SRCLK),
+    .I(P9_SEG_SRCLK_d) 
+);
+  OBUF P4_SEG_RCLK_obuf (
+    .O(P4_SEG_RCLK),
+    .I(P4_SEG_RCLK_d_4) 
+);
+  OBUF P10_SEG_OE_obuf (
+    .O(P10_SEG_OE),
+    .I(GND) 
+);
+  OBUF P1_COM_SER_obuf (
+    .O(P1_COM_SER),
+    .I(P1_COM_SER_d) 
+);
+  OBUF P7_COM_SRCLK_obuf (
+    .O(P7_COM_SRCLK),
+    .I(P7_COM_SRCLK_d) 
+);
+  OBUF P2_COM_RCLK_obuf (
+    .O(P2_COM_RCLK),
+    .I(P2_COM_RCLK_d_4) 
+);
+  OBUF P8_COM_OE_obuf (
+    .O(P8_COM_OE),
+    .I(GND) 
+);
+  LUT3 n23_s0 (
+    .F(n23_4),
+    .I0(processCounter[3]),
+    .I1(P7_COM_SRCLK_d),
+    .I2(n23_5) 
+);
+defparam n23_s0.INIT=8'h10;
+  LUT3 n653_s0 (
+    .F(n653_3),
+    .I0(processCounter[1]),
+    .I1(P9_SEG_SRCLK_d),
+    .I2(n653_4) 
+);
+defparam n653_s0.INIT=8'h70;
+  LUT2 n716_s0 (
+    .F(n716_3),
+    .I0(n716_4),
+    .I1(P7_COM_SRCLK_d) 
+);
+defparam n716_s0.INIT=4'h1;
+  LUT4 n344_s1 (
+    .F(n344_4),
+    .I0(n23_5),
+    .I1(processCounter[3]),
+    .I2(n716_4),
+    .I3(P7_COM_SRCLK_d) 
+);
+defparam n344_s1.INIT=16'h440F;
+  LUT2 DIN_s5 (
+    .F(DIN_7),
+    .I0(DIN_8),
+    .I1(P7_COM_SRCLK_d) 
+);
+defparam DIN_s5.INIT=4'hE;
+  LUT2 anode_data_1_s14 (
+    .F(anode_data_addr_tmp_14),
+    .I0(anode_data_1_34),
+    .I1(anode_data_1_12) 
+);
+defparam anode_data_1_s14.INIT=4'h6;
+  LUT3 anode_data_1_s15 (
+    .F(anode_data_addr_tmp_15),
+    .I0(anode_data_1_34),
+    .I1(anode_data_1_12),
+    .I2(anode_data_1_16) 
+);
+defparam anode_data_1_s15.INIT=8'h78;
+  LUT4 anode_data_1_s16 (
+    .F(anode_data_1_32),
+    .I0(anode_data_1_34),
+    .I1(anode_data_1_12),
+    .I2(anode_data_1_16),
+    .I3(anode_data_1_20) 
+);
+defparam anode_data_1_s16.INIT=16'h7F80;
+  LUT3 n23_s1 (
+    .F(n23_5),
+    .I0(P9_SEG_SRCLK_d),
+    .I1(processCounter[1]),
+    .I2(processCounter[2]) 
+);
+defparam n23_s1.INIT=8'h01;
+  LUT3 n653_s1 (
+    .F(n653_4),
+    .I0(processCounter[2]),
+    .I1(P7_COM_SRCLK_d),
+    .I2(processCounter[3]) 
+);
+defparam n653_s1.INIT=8'h10;
+  LUT4 n716_s1 (
+    .F(n716_4),
+    .I0(P9_SEG_SRCLK_d),
+    .I1(processCounter[1]),
+    .I2(processCounter[2]),
+    .I3(processCounter[3]) 
+);
+defparam n716_s1.INIT=16'h8000;
+  LUT4 DIN_s6 (
+    .F(DIN_8),
+    .I0(processCounter[2]),
+    .I1(processCounter[1]),
+    .I2(P9_SEG_SRCLK_d),
+    .I3(processCounter[3]) 
+);
+defparam DIN_s6.INIT=16'hD700;
+  LUT4 anode_data_addr_tmp_s6 (
+    .F(anode_data_addr_tmp_19),
+    .I0(anode_data_1_34),
+    .I1(anode_data_1_12),
+    .I2(anode_data_1_16),
+    .I3(anode_data_1_20) 
+);
+defparam anode_data_addr_tmp_s6.INIT=16'h807F;
+  LUT4 anode_data_1_s19 (
+    .F(anode_data_1_40),
+    .I0(anode_data_1_34),
+    .I1(processCounter[3]),
+    .I2(n23_5),
+    .I3(P7_COM_SRCLK_d) 
+);
+defparam anode_data_1_s19.INIT=16'h9AAA;
+  LUT3 n367_s2 (
+    .F(n367_6),
+    .I0(processCounter[3]),
+    .I1(n23_5),
+    .I2(P7_COM_SRCLK_d) 
+);
+defparam n367_s2.INIT=8'h40;
+  DFF processCounter_4_s0 (
+    .Q(P7_COM_SRCLK_d),
+    .D(n18_1),
+    .CLK(AD_CLK_d) 
+);
+  DFF processCounter_3_s0 (
+    .Q(processCounter[3]),
+    .D(n19_1),
+    .CLK(AD_CLK_d) 
+);
+  DFF processCounter_2_s0 (
+    .Q(processCounter[2]),
+    .D(n20_1),
+    .CLK(AD_CLK_d) 
+);
+  DFF processCounter_1_s0 (
+    .Q(processCounter[1]),
+    .D(n21_1),
+    .CLK(AD_CLK_d) 
+);
+  DFF processCounter_0_s0 (
+    .Q(P9_SEG_SRCLK_d),
+    .D(P4_SEG_RCLK_d_4),
+    .CLK(AD_CLK_d) 
+);
+  DFFR CS_s2 (
+    .Q(CS_d),
+    .D(n344_4),
+    .CLK(AD_CLK_d),
+    .RESET(n716_3) 
+);
+  DFFRE DIN_s2 (
+    .Q(DIN_d),
+    .D(n653_3),
+    .CLK(AD_CLK_d),
+    .CE(DIN_7),
+    .RESET(n23_4) 
+);
+  DFFE anode_data_1_s6 (
+    .Q(anode_data_1_12),
+    .D(anode_data_addr_tmp_14),
+    .CLK(AD_CLK_d),
+    .CE(n367_6) 
+);
+  DFFE anode_data_1_s8 (
+    .Q(anode_data_1_16),
+    .D(anode_data_addr_tmp_15),
+    .CLK(AD_CLK_d),
+    .CE(n367_6) 
+);
+  DFFE anode_data_1_s10 (
+    .Q(anode_data_1_20),
+    .D(anode_data_1_32),
+    .CLK(AD_CLK_d),
+    .CE(n367_6) 
+);
+  DFF anode_data_1_s17 (
+    .Q(anode_data_1_34),
+    .D(anode_data_1_40),
+    .CLK(AD_CLK_d) 
+);
+defparam anode_data_1_s17.INIT=1'b0;
+  RAM16SDP1 anode_data_1_s11 (
+    .DO(P1_COM_SER_d),
+    .DI(P1_COM_SER_d),
+    .WAD({anode_data_addr_tmp_19,anode_data_addr_tmp_15,anode_data_addr_tmp_14,anode_data_1_41}),
+    .RAD({anode_data_1_20,anode_data_1_16,anode_data_1_12,anode_data_1_34}),
+    .WRE(n367_6),
+    .CLK(AD_CLK_d) 
+);
+defparam anode_data_1_s11.INIT_0=16'h01FE;
+  ALU n21_s (
+    .SUM(n21_1),
+    .COUT(n21_2),
+    .I0(processCounter[1]),
+    .I1(P9_SEG_SRCLK_d),
+    .I3(GND),
+    .CIN(GND) 
+);
+defparam n21_s.ALU_MODE=0;
+  ALU n20_s (
+    .SUM(n20_1),
+    .COUT(n20_2),
+    .I0(processCounter[2]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n21_2) 
+);
+defparam n20_s.ALU_MODE=0;
+  ALU n19_s (
+    .SUM(n19_1),
+    .COUT(n19_2),
+    .I0(processCounter[3]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n20_2) 
+);
+defparam n19_s.ALU_MODE=0;
+  ALU n18_s (
+    .SUM(n18_1),
+    .COUT(n18_0_COUT),
+    .I0(P7_COM_SRCLK_d),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n19_2) 
+);
+defparam n18_s.ALU_MODE=0;
+  INV P4_SEG_RCLK_d_s0 (
+    .O(P4_SEG_RCLK_d_4),
+    .I(P9_SEG_SRCLK_d) 
+);
+  INV P2_COM_RCLK_d_s0 (
+    .O(P2_COM_RCLK_d_4),
+    .I(P7_COM_SRCLK_d) 
+);
+  INV anode_data_1_s21 (
+    .O(anode_data_1_41),
+    .I(anode_data_1_34) 
+);
+  timer inst_1 (
+    .clk_d(clk_d),
+    .AD_CLK_d(AD_CLK_d)
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+  GSR GSR (
+    .GSRI(VCC) 
+);
+endmodule /* top */

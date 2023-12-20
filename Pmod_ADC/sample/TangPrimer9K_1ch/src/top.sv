@@ -22,7 +22,6 @@ module top (
 );
 
   logic  controlCLK;
-  logic rotateCLK;
 
   logic[15:0] processCounter;  // general counter 
 
@@ -32,7 +31,7 @@ module top (
   logic[9:0] accel;
   logic[9:0] disp_speed;  // store rotation speed for display
 
-  logic[8:0] anode_data=9'b000000001;
+  logic[8:0] anode_data = 9'b111111110;
 
 
   timer #(
@@ -89,19 +88,19 @@ module top (
 //7seg cathode
 
 //7seg anode
-    if(processCounter[3] == 1)begin
+    if(processCounter[4:0] == 5'b10000)begin
       anode_data <= {anode_data[7:0],anode_data[8]};
     end
       
   end
 
-  assign P3_SEG_SER = 1'b0;
+  assign P3_SEG_SER = 1'b1;
   assign P9_SEG_SRCLK = processCounter[0];
-  assign P4_SEG_RCLK = P9_SEG_SRCLK;
+  assign P4_SEG_RCLK = ~P9_SEG_SRCLK;
   assign P10_SEG_OE = 1'b0;
 
   assign P1_COM_SER = anode_data[0];
-  assign P7_COM_SRCLK = processCounter[2];
+  assign P7_COM_SRCLK = processCounter[4];
   assign P2_COM_RCLK = ~P7_COM_SRCLK;
   assign P8_COM_OE = 1'b0;
 
@@ -132,7 +131,7 @@ module top (
 endmodule
 
 module timer #(
-  parameter COUNT_MAX = 27000  //1000us
+  parameter COUNT_MAX = 2700  //1000us
 ) (
   input  wire  clk,
   output logic overflow
@@ -143,9 +142,10 @@ module timer #(
   always_ff @ (posedge clk) begin
     if(counter == COUNT_MAX)begin
       counter  <= 'd0;
+      overflow <= 'd1;
     end else begin
       counter  <= counter + 'd1;
-      overflow <= 'd1;
+      overflow <= 'd0;
     end
   end
 

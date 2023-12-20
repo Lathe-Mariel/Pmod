@@ -1,66 +1,42 @@
 module gw_gao(
-    duty,
-    \rotateState[2] ,
-    \rotateState[1] ,
-    \rotateState[0] ,
-    HIN_R,
-    HIN_S,
-    HIN_T,
-    CS,
-    DIN,
-    DOUT,
-    \processCounter[5] ,
-    \processCounter[4] ,
-    \processCounter[3] ,
-    \processCounter[2] ,
-    \processCounter[1] ,
+    P3_SEG_SER,
+    P9_SEG_SRCLK,
+    P4_SEG_RCLK,
+    P10_SEG_OE,
+    P1_COM_SER,
+    P7_COM_SRCLK,
+    P2_COM_RCLK,
+    P8_COM_OE,
     \processCounter[0] ,
-    controlCLK,
     tms_pad_i,
     tck_pad_i,
     tdi_pad_i,
     tdo_pad_o
 );
 
-input duty;
-input \rotateState[2] ;
-input \rotateState[1] ;
-input \rotateState[0] ;
-input HIN_R;
-input HIN_S;
-input HIN_T;
-input CS;
-input DIN;
-input DOUT;
-input \processCounter[5] ;
-input \processCounter[4] ;
-input \processCounter[3] ;
-input \processCounter[2] ;
-input \processCounter[1] ;
+input P3_SEG_SER;
+input P9_SEG_SRCLK;
+input P4_SEG_RCLK;
+input P10_SEG_OE;
+input P1_COM_SER;
+input P7_COM_SRCLK;
+input P2_COM_RCLK;
+input P8_COM_OE;
 input \processCounter[0] ;
-input controlCLK;
 input tms_pad_i;
 input tck_pad_i;
 input tdi_pad_i;
 output tdo_pad_o;
 
-wire duty;
-wire \rotateState[2] ;
-wire \rotateState[1] ;
-wire \rotateState[0] ;
-wire HIN_R;
-wire HIN_S;
-wire HIN_T;
-wire CS;
-wire DIN;
-wire DOUT;
-wire \processCounter[5] ;
-wire \processCounter[4] ;
-wire \processCounter[3] ;
-wire \processCounter[2] ;
-wire \processCounter[1] ;
+wire P3_SEG_SER;
+wire P9_SEG_SRCLK;
+wire P4_SEG_RCLK;
+wire P10_SEG_OE;
+wire P1_COM_SER;
+wire P7_COM_SRCLK;
+wire P2_COM_RCLK;
+wire P8_COM_OE;
 wire \processCounter[0] ;
-wire controlCLK;
 wire tms_pad_i;
 wire tck_pad_i;
 wire tdi_pad_i;
@@ -134,8 +110,8 @@ gw_con_top  u_icon_top(
 
 ao_top u_ao_top(
     .control(control0[9:0]),
-    .data_i({duty,\rotateState[2] ,\rotateState[1] ,\rotateState[0] ,HIN_R,HIN_S,HIN_T,CS,DIN,DOUT,\processCounter[5] ,\processCounter[4] ,\processCounter[3] ,\processCounter[2] ,\processCounter[1] ,\processCounter[0] }),
-    .clk_i(controlCLK)
+    .data_i({P3_SEG_SER,P9_SEG_SRCLK,P4_SEG_RCLK,P10_SEG_OE,P1_COM_SER,P7_COM_SRCLK,P2_COM_RCLK,P8_COM_OE}),
+    .clk_i(\processCounter[0] )
 );
 
 endmodule
