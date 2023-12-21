@@ -5,7 +5,6 @@ module top (
 
   input  wire sw1,
   input  wire sw2,
-  input wire[3:0] tacSW,
   output wire AD_CLK,
   output logic CS,
   output logic DIN,
@@ -29,8 +28,6 @@ module top (
 
   logic[9:0] recieveADC;
   logic[9:0] accel;
-
-  logic[7:0] anode_data = 8'b11111110;
 
   logic P1_COM_SER;
   logic P2_COM_RCLK;
@@ -91,7 +88,7 @@ module top (
 //7seg cathode
 
 //7seg anode
-    if(processCounter[2:0] == 3'b000)begin
+    if(processCounter[3:0] == 1'b1001)begin
       P2_COM_RCLK <= 1;
       P4_SEG_RCLK <= 1;
     end else begin
@@ -103,16 +100,14 @@ module top (
     end else begin
       P1_COM_SER <= 1;
     end
-
   end
-
 
   function currentBit;
   input [7:0] in;
     currentBit = (in >> processCounter[2:0]) & 1'b1;
   endfunction
 
-  assign P3_SEG_SER = 1'b1;//currentBit(decode7seg(4'h4));
+  assign P3_SEG_SER = currentBit(decode7seg(4'h4));
 
   assign P9_SEG_SRCLK = controlCLK;
   assign P10_SEG_OE = 1'b0;
@@ -123,8 +118,8 @@ module top (
   assign AD_CLK = controlCLK;
 
   function [7:0] decode7seg;
-  input [3:0] in;
-    case(in)
+  input [3:0] in1;
+    case(in1)
       4'h0:  decode7seg = 8'b00000011;
       4'h1:  decode7seg = 8'b10011111;
       4'h2:  decode7seg = 8'b00100101;
@@ -147,7 +142,7 @@ module top (
 endmodule
 
 module timer #(
-  parameter COUNT_MAX = 27000  //1000us
+  parameter COUNT_MAX = 2700  //1000us
 ) (
   input  wire  clk,
   output logic overflow
@@ -158,6 +153,9 @@ module timer #(
   always_ff @ (posedge clk) begin
     if(counter == COUNT_MAX)begin
       counter  <= 'd0;
+      overflow <= 'd0;
+    end else if(counter > COUNT_MAX/2) begin
+      counter  <= counter + 'd1;
       overflow <= 'd1;
     end else begin
       counter  <= counter + 'd1;

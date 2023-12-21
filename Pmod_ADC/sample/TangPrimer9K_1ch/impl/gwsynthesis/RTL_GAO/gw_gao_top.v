@@ -1,8 +1,4 @@
 module gw_gao(
-    \decode7seg.in[3] ,
-    \decode7seg.in[2] ,
-    \decode7seg.in[1] ,
-    \decode7seg.in[0] ,
     P1_COM_SER,
     P2_COM_RCLK,
     \processCounter[5] ,
@@ -14,18 +10,18 @@ module gw_gao(
     P3_SEG_SER,
     P9_SEG_SRCLK,
     P4_SEG_RCLK,
-    controlCLK,
-    \inst_1/counter[5] ,
+    P7_COM_SRCLK,
+    \decode7seg.in1[3] ,
+    \decode7seg.in1[2] ,
+    \decode7seg.in1[1] ,
+    \decode7seg.in1[0] ,
+    \inst_1/counter[7] ,
     tms_pad_i,
     tck_pad_i,
     tdi_pad_i,
     tdo_pad_o
 );
 
-input \decode7seg.in[3] ;
-input \decode7seg.in[2] ;
-input \decode7seg.in[1] ;
-input \decode7seg.in[0] ;
 input P1_COM_SER;
 input P2_COM_RCLK;
 input \processCounter[5] ;
@@ -37,17 +33,17 @@ input \processCounter[0] ;
 input P3_SEG_SER;
 input P9_SEG_SRCLK;
 input P4_SEG_RCLK;
-input controlCLK;
-input \inst_1/counter[5] ;
+input P7_COM_SRCLK;
+input \decode7seg.in1[3] ;
+input \decode7seg.in1[2] ;
+input \decode7seg.in1[1] ;
+input \decode7seg.in1[0] ;
+input \inst_1/counter[7] ;
 input tms_pad_i;
 input tck_pad_i;
 input tdi_pad_i;
 output tdo_pad_o;
 
-wire \decode7seg.in[3] ;
-wire \decode7seg.in[2] ;
-wire \decode7seg.in[1] ;
-wire \decode7seg.in[0] ;
 wire P1_COM_SER;
 wire P2_COM_RCLK;
 wire \processCounter[5] ;
@@ -59,8 +55,12 @@ wire \processCounter[0] ;
 wire P3_SEG_SER;
 wire P9_SEG_SRCLK;
 wire P4_SEG_RCLK;
-wire controlCLK;
-wire \inst_1/counter[5] ;
+wire P7_COM_SRCLK;
+wire \decode7seg.in1[3] ;
+wire \decode7seg.in1[2] ;
+wire \decode7seg.in1[1] ;
+wire \decode7seg.in1[0] ;
+wire \inst_1/counter[7] ;
 wire tms_pad_i;
 wire tck_pad_i;
 wire tdi_pad_i;
@@ -134,8 +134,8 @@ gw_con_top  u_icon_top(
 
 ao_top u_ao_top(
     .control(control0[9:0]),
-    .data_i({\decode7seg.in[3] ,\decode7seg.in[2] ,\decode7seg.in[1] ,\decode7seg.in[0] ,P1_COM_SER,P2_COM_RCLK,\processCounter[5] ,\processCounter[4] ,\processCounter[3] ,\processCounter[2] ,\processCounter[1] ,\processCounter[0] ,P3_SEG_SER,P9_SEG_SRCLK,P4_SEG_RCLK,controlCLK}),
-    .clk_i(\inst_1/counter[5] )
+    .data_i({P1_COM_SER,P2_COM_RCLK,\processCounter[5] ,\processCounter[4] ,\processCounter[3] ,\processCounter[2] ,\processCounter[1] ,\processCounter[0] ,P3_SEG_SER,P9_SEG_SRCLK,P4_SEG_RCLK,P7_COM_SRCLK,\decode7seg.in1[3] ,\decode7seg.in1[2] ,\decode7seg.in1[1] ,\decode7seg.in1[0] }),
+    .clk_i(\inst_1/counter[7] )
 );
 
 endmodule

@@ -2,14 +2,8 @@
 <GAO_CONFIG>
     <Version>3.0</Version>
     <Mode>Lite</Mode>
-    <AoCore_Lite index="0" sample_clock="inst_1/counter[5]" trig_type="0" capture_amount="16384" implemention="0" input_register_enabled="0" capture_init_data_enabled="0" module_name="top">
+    <AoCore_Lite index="0" sample_clock="inst_1/counter[7]" trig_type="0" capture_amount="2048" implemention="0" input_register_enabled="0" capture_init_data_enabled="0" module_name="top">
         <SignalList>
-            <Bus name="decode7seg.in[3:0]">
-                <Signal>decode7seg.in[3]</Signal>
-                <Signal>decode7seg.in[2]</Signal>
-                <Signal>decode7seg.in[1]</Signal>
-                <Signal>decode7seg.in[0]</Signal>
-            </Bus>
             <Signal>P1_COM_SER</Signal>
             <Signal>P2_COM_RCLK</Signal>
             <Bus name="processCounter[5:0]">
@@ -23,8 +17,14 @@
             <Signal>P3_SEG_SER</Signal>
             <Signal>P9_SEG_SRCLK</Signal>
             <Signal>P4_SEG_RCLK</Signal>
-            <Signal>controlCLK</Signal>
+            <Signal>P7_COM_SRCLK</Signal>
+            <Bus name="decode7seg.in1[3:0]">
+                <Signal>decode7seg.in1[3]</Signal>
+                <Signal>decode7seg.in1[2]</Signal>
+                <Signal>decode7seg.in1[1]</Signal>
+                <Signal>decode7seg.in1[0]</Signal>
+            </Bus>
         </SignalList>
     </AoCore_Lite>
-    <GAO_ID>1000001110000111</GAO_ID>
+    <GAO_ID>1110000110001001</GAO_ID>
 </GAO_CONFIG>
