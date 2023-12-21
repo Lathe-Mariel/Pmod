@@ -25,14 +25,17 @@ module top (
 
   logic[15:0] processCounter;  // general counter 
 
-  logic[5:0] display7seg[5]; //0000-9999
+  logic[3:0] display7seg[6] = {4'd1, 4'd1, 4'd1, 4'd1, 4'd1, 4'd1}; //000000-999999
 
   logic[9:0] recieveADC;
   logic[9:0] accel;
-  logic[9:0] disp_speed;  // store rotation speed for display
 
-  logic[8:0] anode_data = 9'b111111110;
+  logic[7:0] anode_data = 8'b11111110;
 
+  logic P1_COM_SER;
+  logic P2_COM_RCLK;
+
+  logic P4_SEG_RCLK;
 
   timer #(
     .COUNT_MAX()
@@ -88,20 +91,33 @@ module top (
 //7seg cathode
 
 //7seg anode
-    if(processCounter[4:0] == 5'b10000)begin
-      anode_data <= {anode_data[7:0],anode_data[8]};
+    if(processCounter[2:0] == 3'b000)begin
+      P2_COM_RCLK <= 1;
+      P4_SEG_RCLK <= 1;
+    end else begin
+      P2_COM_RCLK <= 0;
+      P4_SEG_RCLK <= 0;
     end
-      
+    if(processCounter[5:3] == processCounter[2:0])begin
+      P1_COM_SER <= 0;
+    end else begin
+      P1_COM_SER <= 1;
+    end
+
   end
 
-  assign P3_SEG_SER = 1'b1;
-  assign P9_SEG_SRCLK = processCounter[0];
-  assign P4_SEG_RCLK = ~P9_SEG_SRCLK;
+
+  function currentBit;
+  input [7:0] in;
+    currentBit = (in >> processCounter[2:0]) & 1'b1;
+  endfunction
+
+  assign P3_SEG_SER = 1'b1;//currentBit(decode7seg(4'h4));
+
+  assign P9_SEG_SRCLK = controlCLK;
   assign P10_SEG_OE = 1'b0;
 
-  assign P1_COM_SER = anode_data[0];
-  assign P7_COM_SRCLK = processCounter[4];
-  assign P2_COM_RCLK = ~P7_COM_SRCLK;
+  assign P7_COM_SRCLK = controlCLK;
   assign P8_COM_OE = 1'b0;
 
   assign AD_CLK = controlCLK;
@@ -131,7 +147,7 @@ module top (
 endmodule
 
 module timer #(
-  parameter COUNT_MAX = 2700  //1000us
+  parameter COUNT_MAX = 27000  //1000us
 ) (
   input  wire  clk,
   output logic overflow

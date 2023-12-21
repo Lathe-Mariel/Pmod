@@ -1,8 +1,9 @@
--d H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\tangnano9k_brushless.vg
+-d C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\tangnano9k.vg
 -p GW1NR-9C-QFN88P-6
 -pn GW1NR-LV9QN88PC6/I5
--cst H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.cst
--cfg H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\pnr\device.cfg
+-cst C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.cst
+-cfg C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\pnr\device.cfg
+-gao_crc 1000001110000111
 -bit
 -tr
 -ph
@@ -10,3 +11,4 @@
 -cst_error
 -correct_hold 1
 -route_maxfan 23
+-rtl_gao
