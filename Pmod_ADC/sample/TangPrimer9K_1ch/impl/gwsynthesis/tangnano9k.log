@@ -1,10 +1,9 @@
 GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv'
-WARN  (EX3628) : Redeclaration of ANSI port 'P1_COM_SER' is not allowed("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":35)
-WARN  (EX3628) : Redeclaration of ANSI port 'P2_COM_RCLK' is not allowed("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":36)
-WARN  (EX3628) : Redeclaration of ANSI port 'P4_SEG_RCLK' is not allowed("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":38)
-WARN  (EX3792) : Literal value 'b1001 truncated to fit in 1 bits("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":94)
+WARN  (EX3628) : Redeclaration of ANSI port 'P1_COM_SER' is not allowed("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":32)
+WARN  (EX3628) : Redeclaration of ANSI port 'P2_COM_RCLK' is not allowed("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":33)
+WARN  (EX3628) : Redeclaration of ANSI port 'P4_SEG_RCLK' is not allowed("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":35)
 Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'
 Analyzing included file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
 Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
@@ -23,12 +22,12 @@ Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_co
 Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\gw_jtag.v'
 Analyzing Verilog file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\gw_gao_top.v'
 Compiling module 'top'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":3)
-Extracting RAM for identifier 'display7seg'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":28)
-Compiling module 'timer'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":147)
-WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":161)
-WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":164)
-WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":49)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":84)
+Extracting RAM for identifier 'display7seg'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":27)
+Compiling module 'timer'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":143)
+WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":157)
+WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":160)
+WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":46)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":81)
 Compiling module 'gw_gao'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\gw_gao_top.v":1)
 Compiling module 'GW_JTAG'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\gw_jtag.v":1)
 Compiling module '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":0)
@@ -38,17 +37,16 @@ Compiling module '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_
 Extracting RAM for identifier '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":0)
 Trying to combine GAO to RTL design
 NOTE  (EX0101) : Current top module is "top"
-WARN  (EX0211) : The output port "boardLED[5]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":13)
-WARN  (EX0211) : The output port "boardLED[4]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":13)
-WARN  (EX0211) : The output port "boardLED[3]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":13)
-WARN  (EX0211) : The output port "boardLED[2]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":13)
-WARN  (EX0211) : The output port "boardLED[1]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":13)
-WARN  (EX0211) : The output port "boardLED[0]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":13)
+WARN  (EX0211) : The output port "boardLED[5]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
+WARN  (EX0211) : The output port "boardLED[4]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
+WARN  (EX0211) : The output port "boardLED[3]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
+WARN  (EX0211) : The output port "boardLED[2]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
+WARN  (EX0211) : The output port "boardLED[1]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
+WARN  (EX0211) : The output port "boardLED[0]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
 [5%] Running netlist conversion ...
 WARN  (CV0016) : Input sw1 is unused("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":6)
 WARN  (CV0016) : Input sw2 is unused("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":7)
-WARN  (CV0016) : Input tacSW is unused("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":8)
-WARN  (CV0016) : Input DOUT is unused("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
+WARN  (CV0016) : Input DOUT is unused("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":11)
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
 [15%] Optimizing Phase 1 completed
