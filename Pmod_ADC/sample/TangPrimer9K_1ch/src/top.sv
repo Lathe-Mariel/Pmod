@@ -24,7 +24,7 @@ module top (
 
   logic[15:0] processCounter;  // general counter 
 
-  logic[3:0] display7seg[6] = {4'd1, 4'd1, 4'd1, 4'd2, 4'd2, 4'd2}; //000000-999999
+  logic[3:0] display7seg[6] = {4'd9, 4'd8, 4'd7, 4'd6, 4'd5, 4'd0}; //000000-999999
 
   logic[9:0] recieveADC;
   logic[9:0] accel;
@@ -32,6 +32,7 @@ module top (
   logic P1_COM_SER;
   logic P2_COM_RCLK;
 
+  logic P3_SEG_SER;
   logic P4_SEG_RCLK;
 
   timer #(
@@ -86,7 +87,7 @@ module top (
     end
 
 //7seg
-    if(processCounter[2:0] == 3'b011)begin
+    if(processCounter[2:0] == 3'b000)begin
       P2_COM_RCLK <= 1;
       P4_SEG_RCLK <= 1;
     end else begin
@@ -99,14 +100,17 @@ module top (
     end else begin
       P1_COM_SER <= 1;
     end
+
+    P3_SEG_SER <= currentBit(decode7seg(display7seg[(recieveADC >> (processCounter[5:3]*4))& 'b1111]));
+//    P3_SEG_SER <= currentBit(decode7seg(display7seg[processCounter[5:3]]));
   end
 
   function currentBit;
   input [7:0] in;
-    currentBit = (in >> processCounter[2:0]) & 1'b1;
+    currentBit = in[processCounter[2:0]];
   endfunction
 
-  assign P3_SEG_SER = currentBit(decode7seg(display7seg[processCounter[5:3]]));
+  //assign P3_SEG_SER = currentBit(decode7seg(display7seg[processCounter[5:3]]));
 
   assign P9_SEG_SRCLK = ~controlCLK;
   assign P10_SEG_OE = 1'b0;
@@ -119,22 +123,22 @@ module top (
   function [7:0] decode7seg;
   input [3:0] in1;
     case(in1)
-      4'h0:  decode7seg = 8'b00111111;
-      4'h1:  decode7seg = 8'b00000110;
-      4'h2:  decode7seg = 8'b01011011;
-      4'h3:  decode7seg = 8'b01001111;
+      4'h0:  decode7seg = 8'b11111100;
+      4'h1:  decode7seg = 8'b01100000;
+      4'h2:  decode7seg = 8'b11011010;
+      4'h3:  decode7seg = 8'b11110010;
       4'h4:  decode7seg = 8'b01100110;
-      4'h5:  decode7seg = 8'b01101101;
-      4'h6:  decode7seg = 8'b01111101;
-      4'h7:  decode7seg = 8'b00000111;
-      4'h8:  decode7seg = 8'b01111111;
-      4'h9:  decode7seg = 8'b11101111;
-      4'ha:  decode7seg = 8'b01110111;
-      4'hb:  decode7seg = 8'b01111100;
-      4'hc:  decode7seg = 8'b00111001;
-      4'hd:  decode7seg = 8'b00011110;
-      4'he:  decode7seg = 8'b01111001;
-      4'hf:  decode7seg = 8'b01110001;
+      4'h5:  decode7seg = 8'b10110110;
+      4'h6:  decode7seg = 8'b10111110;
+      4'h7:  decode7seg = 8'b11100000;
+      4'h8:  decode7seg = 8'b11111110;
+      4'h9:  decode7seg = 8'b11110110;
+      4'ha:  decode7seg = 8'b11101110;
+      4'hb:  decode7seg = 8'b00111110;
+      4'hc:  decode7seg = 8'b10011100;
+      4'hd:  decode7seg = 8'b01111000;
+      4'he:  decode7seg = 8'b10011110;
+      4'hf:  decode7seg = 8'b10001110;
       default:decode7seg = 8'b11111111;
     endcase
   endfunction
