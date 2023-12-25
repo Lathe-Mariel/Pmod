@@ -1,8 +1,8 @@
--d C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\tangnano9k.vg
+-d H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\tangnano9k.vg
 -p GW1NR-9C-QFN88P-6
 -pn GW1NR-LV9QN88PC6/I5
--cst C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.cst
--cfg C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\pnr\device.cfg
+-cst H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.cst
+-cfg H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\pnr\device.cfg
 -gao_crc 1010000011111101
 -bit
 -tr

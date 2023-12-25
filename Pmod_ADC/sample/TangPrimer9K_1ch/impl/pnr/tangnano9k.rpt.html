@@ -55,11 +55,11 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Design File</td>
-<td>C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\tangnano9k.vg</td>
+<td>H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\tangnano9k.vg</td>
 </tr>
 <tr>
 <td class="label">Physical Constraints File</td>
-<td>C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.cst</td>
+<td>H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.cst</td>
 </tr>
 <tr>
 <td class="label">Timing Constraints File</td>
@@ -67,7 +67,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Version</td>
-<td>V1.9.8.11 Education</td>
+<td>V1.9.9 Beta-6</td>
 </tr>
 <tr>
 <td class="label">Part Number</td>
@@ -83,7 +83,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Mon Dec 25 13:57:04 2023
+<td>Tue Dec 26 00:53:09 2023
 </td>
 </tr>
 <tr>
@@ -97,24 +97,24 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td class="label">Place & Route Process</td>
 <td>Running placement:
-   Placement Phase 0: CPU time = 0h 0m 0.016s, Elapsed time = 0h 0m 0.022s
-   Placement Phase 1: CPU time = 0h 0m 0.048s, Elapsed time = 0h 0m 0.041s
-   Placement Phase 2: CPU time = 0h 0m 0.015s, Elapsed time = 0h 0m 0.018s
-   Placement Phase 3: CPU time = 0h 0m 0.566s, Elapsed time = 0h 0m 0.577s
-   Total Placement: CPU time = 0h 0m 0.645s, Elapsed time = 0h 0m 0.658s
+   Placement Phase 0: CPU time = 0h 0m 0.068s, Elapsed time = 0h 0m 0.068s
+   Placement Phase 1: CPU time = 0h 0m 0.11s, Elapsed time = 0h 0m 0.11s
+   Placement Phase 2: CPU time = 0h 0m 0.043s, Elapsed time = 0h 0m 0.043s
+   Placement Phase 3: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
+   Total Placement: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
 Running routing:
-   Routing Phase 0: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Routing Phase 1: CPU time = 0h 0m 0.09s, Elapsed time = 0h 0m 0.091s
-   Routing Phase 2: CPU time = 0h 0m 0.115s, Elapsed time = 0h 0m 0.113s
+   Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0.001s
+   Routing Phase 1: CPU time = 0h 0m 0.212s, Elapsed time = 0h 0m 0.213s
+   Routing Phase 2: CPU time = 0h 0m 0.255s, Elapsed time = 0h 0m 0.255s
    Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Total Routing: CPU time = 0h 0m 0.205s, Elapsed time = 0h 0m 0.204s
+   Total Routing: CPU time = 0h 0m 0.468s, Elapsed time = 0h 0m 0.469s
 Generate output files:
-   CPU time = 0h 0m 0.964s, Elapsed time = 0h 0m 0.958s
+   CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
 </td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s, Peak memory usage = 203MB</td>
+<td>CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s, Peak memory usage = 158MB</td>
 </tr>
 </table>
 <br/>
@@ -129,12 +129,12 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>258/8640</td>
-<td>3%</td>
+<td>261/8640</td>
+<td>4%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --LUT,ALU,ROM16</td>
-<td>252(232 LUT, 20 ALU, 0 ROM16)</td>
+<td>255(235 LUT, 20 ALU, 0 ROM16)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -169,7 +169,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">CLS</td>
-<td>207/4320</td>
+<td>212/4320</td>
 <td>5%</td>
 </tr>
 <tr>
@@ -293,7 +293,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">GCLK_PIN</td>
-<td>3/4(75%)</td>
+<td>3/3(100%)</td>
 </tr>
 <tr>
 <td class="label">PLL</td>
@@ -332,12 +332,12 @@ Generate output files:
 <td> BR BL</td>
 </tr>
 <tr>
-<td class="label">control0[0]</td>
+<td class="label">gw_gao_inst_0/control0[0]</td>
 <td>PRIMARY</td>
 <td> TL BR BL</td>
 </tr>
 <tr>
-<td class="label">gao_jtag_reset</td>
+<td class="label">gw_gao_inst_0/gao_jtag_reset</td>
 <td>LW</td>
 <td> -</td>
 </tr>
