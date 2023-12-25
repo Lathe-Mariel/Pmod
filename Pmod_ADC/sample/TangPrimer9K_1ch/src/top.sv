@@ -24,10 +24,9 @@ module top (
 
   logic[15:0] processCounter;  // general counter 
 
-  logic[3:0] display7seg[6] = {4'd9, 4'd8, 4'd7, 4'd6, 4'd5, 4'd0}; //000000-999999
+  logic[3:0] display7seg[8] = {4'd9, 4'd8, 4'd7, 4'd6, 4'd5, 4'd0, 4'd0, 4'd0}; //000000-999999
 
   logic[9:0] recieveADC;
-  logic[9:0] accel;
 
   logic P1_COM_SER;
   logic P2_COM_RCLK;
@@ -74,17 +73,11 @@ module top (
       DIN <= 0;
       CS <= 0;
     end else begin
-      if(recieveADC < 'd280)begin
-        accel <= 'd0;
-      end else if(recieveADC > 'd780) begin
-        accel <= 'd1000;
-      end else begin
-        accel <= (recieveADC - 'd280) * 2;  // for Mini Cart Accel     //origin 270 - 780  to 0 - 16
-      end
-
+ 
       DIN <= 0;
       CS <= 1;
     end
+    display7seg[processCounter[7:5]] <= (recieveADC >> (processCounter[7:5]*4))& 4'b1111;
 
 //7seg
     if(processCounter[2:0] == 3'b000)begin
@@ -101,7 +94,8 @@ module top (
       P1_COM_SER <= 1;
     end
 
-    P3_SEG_SER <= currentBit(decode7seg(display7seg[(recieveADC >> (processCounter[5:3]*4))& 'b1111]));
+    P3_SEG_SER <= currentBit(decode7seg(display7seg[processCounter[5:3]]));
+
 //    P3_SEG_SER <= currentBit(decode7seg(display7seg[processCounter[5:3]]));
   end
 

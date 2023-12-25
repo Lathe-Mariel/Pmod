@@ -18,13 +18,19 @@
             <Signal>P9_SEG_SRCLK</Signal>
             <Signal>P4_SEG_RCLK</Signal>
             <Signal>P7_COM_SRCLK</Signal>
-            <Bus name="decode7seg.in1[3:0]">
-                <Signal>decode7seg.in1[3]</Signal>
-                <Signal>decode7seg.in1[2]</Signal>
-                <Signal>decode7seg.in1[1]</Signal>
-                <Signal>decode7seg.in1[0]</Signal>
+            <Bus name="recieveADC[9:0]">
+                <Signal>recieveADC[9]</Signal>
+                <Signal>recieveADC[8]</Signal>
+                <Signal>recieveADC[7]</Signal>
+                <Signal>recieveADC[6]</Signal>
+                <Signal>recieveADC[5]</Signal>
+                <Signal>recieveADC[4]</Signal>
+                <Signal>recieveADC[3]</Signal>
+                <Signal>recieveADC[2]</Signal>
+                <Signal>recieveADC[1]</Signal>
+                <Signal>recieveADC[0]</Signal>
             </Bus>
         </SignalList>
     </AoCore_Lite>
-    <GAO_ID>1110000110001001</GAO_ID>
+    <GAO_ID>1010000011111101</GAO_ID>
 </GAO_CONFIG>

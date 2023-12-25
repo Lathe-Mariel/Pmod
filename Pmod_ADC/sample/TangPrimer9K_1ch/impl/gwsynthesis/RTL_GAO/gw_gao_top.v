@@ -11,10 +11,16 @@ module gw_gao(
     P9_SEG_SRCLK,
     P4_SEG_RCLK,
     P7_COM_SRCLK,
-    \decode7seg.in1[3] ,
-    \decode7seg.in1[2] ,
-    \decode7seg.in1[1] ,
-    \decode7seg.in1[0] ,
+    \recieveADC[9] ,
+    \recieveADC[8] ,
+    \recieveADC[7] ,
+    \recieveADC[6] ,
+    \recieveADC[5] ,
+    \recieveADC[4] ,
+    \recieveADC[3] ,
+    \recieveADC[2] ,
+    \recieveADC[1] ,
+    \recieveADC[0] ,
     \inst_1/counter[7] ,
     tms_pad_i,
     tck_pad_i,
@@ -34,10 +40,16 @@ input P3_SEG_SER;
 input P9_SEG_SRCLK;
 input P4_SEG_RCLK;
 input P7_COM_SRCLK;
-input \decode7seg.in1[3] ;
-input \decode7seg.in1[2] ;
-input \decode7seg.in1[1] ;
-input \decode7seg.in1[0] ;
+input \recieveADC[9] ;
+input \recieveADC[8] ;
+input \recieveADC[7] ;
+input \recieveADC[6] ;
+input \recieveADC[5] ;
+input \recieveADC[4] ;
+input \recieveADC[3] ;
+input \recieveADC[2] ;
+input \recieveADC[1] ;
+input \recieveADC[0] ;
 input \inst_1/counter[7] ;
 input tms_pad_i;
 input tck_pad_i;
@@ -56,10 +68,16 @@ wire P3_SEG_SER;
 wire P9_SEG_SRCLK;
 wire P4_SEG_RCLK;
 wire P7_COM_SRCLK;
-wire \decode7seg.in1[3] ;
-wire \decode7seg.in1[2] ;
-wire \decode7seg.in1[1] ;
-wire \decode7seg.in1[0] ;
+wire \recieveADC[9] ;
+wire \recieveADC[8] ;
+wire \recieveADC[7] ;
+wire \recieveADC[6] ;
+wire \recieveADC[5] ;
+wire \recieveADC[4] ;
+wire \recieveADC[3] ;
+wire \recieveADC[2] ;
+wire \recieveADC[1] ;
+wire \recieveADC[0] ;
 wire \inst_1/counter[7] ;
 wire tms_pad_i;
 wire tck_pad_i;
@@ -134,7 +152,7 @@ gw_con_top  u_icon_top(
 
 ao_top u_ao_top(
     .control(control0[9:0]),
-    .data_i({P1_COM_SER,P2_COM_RCLK,\processCounter[5] ,\processCounter[4] ,\processCounter[3] ,\processCounter[2] ,\processCounter[1] ,\processCounter[0] ,P3_SEG_SER,P9_SEG_SRCLK,P4_SEG_RCLK,P7_COM_SRCLK,\decode7seg.in1[3] ,\decode7seg.in1[2] ,\decode7seg.in1[1] ,\decode7seg.in1[0] }),
+    .data_i({P1_COM_SER,P2_COM_RCLK,\processCounter[5] ,\processCounter[4] ,\processCounter[3] ,\processCounter[2] ,\processCounter[1] ,\processCounter[0] ,P3_SEG_SER,P9_SEG_SRCLK,P4_SEG_RCLK,P7_COM_SRCLK,\recieveADC[9] ,\recieveADC[8] ,\recieveADC[7] ,\recieveADC[6] ,\recieveADC[5] ,\recieveADC[4] ,\recieveADC[3] ,\recieveADC[2] ,\recieveADC[1] ,\recieveADC[0] }),
     .clk_i(\inst_1/counter[7] )
 );
 
