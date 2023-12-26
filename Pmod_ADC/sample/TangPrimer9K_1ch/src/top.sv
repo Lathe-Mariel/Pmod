@@ -136,6 +136,26 @@ module top (
       default:decode7seg = 8'b11111111;
     endcase
   endfunction
+
+  wire [9:0] idx;
+	FFT_Top fft_inst(
+		.idx(idx_o), //output [7:0] idx
+		.xk_re(xk_re_o), //output [9:0] xk_re
+		.xk_im(xk_im_o), //output [9:0] xk_im
+		.sod(sod_o), //output sod,  start of domain sequence(starting data input)
+		.ipd(ipd_o), //output ipd,  this signal is High during input data sampling
+		.eod(eod_o), //output eod,  end of domain sequence(ending data input)
+		.busy(boardLED[0]), //output busy,  this signal is High durting translate data
+		.soud(soud_o), //output soud,  start of unload data
+		.opd(opd_o), //output opd,  during output data
+		.eoud(eoud_o), //output eoud,  stop of unload data
+		.xn_re(recieveADC), //input [9:0] xn_re
+		.xn_im(recieveADC), //input [9:0] xn_im
+		.start(start_i), //input start
+		.clk(clk_i), //input clk(fftClk)
+		.rst(rst_i) //input rst
+	);
+
 endmodule
 
 module timer #(

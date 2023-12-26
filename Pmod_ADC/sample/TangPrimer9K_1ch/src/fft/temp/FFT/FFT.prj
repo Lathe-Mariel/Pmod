@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW1NR-9C" package="QFN88P" speed="6" partNumber="GW1NR-LV9QN88PC6/I5"/>
+    <FileList>
+        <File path="H:/Gowin/Gowin_V1.9.9Beta-6/IDE/ipcore/FFT/data/fft.v" type="verilog"/>
+        <File path="H:/Gowin/Gowin_V1.9.9Beta-6/IDE/ipcore/FFT/data/interface.v" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="1"/>
+        <Option type="include_path" value="H:/Gowin/Gowin_V1.9.9Beta-6/IDE/ipcore/FFT/data"/>
+        <Option type="include_path" value="H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/fft/temp/FFT"/>
+        <Option type="output_file" value="fft.vg"/>
+        <Option type="output_template" value="fft_tmp.v"/>
+        <Option type="ram_balance" value="1"/>
+        <Option type="ram_rw_check" value="1"/>
+        <Option type="verilog_language" value="sysv-2017"/>
+    </OptionList>
+</Project>
