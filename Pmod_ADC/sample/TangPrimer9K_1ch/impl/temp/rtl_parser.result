@@ -1,37 +1,37 @@
 [
  {
-  "InstFile" : "H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/top.sv",
+  "InstFile" : "C:/Git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/top.sv",
   "InstLine" : 3,
   "InstName" : "top",
-  "ModuleFile" : "H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/top.sv",
+  "ModuleFile" : "C:/Git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/top.sv",
   "ModuleLine" : 3,
   "ModuleName" : "top",
   "SubInsts" : [
    {
-    "InstFile" : "H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/top.sv",
-    "InstLine" : 39,
+    "InstFile" : "C:/Git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/top.sv",
+    "InstLine" : 43,
     "InstName" : "inst_1",
-    "ModuleFile" : "H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/top.sv",
-    "ModuleLine" : 141,
+    "ModuleFile" : "C:/Git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/top.sv",
+    "ModuleLine" : 175,
     "ModuleName" : "timer"
-   }
-  ]
- },
- {
-  "InstFile" : "H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/fft/fft.v",
-  "InstLine" : 2332,
-  "InstName" : "FFT_Top",
-  "ModuleFile" : "H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/fft/fft.v",
-  "ModuleLine" : 2332,
-  "ModuleName" : "FFT_Top",
-  "SubInsts" : [
+   },
    {
-    "InstFile" : "H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/fft/fft.v",
-    "InstLine" : 2367,
-    "InstName" : "fft_top_inst",
-    "ModuleFile" : "H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/fft/fft.v",
+    "InstFile" : "C:/Git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/top.sv",
+    "InstLine" : 48,
+    "InstName" : "fb_inst",
+    "ModuleFile" : "C:/Git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/frameBuffer_16x16.sv",
     "ModuleLine" : 1,
-    "ModuleName" : "~fft_top.FFT_Top"
+    "ModuleName" : "frameBuffer_16x16",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/frameBuffer_16x16.sv",
+      "InstLine" : 42,
+      "InstName" : "ti",
+      "ModuleFile" : "C:/Git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/frameBuffer_16x16.sv",
+      "ModuleLine" : 82,
+      "ModuleName" : "timer2"
+     }
+    ]
    }
   ]
  }

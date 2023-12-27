@@ -1,84 +1,60 @@
 module gw_gao(
-    P1_COM_SER,
-    P2_COM_RCLK,
-    \processCounter[5] ,
-    \processCounter[4] ,
-    \processCounter[3] ,
-    \processCounter[2] ,
-    \processCounter[1] ,
-    \processCounter[0] ,
-    P3_SEG_SER,
-    P9_SEG_SRCLK,
-    P4_SEG_RCLK,
-    P7_COM_SRCLK,
-    \recieveADC[9] ,
-    \recieveADC[8] ,
-    \recieveADC[7] ,
-    \recieveADC[6] ,
-    \recieveADC[5] ,
-    \recieveADC[4] ,
-    \recieveADC[3] ,
-    \recieveADC[2] ,
-    \recieveADC[1] ,
-    \recieveADC[0] ,
-    \inst_1/counter[7] ,
+    \fb_inst/serial_count[4] ,
+    \fb_inst/serial_count[3] ,
+    \fb_inst/serial_count[2] ,
+    \fb_inst/serial_count[1] ,
+    \fb_inst/serial_count[0] ,
+    \fb_inst/column_count[5] ,
+    \fb_inst/column_count[4] ,
+    \fb_inst/column_count[3] ,
+    \fb_inst/column_count[2] ,
+    \fb_inst/column_count[1] ,
+    \fb_inst/column_count[0] ,
+    \fb_inst/serial_data ,
+    \fb_inst/sclk ,
+    \fb_inst/rclk ,
+    \fb_inst/ti/counter[4] ,
     tms_pad_i,
     tck_pad_i,
     tdi_pad_i,
     tdo_pad_o
 );
 
-input P1_COM_SER;
-input P2_COM_RCLK;
-input \processCounter[5] ;
-input \processCounter[4] ;
-input \processCounter[3] ;
-input \processCounter[2] ;
-input \processCounter[1] ;
-input \processCounter[0] ;
-input P3_SEG_SER;
-input P9_SEG_SRCLK;
-input P4_SEG_RCLK;
-input P7_COM_SRCLK;
-input \recieveADC[9] ;
-input \recieveADC[8] ;
-input \recieveADC[7] ;
-input \recieveADC[6] ;
-input \recieveADC[5] ;
-input \recieveADC[4] ;
-input \recieveADC[3] ;
-input \recieveADC[2] ;
-input \recieveADC[1] ;
-input \recieveADC[0] ;
-input \inst_1/counter[7] ;
+input \fb_inst/serial_count[4] ;
+input \fb_inst/serial_count[3] ;
+input \fb_inst/serial_count[2] ;
+input \fb_inst/serial_count[1] ;
+input \fb_inst/serial_count[0] ;
+input \fb_inst/column_count[5] ;
+input \fb_inst/column_count[4] ;
+input \fb_inst/column_count[3] ;
+input \fb_inst/column_count[2] ;
+input \fb_inst/column_count[1] ;
+input \fb_inst/column_count[0] ;
+input \fb_inst/serial_data ;
+input \fb_inst/sclk ;
+input \fb_inst/rclk ;
+input \fb_inst/ti/counter[4] ;
 input tms_pad_i;
 input tck_pad_i;
 input tdi_pad_i;
 output tdo_pad_o;
 
-wire P1_COM_SER;
-wire P2_COM_RCLK;
-wire \processCounter[5] ;
-wire \processCounter[4] ;
-wire \processCounter[3] ;
-wire \processCounter[2] ;
-wire \processCounter[1] ;
-wire \processCounter[0] ;
-wire P3_SEG_SER;
-wire P9_SEG_SRCLK;
-wire P4_SEG_RCLK;
-wire P7_COM_SRCLK;
-wire \recieveADC[9] ;
-wire \recieveADC[8] ;
-wire \recieveADC[7] ;
-wire \recieveADC[6] ;
-wire \recieveADC[5] ;
-wire \recieveADC[4] ;
-wire \recieveADC[3] ;
-wire \recieveADC[2] ;
-wire \recieveADC[1] ;
-wire \recieveADC[0] ;
-wire \inst_1/counter[7] ;
+wire \fb_inst/serial_count[4] ;
+wire \fb_inst/serial_count[3] ;
+wire \fb_inst/serial_count[2] ;
+wire \fb_inst/serial_count[1] ;
+wire \fb_inst/serial_count[0] ;
+wire \fb_inst/column_count[5] ;
+wire \fb_inst/column_count[4] ;
+wire \fb_inst/column_count[3] ;
+wire \fb_inst/column_count[2] ;
+wire \fb_inst/column_count[1] ;
+wire \fb_inst/column_count[0] ;
+wire \fb_inst/serial_data ;
+wire \fb_inst/sclk ;
+wire \fb_inst/rclk ;
+wire \fb_inst/ti/counter[4] ;
 wire tms_pad_i;
 wire tck_pad_i;
 wire tdi_pad_i;
@@ -152,8 +128,8 @@ gw_con_top  u_icon_top(
 
 ao_top u_ao_top(
     .control(control0[9:0]),
-    .data_i({P1_COM_SER,P2_COM_RCLK,\processCounter[5] ,\processCounter[4] ,\processCounter[3] ,\processCounter[2] ,\processCounter[1] ,\processCounter[0] ,P3_SEG_SER,P9_SEG_SRCLK,P4_SEG_RCLK,P7_COM_SRCLK,\recieveADC[9] ,\recieveADC[8] ,\recieveADC[7] ,\recieveADC[6] ,\recieveADC[5] ,\recieveADC[4] ,\recieveADC[3] ,\recieveADC[2] ,\recieveADC[1] ,\recieveADC[0] }),
-    .clk_i(\inst_1/counter[7] )
+    .data_i({\fb_inst/serial_count[4] ,\fb_inst/serial_count[3] ,\fb_inst/serial_count[2] ,\fb_inst/serial_count[1] ,\fb_inst/serial_count[0] ,\fb_inst/column_count[5] ,\fb_inst/column_count[4] ,\fb_inst/column_count[3] ,\fb_inst/column_count[2] ,\fb_inst/column_count[1] ,\fb_inst/column_count[0] ,\fb_inst/serial_data ,\fb_inst/sclk ,\fb_inst/rclk }),
+    .clk_i(\fb_inst/ti/counter[4] )
 );
 
 endmodule

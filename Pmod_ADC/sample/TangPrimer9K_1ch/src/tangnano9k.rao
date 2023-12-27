@@ -2,35 +2,27 @@
 <GAO_CONFIG>
     <Version>3.0</Version>
     <Mode>Lite</Mode>
-    <AoCore_Lite index="0" sample_clock="inst_1/counter[7]" trig_type="0" capture_amount="2048" implemention="0" input_register_enabled="0" capture_init_data_enabled="0" module_name="top">
+    <AoCore_Lite index="0" sample_clock="fb_inst/ti/counter[4]" trig_type="0" capture_amount="4096" implemention="0" input_register_enabled="0" capture_init_data_enabled="0" module_name="top">
         <SignalList>
-            <Signal>P1_COM_SER</Signal>
-            <Signal>P2_COM_RCLK</Signal>
-            <Bus name="processCounter[5:0]">
-                <Signal>processCounter[5]</Signal>
-                <Signal>processCounter[4]</Signal>
-                <Signal>processCounter[3]</Signal>
-                <Signal>processCounter[2]</Signal>
-                <Signal>processCounter[1]</Signal>
-                <Signal>processCounter[0]</Signal>
+            <Bus name="fb_inst/serial_count[4:0]">
+                <Signal>fb_inst/serial_count[4]</Signal>
+                <Signal>fb_inst/serial_count[3]</Signal>
+                <Signal>fb_inst/serial_count[2]</Signal>
+                <Signal>fb_inst/serial_count[1]</Signal>
+                <Signal>fb_inst/serial_count[0]</Signal>
             </Bus>
-            <Signal>P3_SEG_SER</Signal>
-            <Signal>P9_SEG_SRCLK</Signal>
-            <Signal>P4_SEG_RCLK</Signal>
-            <Signal>P7_COM_SRCLK</Signal>
-            <Bus name="recieveADC[9:0]">
-                <Signal>recieveADC[9]</Signal>
-                <Signal>recieveADC[8]</Signal>
-                <Signal>recieveADC[7]</Signal>
-                <Signal>recieveADC[6]</Signal>
-                <Signal>recieveADC[5]</Signal>
-                <Signal>recieveADC[4]</Signal>
-                <Signal>recieveADC[3]</Signal>
-                <Signal>recieveADC[2]</Signal>
-                <Signal>recieveADC[1]</Signal>
-                <Signal>recieveADC[0]</Signal>
+            <Bus name="fb_inst/column_count[5:0]">
+                <Signal>fb_inst/column_count[5]</Signal>
+                <Signal>fb_inst/column_count[4]</Signal>
+                <Signal>fb_inst/column_count[3]</Signal>
+                <Signal>fb_inst/column_count[2]</Signal>
+                <Signal>fb_inst/column_count[1]</Signal>
+                <Signal>fb_inst/column_count[0]</Signal>
             </Bus>
+            <Signal>fb_inst/serial_data</Signal>
+            <Signal>fb_inst/sclk</Signal>
+            <Signal>fb_inst/rclk</Signal>
         </SignalList>
     </AoCore_Lite>
-    <GAO_ID>1010000011111101</GAO_ID>
+    <GAO_ID>1100001100111000</GAO_ID>
 </GAO_CONFIG>

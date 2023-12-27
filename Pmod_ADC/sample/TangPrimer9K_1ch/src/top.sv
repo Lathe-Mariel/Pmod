@@ -17,7 +17,11 @@ module top (
   output wire P1_COM_SER,
   output wire P7_COM_SRCLK,
   output wire P2_COM_RCLK,
-  output wire P8_COM_OE
+  output wire P8_COM_OE,
+  output wire clear,
+  output wire sclk,
+  output wire rclk,
+  output wire serial_data
 );
 
   logic  controlCLK;
@@ -40,6 +44,15 @@ module top (
     .clk (clk),
     .overflow(controlCLK)
   );
+
+  frameBuffer_16x16 fb_inst(
+    .clk(clk),
+    .sclk(sclk),
+    .rclk(rclk),
+    .clear(clear),
+    .serial_data(serial_data),
+    .sw(0)
+);
 
   always @(posedge controlCLK)begin
 
@@ -137,6 +150,7 @@ module top (
     endcase
   endfunction
 
+/*
   wire [9:0] idx;
 	FFT_Top fft_inst(
 		.idx(idx_o), //output [7:0] idx
@@ -154,7 +168,7 @@ module top (
 		.start(start_i), //input start
 		.clk(clk_i), //input clk(fftClk)
 		.rst(rst_i) //input rst
-	);
+	);*/
 
 endmodule
 
