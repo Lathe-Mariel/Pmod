@@ -51,7 +51,10 @@ module top (
     .rclk(rclk),
     .clear(clear),
     .serial_data(serial_data),
-    .sw(0)
+    .sw(0),
+    .set_frag(0),
+    .set_row(0),
+    .set_value(0)
 );
 
   always @(posedge controlCLK)begin
@@ -71,7 +74,7 @@ module top (
       DIN <= 1;
       CS <= 0;
     end else if(processCounter[4:0] == 5'd10)begin  // D2
-      DIN <= 1;
+      DIN <= 0;
       CS <= 0;
     end else if(processCounter[4:0] == 5'd11)begin  // D1
       DIN <= 0;
@@ -150,8 +153,14 @@ module top (
     endcase
   endfunction
 
-/*
+
   wire [9:0] idx;
+  logic [7:0] idx_o;
+  logic [9:0] xk_re_o;
+  logic [9:0] xk_im_o;
+  logic sod_o, ipd_o, eod_o, soud_o, opd_o, eoud_o;
+  logic set_frag, set_row, set_value;
+
 	FFT_Top fft_inst(
 		.idx(idx_o), //output [7:0] idx
 		.xk_re(xk_re_o), //output [9:0] xk_re
@@ -165,15 +174,23 @@ module top (
 		.eoud(eoud_o), //output eoud,  stop of unload data
 		.xn_re(recieveADC), //input [9:0] xn_re
 		.xn_im(recieveADC), //input [9:0] xn_im
-		.start(start_i), //input start
-		.clk(clk_i), //input clk(fftClk)
-		.rst(rst_i) //input rst
-	);*/
+		.start(processCounter[15]), //input start
+		.clk(processCounter[4]), //input clk(fftClk)
+		.rst(0) //input rst
+	);
+
+  always @(posedge sod_o)begin
+    if(!set_frag)begin
+      set_frag <= 1'b1;
+      set_row <= idx_o;
+      set_value <= xk_re_o/64;
+    end
+  end
 
 endmodule
 
 module timer #(
-  parameter COUNT_MAX = 2700  //1000us
+  parameter COUNT_MAX = 5400  //5kHz
 ) (
   input  wire  clk,
   output logic overflow

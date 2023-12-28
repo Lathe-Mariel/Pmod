@@ -1,78 +1,34 @@
 GowinSynthesis start
 Running parser ...
-Analyzing Verilog file 'C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv'
-WARN  (EX3628) : Redeclaration of ANSI port 'P1_COM_SER' is not allowed("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":35)
-WARN  (EX3628) : Redeclaration of ANSI port 'P2_COM_RCLK' is not allowed("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":36)
-WARN  (EX3628) : Redeclaration of ANSI port 'P3_SEG_SER' is not allowed("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":38)
-WARN  (EX3628) : Redeclaration of ANSI port 'P4_SEG_RCLK' is not allowed("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":39)
-Analyzing Verilog file 'C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv'
-WARN  (EX3095) : Converting concatenation to assignment pattern("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":36)
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'
-Analyzing included file 'C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
-Back to file 'C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'
-Analyzing included file 'C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_define.v'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Back to file 'C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Analyzing included file 'C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Back to file 'C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Analyzing included file 'C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_parameter.v'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Back to file 'C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'
-Analyzing included file 'C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_control\gw_con_top_define.v'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Back to file 'C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Analyzing included file 'C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_parameter.v'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Back to file 'C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\gw_jtag.v'
-Analyzing Verilog file 'C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\gw_gao_top.v'
-Compiling module 'top'("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":3)
-Extracting RAM for identifier 'display7seg'("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":31)
-Compiling module 'timer'("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":175)
-WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":189)
-WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":192)
-Compiling module 'frameBuffer_16x16'("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":1)
-Extracting RAM for identifier 'frameBuffer'("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":20)
-Compiling module 'timer2'("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":82)
-WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":98)
-WARN  (EX3791) : Expression size 7 truncated to fit in target size 6("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":49)
-WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":53)
-WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":56)
-WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'sw'("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":54)
-WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":59)
-Compiling module '**'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":0)
-Extracting RAM for identifier '**'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":0)
-Compiling module '**'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":0)
-WARN  (EX3791) : Expression size ** truncated to fit in target size **("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":0)
-Compiling module '**'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":0)
-Extracting RAM for identifier '**'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":0)
-Compiling module '**'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":0)
-Compiling module 'GW_JTAG'("C:\Gowin\Gowin_V1.9.8.11_Education\IDE\data\ipcores\gw_jtag.v":1)
-Compiling module 'gw_gao'("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\gw_gao_top.v":1)
-Trying to combine GAO to RTL design
-NOTE  (EX0101) : Current top module is "top"
-WARN  (EX0211) : The output port "boardLED[5]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
-WARN  (EX0211) : The output port "boardLED[4]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
-WARN  (EX0211) : The output port "boardLED[3]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
-WARN  (EX0211) : The output port "boardLED[2]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
-WARN  (EX0211) : The output port "boardLED[1]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
-WARN  (EX0211) : The output port "boardLED[0]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
-[5%] Running netlist conversion ...
-WARN  (CV0016) : Input sw1 is unused("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":6)
-WARN  (CV0016) : Input sw2 is unused("C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":7)
-Running device independent optimization ...
-[10%] Optimizing Phase 0 completed
-[15%] Optimizing Phase 1 completed
-[25%] Optimizing Phase 2 completed
-Running inference ...
-[30%] Inferring Phase 0 completed
-[40%] Inferring Phase 1 completed
-[50%] Inferring Phase 2 completed
-[55%] Inferring Phase 3 completed
-Running technical mapping ...
-[60%] Tech-Mapping Phase 0 completed
-[65%] Tech-Mapping Phase 1 completed
-[75%] Tech-Mapping Phase 2 completed
-[80%] Tech-Mapping Phase 3 completed
-[90%] Tech-Mapping Phase 4 completed
-[95%] Generate netlist file "C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\tangnano9k.vg" completed
-[100%] Generate report file "C:\Git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\tangnano9k_syn.rpt.html" completed
+Analyzing Verilog file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v'
+Analyzing Verilog file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv'
+WARN  (EX3095) : Converting concatenation to assignment pattern("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":39)
+WARN  (EX3786) : Assignment to input 'set_value'("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":51)
+ERROR (EX3900) : Procedural assignment to a non-register 'set_frag' is not permitted("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":52)
+WARN  (EX3786) : Assignment to input 'set_value'("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":54)
+ERROR (EX3928) : Module 'frameBuffer_16x16' is ignored due to previous errors("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":91)
+ERROR (EX3928) : Module 'timer2' is ignored due to previous errors("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":113)
+Verilog file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv' ignored due to errors
+Analyzing Verilog file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv'
+WARN  (EX3628) : Redeclaration of ANSI port 'P1_COM_SER' is not allowed("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":35)
+WARN  (EX3628) : Redeclaration of ANSI port 'P2_COM_RCLK' is not allowed("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":36)
+WARN  (EX3628) : Redeclaration of ANSI port 'P3_SEG_SER' is not allowed("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":38)
+WARN  (EX3628) : Redeclaration of ANSI port 'P4_SEG_RCLK' is not allowed("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":39)
+Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'
+Analyzing included file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
+Back to file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
+Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'
+Analyzing included file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_define.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
+Back to file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
+Analyzing included file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
+Back to file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
+Analyzing included file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_parameter.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
+Back to file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
+Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'
+Analyzing included file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_control\gw_con_top_define.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
+Back to file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
+Analyzing included file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_parameter.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
+Back to file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
+Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\gw_jtag.v'
+Analyzing Verilog file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\gw_gao_top.v'
 GowinSynthesis finish

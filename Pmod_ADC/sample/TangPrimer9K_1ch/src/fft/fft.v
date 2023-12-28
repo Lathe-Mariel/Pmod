@@ -2364,23 +2364,7 @@ input clk;
 input rst;
 wire VCC;
 wire GND;
-  \~fft_top.FFT_Top  fft_top_inst (
-    .start(start),
-    .clk(clk),
-    .rst(rst),
-    .xn_re(xn_re[9:0]),
-    .xn_im(xn_im[9:0]),
-    .sod(sod),
-    .soud(soud),
-    .eoud(eoud),
-    .busy(busy),
-    .ipd(ipd),
-    .eod(eod),
-    .opd(opd),
-    .idx(idx[7:0]),
-    .xk_im(xk_im[9:0]),
-    .xk_re(xk_re[9:0])
-);
+
   VCC VCC_cZ (
     .V(VCC)
 );

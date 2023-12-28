@@ -4,6 +4,9 @@ output logic sclk,
 output logic serial_data,
 output logic rclk,
 output logic clear,
+inout reg set_frag,
+input reg[3:0] set_row,
+input reg[3:0] set_value,
 input sw
 );
 
@@ -43,6 +46,15 @@ timer2 ti(clk, serial_clk);
 logic[4:0] temp;
 
 always @(negedge serial_clk)begin
+  if(set_frag)begin
+    if(set_value == 'b1)begin
+      set_value <= 0;
+      set_frag <= 0;
+    end else begin
+      set_value <= set_value - 'b1;
+      frameBuffer[set_row][set_value] <= 2'd2;
+    end
+  end
 
   if(serial_count == 'd31)begin
     serial_count <= 'd0;
