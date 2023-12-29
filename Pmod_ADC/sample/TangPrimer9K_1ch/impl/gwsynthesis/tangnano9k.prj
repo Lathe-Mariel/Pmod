@@ -4,22 +4,21 @@
     <Version>beta</Version>
     <Device id="GW1NR-9C" package="QFN88P" speed="6" partNumber="GW1NR-LV9QN88PC6/I5"/>
     <FileList>
-        <File path="E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v" type="verilog"/>
-        <File path="E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv" type="verilog"/>
-        <File path="E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv" type="verilog"/>
-        <File path="C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v" type="gao"/>
-        <File path="C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v" type="gao"/>
-        <File path="C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v" type="gao"/>
-        <File path="C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\gw_jtag.v" type="gao"/>
-        <File path="E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\gw_gao_top.v" type="gao"/>
+        <File path="H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v" type="verilog"/>
+        <File path="H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv" type="verilog"/>
+        <File path="H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv" type="verilog"/>
+        <File path="H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v" type="gao"/>
+        <File path="H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v" type="gao"/>
+        <File path="H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v" type="gao"/>
+        <File path="H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\gw_jtag.v" type="gao"/>
+        <File path="H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\gw_gao_top.v" type="gao"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>
-        <Option type="dsp_balance" value="0"/>
-        <Option type="include_path" value="C:/Gowin/Gowin_V1.9.8.09_Education/IDE/data/ipcores/GAO_LITE"/>
-        <Option type="include_path" value="E:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/impl/gwsynthesis/RTL_GAO"/>
+        <Option type="include_path" value="h:/Gowin/Gowin_V1.9.9Beta-6/IDE/data/ipcores/GAO_LITE"/>
+        <Option type="include_path" value="H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/impl/gwsynthesis/RTL_GAO"/>
         <Option type="looplimit" value="2000"/>
-        <Option type="output_file" value="E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\tangnano9k.vg"/>
+        <Option type="output_file" value="H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\tangnano9k.vg"/>
         <Option type="print_all_synthesis_warning" value="0"/>
         <Option type="ram_rw_check" value="1"/>
         <Option type="top_module" value="top"/>

@@ -1,34 +1,118 @@
 GowinSynthesis start
 Running parser ...
-Analyzing Verilog file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v'
-Analyzing Verilog file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv'
-WARN  (EX3095) : Converting concatenation to assignment pattern("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":39)
-WARN  (EX3786) : Assignment to input 'set_value'("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":51)
-ERROR (EX3900) : Procedural assignment to a non-register 'set_frag' is not permitted("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":52)
-WARN  (EX3786) : Assignment to input 'set_value'("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":54)
-ERROR (EX3928) : Module 'frameBuffer_16x16' is ignored due to previous errors("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":91)
-ERROR (EX3928) : Module 'timer2' is ignored due to previous errors("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":113)
-Verilog file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv' ignored due to errors
-Analyzing Verilog file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv'
-WARN  (EX3628) : Redeclaration of ANSI port 'P1_COM_SER' is not allowed("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":35)
-WARN  (EX3628) : Redeclaration of ANSI port 'P2_COM_RCLK' is not allowed("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":36)
-WARN  (EX3628) : Redeclaration of ANSI port 'P3_SEG_SER' is not allowed("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":38)
-WARN  (EX3628) : Redeclaration of ANSI port 'P4_SEG_RCLK' is not allowed("E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":39)
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'
-Analyzing included file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
-Back to file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'
-Analyzing included file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_define.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Back to file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Analyzing included file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Back to file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Analyzing included file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_parameter.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Back to file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":693)
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'
-Analyzing included file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_control\gw_con_top_define.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Back to file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Analyzing included file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_parameter.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Back to file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'("C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.09_Education\IDE\data\ipcores\gw_jtag.v'
-Analyzing Verilog file 'E:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\gw_gao_top.v'
+Analyzing Verilog file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v'
+Analyzing Verilog file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv'
+WARN  (EX3095) : Converting concatenation to assignment pattern("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":39)
+Analyzing Verilog file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv'
+WARN  (EX3628) : Redeclaration of ANSI port 'P1_COM_SER' is not allowed("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":35)
+WARN  (EX3628) : Redeclaration of ANSI port 'P2_COM_RCLK' is not allowed("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":36)
+WARN  (EX3628) : Redeclaration of ANSI port 'P3_SEG_SER' is not allowed("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":38)
+WARN  (EX3628) : Redeclaration of ANSI port 'P4_SEG_RCLK' is not allowed("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":39)
+Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'
+Analyzing included file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
+Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
+Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'
+Analyzing included file 'h:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_define.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":684)
+Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":684)
+Analyzing included file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":684)
+Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":684)
+Analyzing included file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_parameter.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":684)
+Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":684)
+Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'
+Analyzing included file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_control\gw_con_top_define.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
+Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
+Analyzing included file 'h:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_parameter.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
+Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
+Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\gw_jtag.v'
+Analyzing Verilog file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\gw_gao_top.v'
+Compiling module 'top'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":3)
+Extracting RAM for identifier 'display7seg'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":31)
+Compiling module 'timer'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":196)
+WARN  (EX3791) : Expression size 14 truncated to fit in target size 13("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":210)
+WARN  (EX3791) : Expression size 14 truncated to fit in target size 13("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":213)
+Compiling module 'frameBuffer_16x16'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":1)
+Extracting RAM for identifier 'frameBuffer'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":23)
+Compiling module 'timer2'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":104)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":120)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":64)
+WARN  (EX3791) : Expression size 7 truncated to fit in target size 6("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":71)
+WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":75)
+WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":78)
+WARN  (EX3670) : Actual bit length 1 differs from formal bit length 4 for port 'set_row'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":56)
+WARN  (EX3670) : Actual bit length 1 differs from formal bit length 4 for port 'set_value'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":57)
+WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":62)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 1("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":119)
+WARN  (EX3791) : Expression size 4 truncated to fit in target size 1("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":120)
+Compiling module 'FFT_Top'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2332)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'rst'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":191)
+Compiling module 'gw_gao'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\gw_gao_top.v":1)
+Compiling module 'GW_JTAG'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\gw_jtag.v":1)
+Compiling module '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":0)
+Compiling module '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":0)
+WARN  (EX3791) : Expression size ** truncated to fit in target size **("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":0)
+Compiling module '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":0)
+Extracting RAM for identifier '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":0)
+Trying to combine GAO to RTL design
+NOTE  (EX0101) : Current top module is "top"
+WARN  (EX0211) : The output port "idx[7]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2350)
+WARN  (EX0211) : The output port "idx[6]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2350)
+WARN  (EX0211) : The output port "idx[5]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2350)
+WARN  (EX0211) : The output port "idx[4]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2350)
+WARN  (EX0211) : The output port "idx[3]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2350)
+WARN  (EX0211) : The output port "idx[2]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2350)
+WARN  (EX0211) : The output port "idx[1]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2350)
+WARN  (EX0211) : The output port "idx[0]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2350)
+WARN  (EX0211) : The output port "xk_re[9]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2351)
+WARN  (EX0211) : The output port "xk_re[8]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2351)
+WARN  (EX0211) : The output port "xk_re[7]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2351)
+WARN  (EX0211) : The output port "xk_re[6]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2351)
+WARN  (EX0211) : The output port "xk_re[5]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2351)
+WARN  (EX0211) : The output port "xk_re[4]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2351)
+WARN  (EX0211) : The output port "xk_re[3]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2351)
+WARN  (EX0211) : The output port "xk_re[2]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2351)
+WARN  (EX0211) : The output port "xk_re[1]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2351)
+WARN  (EX0211) : The output port "xk_re[0]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2351)
+WARN  (EX0211) : The output port "xk_im[9]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2352)
+WARN  (EX0211) : The output port "xk_im[8]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2352)
+WARN  (EX0211) : The output port "xk_im[7]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2352)
+WARN  (EX0211) : The output port "xk_im[6]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2352)
+WARN  (EX0211) : The output port "xk_im[5]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2352)
+WARN  (EX0211) : The output port "xk_im[4]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2352)
+WARN  (EX0211) : The output port "xk_im[3]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2352)
+WARN  (EX0211) : The output port "xk_im[2]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2352)
+WARN  (EX0211) : The output port "xk_im[1]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2352)
+WARN  (EX0211) : The output port "xk_im[0]" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2352)
+WARN  (EX0211) : The output port "sod" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2353)
+WARN  (EX0211) : The output port "ipd" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2354)
+WARN  (EX0211) : The output port "eod" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2355)
+WARN  (EX0211) : The output port "busy" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2356)
+WARN  (EX0211) : The output port "soud" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2357)
+WARN  (EX0211) : The output port "opd" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2358)
+WARN  (EX0211) : The output port "eoud" of module "FFT_Top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":2359)
+WARN  (EX0211) : The output port "boardLED[5]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
+WARN  (EX0211) : The output port "boardLED[4]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
+WARN  (EX0211) : The output port "boardLED[3]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
+WARN  (EX0211) : The output port "boardLED[2]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
+WARN  (EX0211) : The output port "boardLED[1]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":12)
+[5%] Running netlist conversion ...
+WARN  (CV0016) : Input sw1 is unused("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":6)
+WARN  (CV0016) : Input sw2 is unused("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":7)
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "FFT_Top" instantiated to "fft_inst" is swept in optimizing("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":192)
+[95%] Generate netlist file "H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\tangnano9k.vg" completed
+[100%] Generate report file "H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\tangnano9k_syn.rpt.html" completed
 GowinSynthesis finish

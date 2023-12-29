@@ -51,10 +51,10 @@ module top (
     .rclk(rclk),
     .clear(clear),
     .serial_data(serial_data),
-    .sw(0),
-    .set_frag(0),
-    .set_row(0),
-    .set_value(0)
+    .set_busy(set_busy),
+    .set_request(set_request),
+    .set_row(set_row),
+    .set_value(set_value)
 );
 
   always @(posedge controlCLK)begin
@@ -113,6 +113,19 @@ module top (
     P3_SEG_SER <= currentBit(decode7seg(display7seg[processCounter[5:3]]));
 
 //    P3_SEG_SER <= currentBit(decode7seg(display7seg[processCounter[5:3]]));
+
+//showing frame buffer
+    if(sod_o)begin
+      set_row <= idx_o;
+      set_value <= xk_re_o/64;
+      if(!set_request & !set_busy)begin
+        set_request <= 1'b1;
+      end
+      if(set_busy)begin
+        set_request <= 1'b0;
+      end
+    end
+
   end
 
   function currentBit;
@@ -153,13 +166,12 @@ module top (
     endcase
   endfunction
 
-
   wire [9:0] idx;
   logic [7:0] idx_o;
   logic [9:0] xk_re_o;
   logic [9:0] xk_im_o;
   logic sod_o, ipd_o, eod_o, soud_o, opd_o, eoud_o;
-  logic set_frag, set_row, set_value;
+  logic set_busy, set_row, set_value, set_request;
 
 	FFT_Top fft_inst(
 		.idx(idx_o), //output [7:0] idx
@@ -178,14 +190,6 @@ module top (
 		.clk(processCounter[4]), //input clk(fftClk)
 		.rst(0) //input rst
 	);
-
-  always @(posedge sod_o)begin
-    if(!set_frag)begin
-      set_frag <= 1'b1;
-      set_row <= idx_o;
-      set_value <= xk_re_o/64;
-    end
-  end
 
 endmodule
 

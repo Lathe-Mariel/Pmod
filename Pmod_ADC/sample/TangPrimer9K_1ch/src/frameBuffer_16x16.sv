@@ -4,10 +4,10 @@ output logic sclk,
 output logic serial_data,
 output logic rclk,
 output logic clear,
-inout reg set_frag,
+output reg set_busy,
+input logic set_request,
 input reg[3:0] set_row,
-input reg[3:0] set_value,
-input sw
+input reg[3:0] set_value
 );
 
 logic [4:0] serial_count;    // serial counter  for 32bit serial data
@@ -38,20 +38,30 @@ logic[1:0] frameBuffer[15:0][15:0]= {
                             '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d0},  //14
                             '{'d0,'d0,'d0,'d0,'d0,'d0,'d0,'d0,  'd0,'d0,'d0,'d0,'d0,'d0,'d0,'d0}};  //15;
 
-//logic down_flag = 'b0;
 logic serial_clk;
 
 //timer ti(clk, m_clk);
 timer2 ti(clk, serial_clk);
 logic[4:0] temp;
 
+logic[9:0] value_buffer;
+
 always @(negedge serial_clk)begin
-  if(set_frag)begin
-    if(set_value == 'b1)begin
-      set_value <= 0;
-      set_frag <= 0;
+
+
+  if(set_request)begin
+    set_busy <= 1'b1;
+    value_buffer <= set_value;
+  end
+
+  if(set_busy)begin
+    if(value_buffer == 'b1)begin
+      frameBuffer[set_row][set_value] <= 2'd2;
+      value_buffer <= 0;
+      set_busy <= 0;
     end else begin
-      set_value <= set_value - 'b1;
+      set_busy <= 1;
+      value_buffer <= value_buffer - 'b1;
       frameBuffer[set_row][set_value] <= 2'd2;
     end
   end
