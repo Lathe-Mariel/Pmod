@@ -12,7 +12,7 @@
     "InstLine" : 43,
     "InstName" : "inst_1",
     "ModuleFile" : "H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/top.sv",
-    "ModuleLine" : 196,
+    "ModuleLine" : 201,
     "ModuleName" : "timer"
    },
    {
@@ -28,18 +28,28 @@
       "InstLine" : 44,
       "InstName" : "ti",
       "ModuleFile" : "H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/frameBuffer_16x16.sv",
-      "ModuleLine" : 104,
+      "ModuleLine" : 105,
       "ModuleName" : "timer2"
      }
     ]
    },
    {
     "InstFile" : "H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/top.sv",
-    "InstLine" : 176,
+    "InstLine" : 180,
     "InstName" : "fft_inst",
     "ModuleFile" : "H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/fft/fft.v",
-    "ModuleLine" : 2332,
-    "ModuleName" : "FFT_Top"
+    "ModuleLine" : 1716,
+    "ModuleName" : "FFT_Top",
+    "SubInsts" : [
+     {
+      "InstFile" : "H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/fft/fft.v",
+      "InstLine" : 1751,
+      "InstName" : "fft_top_inst",
+      "ModuleFile" : "H:/git/Pmod/Pmod_ADC/sample/TangPrimer9K_1ch/src/fft/fft.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "~fft_top.FFT_Top"
+     }
+    ]
    }
   ]
  }

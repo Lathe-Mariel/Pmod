@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="23" Alu="7" Lut="48" Ssram="1">
-    <SubModule name="inst_1" Register="14" Alu="12" Lut="9"/>
-    <SubModule name="fb_inst" Register="24" Alu="5" Lut="58" Ssram="16">
+<Module name="top" Register="32" Alu="7" Lut="51" Ssram="1">
+    <SubModule name="inst_1" Register="10" Alu="8" Lut="7"/>
+    <SubModule name="fb_inst" Register="514" Alu="5" Lut="352">
         <SubModule name="ti" Register="8" Lut="13"/>
     </SubModule>
-    <SubModule name="gw_gao_inst_0" Register="157" Lut="174" Bsram="4"/>
+    <SubModule name="gw_gao_inst_0" Register="157" Lut="170" Bsram="4"/>
+    <SubModule name="fft_inst" Register="101" Alu="52" Lut="251" Dsp="2" Bsram="5"/>
 </Module>

@@ -44,7 +44,7 @@ logic serial_clk;
 timer2 ti(clk, serial_clk);
 logic[4:0] temp;
 
-logic[9:0] value_buffer;
+logic[3:0] value_buffer;
 
 always @(negedge serial_clk)begin
 
@@ -55,15 +55,16 @@ always @(negedge serial_clk)begin
   end
 
   if(set_busy)begin
-    if(value_buffer == 'b1)begin
-      frameBuffer[set_row][set_value] <= 2'd2;
-      value_buffer <= 0;
-      set_busy <= 0;
-    end else begin
-      set_busy <= 1;
-      value_buffer <= value_buffer - 'b1;
-      frameBuffer[set_row][set_value] <= 2'd2;
+    for(int i=0;i<16;i++)begin
+      if(value_buffer == i)begin
+        frameBuffer[i][set_row] <= 2'd3;
+      end else if(value_buffer >= i)begin
+        frameBuffer[i][set_row] <= 2'd1;
+      end else begin
+        frameBuffer[i][set_row] <= 2'd0;
+      end
     end
+    set_busy <= 0;
   end
 
   if(serial_count == 'd31)begin

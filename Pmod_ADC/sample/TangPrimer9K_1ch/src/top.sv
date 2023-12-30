@@ -115,9 +115,12 @@ module top (
 //    P3_SEG_SER <= currentBit(decode7seg(display7seg[processCounter[5:3]]));
 
 //showing frame buffer
-    if(sod_o)begin
+    if(opd_o)begin
+//    if(processCounter[10])begin
       set_row <= idx_o;
-      set_value <= xk_re_o/64;
+//      set_row <= processCounter[8:5];
+      set_value <= 3+ xk_re_o/64;
+//      set_value <= 4'd7;
       if(!set_request & !set_busy)begin
         set_request <= 1'b1;
       end
@@ -167,34 +170,36 @@ module top (
   endfunction
 
   wire [9:0] idx;
-  logic [7:0] idx_o;
+  logic [3:0] idx_o;
   logic [9:0] xk_re_o;
   logic [9:0] xk_im_o;
   logic sod_o, ipd_o, eod_o, soud_o, opd_o, eoud_o;
-  logic set_busy, set_row, set_value, set_request;
+  logic set_busy, set_request;
+  logic[3:0] set_row, set_value;
 
 	FFT_Top fft_inst(
-		.idx(idx_o), //output [7:0] idx
+		.idx(idx_o), //output [3:0] idx
 		.xk_re(xk_re_o), //output [9:0] xk_re
 		.xk_im(xk_im_o), //output [9:0] xk_im
-		.sod(sod_o), //output sod,  start of domain sequence(starting data input)
-		.ipd(ipd_o), //output ipd,  this signal is High during input data sampling
-		.eod(eod_o), //output eod,  end of domain sequence(ending data input)
+		.sod(boardLED[2]), //output sod,  start of domain sequence(starting data input)
+		.ipd(boardLED[3]), //output ipd,  this signal is High during input data sampling
+		.eod(boardLED[4]), //output eod,  end of domain sequence(ending data input)
 		.busy(boardLED[0]), //output busy,  this signal is High durting translate data
 		.soud(soud_o), //output soud,  start of unload data
 		.opd(opd_o), //output opd,  during output data
-		.eoud(eoud_o), //output eoud,  stop of unload data
-		.xn_re(recieveADC), //input [9:0] xn_re
-		.xn_im(recieveADC), //input [9:0] xn_im
-		.start(processCounter[15]), //input start
+		.eoud(boardLED[5]), //output eoud,  stop of unload data
+		.xn_re(recieveADC & 10'b1000000000), //input [9:0] xn_re
+		.xn_im(recieveADC & 10'b1000000000), //input [9:0] xn_im
+		.start(processCounter[7]), //input start
 		.clk(processCounter[4]), //input clk(fftClk)
 		.rst(0) //input rst
 	);
 
+assign boardLED[1] = opd_o;
 endmodule
 
 module timer #(
-  parameter COUNT_MAX = 5400  //5kHz
+  parameter COUNT_MAX = 300
 ) (
   input  wire  clk,
   output logic overflow

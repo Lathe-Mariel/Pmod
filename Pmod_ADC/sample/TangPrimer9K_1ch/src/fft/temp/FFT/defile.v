@@ -1,9 +1,9 @@
 `define MODULE_NAME FFT_Top
 `define TARGET_DEVICE_GW1NR_9C
 `define FIXED
-`define FFT256
-`define POINTS 256
-`define POINTS_LOG 8
+`define FFT16
+`define POINTS 16
+`define POINTS_LOG 4
 `define LOW_RESOURCE
 `define MODE_FORWARD
 `define OUTPUT_NATURAL
