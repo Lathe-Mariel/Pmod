@@ -8,28 +8,35 @@ WARN  (EX3628) : Redeclaration of ANSI port 'P1_COM_SER' is not allowed("H:\git\
 WARN  (EX3628) : Redeclaration of ANSI port 'P2_COM_RCLK' is not allowed("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":36)
 WARN  (EX3628) : Redeclaration of ANSI port 'P3_SEG_SER' is not allowed("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":38)
 WARN  (EX3628) : Redeclaration of ANSI port 'P4_SEG_RCLK' is not allowed("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":39)
-Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'
-Analyzing included file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
-Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
-Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'
-Analyzing included file 'h:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_define.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":684)
-Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":684)
-Analyzing included file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":684)
-Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":684)
-Analyzing included file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_parameter.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":684)
-Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":684)
-Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'
-Analyzing included file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_control\gw_con_top_define.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Analyzing included file 'h:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_parameter.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
+Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_crc32.v'
+Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v'
+Analyzing included file 'h:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_define.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":327)
+Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":327)
+Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v'
+Analyzing included file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v":150)
+Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v":150)
+Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'
+Analyzing included file 'h:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_define.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2738)
+Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2738)
+Analyzing included file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2738)
+Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2738)
+Analyzing included file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_expression.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2738)
+Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2738)
+Analyzing included file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_parameter.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2738)
+Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2738)
+Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v'
+Analyzing included file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_control\gw_con_top_define.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
+Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
+Analyzing included file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\ao_control\gw_con_parameter.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
+Back to file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
 Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\gw_jtag.v'
 Analyzing Verilog file 'H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\gw_gao_top.v'
 Compiling module 'top'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":3)
 Extracting RAM for identifier 'display7seg'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":31)
-Compiling module 'timer'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":201)
-WARN  (EX3791) : Expression size 10 truncated to fit in target size 9("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":215)
-WARN  (EX3791) : Expression size 10 truncated to fit in target size 9("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":218)
+Extracting RAM for identifier 'recieveADC'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":33)
+Compiling module 'timer'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":221)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":235)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":238)
 Compiling module 'frameBuffer_16x16'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":1)
 Extracting RAM for identifier 'frameBuffer'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":23)
 Compiling module 'timer2'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":105)
@@ -37,9 +44,10 @@ WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("H:\git\Pmo
 WARN  (EX3791) : Expression size 7 truncated to fit in target size 6("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":72)
 WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":76)
 WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\frameBuffer_16x16.sv":79)
-WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":62)
-WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":122)
-Compiling module 'FFT_Top'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":1716)
+WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":68)
+WARN  (EX3791) : Expression size 26 truncated to fit in target size 4("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":132)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":136)
+Compiling module 'FFT_Top'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":1845)
 Compiling module '**'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":0)
 Compiling module '**'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":0)
 Compiling module '**'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":0)
@@ -57,14 +65,15 @@ Compiling module '**'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.
 Compiling module '**'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":0)
 Compiling module '**'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":0)
 Compiling module '**'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":0)
-WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'rst'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":195)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'rst'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.sv":215)
 Compiling module 'gw_gao'("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\RTL_GAO\gw_gao_top.v":1)
 Compiling module 'GW_JTAG'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\gw_jtag.v":1)
-Compiling module '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":0)
-Compiling module '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":0)
-WARN  (EX3791) : Expression size ** truncated to fit in target size **("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":0)
-Compiling module '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":0)
-Extracting RAM for identifier '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":0)
+Compiling module '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":0)
+Compiling module '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":0)
+Compiling module '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v":0)
+Extracting RAM for identifier '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v":0)
+Compiling module '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_crc32.v":0)
+Compiling module '**'("H:\Gowin\Gowin_V1.9.9Beta-6\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":0)
 Trying to combine GAO to RTL design
 NOTE  (EX0101) : Current top module is "top"
 [5%] Running netlist conversion ...
@@ -85,7 +94,6 @@ Running technical mapping ...
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
-WARN  (NL0002) : The module "~memory.FFT_Top_1" instantiated to "imMem" is swept in optimizing("H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\fft\fft.v":0)
 [95%] Generate netlist file "H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\tangnano9k.vg" completed
 [100%] Generate report file "H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\gwsynthesis\tangnano9k_syn.rpt.html" completed
 GowinSynthesis finish

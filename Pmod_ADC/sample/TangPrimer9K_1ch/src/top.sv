@@ -30,13 +30,19 @@ module top (
 
   logic[3:0] display7seg[8] = {4'd0, 4'd0, 4'd0, 4'd0, 4'd0, 4'd0, 4'd0, 4'd0}; //000000-999999
 
-  logic[9:0] recieveADC;
+  logic[9:0] recieveADC[128];
 
   logic P1_COM_SER;
   logic P2_COM_RCLK;
 
   logic P3_SEG_SER;
   logic P4_SEG_RCLK;
+
+//  logic[9:0] adc_sample;
+
+  logic[15:0] sum;
+
+//  assign adc_sample = recieveADC[processCounter[9:3]];
 
   timer #(
     .COUNT_MAX()
@@ -85,7 +91,7 @@ module top (
     end else if(processCounter[4:0] < 5'd15)begin  // 0
       CS <= 0;
     end else if(processCounter[4:0] > 5'd14 && processCounter[4:0] < 25)begin  // recieve data
-      recieveADC[24 - processCounter[4:0]] <= DOUT;
+      recieveADC[processCounter[11:5]][24 - processCounter[4:0]] <= DOUT;
       DIN <= 0;
       CS <= 0;
     end else begin
@@ -93,7 +99,7 @@ module top (
       DIN <= 0;
       CS <= 1;
     end
-    display7seg[5 - processCounter[7:5]] <= (recieveADC >> (processCounter[7:5]*4))& 4'b1111;
+    display7seg[5 - processCounter[7:5]] <= (recieveADC[processCounter[0]] >> (processCounter[7:5]*4))& 4'b1111;
 
 //7seg
     if(processCounter[2:0] == 3'b000)begin
@@ -115,18 +121,31 @@ module top (
 //    P3_SEG_SER <= currentBit(decode7seg(display7seg[processCounter[5:3]]));
 
 //showing frame buffer
-    if(opd_o)begin
+    if(processCounter[2:0] == 3'b111)begin
+      if(opd_o)begin
 //    if(processCounter[10])begin
-      set_row <= idx_o;
+        int tmp;
+        tmp = xk_re_o[7]?-xk_re_o:xk_re_o;
+        if(processCounter[4:3] == 2'b11)begin
+          set_row <= idx_o[5:2];
+          set_value <= (sum + tmp) >> 6;
+          sum <= 0;
+        end else begin
+            sum <= sum + tmp;
+        end
+      end else begin
+        sum <= 0;
+      end
+
 //      set_row <= processCounter[8:5];
-      set_value <= 3+ xk_re_o/64;
-//      set_value <= 4'd7;
       if(!set_request & !set_busy)begin
         set_request <= 1'b1;
       end
       if(set_busy)begin
         set_request <= 1'b0;
       end
+//      set_value <= 4'd7;
+
     end
 
   end
@@ -169,18 +188,17 @@ module top (
     endcase
   endfunction
 
-  wire [9:0] idx;
-  logic [3:0] idx_o;
-  logic [9:0] xk_re_o;
-  logic [9:0] xk_im_o;
+  logic [5:0] idx_o;
+  logic [7:0] xk_re_o;
+  logic [7:0] xk_im_o;
   logic sod_o, ipd_o, eod_o, soud_o, opd_o, eoud_o;
   logic set_busy, set_request;
   logic[3:0] set_row, set_value;
 
 	FFT_Top fft_inst(
-		.idx(idx_o), //output [3:0] idx
-		.xk_re(xk_re_o), //output [9:0] xk_re
-		.xk_im(xk_im_o), //output [9:0] xk_im
+		.idx(idx_o), //output [5:0] idx
+		.xk_re(xk_re_o), //output [7:0] xk_re
+		.xk_im(xk_im_o), //output [7:0] xk_im
 		.sod(boardLED[2]), //output sod,  start of domain sequence(starting data input)
 		.ipd(boardLED[3]), //output ipd,  this signal is High during input data sampling
 		.eod(boardLED[4]), //output eod,  end of domain sequence(ending data input)
@@ -188,10 +206,10 @@ module top (
 		.soud(soud_o), //output soud,  start of unload data
 		.opd(opd_o), //output opd,  during output data
 		.eoud(boardLED[5]), //output eoud,  stop of unload data
-		.xn_re(recieveADC & 10'b1000000000), //input [9:0] xn_re
-		.xn_im(recieveADC & 10'b1000000000), //input [9:0] xn_im
-		.start(processCounter[7]), //input start
-		.clk(processCounter[4]), //input clk(fftClk)
+		.xn_re(recieveADC[{~processCounter[11],processCounter[8:3]}][9:2]), //input [7:0] xn_re
+		.xn_im(recieveADC[{~processCounter[11],processCounter[8:3]}][9:2]), //input [7:0] xn_im
+		.start(processCounter[10]), //input start
+		.clk(~processCounter[2]), //input clk(fftClk)
 		.rst(0) //input rst
 	);
 
@@ -199,7 +217,7 @@ assign boardLED[1] = opd_o;
 endmodule
 
 module timer #(
-  parameter COUNT_MAX = 300
+  parameter COUNT_MAX = 150
 ) (
   input  wire  clk,
   output logic overflow

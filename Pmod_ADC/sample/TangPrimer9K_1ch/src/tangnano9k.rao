@@ -1,28 +1,86 @@
 <?xml version="1" encoding="UTF-8"?>
 <GAO_CONFIG>
     <Version>3.0</Version>
-    <Mode>Lite</Mode>
-    <AoCore_Lite index="0" sample_clock="fb_inst/ti/counter[4]" trig_type="0" capture_amount="4096" implemention="0" input_register_enabled="0" capture_init_data_enabled="0" module_name="top">
+    <Mode>Standard</Mode>
+    <AoCore index="0" sample_clock="inst_1/counter[6]" trig_type="0" storage_depth="8192" window_num="1" capture_amount="8192" implementation="0" trigger_pos="0" module_name="top" force_trigger_by_falling_edge="false">
         <SignalList>
-            <Bus name="fb_inst/serial_count[4:0]">
-                <Signal>fb_inst/serial_count[4]</Signal>
-                <Signal>fb_inst/serial_count[3]</Signal>
-                <Signal>fb_inst/serial_count[2]</Signal>
-                <Signal>fb_inst/serial_count[1]</Signal>
-                <Signal>fb_inst/serial_count[0]</Signal>
+            <Bus name="fft_inst/xk_im[7:2]">
+                <Signal>fft_inst/xk_im[7]</Signal>
+                <Signal>fft_inst/xk_im[6]</Signal>
+                <Signal>fft_inst/xk_im[5]</Signal>
+                <Signal>fft_inst/xk_im[4]</Signal>
+                <Signal>fft_inst/xk_im[3]</Signal>
+                <Signal>fft_inst/xk_im[2]</Signal>
             </Bus>
-            <Bus name="fb_inst/column_count[5:0]">
-                <Signal>fb_inst/column_count[5]</Signal>
-                <Signal>fb_inst/column_count[4]</Signal>
-                <Signal>fb_inst/column_count[3]</Signal>
-                <Signal>fb_inst/column_count[2]</Signal>
-                <Signal>fb_inst/column_count[1]</Signal>
-                <Signal>fb_inst/column_count[0]</Signal>
+            <Bus name="sum[12:0]">
+                <Signal>sum[12]</Signal>
+                <Signal>sum[11]</Signal>
+                <Signal>sum[10]</Signal>
+                <Signal>sum[9]</Signal>
+                <Signal>sum[8]</Signal>
+                <Signal>sum[7]</Signal>
+                <Signal>sum[6]</Signal>
+                <Signal>sum[5]</Signal>
+                <Signal>sum[4]</Signal>
+                <Signal>sum[3]</Signal>
+                <Signal>sum[2]</Signal>
+                <Signal>sum[1]</Signal>
+                <Signal>sum[0]</Signal>
             </Bus>
-            <Signal>fb_inst/serial_data</Signal>
-            <Signal>fb_inst/sclk</Signal>
-            <Signal>fb_inst/rclk</Signal>
+            <Bus name="xk_re_o[7:0]">
+                <Signal>xk_re_o[7]</Signal>
+                <Signal>xk_re_o[6]</Signal>
+                <Signal>xk_re_o[5]</Signal>
+                <Signal>xk_re_o[4]</Signal>
+                <Signal>xk_re_o[3]</Signal>
+                <Signal>xk_re_o[2]</Signal>
+                <Signal>xk_re_o[1]</Signal>
+                <Signal>xk_re_o[0]</Signal>
+            </Bus>
         </SignalList>
-    </AoCore_Lite>
-    <GAO_ID>1100001100111000</GAO_ID>
+        <Triggers>
+            <Trigger index="0">
+                <SignalList>
+                    <Signal>fft_inst/start</Signal>
+                </SignalList>
+            </Trigger>
+            <Trigger index="1"/>
+            <Trigger index="2"/>
+            <Trigger index="3"/>
+            <Trigger index="4"/>
+            <Trigger index="5"/>
+            <Trigger index="6"/>
+            <Trigger index="7"/>
+            <Trigger index="8"/>
+            <Trigger index="9"/>
+            <Trigger index="10"/>
+            <Trigger index="11"/>
+            <Trigger index="12"/>
+            <Trigger index="13"/>
+            <Trigger index="14"/>
+            <Trigger index="15"/>
+        </Triggers>
+        <MatchUnits>
+            <MatchUnit index="0" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="1" value1="0" trigger="0"/>
+            <MatchUnit index="1" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="2" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="3" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="4" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="5" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="6" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="7" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="8" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="9" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="10" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="11" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="12" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="13" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="14" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="15" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+        </MatchUnits>
+        <Expressions type="Static">
+            <Expression>M0</Expression>
+        </Expressions>
+    </AoCore>
+    <GAO_ID>1111110001000010</GAO_ID>
 </GAO_CONFIG>
