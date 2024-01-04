@@ -122,13 +122,13 @@ module top (
 
 //showing frame buffer
     if(processCounter[2:0] == 3'b111)begin
-      if(opd_o)begin
+      if(opd_o && idx_o < 32)begin
 //    if(processCounter[10])begin
         int tmp;
         tmp = xk_re_o[7]?-xk_re_o:xk_re_o;
-        if(processCounter[4:3] == 2'b11)begin
-          set_row <= idx_o[5:2];
-          set_value <= (sum + tmp) >> 6;
+        if(processCounter[3] == 1'b1)begin
+          set_row <= idx_o[4:1];
+          set_value <= (sum + tmp) >> 3;
           sum <= 0;
         end else begin
             sum <= sum + tmp;
@@ -138,7 +138,7 @@ module top (
       end
 
 //      set_row <= processCounter[8:5];
-      if(!set_request & !set_busy)begin
+      if(opd_o && !set_request && !set_busy)begin
         set_request <= 1'b1;
       end
       if(set_busy)begin
@@ -189,8 +189,8 @@ module top (
   endfunction
 
   logic [5:0] idx_o;
-  logic [7:0] xk_re_o;
-  logic [7:0] xk_im_o;
+  logic signed [7:0] xk_re_o;
+  logic signed [7:0] xk_im_o;
   logic sod_o, ipd_o, eod_o, soud_o, opd_o, eoud_o;
   logic set_busy, set_request;
   logic[3:0] set_row, set_value;
@@ -208,7 +208,7 @@ module top (
 		.eoud(boardLED[5]), //output eoud,  stop of unload data
 		.xn_re(recieveADC[{~processCounter[11],processCounter[8:3]}][9:2]), //input [7:0] xn_re
 		.xn_im(recieveADC[{~processCounter[11],processCounter[8:3]}][9:2]), //input [7:0] xn_im
-		.start(processCounter[10]), //input start
+		.start(processCounter[9]), //input start
 		.clk(~processCounter[2]), //input clk(fftClk)
 		.rst(0) //input rst
 	);
@@ -217,7 +217,7 @@ assign boardLED[1] = opd_o;
 endmodule
 
 module timer #(
-  parameter COUNT_MAX = 150
+  parameter COUNT_MAX = 75
 ) (
   input  wire  clk,
   output logic overflow
