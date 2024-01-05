@@ -54,7 +54,7 @@ always @(negedge serial_clk)begin
     value_buffer <= set_value;
   end
 
-  if(set_busy)begin
+  if(set_busy || set_request)begin
     for(int i=0;i<16;i++)begin
       if(value_buffer == i)begin
         frameBuffer[i][set_row] <= 2'd3;

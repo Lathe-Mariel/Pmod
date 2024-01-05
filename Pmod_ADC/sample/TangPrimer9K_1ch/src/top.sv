@@ -123,7 +123,6 @@ module top (
 //showing frame buffer
     if(processCounter[2:0] == 3'b111)begin
       if(opd_o && idx_o < 32)begin
-//    if(processCounter[10])begin
         int tmp;
         tmp = xk_re_o[7]?-xk_re_o:xk_re_o;
         if(processCounter[3] == 1'b1)begin
@@ -137,15 +136,12 @@ module top (
         sum <= 0;
       end
 
-//      set_row <= processCounter[8:5];
       if(opd_o && !set_request && !set_busy)begin
         set_request <= 1'b1;
       end
       if(set_busy)begin
         set_request <= 1'b0;
       end
-//      set_value <= 4'd7;
-
     end
 
   end
@@ -195,6 +191,7 @@ module top (
   logic set_busy, set_request;
   logic[3:0] set_row, set_value;
 
+//make FFT circuit by Gowin IP
 	FFT_Top fft_inst(
 		.idx(idx_o), //output [5:0] idx
 		.xk_re(xk_re_o), //output [7:0] xk_re
