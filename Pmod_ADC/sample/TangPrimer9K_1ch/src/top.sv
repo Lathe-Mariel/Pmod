@@ -125,10 +125,10 @@ module top (
       if(opd_o && idx_o < 32)begin
         int tmp;
         tmp = xk_re_o[7]?-xk_re_o:xk_re_o;
-        if(processCounter[3] == 1'b1)begin
+        if(processCounter[3] == 1'b0)begin
           set_row <= idx_o[4:1];
           set_value <= (sum + tmp) >> 3;
-          sum <= 0;
+          sum <= tmp;
         end else begin
             sum <= sum + tmp;
         end

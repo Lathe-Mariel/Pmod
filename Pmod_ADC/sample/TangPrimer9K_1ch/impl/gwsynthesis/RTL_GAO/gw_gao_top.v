@@ -26,6 +26,10 @@ module gw_gao(
     \xk_re_o[2] ,
     \xk_re_o[1] ,
     \xk_re_o[0] ,
+    \fb_inst/set_value[3] ,
+    \fb_inst/set_value[2] ,
+    \fb_inst/set_value[1] ,
+    \fb_inst/set_value[0] ,
     \fft_inst/start ,
     \inst_1/counter[6] ,
     tms_pad_i,
@@ -61,6 +65,10 @@ input \xk_re_o[3] ;
 input \xk_re_o[2] ;
 input \xk_re_o[1] ;
 input \xk_re_o[0] ;
+input \fb_inst/set_value[3] ;
+input \fb_inst/set_value[2] ;
+input \fb_inst/set_value[1] ;
+input \fb_inst/set_value[0] ;
 input \fft_inst/start ;
 input \inst_1/counter[6] ;
 input tms_pad_i;
@@ -95,6 +103,10 @@ wire \xk_re_o[3] ;
 wire \xk_re_o[2] ;
 wire \xk_re_o[1] ;
 wire \xk_re_o[0] ;
+wire \fb_inst/set_value[3] ;
+wire \fb_inst/set_value[2] ;
+wire \fb_inst/set_value[1] ;
+wire \fb_inst/set_value[0] ;
 wire \fft_inst/start ;
 wire \inst_1/counter[6] ;
 wire tms_pad_i;
@@ -171,7 +183,7 @@ gw_con_top  u_icon_top(
 ao_top_0  u_la0_top(
     .control(control0[9:0]),
     .trig0_i(\fft_inst/start ),
-    .data_i({\fft_inst/xk_im[7] ,\fft_inst/xk_im[6] ,\fft_inst/xk_im[5] ,\fft_inst/xk_im[4] ,\fft_inst/xk_im[3] ,\fft_inst/xk_im[2] ,\sum[12] ,\sum[11] ,\sum[10] ,\sum[9] ,\sum[8] ,\sum[7] ,\sum[6] ,\sum[5] ,\sum[4] ,\sum[3] ,\sum[2] ,\sum[1] ,\sum[0] ,\xk_re_o[7] ,\xk_re_o[6] ,\xk_re_o[5] ,\xk_re_o[4] ,\xk_re_o[3] ,\xk_re_o[2] ,\xk_re_o[1] ,\xk_re_o[0] }),
+    .data_i({\fft_inst/xk_im[7] ,\fft_inst/xk_im[6] ,\fft_inst/xk_im[5] ,\fft_inst/xk_im[4] ,\fft_inst/xk_im[3] ,\fft_inst/xk_im[2] ,\sum[12] ,\sum[11] ,\sum[10] ,\sum[9] ,\sum[8] ,\sum[7] ,\sum[6] ,\sum[5] ,\sum[4] ,\sum[3] ,\sum[2] ,\sum[1] ,\sum[0] ,\xk_re_o[7] ,\xk_re_o[6] ,\xk_re_o[5] ,\xk_re_o[4] ,\xk_re_o[3] ,\xk_re_o[2] ,\xk_re_o[1] ,\xk_re_o[0] ,\fb_inst/set_value[3] ,\fb_inst/set_value[2] ,\fb_inst/set_value[1] ,\fb_inst/set_value[0] }),
     .clk_i(\inst_1/counter[6] )
 );
 

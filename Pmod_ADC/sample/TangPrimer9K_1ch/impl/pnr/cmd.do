@@ -3,7 +3,7 @@
 -pn GW1NR-LV9QN88PC6/I5
 -cst H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\src\top.cst
 -cfg H:\git\Pmod\Pmod_ADC\sample\TangPrimer9K_1ch\impl\pnr\device.cfg
--gao_crc 1111110001000010
+-gao_crc 0110111000111011
 -bit
 -tr
 -ph
