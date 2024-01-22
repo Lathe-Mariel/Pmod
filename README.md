@@ -15,3 +15,4 @@ Each Pmod board directory has KiCAD project file and garber data.
 <img src="Pmod_7LED_8digit/7seg8digit.jpg" height="120"> | Pmod_7LED_8digit | 7セグLED8桁 | 4桁7セグモジュール×2個使用
 <img src="Pmod_US_Speaker/us.jpg" height="120"> | Pmod_US_Speaker | 超音波浮揚 | 超音波トランスジューサ×6モジュール
 <img src="Pmod_Matrix256/sine.png" height="120"> | Pmod_Matrix256 | 16x16マトリクスLED | 秋月横長マトリクスLED
+<img src="" height="120"> | Pmod_SC1602 | 16桁2行キャラクタディスプレー | 白黒キャラクタディスプレー
