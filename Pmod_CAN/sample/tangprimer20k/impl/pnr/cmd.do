@@ -1,0 +1,13 @@
+-d H:\git\Pmod\Pmod_CAN\sample\tangprimer20k\impl\gwsynthesis\WS2812.vg
+-p GW2A-18C-PBGA256-8
+-pn GW2A-LV18PG256C8/I7
+-cst H:\git\Pmod\Pmod_CAN\sample\tangprimer20k\src\top.cst
+-cfg H:\git\Pmod\Pmod_CAN\sample\tangprimer20k\impl\pnr\device.cfg
+-sdc H:\git\Pmod\Pmod_CAN\sample\tangprimer20k\src\WS2812.sdc
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-correct_hold 1
+-route_maxfan 23
