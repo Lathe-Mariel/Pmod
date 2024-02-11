@@ -17,4 +17,4 @@ Each Pmod board directory has KiCAD project file and garber data.
 <img src="Pmod_Matrix256/sine.png" height="120"> | Pmod_Matrix256 | 16x16マトリクスLED | 秋月横長マトリクスLED
 <img src="" height="120"> | Pmod_ADC | 10bit 8ch A-Dコンバータ | MCP3008/MCP3208
 <img src="" height="120"> | Pmod_SC1602 | 16桁2行キャラクタディスプレー | データ4ビット
-<img src="" height="120"> | Pmod_CAN | CAN | TJA1441AT
+<img src="Pmod_CAN/pmod_can.jpg" height="120"> | Pmod_CAN | CAN | TJA1441AT
