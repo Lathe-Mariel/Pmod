@@ -1,0 +1,44 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\debounce.sv'
+WARN  (EX3628) : Redeclaration of ANSI port 'sw_out' is not allowed("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\debounce.sv":6)
+Analyzing Verilog file 'H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv'
+WARN  (EX3628) : Redeclaration of ANSI port 'onboard_led' is not allowed("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":36)
+WARN  (EX3628) : Redeclaration of ANSI port 'mat_CLOCK' is not allowed("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":37)
+WARN  (EX3628) : Redeclaration of ANSI port 'mat_RCLOCK' is not allowed("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":38)
+WARN  (EX3628) : Redeclaration of ANSI port 'ROW' is not allowed("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":39)
+WARN  (EX3628) : Redeclaration of ANSI port 'COL_Red' is not allowed("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":40)
+WARN  (EX3628) : Redeclaration of ANSI port 'COL_Green' is not allowed("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":41)
+Compiling module 'top'("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":1)
+Extracting RAM for identifier 'ledFrameBuffer'("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":43)
+Compiling module 'timer1'("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":138)
+WARN  (EX3791) : Expression size 12 truncated to fit in target size 11("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":152)
+WARN  (EX3791) : Expression size 2 truncated to fit in target size 1("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":85)
+WARN  (EX3791) : Expression size 15 truncated to fit in target size 14("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":88)
+NOTE  (EX0101) : Current top module is "top"
+WARN  (EX0211) : The output port "onboard_led[5]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":20)
+WARN  (EX0211) : The output port "onboard_led[4]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":20)
+WARN  (EX0211) : The output port "onboard_led[3]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":20)
+WARN  (EX0211) : The output port "onboard_led[2]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":20)
+WARN  (EX0211) : The output port "onboard_led[1]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":20)
+WARN  (EX0211) : The output port "onboard_led[0]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":20)
+[5%] Running netlist conversion ...
+WARN  (CV0016) : Input sw is unused("H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\src\top.sv":3)
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\impl\gwsynthesis\matrix2.vg" completed
+[100%] Generate report file "H:\git\Pmod\Pmod_Matrix2\sample\GOWIN_matrix2\TangPrimer20K_test\impl\gwsynthesis\matrix2_syn.rpt.html" completed
+GowinSynthesis finish

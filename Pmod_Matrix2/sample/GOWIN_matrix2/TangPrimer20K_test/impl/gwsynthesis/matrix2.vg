@@ -1,0 +1,2439 @@
+//
+//Written by GowinSynthesis
+//Product Version "V1.9.9 Beta-6"
+//Tue Feb 13 00:11:13 2024
+
+//Source file index table:
+//file0 "\H:/git/Pmod/Pmod_Matrix2/sample/GOWIN_matrix2/TangPrimer20K_test/src/debounce.sv"
+//file1 "\H:/git/Pmod/Pmod_Matrix2/sample/GOWIN_matrix2/TangPrimer20K_test/src/top.sv"
+`timescale 100 ps/100 ps
+module timer1 (
+  clk_d,
+  overflow_Z
+)
+;
+input clk_d;
+output overflow_Z;
+wire n10_3;
+wire n10_4;
+wire n10_5;
+wire n10_6;
+wire n21_1;
+wire n21_2;
+wire n20_1;
+wire n20_2;
+wire n19_1;
+wire n19_2;
+wire n18_1;
+wire n18_2;
+wire n17_1;
+wire n17_2;
+wire n16_1;
+wire n16_2;
+wire n15_1;
+wire n15_2;
+wire n14_1;
+wire n14_2;
+wire n13_1;
+wire n13_2;
+wire n12_1;
+wire n12_0_COUT;
+wire n22_6;
+wire [10:0] counter;
+wire VCC;
+wire GND;
+  LUT3 n10_s0 (
+    .F(n10_3),
+    .I0(n10_4),
+    .I1(n10_5),
+    .I2(n10_6) 
+);
+defparam n10_s0.INIT=8'h80;
+  LUT4 n10_s1 (
+    .F(n10_4),
+    .I0(counter[7]),
+    .I1(counter[9]),
+    .I2(counter[8]),
+    .I3(counter[6]) 
+);
+defparam n10_s1.INIT=16'h1000;
+  LUT4 n10_s2 (
+    .F(n10_5),
+    .I0(counter[3]),
+    .I1(counter[4]),
+    .I2(counter[5]),
+    .I3(counter[2]) 
+);
+defparam n10_s2.INIT=16'h0100;
+  LUT3 n10_s3 (
+    .F(n10_6),
+    .I0(counter[0]),
+    .I1(counter[1]),
+    .I2(counter[10]) 
+);
+defparam n10_s3.INIT=8'h40;
+  DFFR counter_9_s0 (
+    .Q(counter[9]),
+    .D(n13_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_9_s0.INIT=1'b0;
+  DFFR counter_8_s0 (
+    .Q(counter[8]),
+    .D(n14_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_8_s0.INIT=1'b0;
+  DFFR counter_7_s0 (
+    .Q(counter[7]),
+    .D(n15_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_7_s0.INIT=1'b0;
+  DFFR counter_6_s0 (
+    .Q(counter[6]),
+    .D(n16_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_6_s0.INIT=1'b0;
+  DFFR counter_5_s0 (
+    .Q(counter[5]),
+    .D(n17_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_5_s0.INIT=1'b0;
+  DFFR counter_4_s0 (
+    .Q(counter[4]),
+    .D(n18_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_4_s0.INIT=1'b0;
+  DFFR counter_3_s0 (
+    .Q(counter[3]),
+    .D(n19_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_3_s0.INIT=1'b0;
+  DFFR counter_2_s0 (
+    .Q(counter[2]),
+    .D(n20_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_2_s0.INIT=1'b0;
+  DFFR counter_1_s0 (
+    .Q(counter[1]),
+    .D(n21_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_1_s0.INIT=1'b0;
+  DFFR counter_0_s0 (
+    .Q(counter[0]),
+    .D(n22_6),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_0_s0.INIT=1'b0;
+  DFF overflow_s0 (
+    .Q(overflow_Z),
+    .D(n10_3),
+    .CLK(clk_d) 
+);
+  DFFR counter_10_s0 (
+    .Q(counter[10]),
+    .D(n12_1),
+    .CLK(clk_d),
+    .RESET(n10_3) 
+);
+defparam counter_10_s0.INIT=1'b0;
+  ALU n21_s (
+    .SUM(n21_1),
+    .COUT(n21_2),
+    .I0(counter[1]),
+    .I1(counter[0]),
+    .I3(GND),
+    .CIN(GND) 
+);
+defparam n21_s.ALU_MODE=0;
+  ALU n20_s (
+    .SUM(n20_1),
+    .COUT(n20_2),
+    .I0(counter[2]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n21_2) 
+);
+defparam n20_s.ALU_MODE=0;
+  ALU n19_s (
+    .SUM(n19_1),
+    .COUT(n19_2),
+    .I0(counter[3]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n20_2) 
+);
+defparam n19_s.ALU_MODE=0;
+  ALU n18_s (
+    .SUM(n18_1),
+    .COUT(n18_2),
+    .I0(counter[4]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n19_2) 
+);
+defparam n18_s.ALU_MODE=0;
+  ALU n17_s (
+    .SUM(n17_1),
+    .COUT(n17_2),
+    .I0(counter[5]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n18_2) 
+);
+defparam n17_s.ALU_MODE=0;
+  ALU n16_s (
+    .SUM(n16_1),
+    .COUT(n16_2),
+    .I0(counter[6]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n17_2) 
+);
+defparam n16_s.ALU_MODE=0;
+  ALU n15_s (
+    .SUM(n15_1),
+    .COUT(n15_2),
+    .I0(counter[7]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n16_2) 
+);
+defparam n15_s.ALU_MODE=0;
+  ALU n14_s (
+    .SUM(n14_1),
+    .COUT(n14_2),
+    .I0(counter[8]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n15_2) 
+);
+defparam n14_s.ALU_MODE=0;
+  ALU n13_s (
+    .SUM(n13_1),
+    .COUT(n13_2),
+    .I0(counter[9]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n14_2) 
+);
+defparam n13_s.ALU_MODE=0;
+  ALU n12_s (
+    .SUM(n12_1),
+    .COUT(n12_0_COUT),
+    .I0(counter[10]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n13_2) 
+);
+defparam n12_s.ALU_MODE=0;
+  INV n22_s2 (
+    .O(n22_6),
+    .I(counter[0]) 
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+endmodule /* timer1 */
+module top (
+  clk,
+  sw,
+  CLR1,
+  CLR2,
+  CLR3,
+  COL_Red,
+  COL_Green,
+  ROW,
+  mat_RCLOCK,
+  mat_CLOCK,
+  ch2_CLR1,
+  ch2_CLR2,
+  ch2_CLR3,
+  ch2_COL_Red,
+  ch2_COL_Green,
+  ch2_ROW,
+  ch2_mat_RCLOCK,
+  ch2_mat_CLOCK,
+  onboard_led
+)
+;
+input clk;
+input sw;
+output CLR1;
+output CLR2;
+output CLR3;
+output COL_Red;
+output COL_Green;
+output ROW;
+output mat_RCLOCK;
+output mat_CLOCK;
+output ch2_CLR1;
+output ch2_CLR2;
+output ch2_CLR3;
+output ch2_COL_Red;
+output ch2_COL_Green;
+output ch2_ROW;
+output ch2_mat_RCLOCK;
+output ch2_mat_CLOCK;
+output [5:0] onboard_led;
+wire clk_d;
+wire n85_4;
+wire n235_3;
+wire ledFrameBuffer_766;
+wire ledFrameBuffer_768;
+wire ledFrameBuffer_770;
+wire ledFrameBuffer_772;
+wire ledFrameBuffer_774;
+wire ledFrameBuffer_776;
+wire ledFrameBuffer_778;
+wire ledFrameBuffer_780;
+wire ledFrameBuffer_782;
+wire ledFrameBuffer_784;
+wire ledFrameBuffer_786;
+wire ledFrameBuffer_788;
+wire ledFrameBuffer_790;
+wire ledFrameBuffer_792;
+wire ledFrameBuffer_794;
+wire ledFrameBuffer_796;
+wire ledFrameBuffer_798;
+wire ledFrameBuffer_800;
+wire ledFrameBuffer_802;
+wire ledFrameBuffer_804;
+wire ledFrameBuffer_806;
+wire ledFrameBuffer_808;
+wire ledFrameBuffer_810;
+wire ledFrameBuffer_812;
+wire ledFrameBuffer_814;
+wire ledFrameBuffer_816;
+wire ledFrameBuffer_818;
+wire ledFrameBuffer_820;
+wire ledFrameBuffer_822;
+wire ledFrameBuffer_824;
+wire ledFrameBuffer_826;
+wire ledFrameBuffer_828;
+wire ledFrameBuffer_830;
+wire ledFrameBuffer_832;
+wire ledFrameBuffer_834;
+wire ledFrameBuffer_836;
+wire ledFrameBuffer_838;
+wire ledFrameBuffer_840;
+wire ledFrameBuffer_842;
+wire ledFrameBuffer_844;
+wire ledFrameBuffer_846;
+wire ledFrameBuffer_848;
+wire ledFrameBuffer_850;
+wire ledFrameBuffer_852;
+wire ledFrameBuffer_854;
+wire ledFrameBuffer_856;
+wire ledFrameBuffer_858;
+wire ledFrameBuffer_860;
+wire ledFrameBuffer_862;
+wire ledFrameBuffer_864;
+wire ledFrameBuffer_866;
+wire ledFrameBuffer_868;
+wire ledFrameBuffer_870;
+wire ledFrameBuffer_872;
+wire ledFrameBuffer_874;
+wire ledFrameBuffer_876;
+wire ledFrameBuffer_878;
+wire ledFrameBuffer_880;
+wire ledFrameBuffer_882;
+wire ledFrameBuffer_884;
+wire ledFrameBuffer_886;
+wire ledFrameBuffer_888;
+wire ledFrameBuffer_890;
+wire ledFrameBuffer_892;
+wire n111_18;
+wire ledFrameBuffer_894;
+wire n24_4;
+wire n114_4;
+wire n113_4;
+wire ledFrameBuffer_895;
+wire ledFrameBuffer_896;
+wire ledFrameBuffer_897;
+wire ledFrameBuffer_898;
+wire ledFrameBuffer_899;
+wire ledFrameBuffer_900;
+wire ledFrameBuffer_901;
+wire ledFrameBuffer_902;
+wire ledFrameBuffer_903;
+wire ledFrameBuffer_904;
+wire ledFrameBuffer_905;
+wire ledFrameBuffer_906;
+wire ledFrameBuffer_907;
+wire ledFrameBuffer_908;
+wire ledFrameBuffer_909;
+wire ledFrameBuffer_910;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_224 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_226 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_228 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_230 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_232 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_234 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_236 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_238 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_240 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_242 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_244 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_246 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_248 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_250 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_252 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_254 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_256 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_258 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_260 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_262 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_264 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_266 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_268 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_270 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_272 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_274 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_276 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_278 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_280 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_282 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_284 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_286 ;
+wire n25_10;
+wire n236_6;
+wire n26_8;
+wire n122_10;
+wire ch2_mat_RCLOCK_d;
+wire ch2_ROW_d;
+wire ch2_COL_Red_d;
+wire ch2_COL_Green_d;
+wire ch2_mat_CLOCK_d;
+wire colorSelector_4;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_0_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_1_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_2_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_3_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_4_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_5_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_6_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_7_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_8_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_9_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_10_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_11_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_12_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_13_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_14_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_15_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_16_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_17_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_18_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_19_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_20_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_21_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_22_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_23_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_24_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_25_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_26_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_27_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_28_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_29_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_30_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_31_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_32_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_33_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_34_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_35_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_36_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_37_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_38_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_39_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_40_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_41_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_42_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_43_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_44_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_45_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_46_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_47_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_48_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_49_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_50_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_51_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_52_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_53_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_54_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_55_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_56_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_57_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_58_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_59_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_60_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_61_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_62_G[0]_1 ;
+wire \ledFrameBuffer_ledFrameBuffer_RAMREG_63_G[0]_1 ;
+wire n40_1;
+wire n40_2;
+wire n39_1;
+wire n39_2;
+wire n38_1;
+wire n38_2;
+wire n37_1;
+wire n37_2;
+wire n36_1;
+wire n36_2;
+wire n35_1;
+wire n35_2;
+wire n34_1;
+wire n34_2;
+wire n33_1;
+wire n33_2;
+wire n32_1;
+wire n32_2;
+wire n31_1;
+wire n31_2;
+wire n30_1;
+wire n30_2;
+wire n29_1;
+wire n29_2;
+wire n28_1;
+wire n28_0_COUT;
+wire n116_1_SUM;
+wire n116_3;
+wire n117_1_SUM;
+wire n117_3;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_162 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_164 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_166 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_168 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_170 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_172 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_174 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_176 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_178 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_180 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_182 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_184 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_186 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_188 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_190 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_192 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_194 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_196 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_198 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_200 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_202 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_204 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_206 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_208 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_210 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_212 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_214 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_216 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_218 ;
+wire \ledFrameBuffer_RAMOUT_7_G[3]_220 ;
+wire n14_6;
+wire n122_11;
+wire n115_6;
+wire overflow_Z;
+wire [2:0] rowCounter;
+wire [13:1] cycleCounter;
+wire [2:0] currentStep;
+wire VCC;
+wire GND;
+  IBUF clk_ibuf (
+    .O(clk_d),
+    .I(clk) 
+);
+  OBUF CLR1_obuf (
+    .O(CLR1),
+    .I(VCC) 
+);
+  OBUF CLR2_obuf (
+    .O(CLR2),
+    .I(VCC) 
+);
+  OBUF CLR3_obuf (
+    .O(CLR3),
+    .I(VCC) 
+);
+  OBUF COL_Red_obuf (
+    .O(COL_Red),
+    .I(ch2_COL_Red_d) 
+);
+  OBUF COL_Green_obuf (
+    .O(COL_Green),
+    .I(ch2_COL_Green_d) 
+);
+  OBUF ROW_obuf (
+    .O(ROW),
+    .I(ch2_ROW_d) 
+);
+  OBUF mat_RCLOCK_obuf (
+    .O(mat_RCLOCK),
+    .I(ch2_mat_RCLOCK_d) 
+);
+  OBUF mat_CLOCK_obuf (
+    .O(mat_CLOCK),
+    .I(ch2_mat_CLOCK_d) 
+);
+  OBUF ch2_CLR1_obuf (
+    .O(ch2_CLR1),
+    .I(VCC) 
+);
+  OBUF ch2_CLR2_obuf (
+    .O(ch2_CLR2),
+    .I(VCC) 
+);
+  OBUF ch2_CLR3_obuf (
+    .O(ch2_CLR3),
+    .I(VCC) 
+);
+  OBUF ch2_COL_Red_obuf (
+    .O(ch2_COL_Red),
+    .I(ch2_COL_Red_d) 
+);
+  OBUF ch2_COL_Green_obuf (
+    .O(ch2_COL_Green),
+    .I(ch2_COL_Green_d) 
+);
+  OBUF ch2_ROW_obuf (
+    .O(ch2_ROW),
+    .I(ch2_ROW_d) 
+);
+  OBUF ch2_mat_RCLOCK_obuf (
+    .O(ch2_mat_RCLOCK),
+    .I(ch2_mat_RCLOCK_d) 
+);
+  OBUF ch2_mat_CLOCK_obuf (
+    .O(ch2_mat_CLOCK),
+    .I(ch2_mat_CLOCK_d) 
+);
+  TBUF onboard_led_5_s0 (
+    .O(onboard_led[0]),
+    .I(GND),
+    .OEN(VCC) 
+);
+  TBUF onboard_led_5_s1 (
+    .O(onboard_led[1]),
+    .I(GND),
+    .OEN(VCC) 
+);
+  TBUF onboard_led_5_s2 (
+    .O(onboard_led[2]),
+    .I(GND),
+    .OEN(VCC) 
+);
+  TBUF onboard_led_5_s3 (
+    .O(onboard_led[3]),
+    .I(GND),
+    .OEN(VCC) 
+);
+  TBUF onboard_led_5_s4 (
+    .O(onboard_led[4]),
+    .I(GND),
+    .OEN(VCC) 
+);
+  TBUF onboard_led_5_s5 (
+    .O(onboard_led[5]),
+    .I(GND),
+    .OEN(VCC) 
+);
+  LUT3 n85_s0 (
+    .F(n85_4),
+    .I0(currentStep[0]),
+    .I1(currentStep[1]),
+    .I2(currentStep[2]) 
+);
+defparam n85_s0.INIT=8'h01;
+  LUT4 n235_s0 (
+    .F(n235_3),
+    .I0(currentStep[0]),
+    .I1(currentStep[1]),
+    .I2(currentStep[2]),
+    .I3(ch2_mat_CLOCK_d) 
+);
+defparam n235_s0.INIT=16'h8000;
+  LUT3 ledFrameBuffer_s764 (
+    .F(ledFrameBuffer_766),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_895),
+    .I2(ledFrameBuffer_896) 
+);
+defparam ledFrameBuffer_s764.INIT=8'h80;
+  LUT3 ledFrameBuffer_s765 (
+    .F(ledFrameBuffer_768),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_895),
+    .I2(ledFrameBuffer_897) 
+);
+defparam ledFrameBuffer_s765.INIT=8'h80;
+  LUT3 ledFrameBuffer_s766 (
+    .F(ledFrameBuffer_770),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_895),
+    .I2(ledFrameBuffer_898) 
+);
+defparam ledFrameBuffer_s766.INIT=8'h80;
+  LUT3 ledFrameBuffer_s767 (
+    .F(ledFrameBuffer_772),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_895),
+    .I2(ledFrameBuffer_899) 
+);
+defparam ledFrameBuffer_s767.INIT=8'h80;
+  LUT3 ledFrameBuffer_s768 (
+    .F(ledFrameBuffer_774),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_895),
+    .I2(ledFrameBuffer_900) 
+);
+defparam ledFrameBuffer_s768.INIT=8'h80;
+  LUT3 ledFrameBuffer_s769 (
+    .F(ledFrameBuffer_776),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_895),
+    .I2(ledFrameBuffer_901) 
+);
+defparam ledFrameBuffer_s769.INIT=8'h80;
+  LUT3 ledFrameBuffer_s770 (
+    .F(ledFrameBuffer_778),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_895),
+    .I2(ledFrameBuffer_902) 
+);
+defparam ledFrameBuffer_s770.INIT=8'h80;
+  LUT3 ledFrameBuffer_s771 (
+    .F(ledFrameBuffer_780),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_895),
+    .I2(ledFrameBuffer_903) 
+);
+defparam ledFrameBuffer_s771.INIT=8'h80;
+  LUT3 ledFrameBuffer_s772 (
+    .F(ledFrameBuffer_782),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_896),
+    .I2(ledFrameBuffer_904) 
+);
+defparam ledFrameBuffer_s772.INIT=8'h80;
+  LUT3 ledFrameBuffer_s773 (
+    .F(ledFrameBuffer_784),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_897),
+    .I2(ledFrameBuffer_904) 
+);
+defparam ledFrameBuffer_s773.INIT=8'h80;
+  LUT3 ledFrameBuffer_s774 (
+    .F(ledFrameBuffer_786),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_898),
+    .I2(ledFrameBuffer_904) 
+);
+defparam ledFrameBuffer_s774.INIT=8'h80;
+  LUT3 ledFrameBuffer_s775 (
+    .F(ledFrameBuffer_788),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_899),
+    .I2(ledFrameBuffer_904) 
+);
+defparam ledFrameBuffer_s775.INIT=8'h80;
+  LUT3 ledFrameBuffer_s776 (
+    .F(ledFrameBuffer_790),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_900),
+    .I2(ledFrameBuffer_904) 
+);
+defparam ledFrameBuffer_s776.INIT=8'h80;
+  LUT3 ledFrameBuffer_s777 (
+    .F(ledFrameBuffer_792),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_901),
+    .I2(ledFrameBuffer_904) 
+);
+defparam ledFrameBuffer_s777.INIT=8'h80;
+  LUT3 ledFrameBuffer_s778 (
+    .F(ledFrameBuffer_794),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_902),
+    .I2(ledFrameBuffer_904) 
+);
+defparam ledFrameBuffer_s778.INIT=8'h80;
+  LUT3 ledFrameBuffer_s779 (
+    .F(ledFrameBuffer_796),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_903),
+    .I2(ledFrameBuffer_904) 
+);
+defparam ledFrameBuffer_s779.INIT=8'h80;
+  LUT3 ledFrameBuffer_s780 (
+    .F(ledFrameBuffer_798),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_896),
+    .I2(ledFrameBuffer_905) 
+);
+defparam ledFrameBuffer_s780.INIT=8'h80;
+  LUT3 ledFrameBuffer_s781 (
+    .F(ledFrameBuffer_800),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_897),
+    .I2(ledFrameBuffer_905) 
+);
+defparam ledFrameBuffer_s781.INIT=8'h80;
+  LUT3 ledFrameBuffer_s782 (
+    .F(ledFrameBuffer_802),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_898),
+    .I2(ledFrameBuffer_905) 
+);
+defparam ledFrameBuffer_s782.INIT=8'h80;
+  LUT3 ledFrameBuffer_s783 (
+    .F(ledFrameBuffer_804),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_899),
+    .I2(ledFrameBuffer_905) 
+);
+defparam ledFrameBuffer_s783.INIT=8'h80;
+  LUT3 ledFrameBuffer_s784 (
+    .F(ledFrameBuffer_806),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_900),
+    .I2(ledFrameBuffer_905) 
+);
+defparam ledFrameBuffer_s784.INIT=8'h80;
+  LUT3 ledFrameBuffer_s785 (
+    .F(ledFrameBuffer_808),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_901),
+    .I2(ledFrameBuffer_905) 
+);
+defparam ledFrameBuffer_s785.INIT=8'h80;
+  LUT3 ledFrameBuffer_s786 (
+    .F(ledFrameBuffer_810),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_902),
+    .I2(ledFrameBuffer_905) 
+);
+defparam ledFrameBuffer_s786.INIT=8'h80;
+  LUT3 ledFrameBuffer_s787 (
+    .F(ledFrameBuffer_812),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_903),
+    .I2(ledFrameBuffer_905) 
+);
+defparam ledFrameBuffer_s787.INIT=8'h80;
+  LUT3 ledFrameBuffer_s788 (
+    .F(ledFrameBuffer_814),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_896),
+    .I2(ledFrameBuffer_906) 
+);
+defparam ledFrameBuffer_s788.INIT=8'h80;
+  LUT3 ledFrameBuffer_s789 (
+    .F(ledFrameBuffer_816),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_897),
+    .I2(ledFrameBuffer_906) 
+);
+defparam ledFrameBuffer_s789.INIT=8'h80;
+  LUT3 ledFrameBuffer_s790 (
+    .F(ledFrameBuffer_818),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_898),
+    .I2(ledFrameBuffer_906) 
+);
+defparam ledFrameBuffer_s790.INIT=8'h80;
+  LUT3 ledFrameBuffer_s791 (
+    .F(ledFrameBuffer_820),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_899),
+    .I2(ledFrameBuffer_906) 
+);
+defparam ledFrameBuffer_s791.INIT=8'h80;
+  LUT3 ledFrameBuffer_s792 (
+    .F(ledFrameBuffer_822),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_900),
+    .I2(ledFrameBuffer_906) 
+);
+defparam ledFrameBuffer_s792.INIT=8'h80;
+  LUT3 ledFrameBuffer_s793 (
+    .F(ledFrameBuffer_824),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_901),
+    .I2(ledFrameBuffer_906) 
+);
+defparam ledFrameBuffer_s793.INIT=8'h80;
+  LUT3 ledFrameBuffer_s794 (
+    .F(ledFrameBuffer_826),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_902),
+    .I2(ledFrameBuffer_906) 
+);
+defparam ledFrameBuffer_s794.INIT=8'h80;
+  LUT3 ledFrameBuffer_s795 (
+    .F(ledFrameBuffer_828),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_903),
+    .I2(ledFrameBuffer_906) 
+);
+defparam ledFrameBuffer_s795.INIT=8'h80;
+  LUT3 ledFrameBuffer_s796 (
+    .F(ledFrameBuffer_830),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_896),
+    .I2(ledFrameBuffer_907) 
+);
+defparam ledFrameBuffer_s796.INIT=8'h80;
+  LUT3 ledFrameBuffer_s797 (
+    .F(ledFrameBuffer_832),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_897),
+    .I2(ledFrameBuffer_907) 
+);
+defparam ledFrameBuffer_s797.INIT=8'h80;
+  LUT3 ledFrameBuffer_s798 (
+    .F(ledFrameBuffer_834),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_898),
+    .I2(ledFrameBuffer_907) 
+);
+defparam ledFrameBuffer_s798.INIT=8'h80;
+  LUT3 ledFrameBuffer_s799 (
+    .F(ledFrameBuffer_836),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_899),
+    .I2(ledFrameBuffer_907) 
+);
+defparam ledFrameBuffer_s799.INIT=8'h80;
+  LUT3 ledFrameBuffer_s800 (
+    .F(ledFrameBuffer_838),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_900),
+    .I2(ledFrameBuffer_907) 
+);
+defparam ledFrameBuffer_s800.INIT=8'h80;
+  LUT3 ledFrameBuffer_s801 (
+    .F(ledFrameBuffer_840),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_901),
+    .I2(ledFrameBuffer_907) 
+);
+defparam ledFrameBuffer_s801.INIT=8'h80;
+  LUT3 ledFrameBuffer_s802 (
+    .F(ledFrameBuffer_842),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_902),
+    .I2(ledFrameBuffer_907) 
+);
+defparam ledFrameBuffer_s802.INIT=8'h80;
+  LUT3 ledFrameBuffer_s803 (
+    .F(ledFrameBuffer_844),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_903),
+    .I2(ledFrameBuffer_907) 
+);
+defparam ledFrameBuffer_s803.INIT=8'h80;
+  LUT3 ledFrameBuffer_s804 (
+    .F(ledFrameBuffer_846),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_896),
+    .I2(ledFrameBuffer_908) 
+);
+defparam ledFrameBuffer_s804.INIT=8'h80;
+  LUT3 ledFrameBuffer_s805 (
+    .F(ledFrameBuffer_848),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_897),
+    .I2(ledFrameBuffer_908) 
+);
+defparam ledFrameBuffer_s805.INIT=8'h80;
+  LUT3 ledFrameBuffer_s806 (
+    .F(ledFrameBuffer_850),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_898),
+    .I2(ledFrameBuffer_908) 
+);
+defparam ledFrameBuffer_s806.INIT=8'h80;
+  LUT3 ledFrameBuffer_s807 (
+    .F(ledFrameBuffer_852),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_899),
+    .I2(ledFrameBuffer_908) 
+);
+defparam ledFrameBuffer_s807.INIT=8'h80;
+  LUT3 ledFrameBuffer_s808 (
+    .F(ledFrameBuffer_854),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_900),
+    .I2(ledFrameBuffer_908) 
+);
+defparam ledFrameBuffer_s808.INIT=8'h80;
+  LUT3 ledFrameBuffer_s809 (
+    .F(ledFrameBuffer_856),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_901),
+    .I2(ledFrameBuffer_908) 
+);
+defparam ledFrameBuffer_s809.INIT=8'h80;
+  LUT3 ledFrameBuffer_s810 (
+    .F(ledFrameBuffer_858),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_902),
+    .I2(ledFrameBuffer_908) 
+);
+defparam ledFrameBuffer_s810.INIT=8'h80;
+  LUT3 ledFrameBuffer_s811 (
+    .F(ledFrameBuffer_860),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_903),
+    .I2(ledFrameBuffer_908) 
+);
+defparam ledFrameBuffer_s811.INIT=8'h80;
+  LUT3 ledFrameBuffer_s812 (
+    .F(ledFrameBuffer_862),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_896),
+    .I2(ledFrameBuffer_909) 
+);
+defparam ledFrameBuffer_s812.INIT=8'h80;
+  LUT3 ledFrameBuffer_s813 (
+    .F(ledFrameBuffer_864),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_897),
+    .I2(ledFrameBuffer_909) 
+);
+defparam ledFrameBuffer_s813.INIT=8'h80;
+  LUT3 ledFrameBuffer_s814 (
+    .F(ledFrameBuffer_866),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_898),
+    .I2(ledFrameBuffer_909) 
+);
+defparam ledFrameBuffer_s814.INIT=8'h80;
+  LUT3 ledFrameBuffer_s815 (
+    .F(ledFrameBuffer_868),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_899),
+    .I2(ledFrameBuffer_909) 
+);
+defparam ledFrameBuffer_s815.INIT=8'h80;
+  LUT3 ledFrameBuffer_s816 (
+    .F(ledFrameBuffer_870),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_900),
+    .I2(ledFrameBuffer_909) 
+);
+defparam ledFrameBuffer_s816.INIT=8'h80;
+  LUT3 ledFrameBuffer_s817 (
+    .F(ledFrameBuffer_872),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_901),
+    .I2(ledFrameBuffer_909) 
+);
+defparam ledFrameBuffer_s817.INIT=8'h80;
+  LUT3 ledFrameBuffer_s818 (
+    .F(ledFrameBuffer_874),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_902),
+    .I2(ledFrameBuffer_909) 
+);
+defparam ledFrameBuffer_s818.INIT=8'h80;
+  LUT3 ledFrameBuffer_s819 (
+    .F(ledFrameBuffer_876),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_903),
+    .I2(ledFrameBuffer_909) 
+);
+defparam ledFrameBuffer_s819.INIT=8'h80;
+  LUT3 ledFrameBuffer_s820 (
+    .F(ledFrameBuffer_878),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_896),
+    .I2(ledFrameBuffer_910) 
+);
+defparam ledFrameBuffer_s820.INIT=8'h80;
+  LUT3 ledFrameBuffer_s821 (
+    .F(ledFrameBuffer_880),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_897),
+    .I2(ledFrameBuffer_910) 
+);
+defparam ledFrameBuffer_s821.INIT=8'h80;
+  LUT3 ledFrameBuffer_s822 (
+    .F(ledFrameBuffer_882),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_898),
+    .I2(ledFrameBuffer_910) 
+);
+defparam ledFrameBuffer_s822.INIT=8'h80;
+  LUT3 ledFrameBuffer_s823 (
+    .F(ledFrameBuffer_884),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_899),
+    .I2(ledFrameBuffer_910) 
+);
+defparam ledFrameBuffer_s823.INIT=8'h80;
+  LUT3 ledFrameBuffer_s824 (
+    .F(ledFrameBuffer_886),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_900),
+    .I2(ledFrameBuffer_910) 
+);
+defparam ledFrameBuffer_s824.INIT=8'h80;
+  LUT3 ledFrameBuffer_s825 (
+    .F(ledFrameBuffer_888),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_901),
+    .I2(ledFrameBuffer_910) 
+);
+defparam ledFrameBuffer_s825.INIT=8'h80;
+  LUT3 ledFrameBuffer_s826 (
+    .F(ledFrameBuffer_890),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_902),
+    .I2(ledFrameBuffer_910) 
+);
+defparam ledFrameBuffer_s826.INIT=8'h80;
+  LUT3 ledFrameBuffer_s827 (
+    .F(ledFrameBuffer_892),
+    .I0(n235_3),
+    .I1(ledFrameBuffer_903),
+    .I2(ledFrameBuffer_910) 
+);
+defparam ledFrameBuffer_s827.INIT=8'h80;
+  LUT3 n111_s10 (
+    .F(n111_18),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_218 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_220 ),
+    .I2(currentStep[0]) 
+);
+defparam n111_s10.INIT=8'hCA;
+  LUT3 ledFrameBuffer_s828 (
+    .F(ledFrameBuffer_894),
+    .I0(colorSelector_4),
+    .I1(cycleCounter[7]),
+    .I2(n235_3) 
+);
+defparam ledFrameBuffer_s828.INIT=8'hBF;
+  LUT3 n24_s0 (
+    .F(n24_4),
+    .I0(rowCounter[0]),
+    .I1(rowCounter[1]),
+    .I2(rowCounter[2]) 
+);
+defparam n24_s0.INIT=8'h78;
+  LUT2 n114_s0 (
+    .F(n114_4),
+    .I0(currentStep[0]),
+    .I1(currentStep[1]) 
+);
+defparam n114_s0.INIT=4'h6;
+  LUT3 n113_s0 (
+    .F(n113_4),
+    .I0(currentStep[0]),
+    .I1(currentStep[1]),
+    .I2(currentStep[2]) 
+);
+defparam n113_s0.INIT=8'h78;
+  LUT3 ledFrameBuffer_s829 (
+    .F(ledFrameBuffer_895),
+    .I0(cycleCounter[12]),
+    .I1(cycleCounter[11]),
+    .I2(cycleCounter[13]) 
+);
+defparam ledFrameBuffer_s829.INIT=8'h01;
+  LUT4 ledFrameBuffer_s830 (
+    .F(ledFrameBuffer_896),
+    .I0(colorSelector_4),
+    .I1(cycleCounter[9]),
+    .I2(cycleCounter[8]),
+    .I3(cycleCounter[10]) 
+);
+defparam ledFrameBuffer_s830.INIT=16'h0001;
+  LUT4 ledFrameBuffer_s831 (
+    .F(ledFrameBuffer_897),
+    .I0(colorSelector_4),
+    .I1(cycleCounter[9]),
+    .I2(cycleCounter[10]),
+    .I3(cycleCounter[8]) 
+);
+defparam ledFrameBuffer_s831.INIT=16'h0100;
+  LUT4 ledFrameBuffer_s832 (
+    .F(ledFrameBuffer_898),
+    .I0(colorSelector_4),
+    .I1(cycleCounter[8]),
+    .I2(cycleCounter[10]),
+    .I3(cycleCounter[9]) 
+);
+defparam ledFrameBuffer_s832.INIT=16'h0100;
+  LUT4 ledFrameBuffer_s833 (
+    .F(ledFrameBuffer_899),
+    .I0(colorSelector_4),
+    .I1(cycleCounter[10]),
+    .I2(cycleCounter[8]),
+    .I3(cycleCounter[9]) 
+);
+defparam ledFrameBuffer_s833.INIT=16'h1000;
+  LUT4 ledFrameBuffer_s834 (
+    .F(ledFrameBuffer_900),
+    .I0(colorSelector_4),
+    .I1(cycleCounter[9]),
+    .I2(cycleCounter[8]),
+    .I3(cycleCounter[10]) 
+);
+defparam ledFrameBuffer_s834.INIT=16'h0100;
+  LUT4 ledFrameBuffer_s835 (
+    .F(ledFrameBuffer_901),
+    .I0(colorSelector_4),
+    .I1(cycleCounter[9]),
+    .I2(cycleCounter[8]),
+    .I3(cycleCounter[10]) 
+);
+defparam ledFrameBuffer_s835.INIT=16'h1000;
+  LUT4 ledFrameBuffer_s836 (
+    .F(ledFrameBuffer_902),
+    .I0(colorSelector_4),
+    .I1(cycleCounter[8]),
+    .I2(cycleCounter[9]),
+    .I3(cycleCounter[10]) 
+);
+defparam ledFrameBuffer_s836.INIT=16'h1000;
+  LUT4 ledFrameBuffer_s837 (
+    .F(ledFrameBuffer_903),
+    .I0(colorSelector_4),
+    .I1(cycleCounter[9]),
+    .I2(cycleCounter[8]),
+    .I3(cycleCounter[10]) 
+);
+defparam ledFrameBuffer_s837.INIT=16'h4000;
+  LUT3 ledFrameBuffer_s838 (
+    .F(ledFrameBuffer_904),
+    .I0(cycleCounter[12]),
+    .I1(cycleCounter[13]),
+    .I2(cycleCounter[11]) 
+);
+defparam ledFrameBuffer_s838.INIT=8'h10;
+  LUT3 ledFrameBuffer_s839 (
+    .F(ledFrameBuffer_905),
+    .I0(cycleCounter[11]),
+    .I1(cycleCounter[13]),
+    .I2(cycleCounter[12]) 
+);
+defparam ledFrameBuffer_s839.INIT=8'h10;
+  LUT3 ledFrameBuffer_s840 (
+    .F(ledFrameBuffer_906),
+    .I0(cycleCounter[13]),
+    .I1(cycleCounter[11]),
+    .I2(cycleCounter[12]) 
+);
+defparam ledFrameBuffer_s840.INIT=8'h40;
+  LUT3 ledFrameBuffer_s841 (
+    .F(ledFrameBuffer_907),
+    .I0(cycleCounter[12]),
+    .I1(cycleCounter[11]),
+    .I2(cycleCounter[13]) 
+);
+defparam ledFrameBuffer_s841.INIT=8'h10;
+  LUT3 ledFrameBuffer_s842 (
+    .F(ledFrameBuffer_908),
+    .I0(cycleCounter[12]),
+    .I1(cycleCounter[11]),
+    .I2(cycleCounter[13]) 
+);
+defparam ledFrameBuffer_s842.INIT=8'h40;
+  LUT3 ledFrameBuffer_s843 (
+    .F(ledFrameBuffer_909),
+    .I0(cycleCounter[11]),
+    .I1(cycleCounter[12]),
+    .I2(cycleCounter[13]) 
+);
+defparam ledFrameBuffer_s843.INIT=8'h40;
+  LUT3 ledFrameBuffer_s844 (
+    .F(ledFrameBuffer_910),
+    .I0(cycleCounter[12]),
+    .I1(cycleCounter[11]),
+    .I2(cycleCounter[13]) 
+);
+defparam ledFrameBuffer_s844.INIT=8'h80;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s251  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_224 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_32_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_0_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s251 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s252  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_226 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_48_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_16_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s252 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s253  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_228 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_40_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_8_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s253 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s254  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_230 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_56_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_24_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s254 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s255  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_232 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_36_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_4_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s255 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s256  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_234 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_52_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_20_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s256 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s257  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_236 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_44_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_12_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s257 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s258  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_238 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_60_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_28_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s258 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s259  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_240 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_34_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_2_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s259 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s260  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_242 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_50_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_18_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s260 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s261  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_244 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_42_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_10_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s261 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s262  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_246 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_58_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_26_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s262 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s263  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_248 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_38_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_6_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s263 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s264  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_250 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_54_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_22_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s264 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s265  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_252 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_46_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_14_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s265 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s266  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_254 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_62_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_30_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s266 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s267  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_256 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_33_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_1_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s267 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s268  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_258 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_49_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_17_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s268 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s269  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_260 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_41_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_9_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s269 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s270  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_262 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_57_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_25_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s270 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s271  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_264 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_37_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_5_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s271 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s272  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_266 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_53_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_21_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s272 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s273  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_268 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_45_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_13_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s273 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s274  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_270 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_61_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_29_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s274 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s275  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_272 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_35_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_3_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s275 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s276  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_274 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_51_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_19_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s276 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s277  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_276 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_43_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_11_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s277 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s278  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_278 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_59_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_27_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s278 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s279  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_280 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_39_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_7_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s279 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s280  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_282 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_55_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_23_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s280 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s281  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_284 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_47_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_15_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s281 .INIT=16'hCAAC;
+  LUT4 \ledFrameBuffer_RAMOUT_7_G[3]_s282  (
+    .F(\ledFrameBuffer_RAMOUT_7_G[3]_286 ),
+    .I0(\ledFrameBuffer_ledFrameBuffer_RAMREG_63_G[0]_1 ),
+    .I1(\ledFrameBuffer_ledFrameBuffer_RAMREG_31_G[0]_1 ),
+    .I2(colorSelector_4),
+    .I3(rowCounter[2]) 
+);
+defparam \ledFrameBuffer_RAMOUT_7_G[3]_s282 .INIT=16'hCAAC;
+  LUT4 n25_s2 (
+    .F(n25_10),
+    .I0(rowCounter[1]),
+    .I1(rowCounter[0]),
+    .I2(colorSelector_4),
+    .I3(n235_3) 
+);
+defparam n25_s2.INIT=16'hA6AA;
+  LUT2 n236_s1 (
+    .F(n236_6),
+    .I0(colorSelector_4),
+    .I1(n235_3) 
+);
+defparam n236_s1.INIT=4'h4;
+  LUT3 n26_s3 (
+    .F(n26_8),
+    .I0(rowCounter[0]),
+    .I1(colorSelector_4),
+    .I2(n235_3) 
+);
+defparam n26_s3.INIT=8'h9A;
+  LUT4 n122_s4 (
+    .F(n122_10),
+    .I0(currentStep[2]),
+    .I1(rowCounter[2]),
+    .I2(n117_3),
+    .I3(ch2_mat_CLOCK_d) 
+);
+defparam n122_s4.INIT=16'hF600;
+  DFFE rowCounter_2_s0 (
+    .Q(rowCounter[2]),
+    .D(n24_4),
+    .CLK(overflow_Z),
+    .CE(n236_6) 
+);
+defparam rowCounter_2_s0.INIT=1'b0;
+  DFFE cycleCounter_13_s0 (
+    .Q(cycleCounter[13]),
+    .D(n28_1),
+    .CLK(overflow_Z),
+    .CE(n236_6) 
+);
+  DFFE cycleCounter_12_s0 (
+    .Q(cycleCounter[12]),
+    .D(n29_1),
+    .CLK(overflow_Z),
+    .CE(n236_6) 
+);
+  DFFE cycleCounter_11_s0 (
+    .Q(cycleCounter[11]),
+    .D(n30_1),
+    .CLK(overflow_Z),
+    .CE(n236_6) 
+);
+  DFFE cycleCounter_10_s0 (
+    .Q(cycleCounter[10]),
+    .D(n31_1),
+    .CLK(overflow_Z),
+    .CE(n236_6) 
+);
+  DFFE cycleCounter_9_s0 (
+    .Q(cycleCounter[9]),
+    .D(n32_1),
+    .CLK(overflow_Z),
+    .CE(n236_6) 
+);
+  DFFE cycleCounter_8_s0 (
+    .Q(cycleCounter[8]),
+    .D(n33_1),
+    .CLK(overflow_Z),
+    .CE(n236_6) 
+);
+  DFFE cycleCounter_7_s0 (
+    .Q(cycleCounter[7]),
+    .D(n34_1),
+    .CLK(overflow_Z),
+    .CE(n236_6) 
+);
+  DFFE cycleCounter_6_s0 (
+    .Q(cycleCounter[6]),
+    .D(n35_1),
+    .CLK(overflow_Z),
+    .CE(n236_6) 
+);
+  DFFE cycleCounter_5_s0 (
+    .Q(cycleCounter[5]),
+    .D(n36_1),
+    .CLK(overflow_Z),
+    .CE(n236_6) 
+);
+  DFFE cycleCounter_4_s0 (
+    .Q(cycleCounter[4]),
+    .D(n37_1),
+    .CLK(overflow_Z),
+    .CE(n236_6) 
+);
+  DFFE cycleCounter_3_s0 (
+    .Q(cycleCounter[3]),
+    .D(n38_1),
+    .CLK(overflow_Z),
+    .CE(n236_6) 
+);
+  DFFE cycleCounter_2_s0 (
+    .Q(cycleCounter[2]),
+    .D(n39_1),
+    .CLK(overflow_Z),
+    .CE(n236_6) 
+);
+  DFFE cycleCounter_1_s0 (
+    .Q(cycleCounter[1]),
+    .D(n40_1),
+    .CLK(overflow_Z),
+    .CE(n236_6) 
+);
+  DFFRE mat_RCLOCK_s2 (
+    .Q(ch2_mat_RCLOCK_d),
+    .D(n85_4),
+    .CLK(overflow_Z),
+    .CE(ch2_mat_CLOCK_d),
+    .RESET(n235_3) 
+);
+  DFFE ROW_s2 (
+    .Q(ch2_ROW_d),
+    .D(n111_18),
+    .CLK(overflow_Z),
+    .CE(ch2_mat_CLOCK_d) 
+);
+  DFFE currentStep_2_s0 (
+    .Q(currentStep[2]),
+    .D(n113_4),
+    .CLK(overflow_Z),
+    .CE(ch2_mat_CLOCK_d) 
+);
+  DFFE currentStep_1_s0 (
+    .Q(currentStep[1]),
+    .D(n114_4),
+    .CLK(overflow_Z),
+    .CE(ch2_mat_CLOCK_d) 
+);
+  DFFE currentStep_0_s0 (
+    .Q(currentStep[0]),
+    .D(n115_6),
+    .CLK(overflow_Z),
+    .CE(ch2_mat_CLOCK_d) 
+);
+  DFFSE COL_Red_s2 (
+    .Q(ch2_COL_Red_d),
+    .D(n122_11),
+    .CLK(overflow_Z),
+    .CE(ch2_mat_CLOCK_d),
+    .SET(n122_10) 
+);
+  DFFSE COL_Green_s2 (
+    .Q(ch2_COL_Green_d),
+    .D(colorSelector_4),
+    .CLK(overflow_Z),
+    .CE(ch2_mat_CLOCK_d),
+    .SET(n122_10) 
+);
+  DFF mat_CLOCK_s2 (
+    .Q(ch2_mat_CLOCK_d),
+    .D(n14_6),
+    .CLK(overflow_Z) 
+);
+  DFFE colorSelector_s1 (
+    .Q(colorSelector_4),
+    .D(n122_11),
+    .CLK(overflow_Z),
+    .CE(n235_3) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_0_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_0_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_766) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_1_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_1_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_768) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_2_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_2_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_770) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_3_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_3_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_772) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_4_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_4_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_774) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_5_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_5_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_776) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_6_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_6_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_778) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_7_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_7_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_780) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_8_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_8_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_782) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_9_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_9_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_784) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_10_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_10_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_786) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_11_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_11_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_788) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_12_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_12_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_790) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_13_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_13_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_792) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_14_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_14_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_794) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_15_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_15_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_796) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_16_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_16_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_798) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_17_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_17_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_800) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_18_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_18_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_802) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_19_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_19_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_804) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_20_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_20_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_806) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_21_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_21_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_808) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_22_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_22_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_810) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_23_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_23_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_812) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_24_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_24_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_814) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_25_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_25_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_816) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_26_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_26_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_818) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_27_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_27_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_820) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_28_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_28_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_822) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_29_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_29_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_824) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_30_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_30_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_826) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_31_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_31_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_828) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_32_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_32_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_830) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_33_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_33_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_832) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_34_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_34_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_834) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_35_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_35_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_836) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_36_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_36_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_838) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_37_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_37_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_840) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_38_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_38_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_842) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_39_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_39_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_844) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_40_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_40_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_846) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_41_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_41_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_848) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_42_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_42_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_850) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_43_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_43_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_852) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_44_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_44_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_854) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_45_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_45_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_856) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_46_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_46_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_858) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_47_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_47_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_860) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_48_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_48_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_862) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_49_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_49_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_864) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_50_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_50_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_866) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_51_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_51_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_868) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_52_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_52_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_870) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_53_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_53_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_872) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_54_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_54_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_874) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_55_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_55_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_876) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_56_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_56_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_878) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_57_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_57_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_880) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_58_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_58_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_882) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_59_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_59_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_884) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_60_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_60_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_886) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_61_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_61_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_888) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_62_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_62_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_890) 
+);
+  DFFE \ledFrameBuffer_ledFrameBuffer_RAMREG_63_G[0]_s0  (
+    .Q(\ledFrameBuffer_ledFrameBuffer_RAMREG_63_G[0]_1 ),
+    .D(ledFrameBuffer_894),
+    .CLK(overflow_Z),
+    .CE(ledFrameBuffer_892) 
+);
+  DFF rowCounter_1_s1 (
+    .Q(rowCounter[1]),
+    .D(n25_10),
+    .CLK(overflow_Z) 
+);
+defparam rowCounter_1_s1.INIT=1'b0;
+  DFF rowCounter_0_s1 (
+    .Q(rowCounter[0]),
+    .D(n26_8),
+    .CLK(overflow_Z) 
+);
+defparam rowCounter_0_s1.INIT=1'b0;
+  ALU n40_s (
+    .SUM(n40_1),
+    .COUT(n40_2),
+    .I0(cycleCounter[1]),
+    .I1(rowCounter[0]),
+    .I3(GND),
+    .CIN(GND) 
+);
+defparam n40_s.ALU_MODE=0;
+  ALU n39_s (
+    .SUM(n39_1),
+    .COUT(n39_2),
+    .I0(cycleCounter[2]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n40_2) 
+);
+defparam n39_s.ALU_MODE=0;
+  ALU n38_s (
+    .SUM(n38_1),
+    .COUT(n38_2),
+    .I0(cycleCounter[3]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n39_2) 
+);
+defparam n38_s.ALU_MODE=0;
+  ALU n37_s (
+    .SUM(n37_1),
+    .COUT(n37_2),
+    .I0(cycleCounter[4]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n38_2) 
+);
+defparam n37_s.ALU_MODE=0;
+  ALU n36_s (
+    .SUM(n36_1),
+    .COUT(n36_2),
+    .I0(cycleCounter[5]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n37_2) 
+);
+defparam n36_s.ALU_MODE=0;
+  ALU n35_s (
+    .SUM(n35_1),
+    .COUT(n35_2),
+    .I0(cycleCounter[6]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n36_2) 
+);
+defparam n35_s.ALU_MODE=0;
+  ALU n34_s (
+    .SUM(n34_1),
+    .COUT(n34_2),
+    .I0(cycleCounter[7]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n35_2) 
+);
+defparam n34_s.ALU_MODE=0;
+  ALU n33_s (
+    .SUM(n33_1),
+    .COUT(n33_2),
+    .I0(cycleCounter[8]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n34_2) 
+);
+defparam n33_s.ALU_MODE=0;
+  ALU n32_s (
+    .SUM(n32_1),
+    .COUT(n32_2),
+    .I0(cycleCounter[9]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n33_2) 
+);
+defparam n32_s.ALU_MODE=0;
+  ALU n31_s (
+    .SUM(n31_1),
+    .COUT(n31_2),
+    .I0(cycleCounter[10]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n32_2) 
+);
+defparam n31_s.ALU_MODE=0;
+  ALU n30_s (
+    .SUM(n30_1),
+    .COUT(n30_2),
+    .I0(cycleCounter[11]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n31_2) 
+);
+defparam n30_s.ALU_MODE=0;
+  ALU n29_s (
+    .SUM(n29_1),
+    .COUT(n29_2),
+    .I0(cycleCounter[12]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n30_2) 
+);
+defparam n29_s.ALU_MODE=0;
+  ALU n28_s (
+    .SUM(n28_1),
+    .COUT(n28_0_COUT),
+    .I0(cycleCounter[13]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n29_2) 
+);
+defparam n28_s.ALU_MODE=0;
+  ALU n116_s0 (
+    .SUM(n116_1_SUM),
+    .COUT(n116_3),
+    .I0(currentStep[0]),
+    .I1(rowCounter[0]),
+    .I3(GND),
+    .CIN(GND) 
+);
+defparam n116_s0.ALU_MODE=3;
+  ALU n117_s0 (
+    .SUM(n117_1_SUM),
+    .COUT(n117_3),
+    .I0(currentStep[1]),
+    .I1(rowCounter[1]),
+    .I3(GND),
+    .CIN(n116_3) 
+);
+defparam n117_s0.ALU_MODE=3;
+  MUX2_LUT5 \ledFrameBuffer_RAMOUT_7_G[3]_s235  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_162 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_224 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_226 ),
+    .S0(rowCounter[1]) 
+);
+  MUX2_LUT5 \ledFrameBuffer_RAMOUT_7_G[3]_s236  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_164 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_228 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_230 ),
+    .S0(rowCounter[1]) 
+);
+  MUX2_LUT5 \ledFrameBuffer_RAMOUT_7_G[3]_s237  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_166 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_232 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_234 ),
+    .S0(rowCounter[1]) 
+);
+  MUX2_LUT5 \ledFrameBuffer_RAMOUT_7_G[3]_s238  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_168 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_236 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_238 ),
+    .S0(rowCounter[1]) 
+);
+  MUX2_LUT5 \ledFrameBuffer_RAMOUT_7_G[3]_s239  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_170 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_240 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_242 ),
+    .S0(rowCounter[1]) 
+);
+  MUX2_LUT5 \ledFrameBuffer_RAMOUT_7_G[3]_s240  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_172 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_244 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_246 ),
+    .S0(rowCounter[1]) 
+);
+  MUX2_LUT5 \ledFrameBuffer_RAMOUT_7_G[3]_s241  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_174 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_248 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_250 ),
+    .S0(rowCounter[1]) 
+);
+  MUX2_LUT5 \ledFrameBuffer_RAMOUT_7_G[3]_s242  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_176 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_252 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_254 ),
+    .S0(rowCounter[1]) 
+);
+  MUX2_LUT5 \ledFrameBuffer_RAMOUT_7_G[3]_s243  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_178 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_256 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_258 ),
+    .S0(rowCounter[1]) 
+);
+  MUX2_LUT5 \ledFrameBuffer_RAMOUT_7_G[3]_s244  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_180 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_260 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_262 ),
+    .S0(rowCounter[1]) 
+);
+  MUX2_LUT5 \ledFrameBuffer_RAMOUT_7_G[3]_s245  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_182 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_264 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_266 ),
+    .S0(rowCounter[1]) 
+);
+  MUX2_LUT5 \ledFrameBuffer_RAMOUT_7_G[3]_s246  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_184 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_268 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_270 ),
+    .S0(rowCounter[1]) 
+);
+  MUX2_LUT5 \ledFrameBuffer_RAMOUT_7_G[3]_s247  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_186 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_272 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_274 ),
+    .S0(rowCounter[1]) 
+);
+  MUX2_LUT5 \ledFrameBuffer_RAMOUT_7_G[3]_s248  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_188 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_276 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_278 ),
+    .S0(rowCounter[1]) 
+);
+  MUX2_LUT5 \ledFrameBuffer_RAMOUT_7_G[3]_s249  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_190 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_280 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_282 ),
+    .S0(rowCounter[1]) 
+);
+  MUX2_LUT5 \ledFrameBuffer_RAMOUT_7_G[3]_s250  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_192 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_284 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_286 ),
+    .S0(rowCounter[1]) 
+);
+  MUX2_LUT6 \ledFrameBuffer_RAMOUT_7_G[3]_s227  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_194 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_162 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_164 ),
+    .S0(rowCounter[0]) 
+);
+  MUX2_LUT6 \ledFrameBuffer_RAMOUT_7_G[3]_s228  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_196 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_166 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_168 ),
+    .S0(rowCounter[0]) 
+);
+  MUX2_LUT6 \ledFrameBuffer_RAMOUT_7_G[3]_s229  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_198 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_170 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_172 ),
+    .S0(rowCounter[0]) 
+);
+  MUX2_LUT6 \ledFrameBuffer_RAMOUT_7_G[3]_s230  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_200 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_174 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_176 ),
+    .S0(rowCounter[0]) 
+);
+  MUX2_LUT6 \ledFrameBuffer_RAMOUT_7_G[3]_s231  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_202 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_178 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_180 ),
+    .S0(rowCounter[0]) 
+);
+  MUX2_LUT6 \ledFrameBuffer_RAMOUT_7_G[3]_s232  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_204 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_182 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_184 ),
+    .S0(rowCounter[0]) 
+);
+  MUX2_LUT6 \ledFrameBuffer_RAMOUT_7_G[3]_s233  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_206 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_186 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_188 ),
+    .S0(rowCounter[0]) 
+);
+  MUX2_LUT6 \ledFrameBuffer_RAMOUT_7_G[3]_s234  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_208 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_190 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_192 ),
+    .S0(rowCounter[0]) 
+);
+  MUX2_LUT7 \ledFrameBuffer_RAMOUT_7_G[3]_s223  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_210 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_194 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_196 ),
+    .S0(currentStep[2]) 
+);
+  MUX2_LUT7 \ledFrameBuffer_RAMOUT_7_G[3]_s224  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_212 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_198 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_200 ),
+    .S0(currentStep[2]) 
+);
+  MUX2_LUT7 \ledFrameBuffer_RAMOUT_7_G[3]_s225  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_214 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_202 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_204 ),
+    .S0(currentStep[2]) 
+);
+  MUX2_LUT7 \ledFrameBuffer_RAMOUT_7_G[3]_s226  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_216 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_206 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_208 ),
+    .S0(currentStep[2]) 
+);
+  MUX2_LUT8 \ledFrameBuffer_RAMOUT_7_G[3]_s188  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_218 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_210 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_212 ),
+    .S0(currentStep[1]) 
+);
+  MUX2_LUT8 \ledFrameBuffer_RAMOUT_7_G[3]_s189  (
+    .O(\ledFrameBuffer_RAMOUT_7_G[3]_220 ),
+    .I0(\ledFrameBuffer_RAMOUT_7_G[3]_214 ),
+    .I1(\ledFrameBuffer_RAMOUT_7_G[3]_216 ),
+    .S0(currentStep[1]) 
+);
+  INV n14_s2 (
+    .O(n14_6),
+    .I(ch2_mat_CLOCK_d) 
+);
+  INV n122_s5 (
+    .O(n122_11),
+    .I(colorSelector_4) 
+);
+  INV n115_s2 (
+    .O(n115_6),
+    .I(currentStep[0]) 
+);
+  timer1 timer_instance (
+    .clk_d(clk_d),
+    .overflow_Z(overflow_Z)
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+  GSR GSR (
+    .GSRI(VCC) 
+);
+endmodule /* top */
