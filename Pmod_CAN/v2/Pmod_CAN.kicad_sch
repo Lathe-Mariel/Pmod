@@ -2821,12 +2821,6 @@
 		(uuid "4e9c13ff-32a0-42ad-8b2c-42fad15edbd0")
 	)
 	(junction
-		(at 146.685 127.635)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5886756d-d367-4070-b7d1-9ec74954c2ec")
-	)
-	(junction
 		(at 95.885 93.345)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2897,6 +2891,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "abb1c84c-4e2b-474a-9555-c4e71a53fbf8")
+	)
+	(junction
+		(at 139.7 127.635)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ade215ec-8864-4b99-bcbe-1c8c7f117574")
 	)
 	(junction
 		(at 106.045 103.505)
@@ -3372,6 +3372,16 @@
 	)
 	(wire
 		(pts
+			(xy 139.7 127.635) (xy 160.655 127.635)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "72b27a9c-c74d-4051-b44c-632cc37962e5")
+	)
+	(wire
+		(pts
 			(xy 228.6 93.98) (xy 228.6 94.615)
 		)
 		(stroke
@@ -3392,7 +3402,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.685 151.13) (xy 146.685 127.635)
+			(xy 139.7 151.13) (xy 139.7 127.635)
 		)
 		(stroke
 			(width 0)
@@ -3542,23 +3552,13 @@
 	)
 	(wire
 		(pts
-			(xy 146.685 127.635) (xy 146.685 126.365)
+			(xy 139.7 127.635) (xy 139.7 126.365)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "afce75d7-b659-4b45-ba06-07de37fa0d7c")
-	)
-	(wire
-		(pts
-			(xy 160.655 127.635) (xy 146.685 127.635)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b32be3bd-75b0-406d-8c74-0ab7463e0832")
 	)
 	(wire
 		(pts
@@ -3642,7 +3642,7 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 151.13) (xy 146.685 151.13)
+			(xy 157.48 151.13) (xy 139.7 151.13)
 		)
 		(stroke
 			(width 0)
@@ -3921,7 +3921,7 @@
 		(dnp no)
 		(uuid "02234e0b-0392-4355-b762-24d4a7f46ffd")
 		(property "Reference" "C2"
-			(at 233.045 97.79 90)
+			(at 234.315 90.805 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3929,7 +3929,7 @@
 			)
 		)
 		(property "Value" "4.7n"
-			(at 235.585 93.98 90)
+			(at 235.585 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4124,7 +4124,7 @@
 			)
 		)
 		(property "Value" "4.7k"
-			(at 163.195 153.67 90)
+			(at 163.83 153.67 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4258,7 +4258,7 @@
 			)
 		)
 		(property "Value" "60.4"
-			(at 229.87 90.17 0)
+			(at 226.06 92.075 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4507,7 +4507,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 146.685 126.365 0)
+		(at 139.7 126.365 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4515,7 +4515,7 @@
 		(dnp no)
 		(uuid "63b2720f-2273-4815-866a-59168f2dc504")
 		(property "Reference" "#PWR07"
-			(at 146.685 130.175 0)
+			(at 139.7 130.175 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4524,7 +4524,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 142.875 126.365 0)
+			(at 135.89 126.365 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4532,7 +4532,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 146.685 126.365 0)
+			(at 139.7 126.365 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4541,7 +4541,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 146.685 126.365 0)
+			(at 139.7 126.365 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4550,7 +4550,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 146.685 126.365 0)
+			(at 139.7 126.365 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4794,7 +4794,7 @@
 			)
 		)
 		(property "Value" "4.7k"
-			(at 146.685 115.57 0)
+			(at 142.875 116.205 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5067,7 +5067,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 175.26 125.095 0)
+			(at 173.99 124.46 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5306,7 +5306,7 @@
 			)
 		)
 		(property "Value" "4.7k"
-			(at 151.13 114.935 0)
+			(at 152.4 115.57 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5721,7 +5721,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 236.22 97.79 0)
+			(at 236.22 98.425 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6002,7 +6002,7 @@
 			)
 		)
 		(property "Value" "4.7k"
-			(at 164.465 88.265 0)
+			(at 165.735 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6140,7 +6140,7 @@
 			)
 		)
 		(property "Value" "AE_XC9306-5V0"
-			(at 140.97 141.605 90)
+			(at 142.875 141.605 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6221,7 +6221,7 @@
 			)
 		)
 		(property "Value" "60.4"
-			(at 229.87 100.33 0)
+			(at 226.06 100.33 90)
 			(effects
 				(font
 					(size 1.27 1.27)
