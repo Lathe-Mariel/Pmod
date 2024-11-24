@@ -1,0 +1,13 @@
+-d H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\gwsynthesis\Pmod_sc1602.vg
+-p GW1NR-9C-QFN88P-6
+-pn GW1NR-LV9QN88PC6/I5
+-cst H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.cst
+-cfg H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\pnr\device.cfg
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-correct_hold 1
+-route_maxfan 23
+-global_freq 50.000
