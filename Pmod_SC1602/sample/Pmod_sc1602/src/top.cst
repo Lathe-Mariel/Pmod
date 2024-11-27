@@ -23,13 +23,12 @@ IO_LOC "sc1608_rs" 39;
 IO_PORT "sc1608_rs" PULL_MODE=NONE DRIVE=8;
 IO_LOC "sc1608_rw" 37;
 IO_PORT "sc1608_rw" PULL_MODE=NONE DRIVE=8;
-/*
-IO_LOC "sc1608_data[0]" ;
+
+IO_LOC "sc1608_data[0]" 28;
 IO_PORT "sc1608_data[0]" PULL_MODE=NONE DRIVE=8;
-IO_LOC "sc1608_data[1]" ;
+IO_LOC "sc1608_data[1]" 27;
 IO_PORT "sc1608_data[1]" PULL_MODE=NONE DRIVE=8;
-IO_LOC "sc1608_data[2]" ;
+IO_LOC "sc1608_data[2]" 26;
 IO_PORT "sc1608_data[2]" PULL_MODE=NONE DRIVE=8;
-IO_LOC "sc1608_data[3]" ;
+IO_LOC "sc1608_data[3]" 25;
 IO_PORT "sc1608_data[3]" PULL_MODE=NONE DRIVE=8;
-*/

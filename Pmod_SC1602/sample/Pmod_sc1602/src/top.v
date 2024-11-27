@@ -5,8 +5,8 @@ module top (
     output sc1608_vo,
     output sc1608_rs,
     output sc1608_rw,
-    output sc1608_enable
-//    output [3:0] sc1608_data
+    output sc1608_enable,
+    output [3:0] sc1608_data
 );
 
 reg [23:0] counter;
@@ -54,8 +54,8 @@ lcd_driver_8 driver0(
 //.rd(),
 .sc1602_en(sc1608_enable),
 .sc1602_rs(sc1608_rs),
-.sc1602_rw(sc1608_rw)
-//.sc1602_data(sc1608_data),
+.sc1602_rw(sc1608_rw),
+.sc1602_data(sc1608_data)
 //.rfrsh_rate()
 );
 
