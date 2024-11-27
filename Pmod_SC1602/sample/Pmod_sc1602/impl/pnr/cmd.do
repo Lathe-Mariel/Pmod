@@ -1,8 +1,8 @@
--d H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\gwsynthesis\Pmod_sc1602.vg
+-d C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\gwsynthesis\Pmod_sc1602.vg
 -p GW1NR-9C-QFN88P-6
 -pn GW1NR-LV9QN88PC6/I5
--cst H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.cst
--cfg H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\pnr\device.cfg
+-cst C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.cst
+-cfg C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\pnr\device.cfg
 -bit
 -tr
 -ph

@@ -50,11 +50,11 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Design File</td>
-<td>H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\gwsynthesis\Pmod_sc1602.vg</td>
+<td>C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\gwsynthesis\Pmod_sc1602.vg</td>
 </tr>
 <tr>
 <td class="label">Physical Constraints File</td>
-<td>H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.cst</td>
+<td>C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.cst</td>
 </tr>
 <tr>
 <td class="label">Timing Constraints File</td>
@@ -62,7 +62,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Tool Version</td>
-<td>V1.9.9.01 (64-bit)</td>
+<td>V1.9.9.03 (64-bit)</td>
 </tr>
 <tr>
 <td class="label">Part Number</td>
@@ -78,7 +78,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Mon Nov 25 00:11:14 2024
+<td>Wed Nov 27 21:13:52 2024
 </td>
 </tr>
 <tr>
@@ -252,25 +252,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>1.8</td>
 </tr>
 <tr>
-<td class="label">backlight</td>
-<td></td>
-<td>38/2</td>
-<td>Y</td>
-<td>out</td>
-<td>IOB31[B]</td>
-<td>LVCMOS18</td>
-<td>8</td>
-<td>NONE</td>
-<td>NA</td>
-<td>NA</td>
-<td>OFF</td>
-<td>NA</td>
-<td>NA</td>
-<td>NA</td>
-<td>1.8</td>
-</tr>
-<tr>
-<td class="label">vo</td>
+<td class="label">sc1608_vo</td>
 <td></td>
 <td>36/2</td>
 <td>Y</td>
@@ -288,7 +270,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>1.8</td>
 </tr>
 <tr>
-<td class="label">rs</td>
+<td class="label">sc1608_rs</td>
 <td></td>
 <td>39/2</td>
 <td>Y</td>
@@ -306,12 +288,30 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>1.8</td>
 </tr>
 <tr>
-<td class="label">rw</td>
+<td class="label">sc1608_rw</td>
 <td></td>
 <td>37/2</td>
 <td>Y</td>
 <td>out</td>
 <td>IOB31[A]</td>
+<td>LVCMOS18</td>
+<td>8</td>
+<td>NONE</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td class="label">sc1608_enable</td>
+<td></td>
+<td>38/2</td>
+<td>Y</td>
+<td>out</td>
+<td>IOB31[B]</td>
 <td>LVCMOS18</td>
 <td>8</td>
 <td>NONE</td>
@@ -921,7 +921,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">36/2</td>
-<td>vo</td>
+<td>sc1608_vo</td>
 <td>out</td>
 <td>IOB29[B]</td>
 <td>LVCMOS18</td>
@@ -937,7 +937,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">37/2</td>
-<td>rw</td>
+<td>sc1608_rw</td>
 <td>out</td>
 <td>IOB31[A]</td>
 <td>LVCMOS18</td>
@@ -953,7 +953,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">38/2</td>
-<td>backlight</td>
+<td>sc1608_enable</td>
 <td>out</td>
 <td>IOB31[B]</td>
 <td>LVCMOS18</td>
@@ -969,7 +969,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">39/2</td>
-<td>rs</td>
+<td>sc1608_rs</td>
 <td>out</td>
 <td>IOB33[A]</td>
 <td>LVCMOS18</td>

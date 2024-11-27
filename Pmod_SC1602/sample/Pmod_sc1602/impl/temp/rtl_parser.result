@@ -1,18 +1,28 @@
 [
  {
-  "InstFile" : "C:/Git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/lcd_driver_8.v",
-  "InstLine" : 1,
-  "InstName" : "lcd_driver_8",
-  "ModuleFile" : "C:/Git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/lcd_driver_8.v",
-  "ModuleLine" : 1,
-  "ModuleName" : "lcd_driver_8"
- },
- {
   "InstFile" : "C:/Git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/top.v",
   "InstLine" : 1,
   "InstName" : "top",
   "ModuleFile" : "C:/Git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/top.v",
   "ModuleLine" : 1,
-  "ModuleName" : "top"
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/top.v",
+    "InstLine" : 43,
+    "InstName" : "your_instance_name",
+    "ModuleFile" : "C:/Git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/gowin_rpll/gowin_rpll.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "Gowin_rPLL"
+   },
+   {
+    "InstFile" : "C:/Git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/top.v",
+    "InstLine" : 49,
+    "InstName" : "driver0",
+    "ModuleFile" : "C:/Git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/lcd_driver_8.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "lcd_driver_8"
+   }
+  ]
  }
 ]
