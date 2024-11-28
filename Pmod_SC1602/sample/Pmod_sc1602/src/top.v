@@ -13,8 +13,10 @@ reg [23:0] counter;
 wire contrast;
 wire sc1602_clk;
 wire clkout;
+wire locked;
 
-assign contrast = counter[4] | counter[3] | counter[2];
+assign contrast = 0;
+//assign contrast = counter[6] & counter[5] & counter[4] & counter[3] & counter[2] & counter[1] & counter[0] ;
 
 TBUF u0(
     .O(sc1608_vo),
@@ -43,14 +45,15 @@ end
 Gowin_rPLL your_instance_name(
     .clkout(clkout),   //output clkout
     .clkoutd(sc1602_clk), //output clkoutd
-    .clkin(sys_clk)    //input clkin
+    .clkin(sys_clk),    //input clkin
+    .lock(locked)
 );
 
 lcd_driver_8 driver0(
 .clk(sc1602_clk),
-.resetn(sys_rst_n),
+.resetn(sys_rst_n | ~locked),
 //.addr(),
-.data(8'h46),
+.data(8'h52),
 //.rd(),
 .sc1602_en(sc1608_enable),
 .sc1602_rs(sc1608_rs),

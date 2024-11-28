@@ -136,7 +136,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_data <= 4'h1;    //
                         state <= WAIT;
                         next <= DSPON1;
-                        hold_time = 42;
+                        hold_time = 52; //42
                     end
                 DSPON1: // Display on/off
                     begin
@@ -207,7 +207,7 @@ always @(posedge clk or negedge resetn) begin
                         next <= REDCHR;
                         didx <= 0;
                         rfrsh_rate <= ~rfrsh_rate;    // output refresh rate;
-                        hold_time = 42;
+                        hold_time = 52; //42
                     end
                 DDRMADSET1:    // Set DDRAM address
                     // Sets DDRAM address. DDRAM data is sent and 

@@ -7,7 +7,7 @@
 
 -mod_name Gowin_rPLL
 -file_name gowin_rpll
--path C:/Git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/gowin_rpll/
+-path E:/git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/gowin_rpll/
 -type PLL
 -rPll true
 -file_type vlg
@@ -24,7 +24,7 @@
 -rst_sig_p false
 -fclkin 27
 -clkfb_sel 0
--en_lock false
+-en_lock true
 -clkout_bypass false
 -clkout_ft_dir 1
 -en_clkoutp false
