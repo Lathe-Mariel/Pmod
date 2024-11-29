@@ -7,17 +7,17 @@
 
 -mod_name Gowin_rPLL
 -file_name gowin_rpll
--path E:/git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/gowin_rpll/
+-path C:/Git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/gowin_rpll/
 -type PLL
 -rPll true
 -file_type vlg
 -dev_type GW1NR-9C
 -dyn_idiv_sel false
--idiv_sel 3
+-idiv_sel 1
 -dyn_fbdiv_sel false
 -fbdiv_sel 1
 -dyn_odiv_sel false
--odiv_sel 48
+-odiv_sel 16
 -dyn_sdiv_sel 100
 -dyn_da_en true
 -rst_sig false

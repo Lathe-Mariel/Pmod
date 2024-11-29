@@ -1,8 +1,9 @@
--d E:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\gwsynthesis\Pmod_sc1602.vg
+-d C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\gwsynthesis\Pmod_sc1602.vg
 -p GW1NR-9C-QFN88P-6
 -pn GW1NR-LV9QN88PC6/I5
--cst E:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.cst
--cfg E:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\pnr\device.cfg
+-cst C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.cst
+-cfg C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\pnr\device.cfg
+-gao_crc 0111101010010110
 -bit
 -tr
 -ph
@@ -11,3 +12,4 @@
 -correct_hold 1
 -route_maxfan 23
 -global_freq 50.000
+-rtl_gao

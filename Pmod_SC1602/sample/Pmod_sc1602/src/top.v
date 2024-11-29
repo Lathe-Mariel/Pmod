@@ -14,7 +14,7 @@ wire contrast;
 wire sc1602_clk;
 wire clkout;
 wire locked;
-
+/*
 assign contrast = 0;
 //assign contrast = counter[6] & counter[5] & counter[4] & counter[3] & counter[2] & counter[1] & counter[0] ;
 
@@ -23,6 +23,7 @@ TBUF u0(
     .I(1'b0),
     .OEN(~contrast)
 );
+*/
 
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if (!sys_rst_n)
@@ -51,9 +52,9 @@ Gowin_rPLL your_instance_name(
 
 lcd_driver_8 driver0(
 .clk(sc1602_clk),
-.resetn(sys_rst_n | ~locked),
+.resetn(sys_rst_n & locked),
 //.addr(),
-.data(8'h52),
+.data(8'h48),
 //.rd(),
 .sc1602_en(sc1608_enable),
 .sc1602_rs(sc1608_rs),
