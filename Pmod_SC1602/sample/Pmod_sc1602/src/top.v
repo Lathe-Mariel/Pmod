@@ -14,7 +14,7 @@ wire contrast;
 wire sc1602_clk;
 wire clkout;
 wire locked;
-/*
+
 assign contrast = 0;
 //assign contrast = counter[6] & counter[5] & counter[4] & counter[3] & counter[2] & counter[1] & counter[0] ;
 
@@ -23,7 +23,7 @@ TBUF u0(
     .I(1'b0),
     .OEN(~contrast)
 );
-*/
+
 
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if (!sys_rst_n)

@@ -53,7 +53,7 @@ always @(posedge clk or negedge resetn) begin
     if (!resetn)
         begin
             state <= RESET;
-            didx <= 0;
+            didx <= 8'b0;
         end
     else
         begin
@@ -63,7 +63,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_en <= 0;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h0;    // DL=0, N=1, F=0
+                        sc1602_data <= 4'h3;    // DL=0, N=1, F=0
                         next <= RESET1;
                         state <= WAIT;
                         hold_time = 6370;
@@ -86,7 +86,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_data <= 4'h3;    // DL=0, N=1, F=0
                         next <= RESET3;
                         state <= WAIT;
-                        hold_time = 33;
+                        hold_time = 1250;
                     end
                 RESET3:
                     begin
@@ -187,10 +187,10 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_rw <= 0;
                         sc1602_data <= 4'h1;    //h1
                         state <= WAIT;
-                        next <= ENMODST1;
+                        next <= DSPON1;
                         hold_time = 410; //42
                     end
-/*
+
                 DSPON1: // Display on/off
                     begin
                         sc1602_en <= 1;
@@ -206,12 +206,12 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'hC;    //
+                        sc1602_data <= 4'hF;    //
                         state <= WAIT;
                         next <= ENMODST1;
                         hold_time = HOLDINGT;
                     end
-*/
+
                 ENMODST1:    // Entry Mode
                     // Sets cursor move direction and specifies display shift. 
                     // These operations are performed during data write and read.
@@ -258,7 +258,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_data <= 4'h2;
                         state <= WAIT;
                         next <= REDCHR;
-                        didx <= 0;
+                        didx <= 8'b0;
                         rfrsh_rate <= ~rfrsh_rate;    // output refresh rate;
                         hold_time = 410; //42
                     end
@@ -289,6 +289,7 @@ always @(posedge clk or negedge resetn) begin
                         addr <= didx;
                         rd <= 1;
                         state <= WRTCHR1;
+                        sc1602_rs <= 1;
                     end
                 WRTCHR1:
                     begin
@@ -297,6 +298,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_rs <= 1;
                         sc1602_rw <= 0;
                         sc1602_en <= 1;
+                        didx <= didx + 8'b1;
                         next <= WRTCHR2;
                         state <= WAIT;
                         hold_time = HOLDINGT;
@@ -308,7 +310,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_rs <= 1;
                         sc1602_rw <= 0;
                         sc1602_en <= 1;
-                        didx <= didx + 1;
+
                         if (didx == 16)
                             begin
                                 didx <= 8'H40;

@@ -1,33 +1,54 @@
 module gw_gao(
+    \sc1608_data[3] ,
+    \sc1608_data[2] ,
+    \sc1608_data[1] ,
+    \sc1608_data[0] ,
+    sc1608_rs,
+    sc1608_enable,
     \driver0/state[4] ,
     \driver0/state[3] ,
     \driver0/state[2] ,
     \driver0/state[1] ,
     \driver0/state[0] ,
-    \driver0/clk ,
+    sys_rst_n,
+    \counter[2] ,
     tms_pad_i,
     tck_pad_i,
     tdi_pad_i,
     tdo_pad_o
 );
 
+input \sc1608_data[3] ;
+input \sc1608_data[2] ;
+input \sc1608_data[1] ;
+input \sc1608_data[0] ;
+input sc1608_rs;
+input sc1608_enable;
 input \driver0/state[4] ;
 input \driver0/state[3] ;
 input \driver0/state[2] ;
 input \driver0/state[1] ;
 input \driver0/state[0] ;
-input \driver0/clk ;
+input sys_rst_n;
+input \counter[2] ;
 input tms_pad_i;
 input tck_pad_i;
 input tdi_pad_i;
 output tdo_pad_o;
 
+wire \sc1608_data[3] ;
+wire \sc1608_data[2] ;
+wire \sc1608_data[1] ;
+wire \sc1608_data[0] ;
+wire sc1608_rs;
+wire sc1608_enable;
 wire \driver0/state[4] ;
 wire \driver0/state[3] ;
 wire \driver0/state[2] ;
 wire \driver0/state[1] ;
 wire \driver0/state[0] ;
-wire \driver0/clk ;
+wire sys_rst_n;
+wire \counter[2] ;
 wire tms_pad_i;
 wire tck_pad_i;
 wire tdi_pad_i;
@@ -99,10 +120,12 @@ gw_con_top  u_icon_top(
     .update_dr_i(update_dr)
 );
 
-ao_top u_ao_top(
+ao_top_0  u_la0_top(
     .control(control0[9:0]),
-    .data_i({\driver0/state[4] ,\driver0/state[3] ,\driver0/state[2] ,\driver0/state[1] ,\driver0/state[0] }),
-    .clk_i(\driver0/clk )
+    .trig0_i({\driver0/state[4] ,\driver0/state[3] ,\driver0/state[2] ,\driver0/state[1] ,\driver0/state[0] }),
+    .trig1_i(sys_rst_n),
+    .data_i({\sc1608_data[3] ,\sc1608_data[2] ,\sc1608_data[1] ,\sc1608_data[0] ,sc1608_rs,sc1608_enable,\driver0/state[4] ,\driver0/state[3] ,\driver0/state[2] ,\driver0/state[1] ,\driver0/state[0] }),
+    .clk_i(\counter[2] )
 );
 
 endmodule

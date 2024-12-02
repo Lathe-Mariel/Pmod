@@ -3,7 +3,6 @@
 -pn GW1NR-LV9QN88PC6/I5
 -cst C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.cst
 -cfg C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\pnr\device.cfg
--gao_crc 0111101010010110
 -bit
 -tr
 -ph
@@ -12,4 +11,3 @@
 -correct_hold 1
 -route_maxfan 23
 -global_freq 50.000
--rtl_gao
