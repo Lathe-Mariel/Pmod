@@ -66,7 +66,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_data <= 4'h3;    // DL=0, N=1, F=0
                         next <= RESET1;
                         state <= WAIT;
-                        hold_time = 6370;
+                        hold_time = 13'd6370;
                     end
                 RESET1:
                     begin
@@ -76,7 +76,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_data <= 4'h3;    // DL=0, N=1, F=0
                         next <= RESET2;
                         state <= WAIT;
-                        hold_time = 1250;
+                        hold_time = 13'd1250;
                     end
                 RESET2:
                     begin
@@ -86,7 +86,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_data <= 4'h3;    // DL=0, N=1, F=0
                         next <= RESET3;
                         state <= WAIT;
-                        hold_time = 1250;
+                        hold_time = 13'd1250;
                     end
                 RESET3:
                     begin
@@ -96,7 +96,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_data <= 4'h3;    // DL=0, N=1, F=0
                         next <= FNCSET0;
                         state <= WAIT;
-                        hold_time = 1250;
+                        hold_time = 13'd1250;
                     end
                 WAIT:
                     begin
@@ -188,10 +188,10 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_data <= 4'h1;    //h1
                         state <= WAIT;
                         next <= DSPON1;
-                        hold_time = 410; //42
+                        hold_time = 13'd410; //42
                     end
 
-                DSPON1: // Display on/off
+                DSPON1: // Entry Mode
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
@@ -206,13 +206,13 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'hF;    //
+                        sc1602_data <= 4'h6;    //
                         state <= WAIT;
                         next <= ENMODST1;
                         hold_time = HOLDINGT;
                     end
 
-                ENMODST1:    // Entry Mode
+                ENMODST1:    // Display On/Off
                     // Sets cursor move direction and specifies display shift. 
                     // These operations are performed during data write and read.
                     // I/D : 1=Increment, 0=Decrement, S : 1=Accompanies display shift
@@ -225,12 +225,12 @@ always @(posedge clk or negedge resetn) begin
                         next <= ENMODST2;
                         hold_time = HOLDINGT;
                     end
-                ENMODST2:    // Entry Mode
+                ENMODST2:
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h6;    //
+                        sc1602_data <= 4'hc;    //
                         state <= WAIT;
                         next <= RETHOM1;
                         hold_time = HOLDINGT;
@@ -260,7 +260,7 @@ always @(posedge clk or negedge resetn) begin
                         next <= REDCHR;
                         didx <= 8'b0;
                         rfrsh_rate <= ~rfrsh_rate;    // output refresh rate;
-                        hold_time = 410; //42
+                        hold_time = 13'd410; //42
                     end
                 DDRMADSET1:    // Set DDRAM address
                     // Sets DDRAM address. DDRAM data is sent and 
@@ -289,7 +289,7 @@ always @(posedge clk or negedge resetn) begin
                         addr <= didx;
                         rd <= 1;
                         state <= WRTCHR1;
-                        sc1602_rs <= 1;
+                        //sc1602_rs <= 1;
                     end
                 WRTCHR1:
                     begin
