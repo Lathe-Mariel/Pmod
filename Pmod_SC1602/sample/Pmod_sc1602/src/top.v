@@ -27,20 +27,14 @@ TBUF u0(
 
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if (!sys_rst_n)
-        counter <= 24'd0;
+        led[0] <= 0;
     else if (counter < 24'd1349_9999)       // 0.5s delay
-        counter <= counter + 1'd1;
+        begin
+            counter <= counter + 1'd1;
+            led[0] <= 1;
+        end
     else
         counter <= 24'd0;
-end
-
-always @(posedge sys_clk or negedge sys_rst_n) begin
-    if (!sys_rst_n)
-        led <= 6'b111110;
-    else if (counter == 24'd1349_9999)       // 0.5s delay
-        led[5:0] <= {led[4:0],led[5]};
-    else
-        led <= led;
 end
 
 Gowin_rPLL your_instance_name(
@@ -54,7 +48,7 @@ lcd_driver_8 driver0(
 .clk(sc1602_clk),
 .resetn(sys_rst_n & locked),
 //.addr(),
-.data(8'h48),
+.data(8'h42),
 //.rd(),
 .sc1602_en(sc1608_enable),
 .sc1602_rs(sc1608_rs),

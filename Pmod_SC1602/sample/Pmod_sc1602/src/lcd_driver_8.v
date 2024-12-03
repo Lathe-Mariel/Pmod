@@ -14,7 +14,7 @@ output rfrsh_rate;
 reg rfrsh_rate;
 
 reg [7:0] state, next, didx;
-reg [12:0] hold_time;
+reg [16:0] hold_time;
 
 parameter RESET=0;
 parameter RESET1=1;
@@ -40,6 +40,7 @@ parameter WRTCHR2=20;
 parameter DDRMADSET1=21;
 parameter DDRMADSET2=22;
 parameter RESET3=23;
+parameter STOP=30;
 
 parameter HOLDINGT=0;
 
@@ -109,7 +110,7 @@ always @(posedge clk or negedge resetn) begin
                             state <= next;
                         else 
                             begin
-                                hold_time = hold_time - 1;
+                                hold_time <= hold_time - 1;
                             end
                     end
                FNCSET0: // Function set
@@ -259,7 +260,7 @@ always @(posedge clk or negedge resetn) begin
                         state <= WAIT;
                         next <= REDCHR;
                         didx <= 8'b0;
-                        rfrsh_rate <= ~rfrsh_rate;    // output refresh rate;
+                        //rfrsh_rate <= ~rfrsh_rate;    // output refresh rate;
                         hold_time = 13'd410; //42
                     end
                 DDRMADSET1:    // Set DDRAM address
@@ -318,8 +319,9 @@ always @(posedge clk or negedge resetn) begin
                             end
                         else if (didx > 8'H4F)
                             begin
-                                didx <= 8'H00;
+                                //didx <= 8'H00;
                                 next <= RETHOM1;
+                                //next <= RESET1;
                             end
                         else
                             next <= REDCHR;
