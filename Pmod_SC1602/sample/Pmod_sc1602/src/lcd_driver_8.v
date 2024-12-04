@@ -40,7 +40,6 @@ parameter WRTCHR2=20;
 parameter DDRMADSET1=21;
 parameter DDRMADSET2=22;
 parameter RESET3=23;
-parameter STOP=30;
 
 parameter HOLDINGT=0;
 
@@ -67,7 +66,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_data <= 4'h3;    // DL=0, N=1, F=0
                         next <= RESET1;
                         state <= WAIT;
-                        hold_time = 13'd6370;
+                        hold_time = 13'd3600;
                     end
                 RESET1:
                     begin
@@ -77,7 +76,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_data <= 4'h3;    // DL=0, N=1, F=0
                         next <= RESET2;
                         state <= WAIT;
-                        hold_time = 13'd1250;
+                        hold_time = 13'd139;
                     end
                 RESET2:
                     begin
@@ -87,7 +86,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_data <= 4'h3;    // DL=0, N=1, F=0
                         next <= RESET3;
                         state <= WAIT;
-                        hold_time = 13'd1250;
+                        hold_time = 13'd139;
                     end
                 RESET3:
                     begin
@@ -97,7 +96,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_data <= 4'h3;    // DL=0, N=1, F=0
                         next <= FNCSET0;
                         state <= WAIT;
-                        hold_time = 13'd1250;
+                        hold_time = 13'd139;
                     end
                 WAIT:
                     begin
@@ -189,31 +188,31 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_data <= 4'h1;    //h1
                         state <= WAIT;
                         next <= DSPON1;
-                        hold_time = 13'd410; //42
+                        hold_time = 13'd139; //42
                     end
 
-                DSPON1: // Entry Mode
+                ENMODST1: // Entry Mode
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
                         sc1602_data <= 4'h0;    // D=1, C=0, B=0
                         state <= WAIT;
-                        next <= DSPON2;
+                        next <= ENMODST2;
                         hold_time = HOLDINGT;
                     end
-                DSPON2: //
+                ENMODST2: //
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
                         sc1602_data <= 4'h6;    //
                         state <= WAIT;
-                        next <= ENMODST1;
+                        next <= DSPON1;
                         hold_time = HOLDINGT;
                     end
 
-                ENMODST1:    // Display On/Off
+                DSPON1:    // Display On/Off
                     // Sets cursor move direction and specifies display shift. 
                     // These operations are performed during data write and read.
                     // I/D : 1=Increment, 0=Decrement, S : 1=Accompanies display shift
@@ -223,15 +222,15 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_rw <= 0;
                         sc1602_data <= 4'h0;    // 1, I/D=1, S=0
                         state <= WAIT;
-                        next <= ENMODST2;
+                        next <= DSPON2;
                         hold_time = HOLDINGT;
                     end
-                ENMODST2:
+                DSPON2:
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'hc;    //
+                        sc1602_data <= 4'hc;
                         state <= WAIT;
                         next <= RETHOM1;
                         hold_time = HOLDINGT;
@@ -260,8 +259,8 @@ always @(posedge clk or negedge resetn) begin
                         state <= WAIT;
                         next <= REDCHR;
                         didx <= 8'b0;
-                        //rfrsh_rate <= ~rfrsh_rate;    // output refresh rate;
-                        hold_time = 13'd410; //42
+                        rfrsh_rate <= ~rfrsh_rate;    // output refresh rate;
+                        hold_time = 13'd139;
                     end
                 DDRMADSET1:    // Set DDRAM address
                     // Sets DDRAM address. DDRAM data is sent and 
@@ -319,9 +318,7 @@ always @(posedge clk or negedge resetn) begin
                             end
                         else if (didx > 8'H4F)
                             begin
-                                //didx <= 8'H00;
                                 next <= RETHOM1;
-                                //next <= RESET1;
                             end
                         else
                             next <= REDCHR;
