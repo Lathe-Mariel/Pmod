@@ -3,13 +3,12 @@ Running parser ...
 Analyzing Verilog file 'H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\gowin_rpll\gowin_rpll.v'
 Analyzing Verilog file 'H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\lcd_driver_8.v'
 Analyzing Verilog file 'H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v'
-WARN  (EX3073) : Port 'addr' remains unconnected for this instance("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":58)
+WARN  (EX3073) : Port 'frame_rate' remains unconnected for this instance("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":58)
 Compiling module 'top'("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":1)
 Compiling module 'Gowin_rPLL'("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\gowin_rpll\gowin_rpll.v":10)
 Compiling module 'lcd_driver_8'("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\lcd_driver_8.v":1)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 17("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\lcd_driver_8.v":113)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 12("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\lcd_driver_8.v":103)
 NOTE  (EX0101) : Current top module is "top"
-WARN  (EX0211) : The output port "rfrsh_rate" of module "lcd_driver_8" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\lcd_driver_8.v":13)
 WARN  (EX0211) : The output port "led[5]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":4)
 WARN  (EX0211) : The output port "led[4]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":4)
 WARN  (EX0211) : The output port "led[3]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":4)

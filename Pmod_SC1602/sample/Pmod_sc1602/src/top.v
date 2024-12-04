@@ -48,12 +48,12 @@ lcd_driver_8 driver0(
 .clk(sc1602_clk),
 .resetn(sys_rst_n & locked),
 //.addr(),
-.data(8'h42),
+.character(8'h45),
 //.rd(),
 .sc1602_en(sc1608_enable),
 .sc1602_rs(sc1608_rs),
 .sc1602_rw(sc1608_rw),
-.sc1602_data(sc1608_data)
+.sc1602_db(sc1608_data)
 //.rfrsh_rate()
 );
 

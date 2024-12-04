@@ -1,329 +1,293 @@
-module lcd_driver_8(clk,resetn,addr,data,rd,sc1602_en,sc1602_rs,sc1602_rw,sc1602_data,rfrsh_rate);
-input clk,resetn;
-output [7:0] addr;
-reg [7:0] addr;
-input [7:0] data;
-output rd;
-reg rd;
+module lcd_driver_8(clk,resetn, character, sc1602_en, sc1602_rs, sc1602_rw, sc1602_db, frame_rate);
+input clk, resetn;
+input [7:0] character;
 output sc1602_en,sc1602_rs,sc1602_rw;
 reg sc1602_en,sc1602_rs,sc1602_rw;
-output [3:0] sc1602_data;
-reg [3:0] sc1602_data;
+output [3:0] sc1602_db;
+reg [3:0] sc1602_db;
 
-output rfrsh_rate;
-reg rfrsh_rate;
+output frame_rate;
+reg frame_rate;
 
-reg [7:0] state, next, didx;
-reg [16:0] hold_time;
+reg [7:0] state, next_state, locate;
+reg [11:0] wait_counter;
 
-parameter RESET=0;
-parameter RESET1=1;
-parameter RESET2=2;
-parameter WAIT=3;
-parameter HOLD=4;
-parameter FNCSET0=5;
-parameter FNCSET1=6;
-parameter FNCSET2=7;
-parameter DSPOFF1=8;
-parameter DSPOFF2=9;
-parameter CLRDSP1=10;
-parameter CLRDSP2=11;
-parameter DSPON1=12;
-parameter DSPON2=13;
-parameter ENMODST1=14;
-parameter ENMODST2=15;
-parameter RETHOM1=16;
-parameter RETHOM2=17;
-parameter REDCHR=18;
-parameter WRTCHR1=19;
-parameter WRTCHR2=20;
-parameter DDRMADSET1=21;
-parameter DDRMADSET2=22;
-parameter RESET3=23;
+localparam RST=0;
+localparam RST1=1;
+localparam RST2=2;
+localparam WAIT1=3;
+localparam WAIT2=4;
+localparam FUNC_SET0=5;
+localparam FUNC_SET1=6;
+localparam FUNC_SET2=7;
+localparam DSPOFF1=8;
+localparam DSPOFF2=9;
+localparam CLEAR1=10;
+localparam CLEAR2=11;
+localparam DSPON1=12;
+localparam DSPON2=13;
+localparam MODE1=14;
+localparam MODE2=15;
+localparam RETURN1=16;
+localparam RETURN2=17;
+localparam WRIGHT1=19;
+localparam WRIGHT2=20;
+localparam DDRAM1=21;
+localparam DDRAM2=22;
+localparam RST3=23;
 
-parameter HOLDINGT=0;
-
-// DL=1:8bit, N=1:2-line, F=0:5x8 dot, D=0:disp off
-// C=0:Cursor off, B=0:Blinking off
-// I/D=1:Increment by 1, S=0:No shift
+localparam JUST_MOMENT=1;
 
 
 always @(posedge clk or negedge resetn) begin
 
     if (!resetn)
         begin
-            state <= RESET;
-            didx <= 8'b0;
+            state <= RST;
+            locate <= 8'b0;
         end
     else
         begin
             case (state)
-                RESET:
+                RST:
                     begin
                         sc1602_en <= 0;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h3;    // DL=0, N=1, F=0
-                        next <= RESET1;
-                        state <= WAIT;
-                        hold_time = 13'd3600;
+                        sc1602_db <= 4'h3;
+                        next_state <= RST1;
+                        state <= WAIT1;
+                        wait_counter = 12'd4000; // more than 40ms
                     end
-                RESET1:
+                RST1:
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h3;    // DL=0, N=1, F=0
-                        next <= RESET2;
-                        state <= WAIT;
-                        hold_time = 13'd139;
+                        sc1602_db <= 4'h3;
+                        next_state <= RST2;
+                        state <= WAIT1;
+                        wait_counter = 12'd400;  // more than 4.1ms
                     end
-                RESET2:
+                RST2:
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h3;    // DL=0, N=1, F=0
-                        next <= RESET3;
-                        state <= WAIT;
-                        hold_time = 13'd139;
+                        sc1602_db <= 4'h3;
+                        next_state <= RST3;
+                        state <= WAIT1;
+                        wait_counter = 12'd140; // more than 100us
                     end
-                RESET3:
+                RST3:
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h3;    // DL=0, N=1, F=0
-                        next <= FNCSET0;
-                        state <= WAIT;
-                        hold_time = 13'd139;
+                        sc1602_db <= 4'h3;
+                        next_state <= FUNC_SET0;
+                        state <= WAIT1;
+                        wait_counter = JUST_MOMENT; // more than 38us
                     end
-                WAIT:
+                WAIT1:
                     begin
                         sc1602_en <= 0;
-                        state <= HOLD;
+                        state <= WAIT2;
                     end
-                HOLD:
+                WAIT2:
                     begin
-                        if (hold_time == 0)
-                            state <= next;
+                        if (wait_counter == 0)
+                            state <= next_state;
                         else 
                             begin
-                                hold_time <= hold_time - 1;
+                                wait_counter <= wait_counter - 1;
                             end
                     end
-               FNCSET0: // Function set
-                    // Sets interface data length(DL)
-                    // number of display lines (N)
-                    // and character font (F).
-                    // DL : 1=8 bits, 0=4 bits
-                    // N : 1=2-lines, 0=1-line
-                    // F : 5x10 dots, 0=5x8 dots
+               FUNC_SET0:
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h2;
-                        state <= WAIT;
-                        next <= FNCSET1;
-                        hold_time = HOLDINGT;
+                        sc1602_db <= 4'h2;
+                        state <= WAIT1;
+                        next_state <= FUNC_SET1;
+                        wait_counter = JUST_MOMENT;
                     end
-                FNCSET1: // Function set
+                FUNC_SET1:
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h2;    // DL=0
-                        state <= WAIT;
-                        next <= FNCSET2;
-                        hold_time = HOLDINGT;
+                        sc1602_db <= 4'h2;
+                        state <= WAIT1;
+                        next_state <= FUNC_SET2;
+                        wait_counter = JUST_MOMENT;
                     end
-                FNCSET2: // Function set
+                FUNC_SET2: // Function set
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h8;    // N=1, F=0
-                        state <= WAIT;
-                        next <= DSPOFF1;
-                        hold_time = HOLDINGT;
+                        sc1602_db <= 4'h8;
+                        state <= WAIT1;
+                        next_state <= DSPOFF1;
+                        wait_counter = JUST_MOMENT;
                     end
-                DSPOFF1:    // Display on/off
-                    // D: 1=Display on, 0=off, C: 1=Cursor on, 0=off, B: 1=Cursor blinking, 0=off
+                DSPOFF1:
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h0;    // Display on/off=0, Block cursor =0, Blink =0
-                        state <= WAIT;
-                        next <= DSPOFF2;
-                        hold_time = HOLDINGT;
+                        sc1602_db <= 4'h0;
+                        state <= WAIT1;
+                        next_state <= DSPOFF2;
+                        wait_counter = JUST_MOMENT;
                     end
-                DSPOFF2:    // Display on/off
+                DSPOFF2:
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h8;    // Display on/off=0, Block cursor =0, Blink =0
-                        state <= WAIT;
-                        next <= CLRDSP1;
-                        hold_time = HOLDINGT;
+                        sc1602_db <= 4'h8;
+                        state <= WAIT1;
+                        next_state <= CLEAR1;
+                        wait_counter = JUST_MOMENT;
                     end
-                CLRDSP1: // Clear display / 1.52ms
-                    // Clear entire display and sets DDRAM address 0 in address counter.
+                CLEAR1:
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h0;    // Clear Display
-                        state <= WAIT;
-                        next <= CLRDSP2;
-                        hold_time = HOLDINGT;
+                        sc1602_db <= 4'h0;
+                        state <= WAIT1;
+                        next_state <= CLEAR2;
+                        wait_counter = JUST_MOMENT;
                     end
-                CLRDSP2: //
+                CLEAR2: //
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h1;    //h1
-                        state <= WAIT;
-                        next <= DSPON1;
-                        hold_time = 13'd139; //42
+                        sc1602_db <= 4'h1;
+                        state <= WAIT1;
+                        next_state <= MODE1;
+                        wait_counter = 12'd200; // more than 1.52ms
                     end
 
-                ENMODST1: // Entry Mode
+                MODE1: // Entry Mode
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h0;    // D=1, C=0, B=0
-                        state <= WAIT;
-                        next <= ENMODST2;
-                        hold_time = HOLDINGT;
+                        sc1602_db <= 4'h0;
+                        state <= WAIT1;
+                        next_state <= MODE2;
+                        wait_counter = JUST_MOMENT;
                     end
-                ENMODST2: //
+                MODE2: //
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h6;    //
-                        state <= WAIT;
-                        next <= DSPON1;
-                        hold_time = HOLDINGT;
+                        sc1602_db <= 4'h6;
+                        state <= WAIT1;
+                        next_state <= DSPON1;
+                        wait_counter = JUST_MOMENT;
                     end
 
-                DSPON1:    // Display On/Off
-                    // Sets cursor move direction and specifies display shift. 
-                    // These operations are performed during data write and read.
-                    // I/D : 1=Increment, 0=Decrement, S : 1=Accompanies display shift
+                DSPON1:
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h0;    // 1, I/D=1, S=0
-                        state <= WAIT;
-                        next <= DSPON2;
-                        hold_time = HOLDINGT;
+                        sc1602_db <= 4'h0;
+                        state <= WAIT1;
+                        next_state <= DSPON2;
+                        wait_counter = JUST_MOMENT;
                     end
                 DSPON2:
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'hc;
-                        state <= WAIT;
-                        next <= RETHOM1;
-                        hold_time = HOLDINGT;
+                        sc1602_db <= 4'hc;
+                        state <= WAIT1;
+                        next_state <= RETURN1;
+                        wait_counter = JUST_MOMENT;
                     end
-                RETHOM1: // Return Home / 1.52ms
-                    // Set DDRAM address to "00H" 
-                    // from AC and return cursor to its
-                    // original position if shifted. The
-                    // contents of DDRAM are not changed.
+                RETURN1:
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h0;
-                        state <= WAIT;
-                        next <= RETHOM2;
-                        //rfrsh_rate <= ~rfrsh_rate;    // output refresh rate;
-                        hold_time = HOLDINGT;
+                        sc1602_db <= 4'h0;
+                        state <= WAIT1;
+                        next_state <= RETURN2;
+                        wait_counter = JUST_MOMENT;
                     end
-                RETHOM2:
+                RETURN2:
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= 4'h2;
-                        state <= WAIT;
-                        next <= REDCHR;
-                        didx <= 8'b0;
-                        rfrsh_rate <= ~rfrsh_rate;    // output refresh rate;
-                        hold_time = 13'd139;
+                        sc1602_db <= 4'h2;
+                        state <= WAIT1;
+                        next_state <= WRIGHT1;
+                        locate <= 8'b0;
+                        frame_rate <= ~frame_rate;
+                        wait_counter = 12'd200; // more than 1.52ms
                     end
-                DDRMADSET1:    // Set DDRAM address
-                    // Sets DDRAM address. DDRAM data is sent and 
-                    // received after this setting.
+                DDRAM1:
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= {1'b1, didx[6:4]};
-                        state <= WAIT;
-                        next <= DDRMADSET2;
-                        hold_time = HOLDINGT;
+                        sc1602_db <= {1'b1, locate[6:4]};
+                        state <= WAIT1;
+                        next_state <= DDRAM2;
+                        wait_counter = JUST_MOMENT;
                     end
-                DDRMADSET2:    // Set DDRAM address
+                DDRAM2:
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_data <= didx[3:0];
-                        state <= WAIT;
-                        next <= REDCHR;
-                        hold_time = HOLDINGT;
+                        sc1602_db <= locate[3:0];
+                        state <= WAIT1;
+                        next_state <= WRIGHT1;
+                        wait_counter = JUST_MOMENT;
                     end
-                REDCHR:
-                    begin 
-                        addr <= didx;
-                        rd <= 1;
-                        state <= WRTCHR1;
-                        //sc1602_rs <= 1;
-                    end
-                WRTCHR1:
+                WRIGHT1:
                     begin
-                        sc1602_data <= data[7:4];
-                        rd <= 0;
+                        sc1602_db <= character[7:4];
                         sc1602_rs <= 1;
                         sc1602_rw <= 0;
                         sc1602_en <= 1;
-                        didx <= didx + 8'b1;
-                        next <= WRTCHR2;
-                        state <= WAIT;
-                        hold_time = HOLDINGT;
+                        locate <= locate + 8'b1;
+                        next_state <= WRIGHT2;
+                        state <= WAIT1;
+                        wait_counter = JUST_MOMENT;
                     end
-                WRTCHR2:
+                WRIGHT2:
                     begin
-                        sc1602_data <= data[3:0];
-                        rd <= 0;
+                        sc1602_db <= character[3:0];
                         sc1602_rs <= 1;
                         sc1602_rw <= 0;
                         sc1602_en <= 1;
 
-                        if (didx == 16)
+                        if (locate == 16)
                             begin
-                                didx <= 8'H40;
-                                next <= DDRMADSET1;
+                                locate <= 8'h40;
+                                next_state <= DDRAM1;
                             end
-                        else if (didx > 8'H4F)
+                        else if (locate > 8'h4F)
                             begin
-                                next <= RETHOM1;
+                                next_state <= RETURN1;
                             end
                         else
-                            next <= REDCHR;
-                        state <= WAIT;
-                        hold_time = HOLDINGT;
+                            next_state <= WRIGHT1;
+                        state <= WAIT1;
+                        wait_counter = JUST_MOMENT;
                     end
             endcase
         end
