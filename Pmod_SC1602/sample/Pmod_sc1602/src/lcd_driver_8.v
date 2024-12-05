@@ -1,8 +1,8 @@
 module lcd_driver_8(clk,resetn, character, sc1602_en, sc1602_rs, sc1602_rw, sc1602_db, frame_rate);
 input clk, resetn;
 input [7:0] character;
-output sc1602_en,sc1602_rs,sc1602_rw;
-reg sc1602_en,sc1602_rs,sc1602_rw;
+output sc1602_en,sc1602_rs, sc1602_rw;
+reg sc1602_en,sc1602_rs, sc1602_rw;
 output [3:0] sc1602_db;
 reg [3:0] sc1602_db;
 
@@ -263,7 +263,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_rs <= 1;
                         sc1602_rw <= 0;
                         sc1602_en <= 1;
-                        locate <= locate + 8'b1;
+                        locate <= locate + 8'b1; // increment position for character on LCD RAM
                         next_state <= WRIGHT2;
                         state <= WAIT1;
                         wait_counter = JUST_MOMENT;
@@ -277,7 +277,7 @@ always @(posedge clk or negedge resetn) begin
 
                         if (locate == 16)
                             begin
-                                locate <= 8'h40;
+                                locate <= 8'h40; // increment row
                                 next_state <= DDRAM1;
                             end
                         else if (locate > 8'h4F)
