@@ -1,16 +1,18 @@
-module lcd_driver_8(clk,resetn, character, sc1602_en, sc1602_rs, sc1602_rw, sc1602_db, frame_rate);
-input clk, resetn;
-input [7:0] character;
-output sc1602_en,sc1602_rs, sc1602_rw;
-reg sc1602_en,sc1602_rs, sc1602_rw;
-output [3:0] sc1602_db;
-reg [3:0] sc1602_db;
+module lcd_driver_8(
+input logic clk, 
+input logic resetn,
+input logic[7:0] character,
+output logic sc1602_en,
+output logic sc1602_rs,
+output logic sc1602_rw,
+output logic[3:0] sc1602_db,
+output logic drawing
+);
 
-output frame_rate;
-reg frame_rate;
-
-reg [7:0] state, next_state, locate;
-reg [11:0] wait_counter;
+logic [7:0] state;
+logic [7:0] next_state;
+logic [7:0] locate;
+logic [11:0] wait_counter;
 
 localparam RST=0;
 localparam RST1=1;
@@ -26,12 +28,12 @@ localparam CLEAR1=10;
 localparam CLEAR2=11;
 localparam DSPON1=12;
 localparam DSPON2=13;
-localparam MODE1=14;
-localparam MODE2=15;
+localparam ENT_MODE1=14;
+localparam ENT_MODE2=15;
 localparam RETURN1=16;
 localparam RETURN2=17;
-localparam WRIGHT1=19;
-localparam WRIGHT2=20;
+localparam WRITE1=19;
+localparam WRITE2=20;
 localparam DDRAM1=21;
 localparam DDRAM2=22;
 localparam RST3=23;
@@ -91,19 +93,17 @@ always @(posedge clk or negedge resetn) begin
                     end
                 WAIT1:
                     begin
-                        sc1602_en <= 0;
-                        state <= WAIT2;
-                    end
-                WAIT2:
-                    begin
-                        if (wait_counter == 0)
-                            state <= next_state;
-                        else 
-                            begin
+                        if(sc1602_en == 1)begin
+                            sc1602_en <= 0;
+                        end else begin
+                            if (wait_counter == 0)
+                                state <= next_state;
+                            else begin
                                 wait_counter <= wait_counter - 1;
                             end
+                        end
                     end
-               FUNC_SET0:
+               FUNC_SET0: // FUNCTION SET for SC1602
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
@@ -138,7 +138,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_db <= 4'h0;
+                        sc1602_db <= 4'h0; // MSB of 8bit
                         state <= WAIT1;
                         next_state <= DSPOFF2;
                         wait_counter = JUST_MOMENT;
@@ -148,7 +148,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_db <= 4'h8;
+                        sc1602_db <= 4'h8; // LSB of 8bit
                         state <= WAIT1;
                         next_state <= CLEAR1;
                         wait_counter = JUST_MOMENT;
@@ -158,7 +158,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_db <= 4'h0;
+                        sc1602_db <= 4'h0; // MSB of 8bit
                         state <= WAIT1;
                         next_state <= CLEAR2;
                         wait_counter = JUST_MOMENT;
@@ -168,28 +168,28 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_db <= 4'h1;
+                        sc1602_db <= 4'h1;  // LSB of 8bit
                         state <= WAIT1;
-                        next_state <= MODE1;
+                        next_state <= ENT_MODE1;
                         wait_counter = 12'd200; // more than 1.52ms
                     end
 
-                MODE1: // Entry Mode
+                ENT_MODE1: // Entry Mode
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_db <= 4'h0;
+                        sc1602_db <= 4'h0;  // MSB of 8bit
                         state <= WAIT1;
-                        next_state <= MODE2;
+                        next_state <= ENT_MODE2;
                         wait_counter = JUST_MOMENT;
                     end
-                MODE2: //
+                ENT_MODE2: //
                     begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_db <= 4'h6;
+                        sc1602_db <= 4'h6; // LSB of 8bit
                         state <= WAIT1;
                         next_state <= DSPON1;
                         wait_counter = JUST_MOMENT;
@@ -200,7 +200,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_db <= 4'h0;
+                        sc1602_db <= 4'h0; // MSB of 8bit
                         state <= WAIT1;
                         next_state <= DSPON2;
                         wait_counter = JUST_MOMENT;
@@ -210,7 +210,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_db <= 4'hc;
+                        sc1602_db <= 4'hc; // LSB of 8bit
                         state <= WAIT1;
                         next_state <= RETURN1;
                         wait_counter = JUST_MOMENT;
@@ -220,7 +220,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_db <= 4'h0;
+                        sc1602_db <= 4'h0; // MSB of 8bit
                         state <= WAIT1;
                         next_state <= RETURN2;
                         wait_counter = JUST_MOMENT;
@@ -230,11 +230,10 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_en <= 1;
                         sc1602_rs <= 0;
                         sc1602_rw <= 0;
-                        sc1602_db <= 4'h2;
+                        sc1602_db <= 4'h2; // LSB of 8bit
                         state <= WAIT1;
-                        next_state <= WRIGHT1;
-                        locate <= 8'b0;
-                        frame_rate <= ~frame_rate;
+                        next_state <= WRITE1;
+                        locate <= 8'b0;         // character insert location 0 set
                         wait_counter = 12'd200; // more than 1.52ms
                     end
                 DDRAM1:
@@ -254,23 +253,24 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_rw <= 0;
                         sc1602_db <= locate[3:0];
                         state <= WAIT1;
-                        next_state <= WRIGHT1;
+                        next_state <= WRITE1;
                         wait_counter = JUST_MOMENT;
                     end
-                WRIGHT1:
+                WRITE1:
                     begin
-                        sc1602_db <= character[7:4];
+                        drawing <= 1; // showing it's in a draw process
+                        sc1602_db <= character[7:4]; //MSB of 8bit code that represents a character
                         sc1602_rs <= 1;
                         sc1602_rw <= 0;
                         sc1602_en <= 1;
                         locate <= locate + 8'b1; // increment position for character on LCD RAM
-                        next_state <= WRIGHT2;
+                        next_state <= WRITE2;
                         state <= WAIT1;
                         wait_counter = JUST_MOMENT;
                     end
-                WRIGHT2:
+                WRITE2:
                     begin
-                        sc1602_db <= character[3:0];
+                        sc1602_db <= character[3:0]; // LSB of 8bit code that represents a character
                         sc1602_rs <= 1;
                         sc1602_rw <= 0;
                         sc1602_en <= 1;
@@ -285,8 +285,9 @@ always @(posedge clk or negedge resetn) begin
                                 next_state <= RETURN1;
                             end
                         else
-                            next_state <= WRIGHT1;
+                            next_state <= WRITE1;
                         state <= WAIT1;
+                        drawing <= 0;
                         wait_counter = JUST_MOMENT;
                     end
             endcase

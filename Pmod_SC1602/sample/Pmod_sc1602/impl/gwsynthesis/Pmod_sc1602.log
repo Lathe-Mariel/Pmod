@@ -1,19 +1,19 @@
 GowinSynthesis start
 Running parser ...
-Analyzing Verilog file 'H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\gowin_rpll\gowin_rpll.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\lcd_driver_8.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v'
-WARN  (EX3073) : Port 'frame_rate' remains unconnected for this instance("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":58)
-Compiling module 'top'("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":1)
-Compiling module 'Gowin_rPLL'("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\gowin_rpll\gowin_rpll.v":10)
-Compiling module 'lcd_driver_8'("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\lcd_driver_8.v":1)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 12("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\lcd_driver_8.v":103)
+Analyzing Verilog file 'C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\gowin_rpll\gowin_rpll.v'
+Analyzing Verilog file 'C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\lcd_driver_8.v'
+Analyzing Verilog file 'C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v'
+Compiling module 'top'("C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":1)
+Extracting RAM for identifier 'word'("C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":19)
+Compiling module 'Gowin_rPLL'("C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\gowin_rpll\gowin_rpll.v":10)
+Compiling module 'lcd_driver_8'("C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\lcd_driver_8.v":1)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 12("C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\lcd_driver_8.v":102)
 NOTE  (EX0101) : Current top module is "top"
-WARN  (EX0211) : The output port "led[5]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":4)
-WARN  (EX0211) : The output port "led[4]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":4)
-WARN  (EX0211) : The output port "led[3]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":4)
-WARN  (EX0211) : The output port "led[2]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":4)
-WARN  (EX0211) : The output port "led[1]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":4)
+WARN  (EX0211) : The output port "led[5]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":4)
+WARN  (EX0211) : The output port "led[4]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":4)
+WARN  (EX0211) : The output port "led[3]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":4)
+WARN  (EX0211) : The output port "led[2]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":4)
+WARN  (EX0211) : The output port "led[1]" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\src\top.v":4)
 [5%] Running netlist conversion ...
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
@@ -30,6 +30,7 @@ Running technical mapping ...
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
-[95%] Generate netlist file "H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\gwsynthesis\Pmod_sc1602.vg" completed
-[100%] Generate report file "H:\git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\gwsynthesis\Pmod_sc1602_syn.rpt.html" completed
+[95%] Generate netlist file "C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\gwsynthesis\Pmod_sc1602.vg" completed
+WARN  (CK3000) : Can't calculate clocks' relationship between: "driver0/sc1602_drawing" and "your_instance_name/rpll_inst/CLKOUTD.default_gen_clk"
+[100%] Generate report file "C:\Git\Pmod\Pmod_SC1602\sample\Pmod_sc1602\impl\gwsynthesis\Pmod_sc1602_syn.rpt.html" completed
 GowinSynthesis finish

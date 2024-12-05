@@ -2,24 +2,27 @@ module top (
     input sys_clk,          // clk input
     input sys_rst_n,        // reset input
     output reg [5:0] led,   // 6 LEDS pin
-    output sc1608_vo,
-    output sc1608_rs,
-    output sc1608_rw,
-    output sc1608_enable,
-    output [3:0] sc1608_data
+    output sc1602_vo,
+    output sc1602_rs,
+    output sc1602_rw,
+    output sc1602_enable,
+    output [3:0] sc1602_data
 );
 
-reg [23:0] counter;
-wire contrast;
-wire sc1602_clk;
-wire clkout;
-wire locked;
+logic [23:0] counter;
+logic contrast;
+logic sc1602_clk;
+logic clkout;
+logic locked;
+logic sc1602_drawing;
+logic [7:0] word_counter;
+logic [7:0] word[4] = {8'h46, 8'h50, 8'h47, 8'h41};
 
 assign contrast = 0;
 //assign contrast = counter[6] & counter[5] & counter[4] & counter[3] & counter[2] & counter[1] & counter[0] ;
 
 TBUF u0(
-    .O(sc1608_vo),
+    .O(sc1602_vo),
     .I(1'b0),
     .OEN(~contrast)
 );
@@ -44,17 +47,20 @@ Gowin_rPLL your_instance_name(
     .lock(locked)
 );
 
+always @(negedge sc1602_drawing)begin
+    word_counter <= word_counter + 8'b1;
+end
+
 lcd_driver_8 driver0(
 .clk(sc1602_clk),
 .resetn(sys_rst_n & locked),
-//.addr(),
-.character(8'h45),
-//.rd(),
-.sc1602_en(sc1608_enable),
-.sc1602_rs(sc1608_rs),
-.sc1602_rw(sc1608_rw),
-.sc1602_db(sc1608_data)
-//.rfrsh_rate()
+.character(word[word_counter]),
+.sc1602_en(sc1602_enable),
+.sc1602_rs(sc1602_rs),
+.sc1602_rw(sc1602_rw),
+.sc1602_db(sc1602_data),
+.drawing(sc1602_drawing)
+//.frame_rate()
 );
 
 endmodule
