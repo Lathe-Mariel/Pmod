@@ -2,6 +2,8 @@ module lcd_driver_8(
 input logic clk, 
 input logic resetn,
 input logic[7:0] character,
+input logic [2:0] command_in,
+output logic ready,
 output logic sc1602_en,
 output logic sc1602_rs,
 output logic sc1602_rw,
@@ -12,7 +14,7 @@ output logic drawing
 logic [7:0] state;
 logic [7:0] next_state;
 logic [7:0] locate;
-logic [11:0] wait_counter;
+logic [12:0] wait_counter;
 
 localparam RST=0;
 localparam RST1=1;
@@ -32,11 +34,14 @@ localparam ENT_MODE1=14;
 localparam ENT_MODE2=15;
 localparam RETURN1=16;
 localparam RETURN2=17;
+localparam HOME=18;
 localparam WRITE1=19;
 localparam WRITE2=20;
 localparam DDRAM1=21;
 localparam DDRAM2=22;
 localparam RST3=23;
+localparam CURSOL1=24;
+localparam CURSOL2=25;
 
 localparam JUST_MOMENT=1;
 
@@ -45,6 +50,7 @@ always @(posedge clk or negedge resetn) begin
 
     if (!resetn)
         begin
+            ready <= 0;
             state <= RST;
             locate <= 8'b0;
         end
@@ -59,7 +65,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_db <= 4'h3;
                         next_state <= RST1;
                         state <= WAIT1;
-                        wait_counter = 12'd4000; // more than 40ms
+                        wait_counter = 13'd4000; // more than 40ms
                     end
                 RST1:
                     begin
@@ -69,7 +75,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_db <= 4'h3;
                         next_state <= RST2;
                         state <= WAIT1;
-                        wait_counter = 12'd400;  // more than 4.1ms
+                        wait_counter = 13'd400;  // more than 4.1ms
                     end
                 RST2:
                     begin
@@ -79,7 +85,7 @@ always @(posedge clk or negedge resetn) begin
                         sc1602_db <= 4'h3;
                         next_state <= RST3;
                         state <= WAIT1;
-                        wait_counter = 12'd140; // more than 100us
+                        wait_counter = 13'd140; // more than 100us
                     end
                 RST3:
                     begin
@@ -282,7 +288,7 @@ always @(posedge clk or negedge resetn) begin
                             end
                         else if (locate > 8'h4F)
                             begin
-                                next_state <= RETURN1;
+                                next_state <= HOME;
                             end
                         else
                             next_state <= WRITE1;
@@ -290,6 +296,35 @@ always @(posedge clk or negedge resetn) begin
                         drawing <= 0;
                         wait_counter = JUST_MOMENT;
                     end
+                HOME:begin
+                    if(command_in[2:1] == 2'b00)begin
+                        ready <= 1;
+                        next_state <= WRITE1;
+                    end else if(command_in[2:1] == 2'b01)begin
+                        ready <= 0;
+                        next_state <= CURSOL1;
+                    end
+                    state <= WAIT1;
+                    wait_counter <= JUST_MOMENT;
+                end
+                CURSOL1:begin
+                   sc1602_db <= 4'd1; // MSB
+                   sc1602_rs <= 0;
+                   sc1602_rw <= 0;
+                   sc1602_en <= 1;
+                   next_state <= CURSOL2;
+                   state <= WAIT1;
+                   wait_counter <= JUST_MOMENT;
+                end
+                CURSOL2:begin
+                   sc1602_db <= {1'b1, command_in[0], 2'b0}; // LSB
+                   sc1602_rs <= 0;
+                   sc1602_rw <= 0;
+                   sc1602_en <= 1;
+                   next_state <= HOME;
+                   state <= WAIT1;
+                   wait_counter <= 4096;
+                end
             endcase
         end
 end

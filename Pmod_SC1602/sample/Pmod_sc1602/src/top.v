@@ -1,6 +1,7 @@
 module top (
     input sys_clk,          // clk input
     input sys_rst_n,        // reset input
+    input sw,
     output reg [5:0] led,   // 6 LEDS pin
     output sc1602_vo,
     output sc1602_rs,
@@ -16,7 +17,10 @@ logic clkout;
 logic locked;
 logic sc1602_drawing;
 logic [7:0] word_counter;
-logic [7:0] word[4] = {8'h46, 8'h50, 8'h47, 8'h41};
+logic [7:0] word[8] = {8'h20, 8'h46, 8'h50, 8'h47, 8'h41, 8'h20, 8'h20, 8'h20};
+
+logic sc1602_valid, sc1602_ready;
+logic [2:0] sc1602_command; // {2'b command, 1'b LR}
 
 assign contrast = 0;
 //assign contrast = counter[6] & counter[5] & counter[4] & counter[3] & counter[2] & counter[1] & counter[0] ;
@@ -29,15 +33,26 @@ TBUF u0(
 
 
 always @(posedge sys_clk or negedge sys_rst_n) begin
-    if (!sys_rst_n)
+    if (!sys_rst_n)begin
         led[0] <= 0;
-    else if (counter < 24'd1349_9999)       // 0.5s delay
-        begin
-            counter <= counter + 1'd1;
-            led[0] <= 1;
+        counter <= 0;
+    end else if (counter < 24'd1349_9999)begin       // 0.5s delay
+        counter <= counter + 1'd1;
+        led[0] <= 1;
+        if(sc1602_ready)begin
+            if(!sw)begin
+                led[1] <= 0;
+                sc1602_command <= {2'b01, 1'b0};  // Window shift, left
+            end else begin
+                led[1] <= 1;
+            end
+        end else begin
+            sc1602_command <= 3'b0;
         end
-    else
+    end else begin
         counter <= 24'd0;
+    end
+
 end
 
 Gowin_rPLL your_instance_name(
@@ -47,8 +62,12 @@ Gowin_rPLL your_instance_name(
     .lock(locked)
 );
 
-always @(negedge sc1602_drawing)begin
-    word_counter <= word_counter + 8'b1;
+always @(negedge sc1602_drawing or negedge sys_rst_n)begin
+    if(!sys_rst_n)begin
+        word_counter <= 0;
+    end else begin
+        word_counter <= word_counter + 8'b1;
+    end
 end
 
 lcd_driver_8 driver0(
@@ -59,7 +78,9 @@ lcd_driver_8 driver0(
 .sc1602_rs(sc1602_rs),
 .sc1602_rw(sc1602_rw),
 .sc1602_db(sc1602_data),
-.drawing(sc1602_drawing)
+.drawing(sc1602_drawing),
+.command_in(sc1602_command),
+.ready(sc1602_ready)
 //.frame_rate()
 );
 
