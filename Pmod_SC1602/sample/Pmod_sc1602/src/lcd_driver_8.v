@@ -1,13 +1,13 @@
 module lcd_driver_8(
 input logic clk, 
 input logic resetn,
-input logic[7:0] character,
+input logic[7:0] character_in,  // a character to display
 input logic [2:0] command_in,
 output logic ready_o,
-output logic sc1602_en,
-output logic sc1602_rs,
-output logic sc1602_rw,
-output logic[3:0] sc1602_db,
+output logic sc1602_en,       // EN to connect SC1602
+output logic sc1602_rs,       // RS to connect SC1602
+output logic sc1602_rw,       // RW to connect SC1602
+output logic[3:0] sc1602_db,  // 4bit data to connect SC1602
 output logic drawing
 );
 
@@ -264,7 +264,7 @@ always @(posedge clk or negedge resetn) begin
                 WRITE1:  // Show character
                     begin
                         drawing <= 1; // showing it's in a draw process
-                        sc1602_db <= character[7:4]; //MSB of 8bit code that represents a character
+                        sc1602_db <= character_in[7:4]; //MSB of 8bit code that represents a character
                         sc1602_rs <= 1;
                         sc1602_rw <= 0;
                         sc1602_en <= 1;
@@ -275,7 +275,7 @@ always @(posedge clk or negedge resetn) begin
                     end
                 WRITE2:
                     begin
-                        sc1602_db <= character[3:0]; // LSB of 8bit code that represents a character
+                        sc1602_db <= character_in[3:0]; // LSB of 8bit code that represents a character
                         sc1602_rs <= 1;
                         sc1602_rw <= 0;
                         sc1602_en <= 1;
