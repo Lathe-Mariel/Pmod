@@ -1,12 +1,12 @@
 //
 //Written by GowinSynthesis
-//Tool Version "V1.9.9.01 (64-bit)"
-//Fri Dec  6 03:20:26 2024
+//Tool Version "V1.9.9.03 (64-bit)"
+//Fri Dec  6 18:21:16 2024
 
 //Source file index table:
-//file0 "\H:/git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/gowin_rpll/gowin_rpll.v"
-//file1 "\H:/git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/lcd_driver_8.v"
-//file2 "\H:/git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/top.v"
+//file0 "\C:/Git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/gowin_rpll/gowin_rpll.v"
+//file1 "\C:/Git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/lcd_driver_8.v"
+//file2 "\C:/Git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/top.v"
 `timescale 100 ps/100 ps
 module Gowin_rPLL (
   sys_clk_d,
@@ -1279,7 +1279,7 @@ defparam n328_s11.INIT=16'hE4E6;
     .CLK(sc1602_clk),
     .CE(drawing_8) 
 );
-  DFFCE ready_s0 (
+  DFFCE ready_o_s0 (
     .Q(sc1602_ready),
     .D(n112_7),
     .CLK(sc1602_clk),

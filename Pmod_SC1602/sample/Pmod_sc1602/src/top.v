@@ -23,7 +23,6 @@ logic sc1602_valid, sc1602_ready;
 logic [2:0] sc1602_command; // {2'b command, 1'b LR}
 
 assign contrast = 0;
-//assign contrast = counter[6] & counter[5] & counter[4] & counter[3] & counter[2] & counter[1] & counter[0] ;
 
 TBUF u0(
     .O(sc1602_vo),
@@ -36,15 +35,15 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
     if (!sys_rst_n)begin
         led[0] <= 0;
         counter <= 0;
-    end else if (counter < 24'd1349_9999)begin       // 0.5s delay
+    end else if (counter < 24'd1349_9999)begin      // 0.5s delay
         counter <= counter + 1'd1;
-        led[0] <= 1;
+        led[0] <= 1;  //on board LED for debug
         if(sc1602_ready)begin
             if(!sw)begin
-                led[1] <= 0;
-                sc1602_command <= {2'b01, 1'b0};  // Window shift, left
+                led[1] <= 0;  // on board LED for debug
+                sc1602_command <= {2'b01, 1'b0};    // Window shift, left
             end else begin
-                led[1] <= 1;
+                led[1] <= 1;  // on board LED for bebug
             end
         end else begin
             sc1602_command <= 3'b0;
@@ -56,9 +55,9 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
 end
 
 Gowin_rPLL your_instance_name(
-    .clkout(clkout),   //output clkout
+    .clkout(clkout),      //output clkout
     .clkoutd(sc1602_clk), //output clkoutd
-    .clkin(sys_clk),    //input clkin
+    .clkin(sys_clk),      //input clkin
     .lock(locked)
 );
 
@@ -80,7 +79,7 @@ lcd_driver_8 driver0(
 .sc1602_db(sc1602_data),
 .drawing(sc1602_drawing),
 .command_in(sc1602_command),
-.ready(sc1602_ready)
+.ready_o(sc1602_ready)
 //.frame_rate()
 );
 
