@@ -1,7 +1,7 @@
 //
 //Written by GowinSynthesis
 //Tool Version "V1.9.9.03 (64-bit)"
-//Fri Dec  6 19:46:49 2024
+//Fri Dec  6 20:24:38 2024
 
 //Source file index table:
 //file0 "\C:/Git/Pmod/Pmod_SC1602/sample/Pmod_sc1602/src/gowin_rpll/gowin_rpll.v"
@@ -68,7 +68,7 @@ defparam rpll_inst.PSDA_SEL="0000";
     .G(GND)
 );
 endmodule /* Gowin_rPLL */
-module lcd_driver_8 (
+module sc1602_driver (
   sc1602_clk,
   sys_rst_n_d,
   locked,
@@ -1399,7 +1399,7 @@ defparam locate_0_s3.INIT=1'b0;
   GND GND_cZ (
     .G(GND)
 );
-endmodule /* lcd_driver_8 */
+endmodule /* sc1602_driver */
 module top (
   sys_clk,
   sys_rst_n,
@@ -2169,7 +2169,7 @@ defparam n10_s81.INIT=4'h8;
     .sc1602_clk(sc1602_clk),
     .locked(locked)
 );
-  lcd_driver_8 driver0 (
+  sc1602_driver driver0 (
     .sc1602_clk(sc1602_clk),
     .sys_rst_n_d(sys_rst_n_d),
     .locked(locked),

@@ -69,7 +69,7 @@ always @(negedge sc1602_drawing or negedge sys_rst_n)begin
     end
 end
 
-lcd_driver_8 driver0(
+sc1602_driver driver0(
 .clk(sc1602_clk),
 .resetn(sys_rst_n & locked),
 .character_in(word[word_counter]),

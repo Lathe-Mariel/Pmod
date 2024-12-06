@@ -1,4 +1,4 @@
-module lcd_driver_8(
+module sc1602_driver(
 input logic clk, 
 input logic resetn,
 input logic[7:0] character_in,  // a character to display
