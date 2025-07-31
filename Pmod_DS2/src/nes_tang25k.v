@@ -10,34 +10,11 @@ module NES_Tang25k(
 
     input s1,
     input reset,
-
     // UART
     input UART_RXD,
     output UART_TXD,
-
     // LEDs
     output [1:0] led,
-
-    // SDRAM
-    output O_sdram_clk,
-    output O_sdram_cke,
-    output O_sdram_cs_n,            // chip select
-    output O_sdram_cas_n,           // columns address select
-    output O_sdram_ras_n,           // row address select
-    output O_sdram_wen_n,           // write enable
-    inout [15:0] IO_sdram_dq,       // 32 bit bidirectional data bus
-    output [12:0] O_sdram_addr,     // 11 bit multiplexed address bus
-    output [1:0] O_sdram_ba,        // two banks
-    output [1:0] O_sdram_dqm,       // 32/4
-
-    // MicroSD
-    output sd_clk,
-    inout sd_cmd,      // MOSI
-    input  sd_dat0,     // MISO
-    output sd_dat1,     // 1
-    output sd_dat2,     // 1
-    output sd_dat3,     // 1
-
     // Dualshock game controller
     output joystick_clk,
     output joystick_mosi,
@@ -46,14 +23,7 @@ module NES_Tang25k(
     output joystick_clk2,
     output joystick_mosi2,
     input joystick_miso2,
-    output reg joystick_cs2,
-
-    // USB
-    inout usbdm,
-    inout usbdp,
-    inout usbdm2,
-    inout usbdp2,
-//    output clk_usb,
+    output reg joystick_cs2, 
 
     // HDMI TX
     output       tmds_clk_n,
@@ -63,7 +33,6 @@ module NES_Tang25k(
 );
 
 `include "nes_tang25k.vh"
-
 
 reg sys_resetn = 0;
 reg [7:0] reset_cnt = 255;
@@ -75,7 +44,6 @@ end
 
 `ifndef VERILATOR
 
-  wire clk_usb;
   wire clk;
 
   // HDMI domain clocks
@@ -85,8 +53,8 @@ end
     
     Gowin_PLL pll_clk(
         .lock(pll_lock), //output lock
-        .clkout0(clk_usb), //output clkout0
-        .clkout1(clk_sdram), //output clkout1
+        .clkout0(), //output clkout0
+        .clkout1(), //output clkout1
         .clkout2(clk_p5), //output clkout2
         .clkout3(clk), //output clkout3
         .clkin(sys_clk) //input clkin
@@ -110,7 +78,7 @@ end
   // internal wiring and state
   wire joypad_strobe;
   wire [1:0] joypad_clock;
-  wire [21:0] memory_addr;      // 4MB address space
+
   wire memory_read_cpu, memory_read_ppu;
   wire memory_write;
   wire [7:0] memory_din_cpu, memory_din_ppu;
@@ -121,9 +89,6 @@ end
   wire [1:0] dbgctr;
   reg [3:0] nes_ce = 0;
   wire [15:0] SW = 16'b1111_1111_1111_1111;   // every switch is on
-
-  wire [7:0] sd_dout;
-  wire sd_dout_valid;
 
   // UART
   wire [7:0] uart_data;
@@ -138,21 +103,6 @@ UartDemux #(.FREQ(FREQ), .BAUDRATE(BAUDRATE)) uart_demux(
 
   // ROM loader
   reg  [7:0] loader_conf;     // bit 0 is reset
-
-`ifdef EMBED_GAME
-  // Static compiled-in game data 
-  wire [7:0] loader_input;
-  wire loader_clk;
-  wire loader_reset = ~sys_resetn;
-  GameData game_data(
-        .clk(clk), .reset(~sys_resetn), .start(1'b1), 
-        .odata(loader_input), .odata_clk(loader_clk));
-`else
-  // Dynamic game loading from UART
-  wire [7:0] loader_input = sd_dout_valid ? sd_dout : uart_data;
-  wire       loader_clk   = (uart_addr == 8'h37) && uart_write || sd_dout_valid;
-  wire loader_reset = ~sys_resetn | loader_conf[0];
-`endif
 
   reg  [7:0] loader_btn, loader_btn_2;
   always @(posedge clk) begin
@@ -170,16 +120,12 @@ UartDemux #(.FREQ(FREQ), .BAUDRATE(BAUDRATE)) uart_demux(
   O is A, X is B
   */
   wire [7:0] joy_rx[0:1], joy_rx2[0:1];     // 6 RX bytes for all button/axis state
-  wire [7:0] usb_btn, usb_btn2;
-  wire usb_btn_x, usb_btn_y, usb_btn_x2, usb_btn_y2;
-  wire usb_conerr, usb_conerr2;
+
   wire auto_square, auto_triangle, auto_square2, auto_triangle2;
   wire [7:0] nes_btn = {~joy_rx[0][5], ~joy_rx[0][7], ~joy_rx[0][6], ~joy_rx[0][4], 
-                        ~joy_rx[0][3], ~joy_rx[0][0], ~joy_rx[1][6] | auto_square, ~joy_rx[1][5] | auto_triangle} |
-                         usb_btn;
+                        ~joy_rx[0][3], ~joy_rx[0][0], ~joy_rx[1][6] | auto_square, ~joy_rx[1][5] | auto_triangle} ;
   wire [7:0] nes_btn2 = {~joy_rx2[0][5], ~joy_rx2[0][7], ~joy_rx2[0][6], ~joy_rx2[0][4], 
-                         ~joy_rx2[0][3], ~joy_rx2[0][0], ~joy_rx2[1][6] | auto_square2, ~joy_rx2[1][5] | auto_triangle2} |
-                         usb_btn2;
+                         ~joy_rx2[0][3], ~joy_rx2[0][0], ~joy_rx2[1][6] | auto_square2, ~joy_rx2[1][5] | auto_triangle2} ;
   
   // Joypad handling
   always @(posedge clk) begin
@@ -200,13 +146,6 @@ UartDemux #(.FREQ(FREQ), .BAUDRATE(BAUDRATE)) uart_demux(
   wire [31:0] mapper_flags;
   wire loader_done, loader_fail, loader_refresh;
 
-  // Parses ROM data and store them for MemoryController to access
-  GameLoader loader(
-        .clk(clk), .reset(loader_reset), .indata(loader_input), .indata_clk(loader_clk),
-        .mem_addr(loader_addr), .mem_data(loader_write_data), .mem_write(loader_write),
-        .mem_refresh(loader_refresh), .mapper_flags(mapper_flags), 
-        .done(loader_done), .error(loader_fail));
-
   // The NES machine
   // nes_ce  / 0 \___/ 1 \___/ 2 \___/ 3 \___/ 4 \___/ 0 \___
   // MemCtrl |mem_cmd|ACTIVE | RD/WR |       |  Dout |run_mem|
@@ -225,76 +164,8 @@ UartDemux #(.FREQ(FREQ), .BAUDRATE(BAUDRATE)) uart_demux(
 
   reg tick_seen;
 
-  // NES is clocked at every 5th cycle.
-  always @(posedge clk) begin
-`ifdef VERILATOR
-    nes_ce <= nes_ce == 4'd4 ? 0 : nes_ce + 1;
-`else
-  `ifndef STEP_TRACING
-    nes_ce <= nes_ce == 4'd4 ? 0 : nes_ce + 1;    
-  `else
-    // single stepping every 0.01 second
-    // - when waiting for a tick, nes_ce loops between 7 and 13 and 
-    //   issues memory refresh on #7
-    // - when a tick is seen, nes_ce goes back to 0
-    nes_ce <= nes_ce == 4'd13 ? 4'd7 : nes_ce + 1;
-    if (tick) tick_seen <= 1'b1;
-    if (nes_ce == 4'd13 && tick_seen) begin
-        nes_ce <= 0;
-        tick_seen <= 1'b0;
-    end
-  `endif
-`endif
-    // log memory access result for debug
-    if (nes_ce == 4'd4 && !reset_nes) begin
-        if (memory_write || memory_read_cpu || memory_read_ppu) begin
-            last_addr <= memory_addr;
-            last_dout <= memory_read_cpu ? memory_din_cpu : memory_din_ppu;
-            last_din <= memory_dout;
-            last_write <= memory_write;
-            last_idle <= 1'b0;
-        end else begin
-            // memory is idle this cycle
-            last_idle <= 1'b1;
-        end
-    end else if (loader_write) begin
-        last_write <= 1'b1;
-        last_addr <= loader_addr;
-        last_din <= loader_write_data;
-    end
-  end
-
-  // Main NES machine
-  NES nes(clk, reset_nes, run_nes,
-          mapper_flags,
-          sample, color,
-          joypad_strobe, joypad_clock, {joypad_bits2[0], joypad_bits[0]},
-          SW[4:0],
-          memory_addr,
-          memory_read_cpu, memory_din_cpu,
-          memory_read_ppu, memory_din_ppu,
-          memory_write, memory_dout,
-          cycle, scanline
-        );
-
 /*verilator tracing_off*/
-  // Combine RAM and ROM data to a single address space for NES to access
-  wire ram_busy, ram_fail;
-  wire [19:0] ram_total_written;
-  MemoryController memory(.clk(clk), .clk_sdram(clk_sdram), .resetn(sys_resetn),
-        .read_a(memory_read_cpu && run_mem), 
-        .read_b(memory_read_ppu && run_mem),
-        .write(memory_write && run_mem || loader_write),
-        .refresh((~memory_read_cpu && ~memory_read_ppu && ~memory_write && ~loader_write) && run_mem || nes_ce == 4'd7 || (loader_refresh && ~loader_write)),
-        .addr(loader_write ? loader_addr : memory_addr),
-        .din(loader_write ? loader_write_data : memory_dout),
-        .dout_a(memory_din_cpu), .dout_b(memory_din_ppu),
-        .busy(ram_busy), .fail(ram_fail), .total_written(ram_total_written),
 
-        .SDRAM_DQ(IO_sdram_dq), .SDRAM_A(O_sdram_addr), .SDRAM_BA(O_sdram_ba), .SDRAM_nCS(O_sdram_cs_n),
-        .SDRAM_nWE(O_sdram_wen_n), .SDRAM_nRAS(O_sdram_ras_n), .SDRAM_nCAS(O_sdram_cas_n), 
-        .SDRAM_CLK(O_sdram_clk), .SDRAM_CKE(O_sdram_cke), .SDRAM_DQM(O_sdram_dqm)
-);
 /*verilator tracing_on*/
 
 `ifndef VERILATOR
@@ -311,21 +182,6 @@ nes2hdmi u_hdmi (
     .clk_pixel(clk_p), .clk_5x_pixel(clk_p5), .locked(pll_lock),
     .tmds_clk_n(tmds_clk_n), .tmds_clk_p(tmds_clk_p),
     .tmds_d_n(tmds_d_n), .tmds_d_p(tmds_d_p)
-);
-
-reg [7:0] sd_debug_reg;
-wire [7:0] sd_debug_out;
-
-SDLoader #(.FREQ(FREQ)) sd_loader (
-    .clk(clk), .resetn(sys_resetn),
-    .overlay(menu_overlay), .color(menu_color), .scanline(menu_scanline),
-    .cycle(menu_cycle),
-    .nes_btn(loader_btn | nes_btn | loader_btn_2 | nes_btn2), 
-    .dout(sd_dout), .dout_valid(sd_dout_valid),
-    .sd_clk(sd_clk), .sd_cmd(sd_cmd), .sd_dat0(sd_dat0), .sd_dat1(sd_dat1),
-    .sd_dat2(sd_dat2), .sd_dat3(sd_dat3),
-
-    .debug_reg(sd_debug_reg), .debug_out(sd_debug_out)
 );
 
 // Dualshock controller
@@ -363,37 +219,10 @@ dualshock_controller controller2 (
     .I_VIB_SW(2'b00), .I_VIB_DAT(8'hff)     // no vibration
 );
 
-Autofire af_square (.clk(clk), .resetn(sys_resetn), .btn(~joy_rx[1][7] | usb_btn_y), .out(auto_square));            // B
-Autofire af_triangle (.clk(clk), .resetn(sys_resetn), .btn(~joy_rx[1][4] | usb_btn_x), .out(auto_triangle));        // A
-Autofire af_square2 (.clk(clk), .resetn(sys_resetn), .btn(~joy_rx2[1][7] | usb_btn_y2), .out(auto_square2));
-Autofire af_triangle2 (.clk(clk), .resetn(sys_resetn), .btn(~joy_rx2[1][4] | usb_btn_x2), .out(auto_triangle2));
-
-//   usb_btn:      (R L D U START SELECT B A)
-wire [1:0] usb_type, usb_type2;
-wire usb_report, usb_report2;
-usb_hid_host usb_controller (
-    .usbclk(clk_usb), .usbrst_n(sys_resetn),
-    .usb_dm(usbdm), .usb_dp(usbdp),	.typ(usb_type), .report(usb_report), 
-    .game_l(usb_btn[6]), .game_r(usb_btn[7]), .game_u(usb_btn[4]), .game_d(usb_btn[5]), 
-    .game_a(usb_btn[0]), .game_b(usb_btn[1]), .game_x(usb_btn_x), .game_y(usb_btn_y), 
-    .game_sel(usb_btn[2]), .game_sta(usb_btn[3]),
-    // ignore keyboard and mouse input
-    .key_modifiers(), .key1(), .key2(), .key3(), .key4(),
-    .mouse_btn(), .mouse_dx(), .mouse_dy(),
-    .dbg_hid_report()
-);
-
-usb_hid_host usb_controller2 (
-    .usbclk(clk_usb), .usbrst_n(sys_resetn),
-    .usb_dm(usbdm2), .usb_dp(usbdp2),	.typ(usb_type2), .report(usb_report2), 
-    .game_l(usb_btn2[6]), .game_r(usb_btn2[7]), .game_u(usb_btn2[4]), .game_d(usb_btn2[5]), 
-    .game_a(usb_btn2[0]), .game_b(usb_btn2[1]), .game_x(usb_btn_x2), .game_y(usb_btn_y2), 
-    .game_sel(usb_btn2[2]), .game_sta(usb_btn2[3]),
-    // ignore keyboard and mouse input
-    .key_modifiers(), .key1(), .key2(), .key3(), .key4(),
-    .mouse_btn(), .mouse_dx(), .mouse_dy(),
-    .dbg_hid_report()
-);
+Autofire af_square (.clk(clk), .resetn(sys_resetn), .btn(~joy_rx[1][7] ), .out(auto_square));            // B
+Autofire af_triangle (.clk(clk), .resetn(sys_resetn), .btn(~joy_rx[1][4] ), .out(auto_triangle));        // A
+Autofire af_square2 (.clk(clk), .resetn(sys_resetn), .btn(~joy_rx2[1][7] ), .out(auto_square2));
+Autofire af_triangle2 (.clk(clk), .resetn(sys_resetn), .btn(~joy_rx2[1][4] ), .out(auto_triangle2));
 
 //
 // Print control
@@ -417,108 +246,13 @@ reg print_stat; // pulse every 2 seconds
 reg [15:0] recv_packets = 0;
 reg [15:0] indata_clk_count = 0;
 
-reg [3:0] sd_state0 = 0;
-
 reg [19:0] timer;           // 37 times per second
 always @(posedge clk) timer <= timer + 1;
-
-// `define SD_REPORT
 
 always@(posedge clk)begin
     state_0<={2'b0, loader_done};
     state_1<=state_0;
-
-    // status for SD file browsing
-`ifdef SD_REPORT
-    case (timer)
-    20'h00000: begin
-      `print("sd: file_total=", STR);
-      sd_debug_reg = 2;
-    end
-    20'h10000: begin 
-      `print(sd_debug_out, 1);
-      sd_debug_reg = 1;
-    end
-    20'h20000: `print(sd_debug_out, 1);
-    20'h30000: begin
-      `print(", file_start=", STR);
-      sd_debug_reg = 3;      
-    end
-    20'h40000: `print(sd_debug_out, 1);
-    20'h50000: begin
-      `print(", active=", STR);
-      sd_debug_reg = 4;      
-    end
-    20'h60000: `print(sd_debug_out, 1);
-    20'h70000: begin
-      `print(", total=", STR);
-      sd_debug_reg = 5;      
-    end
-    20'h80000: `print(sd_debug_out, 1);
-    20'h80000: begin
-      `print(", state=", STR);
-      sd_debug_reg = 6;      
-    end
-    20'ha0000: `print(sd_debug_out, 1);
-    20'hb0000: `print(", buttons=", STR);
-    20'hc0000: `print({nes_btn, nes_btn2}, 2);
-    20'hf0000: `print("\n", STR);
-    endcase
-`endif
-
-    if (uart_demux.write)
-        recv_packets <= recv_packets + 1;        
-
-    if(state_0==state_1) begin //stable value
-        state_old<=state_new;
-
-        if(state_old!=state_new)begin//state changes
-            if(state_new==3'd0) `print("NES_Tang starting...\n", STR);
-            if(state_new==3'd1) `print("Game loading done.\n", STR);
-        end
-    end
-
-`ifdef HID_REPORT
-    if (timer == 20'h00000)
-      `print("hid=", STR);
-    if (timer == 20'h10000)
-      `print(dbg_hid_report, 8);
-    if (timer == 20'h20000)
-      `print(", vidpid=", STR);
-    if (timer == 20'h30000)
-      `print({dbg_vid, dbg_pid}, 4);
-    if (timer == 20'h40000)
-      `print(", dev=", STR);
-    if (timer == 20'h50000)
-      `print({4'b0, dbg_dev}, 1);
-    if (timer == 20'h60000)
-      `print(", ds2[2]=", STR);
-    if (timer == 20'h70000)
-      `print({joy_rx[0], joy_rx[1], joy_rx2[0], joy_rx2[1]}, 4);
-    if (timer == 20'h80000)
-      `print(", usb_btn[2]=", STR);
-    if (timer == 20'h90000)
-      `print({usb_btn, usb_btn2}, 2);
-
-    if (timer == 20'hf0000)
-      `print("\n", STR);
-`endif
-
-`ifdef PRINT_SD
-    if (sd_state != sd_state0) begin
-        if (sd_state == SD_READ_META) begin
-            `print("Reading SDcard\n", STR);
-        end
-        if (sd_state == SD_START_SECTOR) begin
-            if (sd_rsector[15:0] == 16'b0) begin
-                `print(sd_romlen, 3);
-            end else 
-                `print(sd_rsector[15:0], 2);
-        end
-        sd_state0 <= sd_state;
-    end
-`endif
-
+   
 `ifdef COLOR_TRACING
     // print some color values
     if (loader_done && tick)
@@ -572,6 +306,7 @@ always@(posedge clk)begin
     if(~sys_resetn) begin
        `print("System Reset\nWelcome to NES_Tang\n",STR);
     end
+
 end
 
 reg [19:0] tick_counter;
