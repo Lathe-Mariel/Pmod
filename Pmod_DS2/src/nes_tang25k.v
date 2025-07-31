@@ -29,7 +29,8 @@ module NES_Tang25k(
     output       tmds_clk_n,
     output       tmds_clk_p,
     output [2:0] tmds_d_n,
-    output [2:0] tmds_d_p
+    output [2:0] tmds_d_p,
+    output [7:0] pmod_led
 );
 
 `include "nes_tang25k.vh"
@@ -127,6 +128,8 @@ UartDemux #(.FREQ(FREQ), .BAUDRATE(BAUDRATE)) uart_demux(
   wire [7:0] nes_btn2 = {~joy_rx2[0][5], ~joy_rx2[0][7], ~joy_rx2[0][6], ~joy_rx2[0][4], 
                          ~joy_rx2[0][3], ~joy_rx2[0][0], ~joy_rx2[1][6] | auto_square2, ~joy_rx2[1][5] | auto_triangle2} ;
   
+assign pmod_led = {joy_rx[0][4],joy_rx[1][3:0],joy_rx[1][7:5]};
+
   // Joypad handling
   always @(posedge clk) begin
     if (joypad_strobe) begin
