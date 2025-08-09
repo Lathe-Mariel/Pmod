@@ -80,10 +80,6 @@ end
   wire joypad_strobe;
   wire [1:0] joypad_clock;
 
-  wire memory_read_cpu, memory_read_ppu;
-  wire memory_write;
-  wire [7:0] memory_din_cpu, memory_din_ppu;
-  wire [7:0] memory_dout;
   reg [7:0] joypad_bits, joypad_bits2;
   reg [1:0] last_joypad_clock;
   wire [31:0] dbgadr;
@@ -128,7 +124,7 @@ UartDemux #(.FREQ(FREQ), .BAUDRATE(BAUDRATE)) uart_demux(
   wire [7:0] nes_btn2 = {~joy_rx2[0][5], ~joy_rx2[0][7], ~joy_rx2[0][6], ~joy_rx2[0][4], 
                          ~joy_rx2[0][3], ~joy_rx2[0][0], ~joy_rx2[1][6] | auto_square2, ~joy_rx2[1][5] | auto_triangle2} ;
   
-assign pmod_led = {joy_rx[0][4],joy_rx[1][3:0],joy_rx[1][7:5]};
+assign pmod_led = {joy_rx[0][4],joy_rx[1][3:0],joy_rx[1][7:5]}; //for test
 
   // Joypad handling
   always @(posedge clk) begin
@@ -143,11 +139,7 @@ assign pmod_led = {joy_rx[0][4],joy_rx[1][3:0],joy_rx[1][7:5]};
     last_joypad_clock <= joypad_clock;
   end
 
-  wire [21:0] loader_addr;
-  wire [7:0] loader_write_data;
-  wire loader_write;
-  wire [31:0] mapper_flags;
-  wire loader_done, loader_fail, loader_refresh;
+  wire loader_done;
 
   // The NES machine
   // nes_ce  / 0 \___/ 1 \___/ 2 \___/ 3 \___/ 4 \___/ 0 \___
@@ -159,13 +151,8 @@ assign pmod_led = {joy_rx[0][4],joy_rx[1][3:0],joy_rx[1][7:5]};
   wire run_nes = (nes_ce == 4) && !reset_nes;       // nes runs at clock cycle #4
 
   // For debug
-  reg [21:0] last_addr;
-  reg [7:0] last_din;
-  reg [7:0] last_dout;
   reg last_write;   // if 0, then we did a read
   reg last_idle;
-
-  reg tick_seen;
 
 /*verilator tracing_off*/
 
@@ -173,19 +160,8 @@ assign pmod_led = {joy_rx[0][4],joy_rx[1][3:0],joy_rx[1][7:5]};
 
 `ifndef VERILATOR
 
-wire menu_overlay;
-wire [5:0] menu_color;
-wire [7:0] menu_scanline, menu_cycle;
-
 // HDMI output
-nes2hdmi u_hdmi (
-    .clk(clk), .resetn(sys_resetn),
-    .color(menu_overlay ? menu_color : color), .cycle(menu_overlay ? menu_cycle : cycle), 
-    .scanline(menu_overlay ? menu_scanline : scanline), .sample(sample >> 1),
-    .clk_pixel(clk_p), .clk_5x_pixel(clk_p5), .locked(pll_lock),
-    .tmds_clk_n(tmds_clk_n), .tmds_clk_p(tmds_clk_p),
-    .tmds_d_n(tmds_d_n), .tmds_d_p(tmds_d_p)
-);
+
 
 // Dualshock controller
 reg sclk;                   // controller main clock at 250Khz
@@ -233,84 +209,16 @@ Autofire af_triangle2 (.clk(clk), .resetn(sys_resetn), .btn(~joy_rx2[1][4] ), .o
 `include "print.v"
 defparam tx.uart_freq=BAUDRATE;
 defparam tx.clk_freq=FREQ;
-assign print_clk = sys_clk;
+
 assign UART_TXD = uart_txp;
 
-reg[3:0] state_0;
-reg[3:0] state_1;
-reg[3:0] state_old = 3'd7;
-wire[3:0] state_new = state_1;
-
-reg [7:0] print_counters = 0, print_counters_p;
 
 reg tick;       // pulse every 0.01 second
 reg print_stat; // pulse every 2 seconds
 
-reg [15:0] recv_packets = 0;
-reg [15:0] indata_clk_count = 0;
-
 reg [19:0] timer;           // 37 times per second
 always @(posedge clk) timer <= timer + 1;
 
-always@(posedge clk)begin
-    state_0<={2'b0, loader_done};
-    state_1<=state_0;
-   
-`ifdef COLOR_TRACING
-    // print some color values
-    if (loader_done && tick)
-        print_counters <= 8'd1;
-    print_counters_p <= print_counters;
-    if (print_state == PRINT_IDLE_STATE && print_counters == print_counters_p && print_counters != 0) begin
-        case (print_counters)
-        8'd1: `print({7'b0, scanline}, 2);
-        8'd2: `print("  ", STR);
-        8'd3: `print({7'b0, cycle}, 2);
-        8'd4: `print("  ", STR);
-        8'd5: `print({2'b0, color}, 1);
-        8'd6: `print("  ", STR);
-        8'd255: `print("\n", STR);
-        endcase
-        print_counters <= print_counters == 8'd255 ? 0 : print_counters + 1;
-    end
-`endif
-
-    // print stats every 2 seconds normally, or every 0.01 second before game data is ready
-`ifdef STEP_TRACING
-    if (tick)
-        print_counters <= 8'd1;
-    print_counters_p <= print_counters;
-    if (print_state == PRINT_IDLE_STATE && print_counters == print_counters_p && print_counters != 0) begin
-        case (print_counters)
-        8'd1: `print("loader_done=", STR);
-        8'd2: `print({7'b0, loader_done}, 1);
-        8'd3: if (~last_idle) `print(", last memory operation: <write=", STR);
-        8'd6: if (~last_idle) `print({7'b0, last_write}, 1);
-        8'd7: if (~last_idle) `print(", addr=", STR);
-        8'd8: if (~last_idle) `print({2'b0, last_addr}, 3);
-        8'd9: if (~last_idle) `print(", din=", STR);
-        8'd10: if (~last_idle) `print(last_din, 1);
-        8'd11: if (~last_idle) `print(", dout=", STR);
-        8'd12: if (~last_idle) `print(last_dout, 1);
-        8'd13: if (~last_idle) `print(">", STR);
-        8'd14: `print(", total_written=", STR);
-        8'd15: `print({4'b0, ram_total_written}, 3);
-        8'd16: `print(", ram_busy=", STR);
-        8'd17: `print({7'b0, ram_busy}, 1);
-        8'd18: `print(", ram_fail=", STR);
-        8'd19: `print({7'b0, ram_fail}, 1);
-
-        8'd255: `print("\n\n", STR);
-        endcase
-        print_counters <= print_counters == 8'd255 ? 0 : print_counters + 1;
-    end
-`endif
-
-    if(~sys_resetn) begin
-       `print("System Reset\nWelcome to NES_Tang\n",STR);
-    end
-
-end
 
 reg [19:0] tick_counter;
 reg [9:0] stat_counter;
@@ -330,5 +238,94 @@ end
 //assign led = ~{~UART_RXD, loader_done};
 //assign led = ~{~UART_RXD, usb_conerr, loader_done};
 // assign led = ~usb_btn;
+
+	Video_Frame_Buffer_SDRAM frameBuffer_SDRAM(
+		.I_rst_n(rst_n), //input I_rst_n
+		.I_dma_clk(memory_clk45   ), //input I_dma_clk
+
+		.I_wr_halt(sw1         ), //input [0:0] I_wr_halt
+		.I_rd_halt(sw1           ), //input [0:0] I_rd_halt
+
+		.I_vin0_clk(cmos_16bit_clk), //input I_vin0_clk
+		.I_vin0_vs_n(~cmos_vsync  ), //input I_vin0_vs_n
+		.I_vin0_de(cmos_16bit_wr), //input I_vin0_de
+		.I_vin0_data(write_data   ), //input [15:0] I_vin0_data
+		.O_vin0_fifo_full(        ), //output O_vin0_fifo_full
+
+		.I_vout0_clk(video_clk    ), //input I_vout0_clk
+		.I_vout0_vs_n(~syn_off0_vs), //input I_vout0_vs_n
+		.I_vout0_de(camera_de     ), //input I_vout0_de
+		.O_vout0_den(off0_syn_de  ), //output O_vout0_den
+		.O_vout0_data(off0_syn_data), //output [15:0] O_vout0_data
+		.O_vout0_fifo_empty(       ), //output O_vout0_fifo_empty
+
+		.I_sdrc_busy_n(sdrc_busy_n   ), //input I_sdrc_busy_n
+		.O_sdrc_wr_n(sdrc_wr_n    ), //output O_sdrc_wr_n
+		.O_sdrc_rd_n(sdrc_rd_n     ), //output O_sdrc_rd_n
+		.O_sdrc_addr(sdrc_addr          ), //output [20:0] O_sdrc_addr
+		.O_sdrc_data_len(sdrc_data_len), //output [7:0] O_sdrc_data_len
+		.O_sdrc_data(wr_data       ), //output [15:0] O_sdrc_data
+		.O_sdrc_dqm(sdrc_dqm       ), //output [1:0] O_sdrc_dqm
+		.I_sdrc_rd_valid(sdrc_rd_valid), //input I_sdrc_rd_valid
+		.I_sdrc_data_out(sdrc_data ), //input [15:0] I_sdrc_data_out
+		.I_sdrc_init_done(sdrc_init_done) //input I_sdrc_init_done
+	);
+
+SDRAM_controller_top_SIP sdram_controller0( // IPUG279-1.3J  P.7
+		.O_sdram_clk(O_sdram_clk    ),      //output O_sdram_clk
+		.O_sdram_cke(O_sdram_cke    ),      //output O_sdram_cke
+		.O_sdram_cs_n(O_sdram_cs_n  ),      //output O_sdram_cs_n
+		.O_sdram_cas_n(O_sdram_cas_n),      //output O_sdram_cas_n
+		.O_sdram_ras_n(O_sdram_ras_n),      //output O_sdram_ras_n
+		.O_sdram_wen_n(O_sdram_wen_n),      //output O_sdram_wen_n
+		.O_sdram_dqm(O_sdram_dqm    ),      //output [1:0] O_sdram_dqm
+		.O_sdram_addr(O_sdram_addr  ),      //output [12:0] O_sdram_addr
+		.O_sdram_ba(O_sdram_ba      ),      //output [1:0] O_sdram_ba
+		.IO_sdram_dq(IO_sdram_dq    ),              // [15:0] IO_sdram_dq
+		.I_sdrc_rst_n(rst_n         ),              // I_sdrc_rst_n リセット
+		.I_sdrc_clk(memory_clk45    ),              // I_sdrc_clk コントローラ動作クロック
+        .I_sdram_clk(memory_clk     ),              // I_sdram_clk SDRAM動作クロック
+		.I_sdrc_selfrefresh(1'b0 ),                 // I_sdrc_selfrefresh セルフリフレッシュ制御(1:有効, 0:無効)
+		.I_sdrc_power_down(1'b0  ),                 // I_sdrc_power_down 低消費電力制御(1:有効, 0:無効)
+		.I_sdrc_wr_n(sdrc_wr_n  ),                 // I_sdrc_wr_n 書込イネーブル
+		.I_sdrc_rd_n(sdrc_rd_n   ),                 // I_sdrc_rd_n 読取イネーブル
+		.I_sdrc_addr({2'b00,sdrc_addr}  ),                 // [22:0] I_sdrc_addr アドレス
+		.I_sdrc_data_len(sdrc_data_len),         // [7:0] I_sdrc_data_len 読み書きデータ長
+		.I_sdrc_dqm(sdrc_dqm     ),                 // [1:0] I_sdrc_dqm データマスク制御
+		.I_sdrc_data(wr_data     ),                 // [15:0] I_sdrc_data 書込データ
+		.O_sdrc_data(sdrc_data     ),                 // [15:0] O_sdrc_data 読取データ
+		.O_sdrc_init_done(sdrc_init_done),     // O_sdrc_init_done パワーアップ初期化完了(1:完了, 0:未完)
+		.O_sdrc_busy_n(sdrc_busy_n ),                 // O_sdrc_busy_n コントローラアイドル表示．アイドル時に読み書きトリガ可能(1:アイドル, 0:ビジー)
+		.O_sdrc_rd_valid(sdrc_rd_valid),            // O_sdrc_rd_valid 読み取りデータ有効．(1:有効)
+		.O_sdrc_wrd_ack(         )                // O_sdrc_wrd_ack 読み書きリクエスト応答
+);
+
+DVI_TX_Top DVI_TX_Top_inst
+(
+    .I_rst_n       (hdmi4_rst_n   ),  //asynchronous reset, low active
+    .I_serial_clk  (serial_clk    ),
+
+    .I_rgb_clk     (lcd_dclk      ),  //pixel clock
+    .I_rgb_vs      (lcd_vs        ), 
+    .I_rgb_hs      (lcd_hs        ),    
+    .I_rgb_de      (lcd_de        ), 
+    .I_rgb_r       ( off0_syn_de? {off0_syn_data[4:0],3'b0}: bin_en?{8{bin_view}}: mnist_en? {8{mnist_view}}: dvi_x),  //tp0_data_r
+    .I_rgb_g       ( off0_syn_de? {off0_syn_data[10:5],2'b0}: bin_en?{8{bin_view}}: mnist_en? {8{mnist_view}}: dvi_y),  //,  
+    .I_rgb_b       ( off0_syn_de? {off0_syn_data[15:11],3'b0}: bin_en?{8{bin_view}}: mnist_en? {8{mnist_view}}: 8'hff),  //,
+
+    //测试图
+    // .I_rgb_clk     (video_clk       ),  //pixel clock
+    // .I_rgb_vs      (tp0_vs_in  ), 
+    // .I_rgb_hs      (tp0_hs_in  ),   
+    // .I_rgb_de      (tp0_de_in  ), 
+    // .I_rgb_r       (tp0_data_r  ), 
+    // .I_rgb_g       (tp0_data_g  ), 
+    // .I_rgb_b       (tp0_data_b  ), 
+
+    .O_tmds_clk_p  (O_tmds_clk_p  ),
+    .O_tmds_clk_n  (O_tmds_clk_n  ),
+    .O_tmds_data_p (O_tmds_data_p ),  //{r,g,b}
+    .O_tmds_data_n (O_tmds_data_n )
+);
 
 endmodule

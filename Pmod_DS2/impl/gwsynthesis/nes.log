@@ -1,149 +1,91 @@
 GowinSynthesis start
 Running parser ...
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\MicroCode.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\apu.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\autofire.v'
-WARN  (EX3786) : Assignment to input 'out'("H:\git\Pmod\Pmod_DS2\src\autofire.v":20)
-WARN  (EX2350) : Illegal assignment to variable input port 'out'("H:\git\Pmod\Pmod_DS2\src\autofire.v":20)
-WARN  (EX3786) : Assignment to input 'out'("H:\git\Pmod\Pmod_DS2\src\autofire.v":24)
-WARN  (EX2350) : Illegal assignment to variable input port 'out'("H:\git\Pmod\Pmod_DS2\src\autofire.v":24)
-WARN  (EX3786) : Assignment to input 'out'("H:\git\Pmod\Pmod_DS2\src\autofire.v":28)
-WARN  (EX2350) : Illegal assignment to variable input port 'out'("H:\git\Pmod\Pmod_DS2\src\autofire.v":28)
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\compat.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\config.sv'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\cpu.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\dualshock_controller.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\game_loader.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\gowin_clkdiv\gowin_clkdiv.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\gowin_pll\gowin_pll.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\gowin_rpll_usb.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\hdmi\gowin_pll\gowin_pll_hdmi.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\hdmi2\audio_clock_regeneration_packet.sv'
-WARN  (EX2478) : Non-net output port 'clk_audio_counter_wrap' cannot be initialized at declaration in SystemVerilog mode("H:\git\Pmod\Pmod_DS2\src\hdmi2\audio_clock_regeneration_packet.sv":13)
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\hdmi2\audio_info_frame.sv'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\hdmi2\audio_sample_packet.sv'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\hdmi2\auxiliary_video_information_info_frame.sv'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\hdmi2\hdmi.sv'
-WARN  (EX2478) : Non-net output port 'cx' cannot be initialized at declaration in SystemVerilog mode("H:\git\Pmod\Pmod_DS2\src\hdmi2\hdmi.sv":81)
-WARN  (EX2478) : Non-net output port 'cy' cannot be initialized at declaration in SystemVerilog mode("H:\git\Pmod\Pmod_DS2\src\hdmi2\hdmi.sv":82)
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\hdmi2\packet_assembler.sv'
-WARN  (EX2478) : Non-net output port 'counter' cannot be initialized at declaration in SystemVerilog mode("H:\git\Pmod\Pmod_DS2\src\hdmi2\packet_assembler.sv":11)
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\hdmi2\packet_picker.sv'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\hdmi2\serializer.sv'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\hdmi2\source_product_description_info_frame.sv'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\hdmi2\tmds_channel.sv'
-WARN  (EX2478) : Non-net output port 'tmds' cannot be initialized at declaration in SystemVerilog mode("H:\git\Pmod\Pmod_DS2\src\hdmi2\tmds_channel.sv":16)
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\hw_sound.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\hw_uart.v'
-WARN  (EX3801) : Parameter 's_IDLE' becomes localparam in 'uart_rx' with formal parameter declaration list("H:\git\Pmod\Pmod_DS2\src\hw_uart.v":31)
-WARN  (EX3801) : Parameter 's_RX_START_BIT' becomes localparam in 'uart_rx' with formal parameter declaration list("H:\git\Pmod\Pmod_DS2\src\hw_uart.v":32)
-WARN  (EX3801) : Parameter 's_RX_DATA_BITS' becomes localparam in 'uart_rx' with formal parameter declaration list("H:\git\Pmod\Pmod_DS2\src\hw_uart.v":33)
-WARN  (EX3801) : Parameter 's_RX_STOP_BIT' becomes localparam in 'uart_rx' with formal parameter declaration list("H:\git\Pmod\Pmod_DS2\src\hw_uart.v":34)
-WARN  (EX3801) : Parameter 's_CLEANUP' becomes localparam in 'uart_rx' with formal parameter declaration list("H:\git\Pmod\Pmod_DS2\src\hw_uart.v":35)
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\memory_controller.v'
-Analyzing included file 'H:\git\Pmod\Pmod_DS2\src\nes_tang25k.vh'("H:\git\Pmod\Pmod_DS2\src\memory_controller.v":42)
-Back to file 'H:\git\Pmod\Pmod_DS2\src\memory_controller.v'("H:\git\Pmod\Pmod_DS2\src\memory_controller.v":42)
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\mmu.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\nes.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\nes2hdmi.sv'
-Undeclared symbol 'tmdsClk', assumed default net type 'wire'("H:\git\Pmod\Pmod_DS2\src\nes2hdmi.sv":255)
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v'
-Analyzing included file 'H:\git\Pmod\Pmod_DS2\src\nes_tang25k.vh'("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":36)
-Back to file 'H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v'("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":36)
-Analyzing included file 'H:\git\Pmod\Pmod_DS2\src\print.v'("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":233)
-Back to file 'H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v'("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":233)
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\ppu.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\sd_file_list_reader.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\sd_loader.v'
-Analyzing included file 'H:\git\Pmod\Pmod_DS2\src\font.vh'("H:\git\Pmod\Pmod_DS2\src\sd_loader.v":34)
-Back to file 'H:\git\Pmod\Pmod_DS2\src\sd_loader.v'("H:\git\Pmod\Pmod_DS2\src\sd_loader.v":34)
-Undeclared symbol 'debug_active', assumed default net type 'wire'("H:\git\Pmod\Pmod_DS2\src\sd_loader.v":53)
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\sd_reader.sv'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\sdcmd_ctrl.sv'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\uart_tx_V2.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\usb_hid_host.v'
-Analyzing Verilog file 'H:\git\Pmod\Pmod_DS2\src\usb_hid_host_rom.v'
-Compiling module 'NES_Tang25k'("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":8)
-WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("H:\git\Pmod\Pmod_DS2\src\config.sv":47)
-WARN  (EX3780) : Using initial value of 'nes_ce' since it is never assigned("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":91)
-Extracting RAM for identifier 'print_seq'("H:\git\Pmod\Pmod_DS2\src\print.v":6)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":41)
-Compiling module 'Gowin_PLL'("H:\git\Pmod\Pmod_DS2\src\gowin_pll\gowin_pll.v":10)
-Compiling module 'Gowin_CLKDIV'("H:\git\Pmod\Pmod_DS2\src\gowin_clkdiv\gowin_clkdiv.v":10)
-Compiling module 'UartDemux(FREQ=25000000,BAUDRATE=921600)'("H:\git\Pmod\Pmod_DS2\src\hw_uart.v":194)
-Compiling module 'uart_rx(CLKS_PER_BIT=27)'("H:\git\Pmod\Pmod_DS2\src\hw_uart.v":22)
-WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("H:\git\Pmod\Pmod_DS2\src\hw_uart.v":88)
-WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("H:\git\Pmod\Pmod_DS2\src\hw_uart.v":99)
-WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("H:\git\Pmod\Pmod_DS2\src\hw_uart.v":110)
-WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("H:\git\Pmod\Pmod_DS2\src\hw_uart.v":128)
-WARN  (EX3073) : Port 'screen_width' remains unconnected for this instance("H:\git\Pmod\Pmod_DS2\src\nes2hdmi.sv":259)
-Compiling module 'nes2hdmi'("H:\git\Pmod\Pmod_DS2\src\nes2hdmi.sv":8)
-WARN  (EX3780) : Using initial value of 'asp8x7_on' since it is never assigned("H:\git\Pmod\Pmod_DS2\src\nes2hdmi.sv":33)
-Extracting RAM for identifier 'mem'("H:\git\Pmod\Pmod_DS2\src\nes2hdmi.sv":51)
-WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("H:\git\Pmod\Pmod_DS2\src\nes2hdmi.sv":107)
-WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("H:\git\Pmod\Pmod_DS2\src\nes2hdmi.sv":108)
-WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("H:\git\Pmod\Pmod_DS2\src\nes2hdmi.sv":207)
-WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("H:\git\Pmod\Pmod_DS2\src\nes2hdmi.sv":214)
-Compiling module 'hdmi(VIDEO_ID_CODE=4,VIDEO_REFRESH_RATE=60.0,AUDIO_RATE=48000)'("H:\git\Pmod\Pmod_DS2\src\hdmi2\hdmi.sv":4)
-Compiling module 'packet_picker(VIDEO_RATE=74250000.0,IT_CONTENT=1'b1,AUDIO_BIT_WIDTH=16,AUDIO_RATE=48000,VENDOR_NAME=64'b0101010101101110011010110110111001101111011101110110111000000000,PRODUCT_DESCRIPTION=128'b01000110010100000100011101000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,SOURCE_DEVICE_INFORMATION=8'b00000000)'("H:\git\Pmod\Pmod_DS2\src\hdmi2\packet_picker.sv":4)
-Extracting RAM for identifier 'audio_sample_word_buffer'("H:\git\Pmod\Pmod_DS2\src\hdmi2\packet_picker.sv":80)
-Compiling module 'audio_clock_regeneration_packet(VIDEO_RATE=74250000.0,AUDIO_RATE=48000)'("H:\git\Pmod\Pmod_DS2\src\hdmi2\audio_clock_regeneration_packet.sv":5)
-Compiling module 'audio_sample_packet(SAMPLING_FREQUENCY=4'b0010,WORD_LENGTH=4'b0010)'("H:\git\Pmod\Pmod_DS2\src\hdmi2\audio_sample_packet.sv":8)
-WARN  (EX3780) : Using initial value of 'CHANNEL_LEFT' since it is never assigned("H:\git\Pmod\Pmod_DS2\src\hdmi2\audio_sample_packet.sv":63)
-WARN  (EX3780) : Using initial value of 'CHANNEL_RIGHT' since it is never assigned("H:\git\Pmod\Pmod_DS2\src\hdmi2\audio_sample_packet.sv":64)
-Compiling module 'auxiliary_video_information_info_frame(IT_CONTENT=1'b1)'("H:\git\Pmod\Pmod_DS2\src\hdmi2\auxiliary_video_information_info_frame.sv":5)
-Compiling module 'source_product_description_info_frame(VENDOR_NAME=64'b0101010101101110011010110110111001101111011101110110111000000000,PRODUCT_DESCRIPTION=128'b01000110010100000100011101000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,SOURCE_DEVICE_INFORMATION=8'b00000000)'("H:\git\Pmod\Pmod_DS2\src\hdmi2\source_product_description_info_frame.sv":5)
-Compiling module 'audio_info_frame'("H:\git\Pmod\Pmod_DS2\src\hdmi2\audio_info_frame.sv":5)
-WARN  (EX1998) : Net 'headers[255][23]' does not have a driver("H:\git\Pmod\Pmod_DS2\src\hdmi2\packet_picker.sv":29)
-WARN  (EX1998) : Net 'subs[255][3][55]' does not have a driver("H:\git\Pmod\Pmod_DS2\src\hdmi2\packet_picker.sv":30)
-Compiling module 'packet_assembler'("H:\git\Pmod\Pmod_DS2\src\hdmi2\packet_assembler.sv":4)
-Compiling module 'tmds_channel'("H:\git\Pmod\Pmod_DS2\src\hdmi2\tmds_channel.sv":4)
-Compiling module 'tmds_channel(CN=1)'("H:\git\Pmod\Pmod_DS2\src\hdmi2\tmds_channel.sv":4)
-Compiling module 'tmds_channel(CN=2)'("H:\git\Pmod\Pmod_DS2\src\hdmi2\tmds_channel.sv":4)
-Compiling module 'serializer(VIDEO_RATE=74250000.0)'("H:\git\Pmod\Pmod_DS2\src\hdmi2\serializer.sv":1)
-WARN  (EX1998) : Net 'ONE_THIRD[768][7]' does not have a driver("H:\git\Pmod\Pmod_DS2\src\nes2hdmi.sv":38)
-WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":197)
-Compiling module 'dualshock_controller'("H:\git\Pmod\Pmod_DS2\src\dualshock_controller.v":36)
-Compiling module 'ps_pls_gan'("H:\git\Pmod\Pmod_DS2\src\dualshock_controller.v":477)
-WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("H:\git\Pmod\Pmod_DS2\src\dualshock_controller.v":523)
-WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("H:\git\Pmod\Pmod_DS2\src\dualshock_controller.v":588)
-Compiling module 'txd_commnd'("H:\git\Pmod\Pmod_DS2\src\dualshock_controller.v":245)
-Compiling module 'ps_txd'("H:\git\Pmod\Pmod_DS2\src\dualshock_controller.v":628)
-Compiling module 'ps_rxd'("H:\git\Pmod\Pmod_DS2\src\dualshock_controller.v":603)
-WARN  (EX2350) : Illegal assignment to variable input port 'out'("H:\git\Pmod\Pmod_DS2\src\autofire.v":20)
-WARN  (EX2350) : Illegal assignment to variable input port 'out'("H:\git\Pmod\Pmod_DS2\src\autofire.v":24)
-WARN  (EX2350) : Illegal assignment to variable input port 'out'("H:\git\Pmod\Pmod_DS2\src\autofire.v":28)
-Compiling module 'Autofire'("H:\git\Pmod\Pmod_DS2\src\autofire.v":4)
-WARN  (EX3791) : Expression size 22 truncated to fit in target size 21("H:\git\Pmod\Pmod_DS2\src\autofire.v":23)
-Driving port 'out' is declared here("H:\git\Pmod\Pmod_DS2\src\autofire.v":11)
-Port is declared here("H:\git\Pmod\Pmod_DS2\src\autofire.v":11)
-Compiling module 'uart_tx_V2(clk_freq=25000000,uart_freq=921600)'("H:\git\Pmod\Pmod_DS2\src\uart_tx_V2.v":1)
-WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("H:\git\Pmod\Pmod_DS2\src\uart_tx_V2.v":49)
-WARN  (EX3791) : Expression size 21 truncated to fit in target size 20("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":253)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 20("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":319)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
-WARN  (EX1998) : Net 'color[5]' does not have a driver("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":74)
-WARN  (EX1998) : Net 'sample[15]' does not have a driver("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":75)
-WARN  (EX1998) : Net 'scanline[8]' does not have a driver("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":76)
-WARN  (EX1998) : Net 'cycle[8]' does not have a driver("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":77)
-WARN  (EX1998) : Net 'joypad_strobe' does not have a driver("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":80)
-WARN  (EX1998) : Net 'joypad_clock[1]' does not have a driver("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":81)
-WARN  (EX1998) : Net 'auto_square' does not have a driver("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":125)
-WARN  (EX1998) : Net 'auto_triangle' does not have a driver("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":125)
-WARN  (EX1998) : Net 'auto_square2' does not have a driver("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":125)
-WARN  (EX1998) : Net 'auto_triangle2' does not have a driver("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":125)
-WARN  (EX1998) : Net 'loader_done' does not have a driver("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":150)
-WARN  (EX1998) : Net 'menu_overlay' does not have a driver("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":176)
-WARN  (EX1998) : Net 'menu_color[5]' does not have a driver("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":177)
-WARN  (EX1998) : Net 'menu_scanline[7]' does not have a driver("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":178)
-WARN  (EX1998) : Net 'menu_cycle[7]' does not have a driver("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":178)
-WARN  (EX1998) : Net 'print_length[6]' does not have a driver("H:\git\Pmod\Pmod_DS2\src\print.v":15)
-WARN  (EX2565) : Input 'aspect_8x7' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":188)
+Analyzing Verilog file 'E:\git\Pmod\Pmod_DS2\src\autofire.v'
+WARN  (EX3786) : Assignment to input 'out'("E:\git\Pmod\Pmod_DS2\src\autofire.v":20)
+WARN  (EX2350) : Illegal assignment to variable input port 'out'("E:\git\Pmod\Pmod_DS2\src\autofire.v":20)
+WARN  (EX3786) : Assignment to input 'out'("E:\git\Pmod\Pmod_DS2\src\autofire.v":24)
+WARN  (EX2350) : Illegal assignment to variable input port 'out'("E:\git\Pmod\Pmod_DS2\src\autofire.v":24)
+WARN  (EX3786) : Assignment to input 'out'("E:\git\Pmod\Pmod_DS2\src\autofire.v":28)
+WARN  (EX2350) : Illegal assignment to variable input port 'out'("E:\git\Pmod\Pmod_DS2\src\autofire.v":28)
+Analyzing Verilog file 'E:\git\Pmod\Pmod_DS2\src\config.sv'
+Analyzing Verilog file 'E:\git\Pmod\Pmod_DS2\src\dualshock_controller.v'
+Analyzing Verilog file 'E:\git\Pmod\Pmod_DS2\src\gowin_clkdiv\gowin_clkdiv.v'
+Analyzing Verilog file 'E:\git\Pmod\Pmod_DS2\src\gowin_pll\gowin_pll.v'
+Analyzing Verilog file 'E:\git\Pmod\Pmod_DS2\src\gowin_rpll_usb.v'
+Analyzing Verilog file 'E:\git\Pmod\Pmod_DS2\src\hdmi\gowin_pll\gowin_pll_hdmi.v'
+Analyzing Verilog file 'E:\git\Pmod\Pmod_DS2\src\hw_uart.v'
+WARN  (EX3801) : Parameter 's_IDLE' becomes localparam in 'uart_rx' with formal parameter declaration list("E:\git\Pmod\Pmod_DS2\src\hw_uart.v":31)
+WARN  (EX3801) : Parameter 's_RX_START_BIT' becomes localparam in 'uart_rx' with formal parameter declaration list("E:\git\Pmod\Pmod_DS2\src\hw_uart.v":32)
+WARN  (EX3801) : Parameter 's_RX_DATA_BITS' becomes localparam in 'uart_rx' with formal parameter declaration list("E:\git\Pmod\Pmod_DS2\src\hw_uart.v":33)
+WARN  (EX3801) : Parameter 's_RX_STOP_BIT' becomes localparam in 'uart_rx' with formal parameter declaration list("E:\git\Pmod\Pmod_DS2\src\hw_uart.v":34)
+WARN  (EX3801) : Parameter 's_CLEANUP' becomes localparam in 'uart_rx' with formal parameter declaration list("E:\git\Pmod\Pmod_DS2\src\hw_uart.v":35)
+Analyzing Verilog file 'E:\git\Pmod\Pmod_DS2\src\nes.v'
+Analyzing Verilog file 'E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v'
+Analyzing included file 'E:\git\Pmod\Pmod_DS2\src\nes_tang25k.vh'("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":36)
+Back to file 'E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v'("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":36)
+Analyzing included file 'E:\git\Pmod\Pmod_DS2\src\print.v'("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":214)
+Back to file 'E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v'("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":214)
+Analyzing Verilog file 'E:\git\Pmod\Pmod_DS2\src\uart_tx_V2.v'
+Analyzing Verilog file 'E:\git\Pmod\Pmod_DS2\src\usb_hid_host.v'
+Analyzing Verilog file 'E:\git\Pmod\Pmod_DS2\src\usb_hid_host_rom.v'
+Compiling module 'NES_Tang25k'("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":8)
+WARN  (EX3780) : Using initial value of 'nes_ce' since it is never assigned("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":87)
+Extracting RAM for identifier 'print_seq'("E:\git\Pmod\Pmod_DS2\src\print.v":6)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":41)
+Compiling module 'Gowin_PLL'("E:\git\Pmod\Pmod_DS2\src\gowin_pll\gowin_pll.v":10)
+Compiling module 'Gowin_CLKDIV'("E:\git\Pmod\Pmod_DS2\src\gowin_clkdiv\gowin_clkdiv.v":10)
+Compiling module 'UartDemux(FREQ=25000000,BAUDRATE=921600)'("E:\git\Pmod\Pmod_DS2\src\hw_uart.v":194)
+Compiling module 'uart_rx(CLKS_PER_BIT=27)'("E:\git\Pmod\Pmod_DS2\src\hw_uart.v":22)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("E:\git\Pmod\Pmod_DS2\src\hw_uart.v":88)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("E:\git\Pmod\Pmod_DS2\src\hw_uart.v":99)
+WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("E:\git\Pmod\Pmod_DS2\src\hw_uart.v":110)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("E:\git\Pmod\Pmod_DS2\src\hw_uart.v":128)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":178)
+Compiling module 'dualshock_controller'("E:\git\Pmod\Pmod_DS2\src\dualshock_controller.v":36)
+Compiling module 'ps_pls_gan'("E:\git\Pmod\Pmod_DS2\src\dualshock_controller.v":477)
+WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("E:\git\Pmod\Pmod_DS2\src\dualshock_controller.v":523)
+WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("E:\git\Pmod\Pmod_DS2\src\dualshock_controller.v":588)
+Compiling module 'txd_commnd'("E:\git\Pmod\Pmod_DS2\src\dualshock_controller.v":245)
+Compiling module 'ps_txd'("E:\git\Pmod\Pmod_DS2\src\dualshock_controller.v":628)
+Compiling module 'ps_rxd'("E:\git\Pmod\Pmod_DS2\src\dualshock_controller.v":603)
+WARN  (EX2350) : Illegal assignment to variable input port 'out'("E:\git\Pmod\Pmod_DS2\src\autofire.v":20)
+WARN  (EX2350) : Illegal assignment to variable input port 'out'("E:\git\Pmod\Pmod_DS2\src\autofire.v":24)
+WARN  (EX2350) : Illegal assignment to variable input port 'out'("E:\git\Pmod\Pmod_DS2\src\autofire.v":28)
+Compiling module 'Autofire'("E:\git\Pmod\Pmod_DS2\src\autofire.v":4)
+WARN  (EX3791) : Expression size 22 truncated to fit in target size 21("E:\git\Pmod\Pmod_DS2\src\autofire.v":23)
+Driving port 'out' is declared here("E:\git\Pmod\Pmod_DS2\src\autofire.v":11)
+Port is declared here("E:\git\Pmod\Pmod_DS2\src\autofire.v":11)
+Compiling module 'uart_tx_V2(clk_freq=25000000,uart_freq=921600)'("E:\git\Pmod\Pmod_DS2\src\uart_tx_V2.v":1)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("E:\git\Pmod\Pmod_DS2\src\uart_tx_V2.v":49)
+WARN  (EX3791) : Expression size 21 truncated to fit in target size 20("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":225)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 20("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":232)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":237)
+WARN  (EX1998) : Net 'joypad_strobe' does not have a driver("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":80)
+WARN  (EX1998) : Net 'joypad_clock[1]' does not have a driver("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":81)
+WARN  (EX1998) : Net 'auto_square' does not have a driver("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":121)
+WARN  (EX1998) : Net 'auto_triangle' does not have a driver("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":121)
+WARN  (EX1998) : Net 'auto_square2' does not have a driver("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":121)
+WARN  (EX1998) : Net 'auto_triangle2' does not have a driver("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":121)
+WARN  (EX1998) : Net 'loader_done' does not have a driver("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":142)
+WARN  (EX1998) : Net 'print_buffer[1023]' does not have a driver("E:\git\Pmod\Pmod_DS2\src\print.v":10)
+WARN  (EX1998) : Net 'spin_state' does not have a driver("E:\git\Pmod\Pmod_DS2\src\print.v":14)
+WARN  (EX1998) : Net 'print_length[6]' does not have a driver("E:\git\Pmod\Pmod_DS2\src\print.v":15)
+WARN  (EX1998) : Net 'print_type' does not have a driver("E:\git\Pmod\Pmod_DS2\src\print.v":16)
 NOTE  (EX0101) : Current top module is "NES_Tang25k"
-WARN  (EX0211) : The output port "led[1]" of module "NES_Tang25k" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":17)
-WARN  (EX0211) : The output port "led[0]" of module "NES_Tang25k" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":17)
+WARN  (EX0211) : The output port "led[1]" of module "NES_Tang25k" has no driver, assigning undriven bits to Z, simulation mismatch possible("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":17)
+WARN  (EX0211) : The output port "led[0]" of module "NES_Tang25k" has no driver, assigning undriven bits to Z, simulation mismatch possible("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":17)
+WARN  (EX0211) : The output port "tmds_clk_n" of module "NES_Tang25k" has no driver, assigning undriven bits to Z, simulation mismatch possible("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":29)
+WARN  (EX0211) : The output port "tmds_clk_p" of module "NES_Tang25k" has no driver, assigning undriven bits to Z, simulation mismatch possible("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":30)
+WARN  (EX0211) : The output port "tmds_d_n[2]" of module "NES_Tang25k" has no driver, assigning undriven bits to Z, simulation mismatch possible("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":31)
+WARN  (EX0211) : The output port "tmds_d_n[1]" of module "NES_Tang25k" has no driver, assigning undriven bits to Z, simulation mismatch possible("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":31)
+WARN  (EX0211) : The output port "tmds_d_n[0]" of module "NES_Tang25k" has no driver, assigning undriven bits to Z, simulation mismatch possible("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":31)
+WARN  (EX0211) : The output port "tmds_d_p[2]" of module "NES_Tang25k" has no driver, assigning undriven bits to Z, simulation mismatch possible("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":32)
+WARN  (EX0211) : The output port "tmds_d_p[1]" of module "NES_Tang25k" has no driver, assigning undriven bits to Z, simulation mismatch possible("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":32)
+WARN  (EX0211) : The output port "tmds_d_p[0]" of module "NES_Tang25k" has no driver, assigning undriven bits to Z, simulation mismatch possible("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":32)
 [5%] Running netlist conversion ...
-WARN  (CV0016) : Input UART_RXD is unused("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":14)
+WARN  (CV0016) : Input s1 is unused("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":11)
+WARN  (CV0016) : Input reset is unused("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":12)
+WARN  (CV0016) : Input UART_RXD is unused("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":14)
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
 [15%] Optimizing Phase 1 completed
@@ -159,16 +101,13 @@ Running technical mapping ...
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
-WARN  (NL0002) : The module "Autofire" instantiated to "af_square" is swept in optimizing("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":225)
-WARN  (NL0002) : The module "Autofire" instantiated to "af_square2" is swept in optimizing("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":227)
-WARN  (NL0002) : The module "Autofire" instantiated to "af_triangle" is swept in optimizing("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":226)
-WARN  (NL0002) : The module "Autofire" instantiated to "af_triangle2" is swept in optimizing("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":228)
-WARN  (NL0002) : The module "audio_info_frame" instantiated to "audio_info_frame" is swept in optimizing("H:\git\Pmod\Pmod_DS2\src\hdmi2\packet_picker.sv":143)
-WARN  (NL0002) : The module "audio_sample_packet" instantiated to "audio_sample_packet" is swept in optimizing("H:\git\Pmod\Pmod_DS2\src\hdmi2\packet_picker.sv":131)
-WARN  (NL0002) : The module "auxiliary_video_information_info_frame" instantiated to "auxiliary_video_information_info_frame" is swept in optimizing("H:\git\Pmod\Pmod_DS2\src\hdmi2\packet_picker.sv":137)
-WARN  (NL0002) : The module "source_product_description_info_frame" instantiated to "source_product_description_info_frame" is swept in optimizing("H:\git\Pmod\Pmod_DS2\src\hdmi2\packet_picker.sv":140)
-WARN  (NL0002) : The module "UartDemux" instantiated to "uart_demux" is swept in optimizing("H:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":102)
-WARN  (NL0002) : The module "uart_rx" instantiated to "uart" is swept in optimizing("H:\git\Pmod\Pmod_DS2\src\hw_uart.v":200)
-[95%] Generate netlist file "H:\git\Pmod\Pmod_DS2\impl\gwsynthesis\nes.vg" completed
-[100%] Generate report file "H:\git\Pmod\Pmod_DS2\impl\gwsynthesis\nes_syn.rpt.html" completed
+WARN  (NL0002) : The module "Autofire" instantiated to "af_square" is swept in optimizing("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":206)
+WARN  (NL0002) : The module "Autofire" instantiated to "af_square2" is swept in optimizing("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":208)
+WARN  (NL0002) : The module "Autofire" instantiated to "af_triangle" is swept in optimizing("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":207)
+WARN  (NL0002) : The module "Autofire" instantiated to "af_triangle2" is swept in optimizing("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":209)
+WARN  (NL0002) : The module "Gowin_CLKDIV" instantiated to "clk_div" is swept in optimizing("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":68)
+WARN  (NL0002) : The module "UartDemux" instantiated to "uart_demux" is swept in optimizing("E:\git\Pmod\Pmod_DS2\src\nes_tang25k.v":98)
+WARN  (NL0002) : The module "uart_rx" instantiated to "uart" is swept in optimizing("E:\git\Pmod\Pmod_DS2\src\hw_uart.v":200)
+[95%] Generate netlist file "E:\git\Pmod\Pmod_DS2\impl\gwsynthesis\nes.vg" completed
+[100%] Generate report file "E:\git\Pmod\Pmod_DS2\impl\gwsynthesis\nes_syn.rpt.html" completed
 GowinSynthesis finish
