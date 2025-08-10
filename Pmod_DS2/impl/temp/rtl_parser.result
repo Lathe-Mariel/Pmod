@@ -25,7 +25,7 @@
   "SubInsts" : [
    {
     "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 55,
+    "InstLine" : 85,
     "InstName" : "pll_clk",
     "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/gowin_pll/gowin_pll.v",
     "ModuleLine" : 10,
@@ -33,7 +33,7 @@
    },
    {
     "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 64,
+    "InstLine" : 99,
     "InstName" : "clk_div",
     "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/gowin_clkdiv/gowin_clkdiv.v",
     "ModuleLine" : 10,
@@ -41,7 +41,7 @@
    },
    {
     "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 96,
+    "InstLine" : 131,
     "InstName" : "uart_demux",
     "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/hw_uart.v",
     "ModuleLine" : 194,
@@ -59,7 +59,7 @@
    },
    {
     "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 180,
+    "InstLine" : 214,
     "InstName" : "controller",
     "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
     "ModuleLine" : 36,
@@ -101,7 +101,7 @@
    },
    {
     "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 191,
+    "InstLine" : 225,
     "InstName" : "controller2",
     "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
     "ModuleLine" : 36,
@@ -143,7 +143,7 @@
    },
    {
     "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 201,
+    "InstLine" : 235,
     "InstName" : "af_square",
     "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/autofire.v",
     "ModuleLine" : 4,
@@ -151,7 +151,7 @@
    },
    {
     "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 202,
+    "InstLine" : 236,
     "InstName" : "af_triangle",
     "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/autofire.v",
     "ModuleLine" : 4,
@@ -159,7 +159,7 @@
    },
    {
     "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 203,
+    "InstLine" : 237,
     "InstName" : "af_square2",
     "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/autofire.v",
     "ModuleLine" : 4,
@@ -167,7 +167,7 @@
    },
    {
     "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 204,
+    "InstLine" : 238,
     "InstName" : "af_triangle2",
     "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/autofire.v",
     "ModuleLine" : 4,
@@ -180,6 +180,60 @@
     "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/uart_tx_V2.v",
     "ModuleLine" : 1,
     "ModuleName" : "uart_tx_V2"
+   },
+   {
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+    "InstLine" : 275,
+    "InstName" : "frameBuffer_SDRAM",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/video_frame_buffer/video_frame_buffer_sdram.v",
+    "ModuleLine" : 2962,
+    "ModuleName" : "Video_Frame_Buffer_SDRAM",
+    "SubInsts" : [
+     {
+      "InstFile" : "E:/git/Pmod/Pmod_DS2/src/video_frame_buffer/video_frame_buffer_sdram.v",
+      "InstLine" : 3017,
+      "InstName" : "vfb_sdram_wrapper_inst",
+      "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/video_frame_buffer/video_frame_buffer_sdram.v",
+      "ModuleLine" : 10,
+      "ModuleName" : "~vfb_sdram_wrapper.Video_Frame_Buffer_SDRAM"
+     }
+    ]
+   },
+   {
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+    "InstLine" : 307,
+    "InstName" : "sdram_controller0",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/SDRAM_controller_top_SIP/SDRAM_controller_top_SIP.v",
+    "ModuleLine" : 2357,
+    "ModuleName" : "SDRAM_controller_top_SIP",
+    "SubInsts" : [
+     {
+      "InstFile" : "E:/git/Pmod/Pmod_DS2/src/SDRAM_controller_top_SIP/SDRAM_controller_top_SIP.v",
+      "InstLine" : 2924,
+      "InstName" : "sdrc_top_inst",
+      "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/SDRAM_controller_top_SIP/SDRAM_controller_top_SIP.v",
+      "ModuleLine" : 13,
+      "ModuleName" : "~top.SDRAM_controller_top_SIP"
+     }
+    ]
+   },
+   {
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+    "InstLine" : 352,
+    "InstName" : "DVI_TX_Top_inst",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dvi_tx/dvi_tx.v",
+    "ModuleLine" : 1091,
+    "ModuleName" : "DVI_TX_Top",
+    "SubInsts" : [
+     {
+      "InstFile" : "E:/git/Pmod/Pmod_DS2/src/dvi_tx/dvi_tx.v",
+      "InstLine" : 1122,
+      "InstName" : "rgb2dvi_inst",
+      "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dvi_tx/dvi_tx.v",
+      "ModuleLine" : 10,
+      "ModuleName" : "~rgb2dvi.DVI_TX_Top"
+     }
+    ]
    }
   ]
  },
@@ -208,60 +262,6 @@
       "ModuleName" : "usb_hid_host_rom"
      }
     ]
-   }
-  ]
- },
- {
-  "InstFile" : "E:/git/Pmod/Pmod_DS2/src/dvi_tx/dvi_tx.v",
-  "InstLine" : 1091,
-  "InstName" : "DVI_TX_Top",
-  "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dvi_tx/dvi_tx.v",
-  "ModuleLine" : 1091,
-  "ModuleName" : "DVI_TX_Top",
-  "SubInsts" : [
-   {
-    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/dvi_tx/dvi_tx.v",
-    "InstLine" : 1122,
-    "InstName" : "rgb2dvi_inst",
-    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dvi_tx/dvi_tx.v",
-    "ModuleLine" : 10,
-    "ModuleName" : "~rgb2dvi.DVI_TX_Top"
-   }
-  ]
- },
- {
-  "InstFile" : "E:/git/Pmod/Pmod_DS2/src/SDRAM_controller_top_SIP/SDRAM_controller_top_SIP.v",
-  "InstLine" : 2357,
-  "InstName" : "SDRAM_controller_top_SIP",
-  "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/SDRAM_controller_top_SIP/SDRAM_controller_top_SIP.v",
-  "ModuleLine" : 2357,
-  "ModuleName" : "SDRAM_controller_top_SIP",
-  "SubInsts" : [
-   {
-    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/SDRAM_controller_top_SIP/SDRAM_controller_top_SIP.v",
-    "InstLine" : 2924,
-    "InstName" : "sdrc_top_inst",
-    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/SDRAM_controller_top_SIP/SDRAM_controller_top_SIP.v",
-    "ModuleLine" : 13,
-    "ModuleName" : "~top.SDRAM_controller_top_SIP"
-   }
-  ]
- },
- {
-  "InstFile" : "E:/git/Pmod/Pmod_DS2/src/video_frame_buffer/video_frame_buffer_sdram.v",
-  "InstLine" : 2962,
-  "InstName" : "Video_Frame_Buffer_SDRAM",
-  "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/video_frame_buffer/video_frame_buffer_sdram.v",
-  "ModuleLine" : 2962,
-  "ModuleName" : "Video_Frame_Buffer_SDRAM",
-  "SubInsts" : [
-   {
-    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/video_frame_buffer/video_frame_buffer_sdram.v",
-    "InstLine" : 3017,
-    "InstName" : "vfb_sdram_wrapper_inst",
-    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/video_frame_buffer/video_frame_buffer_sdram.v",
-    "ModuleLine" : 10,
-    "ModuleName" : "~vfb_sdram_wrapper.Video_Frame_Buffer_SDRAM"
    }
   ]
  }

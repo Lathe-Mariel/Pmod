@@ -26,18 +26,53 @@ module NES_Tang25k(
     output reg joystick_cs2, 
 
     // HDMI TX
-    output       tmds_clk_n,
-    output       tmds_clk_p,
-    output [2:0] tmds_d_n,
-    output [2:0] tmds_d_p,
-    output [7:0] pmod_led
+    output       O_tmds_clk_n,
+    output       O_tmds_clk_p,
+    output [2:0] O_tmds_data_n,
+    output [2:0] O_tmds_data_p,
+    output [7:0] pmod_led,
+
+    // SDRAM
+    output O_sdram_clk,
+    output O_sdram_cke,
+    output O_sdram_cs_n,            // chip select
+    output O_sdram_cas_n,           // columns address select
+    output O_sdram_ras_n,           // row address select
+    output O_sdram_wen_n,           // write enable
+    inout [15:0] IO_sdram_dq,       // 16 bit bidirectional data bus
+    output [12:0] O_sdram_addr,     // 13 bit multiplexed address bus
+    output [1:0] O_sdram_ba,        // two banks
+    output [1:0] O_sdram_dqm        // 32/4
+
+
 );
 
 `include "nes_tang25k.vh"
 
+//memory interface
+wire                   memory_clk         ;
+wire                   memory_clk45;
+wire                   fb_clk;
+wire                   clk32_5;
+//wire                   dma_clk       	  ;
+
+wire                   sdrc_busy_n        ;
+wire[2:0]              cmd                ;
+wire                   cmd_en             ;
+wire[7:0]              sdrc_data_len      ;
+wire[20:0]             sdrc_addr          ;
+wire                   wr_data_rdy        ;
+wire                   sdrc_wr_n         ;//
+wire                   wr_data_end        ;//
+wire[15:0]   wr_data;  
+wire                   sdrc_rd_valid;
+wire                   rd_data_end        ;//unused   
+wire [15:0] sdrc_data;
+wire                   sdrc_init_done;
+
 reg sys_resetn = 0;
 reg [7:0] reset_cnt = 255;
-always@(posedge clk)    begin
+always@(posedge clk3)    begin
     reset_cnt <= reset_cnt == 0 ? 0 : reset_cnt -1;
     if(reset_cnt == 0)
         sys_resetn <= ~reset & ~s1;
@@ -45,21 +80,21 @@ end
 
 `ifndef VERILATOR
 
-  wire clk;
+  wire clk3;
+
+    Gowin_PLL pll_clk(
+        .lock(pll_lock), //output lock
+        .clkout0(), //output clkout0 12MHz
+        .clkout1(), //output clkout1 25MHz phase270
+        .clkout2(clk_p5), //output clkout2 371.25MHz
+        .clkout3(clk3), //output clkout3 25MHz
+        .clkin(sys_clk) //input clkin
+    );
 
   // HDMI domain clocks
   wire clk_p;     // 720p pixel clock: 74.25 Mhz
   wire clk_p5;    // 5x pixel clock: 371.25 Mhz
   wire pll_lock;
-    
-    Gowin_PLL pll_clk(
-        .lock(pll_lock), //output lock
-        .clkout0(), //output clkout0
-        .clkout1(), //output clkout1
-        .clkout2(clk_p5), //output clkout2
-        .clkout3(clk), //output clkout3
-        .clkin(sys_clk) //input clkin
-    );
 
     Gowin_CLKDIV clk_div (
       .clkout(clk_p),
@@ -94,7 +129,7 @@ end
   wire       uart_error;
 `ifndef VERILATOR
 UartDemux #(.FREQ(FREQ), .BAUDRATE(BAUDRATE)) uart_demux(
-    clk, 1'b0, UART_RXD, uart_data, uart_addr, uart_write, uart_error
+    clk3, 1'b0, UART_RXD, uart_data, uart_addr, uart_write, uart_error
 );
 `endif
 
@@ -102,7 +137,7 @@ UartDemux #(.FREQ(FREQ), .BAUDRATE(BAUDRATE)) uart_demux(
   reg  [7:0] loader_conf;     // bit 0 is reset
 
   reg  [7:0] loader_btn, loader_btn_2;
-  always @(posedge clk) begin
+  always @(posedge clk3) begin
     if (uart_addr == 8'h35 && uart_write)
       loader_conf <= uart_data;
     if (uart_addr == 8'h40 && uart_write)
@@ -127,7 +162,7 @@ UartDemux #(.FREQ(FREQ), .BAUDRATE(BAUDRATE)) uart_demux(
 assign pmod_led = {joy_rx[0][4],joy_rx[1][3:0],joy_rx[1][7:5]}; //for test
 
   // Joypad handling
-  always @(posedge clk) begin
+  always @(posedge clk3) begin
     if (joypad_strobe) begin
       joypad_bits <= loader_btn | nes_btn;
       joypad_bits2 <= loader_btn_2 | nes_btn2;
@@ -155,7 +190,6 @@ assign pmod_led = {joy_rx[0][4],joy_rx[1][3:0],joy_rx[1][7:5]}; //for test
   reg last_idle;
 
 /*verilator tracing_off*/
-
 /*verilator tracing_on*/
 
 `ifndef VERILATOR
@@ -169,7 +203,7 @@ localparam  SCLK_DELAY = FREQ / 200_000;
 reg [$clog2(SCLK_DELAY)-1:0] sclk_cnt;         
 
 // Generate sclk
-always @(posedge clk) begin
+always @(posedge clk3) begin
     sclk_cnt <= sclk_cnt + 1;
     if (sclk_cnt == SCLK_DELAY-1) begin
         sclk = ~sclk;
@@ -198,10 +232,10 @@ dualshock_controller controller2 (
     .I_VIB_SW(2'b00), .I_VIB_DAT(8'hff)     // no vibration
 );
 
-Autofire af_square (.clk(clk), .resetn(sys_resetn), .btn(~joy_rx[1][7] ), .out(auto_square));            // B
-Autofire af_triangle (.clk(clk), .resetn(sys_resetn), .btn(~joy_rx[1][4] ), .out(auto_triangle));        // A
-Autofire af_square2 (.clk(clk), .resetn(sys_resetn), .btn(~joy_rx2[1][7] ), .out(auto_square2));
-Autofire af_triangle2 (.clk(clk), .resetn(sys_resetn), .btn(~joy_rx2[1][4] ), .out(auto_triangle2));
+Autofire af_square (.clk(clk3), .resetn(sys_resetn), .btn(~joy_rx[1][7] ), .out(auto_square));            // B
+Autofire af_triangle (.clk(clk3), .resetn(sys_resetn), .btn(~joy_rx[1][4] ), .out(auto_triangle));        // A
+Autofire af_square2 (.clk(clk3), .resetn(sys_resetn), .btn(~joy_rx2[1][7] ), .out(auto_square2));
+Autofire af_triangle2 (.clk(clk3), .resetn(sys_resetn), .btn(~joy_rx2[1][4] ), .out(auto_triangle2));
 
 //
 // Print control
@@ -217,12 +251,12 @@ reg tick;       // pulse every 0.01 second
 reg print_stat; // pulse every 2 seconds
 
 reg [19:0] timer;           // 37 times per second
-always @(posedge clk) timer <= timer + 1;
+always @(posedge clk3) timer <= timer + 1;
 
 
 reg [19:0] tick_counter;
 reg [9:0] stat_counter;
-always @(posedge clk) begin
+always @(posedge clk3) begin
     tick <= tick_counter == 0;
     tick_counter <= tick_counter == 0 ? FREQ/100 : tick_counter - 1;
 
@@ -235,9 +269,8 @@ end
 
 `endif
 
-//assign led = ~{~UART_RXD, loader_done};
-//assign led = ~{~UART_RXD, usb_conerr, loader_done};
-// assign led = ~usb_btn;
+logic[1:0] sdrc_dqm;
+logic sdrc_rd_n;
 
 	Video_Frame_Buffer_SDRAM frameBuffer_SDRAM(
 		.I_rst_n(rst_n), //input I_rst_n
@@ -300,6 +333,22 @@ SDRAM_controller_top_SIP sdram_controller0( // IPUG279-1.3J  P.7
 		.O_sdrc_wrd_ack(         )                // O_sdrc_wrd_ack 読み書きリクエスト応答
 );
 
+//According to IP parameters to choose
+`define	    WR_VIDEO_WIDTH_16
+`define	DEF_WR_VIDEO_WIDTH 16
+
+`define	    RD_VIDEO_WIDTH_16
+`define	DEF_RD_VIDEO_WIDTH 16
+
+`define	USE_THREE_FRAME_BUFFER
+
+`define	DEF_ADDR_WIDTH 28 
+`define	DEF_SRAM_DATA_WIDTH 128
+parameter WR_VIDEO_WIDTH      = `DEF_WR_VIDEO_WIDTH;  
+parameter RD_VIDEO_WIDTH      = `DEF_RD_VIDEO_WIDTH;  
+wire                      off0_syn_de  ;
+wire [RD_VIDEO_WIDTH-1:0] off0_syn_data;
+
 DVI_TX_Top DVI_TX_Top_inst
 (
     .I_rst_n       (hdmi4_rst_n   ),  //asynchronous reset, low active
@@ -313,14 +362,6 @@ DVI_TX_Top DVI_TX_Top_inst
     .I_rgb_g       ( off0_syn_de? {off0_syn_data[10:5],2'b0}: bin_en?{8{bin_view}}: mnist_en? {8{mnist_view}}: dvi_y),  //,  
     .I_rgb_b       ( off0_syn_de? {off0_syn_data[15:11],3'b0}: bin_en?{8{bin_view}}: mnist_en? {8{mnist_view}}: 8'hff),  //,
 
-    //测试图
-    // .I_rgb_clk     (video_clk       ),  //pixel clock
-    // .I_rgb_vs      (tp0_vs_in  ), 
-    // .I_rgb_hs      (tp0_hs_in  ),   
-    // .I_rgb_de      (tp0_de_in  ), 
-    // .I_rgb_r       (tp0_data_r  ), 
-    // .I_rgb_g       (tp0_data_g  ), 
-    // .I_rgb_b       (tp0_data_b  ), 
 
     .O_tmds_clk_p  (O_tmds_clk_p  ),
     .O_tmds_clk_n  (O_tmds_clk_n  ),
