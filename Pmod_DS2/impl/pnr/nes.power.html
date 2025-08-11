@@ -89,7 +89,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Mon Aug 11 22:53:19 2025
+<td>Tue Aug 12 08:56:47 2025
 </td>
 </tr>
 <tr>
@@ -161,7 +161,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <table class="summary_table">
 <tr>
 <td class="label">Total Power (mW)</td>
-<td>120.626</td>
+<td>120.628</td>
 </tr>
 <tr>
 <td class="label">Quiescent Power (mW)</td>
@@ -169,7 +169,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Dynamic Power (mW)</td>
-<td>67.114</td>
+<td>67.116</td>
 </tr>
 </table>
 <h2><a name="Thermal_Info">Thermal Information:</a></h2>
@@ -199,9 +199,9 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td>VCC</td>
 <td>0.900</td>
-<td>1.219</td>
+<td>1.221</td>
 <td>30.026</td>
-<td>28.121</td>
+<td>28.122</td>
 </tr>
 <tr>
 <td>VCCX</td>
@@ -236,9 +236,9 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td>Logic</td>
-<td>0.328</td>
+<td>0.329</td>
 <td>NA</td>
-<td>3.268</td>
+<td>3.298</td>
 </tr>
 <tr>
 <td>IO</td>
@@ -262,8 +262,8 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td>NES_Tang25k</td>
-<td>53.332</td>
-<td>53.332(53.294)</td>
+<td>53.334</td>
+<td>53.334(53.295)</td>
 <tr>
 <td>NES_Tang25k/DVI_TX_Top_inst/</td>
 <td>0.174</td>
@@ -306,12 +306,12 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>0.003(0.000)</td>
 <tr>
 <td>NES_Tang25k/controller2/</td>
-<td>0.026</td>
-<td>0.026(0.026)</td>
+<td>0.027</td>
+<td>0.027(0.027)</td>
 <tr>
 <td>NES_Tang25k/controller2/cmd/</td>
-<td>0.016</td>
-<td>0.016(0.000)</td>
+<td>0.017</td>
+<td>0.017(0.000)</td>
 <tr>
 <td>NES_Tang25k/controller2/pls/</td>
 <td>0.006</td>
@@ -386,8 +386,8 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>0.000(0.000)</td>
 <tr>
 <td>NES_Tang25k/vga_timing_m0/</td>
-<td>0.017</td>
-<td>0.017(0.000)</td>
+<td>0.018</td>
+<td>0.018(0.000)</td>
 </table>
 <h2><a name="By_Clock_Domain">Power By Clock Domain:</a></h2>
 <table class="detail_table">
@@ -397,24 +397,29 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <th class="label">Total Dynamic Power(mW)</th>
 </tr>
 <tr>
-<td>clk3</td>
-<td>25.000</td>
-<td>0.019</td>
-</tr>
-<tr>
-<td>NO CLOCK DOMAIN</td>
-<td>0.000</td>
-<td>0.000</td>
-</tr>
-<tr>
 <td>clk_div/clkdiv_inst/CLKOUT.default_gen_clk</td>
 <td>65.000</td>
 <td>0.253</td>
 </tr>
 <tr>
+<td>controller2/W_TXSET</td>
+<td>100.000</td>
+<td>0.020</td>
+</tr>
+<tr>
+<td>controller2/W_RXWT</td>
+<td>100.000</td>
+<td>0.008</td>
+</tr>
+<tr>
 <td>sclk</td>
 <td>0.132</td>
 <td>0.000</td>
+</tr>
+<tr>
+<td>controller/W_scan_seq_pls</td>
+<td>100.000</td>
+<td>0.002</td>
 </tr>
 <tr>
 <td>controller/W_TXSET</td>
@@ -427,19 +432,14 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>0.009</td>
 </tr>
 <tr>
-<td>controller2/W_TXSET</td>
-<td>100.000</td>
-<td>0.019</td>
+<td>NO CLOCK DOMAIN</td>
+<td>0.000</td>
+<td>0.000</td>
 </tr>
 <tr>
-<td>controller2/W_RXWT</td>
-<td>100.000</td>
-<td>0.007</td>
-</tr>
-<tr>
-<td>controller/W_scan_seq_pls</td>
-<td>100.000</td>
-<td>0.002</td>
+<td>clk3</td>
+<td>25.000</td>
+<td>0.020</td>
 </tr>
 <tr>
 <td>sys_clk</td>
@@ -447,12 +447,12 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>53.005</td>
 </tr>
 <tr>
-<td>joystick_clk2</td>
+<td>joystick_clk</td>
 <td>0.132</td>
 <td>0.000</td>
 </tr>
 <tr>
-<td>joystick_clk</td>
+<td>joystick_clk2</td>
 <td>0.132</td>
 <td>0.000</td>
 </tr>

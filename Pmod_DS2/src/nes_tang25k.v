@@ -346,7 +346,7 @@ SDRAM_controller_top_SIP sdram_controller0( // IPUG279-1.3J  P.7
 `define	DEF_SRAM_DATA_WIDTH 128
 parameter WR_VIDEO_WIDTH      = `DEF_WR_VIDEO_WIDTH;  
 parameter RD_VIDEO_WIDTH      = `DEF_RD_VIDEO_WIDTH;  
-wire                      syn_off0_re;  // ofifo read enable signal
+//wire                      syn_off0_re;  // ofifo read enable signal
 wire                      syn_off0_vs;
 wire                      syn_off0_hs;
                           
