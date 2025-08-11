@@ -10,14 +10,14 @@
 // 
 
 module usb_hid_host (
-    input  usbclk,		            // 12MHz clock
-    input  usbrst_n,	            // reset
-    inout  usb_dm, usb_dp,          // USB D- and D+
+    input wire  usbclk,		            // 12MHz clock
+    input wire  usbrst_n,	            // reset
+    inout wire usb_dm, usb_dp,          // USB D- and D+
 
     output reg [1:0] typ,           // device type. 0: no device, 1: keyboard, 2: mouse, 3: gamepad
     output reg report,              // pulse after report received from device. 
                                     // key_*, mouse_*, game_* valid depending on typ
-    output conerr,                  // connection or protocol error
+    output wire conerr,                  // connection or protocol error
 
     // keyboard
     output reg [7:0] key_modifiers,
@@ -33,7 +33,7 @@ module usb_hid_host (
     output reg game_a, game_b, game_x, game_y, game_sel, game_sta,  // buttons
 
     // debug
-    output [63:0] dbg_hid_report	// last HID report
+    output wire [63:0] dbg_hid_report	// last HID report
 );
 
 wire data_rdy;          // data ready
@@ -178,17 +178,17 @@ end
 endmodule
 
 module ukp(
-    input usbrst_n,
-    input usbclk,				// 12MHz clock
-    inout usb_dp, usb_dm,		// D+, D-
-    output usb_oe,
+    input wire usbrst_n,
+    input wire usbclk,				// 12MHz clock
+    inout wire usb_dp, usb_dm,		// D+, D-
+    output wire usb_oe,
     output reg ukprdy, 			// data frame is outputing
-    output ukpstb,				// strobe for a byte within the frame
+    output wire ukpstb,				// strobe for a byte within the frame
     output reg [7:0] ukpdat,	// output data when ukpstb=1
     output reg save,			// save: regs[save_r] <= dat[save_b]
     output reg [3:0] save_r, save_b,
     output reg connected,
-    output conerr
+    output wire conerr
 );
 
     parameter S_OPCODE = 0;

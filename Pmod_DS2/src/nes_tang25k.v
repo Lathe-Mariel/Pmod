@@ -4,46 +4,46 @@
 //
 
 // `timescale 1ns / 100ps
+`default_nettype none
 
 module NES_Tang25k(
-    input sys_clk,
+    input wire sys_clk,
 
-    input s1,
-    input reset,
+    input wire s1,
+    input wire reset,
     // UART
-    input UART_RXD,
-    output UART_TXD,
+    input wire UART_RXD,
+    output wire UART_TXD,
     // LEDs
-    output [1:0] led,
+    output wire [1:0] led,
     // Dualshock game controller
-    output joystick_clk,
-    output joystick_mosi,
-    input joystick_miso,
+    output wire joystick_clk,
+    output wire joystick_mosi,
+    input wire joystick_miso,
     output reg joystick_cs,
-    output joystick_clk2,
-    output joystick_mosi2,
-    input joystick_miso2,
+    output wire joystick_clk2,
+    output wire joystick_mosi2,
+    input wire joystick_miso2,
     output reg joystick_cs2, 
 
     // HDMI TX
-    output       O_tmds_clk_n,
-    output       O_tmds_clk_p,
-    output [2:0] O_tmds_data_n,
-    output [2:0] O_tmds_data_p,
-    output [7:0] pmod_led,
+    output wire  O_tmds_clk_n,
+    output wire  O_tmds_clk_p,
+    output wire [2:0] O_tmds_data_n,
+    output wire [2:0] O_tmds_data_p,
+    output wire [7:0] pmod_led,
 
     // SDRAM
-    output O_sdram_clk,
-    output O_sdram_cke,
-    output O_sdram_cs_n,            // chip select
-    output O_sdram_cas_n,           // columns address select
-    output O_sdram_ras_n,           // row address select
-    output O_sdram_wen_n,           // write enable
-    inout [15:0] IO_sdram_dq,       // 16 bit bidirectional data bus
-    output [12:0] O_sdram_addr,     // 13 bit multiplexed address bus
-    output [1:0] O_sdram_ba,        // two banks
-    output [1:0] O_sdram_dqm        // 32/4
-
+    output wire O_sdram_clk,
+    output wire O_sdram_cke,
+    output wire O_sdram_cs_n,            // chip select
+    output wire O_sdram_cas_n,           // columns address select
+    output wire O_sdram_ras_n,           // row address select
+    output wire O_sdram_wen_n,           // write enable
+    inout wire [15:0] IO_sdram_dq,       // 16 bit bidirectional data bus
+    output wire [12:0] O_sdram_addr,     // 13 bit multiplexed address bus
+    output wire [1:0] O_sdram_ba,        // two banks
+    output wire [1:0] O_sdram_dqm        // 32/4
 
 );
 
@@ -269,25 +269,44 @@ end
 
 `endif
 
+wire camera_de;
+wire out_de;
+wire monitor_en;
+  //-------------------
+  //Timing Generator
+  //-------------------
+
+//wire [9:0] lcd_x,lcd_y;
+vga_timing vga_timing_m0(
+    .clk (clk_p),
+    .rst (sys_resetn),
+
+    .hs(syn_off0_hs),
+    .vs(syn_off0_vs),
+    .de(out_de),
+    .rd(camera_de)
+//    .monitor_en(monitor_en)
+);
+
 logic[1:0] sdrc_dqm;
 logic sdrc_rd_n;
 
 	Video_Frame_Buffer_SDRAM frameBuffer_SDRAM(
-		.I_rst_n(rst_n), //input I_rst_n
+		.I_rst_n(sys_resetn),     //input I_rst_n
 		.I_dma_clk(memory_clk45   ), //input I_dma_clk
 
-		.I_wr_halt(sw1         ), //input [0:0] I_wr_halt
-		.I_rd_halt(sw1           ), //input [0:0] I_rd_halt
+		.I_wr_halt(         ),    //input [0:0] I_wr_halt
+		.I_rd_halt(           ),  //input [0:0] I_rd_halt
 
-		.I_vin0_clk(cmos_16bit_clk), //input I_vin0_clk
-		.I_vin0_vs_n(~cmos_vsync  ), //input I_vin0_vs_n
-		.I_vin0_de(cmos_16bit_wr), //input I_vin0_de
-		.I_vin0_data(write_data   ), //input [15:0] I_vin0_data
+		.I_vin0_clk(),               //input I_vin0_clk               cmos_16bit_clk
+		.I_vin0_vs_n(  ),            //input I_vin0_vs_n              ~cmos_vsync
+		.I_vin0_de(),                //input I_vin0_de                cmos_16bit_wr
+		.I_vin0_data(   ),           //input [15:0] I_vin0_data       write_data
 		.O_vin0_fifo_full(        ), //output O_vin0_fifo_full
 
-		.I_vout0_clk(video_clk    ), //input I_vout0_clk
+		.I_vout0_clk(clk_p    ),    //input I_vout0_clk              video_clk
 		.I_vout0_vs_n(~syn_off0_vs), //input I_vout0_vs_n
-		.I_vout0_de(camera_de     ), //input I_vout0_de
+		.I_vout0_de(     ), //input I_vout0_de                        camera_de
 		.O_vout0_den(off0_syn_de  ), //output O_vout0_den
 		.O_vout0_data(off0_syn_data), //output [15:0] O_vout0_data
 		.O_vout0_fifo_empty(       ), //output O_vout0_fifo_empty
@@ -315,7 +334,7 @@ SDRAM_controller_top_SIP sdram_controller0( // IPUG279-1.3J  P.7
 		.O_sdram_addr(O_sdram_addr  ),      //output [12:0] O_sdram_addr
 		.O_sdram_ba(O_sdram_ba      ),      //output [1:0] O_sdram_ba
 		.IO_sdram_dq(IO_sdram_dq    ),              // [15:0] IO_sdram_dq
-		.I_sdrc_rst_n(rst_n         ),              // I_sdrc_rst_n リセット
+		.I_sdrc_rst_n(sys_resetn    ),              // リセット
 		.I_sdrc_clk(memory_clk45    ),              // I_sdrc_clk コントローラ動作クロック
         .I_sdram_clk(memory_clk     ),              // I_sdram_clk SDRAM動作クロック
 		.I_sdrc_selfrefresh(1'b0 ),                 // I_sdrc_selfrefresh セルフリフレッシュ制御(1:有効, 0:無効)
@@ -346,23 +365,64 @@ SDRAM_controller_top_SIP sdram_controller0( // IPUG279-1.3J  P.7
 `define	DEF_SRAM_DATA_WIDTH 128
 parameter WR_VIDEO_WIDTH      = `DEF_WR_VIDEO_WIDTH;  
 parameter RD_VIDEO_WIDTH      = `DEF_RD_VIDEO_WIDTH;  
+wire                      syn_off0_re;  // ofifo read enable signal
+wire                      syn_off0_vs;
+wire                      syn_off0_hs;
+                          
 wire                      off0_syn_de  ;
 wire [RD_VIDEO_WIDTH-1:0] off0_syn_data;
 
+wire lcd_vs,lcd_de,lcd_hs;
+
+    // -----------------------------
+    //  表示画像オーバーレイ
+    // -----------------------------
+
+    logic           prev_de;
+    logic   [11:0]  dvi_x;
+    logic   [10:0]  dvi_y;
+
+    always_ff @(posedge clk_p ) begin
+        prev_de <= lcd_de;
+
+        if ( ~lcd_de ) begin
+            dvi_x <= 0;
+        end
+        else begin
+            dvi_x <= dvi_x + 1;
+        end
+
+        if ( lcd_vs ) begin
+            dvi_y <= 0;
+        end
+        else begin
+            if ( {prev_de, lcd_de} == 2'b10 ) begin
+                dvi_y <= dvi_y + 1;
+            end
+        end
+    end
+
+  // ----------------------
+  // HDMI出力 Output HDMI signal(by IP)
+  // ----------------------
+
 DVI_TX_Top DVI_TX_Top_inst
 (
-    .I_rst_n       (hdmi4_rst_n   ),  //asynchronous reset, low active
-    .I_serial_clk  (serial_clk    ),
+    .I_rst_n       (sys_resetn   ),  //asynchronous reset, low active
+    .I_serial_clk  (clk_p5       ),
 
-    .I_rgb_clk     (lcd_dclk      ),  //pixel clock
+    .I_rgb_clk     (clk_p      ),  //pixel clock
     .I_rgb_vs      (lcd_vs        ), 
     .I_rgb_hs      (lcd_hs        ),    
     .I_rgb_de      (lcd_de        ), 
+    .I_rgb_r       ( off0_syn_de? {off0_syn_data[4:0],3'b0}: dvi_x),  //tp0_data_r
+    .I_rgb_g       ( off0_syn_de? {off0_syn_data[10:5],2'b0}: dvi_y),  //,  
+    .I_rgb_b       ( off0_syn_de? {off0_syn_data[15:11],3'b0}: 8'hff),  //,
+/*
     .I_rgb_r       ( off0_syn_de? {off0_syn_data[4:0],3'b0}: bin_en?{8{bin_view}}: mnist_en? {8{mnist_view}}: dvi_x),  //tp0_data_r
     .I_rgb_g       ( off0_syn_de? {off0_syn_data[10:5],2'b0}: bin_en?{8{bin_view}}: mnist_en? {8{mnist_view}}: dvi_y),  //,  
     .I_rgb_b       ( off0_syn_de? {off0_syn_data[15:11],3'b0}: bin_en?{8{bin_view}}: mnist_en? {8{mnist_view}}: 8'hff),  //,
-
-
+*/
     .O_tmds_clk_p  (O_tmds_clk_p  ),
     .O_tmds_clk_n  (O_tmds_clk_n  ),
     .O_tmds_data_p (O_tmds_data_p ),  //{r,g,b}

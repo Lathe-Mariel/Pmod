@@ -6,6 +6,7 @@
 //Source file index table:
 //file0 "\E:/Gowin/Gowin_V1.9.11.01_x64/IDE/ipcore/VFB/data/vfb_top.v"
 //file1 "\E:/Gowin/Gowin_V1.9.11.01_x64/IDE/ipcore/VFB/data/vfb_wrapper.v"
+`default_nettype wire
 `timescale 100 ps/100 ps
 `pragma protect begin_protected
 `pragma protect version="2.3"
@@ -2960,58 +2961,34 @@ qv9DdPysl37gbw2/5EHw6SF8NoULGKIS3AjkJSg4lh4I/xfeXlv0wqnukka6ygRwg+JbH6dE/V9V
 mrkjdTdmbg==
 `pragma protect end_protected
 module Video_Frame_Buffer_SDRAM (
-  I_rst_n,
-  I_dma_clk,
-  I_wr_halt,
-  I_rd_halt,
-  I_vin0_clk,
-  I_vin0_vs_n,
-  I_vin0_de,
-  I_vin0_data,
-  O_vin0_fifo_full,
-  I_vout0_clk,
-  I_vout0_vs_n,
-  I_vout0_de,
-  O_vout0_den,
-  O_vout0_data,
-  O_vout0_fifo_empty,
-  I_sdrc_busy_n,
-  O_sdrc_wr_n,
-  O_sdrc_rd_n,
-  O_sdrc_addr,
-  O_sdrc_data_len,
-  O_sdrc_data,
-  O_sdrc_dqm,
-  I_sdrc_rd_valid,
-  I_sdrc_data_out,
-  I_sdrc_init_done
+input wire  I_rst_n,
+input wire  I_dma_clk,
+input wire [0:0]  I_wr_halt,
+input wire [0:0]  I_rd_halt,
+input wire  I_vin0_clk,
+input wire  I_vin0_vs_n,
+input wire  I_vin0_de,
+input wire [15:0] I_vin0_data,
+output wire  O_vin0_fifo_full,
+input wire  I_vout0_clk,
+input wire  I_vout0_vs_n,
+input wire  I_vout0_de,
+output wire  O_vout0_den,
+output wire [15:0]  O_vout0_data,
+output wire  O_vout0_fifo_empty,
+input wire   I_sdrc_busy_n,
+output wire  O_sdrc_wr_n,
+output wire  O_sdrc_rd_n,
+output wire [21:0]  O_sdrc_addr,
+output wire [7:0]   O_sdrc_data_len,
+output wire [15:0]  O_sdrc_data,
+output wire [1:0]   O_sdrc_dqm,
+input wire  I_sdrc_rd_valid,
+input wire [15:0]   I_sdrc_data_out,
+input wire  I_sdrc_init_done
 )
 ;
-input I_rst_n;
-input I_dma_clk;
-input [0:0] I_wr_halt;
-input [0:0] I_rd_halt;
-input I_vin0_clk;
-input I_vin0_vs_n;
-input I_vin0_de;
-input [15:0] I_vin0_data;
-output O_vin0_fifo_full;
-input I_vout0_clk;
-input I_vout0_vs_n;
-input I_vout0_de;
-output O_vout0_den;
-output [15:0] O_vout0_data;
-output O_vout0_fifo_empty;
-input I_sdrc_busy_n;
-output O_sdrc_wr_n;
-output O_sdrc_rd_n;
-output [21:0] O_sdrc_addr;
-output [7:0] O_sdrc_data_len;
-output [15:0] O_sdrc_data;
-output [1:0] O_sdrc_dqm;
-input I_sdrc_rd_valid;
-input [15:0] I_sdrc_data_out;
-input I_sdrc_init_done;
+
 wire VCC;
 wire GND;
   \~vfb_sdram_wrapper.Video_Frame_Buffer_SDRAM  vfb_sdram_wrapper_inst (
@@ -3059,3 +3036,4 @@ assign O_sdrc_data_len[7] = GND;
 assign O_sdrc_dqm[0] = GND;
 assign O_sdrc_dqm[1] = GND;
 endmodule /* Video_Frame_Buffer_SDRAM */
+`default_nettype none

@@ -1,7 +1,8 @@
-Reading netlist file: "E:\git\Pmod\Pmod_DS2\impl\gwsynthesis\nes.vg"
-Parsing netlist file "E:\git\Pmod\Pmod_DS2\impl\gwsynthesis\nes.vg" completed
+Reading netlist file: "C:\Git\Pmod\Pmod_DS2\impl\gwsynthesis\nes.vg"
+Parsing netlist file "C:\Git\Pmod\Pmod_DS2\impl\gwsynthesis\nes.vg" completed
+WARN  (PA1019) : Invalid VCO frequency 'FCLKIN*FBDIV_SEL*(MDIV_SEL+MDIV_FRAC_SEL/8)/IDIV_SEL' to 'PLLA_inst'(PLL) set by 'Gowin_PLL' of module, suitable range is from 700MHz to 1400MHz.
 Processing netlist completed
-Reading constraint file: "E:\git\Pmod\Pmod_DS2\src\nestang.cst"
+Reading constraint file: "C:\Git\Pmod\Pmod_DS2\src\nestang.cst"
 Physical Constraint parsed completed
 Running placement......
 [10%] Placement Phase 0 completed
@@ -13,6 +14,7 @@ WARN  (TA1132) :  'sclk' was determined to be a clock but was not created.
 WARN  (TA1132) :  'controller/W_TXSET' was determined to be a clock but was not created.
 WARN  (TA1132) :  'controller2/W_TXSET' was determined to be a clock but was not created.
 WARN  (TA1132) :  'controller2/W_RXWT' was determined to be a clock but was not created.
+WARN  (TA1132) :  'clk_div/clkdiv_inst/CLKOUT.default_gen_clk' was determined to be a clock but was not created.
 [50%] Placement Phase 3 completed
 Running routing......
 [60%] Routing Phase 0 completed
@@ -26,10 +28,10 @@ Bitstream generation in progress......
 Bitstream generation completed
 Running power analysis......
 [100%] Power analysis completed
-Generate file "E:\git\Pmod\Pmod_DS2\impl\pnr\nes.power.html" completed
-Generate file "E:\git\Pmod\Pmod_DS2\impl\pnr\nes.pin.html" completed
-Generate file "E:\git\Pmod\Pmod_DS2\impl\pnr\nes.rpt.html" completed
-Generate file "E:\git\Pmod\Pmod_DS2\impl\pnr\nes.rpt.txt" completed
-Generate file "E:\git\Pmod\Pmod_DS2\impl\pnr\nes.tr.html" completed
-Sun Aug 10 16:33:59 2025
+Generate file "C:\Git\Pmod\Pmod_DS2\impl\pnr\nes.power.html" completed
+Generate file "C:\Git\Pmod\Pmod_DS2\impl\pnr\nes.pin.html" completed
+Generate file "C:\Git\Pmod\Pmod_DS2\impl\pnr\nes.rpt.html" completed
+Generate file "C:\Git\Pmod\Pmod_DS2\impl\pnr\nes.rpt.txt" completed
+Generate file "C:\Git\Pmod\Pmod_DS2\impl\pnr\nes.tr.html" completed
+Mon Aug 11 15:17:19 2025
 
