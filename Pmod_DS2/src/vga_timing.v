@@ -1,26 +1,26 @@
 module vga_timing(
 	input wire clk,           //pixel clock
 	input wire rst,           //reset signal high active
-	output wire hs,            //horizontal synchronization
-	output wire vs,            //vertical synchronization
-	output wire de,            //video valid
+	output wire O_hs,            //horizontal synchronization
+	output wire O_vs,            //vertical synchronization
+	output wire O_de,            //video valid
 //    output reg            monitor_en,    // monitor enable
 
 	output reg [9:0] active_x,              //video x position 
 	output reg [9:0] active_y,             //video y position 
-	output reg rd //real resolution
+	output reg O_rd //real resolution
 	);
 
 
 //VIDEO_1024 768
-parameter H_ACTIVE = 16'd720;  //1280(P65MHz) 1920 1280@24 720(P27Mhz)
-parameter H_FP = 16'd16;       //110           88   1760    16
-parameter H_SYNC = 16'd62;      //40           44   40      62
-parameter H_BP = 16'd60;       //220           148  220     60
-parameter V_ACTIVE = 16'd480;   //720          1080         480
-parameter V_FP  = 16'd9;        //5            4            9
-parameter V_SYNC  = 16'd6;      //5            5            6
-parameter V_BP  = 16'd30;       //20           36           30
+parameter H_ACTIVE = 16'd1920;  //1280(P65MHz) 1920 1280@24 720(P27Mhz)
+parameter H_FP = 16'd88;       //110           88   1760    16
+parameter H_SYNC = 16'd44;      //40           44   40      62
+parameter H_BP = 16'd148;       //220           148  220     60
+parameter V_ACTIVE = 16'd1080;   //720          1080         480
+parameter V_FP  = 16'd4;        //5            4            9
+parameter V_SYNC  = 16'd5;      //5            5            6
+parameter V_BP  = 16'd36;       //20           36           30
 parameter HS_POL = 1'b1;
 parameter VS_POL = 1'b1;
 parameter RD_H = 16'd480;
@@ -36,17 +36,17 @@ reg[10:0] v_cnt;                 //vertical counter
 
 reg h_active;                    //horizontal video active
 reg v_active;                    //vertical video active
-assign hs = hs_reg;
-assign vs = vs_reg;
-assign de = h_active & v_active;
+assign O_hs = hs_reg;
+assign O_vs = vs_reg;
+assign O_de = h_active & v_active;
 
 
 /*有効領域 de信号生成*/
 always@ (posedge clk)begin
     if(rst == 1'b1)
-        rd <= 0;
+        O_rd <= 0;
     else begin
-        rd <= (h_cnt > (H_FP + H_SYNC -2)) & (h_cnt < (H_FP + H_SYNC + RD_H -1)) & 
+        O_rd <= (h_cnt > (H_FP + H_SYNC -2)) & (h_cnt < (H_FP + H_SYNC + RD_H -1)) & 
               (v_cnt > (V_FP + V_SYNC -2)) & (v_cnt < (V_FP + V_SYNC + RD_V -1));
     end
 end

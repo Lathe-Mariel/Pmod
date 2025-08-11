@@ -1,9 +1,9 @@
--d C:\Git\Pmod\Pmod_DS2\impl\gwsynthesis\nes.vg
+-d E:\git\Pmod\Pmod_DS2\impl\gwsynthesis\nes.vg
 -p GW5A-25A-MBGA121N-1
 -pn GW5A-LV25MG121NES
--cst C:\Git\Pmod\Pmod_DS2\src\nestang.cst
--cfg C:\Git\Pmod\Pmod_DS2\impl\pnr\device.cfg
--sdc C:\Git\Pmod\Pmod_DS2\src\nes.sdc
+-cst E:\git\Pmod\Pmod_DS2\src\nestang.cst
+-cfg E:\git\Pmod\Pmod_DS2\impl\pnr\device.cfg
+-sdc E:\git\Pmod\Pmod_DS2\src\nes.sdc
 -bit
 -tr
 -ph
@@ -11,7 +11,7 @@
 -cst_error
 -convert_sdp32_36_to_sdp16_18
 -place_option 0
--route_option 0
+-route_option 1
 -clock_route_order 0
 -correct_hold 1
 -route_maxfan 23

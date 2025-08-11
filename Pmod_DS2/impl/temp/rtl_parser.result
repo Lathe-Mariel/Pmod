@@ -1,243 +1,243 @@
 [
  {
-  "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+  "InstFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
   "InstLine" : 191,
   "InstName" : "txd_commnd_EZ",
-  "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+  "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
   "ModuleLine" : 191,
   "ModuleName" : "txd_commnd_EZ"
  },
  {
-  "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/hdmi/gowin_pll/gowin_pll_hdmi.v",
+  "InstFile" : "E:/git/Pmod/Pmod_DS2/src/hdmi/gowin_pll/gowin_pll_hdmi.v",
   "InstLine" : 10,
   "InstName" : "Gowin_PLL_HDMI",
-  "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/hdmi/gowin_pll/gowin_pll_hdmi.v",
+  "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/hdmi/gowin_pll/gowin_pll_hdmi.v",
   "ModuleLine" : 10,
   "ModuleName" : "Gowin_PLL_HDMI"
  },
  {
-  "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+  "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
   "InstLine" : 9,
   "InstName" : "NES_Tang25k",
-  "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+  "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
   "ModuleLine" : 9,
   "ModuleName" : "NES_Tang25k",
   "SubInsts" : [
    {
-    "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 85,
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+    "InstLine" : 83,
     "InstName" : "pll_clk",
-    "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/gowin_pll/gowin_pll.v",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/gowin_pll/gowin_pll.v",
     "ModuleLine" : 10,
     "ModuleName" : "Gowin_PLL"
    },
    {
-    "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 99,
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+    "InstLine" : 97,
     "InstName" : "clk_div",
-    "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/gowin_clkdiv/gowin_clkdiv.v",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/gowin_clkdiv/gowin_clkdiv.v",
     "ModuleLine" : 10,
     "ModuleName" : "Gowin_CLKDIV"
    },
    {
-    "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 131,
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+    "InstLine" : 127,
     "InstName" : "uart_demux",
-    "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/hw_uart.v",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/hw_uart.v",
     "ModuleLine" : 194,
     "ModuleName" : "UartDemux",
     "SubInsts" : [
      {
-      "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/hw_uart.v",
+      "InstFile" : "E:/git/Pmod/Pmod_DS2/src/hw_uart.v",
       "InstLine" : 200,
       "InstName" : "uart",
-      "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/hw_uart.v",
+      "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/hw_uart.v",
       "ModuleLine" : 22,
       "ModuleName" : "uart_rx"
      }
     ]
    },
    {
-    "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 214,
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+    "InstLine" : 197,
     "InstName" : "controller",
-    "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
     "ModuleLine" : 36,
     "ModuleName" : "dualshock_controller",
     "SubInsts" : [
      {
-      "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+      "InstFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
       "InstLine" : 86,
       "InstName" : "pls",
-      "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+      "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
       "ModuleLine" : 477,
       "ModuleName" : "ps_pls_gan"
      },
      {
-      "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+      "InstFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
       "InstLine" : 107,
       "InstName" : "cmd",
-      "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+      "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
       "ModuleLine" : 245,
       "ModuleName" : "txd_commnd"
      },
      {
-      "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+      "InstFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
       "InstLine" : 140,
       "InstName" : "txd",
-      "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+      "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
       "ModuleLine" : 628,
       "ModuleName" : "ps_txd"
      },
      {
-      "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+      "InstFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
       "InstLine" : 151,
       "InstName" : "rxd",
-      "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+      "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
       "ModuleLine" : 603,
       "ModuleName" : "ps_rxd"
      }
     ]
    },
    {
-    "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 225,
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+    "InstLine" : 208,
     "InstName" : "controller2",
-    "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
     "ModuleLine" : 36,
     "ModuleName" : "dualshock_controller",
     "SubInsts" : [
      {
-      "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+      "InstFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
       "InstLine" : 86,
       "InstName" : "pls",
-      "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+      "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
       "ModuleLine" : 477,
       "ModuleName" : "ps_pls_gan"
      },
      {
-      "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+      "InstFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
       "InstLine" : 107,
       "InstName" : "cmd",
-      "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+      "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
       "ModuleLine" : 245,
       "ModuleName" : "txd_commnd"
      },
      {
-      "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+      "InstFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
       "InstLine" : 140,
       "InstName" : "txd",
-      "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+      "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
       "ModuleLine" : 628,
       "ModuleName" : "ps_txd"
      },
      {
-      "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+      "InstFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
       "InstLine" : 151,
       "InstName" : "rxd",
-      "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
+      "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dualshock_controller.v",
       "ModuleLine" : 603,
       "ModuleName" : "ps_rxd"
      }
     ]
    },
    {
-    "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 235,
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+    "InstLine" : 218,
     "InstName" : "af_square",
-    "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/autofire.v",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/autofire.v",
     "ModuleLine" : 4,
     "ModuleName" : "Autofire"
    },
    {
-    "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 236,
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+    "InstLine" : 219,
     "InstName" : "af_triangle",
-    "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/autofire.v",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/autofire.v",
     "ModuleLine" : 4,
     "ModuleName" : "Autofire"
    },
    {
-    "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 237,
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+    "InstLine" : 220,
     "InstName" : "af_square2",
-    "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/autofire.v",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/autofire.v",
     "ModuleLine" : 4,
     "ModuleName" : "Autofire"
    },
    {
-    "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 238,
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+    "InstLine" : 221,
     "InstName" : "af_triangle2",
-    "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/autofire.v",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/autofire.v",
     "ModuleLine" : 4,
     "ModuleName" : "Autofire"
    },
    {
-    "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/print.v",
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/print.v",
     "InstLine" : 105,
     "InstName" : "tx",
-    "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/uart_tx_V2.v",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/uart_tx_V2.v",
     "ModuleLine" : 1,
     "ModuleName" : "uart_tx_V2"
    },
    {
-    "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 276,
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+    "InstLine" : 261,
     "InstName" : "vga_timing_m0",
-    "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/vga_timing.v",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/vga_timing.v",
     "ModuleLine" : 1,
     "ModuleName" : "vga_timing"
    },
    {
-    "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 290,
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+    "InstLine" : 275,
     "InstName" : "frameBuffer_SDRAM",
-    "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/video_frame_buffer/video_frame_buffer_sdram.v",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/video_frame_buffer/video_frame_buffer_sdram.v",
     "ModuleLine" : 2963,
     "ModuleName" : "Video_Frame_Buffer_SDRAM",
     "SubInsts" : [
      {
-      "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/video_frame_buffer/video_frame_buffer_sdram.v",
+      "InstFile" : "E:/git/Pmod/Pmod_DS2/src/video_frame_buffer/video_frame_buffer_sdram.v",
       "InstLine" : 2994,
       "InstName" : "vfb_sdram_wrapper_inst",
-      "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/video_frame_buffer/video_frame_buffer_sdram.v",
+      "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/video_frame_buffer/video_frame_buffer_sdram.v",
       "ModuleLine" : 11,
       "ModuleName" : "~vfb_sdram_wrapper.Video_Frame_Buffer_SDRAM"
      }
     ]
    },
    {
-    "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 322,
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+    "InstLine" : 307,
     "InstName" : "sdram_controller0",
-    "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/SDRAM_controller_top_SIP/SDRAM_controller_top_SIP.v",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/SDRAM_controller_top_SIP/SDRAM_controller_top_SIP.v",
     "ModuleLine" : 2357,
     "ModuleName" : "SDRAM_controller_top_SIP",
     "SubInsts" : [
      {
-      "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/SDRAM_controller_top_SIP/SDRAM_controller_top_SIP.v",
+      "InstFile" : "E:/git/Pmod/Pmod_DS2/src/SDRAM_controller_top_SIP/SDRAM_controller_top_SIP.v",
       "InstLine" : 2924,
       "InstName" : "sdrc_top_inst",
-      "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/SDRAM_controller_top_SIP/SDRAM_controller_top_SIP.v",
+      "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/SDRAM_controller_top_SIP/SDRAM_controller_top_SIP.v",
       "ModuleLine" : 13,
       "ModuleName" : "~top.SDRAM_controller_top_SIP"
      }
     ]
    },
    {
-    "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 405,
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/nes_tang25k.v",
+    "InstLine" : 394,
     "InstName" : "DVI_TX_Top_inst",
-    "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/dvi_tx/dvi_tx.v",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dvi_tx/dvi_tx.v",
     "ModuleLine" : 1091,
     "ModuleName" : "DVI_TX_Top",
     "SubInsts" : [
      {
-      "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/dvi_tx/dvi_tx.v",
+      "InstFile" : "E:/git/Pmod/Pmod_DS2/src/dvi_tx/dvi_tx.v",
       "InstLine" : 1122,
       "InstName" : "rgb2dvi_inst",
-      "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/dvi_tx/dvi_tx.v",
+      "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/dvi_tx/dvi_tx.v",
       "ModuleLine" : 10,
       "ModuleName" : "~rgb2dvi.DVI_TX_Top"
      }
@@ -246,26 +246,26 @@
   ]
  },
  {
-  "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/usb_hid_host.v",
+  "InstFile" : "E:/git/Pmod/Pmod_DS2/src/usb_hid_host.v",
   "InstLine" : 12,
   "InstName" : "usb_hid_host",
-  "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/usb_hid_host.v",
+  "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/usb_hid_host.v",
   "ModuleLine" : 12,
   "ModuleName" : "usb_hid_host",
   "SubInsts" : [
    {
-    "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/usb_hid_host.v",
+    "InstFile" : "E:/git/Pmod/Pmod_DS2/src/usb_hid_host.v",
     "InstLine" : 48,
     "InstName" : "ukp",
-    "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/usb_hid_host.v",
+    "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/usb_hid_host.v",
     "ModuleLine" : 180,
     "ModuleName" : "ukp",
     "SubInsts" : [
      {
-      "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/usb_hid_host.v",
+      "InstFile" : "E:/git/Pmod/Pmod_DS2/src/usb_hid_host.v",
       "InstLine" : 241,
       "InstName" : "ukprom",
-      "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/usb_hid_host_rom.v",
+      "ModuleFile" : "E:/git/Pmod/Pmod_DS2/src/usb_hid_host_rom.v",
       "ModuleLine" : 1,
       "ModuleName" : "usb_hid_host_rom"
      }

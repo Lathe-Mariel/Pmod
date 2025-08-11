@@ -5,34 +5,34 @@
 1. PnR Messages
 
   <Report Title>: PnR Report
-  <Design File>: C:\Git\Pmod\Pmod_DS2\impl\gwsynthesis\nes.vg
-  <Physical Constraints File>: C:\Git\Pmod\Pmod_DS2\src\nestang.cst
-  <Timing Constraints File>: C:\Git\Pmod\Pmod_DS2\src\nes.sdc
-  <Tool Version>: V1.9.11.02 (64-bit)
+  <Design File>: E:\git\Pmod\Pmod_DS2\impl\gwsynthesis\nes.vg
+  <Physical Constraints File>: E:\git\Pmod\Pmod_DS2\src\nestang.cst
+  <Timing Constraints File>: E:\git\Pmod\Pmod_DS2\src\nes.sdc
+  <Tool Version>: V1.9.11.01 (64-bit)
   <Part Number>: GW5A-LV25MG121NES
   <Device>: GW5A-25
   <Device Version>: A
-  <Created Time>:Mon Aug 11 15:17:18 2025
+  <Created Time>:Mon Aug 11 22:53:19 2025
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 0.182s, Elapsed time = 0h 0m 0.183s
-    Placement Phase 1: CPU time = 0h 0m 0.144s, Elapsed time = 0h 0m 0.143s
-    Placement Phase 2: CPU time = 0h 0m 0.228s, Elapsed time = 0h 0m 0.228s
-    Placement Phase 3: CPU time = 0h 0m 0.469s, Elapsed time = 0h 0m 0.469s
-    Total Placement: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
+    Placement Phase 0: CPU time = 0h 0m 0.309s, Elapsed time = 0h 0m 0.309s
+    Placement Phase 1: CPU time = 0h 0m 0.233s, Elapsed time = 0h 0m 0.233s
+    Placement Phase 2: CPU time = 0h 0m 0.412s, Elapsed time = 0h 0m 0.412s
+    Placement Phase 3: CPU time = 0h 0m 0.794s, Elapsed time = 0h 0m 0.794s
+    Total Placement: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
  Running routing:
-    Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0.001s
-    Routing Phase 1: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-    Routing Phase 2: CPU time = 0h 0m 0.031s, Elapsed time = 0h 0m 0.03s
+    Routing Phase 0: CPU time = 0h 0m 0.002s, Elapsed time = 0h 0m 0.001s
+    Routing Phase 1: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
+    Routing Phase 2: CPU time = 0h 0m 0.044s, Elapsed time = 0h 0m 0.044s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
     Total Routing: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
  Generate output files:
     CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
 
- Total Time and Memory Usage: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s, Peak memory usage = 568MB
+ Total Time and Memory Usage: CPU time = 0h 0m 7s, Elapsed time = 0h 0m 7s, Peak memory usage = 574MB
 
 
 3. Resource Usage Summary
@@ -40,15 +40,15 @@
   --------------------------------------------------------------------------------
   Resources                   | Usage                               | Utilization
   --------------------------------------------------------------------------------
-  Logic                       | 1519/23040                          |  7%
-    --LUT,ALU,ROM16           | 1519(1314 LUT, 205 ALU, 0 ROM16)    | -
+  Logic                       | 1561/23040                          |  7%
+    --LUT,ALU,ROM16           | 1561(1340 LUT, 221 ALU, 0 ROM16)    | -
     --SSRAM(RAM16)            | 0                                   | -
-  Register                    | 942/23280                           |  5%
+  Register                    | 962/23280                           |  5%
     --Logic Register as Latch | 0/23040                             |  0%
-    --Logic Register as FF    | 896/23040                           |  4%
+    --Logic Register as FF    | 916/23040                           |  4%
     --I/O Register as Latch   | 0/240                               |  0%
     --I/O Register as FF      | 46/240                              |  20%
-  CLS                         | 1051/11520                          |  10%
+  CLS                         | 1083/11520                          |  10%
   I/O Port                    | 70/86                               |  82%
   I/O Buf                     | 65                                  | -
     --Input Buf               | 5                                   | -
@@ -85,8 +85,8 @@
   ------------------------------------------
   Clock Resource| Usage         | Utilization 
   ------------------------------------------
-  PRIMARY       | 7/8           | 88%
-  LW            | 8/8           | 100%
+  PRIMARY       | 8/8           | 100%
+  LW            | 7/8           | 88%
   GCLK_PIN      | 27/30         | 90%
   CLKDIV        | 1/16          | 7%
   PLLA          | 1/6           | 17%
@@ -99,8 +99,9 @@
   Signal         | Global Clock   | Location
   -------------------------------------------
   sclk           | PRIMARY        |  TL
-  clk3           | PRIMARY        |  TL BL
+  clk3           | PRIMARY        |  TL
   clk_p          | PRIMARY        |  TR TL BR BL
+  joystick_clk_d | PRIMARY        |  TR TL
   joystick_clk2_d| PRIMARY        |  TR TL
   controller/n50_13| PRIMARY        |  TL
   controller/W_TXSET| PRIMARY        |  TL
@@ -108,13 +109,12 @@
   s1_d           | LW             |  -
   reset_d        | LW             |  -
   sys_resetn     | LW             |  -
-  joystick_clk_d | LW             |  -
   controller/W_scan_seq_pls| LW             |  -
   controller2/W_RXWT| LW             |  -
   frameBuffer_SDRAM/vfb_sdram_wrapper_inst/u0_dma_frame_buffer/u_dma_write_ctrl/fifo_write_inst/reset_r[1]| LW             |  -
   frameBuffer_SDRAM/vfb_sdram_wrapper_inst/u0_dma_frame_buffer/u_dma_read_ctrl/fifo_read_inst/reset_r[1]| LW             |  -
   sys_clk_d      | HCLK           | 
-  clk_p5         | HCLK           | BANK0_BANK1_HCLK0
+  clk_p5         | HCLK           | TOP[0]
   ===========================================
 
 
@@ -131,7 +131,7 @@ joystick_miso     | -         | K11/7         | Y          | in    | IOT11[A] | 
 joystick_miso2    | -         | L11/7         | Y          | in    | IOT11[B] | -               | LVCMOS33   | OFF   | UP        | OFF       | ON         | OFF        | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE         
 UART_TXD          | -         | C3/4          | Y          | out   | IOB56[B] | -               | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE         
 led[0]            | -         | E8/4          | Y          | out   | IOB37[A] | READY           | LVCMOS33   | 8     | UP        | OFF       | OFF        | OFF        | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE         
-led[1]            | -         | L6/7          | N          | out   | IOT23[A] | -               | LVCMOS33   | 8     | UP        | OFF       | OFF        | OFF        | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE         
+led[1]            | -         | L6/7          | N          | out   | IOT23[A] | -               | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE         
 joystick_clk      | -         | L5/1          | Y          | out   | IOT63[A] | GCLKT_3/RPLL0_T_IN0 | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE         
 joystick_mosi     | -         | E11/6         | Y          | out   | IOL3[A]  | GCLKT_14/LPLL0_T_IN2 | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE         
 joystick_cs       | -         | A11/6         | Y          | out   | IOL14[A] | LPLL1_T_IN0     | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE         
@@ -213,7 +213,7 @@ L7/7     | O_sdram_dqm[1]    | out   | IOT19[A] | -               | LVCMOS33 | 8
 L8/7     | O_sdram_dqm[0]    | out   | IOT19[B] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE         
 K7/7     | O_sdram_addr[4]   | out   | IOT21[A] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE         
 J7/7     | O_sdram_wen_n     | out   | IOT21[B] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE         
-L6/7     | led[1]            | out   | IOT23[A] | -               | LVCMOS33 | 8     | UP        | OFF       | OFF        | OFF        | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE         
+L6/7     | led[1]            | out   | IOT23[A] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE         
 K6/7     | -                 | in    | IOT23[B] | -               | LVCMOS33 | 8     | UP        | OFF       | ON         | OFF        | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE         
 L9/0     | O_sdram_ba[0]     | out   | IOT31[A] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE         
 K9/0     | O_sdram_cs_n      | out   | IOT31[B] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE         

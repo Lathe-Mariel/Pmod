@@ -52,8 +52,6 @@ module NES_Tang25k(
 //memory interface
 wire                   memory_clk         ;
 wire                   memory_clk45;
-wire                   fb_clk;
-wire                   clk32_5;
 //wire                   dma_clk       	  ;
 
 wire                   sdrc_busy_n        ;
@@ -108,8 +106,6 @@ end
 
   wire [5:0] color;
   wire [15:0] sample;
-  wire [8:0] scanline;
-  wire [8:0] cycle;
 
   // internal wiring and state
   wire joypad_strobe;
@@ -133,19 +129,6 @@ UartDemux #(.FREQ(FREQ), .BAUDRATE(BAUDRATE)) uart_demux(
 );
 `endif
 
-  // ROM loader
-  reg  [7:0] loader_conf;     // bit 0 is reset
-
-  reg  [7:0] loader_btn, loader_btn_2;
-  always @(posedge clk3) begin
-    if (uart_addr == 8'h35 && uart_write)
-      loader_conf <= uart_data;
-    if (uart_addr == 8'h40 && uart_write)
-      loader_btn <= uart_data;
-    if (uart_addr == 8'h41 && uart_write)
-      loader_btn_2 <= uart_data;
-  end
-
   /*
   joy_rx[0:1] dualshock buttons: 0:(L D R U St R3 L3 Se)  1:(□ X O △ R1 L1 R2 L2)
   nes_btn[0:1] NES buttons:      (R L D U START SELECT B A)
@@ -164,8 +147,8 @@ assign pmod_led = {joy_rx[0][4],joy_rx[1][3:0],joy_rx[1][7:5]}; //for test
   // Joypad handling
   always @(posedge clk3) begin
     if (joypad_strobe) begin
-      joypad_bits <= loader_btn | nes_btn;
-      joypad_bits2 <= loader_btn_2 | nes_btn2;
+      joypad_bits <= nes_btn;
+      joypad_bits2 <= nes_btn2;
     end
     if (!joypad_clock[0] && last_joypad_clock[0])
       joypad_bits <= {1'b0, joypad_bits[7:1]};
@@ -197,7 +180,7 @@ assign pmod_led = {joy_rx[0][4],joy_rx[1][3:0],joy_rx[1][7:5]}; //for test
 // HDMI output
 
 
-// Dualshock controller
+// Dualshock controller    FREQ 37_800_000
 reg sclk;                   // controller main clock at 250Khz
 localparam  SCLK_DELAY = FREQ / 200_000;
 reg [$clog2(SCLK_DELAY)-1:0] sclk_cnt;         
@@ -246,13 +229,11 @@ defparam tx.clk_freq=FREQ;
 
 assign UART_TXD = uart_txp;
 
-
 reg tick;       // pulse every 0.01 second
 reg print_stat; // pulse every 2 seconds
 
 reg [19:0] timer;           // 37 times per second
 always @(posedge clk3) timer <= timer + 1;
-
 
 reg [19:0] tick_counter;
 reg [9:0] stat_counter;
@@ -279,12 +260,12 @@ wire monitor_en;
 //wire [9:0] lcd_x,lcd_y;
 vga_timing vga_timing_m0(
     .clk (clk_p),
-    .rst (sys_resetn),
+    .rst (!sys_resetn),
 
-    .hs(syn_off0_hs),
-    .vs(syn_off0_vs),
-    .de(out_de),
-    .rd(camera_de)
+    .O_hs(syn_off0_hs),
+    .O_vs(syn_off0_vs),
+    .O_de(out_de),
+    .O_rd(camera_de)
 //    .monitor_en(monitor_en)
 );
 
@@ -333,23 +314,23 @@ SDRAM_controller_top_SIP sdram_controller0( // IPUG279-1.3J  P.7
 		.O_sdram_dqm(O_sdram_dqm    ),      //output [1:0] O_sdram_dqm
 		.O_sdram_addr(O_sdram_addr  ),      //output [12:0] O_sdram_addr
 		.O_sdram_ba(O_sdram_ba      ),      //output [1:0] O_sdram_ba
-		.IO_sdram_dq(IO_sdram_dq    ),              // [15:0] IO_sdram_dq
-		.I_sdrc_rst_n(sys_resetn    ),              // リセット
-		.I_sdrc_clk(memory_clk45    ),              // I_sdrc_clk コントローラ動作クロック
-        .I_sdram_clk(memory_clk     ),              // I_sdram_clk SDRAM動作クロック
-		.I_sdrc_selfrefresh(1'b0 ),                 // I_sdrc_selfrefresh セルフリフレッシュ制御(1:有効, 0:無効)
-		.I_sdrc_power_down(1'b0  ),                 // I_sdrc_power_down 低消費電力制御(1:有効, 0:無効)
-		.I_sdrc_wr_n(sdrc_wr_n  ),                 // I_sdrc_wr_n 書込イネーブル
-		.I_sdrc_rd_n(sdrc_rd_n   ),                 // I_sdrc_rd_n 読取イネーブル
-		.I_sdrc_addr({2'b00,sdrc_addr}  ),                 // [22:0] I_sdrc_addr アドレス
-		.I_sdrc_data_len(sdrc_data_len),         // [7:0] I_sdrc_data_len 読み書きデータ長
-		.I_sdrc_dqm(sdrc_dqm     ),                 // [1:0] I_sdrc_dqm データマスク制御
-		.I_sdrc_data(wr_data     ),                 // [15:0] I_sdrc_data 書込データ
-		.O_sdrc_data(sdrc_data     ),                 // [15:0] O_sdrc_data 読取データ
-		.O_sdrc_init_done(sdrc_init_done),     // O_sdrc_init_done パワーアップ初期化完了(1:完了, 0:未完)
-		.O_sdrc_busy_n(sdrc_busy_n ),                 // O_sdrc_busy_n コントローラアイドル表示．アイドル時に読み書きトリガ可能(1:アイドル, 0:ビジー)
-		.O_sdrc_rd_valid(sdrc_rd_valid),            // O_sdrc_rd_valid 読み取りデータ有効．(1:有効)
-		.O_sdrc_wrd_ack(         )                // O_sdrc_wrd_ack 読み書きリクエスト応答
+		.IO_sdram_dq(IO_sdram_dq    ),      // [15:0] IO_sdram_dq
+		.I_sdrc_rst_n(sys_resetn    ),      // リセット
+		.I_sdrc_clk(memory_clk45    ),      // I_sdrc_clk コントローラ動作クロック
+        .I_sdram_clk(memory_clk     ),      // I_sdram_clk SDRAM動作クロック
+		.I_sdrc_selfrefresh(1'b0 ),         // I_sdrc_selfrefresh セルフリフレッシュ制御(1:有効, 0:無効)
+		.I_sdrc_power_down(1'b0  ),         // I_sdrc_power_down 低消費電力制御(1:有効, 0:無効)
+		.I_sdrc_wr_n(sdrc_wr_n  ),          // I_sdrc_wr_n 書込イネーブル
+		.I_sdrc_rd_n(sdrc_rd_n   ),         // I_sdrc_rd_n 読取イネーブル
+		.I_sdrc_addr({2'b00,sdrc_addr}  ),  // [22:0] I_sdrc_addr アドレス
+		.I_sdrc_data_len(sdrc_data_len),    // [7:0] I_sdrc_data_len 読み書きデータ長
+		.I_sdrc_dqm(sdrc_dqm     ),         // [1:0] I_sdrc_dqm データマスク制御
+		.I_sdrc_data(wr_data     ),         // [15:0] I_sdrc_data 書込データ
+		.O_sdrc_data(sdrc_data     ),       // [15:0] O_sdrc_data 読取データ
+		.O_sdrc_init_done(sdrc_init_done),  // O_sdrc_init_done パワーアップ初期化完了(1:完了, 0:未完)
+		.O_sdrc_busy_n(sdrc_busy_n ),       // O_sdrc_busy_n コントローラアイドル表示．アイドル時に読み書きトリガ可能(1:アイドル, 0:ビジー)
+		.O_sdrc_rd_valid(sdrc_rd_valid),    // O_sdrc_rd_valid 読み取りデータ有効．(1:有効)
+		.O_sdrc_wrd_ack(         )          // O_sdrc_wrd_ack 読み書きリクエスト応答
 );
 
 //According to IP parameters to choose
@@ -373,6 +354,10 @@ wire                      off0_syn_de  ;
 wire [RD_VIDEO_WIDTH-1:0] off0_syn_data;
 
 wire lcd_vs,lcd_de,lcd_hs;
+
+assign lcd_vs = syn_off0_vs;
+assign lcd_hs = syn_off0_hs;
+assign lcd_de = out_de;
 
     // -----------------------------
     //  表示画像オーバーレイ
