@@ -269,6 +269,13 @@ vga_timing vga_timing_m0(
 //    .monitor_en(monitor_en)
 );
 
+  //---------------
+  //画面データ生成
+  //----------------
+reg [15:0] field_data;
+ 
+assign field_data = {dvi_x[11:7], dvi_y[10:5], 5'h18};
+
 logic[1:0] sdrc_dqm;
 logic sdrc_rd_n;
 
@@ -279,16 +286,16 @@ logic sdrc_rd_n;
 		.I_wr_halt(         ),    //input [0:0] I_wr_halt
 		.I_rd_halt(           ),  //input [0:0] I_rd_halt
 
-		.I_vin0_clk(),               //input I_vin0_clk               cmos_16bit_clk
-		.I_vin0_vs_n(  ),            //input I_vin0_vs_n              ~cmos_vsync
-		.I_vin0_de(),                //input I_vin0_de                cmos_16bit_wr
-		.I_vin0_data(   ),           //input [15:0] I_vin0_data       write_data
-		.O_vin0_fifo_full(        ), //output O_vin0_fifo_full
+		.I_vin0_clk(clk_p),           //input I_vin0_clk               cmos_16bit_clk
+		.I_vin0_vs_n(syn_off0_vs  ),  //input I_vin0_vs_n              ~cmos_vsync
+		.I_vin0_de(out_de),           //input I_vin0_de                cmos_16bit_wr
+		.I_vin0_data(field_data  ),   //input [15:0] I_vin0_data       write_data
+		.O_vin0_fifo_full(        ),  //output O_vin0_fifo_full
 
-		.I_vout0_clk(clk_p    ),    //input I_vout0_clk              video_clk
-		.I_vout0_vs_n(~syn_off0_vs), //input I_vout0_vs_n
-		.I_vout0_de(     ), //input I_vout0_de                        camera_de
-		.O_vout0_den(off0_syn_de  ), //output O_vout0_den
+		.I_vout0_clk(clk_p    ),      //input I_vout0_clk              video_clk
+		.I_vout0_vs_n(~syn_off0_vs),  //input I_vout0_vs_n
+		.I_vout0_de(out_de        ),  //input I_vout0_de                        camera_de
+		.O_vout0_den(  ),  //output O_vout0_den  off0_syn_de
 		.O_vout0_data(off0_syn_data), //output [15:0] O_vout0_data
 		.O_vout0_fifo_empty(       ), //output O_vout0_fifo_empty
 
