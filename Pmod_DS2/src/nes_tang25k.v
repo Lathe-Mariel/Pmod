@@ -50,8 +50,8 @@ module NES_Tang25k(
 `include "nes_tang25k.vh"
 
 //memory interface
-wire                   memory_clk         ;
-wire                   memory_clk45;
+wire                   sdram_clk         ;
+wire                   sdram_clk45;
 //wire                   dma_clk       	  ;
 
 wire                   sdrc_busy_n        ;
@@ -81,12 +81,12 @@ end
   wire clk3;
 
     Gowin_PLL pll_clk(
-        .lock(pll_lock), //output lock
-        .clkout0(), //output clkout0 12MHz
-        .clkout1(), //output clkout1 25MHz phase270
-        .clkout2(clk_p5), //output clkout2 371.25MHz
-        .clkout3(clk3), //output clkout3 25MHz
-        .clkin(sys_clk) //input clkin
+        .lock(pll_lock),  //output lock
+        .clkout0(sdram_clk),       //output clkout0 100MHz
+        .clkout1(sdram_clk45),       //output clkout1 100MHz phase45
+        .clkout2(clk_p5), //output clkout2 325MHz
+        .clkout3(clk3),   //output clkout3 25MHz
+        .clkin(sys_clk)   //input clkin
     );
 
   // HDMI domain clocks
@@ -95,7 +95,7 @@ end
   wire pll_lock;
 
     Gowin_CLKDIV clk_div (
-      .clkout(clk_p),
+      .clkout(clk_p),  //65MHz
       .hclkin(clk_p5),
       .resetn(sys_resetn & pll_lock)
     );
@@ -157,20 +157,22 @@ assign pmod_led = {joy_rx[0][4],joy_rx[1][3:0],joy_rx[1][7:5]}; //for test
     last_joypad_clock <= joypad_clock;
   end
 
-  wire loader_done;
+
 
   // The NES machine
   // nes_ce  / 0 \___/ 1 \___/ 2 \___/ 3 \___/ 4 \___/ 0 \___
   // MemCtrl |mem_cmd|ACTIVE | RD/WR |       |  Dout |run_mem|
   // NES                                     |run_nes|
   //                 `-------- read delay = 4 -------'
-  wire reset_nes = !loader_done;
-  wire run_mem = (nes_ce == 0) && !reset_nes;       // memory runs at clock cycle #0
-  wire run_nes = (nes_ce == 4) && !reset_nes;       // nes runs at clock cycle #4
+
+  //wire loader_done;
+  //wire reset_nes = !loader_done;
+  //wire run_mem = (nes_ce == 0) && !reset_nes;       // memory runs at clock cycle #0
+  //wire run_nes = (nes_ce == 4) && !reset_nes;       // nes runs at clock cycle #4
 
   // For debug
-  reg last_write;   // if 0, then we did a read
-  reg last_idle;
+//  reg last_write;   // if 0, then we did a read
+//  reg last_idle;
 
 /*verilator tracing_off*/
 /*verilator tracing_on*/
@@ -178,7 +180,6 @@ assign pmod_led = {joy_rx[0][4],joy_rx[1][3:0],joy_rx[1][7:5]}; //for test
 `ifndef VERILATOR
 
 // HDMI output
-
 
 // Dualshock controller    FREQ 37_800_000
 reg sclk;                   // controller main clock at 250Khz
@@ -276,26 +277,37 @@ reg [15:0] field_data;
  
 assign field_data = {dvi_x[11:7], dvi_y[10:5], 5'h18};
 
+logic input_buffer;
+logic input_buffer_counter;
+always @(posedge out_de)begin
+    if(input_buffer_counter == 0)begin
+        input_buffer <= 1;
+    end else begin
+        input_buffer <= 0;
+    end    
+    input_buffer_counter <= input_buffer_counter + 8'd1;
+end
+
 logic[1:0] sdrc_dqm;
 logic sdrc_rd_n;
 
 	Video_Frame_Buffer_SDRAM frameBuffer_SDRAM(
 		.I_rst_n(sys_resetn),     //input I_rst_n
-		.I_dma_clk(memory_clk45   ), //input I_dma_clk
+		.I_dma_clk(sdram_clk45   ), //input I_dma_clk
 
 		.I_wr_halt(         ),    //input [0:0] I_wr_halt
 		.I_rd_halt(           ),  //input [0:0] I_rd_halt
 
 		.I_vin0_clk(clk_p),           //input I_vin0_clk               cmos_16bit_clk
-		.I_vin0_vs_n(syn_off0_vs  ),  //input I_vin0_vs_n              ~cmos_vsync
-		.I_vin0_de(out_de),           //input I_vin0_de                cmos_16bit_wr
+		.I_vin0_vs_n(!syn_off0_vs  ),  //input I_vin0_vs_n              ~cmos_vsync
+		.I_vin0_de(input_buffer),           //input I_vin0_de                cmos_16bit_wr
 		.I_vin0_data(field_data  ),   //input [15:0] I_vin0_data       write_data
 		.O_vin0_fifo_full(        ),  //output O_vin0_fifo_full
 
 		.I_vout0_clk(clk_p    ),      //input I_vout0_clk              video_clk
 		.I_vout0_vs_n(~syn_off0_vs),  //input I_vout0_vs_n
 		.I_vout0_de(out_de        ),  //input I_vout0_de                        camera_de
-		.O_vout0_den(  ),  //output O_vout0_den  off0_syn_de
+		.O_vout0_den(off0_syn_de  ),  //output O_vout0_den  
 		.O_vout0_data(off0_syn_data), //output [15:0] O_vout0_data
 		.O_vout0_fifo_empty(       ), //output O_vout0_fifo_empty
 
@@ -323,8 +335,8 @@ SDRAM_controller_top_SIP sdram_controller0( // IPUG279-1.3J  P.7
 		.O_sdram_ba(O_sdram_ba      ),      //output [1:0] O_sdram_ba
 		.IO_sdram_dq(IO_sdram_dq    ),      // [15:0] IO_sdram_dq
 		.I_sdrc_rst_n(sys_resetn    ),      // リセット
-		.I_sdrc_clk(memory_clk45    ),      // I_sdrc_clk コントローラ動作クロック
-        .I_sdram_clk(memory_clk     ),      // I_sdram_clk SDRAM動作クロック
+		.I_sdrc_clk(sdram_clk45    ),      // I_sdrc_clk コントローラ動作クロック
+        .I_sdram_clk(sdram_clk     ),      // I_sdram_clk SDRAM動作クロック
 		.I_sdrc_selfrefresh(1'b0 ),         // I_sdrc_selfrefresh セルフリフレッシュ制御(1:有効, 0:無効)
 		.I_sdrc_power_down(1'b0  ),         // I_sdrc_power_down 低消費電力制御(1:有効, 0:無効)
 		.I_sdrc_wr_n(sdrc_wr_n  ),          // I_sdrc_wr_n 書込イネーブル

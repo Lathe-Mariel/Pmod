@@ -1,3 +1,4 @@
+`default_nettype wire
 
 module Gowin_rPLL_usb (clkout, clkoutp, lock, reset, clkin);
 
@@ -57,3 +58,5 @@ defparam rpll_inst.CLKOUTD3_SRC = "CLKOUT";
 defparam rpll_inst.DEVICE = "GW2AR-18";
 
 endmodule //Gowin_rPLL
+
+`default_nettype none

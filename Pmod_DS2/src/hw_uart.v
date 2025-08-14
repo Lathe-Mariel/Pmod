@@ -1,6 +1,8 @@
 // Copyright (c) 2012-2013 Ludvig Strigeus
 // This program is GPL Licensed. See COPYING for the full license.
 
+`default_nettype wire
+
 `define USE_RX2
 
 `ifdef USE_RX2
@@ -240,3 +242,4 @@ module UartDemux #(parameter FREQ=48_600_000, parameter BAUDRATE=115_200)
   end
 endmodule
 
+`default_nettype none

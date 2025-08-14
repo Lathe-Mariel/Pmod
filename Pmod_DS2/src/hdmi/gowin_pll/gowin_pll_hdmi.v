@@ -7,6 +7,8 @@
 //Device Version: A
 //Created Time: Wed Oct 25 18:39:29 2023
 
+`default_nettype wire
+
 module Gowin_PLL_HDMI (lock, clkout0, clkout1, clkin);
 
 output lock;
@@ -134,3 +136,4 @@ defparam PLLA_inst.CLKOUT1_DT_STEP = 0;
 defparam PLLA_inst.CLKOUT2_DT_STEP = 0;
 defparam PLLA_inst.CLKOUT3_DT_STEP = 0;
 endmodule //Gowin_PLL_HDMI
+`default_nettype none

@@ -9,10 +9,10 @@
  },
  {
   "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/hdmi/gowin_pll/gowin_pll_hdmi.v",
-  "InstLine" : 10,
+  "InstLine" : 12,
   "InstName" : "Gowin_PLL_HDMI",
   "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/hdmi/gowin_pll/gowin_pll_hdmi.v",
-  "ModuleLine" : 10,
+  "ModuleLine" : 12,
   "ModuleName" : "Gowin_PLL_HDMI"
  },
  {
@@ -28,8 +28,26 @@
     "InstLine" : 83,
     "InstName" : "pll_clk",
     "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/gowin_pll/gowin_pll.v",
-    "ModuleLine" : 10,
-    "ModuleName" : "Gowin_PLL"
+    "ModuleLine" : 1,
+    "ModuleName" : "Gowin_PLL",
+    "SubInsts" : [
+     {
+      "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/gowin_pll/gowin_pll.v",
+      "InstLine" : 28,
+      "InstName" : "u_pll",
+      "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/gowin_pll/gowin_pll_mod.v",
+      "ModuleLine" : 11,
+      "ModuleName" : "Gowin_PLL_MOD"
+     },
+     {
+      "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/gowin_pll/gowin_pll.v",
+      "InstLine" : 44,
+      "InstName" : "u_pll_init",
+      "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/pll_init.v",
+      "ModuleLine" : 4,
+      "ModuleName" : "PLL_INIT"
+     }
+    ]
    },
    {
     "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
@@ -44,22 +62,22 @@
     "InstLine" : 127,
     "InstName" : "uart_demux",
     "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/hw_uart.v",
-    "ModuleLine" : 194,
+    "ModuleLine" : 196,
     "ModuleName" : "UartDemux",
     "SubInsts" : [
      {
       "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/hw_uart.v",
-      "InstLine" : 200,
+      "InstLine" : 202,
       "InstName" : "uart",
       "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/hw_uart.v",
-      "ModuleLine" : 22,
+      "ModuleLine" : 24,
       "ModuleName" : "uart_rx"
      }
     ]
    },
    {
     "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 197,
+    "InstLine" : 198,
     "InstName" : "controller",
     "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
     "ModuleLine" : 36,
@@ -101,7 +119,7 @@
    },
    {
     "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 208,
+    "InstLine" : 209,
     "InstName" : "controller2",
     "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/dualshock_controller.v",
     "ModuleLine" : 36,
@@ -143,7 +161,7 @@
    },
    {
     "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 218,
+    "InstLine" : 219,
     "InstName" : "af_square",
     "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/autofire.v",
     "ModuleLine" : 4,
@@ -151,7 +169,7 @@
    },
    {
     "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 219,
+    "InstLine" : 220,
     "InstName" : "af_triangle",
     "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/autofire.v",
     "ModuleLine" : 4,
@@ -159,7 +177,7 @@
    },
    {
     "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 220,
+    "InstLine" : 221,
     "InstName" : "af_square2",
     "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/autofire.v",
     "ModuleLine" : 4,
@@ -167,7 +185,7 @@
    },
    {
     "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 221,
+    "InstLine" : 222,
     "InstName" : "af_triangle2",
     "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/autofire.v",
     "ModuleLine" : 4,
@@ -183,7 +201,7 @@
    },
    {
     "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 261,
+    "InstLine" : 262,
     "InstName" : "vga_timing_m0",
     "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/vga_timing.v",
     "ModuleLine" : 1,
@@ -191,7 +209,7 @@
    },
    {
     "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 282,
+    "InstLine" : 294,
     "InstName" : "frameBuffer_SDRAM",
     "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/video_frame_buffer/video_frame_buffer_sdram.v",
     "ModuleLine" : 2963,
@@ -209,7 +227,7 @@
    },
    {
     "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 314,
+    "InstLine" : 326,
     "InstName" : "sdram_controller0",
     "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/SDRAM_controller_top_SIP/SDRAM_controller_top_SIP.v",
     "ModuleLine" : 2357,
@@ -227,7 +245,7 @@
    },
    {
     "InstFile" : "C:/Git/Pmod/Pmod_DS2/src/nes_tang25k.v",
-    "InstLine" : 401,
+    "InstLine" : 413,
     "InstName" : "DVI_TX_Top_inst",
     "ModuleFile" : "C:/Git/Pmod/Pmod_DS2/src/dvi_tx/dvi_tx.v",
     "ModuleLine" : 1091,
