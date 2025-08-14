@@ -13,6 +13,7 @@ Analyzing Verilog file 'C:\Git\Pmod\Pmod_DS2\src\dualshock_controller.v'
 Analyzing Verilog file 'C:\Git\Pmod\Pmod_DS2\src\dvi_tx\dvi_tx.v'
 Analyzing Verilog file 'C:\Git\Pmod\Pmod_DS2\src\gowin_clkdiv\gowin_clkdiv.v'
 Analyzing Verilog file 'C:\Git\Pmod\Pmod_DS2\src\gowin_pll\gowin_pll.v'
+Analyzing Verilog file 'C:\Git\Pmod\Pmod_DS2\src\gowin_pll\gowin_pll_mod.v'
 Analyzing Verilog file 'C:\Git\Pmod\Pmod_DS2\src\gowin_rpll_usb.v'
 Analyzing Verilog file 'C:\Git\Pmod\Pmod_DS2\src\hdmi\gowin_pll\gowin_pll_hdmi.v'
 Analyzing Verilog file 'C:\Git\Pmod\Pmod_DS2\src\hw_uart.v'
@@ -26,6 +27,7 @@ Analyzing included file 'C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.vh'("C:\Git\Pmod\P
 Back to file 'C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v'("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":50)
 Analyzing included file 'C:\Git\Pmod\Pmod_DS2\src\print.v'("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":227)
 Back to file 'C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v'("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":227)
+Analyzing Verilog file 'C:\Git\Pmod\Pmod_DS2\src\pll_init.v'
 Analyzing Verilog file 'C:\Git\Pmod\Pmod_DS2\src\uart_tx_V2.v'
 Analyzing Verilog file 'C:\Git\Pmod\Pmod_DS2\src\usb_hid_host.v'
 Analyzing Verilog file 'C:\Git\Pmod\Pmod_DS2\src\usb_hid_host_rom.v'
@@ -34,14 +36,12 @@ Previous declaration of 'data' is from here("C:\Git\Pmod\Pmod_DS2\src\usb_hid_ho
 WARN  (EX3671) : Second declaration of 'data' is ignored("C:\Git\Pmod\Pmod_DS2\src\usb_hid_host_rom.v":5)
 Analyzing Verilog file 'C:\Git\Pmod\Pmod_DS2\src\vga_timing.v'
 Analyzing Verilog file 'C:\Git\Pmod\Pmod_DS2\src\video_frame_buffer\video_frame_buffer_sdram.v'
-Analyzing Verilog file 'C:\Git\Pmod\Pmod_DS2\src\gowin_pll\gowin_pll_mod.v'
-Analyzing Verilog file 'C:\Git\Pmod\Pmod_DS2\src\pll_init.v'
-WARN  (EX3073) : Port 'active_x' remains unconnected for this instance("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":271)
+WARN  (EX3073) : Port 'active_x' remains unconnected for this instance("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":269)
 Compiling module 'NES_Tang25k'("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":9)
 Extracting RAM for identifier 'print_seq'("C:\Git\Pmod\Pmod_DS2\src\print.v":6)
 WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":74)
 Compiling module 'Gowin_PLL'("C:\Git\Pmod\Pmod_DS2\src\gowin_pll\gowin_pll.v":1)
-Compiling module 'Gowin_PLL_MOD'("C:\Git\Pmod\Pmod_DS2\src\gowin_pll\gowin_pll_mod.v":11)
+Compiling module 'Gowin_PLL_MOD'("C:\Git\Pmod\Pmod_DS2\src\gowin_pll\gowin_pll_mod.v":10)
 Compiling module 'PLL_INIT(MULTI_FAC=16)'("C:\Git\Pmod\Pmod_DS2\src\pll_init.v":4)
 Compiling module 'Gowin_CLKDIV'("C:\Git\Pmod\Pmod_DS2\src\gowin_clkdiv\gowin_clkdiv.v":10)
 Compiling module 'UartDemux(FREQ=25000000,BAUDRATE=921600)'("C:\Git\Pmod\Pmod_DS2\src\hw_uart.v":196)
@@ -67,14 +67,12 @@ Driving port 'out' is declared here("C:\Git\Pmod\Pmod_DS2\src\autofire.v":11)
 Port is declared here("C:\Git\Pmod\Pmod_DS2\src\autofire.v":11)
 Compiling module 'uart_tx_V2(clk_freq=25000000,uart_freq=921600)'("C:\Git\Pmod\Pmod_DS2\src\uart_tx_V2.v":1)
 WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("C:\Git\Pmod\Pmod_DS2\src\uart_tx_V2.v":49)
-WARN  (EX3791) : Expression size 21 truncated to fit in target size 20("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":237)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 20("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":243)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":248)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 20("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":240)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 10("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":245)
 Compiling module 'vga_timing'("C:\Git\Pmod\Pmod_DS2\src\vga_timing.v":1)
 WARN  (EX3791) : Expression size 12 truncated to fit in target size 10("C:\Git\Pmod\Pmod_DS2\src\vga_timing.v":78)
 WARN  (EX3791) : Expression size 12 truncated to fit in target size 10("C:\Git\Pmod\Pmod_DS2\src\vga_timing.v":86)
 WARN  (EX3791) : Expression size 12 truncated to fit in target size 11("C:\Git\Pmod\Pmod_DS2\src\vga_timing.v":99)
-WARN  (EX3791) : Expression size 2 truncated to fit in target size 1("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":288)
 Compiling module 'Video_Frame_Buffer_SDRAM'("C:\Git\Pmod\Pmod_DS2\src\video_frame_buffer\video_frame_buffer_sdram.v":2963)
 Compiling module '**'("C:\Git\Pmod\Pmod_DS2\src\video_frame_buffer\video_frame_buffer_sdram.v":2962)
 WARN  (EX3670) : Actual bit length 21 differs from formal bit length 22 for port 'O_sdrc_addr'("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":317)
@@ -99,9 +97,36 @@ WARN  (EX1998) : Net 'print_buffer[1023]' does not have a driver("C:\Git\Pmod\Pm
 WARN  (EX1998) : Net 'spin_state' does not have a driver("C:\Git\Pmod\Pmod_DS2\src\print.v":14)
 WARN  (EX1998) : Net 'print_length[6]' does not have a driver("C:\Git\Pmod\Pmod_DS2\src\print.v":15)
 WARN  (EX1998) : Net 'print_type' does not have a driver("C:\Git\Pmod\Pmod_DS2\src\print.v":16)
+WARN  (EX1998) : Net 'off0_syn_de' does not have a driver("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":372)
+WARN  (EX1998) : Net 'off0_syn_data[15]' does not have a driver("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":373)
 WARN  (EX2565) : Input 'mdclk' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":90)
+WARN  (EX2565) : Input 'I_dma_clk' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
 WARN  (EX2565) : Input 'I_wr_halt[0]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
 WARN  (EX2565) : Input 'I_rd_halt[0]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_clk' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_vs_n' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_de' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_data[15]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_data[14]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_data[13]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_data[12]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_data[11]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_data[10]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_data[9]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_data[8]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_data[7]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_data[6]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_data[5]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_data[4]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_data[3]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_data[2]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_data[1]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vin0_data[0]' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vout0_clk' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vout0_vs_n' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_vout0_de' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":324)
+WARN  (EX2565) : Input 'I_sdrc_clk' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":353)
+WARN  (EX2565) : Input 'I_sdram_clk' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":353)
 NOTE  (EX0101) : Current top module is "NES_Tang25k"
 WARN  (EX0211) : The output port "led[1]" of module "NES_Tang25k" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":18)
 WARN  (EX0211) : The output port "led[0]" of module "NES_Tang25k" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Git\Pmod\Pmod_DS2\src\nes_tang25k.v":18)

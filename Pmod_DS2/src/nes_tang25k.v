@@ -82,9 +82,9 @@ end
 
     Gowin_PLL pll_clk(
         .lock(pll_lock),  //output lock
-        .clkout0(sdram_clk),       //output clkout0 100MHz
-        .clkout1(sdram_clk45),       //output clkout1 100MHz phase45
-        .clkout2(clk_p5), //output clkout2 325MHz
+        .clkout0(),       //output clkout0 100MHz   sdram_clk
+        .clkout1(),       //output clkout1 100MHz phase45  sdram_clk45
+        .clkout2(clk_p5), //output clkout2 325MHz 135
         .clkout3(clk3),   //output clkout3 25MHz
         .clkin(sys_clk)   //input clkin
     );
@@ -142,7 +142,7 @@ UartDemux #(.FREQ(FREQ), .BAUDRATE(BAUDRATE)) uart_demux(
   wire [7:0] nes_btn2 = {~joy_rx2[0][5], ~joy_rx2[0][7], ~joy_rx2[0][6], ~joy_rx2[0][4], 
                          ~joy_rx2[0][3], ~joy_rx2[0][0], ~joy_rx2[1][6] | auto_square2, ~joy_rx2[1][5] | auto_triangle2} ;
   
-assign pmod_led = {joy_rx[0][4],joy_rx[1][3:0],joy_rx[1][7:5]}; //for test
+assign pmod_led = {sdrc_init_done,joy_rx[1][3:0],joy_rx[1][7:5]}; //for test
 
   // Joypad handling
   always @(posedge clk3) begin
@@ -233,9 +233,6 @@ assign UART_TXD = uart_txp;
 reg tick;       // pulse every 0.01 second
 reg print_stat; // pulse every 2 seconds
 
-reg [19:0] timer;           // 37 times per second
-always @(posedge clk3) timer <= timer + 1;
-
 reg [19:0] tick_counter;
 reg [9:0] stat_counter;
 always @(posedge clk3) begin
@@ -259,6 +256,7 @@ wire monitor_en;
   //-------------------
 
 //wire [9:0] lcd_x,lcd_y;
+
 vga_timing vga_timing_m0(
     .clk (clk_p),
     .rst (!sys_resetn),
@@ -273,12 +271,14 @@ vga_timing vga_timing_m0(
   //---------------
   //画面データ生成
   //----------------
+/*
 reg [15:0] field_data;
  
 assign field_data = {dvi_x[11:7], dvi_y[10:5], 5'h18};
 
 logic input_buffer;
 logic input_buffer_counter;
+
 always @(posedge out_de)begin
     if(input_buffer_counter == 0)begin
         input_buffer <= 1;
@@ -286,29 +286,29 @@ always @(posedge out_de)begin
         input_buffer <= 0;
     end    
     input_buffer_counter <= input_buffer_counter + 8'd1;
-end
+end*/
 
 logic[1:0] sdrc_dqm;
 logic sdrc_rd_n;
 
 	Video_Frame_Buffer_SDRAM frameBuffer_SDRAM(
 		.I_rst_n(sys_resetn),     //input I_rst_n
-		.I_dma_clk(sdram_clk45   ), //input I_dma_clk
+		.I_dma_clk(   ), //input I_dma_clk  sdram_clk45
 
 		.I_wr_halt(         ),    //input [0:0] I_wr_halt
 		.I_rd_halt(           ),  //input [0:0] I_rd_halt
 
-		.I_vin0_clk(clk_p),           //input I_vin0_clk               cmos_16bit_clk
-		.I_vin0_vs_n(!syn_off0_vs  ),  //input I_vin0_vs_n              ~cmos_vsync
-		.I_vin0_de(input_buffer),           //input I_vin0_de                cmos_16bit_wr
-		.I_vin0_data(field_data  ),   //input [15:0] I_vin0_data       write_data
+		.I_vin0_clk(),           //input I_vin0_clk               cmos_16bit_clk  clk_p
+		.I_vin0_vs_n(  ),  //input I_vin0_vs_n              ~cmos_vsync  !syn_off0_vs
+		.I_vin0_de(),           //input I_vin0_de                cmos_16bit_wr  input_buffer
+		.I_vin0_data(  ),   //input [15:0] I_vin0_data       write_data  field_data
 		.O_vin0_fifo_full(        ),  //output O_vin0_fifo_full
 
-		.I_vout0_clk(clk_p    ),      //input I_vout0_clk              video_clk
-		.I_vout0_vs_n(~syn_off0_vs),  //input I_vout0_vs_n
-		.I_vout0_de(out_de        ),  //input I_vout0_de                        camera_de
-		.O_vout0_den(off0_syn_de  ),  //output O_vout0_den  
-		.O_vout0_data(off0_syn_data), //output [15:0] O_vout0_data
+		.I_vout0_clk(    ),      //input I_vout0_clk              video_clk  clk_p
+		.I_vout0_vs_n(),  //input I_vout0_vs_n  ~syn_off0_vs
+		.I_vout0_de(        ),  //input I_vout0_de                        camera_de out_de
+		.O_vout0_den(  ),  //output O_vout0_den  off0_syn_de
+		.O_vout0_data(), //output [15:0] O_vout0_data off0_syn_data
 		.O_vout0_fifo_empty(       ), //output O_vout0_fifo_empty
 
 		.I_sdrc_busy_n(sdrc_busy_n   ), //input I_sdrc_busy_n
@@ -335,8 +335,8 @@ SDRAM_controller_top_SIP sdram_controller0( // IPUG279-1.3J  P.7
 		.O_sdram_ba(O_sdram_ba      ),      //output [1:0] O_sdram_ba
 		.IO_sdram_dq(IO_sdram_dq    ),      // [15:0] IO_sdram_dq
 		.I_sdrc_rst_n(sys_resetn    ),      // リセット
-		.I_sdrc_clk(sdram_clk45    ),      // I_sdrc_clk コントローラ動作クロック
-        .I_sdram_clk(sdram_clk     ),      // I_sdram_clk SDRAM動作クロック
+		.I_sdrc_clk(    ),      // I_sdrc_clk コントローラ動作クロックsdram_clk45
+        .I_sdram_clk(     ),      // I_sdram_clk SDRAM動作クロックsdram_clk
 		.I_sdrc_selfrefresh(1'b0 ),         // I_sdrc_selfrefresh セルフリフレッシュ制御(1:有効, 0:無効)
 		.I_sdrc_power_down(1'b0  ),         // I_sdrc_power_down 低消費電力制御(1:有効, 0:無効)
 		.I_sdrc_wr_n(sdrc_wr_n  ),          // I_sdrc_wr_n 書込イネーブル

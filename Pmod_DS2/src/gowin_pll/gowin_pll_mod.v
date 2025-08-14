@@ -5,8 +5,7 @@
 //Part Number: GW5A-LV25MG121NES
 //Device: GW5A-25
 //Device Version: A
-//Created Time: Thu Aug 14 12:54:08 2025
-`default_nettype wire
+//Created Time: Thu Aug 14 20:25:26 2025
 
 module Gowin_PLL_MOD (lock, clkout0, clkout1, clkout2, clkout3, mdrdo, clkin, reset, mdclk, mdopc, mdainc, mdwdi);
 
@@ -141,4 +140,3 @@ defparam PLLA_inst.LPF_CAP = 2'b00;
 defparam PLLA_inst.SSC_EN = "FALSE";
 
 endmodule //Gowin_PLL_MOD
-`default_nettype none
