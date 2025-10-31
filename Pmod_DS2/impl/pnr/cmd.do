@@ -1,9 +1,9 @@
--d C:\Git\Pmod\Pmod_DS2\impl\gwsynthesis\nes.vg
+-d H:\git\Pmod\Pmod_DS2\impl\gwsynthesis\nes.vg
 -p GW5A-25A-MBGA121N-1
 -pn GW5A-LV25MG121NES
--cst C:\Git\Pmod\Pmod_DS2\src\nestang.cst
--cfg C:\Git\Pmod\Pmod_DS2\impl\pnr\device.cfg
--sdc C:\Git\Pmod\Pmod_DS2\src\nes.sdc
+-cst H:\git\Pmod\Pmod_DS2\src\nestang.cst
+-cfg H:\git\Pmod\Pmod_DS2\impl\pnr\device.cfg
+-sdc H:\git\Pmod\Pmod_DS2\src\nes.sdc
 -bit
 -tr
 -ph
