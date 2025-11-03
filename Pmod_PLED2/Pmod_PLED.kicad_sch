@@ -1292,6 +1292,263 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "samacsys:2SC2712-BL_F_"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 13.97 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "2SC2712-BL_F_"
+				(at 13.97 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "RN1402LF"
+				(at 13.97 -101.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://uk.rs-online.com/web/p/products/6011567"
+				(at 13.97 -201.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Description" "Transistor Toshiba 2SC2712-BL(F) NPN Bipolar Transistor, 0.15 A, 50 V, 3-Pin SC-59"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" "1"
+				(at 13.97 -401.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "RS Part Number" "6011567"
+				(at 13.97 -501.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "RS Price/Stock" "http://uk.rs-online.com/web/p/products/6011567"
+				(at 13.97 -601.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Toshiba"
+				(at 13.97 -701.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "2SC2712-BL(F)"
+				(at 13.97 -801.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(symbol "2SC2712-BL_F__1_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 7.62 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 2.54) (xy 7.62 -2.54)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 1.27) (xy 10.16 3.81)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -1.27) (xy 10.16 -3.81)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 8.382 -2.54) (xy 8.89 -2.032) (xy 9.398 -3.048) (xy 8.382 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 8.89 0)
+					(radius 4.016)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 3.81) (xy 10.16 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 -3.81) (xy 10.16 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 7.62 270)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -7.62 90)
+					(length 2.54)
+					(name "E"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(junction
 		(at 85.725 125.095)
@@ -1300,10 +1557,28 @@
 		(uuid "0842da39-f72e-44fd-aba7-4111d4302262")
 	)
 	(junction
+		(at 113.665 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "093ed45f-4d1f-4eea-b541-19aa8551f6d3")
+	)
+	(junction
+		(at 114.3 169.545)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0e431ea5-b64e-4dc2-9b61-c29fc9979822")
+	)
+	(junction
 		(at 85.725 162.56)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1ea0bc99-59a7-4772-972d-5b988beb9b2e")
+	)
+	(junction
+		(at 144.78 112.395)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "59dd7ea1-da84-4bb3-8520-27722a79337f")
 	)
 	(junction
 		(at 167.64 130.175)
@@ -1312,10 +1587,28 @@
 		(uuid "633ee167-8a2b-42e2-a331-23a2e437aac6")
 	)
 	(junction
+		(at 116.84 103.505)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6b2d3142-4957-4389-bd29-caa4140092f0")
+	)
+	(junction
+		(at 139.7 147.955)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6b648f7f-ed28-4e59-b42a-e0000961e0ab")
+	)
+	(junction
 		(at 85.725 132.715)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8779ca92-6dac-46d8-a11e-c1639b0ce378")
+	)
+	(junction
+		(at 139.7 176.53)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a45bc543-fcac-4cc0-a34f-cdd62e822c9e")
 	)
 	(junction
 		(at 85.725 106.045)
@@ -1330,32 +1623,36 @@
 		(uuid "b18cb893-8058-4a2d-a17c-85838c6d5f39")
 	)
 	(junction
+		(at 117.475 130.175)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c8581936-03ec-46a7-96c2-a5e61b6dd095")
+	)
+	(junction
 		(at 85.725 154.94)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d6ffdded-1db9-4be2-8bc8-9f5cc10add81")
 	)
 	(junction
-		(at 132.715 165.1)
+		(at 113.665 140.335)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "db81fa83-3787-41c6-a077-d6bd5cc6ae99")
+		(uuid "e15c4e22-186e-4390-bb8f-c21564c03772")
 	)
 	(junction
-		(at 141.605 112.395)
+		(at 118.11 160.02)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "f8668517-9330-417d-afa1-f704bf369760")
+		(uuid "fb338c5c-28af-4d2f-8cd6-41c49da58860")
 	)
-	(junction
-		(at 132.715 135.255)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fe716aaf-991f-42e2-ae8b-1e7bc158d517")
+	(no_connect
+		(at 165.1 100.965)
+		(uuid "dba98459-c89d-47c2-95c6-4a3fe19d314e")
 	)
 	(wire
 		(pts
-			(xy 100.33 98.425) (xy 105.41 98.425)
+			(xy 93.98 98.425) (xy 93.345 98.425)
 		)
 		(stroke
 			(width 0)
@@ -1375,17 +1672,37 @@
 	)
 	(wire
 		(pts
-			(xy 132.715 165.1) (xy 132.715 135.255)
+			(xy 117.475 139.065) (xy 117.475 140.335)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0d7f591b-f0c7-49e3-8ab3-60dfeda53068")
+		(uuid "0957668a-ea3f-4647-9374-a887aa627007")
 	)
 	(wire
 		(pts
-			(xy 141.605 98.425) (xy 141.605 112.395)
+			(xy 116.84 103.505) (xy 118.745 103.505)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a252299-c5b5-40ea-8b94-8e293df4fc61")
+	)
+	(wire
+		(pts
+			(xy 126.365 170.18) (xy 126.365 172.085)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c9bd071-7a75-4a11-a120-2d1622e2c86e")
+	)
+	(wire
+		(pts
+			(xy 144.78 98.425) (xy 144.78 112.395)
 		)
 		(stroke
 			(width 0)
@@ -1395,23 +1712,53 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 125.095) (xy 85.725 125.095)
+			(xy 113.665 130.175) (xy 117.475 130.175)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1c16948f-292c-49f4-a483-c4b71af058db")
+		(uuid "200a0e75-5cc1-4e89-a941-b8c2dd8354df")
 	)
 	(wire
 		(pts
-			(xy 105.41 106.045) (xy 85.725 106.045)
+			(xy 139.7 147.955) (xy 139.7 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23e5de84-f2a6-4570-a319-ad412974bb84")
+	)
+	(wire
+		(pts
+			(xy 118.11 160.02) (xy 118.745 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f3fd0dc-e270-427a-a98b-51bc9444d77b")
+	)
+	(wire
+		(pts
+			(xy 93.345 106.045) (xy 85.725 106.045)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "2f4f85d1-e243-4274-970e-801a25f0c4e7")
+	)
+	(wire
+		(pts
+			(xy 135.255 130.175) (xy 133.985 130.175)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "330546b9-1cb4-4860-9ef1-0c32995b0b0c")
 	)
 	(wire
 		(pts
@@ -1425,7 +1772,37 @@
 	)
 	(wire
 		(pts
-			(xy 85.725 162.56) (xy 105.41 162.56)
+			(xy 117.475 130.175) (xy 118.745 130.175)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3764e5d5-7bb3-4b3e-a498-b97a065131ae")
+	)
+	(wire
+		(pts
+			(xy 117.475 140.335) (xy 113.665 140.335)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3789c55e-3f41-4d30-90ba-f441b7aa107d")
+	)
+	(wire
+		(pts
+			(xy 113.665 147.955) (xy 113.665 140.335)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bfb473a-c349-4c0e-a005-673f79535521")
+	)
+	(wire
+		(pts
+			(xy 85.725 162.56) (xy 93.98 162.56)
 		)
 		(stroke
 			(width 0)
@@ -1435,13 +1812,33 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 165.1) (xy 132.715 165.1)
+			(xy 113.665 111.76) (xy 116.84 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "409cfcdf-5db8-42dc-a63c-ec1c0b225d52")
+	)
+	(wire
+		(pts
+			(xy 114.3 176.53) (xy 139.7 176.53)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "48083429-df42-43e2-9c8d-39847a8d7772")
+	)
+	(wire
+		(pts
+			(xy 113.665 103.505) (xy 116.84 103.505)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "48de89e8-f95c-408a-83cd-ab85097663d9")
 	)
 	(wire
 		(pts
@@ -1455,7 +1852,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 154.94) (xy 141.605 154.94)
+			(xy 114.3 154.94) (xy 144.78 154.94)
 		)
 		(stroke
 			(width 0)
@@ -1465,7 +1862,17 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 98.425) (xy 85.725 98.425)
+			(xy 165.1 95.885) (xy 168.91 95.885)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4cfe049d-330b-4934-bd91-365c006260a0")
+	)
+	(wire
+		(pts
+			(xy 86.36 98.425) (xy 85.725 98.425)
 		)
 		(stroke
 			(width 0)
@@ -1475,13 +1882,43 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 130.175) (xy 167.64 165.1)
+			(xy 167.64 130.175) (xy 167.64 176.53)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "53f8de98-cdd0-4de2-919a-6137586611aa")
+	)
+	(wire
+		(pts
+			(xy 114.3 169.545) (xy 118.11 169.545)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54ffe6b2-43a4-4b9c-a15f-4533fdfe5d16")
+	)
+	(wire
+		(pts
+			(xy 135.89 103.505) (xy 135.89 107.315)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58f2a1af-6b16-42b6-b369-1bb9a5e1f064")
+	)
+	(wire
+		(pts
+			(xy 113.665 108.585) (xy 113.665 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61f82e40-79ae-4f2b-9e1f-d1f232b25299")
 	)
 	(wire
 		(pts
@@ -1505,7 +1942,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.715 135.255) (xy 125.73 135.255)
+			(xy 113.665 147.955) (xy 139.7 147.955)
 		)
 		(stroke
 			(width 0)
@@ -1535,7 +1972,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 125.095) (xy 149.225 125.095)
+			(xy 113.665 125.095) (xy 149.225 125.095)
 		)
 		(stroke
 			(width 0)
@@ -1545,7 +1982,17 @@
 	)
 	(wire
 		(pts
-			(xy 141.605 154.94) (xy 141.605 130.175)
+			(xy 113.665 111.76) (xy 113.665 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7543c905-b81c-4079-b7b3-f133475dac1e")
+	)
+	(wire
+		(pts
+			(xy 144.78 154.94) (xy 144.78 130.175)
 		)
 		(stroke
 			(width 0)
@@ -1555,7 +2002,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.925 112.395) (xy 141.605 112.395)
+			(xy 161.925 112.395) (xy 144.78 112.395)
 		)
 		(stroke
 			(width 0)
@@ -1565,7 +2012,47 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 108.585) (xy 132.715 108.585)
+			(xy 86.36 125.095) (xy 85.725 125.095)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8032118b-caf6-40b3-8db8-24375055d811")
+	)
+	(wire
+		(pts
+			(xy 135.255 130.175) (xy 135.255 133.985)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84639e1a-3c9b-4d16-be8f-a9123f05b013")
+	)
+	(wire
+		(pts
+			(xy 126.365 114.935) (xy 128.905 114.935)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "860c9181-a95d-4a39-8a0b-6e30a7034f4d")
+	)
+	(wire
+		(pts
+			(xy 114.3 160.02) (xy 118.11 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "86c116f2-ee55-419d-9168-74e0f9a4119a")
+	)
+	(wire
+		(pts
+			(xy 113.665 118.11) (xy 139.7 118.11)
 		)
 		(stroke
 			(width 0)
@@ -1575,23 +2062,63 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 154.94) (xy 105.41 154.94)
+			(xy 114.3 165.1) (xy 114.3 169.545)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8ee799c7-df57-4ac7-b3cf-2e2b55511600")
+		(uuid "88d5b114-7d23-445c-9882-da981388f3a4")
 	)
 	(wire
 		(pts
-			(xy 141.605 120.015) (xy 149.225 120.015)
+			(xy 139.7 176.53) (xy 167.64 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "913141c2-e9a6-4270-a194-d5812ef0e82e")
+	)
+	(wire
+		(pts
+			(xy 126.365 114.935) (xy 126.365 113.665)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "959b90d0-aa74-42e1-9368-f06771487746")
+	)
+	(wire
+		(pts
+			(xy 126.365 140.335) (xy 126.365 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96139811-4dd8-4111-80e5-c063da5340b0")
+	)
+	(wire
+		(pts
+			(xy 144.78 120.015) (xy 149.225 120.015)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "9c531aa5-c36b-4492-82a1-fc2b93496b17")
+	)
+	(wire
+		(pts
+			(xy 165.1 93.345) (xy 168.91 93.345)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5762049-a2cf-487b-a428-5cebae8f7d5f")
 	)
 	(wire
 		(pts
@@ -1605,13 +2132,23 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 165.1) (xy 132.715 165.1)
+			(xy 117.475 130.175) (xy 117.475 131.445)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "af8a8b5a-c58e-485c-9e3b-f0592471b642")
+		(uuid "adc8c3aa-cdaf-462c-bc1b-7d4c006e622c")
+	)
+	(wire
+		(pts
+			(xy 139.7 118.11) (xy 139.7 147.955)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "afec55e0-fcc7-4b62-a6fc-37475118cfd6")
 	)
 	(wire
 		(pts
@@ -1622,6 +2159,26 @@
 			(type default)
 		)
 		(uuid "b13c381c-a132-4e5b-aedf-eba58563b4a1")
+	)
+	(wire
+		(pts
+			(xy 116.84 111.76) (xy 116.84 111.125)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b608a813-54cd-4da2-bbf1-dd39fde58167")
+	)
+	(wire
+		(pts
+			(xy 118.11 169.545) (xy 118.11 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "befd8d3a-377f-4dbb-a379-dc277c99b350")
 	)
 	(wire
 		(pts
@@ -1645,7 +2202,7 @@
 	)
 	(wire
 		(pts
-			(xy 141.605 112.395) (xy 141.605 120.015)
+			(xy 144.78 112.395) (xy 144.78 120.015)
 		)
 		(stroke
 			(width 0)
@@ -1655,7 +2212,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 154.94) (xy 85.725 154.94)
+			(xy 86.36 154.94) (xy 85.725 154.94)
 		)
 		(stroke
 			(width 0)
@@ -1665,7 +2222,17 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 98.425) (xy 141.605 98.425)
+			(xy 118.11 160.02) (xy 118.11 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca43fca7-6b38-4920-8136-b18166c51e2e")
+	)
+	(wire
+		(pts
+			(xy 113.665 98.425) (xy 144.78 98.425)
 		)
 		(stroke
 			(width 0)
@@ -1685,6 +2252,46 @@
 	)
 	(wire
 		(pts
+			(xy 135.255 160.02) (xy 135.255 164.465)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ccad953f-3d9d-4a5e-b6d2-6fc5ced1d5a6")
+	)
+	(wire
+		(pts
+			(xy 113.665 140.335) (xy 113.665 135.255)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0caeab0-8240-439f-be24-a045832e60e4")
+	)
+	(wire
+		(pts
+			(xy 133.985 103.505) (xy 135.89 103.505)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d42e899b-04b4-4522-8614-4296ebab4a53")
+	)
+	(wire
+		(pts
+			(xy 126.365 172.085) (xy 128.905 172.085)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d54540be-c8f6-45a2-ba80-11d910f78d16")
+	)
+	(wire
+		(pts
 			(xy 159.385 120.015) (xy 167.64 120.015)
 		)
 		(stroke
@@ -1695,7 +2302,17 @@
 	)
 	(wire
 		(pts
-			(xy 141.605 130.175) (xy 149.225 130.175)
+			(xy 126.365 142.24) (xy 128.27 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da80e423-b6f6-43db-a341-a65d63ece283")
+	)
+	(wire
+		(pts
+			(xy 144.78 130.175) (xy 149.225 130.175)
 		)
 		(stroke
 			(width 0)
@@ -1705,17 +2322,37 @@
 	)
 	(wire
 		(pts
-			(xy 132.715 108.585) (xy 132.715 135.255)
+			(xy 165.1 98.425) (xy 168.91 98.425)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "eafb8b10-7bba-46cc-8acd-01e4ce1506a3")
+		(uuid "df705f28-e60f-46ea-9a60-e3f0a0dd0e44")
 	)
 	(wire
 		(pts
-			(xy 100.33 125.095) (xy 105.41 125.095)
+			(xy 114.3 176.53) (xy 114.3 169.545)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2a27e23-e5cc-4802-a8d5-9202a633b591")
+	)
+	(wire
+		(pts
+			(xy 133.985 160.02) (xy 135.255 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb8c9097-03c6-4be6-85c0-e80d2b2b41b4")
+	)
+	(wire
+		(pts
+			(xy 93.98 125.095) (xy 93.345 125.095)
 		)
 		(stroke
 			(width 0)
@@ -1725,7 +2362,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 132.715) (xy 85.725 132.715)
+			(xy 93.345 132.715) (xy 85.725 132.715)
 		)
 		(stroke
 			(width 0)
@@ -1743,6 +2380,36 @@
 		)
 		(uuid "ff42a275-3b65-4bc0-aaaf-822fe7dae3d8")
 	)
+	(label "EN_G"
+		(at 128.27 142.24 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2d7ad446-11d4-49e5-8919-f30d84d59b97")
+	)
+	(label "EN_R"
+		(at 168.91 93.345 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5cbd7d1a-b668-4953-8a4a-970e73f20054")
+	)
+	(label "EN_B"
+		(at 128.905 172.085 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5eb8a074-8810-4ab2-a403-0c2a9025d02b")
+	)
 	(label "VCC"
 		(at 167.64 114.3 0)
 		(effects
@@ -1754,7 +2421,7 @@
 		(uuid "6fa68491-2cd3-4a14-a21b-e0e3d8496a8e")
 	)
 	(label "Anode_G"
-		(at 135.89 125.095 0)
+		(at 141.605 125.095 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1764,7 +2431,7 @@
 		(uuid "71b026c8-0147-4400-8d33-426ee864f3a9")
 	)
 	(label "Anode_R"
-		(at 141.605 98.425 0)
+		(at 144.78 98.425 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1773,8 +2440,38 @@
 		)
 		(uuid "7ae42fdf-af77-4d99-ac9d-c08e66ef2fb4")
 	)
+	(label "EN_G"
+		(at 168.91 95.885 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8e32fe69-6085-49f3-b97b-d0e0d7796bd8")
+	)
+	(label "EN_R"
+		(at 128.905 114.935 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ad4070ee-fa95-49fc-9a0d-de751c0f964f")
+	)
+	(label "EN_B"
+		(at 168.91 98.425 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c0cae17c-6dc6-4638-8318-5d7abffad1bb")
+	)
 	(label "Anode_B"
-		(at 141.605 154.94 0)
+		(at 144.78 154.94 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1864,7 +2561,7 @@
 	(symbol
 		(lib_name "NJW4617DL3_1")
 		(lib_id "MyLibrary:NJW4617DL3")
-		(at 115.57 161.29 0)
+		(at 104.14 161.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1873,7 +2570,7 @@
 		(fields_autoplaced yes)
 		(uuid "13bc774f-e082-41da-b04a-2de00544f7bb")
 		(property "Reference" "U3"
-			(at 115.57 147.955 0)
+			(at 104.14 147.955 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1881,7 +2578,7 @@
 			)
 		)
 		(property "Value" "NJW4617"
-			(at 115.57 150.495 0)
+			(at 104.14 150.495 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1889,7 +2586,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:TO-252-5_TabPin3"
-			(at 108.458 167.894 0)
+			(at 97.028 167.894 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1900,7 +2597,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 161.29 0)
+			(at 104.14 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1909,7 +2606,7 @@
 			)
 		)
 		(property "Description" "2.5 - 40V, 20m - 500mA, PWM LED Driver"
-			(at 129.54 170.434 0)
+			(at 118.11 170.434 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2021,32 +2718,31 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 96.52 125.095 90)
+		(at 117.475 135.255 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3ef57307-0594-4fc0-94ab-e620d55886c0")
-		(property "Reference" "R1"
-			(at 96.52 119.38 90)
+		(uuid "2f6826cd-e0c9-4a74-a7d7-795940e0dae3")
+		(property "Reference" "R5"
+			(at 115.57 135.255 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "10"
-			(at 96.52 121.92 90)
+		(property "Value" "10k"
+			(at 117.475 135.255 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 96.52 126.873 90)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 119.253 135.255 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2055,7 +2751,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 96.52 125.095 0)
+			(at 117.475 135.255 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2064,7 +2760,197 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 96.52 125.095 0)
+			(at 117.475 135.255 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f1fa4824-8f21-4616-8c3e-be3df124af29")
+		)
+		(pin "2"
+			(uuid "a6de2f45-e432-43c5-ab15-46ae24f6a2bb")
+		)
+		(instances
+			(project "Pmod_PLED"
+				(path "/d5200c1e-908a-4e72-95f9-aca3b7bcc08a"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "samacsys:2SC2712-BL_F_")
+		(at 126.365 113.665 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "308fa5f3-966a-4065-ba9c-f048424598c2")
+		(property "Reference" "Q1"
+			(at 126.365 102.87 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2SC2712-BL_F_"
+			(at 126.365 98.425 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "samacsys:RN1402LF"
+			(at 227.635 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://uk.rs-online.com/web/p/products/6011567"
+			(at 327.635 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Transistor Toshiba 2SC2712-BL(F) NPN Bipolar Transistor, 0.15 A, 50 V, 3-Pin SC-59"
+			(at 126.365 113.665 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1"
+			(at 527.635 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "RS Part Number" "6011567"
+			(at 627.635 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "RS Price/Stock" "http://uk.rs-online.com/web/p/products/6011567"
+			(at 727.635 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Toshiba"
+			(at 827.635 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "2SC2712-BL(F)"
+			(at 927.635 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0dda7e17-1c63-4ff6-9828-93eee1cc5d84")
+		)
+		(pin "2"
+			(uuid "bf540e7b-3609-409c-986a-d7e8d4debf0e")
+		)
+		(pin "3"
+			(uuid "c250bb1a-25d8-4456-943a-1397a90cc53d")
+		)
+		(instances
+			(project ""
+				(path "/d5200c1e-908a-4e72-95f9-aca3b7bcc08a"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 90.17 125.095 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3ef57307-0594-4fc0-94ab-e620d55886c0")
+		(property "Reference" "R1"
+			(at 90.17 119.38 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10"
+			(at 90.17 121.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 90.17 126.873 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 90.17 125.095 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 90.17 125.095 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2088,9 +2974,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 116.84 107.315 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4a50a415-10df-4187-9492-6103ae572bed")
+		(property "Reference" "R4"
+			(at 114.935 107.315 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 116.84 107.315 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 118.618 107.315 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 116.84 107.315 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 116.84 107.315 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "970f6036-f1a0-43e2-858a-ccbbcb5f724c")
+		)
+		(pin "2"
+			(uuid "5666fe10-1bba-4335-9f75-19977e71e067")
+		)
+		(instances
+			(project ""
+				(path "/d5200c1e-908a-4e72-95f9-aca3b7bcc08a"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "NJW4617DL3_1")
 		(lib_id "MyLibrary:NJW4617DL3")
-		(at 115.57 104.775 0)
+		(at 103.505 104.775 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2099,7 +3052,7 @@
 		(fields_autoplaced yes)
 		(uuid "59fa60b8-bf90-42e5-8827-5777a389cd1e")
 		(property "Reference" "U1"
-			(at 115.57 91.44 0)
+			(at 103.505 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2107,7 +3060,7 @@
 			)
 		)
 		(property "Value" "NJW4617"
-			(at 115.57 93.98 0)
+			(at 103.505 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2115,7 +3068,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:TO-252-5_TabPin3"
-			(at 108.458 111.379 0)
+			(at 96.393 111.379 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2126,7 +3079,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 104.775 0)
+			(at 103.505 104.775 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2135,7 +3088,7 @@
 			)
 		)
 		(property "Description" "2.5 - 40V, 20m - 500mA, PWM LED Driver"
-			(at 129.54 113.919 0)
+			(at 117.475 113.919 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2169,7 +3122,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 96.52 154.94 90)
+		(at 90.17 154.94 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2178,7 +3131,7 @@
 		(fields_autoplaced yes)
 		(uuid "5dfe1a80-f3b3-4d28-9185-b3d0834b4a9a")
 		(property "Reference" "R3"
-			(at 96.52 149.225 90)
+			(at 90.17 149.225 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2186,15 +3139,15 @@
 			)
 		)
 		(property "Value" "10"
-			(at 96.52 151.765 90)
+			(at 90.17 151.765 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 96.52 156.718 90)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 90.17 156.718 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2203,7 +3156,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 96.52 154.94 0)
+			(at 90.17 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2212,7 +3165,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 96.52 154.94 0)
+			(at 90.17 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2230,6 +3183,70 @@
 			(project "Pmod_PLED"
 				(path "/d5200c1e-908a-4e72-95f9-aca3b7bcc08a"
 					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 135.255 164.465 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "62cb4306-ec50-4d89-9282-4f9871047b03")
+		(property "Reference" "#PWR05"
+			(at 135.255 170.815 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 132.715 167.005 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 135.255 164.465 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 135.255 164.465 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 135.255 164.465 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7889043f-4e21-4e95-a421-7c1db0f3a68b")
+		)
+		(instances
+			(project "Pmod_PLED"
+				(path "/d5200c1e-908a-4e72-95f9-aca3b7bcc08a"
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -2366,9 +3383,384 @@
 		)
 	)
 	(symbol
+		(lib_id "samacsys:2SC2712-BL_F_")
+		(at 126.365 170.18 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "984e79b6-bae0-4d90-9c1d-94913fad667d")
+		(property "Reference" "Q3"
+			(at 126.365 159.385 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2SC2712-BL_F_"
+			(at 126.365 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "samacsys:RN1402LF"
+			(at 227.635 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://uk.rs-online.com/web/p/products/6011567"
+			(at 327.635 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Transistor Toshiba 2SC2712-BL(F) NPN Bipolar Transistor, 0.15 A, 50 V, 3-Pin SC-59"
+			(at 126.365 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1"
+			(at 527.635 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "RS Part Number" "6011567"
+			(at 627.635 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "RS Price/Stock" "http://uk.rs-online.com/web/p/products/6011567"
+			(at 727.635 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Toshiba"
+			(at 827.635 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "2SC2712-BL(F)"
+			(at 927.635 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2c8642bc-61c3-4a99-9375-68b9027918c5")
+		)
+		(pin "2"
+			(uuid "befd4caa-4836-40ff-888e-b689a86fff78")
+		)
+		(pin "3"
+			(uuid "c8fbe33a-bec9-452f-8a13-31575757ec95")
+		)
+		(instances
+			(project "Pmod_PLED"
+				(path "/d5200c1e-908a-4e72-95f9-aca3b7bcc08a"
+					(reference "Q3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 135.255 133.985 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a91388d9-9ee9-4019-b82f-f9465261307c")
+		(property "Reference" "#PWR04"
+			(at 135.255 140.335 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 132.715 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 135.255 133.985 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 135.255 133.985 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 135.255 133.985 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b1c2bed1-94c4-4397-9f50-cc7c08134bba")
+		)
+		(instances
+			(project "Pmod_PLED"
+				(path "/d5200c1e-908a-4e72-95f9-aca3b7bcc08a"
+					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "samacsys:2SC2712-BL_F_")
+		(at 126.365 140.335 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b6360edb-50a3-40c2-8c02-eb35d9fd9c2a")
+		(property "Reference" "Q2"
+			(at 126.365 129.54 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2SC2712-BL_F_"
+			(at 126.365 125.095 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "samacsys:RN1402LF"
+			(at 227.635 126.365 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://uk.rs-online.com/web/p/products/6011567"
+			(at 327.635 126.365 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Transistor Toshiba 2SC2712-BL(F) NPN Bipolar Transistor, 0.15 A, 50 V, 3-Pin SC-59"
+			(at 126.365 140.335 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1"
+			(at 527.635 126.365 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "RS Part Number" "6011567"
+			(at 627.635 126.365 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "RS Price/Stock" "http://uk.rs-online.com/web/p/products/6011567"
+			(at 727.635 126.365 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Toshiba"
+			(at 827.635 126.365 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "2SC2712-BL(F)"
+			(at 927.635 126.365 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e3f5a58f-2d03-4cc5-9f86-d51e162ed33a")
+		)
+		(pin "2"
+			(uuid "3afb71ae-5a32-4221-a3ab-71d4cc3681d3")
+		)
+		(pin "3"
+			(uuid "73e35c72-925c-4c91-ac10-c11c7a719ce6")
+		)
+		(instances
+			(project "Pmod_PLED"
+				(path "/d5200c1e-908a-4e72-95f9-aca3b7bcc08a"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 118.11 165.1 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bac452b0-ced0-455f-b552-d94b626bab65")
+		(property "Reference" "R6"
+			(at 116.205 165.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 118.11 165.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 119.888 165.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 118.11 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 118.11 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "585a36d9-93c4-446a-a32b-c08b8ee3dbf1")
+		)
+		(pin "2"
+			(uuid "dcf0cefb-1070-46fc-bdb2-b7b8c470501a")
+		)
+		(instances
+			(project "Pmod_PLED"
+				(path "/d5200c1e-908a-4e72-95f9-aca3b7bcc08a"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "NJW4617DL3_1")
 		(lib_id "MyLibrary:NJW4617DL3")
-		(at 115.57 131.445 0)
+		(at 103.505 131.445 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2377,7 +3769,7 @@
 		(fields_autoplaced yes)
 		(uuid "bf54951d-c306-41c8-9ffc-706aa60dea08")
 		(property "Reference" "U2"
-			(at 115.57 118.11 0)
+			(at 103.505 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2385,7 +3777,7 @@
 			)
 		)
 		(property "Value" "NJW4617"
-			(at 115.57 120.65 0)
+			(at 103.505 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2393,7 +3785,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:TO-252-5_TabPin3"
-			(at 108.458 138.049 0)
+			(at 96.393 138.049 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2404,7 +3796,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 131.445 0)
+			(at 103.505 131.445 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2413,7 +3805,7 @@
 			)
 		)
 		(property "Description" "2.5 - 40V, 20m - 500mA, PWM LED Driver"
-			(at 129.54 140.589 0)
+			(at 117.475 140.589 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2447,7 +3839,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 96.52 98.425 90)
+		(at 90.17 98.425 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2456,7 +3848,7 @@
 		(fields_autoplaced yes)
 		(uuid "cfba0a5c-681b-477e-93b4-d54988e3f1b8")
 		(property "Reference" "R2"
-			(at 96.52 92.71 90)
+			(at 90.17 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2464,15 +3856,15 @@
 			)
 		)
 		(property "Value" "10"
-			(at 96.52 95.25 90)
+			(at 90.17 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 96.52 100.203 90)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 90.17 100.203 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2481,7 +3873,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 96.52 98.425 0)
+			(at 90.17 98.425 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2490,7 +3882,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 96.52 98.425 0)
+			(at 90.17 98.425 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2508,6 +3900,70 @@
 			(project "Pmod_PLED"
 				(path "/d5200c1e-908a-4e72-95f9-aca3b7bcc08a"
 					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 135.89 107.315 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ec9c6423-430c-4afa-a982-8bc7b249375e")
+		(property "Reference" "#PWR02"
+			(at 135.89 113.665 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 133.35 109.855 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 135.89 107.315 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 135.89 107.315 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 135.89 107.315 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "eb819d83-dea4-437d-8548-35f42c7613e9")
+		)
+		(instances
+			(project "Pmod_PLED"
+				(path "/d5200c1e-908a-4e72-95f9-aca3b7bcc08a"
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
