@@ -1,23 +1,21 @@
 -d H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\impl\gwsynthesis\Pmod_PowerLED.vg
--p GW5AST-138C-FCPBGA676A-2
--pn GW5AST-LV138FPG676AC2/I1
+-p GW5A-25A-MBGA121N-1
+-pn GW5A-LV25MG121NES
 -cst H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\src\top.cst
 -cfg H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\impl\pnr\device.cfg
 -sdc H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\src\Pmod_PowerLED.sdc
--gao_crc 0010111010101011
+-gao_crc 1010110000100011
 -bit
 -tr
 -ph
 -timing
--ireg_not_in_iob
--oreg_not_in_iob
--ioreg_not_in_iob
 -cst_error
 -convert_sdp32_36_to_sdp16_18
--place_option 3
--route_option 2
+-place_option 0
+-route_option 0
 -clock_route_order 0
 -correct_hold 1
 -route_maxfan 23
 -global_freq 100.000
+-enable_dsrm 0
 -rtl_gao

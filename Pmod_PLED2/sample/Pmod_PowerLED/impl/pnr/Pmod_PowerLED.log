@@ -8,12 +8,12 @@ Running placement......
 [20%] Placement Phase 1 completed
 [30%] Placement Phase 2 completed
 WARN  (TA1132) :  'tck_pad_i' was determined to be a clock but was not created.
+WARN  (TA1132) :  'clk_10k' was determined to be a clock but was not created.
 [50%] Placement Phase 3 completed
 Running routing......
 [60%] Routing Phase 0 completed
 [70%] Routing Phase 1 completed
 [80%] Routing Phase 2 completed
-WARN  (PR1014) : Generic routing resource will be used to clock signal 'sys_clk_d' by the specified constraint. And then it may lead to the excessive delay or skew
 [90%] Routing Phase 3 completed
 Running timing analysis......
 [95%] Timing analysis completed
@@ -27,5 +27,5 @@ Generate file "H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\impl\pnr\Pmod_PowerLE
 Generate file "H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\impl\pnr\Pmod_PowerLED.rpt.html" completed
 Generate file "H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\impl\pnr\Pmod_PowerLED.rpt.txt" completed
 Generate file "H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\impl\pnr\Pmod_PowerLED.tr.html" completed
-Sat Nov 22 21:52:49 2025
+Sun Nov 23 00:42:31 2025
 

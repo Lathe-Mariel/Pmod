@@ -24,19 +24,19 @@ Analyzing included file 'H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\impl\gwsynt
 Back to file 'H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
 Analyzing included file 'H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_init.v'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
 Back to file 'H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
-Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top_138.v'
-Analyzing included file 'H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\impl\gwsynthesis\RTL_GAO\ao_control\gw_con_top_define.v'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top_138.v":396)
-Back to file 'H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top_138.v'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top_138.v":396)
-Analyzing included file 'H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\impl\gwsynthesis\RTL_GAO\ao_control\gw_con_parameter.v'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top_138.v":396)
-Back to file 'H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top_138.v'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top_138.v":396)
+Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v'
+Analyzing included file 'H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\impl\gwsynthesis\RTL_GAO\ao_control\gw_con_top_define.v'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
+Back to file 'H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
+Analyzing included file 'H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\impl\gwsynthesis\RTL_GAO\ao_control\gw_con_parameter.v'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
+Back to file 'H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
 Analyzing Verilog file 'H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\gw_jtag.v'
 Analyzing Verilog file 'H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\impl\gwsynthesis\RTL_GAO\gw_gao_top.v'
 Compiling module 'top'("H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\src\top.sv":3)
 Compiling module 'Gowin_PLL'("H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\src\gowin_pll\gowin_pll.v":10)
-WARN  (EX3791) : Expression size 18 truncated to fit in target size 17("H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\src\top.sv":41)
+WARN  (EX3791) : Expression size 21 truncated to fit in target size 20("H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\src\top.sv":46)
 Compiling module 'gw_gao'("H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\impl\gwsynthesis\RTL_GAO\gw_gao_top.v":1)
 Compiling module 'GW_JTAG'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\gw_jtag.v":1)
-Compiling module '**'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top_138.v":396)
+Compiling module '**'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
 Compiling module '**'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":3042)
 Compiling module '**'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v":1256)
 Extracting RAM for identifier '**'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v":1256)
@@ -44,6 +44,7 @@ Compiling module '**'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_AO_
 Compiling module '**'("H:\Gowin\Gowin_V1.9.11.01_x64\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":374)
 Trying to combine GAO to RTL design
 NOTE  (EX0101) : Current top module is "top"
+WARN  (EX0211) : The output port "led" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\src\top.sv":8)
 WARN  (EX0211) : The output port "fan" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\src\top.sv":9)
 [5%] Running netlist conversion ...
 WARN  (CV0016) : Input switch1 is unused("H:\git\Pmod\Pmod_PLED2\sample\Pmod_PowerLED\src\top.sv":5)

@@ -2,7 +2,7 @@
 <GAO_CONFIG>
     <Version>3.0</Version>
     <Mode>Standard</Mode>
-    <AoCore index="0" sample_clock="clkout_10m" trig_type="0" storage_depth="16384" window_num="1" capture_amount="16384" implementation="0" trigger_pos="0" module_name="top" force_trigger_by_falling_edge="false" capture_init_data_enabled="false">
+    <AoCore index="0" sample_clock="clkout_10m" trig_type="0" storage_depth="2048" window_num="1" capture_amount="2048" implementation="0" trigger_pos="0" module_name="top" force_trigger_by_falling_edge="false" capture_init_data_enabled="false">
         <SignalList>
             <Bus capture_enable="true" name="color[2:0]">
                 <Signal>color[2]</Signal>
@@ -15,6 +15,7 @@
             <Signal capture_enable="true">counter[2]</Signal>
             <Signal capture_enable="true">counter[1]</Signal>
             <Signal capture_enable="true">counter[0]</Signal>
+            <Signal capture_enable="true">counter[17]</Signal>
         </SignalList>
         <Triggers>
             <Trigger index="0">
@@ -60,5 +61,5 @@
             <Expression>M0</Expression>
         </Expressions>
     </AoCore>
-    <GAO_ID>0010111010101011</GAO_ID>
+    <GAO_ID>1010110000100011</GAO_ID>
 </GAO_CONFIG>

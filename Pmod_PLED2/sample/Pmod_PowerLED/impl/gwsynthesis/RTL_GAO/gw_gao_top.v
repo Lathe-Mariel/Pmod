@@ -8,6 +8,7 @@ module gw_gao(
     \counter[2] ,
     \counter[1] ,
     \counter[0] ,
+    \counter[17] ,
     sys_clk,
     clkout_10m,
     tms_pad_i,
@@ -25,6 +26,7 @@ input pll_lock;
 input \counter[2] ;
 input \counter[1] ;
 input \counter[0] ;
+input \counter[17] ;
 input sys_clk;
 input clkout_10m;
 input tms_pad_i;
@@ -41,6 +43,7 @@ wire pll_lock;
 wire \counter[2] ;
 wire \counter[1] ;
 wire \counter[0] ;
+wire \counter[17] ;
 wire sys_clk;
 wire clkout_10m;
 wire tms_pad_i;
@@ -117,7 +120,7 @@ gw_con_top  u_icon_top(
 ao_top_0  u_la0_top(
     .control(control0[9:0]),
     .trig0_i(sys_clk),
-    .data_i({\color[2] ,\color[1] ,\color[0] ,reset,led,pll_lock,\counter[2] ,\counter[1] ,\counter[0] }),
+    .data_i({\color[2] ,\color[1] ,\color[0] ,reset,led,pll_lock,\counter[2] ,\counter[1] ,\counter[0] ,\counter[17] }),
     .clk_i(clkout_10m)
 );
 

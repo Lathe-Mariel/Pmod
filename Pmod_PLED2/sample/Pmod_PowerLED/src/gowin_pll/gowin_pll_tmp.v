@@ -2,10 +2,10 @@
 //All rights reserved.
 //File Title: Template file for instantiation
 //Tool Version: V1.9.11.01 (64-bit)
-//Part Number: GW5AST-LV138FPG676AC2/I1
-//Device: GW5AST-138
-//Device Version: C
-//Created Time: Sat Nov 22 21:51:18 2025
+//Part Number: GW5A-LV25MG121NES
+//Device: GW5A-25
+//Device Version: A
+//Created Time: Sat Nov 22 23:08:20 2025
 
 //Change the instance name and port connections to the signal names
 //--------Copy here to design--------
