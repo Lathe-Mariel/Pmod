@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="32" Alu="27" Lut="59">
-    <SubModule name="timer_instance" Register="10" Alu="8" Lut="4"/>
+<Module name="top" Register="22" Alu="16" Lut="10" T_Register="328(22)" T_Alu="33(16)" T_Lut="507(10)" T_Bsram="10(0)">
+ <SubModule name="your_instance_name"/>
+ <SubModule name="gw_gao_inst_0" Register="306" Alu="17" Lut="497" Bsram="10" T_Register="306(306)" T_Alu="17(17)" T_Lut="497(497)" T_Bsram="10(10)"/>
 </Module>

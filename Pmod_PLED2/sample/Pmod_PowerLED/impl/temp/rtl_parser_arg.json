@@ -1,8 +1,12 @@
 {
- "Device" : "GW2A-18C",
+ "Device" : "GW5AST-138C",
  "Files" : [
   {
-   "Path" : "E:/git/Pmod/Pmod_PLED2/sample/Pmod_PowerLED/src/top.sv",
+   "Path" : "H:/git/Pmod/Pmod_PLED2/sample/Pmod_PowerLED/src/gowin_pll/gowin_pll.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "H:/git/Pmod/Pmod_PLED2/sample/Pmod_PowerLED/src/top.sv",
    "Type" : "verilog"
   }
  ],
@@ -10,7 +14,7 @@
 
  ],
  "LoopLimit" : 2000,
- "ResultFile" : "E:/git/Pmod/Pmod_PLED2/sample/Pmod_PowerLED/impl/temp/rtl_parser.result",
+ "ResultFile" : "H:/git/Pmod/Pmod_PLED2/sample/Pmod_PowerLED/impl/temp/rtl_parser.result",
  "Top" : "top",
  "VerilogStd" : "sysv",
  "VhdlStd" : "vhdl_93"

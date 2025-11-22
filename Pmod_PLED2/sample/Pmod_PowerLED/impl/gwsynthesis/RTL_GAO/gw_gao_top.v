@@ -1,30 +1,48 @@
 module gw_gao(
-    \pwm_counter[3] ,
-    \pwm_counter[2] ,
-    \pwm_counter[1] ,
-    \pwm_counter[0] ,
-    \timer_instance/counter[11] ,
+    \color[2] ,
+    \color[1] ,
+    \color[0] ,
+    reset,
+    led,
+    pll_lock,
+    \counter[2] ,
+    \counter[1] ,
+    \counter[0] ,
+    sys_clk,
+    clkout_10m,
     tms_pad_i,
     tck_pad_i,
     tdi_pad_i,
     tdo_pad_o
 );
 
-input \pwm_counter[3] ;
-input \pwm_counter[2] ;
-input \pwm_counter[1] ;
-input \pwm_counter[0] ;
-input \timer_instance/counter[11] ;
+input \color[2] ;
+input \color[1] ;
+input \color[0] ;
+input reset;
+input led;
+input pll_lock;
+input \counter[2] ;
+input \counter[1] ;
+input \counter[0] ;
+input sys_clk;
+input clkout_10m;
 input tms_pad_i;
 input tck_pad_i;
 input tdi_pad_i;
 output tdo_pad_o;
 
-wire \pwm_counter[3] ;
-wire \pwm_counter[2] ;
-wire \pwm_counter[1] ;
-wire \pwm_counter[0] ;
-wire \timer_instance/counter[11] ;
+wire \color[2] ;
+wire \color[1] ;
+wire \color[0] ;
+wire reset;
+wire led;
+wire pll_lock;
+wire \counter[2] ;
+wire \counter[1] ;
+wire \counter[0] ;
+wire sys_clk;
+wire clkout_10m;
 wire tms_pad_i;
 wire tck_pad_i;
 wire tdi_pad_i;
@@ -96,10 +114,11 @@ gw_con_top  u_icon_top(
     .update_dr_i(update_dr)
 );
 
-ao_top u_ao_top(
+ao_top_0  u_la0_top(
     .control(control0[9:0]),
-    .data_i({\pwm_counter[3] ,\pwm_counter[2] ,\pwm_counter[1] ,\pwm_counter[0] }),
-    .clk_i(\timer_instance/counter[11] )
+    .trig0_i(sys_clk),
+    .data_i({\color[2] ,\color[1] ,\color[0] ,reset,led,pll_lock,\counter[2] ,\counter[1] ,\counter[0] }),
+    .clk_i(clkout_10m)
 );
 
 endmodule

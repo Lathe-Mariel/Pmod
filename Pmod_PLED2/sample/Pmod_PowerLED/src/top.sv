@@ -1,88 +1,57 @@
+`default_nettype none
+
 module top(
-input wire clk,
-input wire sw,
-output logic red,
-output logic blue,
-output logic green
-
+input wire sys_clk,
+input wire switch1,
+input wire switch2,
+input wire reset,
+output logic led,
+output logic fan,
+output logic color[2:0]
 );
 
-logic overflow;
+logic pll_lock;
+logic clkout_10m;
 
-//reg red=0;
-//reg blue=0;
-//reg green=0;
-//reg printf;
+    Gowin_PLL your_instance_name(
+        .lock(pll_lock), //output lock
+        .clkout0(clkout_10m), //output clkout0
+        .clkin(sys_clk), //input clkin
+        .reset(!reset) //input reset
+    );
 
-timer1 timer_instance(clk, overflow);
-reg[10:0] pwm_counter;
-reg[10:0] max='d1024;
-reg[7:0] change_pwm=0;
-reg inc = 0;
+/*primer25k
+    Gowin_PLL your_instance_name(
+        .lock(pll_lock), //output lock
+        .clkout0(clkout_10m), //output clkout0
+        .clkin(sys_clk), //input clkin
+        .reset() //input reset
+    );
+*/
 
-always @(posedge overflow)begin
-if(!sw)begin
-    red <= 1'd1;
-    green <= 1'd1;
-    blue <= 1'd1;
-end else begin
-    if(pwm_counter >= max)begin
-        red <= 1'd1;
-        green <= 1'd1;
-        blue <= 1'd1;
-        pwm_counter <= 'd0;
+logic[16:0] counter;
+logic clk_10k;
 
+
+always @(posedge clkout_10m)begin
+    if(counter >= 99999)begin
+        counter <= 0;
+        clk_10k <= 1;
     end else begin
-        red <= 1'd0;
-        green <= 1'd0;
-        blue <= 1'd0;
-        pwm_counter <= pwm_counter + 'd1;
+        counter <= counter + 'b1;
+        clk_10k <= 0;
     end
-    if(change_pwm == 0)begin
-        if(inc == 0)begin
-            if(max < 'd256)begin
-                max <= max - 'd1;
-            end else begin
-                max <= max - 'd4;
-            end
-            if(max <= 'd32)begin
-                inc <= 1;
-            end
-        end else begin
-            if(max < 'd256)begin
-                max <= max + 'd1;
-            end else begin
-                max <= max + 'd4;
-            end
-            if(max >= 'd1024)begin
-                inc <= 0;
-            end
-        end
-    end
-    change_pwm <= change_pwm + 'd1;
-end
+
 end
 
-endmodule
-
-module timer1 #(
-  parameter COUNT_MAX = 500
-) (
-  input  wire  clk,
-  output logic overflow
-);
-
-  logic [$clog2(COUNT_MAX+1)-1:0] counter = 'd0;
-
-  always_ff @ (posedge clk) begin
-    if (counter == COUNT_MAX) begin
-      counter  <= 'd0;
-      overflow <= 'd1;
+always @(posedge clk_10k)begin
+    if(!reset)begin
+        color <= {1,1,0};
     end else begin
-      counter  <= counter + 'd1;
-      overflow <= 'd0;
+        color <= {color[1:0], color[2]};
     end
-  end
+    led <= ~led;
+end
 endmodule
 
 `default_nettype wire

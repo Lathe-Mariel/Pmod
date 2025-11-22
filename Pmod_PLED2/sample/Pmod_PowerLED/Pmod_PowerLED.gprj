@@ -3,12 +3,13 @@
 <Project>
     <Template>FPGA</Template>
     <Version>5</Version>
-    <Device name="GW5A-25B" pn="GW5A-LV25MG121NC1/I0">gw5a25b-003</Device>
+    <Device name="GW5AST-138C" pn="GW5AST-LV138FPG676AC2/I1">gw5ast138c-002</Device>
     <FileList>
+        <File path="src/gowin_pll/gowin_pll.v" type="file.verilog" enable="1"/>
         <File path="src/timer.sv" type="file.verilog" enable="0"/>
         <File path="src/top.sv" type="file.verilog" enable="1"/>
         <File path="src/top.cst" type="file.cst" enable="1"/>
-        <File path="src/Pmod_PowerLED.rao" type="file.gao" enable="0"/>
-        <File path="src/Pmod_PowerLED2.rao" type="file.gao" enable="1"/>
+        <File path="src/Pmod_PowerLED.sdc" type="file.sdc" enable="1"/>
+        <File path="src/Pmod_PowerLED.rao" type="file.gao" enable="1"/>
     </FileList>
 </Project>
