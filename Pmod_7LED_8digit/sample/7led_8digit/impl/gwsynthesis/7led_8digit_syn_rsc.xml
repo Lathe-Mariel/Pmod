@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="frameBuffer_16x16" Register="25" Alu="4" Lut="32">
-    <SubModule name="ti" Register="11" Alu="9" Lut="4"/>
+<Module name="frameBuffer_16x16" Register="25" Alu="4" Lut="32" T_Register="36(25)" T_Alu="13(4)" T_Lut="36(32)">
+ <SubModule name="ti" Register="11" Alu="9" Lut="4" T_Register="11(11)" T_Alu="9(9)" T_Lut="4(4)"/>
 </Module>
