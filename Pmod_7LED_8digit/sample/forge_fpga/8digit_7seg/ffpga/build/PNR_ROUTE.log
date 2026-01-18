@@ -1,235 +1,422 @@
-net 2: 25 16 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 2: 27 18 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 2: 27 18 1 2 0 1 #timing (1196 1196) ps polarity 1
-net 2: 25 18 0 0 0 1 #timing (1196 1196) ps polarity 0
-net 3: 24 16 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 3: 26 18 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 3: 26 18 1 3 0 1 #timing (1196 1196) ps polarity 1
-net 3: 24 16 0 0 0 1 #timing (1196 1196) ps polarity 0
-net 3: 24 16 0 1 0 1 #timing (1196 1196) ps polarity 0
-net 4: 25 18 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 4: 27 16 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 4: 27 16 1 2 0 1 #timing (1196 1196) ps polarity 1
-net 4: 25 16 0 1 0 1 #timing (1196 1196) ps polarity 0
-net 4: 25 16 0 3 0 1 #timing (1196 1196) ps polarity 0
-net 5: 25 19 0 3 0 0 #timing (1050 1050) ps polarity 1
-net 5: 27 17 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 5: 27 17 1 2 0 1 #timing (1196 1196) ps polarity 1
-net 5: 25 17 0 2 0 1 #timing (1196 1196) ps polarity 0
-net 6: 24 19 0 2 0 0 #timing (1050 1050) ps polarity 1
-net 6: 26 17 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 6: 26 17 1 3 0 1 #timing (1196 1196) ps polarity 1
-net 6: 24 19 0 2 0 1 #timing (1196 1196) ps polarity 0
-net 7: 24 18 0 1 0 0 #timing (1050 1050) ps polarity 1
-net 7: 26 16 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 7: 26 16 3 1 0 1 #timing (1239 1239) ps polarity 0
-net 7: 26 20 1 2 0 1 #timing (1239 1239) ps polarity 1
-net 7: 24 20 0 0 0 1 #timing (1239 1239) ps polarity 0
-net 7: 24 20 0 1 0 1 #timing (1239 1239) ps polarity 0
-net 8: 25 21 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 8: 27 23 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 8: 27 23 1 3 0 1 #timing (1196 1196) ps polarity 1
-net 8: 25 21 0 0 0 1 #timing (1196 1196) ps polarity 0
-net 8: 25 21 0 2 0 1 #timing (1196 1196) ps polarity 0
-net 9: 24 21 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 9: 26 23 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 9: 26 23 1 3 0 1 #timing (1196 1196) ps polarity 1
-net 9: 24 21 0 0 0 1 #timing (1196 1196) ps polarity 0
-net 10: 25 22 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 10: 27 20 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 10: 27 20 3 4 0 1 #timing (1239 1239) ps polarity 0
-net 10: 27 24 1 2 0 1 #timing (1239 1239) ps polarity 1
-net 10: 25 24 0 0 0 1 #timing (1239 1239) ps polarity 0
-net 11: 24 23 0 1 0 0 #timing (1050 1050) ps polarity 1
-net 11: 26 21 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 11: 26 21 1 3 0 1 #timing (1196 1196) ps polarity 1
-net 11: 24 23 0 0 0 1 #timing (1196 1196) ps polarity 0
-net 11: 24 23 0 1 0 1 #timing (1196 1196) ps polarity 0
-net 12: 25 25 0 1 0 0 #timing (1050 1050) ps polarity 1
-net 12: 27 27 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 12: 27 27 3 4 0 1 #timing (1239 1239) ps polarity 0
-net 12: 27 23 1 2 0 1 #timing (1239 1239) ps polarity 1
-net 12: 25 23 0 0 0 1 #timing (1239 1239) ps polarity 0
-net 12: 25 23 0 2 0 1 #timing (1239 1239) ps polarity 0
-net 13: 24 24 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 13: 24 24 1 0 0 0 #timing (1134 1134) ps polarity 0
-net 13: 24 24 3 4 0 1 #timing (1239 1239) ps polarity 0
-net 13: 24 20 1 1 0 1 #timing (1239 1239) ps polarity 1
-net 13: 24 22 0 1 0 1 #timing (1239 1239) ps polarity 0
-net 14: 25 24 0 1 0 0 #timing (1050 1050) ps polarity 1
-net 14: 27 26 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 14: 27 26 1 3 0 1 #timing (1196 1196) ps polarity 1
-net 14: 25 24 0 1 0 1 #timing (1196 1196) ps polarity 0
-net 15: 24 25 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 15: 26 27 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 15: 26 27 1 2 0 1 #timing (1196 1196) ps polarity 1
-net 15: 24 27 0 0 0 1 #timing (1196 1196) ps polarity 0
-net 15: 24 27 0 1 0 1 #timing (1196 1196) ps polarity 0
-net 16: 25 27 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 16: 27 25 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 16: 27 25 1 3 0 1 #timing (1196 1196) ps polarity 1
-net 16: 25 27 0 0 0 1 #timing (1196 1196) ps polarity 0
-net 16: 25 27 0 2 0 1 #timing (1196 1196) ps polarity 0
-net 17: 25 26 0 3 0 0 #timing (1050 1050) ps polarity 1
-net 17: 27 24 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 17: 27 24 1 3 0 1 #timing (1196 1196) ps polarity 1
-net 17: 25 26 0 3 0 1 #timing (1196 1196) ps polarity 0
-net 18: 26 24 0 0 0 0 #timing (1050 1050) ps polarity 0
-net 18: 24 26 1 3 0 0 #timing (1134 1134) ps polarity 1
-net 18: 24 30 3 1 0 0 #timing (1218 1218) ps polarity 1
-net 18: 20 30 4 5 0 0 #timing (1260 1260) ps polarity 1
-net 18: 20 30 1 2 0 1 #timing (1281 1281) ps polarity 0
-net 18: 22 30 0 3 0 1 #timing (1281 1281) ps polarity 1
-net 18: 24 30 1 0 1 1 #timing (1239 1239) ps polarity 0
-net 18: 24 30 0 3 0 1 #timing (1239 1239) ps polarity 1
-net 19: 26 25 0 1 0 0 #timing (1050 1050) ps polarity 1
-net 19: 24 27 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 19: 24 27 3 4 0 1 #timing (1239 1239) ps polarity 0
-net 19: 24 23 1 2 0 1 #timing (1239 1239) ps polarity 1
-net 19: 26 23 0 0 0 1 #timing (1239 1239) ps polarity 0
-net 20: 26 16 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 20: 24 18 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 20: 28 18 4 2 0 0 #timing (1218 1218) ps polarity 0
-net 20: 28 18 1 1 0 1 #timing (1239 1239) ps polarity 1
-net 20: 28 16 0 1 0 1 #timing (1239 1239) ps polarity 0
-net 20: 24 18 1 3 0 1 #timing (1196 1196) ps polarity 1
-net 20: 26 16 0 0 0 1 #timing (1196 1196) ps polarity 0
-net 21: 27 16 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 21: 25 18 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 21: 29 18 4 2 0 0 #timing (1218 1218) ps polarity 0
-net 21: 29 18 1 0 0 1 #timing (1239 1239) ps polarity 1
-net 21: 29 18 0 2 0 1 #timing (1239 1239) ps polarity 0
-net 21: 25 18 1 3 0 1 #timing (1196 1196) ps polarity 1
-net 21: 27 16 0 0 0 1 #timing (1196 1196) ps polarity 0
-net 22: 26 18 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 22: 24 16 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 22: 24 20 3 1 0 0 #timing (1218 1218) ps polarity 0
-net 22: 28 20 4 2 0 0 #timing (1260 1260) ps polarity 0
-net 22: 28 20 1 0 0 1 #timing (1281 1281) ps polarity 1
-net 22: 28 20 0 1 0 1 #timing (1281 1281) ps polarity 0
-net 22: 24 16 1 2 0 1 #timing (1196 1196) ps polarity 1
-net 22: 26 16 0 1 0 1 #timing (1196 1196) ps polarity 0
-net 23: 27 18 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 23: 25 16 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 23: 29 16 4 2 0 0 #timing (1218 1218) ps polarity 0
-net 23: 29 16 1 0 0 1 #timing (1239 1239) ps polarity 1
-net 23: 29 16 0 3 0 1 #timing (1239 1239) ps polarity 0
-net 23: 25 16 1 2 0 1 #timing (1196 1196) ps polarity 1
-net 23: 27 16 0 1 0 1 #timing (1196 1196) ps polarity 0
-net 24: 27 21 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 24: 25 23 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 24: 25 19 3 1 0 0 #timing (1218 1218) ps polarity 0
-net 24: 29 19 4 2 0 0 #timing (1260 1260) ps polarity 0
-net 24: 29 19 1 1 0 1 #timing (1281 1281) ps polarity 1
-net 24: 29 17 0 2 0 1 #timing (1281 1281) ps polarity 0
-net 24: 25 23 1 3 0 1 #timing (1196 1196) ps polarity 1
-net 24: 27 21 0 0 0 1 #timing (1196 1196) ps polarity 0
-net 25: 26 19 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 25: 24 17 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 25: 28 17 4 2 0 0 #timing (1218 1218) ps polarity 0
-net 25: 28 17 1 0 0 1 #timing (1239 1239) ps polarity 1
-net 25: 28 17 0 0 0 1 #timing (1239 1239) ps polarity 0
-net 25: 24 17 3 1 0 1 #timing (1239 1239) ps polarity 0
-net 25: 24 21 1 2 0 1 #timing (1239 1239) ps polarity 1
-net 25: 26 21 0 1 0 1 #timing (1239 1239) ps polarity 0
-net 26: 27 19 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 26: 25 17 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 26: 29 17 4 2 0 0 #timing (1218 1218) ps polarity 0
-net 26: 29 17 1 1 0 1 #timing (1239 1239) ps polarity 1
-net 26: 29 19 0 1 0 1 #timing (1239 1239) ps polarity 0
-net 26: 25 17 3 1 0 1 #timing (1239 1239) ps polarity 0
-net 26: 25 21 1 2 0 1 #timing (1239 1239) ps polarity 1
-net 26: 27 21 0 1 0 1 #timing (1239 1239) ps polarity 0
-net 37: 25 23 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 37: 27 21 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 37: 27 17 3 1 0 0 #timing (1218 1218) ps polarity 0
-net 37: 27 17 1 1 0 1 #timing (1239 1239) ps polarity 1
-net 37: 27 19 0 3 0 1 #timing (1239 1239) ps polarity 0
-net 37: 27 17 1 3 0 1 #timing (1239 1239) ps polarity 1
-net 37: 25 19 0 3 0 1 #timing (1239 1239) ps polarity 0
-net 37: 27 25 3 4 0 0 #timing (1218 1218) ps polarity 0
-net 37: 23 25 4 5 0 0 #timing (1260 1260) ps polarity 0
-net 37: 23 25 3 1 0 1 #timing (1322 1322) ps polarity 0
-net 37: 23 29 1 1 0 1 #timing (1322 1322) ps polarity 1
-net 37: 23 31 0 0 0 1 #timing (1322 1322) ps polarity 0
-net 37: 27 25 1 0 1 1 #timing (1239 1239) ps polarity 1
-net 37: 27 25 0 3 0 1 #timing (1239 1239) ps polarity 0
-net 37: 27 21 1 3 0 1 #timing (1196 1196) ps polarity 1
-net 37: 25 23 0 3 0 1 #timing (1196 1196) ps polarity 0
-net 38: 26 20 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 38: 24 22 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 38: 24 22 3 1 0 1 #timing (1239 1239) ps polarity 0
-net 38: 24 18 1 2 0 1 #timing (1239 1239) ps polarity 1
-net 38: 26 18 0 1 0 1 #timing (1239 1239) ps polarity 0
-net 79: 24 26 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 79: 26 24 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 79: 26 24 3 4 0 1 #timing (1239 1239) ps polarity 0
-net 79: 26 20 1 0 0 1 #timing (1239 1239) ps polarity 1
-net 79: 26 20 0 1 0 1 #timing (1239 1239) ps polarity 0
-net 79: 26 20 1 3 0 1 #timing (1239 1239) ps polarity 1
-net 79: 24 22 0 3 0 1 #timing (1239 1239) ps polarity 0
-net 79: 25 27 0 3 0 0 #timing (1050 1050) ps polarity 1
-net 79: 27 27 1 2 0 0 #timing (1134 1134) ps polarity 0
-net 79: 27 23 3 4 0 0 #timing (1218 1218) ps polarity 0
-net 79: 31 23 4 2 0 0 #timing (1260 1260) ps polarity 0
-net 79: 31 23 1 3 0 1 #timing (1281 1281) ps polarity 1
-net 79: 29 21 0 2 0 1 #timing (1281 1281) ps polarity 0
-net 80: 24 17 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 80: 26 19 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 80: 26 23 3 1 0 0 #timing (1218 1218) ps polarity 0
-net 80: 30 23 4 2 0 0 #timing (1260 1260) ps polarity 0
-net 80: 30 23 1 3 0 1 #timing (1281 1281) ps polarity 1
-net 80: 28 21 0 0 0 1 #timing (1281 1281) ps polarity 0
-net 80: 26 23 1 1 0 1 #timing (1239 1239) ps polarity 1
-net 80: 26 21 0 0 0 1 #timing (1239 1239) ps polarity 0
-net 80: 26 23 1 2 0 1 #timing (1239 1239) ps polarity 1
-net 80: 24 23 0 2 0 1 #timing (1239 1239) ps polarity 0
-net 81: 25 22 0 3 0 0 #timing (1050 1050) ps polarity 1
-net 81: 27 22 1 2 0 0 #timing (1134 1134) ps polarity 0
-net 81: 31 22 4 2 0 0 #timing (1218 1218) ps polarity 0
-net 81: 31 22 1 3 0 1 #timing (1239 1239) ps polarity 1
-net 81: 29 20 0 3 0 1 #timing (1239 1239) ps polarity 0
-net 81: 27 22 1 1 0 1 #timing (1196 1196) ps polarity 1
-net 81: 27 20 0 3 0 1 #timing (1196 1196) ps polarity 0
-net 81: 27 22 1 2 0 1 #timing (1196 1196) ps polarity 1
-net 81: 25 22 0 1 0 1 #timing (1196 1196) ps polarity 0
-net 82: 24 20 0 0 0 0 #timing (1050 1050) ps polarity 1
-net 82: 26 22 1 3 0 0 #timing (1134 1134) ps polarity 0
-net 82: 26 18 3 1 0 0 #timing (1218 1218) ps polarity 0
-net 82: 30 18 4 2 0 0 #timing (1260 1260) ps polarity 0
-net 82: 30 18 1 2 0 1 #timing (1281 1281) ps polarity 1
-net 82: 28 18 0 3 0 1 #timing (1281 1281) ps polarity 0
-net 82: 26 18 1 0 1 1 #timing (1239 1239) ps polarity 1
-net 82: 26 18 0 3 0 1 #timing (1239 1239) ps polarity 0
-net 82: 26 26 3 4 0 0 #timing (1218 1218) ps polarity 0
-net 82: 26 26 1 3 0 1 #timing (1239 1239) ps polarity 1
-net 82: 24 24 0 2 0 1 #timing (1239 1239) ps polarity 0
-net 83: 28 19 0 1 0 0 #timing (1050 1050) ps polarity 0
-net 83: 30 17 1 3 0 0 #timing (1134 1134) ps polarity 1
-net 83: 30 17 5 0 1 0 #timing (1218 1218) ps polarity 0
-net 83: 30 17 5 3 0 1 #timing (1280 1280) ps polarity 0
-net 83: 22 25 4 5 0 1 #timing (1322 1322) ps polarity 1
-net 83: 26 25 3 1 0 1 #timing (1364 1364) ps polarity 1
-net 83: 26 29 1 1 0 1 #timing (1364 1364) ps polarity 0
-net 83: 26 31 0 2 0 1 #timing (1364 1364) ps polarity 1
-net 84: 28 20 0 1 0 0 #timing (1050 1050) ps polarity 0
-net 84: 30 22 1 3 0 0 #timing (1134 1134) ps polarity 1
-net 84: 30 26 3 4 0 0 #timing (1218 1218) ps polarity 1
-net 84: 26 26 4 2 0 0 #timing (1260 1260) ps polarity 1
-net 84: 26 26 3 1 0 1 #timing (1322 1322) ps polarity 1
-net 84: 26 30 1 0 1 1 #timing (1322 1322) ps polarity 0
-net 84: 26 30 0 3 0 1 #timing (1322 1322) ps polarity 1
-net 84: 30 22 4 2 0 1 #timing (1239 1239) ps polarity 1
-net 84: 26 22 1 2 0 1 #timing (1260 1260) ps polarity 0
-net 84: 24 22 0 0 0 1 #timing (1260 1260) ps polarity 1
-net 85: 27 17 0 2 0 0 #timing (1050 1050) ps polarity 1
-net 85: 27 17 1 0 0 0 #timing (1134 1134) ps polarity 0
-net 85: 27 17 3 1 0 1 #timing (1239 1239) ps polarity 0
-net 85: 27 21 1 0 1 1 #timing (1239 1239) ps polarity 1
-net 85: 27 21 0 2 0 1 #timing (1239 1239) ps polarity 0
-net 100: 25 23 0 2 0 0 #timing (1050 1050) ps polarity 1
-net 100: 27 23 1 2 0 0 #timing (1134 1134) ps polarity 0
-net 100: 27 27 3 4 0 0 #timing (1218 1218) ps polarity 0
-net 100: 27 27 3 1 0 1 #timing (1280 1280) ps polarity 0
-net 100: 27 31 1 0 1 1 #timing (1280 1280) ps polarity 1
-net 100: 27 31 0 0 0 1 #timing (1280 1280) ps polarity 0
+net 2: (29 19)->(29 18) 0 1 0 0 #timing (719 719) ps polarity 1
+net 2: (29 18)->(31 16) 1 3 0 0 #timing (908 877) ps polarity 0
+net 2: (31 16)->(29 16) 1 2 0 1 #timing (1202 1129) ps  polarity 1
+net 2: (29 16)->(28 17) 0 3 0 1 #timing (1260 1350) ps  polarity 0
+net 2: (31 16)->(31 20) 3 1 0 0 #timing (1208 1213) ps polarity 0
+net 2: (31 20)->(29 20) 1 2 0 1 #timing (1470 1426) ps  polarity 1
+net 2: (29 20)->(29 20) 0 0 0 1 #timing (1535 1600) ps  polarity 0
+net 3: (28 19)->(28 18) 0 1 0 0 #timing (700 700) ps polarity 1
+net 3: (28 18)->(28 18) 1 0 0 0 #timing (787 790) ps polarity 0
+net 3: (28 18)->(28 16) 1 1 0 1 #timing (1064 1010) ps  polarity 1
+net 3: (28 16)->(28 17) 0 1 0 1 #timing (1177 1223) ps  polarity 0
+net 3: (28 18)->(28 22) 3 1 0 0 #timing (1081 1022) ps polarity 0
+net 3: (28 22)->(28 20) 1 1 0 1 #timing (1363 1247) ps  polarity 1
+net 3: (28 20)->(28 20) 0 0 0 1 #timing (1383 1506) ps  polarity 0
+net 4: (29 21)->(29 21) 0 0 0 0 #timing (686 686) ps polarity 1
+net 4: (29 21)->(31 23) 1 3 0 0 #timing (821 805) ps polarity 0
+net 4: (31 23)->(29 21) 1 3 0 1 #timing (1130 1066) ps  polarity 1
+net 4: (29 21)->(29 21) 0 0 0 1 #timing (1186 1282) ps  polarity 0
+net 4: (31 23)->(31 19) 3 1 0 0 #timing (1099 1103) ps polarity 0
+net 4: (31 19)->(29 17) 1 3 0 1 #timing (1377 1325) ps  polarity 1
+net 4: (29 17)->(28 17) 0 2 0 1 #timing (1475 1544) ps  polarity 0
+net 5: (28 21)->(28 21) 0 0 0 0 #timing (726 726) ps polarity 1
+net 5: (28 21)->(30 23) 1 3 0 0 #timing (869 849) ps polarity 0
+net 5: (30 23)->(28 21) 1 3 0 1 #timing (1200 1134) ps  polarity 1
+net 5: (28 21)->(28 21) 0 0 0 1 #timing (1255 1353) ps  polarity 0
+net 5: (30 23)->(30 19) 3 1 0 0 #timing (1175 1193) ps polarity 0
+net 5: (30 19)->(28 17) 1 3 0 1 #timing (1475 1429) ps  polarity 1
+net 5: (28 17)->(28 17) 0 0 0 1 #timing (1547 1621) ps  polarity 0
+net 6: (29 22)->(29 22) 0 0 0 0 #timing (637 637) ps polarity 1
+net 6: (29 22)->(31 20) 1 3 0 0 #timing (792 766) ps polarity 0
+net 6: (31 20)->(29 22) 1 3 0 1 #timing (1118 1040) ps  polarity 1
+net 6: (29 22)->(29 22) 0 0 0 1 #timing (1161 1273) ps  polarity 0
+net 6: (31 20)->(31 16) 3 1 0 0 #timing (1055 1075) ps polarity 0
+net 6: (31 16)->(27 16) 4 2 0 0 #timing (1315 1317) ps polarity 0
+net 6: (27 16)->(25 16) 1 2 0 1 #timing (1584 1536) ps  polarity 1
+net 6: (25 16)->(25 16) 0 0 0 1 #timing (1701 1752) ps  polarity 0
+net 7: (28 22)->(28 22) 0 0 0 0 #timing (649 649) ps polarity 1
+net 7: (28 22)->(30 20) 1 3 0 0 #timing (827 790) ps polarity 0
+net 7: (30 20)->(28 22) 1 3 0 1 #timing (1149 1062) ps  polarity 1
+net 7: (28 22)->(28 22) 0 0 0 1 #timing (1183 1302) ps  polarity 0
+net 7: (28 22)->(29 23) 0 3 0 0 #timing (667 667) ps polarity 1
+net 7: (29 23)->(29 21) 1 1 0 0 #timing (819 796) ps polarity 0
+net 7: (29 21)->(29 17) 3 1 0 0 #timing (1075 1073) ps polarity 0
+net 7: (29 17)->(25 17) 4 2 0 0 #timing (1394 1362) ps polarity 0
+net 7: (25 17)->(25 17) 1 0 0 1 #timing (1581 1582) ps  polarity 1
+net 7: (25 17)->(25 16) 0 1 0 1 #timing (1658 1665) ps  polarity 0
+net 8: (29 24)->(29 24) 0 0 0 0 #timing (661 661) ps polarity 1
+net 8: (29 24)->(31 26) 1 3 0 0 #timing (813 789) ps polarity 0
+net 8: (31 26)->(31 22) 3 4 0 1 #timing (1295 1176) ps  polarity 0
+net 8: (31 22)->(29 22) 1 2 0 1 #timing (1435 1308) ps  polarity 1
+net 8: (29 22)->(29 23) 0 1 0 1 #timing (1437 1585) ps  polarity 0
+net 8: (29 24)->(28 25) 0 3 0 0 #timing (675 675) ps polarity 1
+net 8: (28 25)->(28 25) 1 0 0 0 #timing (763 763) ps polarity 0
+net 8: (28 25)->(28 21) 3 4 0 0 #timing (1058 1000) ps polarity 0
+net 8: (28 21)->(24 21) 4 2 0 0 #timing (1341 1259) ps polarity 0
+net 8: (24 21)->(24 17) 3 1 0 1 #timing (1760 1719) ps  polarity 0
+net 8: (24 17)->(24 17) 1 0 1 1 #timing (1858 1823) ps  polarity 1
+net 8: (24 17)->(25 16) 0 3 0 1 #timing (1955 1976) ps  polarity 0
+net 9: (28 24)->(28 24) 0 0 0 0 #timing (704 704) ps polarity 1
+net 9: (28 24)->(30 26) 1 3 0 0 #timing (851 828) ps polarity 0
+net 9: (30 26)->(30 22) 3 4 0 0 #timing (1129 1150) ps polarity 0
+net 9: (30 22)->(28 22) 1 2 0 1 #timing (1407 1372) ps  polarity 1
+net 9: (28 22)->(28 23) 0 1 0 1 #timing (1490 1540) ps  polarity 0
+net 9: (30 22)->(26 22) 4 2 0 0 #timing (1453 1434) ps polarity 0
+net 9: (26 22)->(26 18) 3 1 0 1 #timing (1919 1827) ps  polarity 0
+net 9: (26 18)->(24 16) 1 3 0 1 #timing (2084 1979) ps  polarity 1
+net 9: (24 16)->(25 16) 0 2 0 1 #timing (2088 2213) ps  polarity 0
+net 10: (29 25)->(29 25) 0 0 0 0 #timing (762 762) ps polarity 1
+net 10: (29 25)->(31 27) 1 3 0 0 #timing (908 882) ps polarity 0
+net 10: (31 27)->(29 27) 1 2 0 1 #timing (1220 1149) ps  polarity 1
+net 10: (29 27)->(29 26) 0 1 0 1 #timing (1269 1360) ps  polarity 0
+net 10: (31 27)->(31 23) 3 4 0 0 #timing (1168 1193) ps polarity 0
+net 10: (31 23)->(27 23) 4 2 0 0 #timing (1442 1446) ps polarity 0
+net 10: (27 23)->(27 21) 1 1 0 1 #timing (1708 1658) ps  polarity 1
+net 10: (27 21)->(27 20) 0 1 0 1 #timing (1789 1848) ps  polarity 0
+net 11: (28 25)->(28 25) 0 0 0 0 #timing (680 680) ps polarity 1
+net 11: (28 25)->(30 27) 1 3 0 0 #timing (827 805) ps polarity 0
+net 11: (30 27)->(28 27) 1 2 0 1 #timing (1117 1066) ps  polarity 1
+net 11: (28 27)->(28 26) 0 1 0 1 #timing (1187 1258) ps  polarity 0
+net 11: (30 27)->(30 23) 3 4 0 0 #timing (1136 1146) ps polarity 0
+net 11: (30 23)->(26 23) 4 2 0 0 #timing (1458 1428) ps polarity 0
+net 11: (26 23)->(26 21) 1 1 0 1 #timing (1686 1674) ps  polarity 1
+net 11: (26 21)->(27 20) 0 3 0 1 #timing (1815 1830) ps  polarity 0
+net 12: (29 27)->(29 27) 0 0 0 0 #timing (686 686) ps polarity 1
+net 12: (29 27)->(31 25) 1 3 0 0 #timing (847 821) ps polarity 0
+net 12: (31 25)->(29 27) 1 3 0 1 #timing (1158 1080) ps  polarity 1
+net 12: (29 27)->(29 27) 0 0 0 1 #timing (1205 1315) ps  polarity 0
+net 12: (29 27)->(29 26) 0 1 0 0 #timing (700 700) ps polarity 1
+net 12: (29 26)->(31 24) 1 3 0 0 #timing (873 838) ps polarity 0
+net 12: (31 24)->(31 20) 3 4 0 0 #timing (1123 1148) ps polarity 0
+net 12: (31 20)->(27 20) 4 2 0 0 #timing (1398 1403) ps polarity 0
+net 12: (27 20)->(27 20) 1 0 1 1 #timing (1613 1580) ps  polarity 1
+net 12: (27 20)->(27 20) 0 0 0 1 #timing (1712 1731) ps  polarity 0
+net 13: (28 27)->(28 27) 0 0 0 0 #timing (726 726) ps polarity 1
+net 13: (28 27)->(30 25) 1 3 0 0 #timing (894 862) ps polarity 0
+net 13: (30 25)->(28 27) 1 3 0 1 #timing (1210 1134) ps  polarity 1
+net 13: (28 27)->(28 27) 0 0 0 1 #timing (1251 1355) ps  polarity 0
+net 13: (28 27)->(28 26) 0 1 0 0 #timing (736 736) ps polarity 1
+net 13: (28 26)->(30 24) 1 3 0 0 #timing (913 873) ps polarity 0
+net 13: (30 24)->(30 20) 3 4 0 0 #timing (1181 1204) ps polarity 0
+net 13: (30 20)->(26 20) 4 2 0 0 #timing (1488 1475) ps polarity 0
+net 13: (26 20)->(26 20) 1 0 1 1 #timing (1682 1667) ps  polarity 1
+net 13: (26 20)->(27 20) 0 2 0 1 #timing (1808 1806) ps  polarity 0
+net 14: (29 28)->(29 28) 0 0 0 0 #timing (637 637) ps polarity 1
+net 14: (29 28)->(31 30) 1 3 0 0 #timing (777 758) ps polarity 0
+net 14: (31 30)->(29 28) 1 3 0 1 #timing (1095 1030) ps  polarity 1
+net 14: (29 28)->(29 28) 0 0 0 1 #timing (1150 1243) ps  polarity 0
+net 14: (31 30)->(31 26) 3 1 0 0 #timing (1069 1081) ps polarity 0
+net 14: (31 26)->(27 26) 4 2 0 0 #timing (1336 1326) ps polarity 0
+net 14: (27 26)->(27 22) 3 4 0 1 #timing (1780 1676) ps  polarity 0
+net 14: (27 22)->(27 20) 1 1 0 1 #timing (1937 1820) ps  polarity 1
+net 14: (27 20)->(26 20) 0 2 0 1 #timing (1961 2087) ps  polarity 0
+net 15: (28 28)->(28 28) 0 0 0 0 #timing (649 649) ps polarity 1
+net 15: (28 28)->(30 30) 1 3 0 0 #timing (816 786) ps polarity 0
+net 15: (30 30)->(28 28) 1 3 0 1 #timing (1145 1070) ps  polarity 1
+net 15: (28 28)->(28 28) 0 0 0 1 #timing (1189 1295) ps  polarity 0
+net 15: (30 30)->(30 26) 3 1 0 0 #timing (1112 1133) ps polarity 0
+net 15: (30 26)->(26 26) 4 2 0 0 #timing (1444 1417) ps polarity 0
+net 15: (26 26)->(26 22) 3 4 0 1 #timing (1894 1812) ps  polarity 0
+net 15: (26 22)->(26 20) 1 1 0 1 #timing (2041 1950) ps  polarity 1
+net 15: (26 20)->(26 20) 0 0 0 1 #timing (2088 2184) ps  polarity 0
+net 16: (29 30)->(29 30) 0 0 0 0 #timing (661 661) ps polarity 1
+net 16: (29 30)->(31 28) 1 3 0 0 #timing (860 815) ps polarity 0
+net 16: (31 28)->(29 28) 1 2 0 1 #timing (1145 1062) ps  polarity 1
+net 16: (29 28)->(29 29) 0 1 0 1 #timing (1191 1291) ps  polarity 0
+net 16: (29 30)->(28 31) 0 3 0 0 #timing (675 675) ps polarity 1
+net 16: (28 31)->(28 31) 1 0 0 0 #timing (765 765) ps polarity 0
+net 16: (28 31)->(28 27) 3 1 0 0 #timing (1028 986) ps polarity 0
+net 16: (28 27)->(24 27) 4 2 0 0 #timing (1298 1237) ps polarity 0
+net 16: (24 27)->(24 23) 3 4 0 1 #timing (1695 1641) ps  polarity 0
+net 16: (24 23)->(26 21) 1 3 0 1 #timing (1854 1787) ps  polarity 1
+net 16: (26 21)->(26 20) 0 1 0 1 #timing (1898 1982) ps  polarity 0
+net 17: (28 30)->(28 30) 0 0 0 0 #timing (704 704) ps polarity 1
+net 17: (28 30)->(30 28) 1 3 0 0 #timing (890 848) ps polarity 0
+net 17: (30 28)->(28 28) 1 2 0 1 #timing (1169 1094) ps  polarity 1
+net 17: (28 28)->(28 29) 0 1 0 1 #timing (1219 1309) ps  polarity 0
+net 17: (28 30)->(29 31) 0 3 0 0 #timing (675 675) ps polarity 1
+net 17: (29 31)->(29 29) 1 1 0 0 #timing (812 798) ps polarity 0
+net 17: (29 29)->(29 25) 3 1 0 0 #timing (1107 1077) ps polarity 0
+net 17: (29 25)->(25 25) 4 2 0 0 #timing (1423 1367) ps polarity 0
+net 17: (25 25)->(25 21) 3 4 0 1 #timing (1848 1794) ps  polarity 0
+net 17: (25 21)->(27 21) 1 2 0 1 #timing (2029 1955) ps  polarity 1
+net 17: (27 21)->(26 20) 0 3 0 1 #timing (2085 2189) ps  polarity 0
+net 18: (26 16)->(26 16) 0 0 0 0 #timing (649 649) ps polarity 0
+net 18: (26 16)->(24 18) 1 3 0 0 #timing (791 771) ps polarity 1
+net 18: (24 18)->(26 18) 1 2 0 1 #timing (1042 999) ps  polarity 0
+net 18: (26 18)->(26 18) 0 0 0 1 #timing (1144 1174) ps  polarity 1
+net 19: (27 18)->(27 18) 0 0 0 0 #timing (661 661) ps polarity 1
+net 19: (27 18)->(27 16) 1 1 0 0 #timing (773 765) ps polarity 0
+net 19: (27 16)->(23 16) 4 5 0 0 #timing (1158 1114) ps polarity 0
+net 19: (23 16)->(23 16) 1 0 1 1 #timing (1318 1334) ps  polarity 1
+net 19: (23 16)->(22 17) 0 3 0 1 #timing (1447 1426) ps  polarity 0
+net 20: (27 17)->(27 16) 0 1 0 0 #timing (157 157) ps polarity 0
+net 20: (27 16)->(25 18) 1 3 0 0 #timing (325 292) ps polarity 1
+net 20: (25 18)->(27 18) 1 2 0 1 #timing (654 577) ps  polarity 0
+net 20: (27 18)->(26 18) 0 2 0 1 #timing (726 817) ps  polarity 1
+net 21: (26 18)->(26 18) 0 0 0 0 #timing (704 704) ps polarity 1
+net 21: (26 18)->(24 16) 1 3 0 0 #timing (849 825) ps polarity 0
+net 21: (24 16)->(26 16) 1 2 0 1 #timing (1098 1049) ps  polarity 1
+net 21: (26 16)->(27 16) 0 2 0 1 #timing (1152 1207) ps  polarity 0
+net 22: (27 16)->(27 17) 0 1 0 0 #timing (642 642) ps polarity 1
+net 22: (27 17)->(25 19) 1 3 0 0 #timing (809 774) ps polarity 0
+net 22: (25 19)->(27 17) 1 3 0 1 #timing (1176 1082) ps  polarity 1
+net 22: (27 17)->(26 16) 0 3 0 1 #timing (1253 1371) ps  polarity 0
+net 24: (27 21)->(27 21) 0 0 0 0 #timing (686 686) ps polarity 1
+net 24: (27 21)->(25 23) 1 3 0 0 #timing (852 822) ps polarity 0
+net 24: (25 23)->(25 19) 3 1 0 1 #timing (1406 1261) ps  polarity 0
+net 24: (25 19)->(25 17) 1 1 0 1 #timing (1561 1413) ps  polarity 1
+net 24: (25 17)->(25 17) 0 0 0 1 #timing (1519 1684) ps  polarity 0
+net 24: (25 17)->(24 16) 0 3 0 1 #timing (1561 1708) ps  polarity 0
+net 24: (25 19)->(27 19) 1 2 0 1 #timing (1605 1436) ps  polarity 1
+net 24: (27 19)->(27 19) 0 0 0 1 #timing (1551 1748) ps  polarity 0
+net 25: (24 22)->(24 22) 0 0 0 0 #timing (671 671) ps polarity 1
+net 25: (24 22)->(26 20) 1 3 0 0 #timing (838 810) ps polarity 0
+net 25: (26 20)->(24 22) 1 3 0 1 #timing (1145 1068) ps  polarity 1
+net 25: (24 22)->(24 22) 0 0 0 1 #timing (1197 1301) ps  polarity 0
+net 25: (26 20)->(26 16) 3 1 0 0 #timing (1111 1116) ps polarity 0
+net 25: (26 16)->(24 16) 1 2 0 1 #timing (1342 1308) ps  polarity 1
+net 25: (24 16)->(24 17) 0 1 0 1 #timing (1407 1447) ps  polarity 0
+net 25: (26 16)->(22 16) 4 5 0 0 #timing (1460 1415) ps polarity 0
+net 25: (22 16)->(22 18) 1 1 0 1 #timing (1657 1665) ps  polarity 1
+net 25: (22 18)->(22 18) 0 0 0 1 #timing (1787 1796) ps  polarity 0
+net 25: (22 16)->(20 16) 1 2 0 1 #timing (1631 1647) ps  polarity 1
+net 25: (20 16)->(21 16) 0 2 0 1 #timing (1758 1759) ps  polarity 0
+net 25: (26 20)->(26 24) 3 4 0 0 #timing (1195 1165) ps polarity 0
+net 25: (26 24)->(24 24) 1 2 0 1 #timing (1420 1354) ps  polarity 1
+net 25: (24 24)->(25 25) 0 3 0 1 #timing (1477 1539) ps  polarity 0
+net 26: (24 27)->(24 27) 0 0 0 0 #timing (797 797) ps polarity 1
+net 26: (24 27)->(26 27) 1 2 0 0 #timing (922 909) ps polarity 0
+net 26: (26 27)->(26 27) 5 0 1 0 #timing (1026 1071) ps polarity 1
+net 26: (26 27)->(26 19) 5 1 0 1 #timing (1341 1397) ps  polarity 0
+net 26: (26 19)->(24 17) 1 3 0 1 #timing (1675 1556) ps  polarity 1
+net 26: (24 17)->(24 17) 0 0 0 1 #timing (1704 1824) ps  polarity 0
+net 26: (26 19)->(22 19) 4 5 0 1 #timing (1682 1672) ps  polarity 0
+net 26: (22 19)->(22 19) 1 0 1 1 #timing (1868 1834) ps  polarity 1
+net 26: (22 19)->(22 18) 0 1 0 1 #timing (2021 2009) ps  polarity 0
+net 26: (24 27)->(24 26) 0 1 0 0 #timing (700 700) ps polarity 1
+net 26: (24 26)->(24 24) 1 1 0 0 #timing (856 832) ps polarity 0
+net 26: (24 24)->(24 24) 1 0 1 1 #timing (1075 1025) ps  polarity 1
+net 26: (24 24)->(24 25) 0 1 0 1 #timing (1207 1218) ps  polarity 0
+net 26: (24 26)->(26 26) 1 2 0 0 #timing (833 819) ps polarity 0
+net 26: (26 26)->(26 22) 3 4 0 0 #timing (1097 1079) ps polarity 0
+net 26: (26 22)->(24 22) 1 2 0 1 #timing (1325 1267) ps  polarity 1
+net 26: (24 22)->(25 22) 0 2 0 1 #timing (1391 1447) ps  polarity 0
+net 27: (24 24)->(24 24) 0 0 0 0 #timing (706 706) ps polarity 1
+net 27: (24 24)->(24 26) 1 1 0 0 #timing (826 818) ps polarity 0
+net 27: (24 26)->(24 26) 1 0 0 1 #timing (1054 1023) ps  polarity 1
+net 27: (24 26)->(25 27) 0 3 0 1 #timing (1138 1163) ps  polarity 0
+net 27: (24 24)->(24 25) 0 1 0 0 #timing (697 697) ps polarity 1
+net 27: (24 25)->(24 27) 1 1 0 0 #timing (825 815) ps polarity 0
+net 27: (24 27)->(24 23) 3 4 0 0 #timing (1114 1107) ps polarity 0
+net 27: (24 23)->(24 23) 1 0 1 1 #timing (1337 1292) ps  polarity 1
+net 27: (24 23)->(24 23) 0 0 0 1 #timing (1422 1455) ps  polarity 0
+net 27: (24 24)->(25 25) 0 3 0 0 #timing (695 695) ps polarity 1
+net 27: (25 25)->(27 25) 1 2 0 0 #timing (822 814) ps polarity 0
+net 27: (27 25)->(27 25) 5 0 0 0 #timing (932 978) ps polarity 1
+net 27: (27 25)->(27 17) 5 1 0 1 #timing (1261 1315) ps  polarity 0
+net 27: (27 17)->(25 17) 1 2 0 1 #timing (1589 1474) ps  polarity 1
+net 27: (25 17)->(24 17) 0 2 0 1 #timing (1639 1774) ps  polarity 0
+net 28: (25 24)->(25 24) 0 0 0 0 #timing (733 733) ps polarity 1
+net 28: (25 24)->(25 26) 1 1 0 0 #timing (846 839) ps polarity 0
+net 28: (25 26)->(25 26) 1 0 0 1 #timing (1075 1043) ps  polarity 1
+net 28: (25 26)->(24 26) 0 2 0 1 #timing (1129 1168) ps  polarity 0
+net 28: (25 26)->(21 26) 4 5 0 0 #timing (1134 1126) ps polarity 0
+net 28: (21 26)->(21 26) 5 0 0 0 #timing (1276 1285) ps polarity 1
+net 28: (21 26)->(21 18) 5 1 0 1 #timing (1594 1611) ps  polarity 0
+net 28: (21 18)->(23 18) 1 2 0 1 #timing (1869 1800) ps  polarity 1
+net 28: (23 18)->(22 18) 0 2 0 1 #timing (1939 2003) ps  polarity 0
+net 28: (25 24)->(27 26) 1 3 0 0 #timing (890 865) ps polarity 0
+net 28: (27 26)->(27 22) 3 4 0 0 #timing (1204 1210) ps polarity 0
+net 28: (27 22)->(25 22) 1 2 0 1 #timing (1489 1435) ps  polarity 1
+net 28: (25 22)->(25 23) 0 1 0 1 #timing (1616 1668) ps  polarity 0
+net 28: (27 22)->(27 18) 3 1 0 1 #timing (1636 1531) ps  polarity 0
+net 28: (27 18)->(25 16) 1 3 0 1 #timing (1847 1707) ps  polarity 1
+net 28: (25 16)->(24 17) 0 3 0 1 #timing (1885 2047) ps  polarity 0
+net 28: (27 22)->(23 22) 4 5 0 0 #timing (1617 1547) ps polarity 0
+net 28: (23 22)->(23 18) 3 1 0 1 #timing (2025 1988) ps  polarity 0
+net 28: (23 18)->(21 16) 1 3 0 1 #timing (2203 2148) ps  polarity 1
+net 28: (21 16)->(21 16) 0 0 0 1 #timing (2258 2345) ps  polarity 0
+net 28: (25 24)->(25 25) 0 1 0 0 #timing (739 739) ps polarity 1
+net 28: (25 25)->(25 25) 1 0 0 0 #timing (814 818) ps polarity 0
+net 28: (25 25)->(25 25) 5 0 0 0 #timing (921 933) ps polarity 1
+net 28: (25 25)->(25 17) 5 1 0 1 #timing (1267 1293) ps  polarity 0
+net 28: (25 17)->(21 17) 4 5 0 1 #timing (1541 1537) ps  polarity 0
+net 28: (21 17)->(23 17) 1 2 0 1 #timing (1816 1753) ps  polarity 1
+net 28: (23 17)->(23 16) 0 1 0 1 #timing (1878 1943) ps  polarity 0
+net 28: (25 24)->(24 25) 0 3 0 0 #timing (732 732) ps polarity 1
+net 28: (24 25)->(24 25) 1 0 0 0 #timing (824 823) ps polarity 0
+net 28: (24 25)->(24 25) 5 0 0 0 #timing (926 944) ps polarity 1
+net 28: (24 25)->(24 17) 5 1 0 1 #timing (1242 1269) ps  polarity 0
+net 28: (24 17)->(20 17) 4 5 0 1 #timing (1588 1543) ps  polarity 0
+net 28: (20 17)->(22 17) 1 2 0 1 #timing (1800 1724) ps  polarity 1
+net 28: (22 17)->(22 17) 0 0 0 1 #timing (1866 1952) ps  polarity 0
+net 29: (26 17)->(26 17) 0 0 0 0 #timing (155 155) ps polarity 1
+net 29: (26 17)->(26 17) 1 0 0 0 #timing (230 233) ps polarity 0
+net 29: (26 17)->(26 21) 3 1 0 0 #timing (551 481) ps polarity 0
+net 29: (26 21)->(26 25) 3 4 0 1 #timing (967 794) ps  polarity 0
+net 29: (26 25)->(24 27) 1 3 0 1 #timing (1109 929) ps  polarity 1
+net 29: (24 27)->(24 27) 0 0 0 1 #timing (1082 1269) ps  polarity 0
+net 30: (22 18)->(23 19) 0 3 0 0 #timing (696 697) ps polarity 1
+net 30: (23 19)->(23 19) 1 0 0 0 #timing (772 775) ps polarity 0
+net 30: (23 19)->(23 19) 1 0 0 1 #timing (979 949) ps  polarity 1
+net 30: (23 19)->(23 18) 0 1 0 1 #timing (1060 1086) ps  polarity 0
+net 31: (24 16)->(24 17) 0 1 0 0 #timing (672 672) ps polarity 1
+net 31: (24 17)->(26 19) 1 3 0 0 #timing (834 807) ps polarity 0
+net 31: (26 19)->(26 17) 1 1 0 1 #timing (1115 1054) ps  polarity 1
+net 31: (26 17)->(26 17) 0 0 0 1 #timing (1201 1264) ps  polarity 0
+net 31: (26 19)->(24 19) 1 2 0 1 #timing (1083 1031) ps  polarity 1
+net 31: (24 19)->(24 18) 0 1 0 1 #timing (1181 1222) ps  polarity 0
+net 31: (26 19)->(26 23) 3 1 0 0 #timing (1143 1137) ps polarity 0
+net 31: (26 23)->(26 27) 3 4 0 1 #timing (1569 1461) ps  polarity 0
+net 31: (26 27)->(24 27) 1 2 0 1 #timing (1679 1571) ps  polarity 1
+net 31: (24 27)->(25 27) 0 2 0 1 #timing (1686 1797) ps  polarity 0
+net 32: (25 18)->(25 18) 0 0 0 0 #timing (733 733) ps polarity 1
+net 32: (25 18)->(27 16) 1 3 0 0 #timing (945 897) ps polarity 0
+net 32: (27 16)->(27 16) 1 0 0 1 #timing (1183 1117) ps  polarity 1
+net 32: (27 16)->(26 17) 0 3 0 1 #timing (1277 1316) ps  polarity 0
+net 32: (27 16)->(25 18) 1 3 0 1 #timing (1299 1189) ps  polarity 1
+net 32: (25 18)->(25 18) 0 0 0 1 #timing (1373 1505) ps  polarity 0
+net 36: (22 17)->(23 17) 0 2 0 0 #timing (198 198) ps polarity 1
+net 36: (23 17)->(21 19) 1 3 0 0 #timing (369 332) ps polarity 0
+net 36: (21 19)->(21 19) 5 0 0 0 #timing (463 553) ps polarity 1
+net 36: (21 19)->(21 27) 5 1 0 1 #timing (805 894) ps  polarity 0
+net 36: (21 27)->(25 27) 4 5 0 1 #timing (1165 1194) ps  polarity 0
+net 36: (25 27)->(25 27) 1 0 0 1 #timing (1348 1354) ps  polarity 1
+net 36: (25 27)->(24 27) 0 2 0 1 #timing (1434 1436) ps  polarity 0
+net 53: (25 26)->(24 26) 0 2 0 0 #timing (214 214) ps polarity 1
+net 53: (24 26)->(24 26) 1 0 0 0 #timing (298 299) ps polarity 0
+net 53: (24 26)->(24 26) 1 0 1 1 #timing (504 471) ps  polarity 1
+net 53: (24 26)->(24 27) 0 1 0 1 #timing (584 611) ps  polarity 0
+net 66: (27 19)->(27 18) 0 1 0 0 #timing (202 202) ps polarity 0
+net 66: (27 18)->(25 16) 1 3 0 0 #timing (391 350) ps polarity 1
+net 66: (25 16)->(27 18) 1 3 0 1 #timing (740 634) ps  polarity 0
+net 66: (27 18)->(27 19) 0 1 0 1 #timing (765 909) ps  polarity 1
+net 67: (27 20)->(27 20) 0 0 0 0 #timing (185 185) ps polarity 1
+net 67: (27 20)->(27 20) 1 0 0 0 #timing (261 264) ps polarity 0
+net 67: (27 20)->(27 16) 3 1 0 1 #timing (717 602) ps  polarity 0
+net 67: (27 16)->(27 18) 1 1 0 1 #timing (856 732) ps  polarity 1
+net 67: (27 18)->(26 19) 0 3 0 1 #timing (906 1019) ps  polarity 0
+net 68: (26 18)->(27 19) 0 3 0 0 #timing (201 201) ps polarity 0
+net 68: (27 19)->(27 17) 1 1 0 0 #timing (335 324) ps polarity 1
+net 68: (27 17)->(27 21) 3 1 0 1 #timing (764 660) ps  polarity 1
+net 68: (27 21)->(27 21) 1 0 0 1 #timing (865 765) ps  polarity 0
+net 68: (27 21)->(27 21) 0 0 0 1 #timing (866 967) ps  polarity 1
+net 69: (26 19)->(26 19) 0 0 0 0 #timing (186 186) ps polarity 0
+net 69: (26 19)->(24 17) 1 3 0 0 #timing (332 310) ps polarity 1
+net 69: (24 17)->(24 17) 1 0 0 1 #timing (557 514) ps  polarity 0
+net 69: (24 17)->(24 16) 0 1 0 1 #timing (613 657) ps  polarity 1
+net 69: (24 17)->(25 17) 0 2 0 1 #timing (639 673) ps  polarity 1
+net 69: (24 17)->(24 21) 3 1 0 0 #timing (640 619) ps polarity 1
+net 69: (24 21)->(26 21) 1 2 0 1 #timing (868 808) ps  polarity 0
+net 69: (26 21)->(26 21) 0 0 0 1 #timing (918 980) ps  polarity 1
+net 69: (26 21)->(27 21) 0 2 0 1 #timing (925 985) ps  polarity 1
+net 70: (24 23)->(24 22) 0 1 0 0 #timing (200 200) ps polarity 1
+net 70: (24 22)->(24 22) 1 0 0 0 #timing (283 285) ps polarity 0
+net 70: (24 22)->(26 20) 1 3 0 1 #timing (570 510) ps  polarity 1
+net 70: (26 20)->(27 21) 0 3 0 1 #timing (652 721) ps  polarity 0
+net 70: (24 22)->(24 18) 3 1 0 0 #timing (591 525) ps polarity 0
+net 70: (24 18)->(24 16) 1 1 0 1 #timing (864 742) ps  polarity 1
+net 70: (24 16)->(24 16) 0 0 0 1 #timing (895 1016) ps  polarity 0
+net 70: (24 16)->(25 17) 0 3 0 1 #timing (893 1014) ps  polarity 0
+net 71: (25 16)->(25 16) 0 0 0 0 #timing (199 199) ps polarity 0
+net 71: (25 16)->(25 18) 1 1 0 0 #timing (317 310) ps polarity 1
+net 71: (25 18)->(25 16) 1 1 0 1 #timing (598 553) ps  polarity 0
+net 71: (25 16)->(25 17) 0 1 0 1 #timing (672 731) ps  polarity 1
+net 71: (25 16)->(24 16) 0 2 0 1 #timing (694 744) ps  polarity 1
+net 71: (25 18)->(25 22) 3 1 0 1 #timing (808 693) ps  polarity 1
+net 71: (25 22)->(27 20) 1 3 0 1 #timing (1030 878) ps  polarity 0
+net 71: (27 20)->(27 21) 0 1 0 1 #timing (1011 1200) ps  polarity 1
+net 71: (27 20)->(26 21) 0 3 0 1 #timing (1025 1212) ps  polarity 1
+net 72: (24 17)->(25 16) 0 3 0 0 #timing (203 203) ps polarity 1
+net 72: (25 16)->(25 16) 1 0 0 0 #timing (289 290) ps polarity 0
+net 72: (25 16)->(25 20) 3 1 0 0 #timing (601 538) ps polarity 0
+net 72: (25 20)->(25 20) 5 0 1 0 #timing (752 700) ps polarity 1
+net 72: (25 20)->(25 28) 5 1 0 1 #timing (1161 1105) ps  polarity 0
+net 72: (25 28)->(25 30) 1 1 0 1 #timing (1383 1383) ps  polarity 1
+net 72: (25 30)->(25 31) 0 1 0 1 #timing (1488 1505) ps  polarity 0
+net 73: (25 27)->(24 27) 0 2 0 0 #timing (151 151) ps polarity 0
+net 73: (24 27)->(24 27) 1 0 0 0 #timing (232 235) ps polarity 1
+net 73: (24 27)->(24 31) 3 1 0 0 #timing (540 476) ps polarity 1
+net 73: (24 31)->(26 31) 1 2 0 1 #timing (773 669) ps  polarity 0
+net 73: (26 31)->(27 31) 0 2 0 1 #timing (779 889) ps  polarity 1
+net 74: (28 18)->(28 18) 0 0 0 0 #timing (191 191) ps polarity 0
+net 74: (28 18)->(30 16) 1 3 0 0 #timing (384 340) ps polarity 1
+net 74: (30 16)->(26 16) 4 2 0 1 #timing (780 689) ps  polarity 1
+net 74: (26 16)->(24 18) 1 3 0 1 #timing (1040 896) ps  polarity 0
+net 74: (24 18)->(24 18) 0 0 0 1 #timing (1039 1194) ps  polarity 1
+net 75: (28 17)->(28 16) 0 1 0 0 #timing (161 161) ps polarity 1
+net 75: (28 16)->(30 18) 1 3 0 0 #timing (314 288) ps polarity 0
+net 75: (30 18)->(26 18) 4 2 0 1 #timing (725 649) ps  polarity 0
+net 75: (26 18)->(24 18) 1 2 0 1 #timing (969 848) ps  polarity 1
+net 75: (24 18)->(25 18) 0 2 0 1 #timing (948 1078) ps  polarity 0
+net 76: (26 20)->(26 20) 0 0 0 0 #timing (163 163) ps polarity 1
+net 76: (26 20)->(24 22) 1 3 0 0 #timing (308 286) ps polarity 0
+net 76: (24 22)->(24 26) 3 4 0 0 #timing (686 660) ps polarity 0
+net 76: (24 26)->(24 30) 3 1 0 1 #timing (1190 1014) ps  polarity 0
+net 76: (24 30)->(24 30) 1 0 1 1 #timing (1294 1121) ps  polarity 1
+net 76: (24 30)->(25 31) 0 3 0 1 #timing (1245 1407) ps  polarity 0
+net 76: (24 22)->(28 22) 4 2 0 0 #timing (564 605) ps polarity 0
+net 76: (28 22)->(28 18) 3 1 0 1 #timing (1078 901) ps  polarity 0
+net 76: (28 18)->(28 18) 1 0 1 1 #timing (1177 1005) ps  polarity 1
+net 76: (28 18)->(28 19) 0 1 0 1 #timing (1161 1307) ps  polarity 0
+net 77: (25 17)->(25 17) 0 0 0 0 #timing (216 216) ps polarity 1
+net 77: (25 17)->(27 19) 1 3 0 0 #timing (395 361) ps polarity 0
+net 77: (27 19)->(27 19) 1 0 0 1 #timing (641 590) ps  polarity 1
+net 77: (27 19)->(26 18) 0 3 0 1 #timing (731 763) ps  polarity 0
+net 77: (27 19)->(23 19) 4 5 0 0 #timing (744 776) ps polarity 0
+net 77: (23 19)->(23 19) 1 0 1 1 #timing (981 921) ps  polarity 1
+net 77: (23 19)->(22 18) 0 3 0 1 #timing (1061 1103) ps  polarity 0
+net 78: (26 21)->(26 21) 0 0 0 0 #timing (191 191) ps polarity 0
+net 78: (26 21)->(24 21) 1 2 0 0 #timing (295 291) ps polarity 1
+net 78: (24 21)->(24 25) 3 4 0 1 #timing (713 622) ps  polarity 1
+net 78: (24 25)->(24 25) 1 0 0 1 #timing (813 726) ps  polarity 0
+net 78: (24 25)->(24 25) 0 0 0 1 #timing (885 946) ps 
+net 78: (24 25)->(24 24) 0 1 0 1 #timing (915 955) ps  polarity 1
+net 78: (24 25)->(24 25) 1 0 1 1 #timing (813 725) ps  polarity 0
+net 78: (24 25)->(24 25) 0 0 0 1 #timing (885 946) ps  polarity 1
+net 78: (24 25)->(24 24) 0 1 0 1 #timing (795 835) ps 
+net 78: (26 21)->(27 21) 0 2 0 0 #timing (203 203) ps polarity 0
+net 78: (27 21)->(27 23) 1 1 0 0 #timing (319 310) ps polarity 1
+net 78: (27 23)->(27 23) 5 0 0 0 #timing (424 468) ps polarity 0
+net 78: (27 23)->(27 31) 5 1 0 1 #timing (760 807) ps  polarity 1
+net 78: (27 31)->(27 31) 1 0 0 1 #timing (1013 930) ps  polarity 0
+net 78: (27 31)->(27 31) 0 0 0 1 #timing (1027 1112) ps  polarity 1
+net 78: (27 31)->(25 31) 1 2 0 1 #timing (1088 977) ps  polarity 0
+net 78: (25 31)->(25 31) 0 0 0 1 #timing (1095 1235) ps  polarity 1
+net 79: (27 21)->(26 21) 0 2 0 0 #timing (183 183) ps polarity 0
+net 79: (26 21)->(26 23) 1 1 0 0 #timing (295 289) ps polarity 1
+net 79: (26 23)->(26 19) 3 1 0 1 #timing (756 646) ps  polarity 1
+net 79: (26 19)->(26 19) 1 0 1 1 #timing (857 752) ps  polarity 0
+net 79: (26 19)->(26 18) 0 1 0 1 #timing (897 982) ps  polarity 1
+net 80: (24 26)->(24 27) 0 1 0 0 #timing (209 209) ps polarity 1
+net 80: (24 27)->(24 25) 1 1 0 0 #timing (359 336) ps polarity 0
+net 80: (24 25)->(24 27) 1 1 0 1 #timing (642 569) ps  polarity 1
+net 80: (24 27)->(25 26) 0 3 0 1 #timing (726 807) ps  polarity 0
+net 80: (24 25)->(20 25) 4 5 0 0 #timing (682 661) ps polarity 0
+net 80: (20 25)->(20 25) 5 0 0 0 #timing (815 808) ps polarity 1
+net 80: (20 25)->(20 17) 5 1 0 1 #timing (1141 1145) ps  polarity 0
+net 80: (20 17)->(20 17) 1 0 0 1 #timing (1347 1310) ps  polarity 1
+net 80: (20 17)->(21 16) 0 3 0 1 #timing (1438 1462) ps  polarity 0
+net 81: (27 20)->(27 21) 0 1 0 0 #timing (174 174) ps polarity 1
+net 81: (27 21)->(27 21) 1 0 0 0 #timing (256 257) ps polarity 0
+net 81: (27 21)->(27 25) 3 4 0 0 #timing (544 491) ps polarity 0
+net 81: (27 25)->(23 25) 4 5 0 0 #timing (948 831) ps polarity 0
+net 81: (23 25)->(23 29) 3 1 0 1 #timing (1303 1321) ps  polarity 0
+net 81: (23 29)->(23 31) 1 1 0 1 #timing (1465 1473) ps  polarity 1
+net 81: (23 31)->(23 31) 0 0 0 1 #timing (1590 1597) ps  polarity 0
+net 84: (24 27)->(25 27) 0 2 0 0 #timing (205 205) ps polarity 0
+net 84: (25 27)->(25 27) 1 0 0 0 #timing (279 284) ps polarity 1
+net 84: (25 27)->(25 27) 1 0 1 1 #timing (483 455) ps  polarity 0
+net 84: (25 27)->(25 27) 0 0 0 1 #timing (539 574) ps  polarity 1
+net 85: (24 18)->(25 18) 0 2 0 0 #timing (221 221) ps polarity 0
+net 85: (25 18)->(25 18) 1 0 0 0 #timing (305 308) ps polarity 1
+net 85: (25 18)->(25 22) 3 1 0 0 #timing (632 561) ps polarity 1
+net 85: (25 22)->(25 26) 3 4 0 1 #timing (1163 955) ps  polarity 1
+net 85: (25 26)->(25 26) 1 0 1 1 #timing (1280 1076) ps  polarity 0
+net 85: (25 26)->(25 27) 0 1 0 1 #timing (1187 1386) ps  polarity 1
+net 102: (25 22)->(25 22) 0 0 0 0 #timing (199 199) ps polarity 0
+net 102: (25 22)->(27 20) 1 3 0 0 #timing (390 351) ps polarity 1
+net 102: (27 20)->(27 24) 3 4 0 1 #timing (887 737) ps  polarity 1
+net 102: (27 24)->(25 24) 1 2 0 1 #timing (1061 890) ps  polarity 0
+net 102: (25 24)->(24 25) 0 3 0 1 #timing (1058 1242) ps  polarity 1

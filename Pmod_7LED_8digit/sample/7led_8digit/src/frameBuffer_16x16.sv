@@ -49,7 +49,7 @@ always @(posedge signal_clk)begin
     end else begin
       line_data[i] <= 1'b0;
     end
-  end
+    end
 
     s_counter <= 'd0;
     serial_data <= line_data['d15 - s_counter];

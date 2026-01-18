@@ -1,0 +1,25 @@
+// Custom testbench
+
+`timescale 1ns / 1ps
+
+module tb_tb;
+
+reg clk=1;
+
+digit8_7seg digit8_7seg_inst(
+.clk(clk)
+);
+
+  initial begin
+
+    $dumpfile ("tb_tb.vcd");
+    $dumpvars (0, tb_tb);
+
+    #10000000; $finish;
+  end
+  
+  always begin
+    #1; clk <= ~clk;
+  end
+
+endmodule

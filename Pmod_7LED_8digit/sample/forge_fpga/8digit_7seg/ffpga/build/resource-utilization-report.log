@@ -5,19 +5,21 @@
     Top level module name: digit8_7seg
 
     Resource usage:
-       9 Logic 6-LUT CLBs
-           27 CLB LUTs utilized (up to 4 per CLB)
-                 1 of which are 6-input LUTs
-                 7 of which are dual 5-input LUTs
-                34 LUTs total
-           24 CLB FFs utilized (up to 4 pairs per CLB)
-                24 of which are LUT-FF combination
-                24 FFs total
+      12 Logic 6-LUT CLBs
+           42 CLB LUTs utilized (up to 4 per CLB)
+                 6 of which are 6-input LUTs
+                 9 of which are dual 5-input LUTs
+                51 LUTs total
+           28 CLB FFs utilized (up to 4 pairs per CLB)
+                28 of which are LUT-FF combination
+                 2 of which are dual-FFs
+                30 FFs total
        6 I/O CLBs
            11 Output pins
-            2 Output FFs utilized
+            3 Output FFs utilized
        1 Clock
-           Clock 0: net    28, clk, Fanout: 9 CLBs
+           Clock 0: net    34, clk, Fanout: 13 CLBs
+           Total 1 unique clocks
     need 0 DSP and 1 Logic-Memory FPGA 1K Tiles.
 
  
@@ -30,10 +32,10 @@ TILE-REQ:		0		0		0		1
                        140 Logic 6-LUT CLBs
                               40 CLBs support RAM/SR
 
-Usage of Logic CLBs is 6.4%.
+Usage of Logic CLBs is 8.6%.
     Logic-Memory CLB for RAM/Shift-Register is 0.0%.
-Usage of LUTs is 4.8%.
-    dual-LUTs is 1.2%.
-Usage of FF is 4.3%.
-    dual-FF is 0.0%.
+Usage of LUTs is 7.5%.
+    dual-LUTs is 1.6%.
+Usage of FF is 5.0%.
+    dual-FF is 0.4%.
 Usage of IO CLB is 3.3%.
