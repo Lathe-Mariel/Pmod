@@ -1,9 +1,9 @@
-The current time is Mon Jan 19 02:32:58 2026
+The current time is Tue Jan 20 02:20:34 2026
 CPUs=4
 EXE="H:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23\eda-placer.exe"
 BuildDir=H:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23
 BuildPath="H:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23"
-CWD=C:\Users\n11ak\AppData\Local\Temp\IFZjpFvp\out\minplacer\00003_pa03_00006_rplan
+CWD=C:\Users\n11ak\AppData\Local\Temp\tbzMbDff\out\minplacer\00003_pa03_00006_rplan
 LogFile=minplacer_00003_pa03_00006.log
 PrintScreen=..\_00003_pa03_stdout.txt
 Command line: H:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23\eda-placer.exe -print_screen ..\_00003_pa03_stdout.txt -eflx_call_minplacer 00003_pa03_00006_rplan__out__digit8_7seg
@@ -135,16 +135,16 @@ GeometryDumpLayers starts.
 GeometryDumpLayers ends.
 pProblemIni. eramclkAsClock=1
 pProblemIniNetlist. skip_hifi=0, skip_pppff=2147483647
-Netlist=NETLIST_digit8_7seg NumInst=20 NumNet=58
+Netlist=NETLIST_digit8_7seg NumInst=20 NumNet=60
 NumPinst=15
 	DontPlace=0, NonRootRbbChainMember=3, NonRootDspChainMember=0, Const=1, ClkBuf=1
 There are 20 instances. After combining instances in chains, there are 15 instances to place.
 	Clock[0] OrigClock[0] net (net_index=34) clk
-NumPnet=51
-NumTrivial=2 NumDriverless=0
-AverageFO=2.14 #HifiNet=0 AverageFO_HifiNet=0.00
+NumPnet=52
+NumTrivial=3 NumDriverless=0
+AverageFO=2.27 #HifiNet=0 AverageFO_HifiNet=0.00
 NumClk=1 (with 0 inverted)
-There are 51 nets in the design. Average fanout is 2.14.
+There are 52 nets in the design. Average fanout is 2.27.
 There is 1 clock in the design.
 NumInsts=15
 Resource usages:
@@ -171,8 +171,8 @@ Wrote 6 RBB-locations out of 6 IOB insts to EFLX file ..\..\minplacer\00003_pa03
 Wrote 0 RBB-locations out of 6 INTIOB insts to EFLX file ..\..\minplacer\00003_pa03_00006_rplan\minplacer_rbbloc.txt.
 CLOCKPLAN_INI_NETLIST: NUM_CLOCKS=1 NUM_PINSTS=15
 	 #Inst/Usage        L           M         DSP       SPRAM       UPRAM       2PRAM         IOB        ZIOB        NCLT        RCLT      
-	   CLOCK[ 0]*     7(   10)                                                                                                            
-	   NON_CLOCK      2(    2)                                                                                                            
+	   CLOCK[ 0]*     8(   11)                                                                                                            
+	   NON_CLOCK      1(    1)                                                                                                            
 CLOCKPLAN_INI_GEO: NUM_TILE_SLICES=1/1
 {Rsc/Util/MinThre={L=140/12/50 ,M=40/0/8 ,DSP=0/0/4 ,SPRAM=0/0/0 ,UPRAM=0/0/0 ,2PRAM=0/0/0 ,IOB=184/6/16 ,ZIOB=0/0/0 ,NCLT=0/0/0 ,RCLT=0/0/0}
 CLOCKPLAN_INI_PORTLOCKS
@@ -197,11 +197,11 @@ ClockPortFile ..\..\minplacer\00003_pa03_00006_rplan\minplacer_clkloc.txt writte
 |#           0           |
 |*                       |
 |sa0*                    |
-|L=12,L4 C10             |
+|L=12,L4 C11             |
 |IOB=6 C3                |
 |------------------------|
 CLUSTER[0] LAYER0=L TILE=[0,0] CLK=<0,-1> ERAMCLK=<12,0> REGION=<none>
- {L=12 C10 IOB=6 C3 LCHAIN=4 DCHAIN=0} #NEI=0 REACHABLES:
+ {L=12 C11 IOB=6 C3 LCHAIN=4 DCHAIN=0} #NEI=0 REACHABLES:
 CLOCK[0] #LockedPort=1 #AssignedPort=0 #OutputPort=0 TX0Y0={#Cluster=1 L=12 IOB=6}
 *********************************** TILE REPORT ***************************************
 
@@ -209,7 +209,7 @@ CLOCK[0] #LockedPort=1 #AssignedPort=0 #OutputPort=0 TX0Y0={#Cluster=1 L=12 IOB=
 Placement timing:
          Clock        Group  Achievable Frequency(MHz)
 --------------  -----------  -------------------------
-           clk   <UDEF_clk>                   110.534 
+           clk   <UDEF_clk>                   113.986 
 
 
 FINDER ENDS
@@ -217,7 +217,7 @@ pProblemFin.
 Min-placement step ends: Delay and congestion estimation (fastest_delay=0 gentable=0 mode=1). Runtime: 0:0:10 (CPU time), 0:0:10 (real time); peak memory: 1374MB.
 
 
-The current time is Mon Jan 19 02:33:08 2026
+The current time is Tue Jan 20 02:20:44 2026
 
 
 

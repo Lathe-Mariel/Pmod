@@ -1,21 +1,21 @@
 
 Min-placement step: Set up placement.
 There are 20 instances. After combining instances in chains, there are 15 instances to place.
-There are 51 nets in the design, 0 of which have fanout larger than 49. Average fanout is 2.14.
+There are 52 nets in the design, 0 of which have fanout larger than 49. Average fanout is 2.27.
 There is 1 clock in the design.
 Resource usages:
  Type=L: Capacity=140 Utilized=12 NumInst=9. [ChainLen=1]=8 [ChainLen=4]=1
  Type=M: Capacity=40 Utilized=0 NumInst=0.
  Type=IOB: Capacity=184 Utilized=6 NumInst=6.
 Min-placement step: Global placement and legalization.
-Legalizing chains on RBB-L: Legalizing chains of RBB-L:  Len=4.(1|0) Len=2.(2|0) *
-Legalizing non-chains of RBB-L: .(6,0|0,0)
+Legalizing chains on RBB-L: Legalizing chains of RBB-L:  Len=4.(1|0) Len=2.(1|0) *
+Legalizing non-chains of RBB-L: .(7,0|0,0)
 Improving the placement of 9 instances for resource type(s) of RBB-L RBB-M: ...........................................................................................................
 Min-placement step ends: Global placement and legalization. Runtime: 0:0:10 (CPU time), 0:0:10 (real time); peak memory: 1304MB.
 
 
 There are 20 instances. After combining instances in chains, there are 15 instances to place.
-There are 51 nets in the design. Average fanout is 2.14.
+There are 52 nets in the design. Average fanout is 2.27.
 There is 1 clock in the design.
 Resource usages:
  Type=L: Capacity=140 Utilized=12 NumInst=9. [ChainLen=1]=8 [ChainLen=4]=1
@@ -26,7 +26,7 @@ Min-placement step ends: Replication (mode=1). Runtime: 0:0:10 (CPU time), 0:0:1
 
 
 There are 20 instances. After combining instances in chains, there are 15 instances to place.
-There are 51 nets in the design. Average fanout is 2.14.
+There are 52 nets in the design. Average fanout is 2.27.
 There is 1 clock in the design.
 Resource usages:
  Type=L: Capacity=140 Utilized=12 NumInst=9. [ChainLen=1]=8 [ChainLen=4]=1
@@ -35,24 +35,26 @@ Resource usages:
 Min-placement step: Detaild placement (mode=2).
 Long connection estimation: 
 Short connection estimation: ...........
-[ITER=0] WNS=-7397,M=4.698 TNS=-396546 PathNumObj=2 ***&&&&&!@
-[ITER=1] WNS=-7397,M=4.698 TNS=-396546 x PathNumObj=5 ***&&&&&!@
-[ITER=2] WNS=-7397,M=4.698 TNS=-396546 PathNumObj=2 ***&&&&&!@
-[ITER=3] WNS=-7397,M=4.698 TNS=-396546 x PathNumObj=5 ***&&&&&!@
-[ITER=4] WNS=-7397,M=4.698 TNS=-396546 PathNumObj=2 ***&&&&&!@
-[ITER=5] WNS=-7397,M=4.698 TNS=-396546 x PathNumObj=5 
+[ITER=0] WNS=-7380,M=4.690 TNS=-390789 PathNumObj=2 ***&&&&&!@
+[ITER=1] WNS=-7380,M=4.690 TNS=-390789 x PathNumObj=4 ***&
+[ITER=2] WNS=-7322,M=4.661 TNS=-391894 PathNumObj=2 ***&&&&&!@
+[ITER=3] WNS=-7322,M=4.661 TNS=-391894 x PathNumObj=3 ***&&&&&!@
+[ITER=4] WNS=-7322,M=4.661 TNS=-391894 PathNumObj=2 ***&&&&&!@
+[ITER=5] WNS=-7322,M=4.661 TNS=-391894 x PathNumObj=3 ***&&&&&!@
+[ITER=6] WNS=-7322,M=4.661 TNS=-391894 PathNumObj=2 ***&&&&&!@
+[ITER=7] WNS=-7322,M=4.661 TNS=-391894 x PathNumObj=3 
 
 Placement timing:
          Clock        Group  Achievable Frequency(MHz)
 --------------  -----------  -------------------------
-           clk   <UDEF_clk>                   106.428 
+           clk   <UDEF_clk>                   107.285 
 
 
 Min-placement step ends: Detaild placement (mode=2). Runtime: 0:0:10 (CPU time), 0:0:10 (real time); peak memory: 1415MB.
 
 
 There are 20 instances. After combining instances in chains, there are 15 instances to place.
-There are 51 nets in the design. Average fanout is 2.14.
+There are 52 nets in the design. Average fanout is 2.27.
 There is 1 clock in the design.
 Resource usages:
  Type=L: Capacity=140 Utilized=12 NumInst=9. [ChainLen=1]=8 [ChainLen=4]=1
@@ -65,7 +67,7 @@ Short connection estimation: ...........
 Placement timing:
          Clock        Group  Achievable Frequency(MHz)
 --------------  -----------  -------------------------
-           clk   <UDEF_clk>                   106.428 
+           clk   <UDEF_clk>                   107.285 
 
 
 Min-placement step ends: Delay and congestion estimation (fastest_delay=0 gentable=0 mode=1). Runtime: 0:0:10 (CPU time), 0:0:10 (real time); peak memory: 1374MB.
