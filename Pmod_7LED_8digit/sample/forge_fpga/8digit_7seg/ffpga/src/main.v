@@ -13,11 +13,20 @@
   (* iopad_external_pin *) output serial_data_en
 );
 
-  wire [79:0] segment_map = {8'b0110_1111, 8'b0111_1011, 8'b0111_1101, 8'b1011_1100, 8'b1000_0001, 8'b1000_0001, 8'b1000_0001, 8'b1000_0001, 8'b1000_0001, 8'b0011_1111};
+  wire [79:0] segment_map = { 8'b0110_1111,     //9
+                              8'b0111_1011,
+                              8'b0111_1101,
+                              8'b1011_1100,
+                              8'b1000_0001,     //5
+                              8'b1000_0001,
+                              8'b1000_0001,     //3
+                              8'b1000_0001,
+                              8'b1000_0001,
+                              8'b0011_1111};    //0
 
   reg [3:0] counter_16bit=0;
   reg sys_clk;
-  reg [1:0] digit_select=0;  // for 4digit
+  reg [1:0] digit_select=0;   // for 4digit
   reg [3:0] segment_select=0; // for 8segment LED(this is index of segment_map)  
   wire [13:0] target_number = 14'h1234;
   reg [13:0] temp_number=0;
@@ -26,20 +35,18 @@
   reg rclk_reg=0;
 //  reg LED_status;
 
-  assign LED_en = 1'b1;
-  assign clk_en = 1'b1;
+  assign LED_en = 1'b1;   assign clk_en = 1'b1;
+  assign pmod_s_en = 1'b1;  assign rclk_en = 1'b1;
   assign serial_data_en = 1'b1;
-  assign pmod_s_en = 1'b1;
-  assign rclk_en = 1'b1;
   assign srclr_en = 1'b1;
   assign LED = 1;
   assign serial_data = data;
   assign rclk = rclk_reg;
   assign srclr = 1;
   assign pmod_s = sclk_reg;
-  
+
   reg [15:0] counter=0;
-    
+
   always @ (posedge clk)begin
 
     if (counter == 12_500) begin  // 2000Hz
@@ -48,7 +55,6 @@
         
         if(!sclk_reg)begin
           rclk_reg <= 0;
-//      LED_status <= !LED_status;
           counter_16bit <= counter_16bit + 4'b1;
     
           if(counter_16bit == 4'd15)begin  // submitting of every digit data uses 16 clocks
@@ -74,17 +80,44 @@
               data <= 1'b1;
             end
 
-        end
-      end else begin
-        if(counter_16bit == 4'd0)begin
-          rclk_reg <= 1;
+          end
         end else begin
-          rclk_reg <= 0;
+          if(counter_16bit == 4'd0)begin
+            rclk_reg <= 1;
+          end else begin
+            rclk_reg <= 0;
+          end
         end
-      end
     end else begin
         counter <= counter + 1'b1;
     end
   end
   
+endmodule
+
+module bcd_counter(
+  input clk,
+  input in,
+  output out,
+  output carry
+);
+
+reg[3:0] out_reg;
+
+assign out = out_reg;
+
+  always (posedge clk)begin
+    if(in)begin
+
+      if(out_reg == 4'd9)begin
+        carry <= 1;
+        out_reg <= 0;
+      end else begin
+        carry <= 0;
+        out_reg <= out_reg +4'b1;
+      end
+    end else begin
+      carry <= 1;
+    end
+  end
 endmodule
