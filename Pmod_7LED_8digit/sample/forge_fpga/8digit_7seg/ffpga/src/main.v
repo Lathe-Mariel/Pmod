@@ -19,7 +19,7 @@
                               8'b1111_0000,
                               8'b1011_1111,     //5
                               8'b1001_1111,
-                              8'b1000_1111,     //3
+                              8'b1011_1111,     //3
                               8'b1000_0111,
                               8'b1000_0011,
                               8'b0011_1111};    //0
@@ -28,8 +28,8 @@
   reg sys_clk;
   reg [1:0] digit_select=0;   // for 4digit
   reg [3:0] segment_select=0; // for 8segment LED(this is index of segment_map)  
-  wire [13:0] target_number = 14'h1239;
-  reg [13:0] temp_number=0;
+  wire [15:0] target_number = 16'h5678;
+  reg [15:0] temp_number=0;
   reg data=0;
   reg sclk_reg=0;
   reg rclk_reg=0;
@@ -62,7 +62,7 @@
 
           counter_16bit <= counter_16bit + 4'b1;
     
-          if(counter_16bit == 4'd15)begin  // submitting of every digit data uses 16 clocks
+          if(counter_16bit == 4'd0)begin  // submitting of every digit data uses 16 clocks
             digit_select <= digit_select + 2'b1;  // next digit
 //          segment_select <= 1;
             
@@ -72,14 +72,14 @@
               temp_number <= target_number;
             end else begin
 //              temp_number <= temp_number / 10;  // right shift in decimal(for next digit)
-                temp_number <= {4'b0000, temp_number[13:4]};
+                temp_number <= {4'b0000, temp_number[15:4]};
             end
           end
   
           if(counter_16bit[3])begin
             data <= segment_map[segment_select*8 + counter_16bit[2:0]];
           end else begin
-            if(!counter_16bit[2] && (counter_16bit[1:0] == digit_select))begin
+            if(counter_16bit[2] && (counter_16bit[1:0] == digit_select))begin
               data <= 1'b0;
             end else begin
               data <= 1'b1;
