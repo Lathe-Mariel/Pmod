@@ -18,17 +18,17 @@
                               8'b1111_0001,
                               8'b1111_0000,
                               8'b1011_1111,     //5
-                              8'b1001_1111,
-                              8'b1011_1111,     //3
-                              8'b1000_0111,
-                              8'b1000_0011,
-                              8'b0011_1111};    //0
+                              8'b1010_1010,
+                              8'b0000_0000,     //3
+                              8'b1000_0001,
+                              8'b0101_0101,
+                              8'b1010_1010};    //0
 
   reg [3:0] counter_16bit=0;
   reg sys_clk;
   reg [1:0] digit_select=0;   // for 4digit
   reg [3:0] segment_select=0; // for 8segment LED(this is index of segment_map)  
-  wire [15:0] target_number = 16'h5678;
+  wire [15:0] target_number = {4'b1001, 4'b0010, 4'b0011, 4'b0100};
   reg [15:0] temp_number=0;
   reg data=0;
   reg sclk_reg=0;
@@ -64,7 +64,6 @@
     
           if(counter_16bit == 4'd0)begin  // submitting of every digit data uses 16 clocks
             digit_select <= digit_select + 2'b1;  // next digit
-//          segment_select <= 1;
             
             segment_select <= temp_number[3:0];
             
@@ -79,7 +78,7 @@
           if(counter_16bit[3])begin
             data <= segment_map[segment_select*8 + counter_16bit[2:0]];
           end else begin
-            if(counter_16bit[2] && (counter_16bit[1:0] == digit_select))begin
+            if((counter_16bit[1:0] == digit_select))begin
               data <= 1'b0;
             end else begin
               data <= 1'b1;
@@ -87,8 +86,11 @@
 
           end
         end else begin
-          rclk_reg <= 0;
+//          rclk_reg <= 0;
         end
+    end else if(counter == 6000)begin
+      rclk_reg <= 0;
+      counter <= counter + 1'b1;
     end else begin
         counter <= counter + 1'b1;
     end
