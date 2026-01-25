@@ -2,101 +2,78 @@
 
 (* hdlname = "\\digit8_7seg" *)
 (* top =  1  *)
-(* src = "../src/main.v:1.11-99.10" *)
+(* src = "../src/main.v:1.11-106.10" *)
 module digit8_7seg(clk, LED, LED_en, clk_en, pmod_s, pmod_s_en, rclk, rclk_en, srclr, srclr_en, serial_data, serial_data_en);
   (* unused_bits = "0" *)
-  wire _000_;
-  wire _001_;
+  wire _00_;
   (* unused_bits = "0" *)
-  wire _002_;
+  wire _01_;
   (* unused_bits = "0" *)
-  wire _003_;
+  wire _02_;
   (* unused_bits = "0" *)
-  wire _004_;
+  wire _03_;
+  wire _04_;
   (* unused_bits = "0" *)
-  wire _005_;
+  wire _05_;
   (* unused_bits = "0" *)
-  wire _006_;
+  wire _06_;
   (* unused_bits = "0" *)
-  wire _007_;
+  wire _07_;
   (* unused_bits = "0" *)
-  wire _008_;
+  wire _08_;
   (* unused_bits = "0" *)
-  wire _009_;
-  wire _010_;
+  wire _09_;
   (* unused_bits = "0" *)
-  wire _011_;
+  wire _10_;
   (* unused_bits = "0" *)
-  wire _012_;
+  wire _11_;
   (* unused_bits = "0" *)
-  wire _013_;
-  wire _014_;
+  wire _12_;
+  wire _13_;
   (* unused_bits = "0" *)
-  wire _015_;
+  wire _14_;
   (* unused_bits = "0" *)
-  wire _016_;
+  wire _15_;
   (* unused_bits = "0" *)
-  wire _017_;
-  wire _018_;
+  wire _16_;
+  wire _17_;
   (* unused_bits = "0" *)
-  wire _019_;
+  wire _18_;
   (* unused_bits = "0" *)
-  wire _020_;
+  wire _19_;
   (* unused_bits = "0" *)
-  wire _021_;
+  wire _20_;
   (* unused_bits = "0" *)
-  wire _022_;
-  wire _023_;
-  wire _024_;
-  wire _025_;
-  wire _026_;
-  wire _027_;
-  wire _028_;
-  wire _029_;
-  wire _030_;
-  wire _031_;
-  wire _032_;
-  wire _033_;
-  wire _034_;
-  wire _035_;
-  wire _036_;
-  wire _037_;
-  wire _038_;
-  wire _039_;
-  wire _040_;
-  wire _041_;
-  wire _042_;
-  wire _043_;
+  wire _21_;
+  wire _22_;
+  wire _23_;
+  wire _24_;
+  wire _25_;
+  wire _26_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/main.v:63.28-63.48|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/arith_map.v:112.26-112.27" *)
-  wire [3:0] _044_;
+  (* src = "../src/main.v:100.18-100.32|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/arith_map.v:112.26-112.27" *)
+  wire [15:0] _27_;
   (* force_downto = 32'd1 *)
-  (* src = "../src/main.v:93.18-93.32|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/arith_map.v:112.26-112.27" *)
-  wire [15:0] _045_;
-  wire _046_;
-  wire _047_;
-  wire _048_;
+  (* src = "../src/main.v:69.28-69.48|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/arith_map.v:112.26-112.27" *)
+  wire [3:0] _28_;
+  wire _29_;
+  wire _30_;
+  wire _31_;
   (* force_downto = 32'd1 *)
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:30.21-30.22" *)
-  wire [4:0] _049_;
+  wire [4:0] _32_;
   (* force_downto = 32'd1 *)
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:30.21-30.22" *)
-  wire [4:0] _050_;
+  wire [4:0] _33_;
   (* force_downto = 32'd1 *)
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:30.21-30.22" *)
-  wire [1:0] _051_;
+  wire [3:0] _34_;
   (* force_downto = 32'd1 *)
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:30.21-30.22" *)
-  wire [5:0] _052_;
+  wire [5:0] _35_;
   (* force_downto = 32'd1 *)
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:30.21-30.22" *)
-  wire [4:0] _053_;
-  (* force_downto = 32'd1 *)
-  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:30.21-30.22" *)
-  wire [1:0] _054_;
-  (* force_downto = 32'd1 *)
-  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:30.21-30.22" *)
-  wire [5:0] _055_;
+  wire [3:0] _36_;
   (* iopad_external_pin = 32'd1 *)
   (* src = "../src/main.v:3.35-3.38" *)
   output LED;
@@ -114,13 +91,13 @@ module digit8_7seg(clk, LED, LED_en, clk_en, pmod_s, pmod_s_en, rclk, rclk_en, s
   (* src = "../src/main.v:5.35-5.41" *)
   output clk_en;
   wire clk_en;
-  (* src = "../src/main.v:48.14-48.21" *)
+  (* src = "../src/main.v:54.14-54.21" *)
   wire [15:0] counter;
-  (* src = "../src/main.v:27.13-27.26" *)
+  (* src = "../src/main.v:33.13-33.26" *)
   wire [3:0] counter_16bit;
-  (* src = "../src/main.v:33.7-33.11" *)
+  (* src = "../src/main.v:39.7-39.11" *)
   wire data;
-  (* src = "../src/main.v:29.13-29.25" *)
+  (* src = "../src/main.v:35.13-35.25" *)
   wire [1:0] digit_select;
   (* iopad_external_pin = 32'd1 *)
   (* src = "../src/main.v:6.35-6.41" *)
@@ -138,15 +115,12 @@ module digit8_7seg(clk, LED, LED_en, clk_en, pmod_s, pmod_s_en, rclk, rclk_en, s
   (* src = "../src/main.v:9.35-9.42" *)
   output rclk_en;
   wire rclk_en;
-  (* src = "../src/main.v:35.7-35.15" *)
+  (* src = "../src/main.v:41.7-41.15" *)
   wire rclk_reg;
-  (* src = "../src/main.v:34.7-34.15" *)
+  (* src = "../src/main.v:40.7-40.15" *)
   wire sclk_reg;
-  (* src = "../src/main.v:16.15-16.26" *)
-  wire [79:0] segment_map;
-  (* src = "../src/main.v:30.13-30.27" *)
-  (* unused_bits = "1" *)
-  wire [3:0] segment_select;
+  (* src = "../src/main.v:16.16-16.27" *)
+  wire [127:0] segment_map;
   (* iopad_external_pin = 32'd1 *)
   (* src = "../src/main.v:12.35-12.46" *)
   output serial_data;
@@ -163,669 +137,484 @@ module digit8_7seg(clk, LED, LED_en, clk_en, pmod_s, pmod_s_en, rclk, rclk_en, s
   (* src = "../src/main.v:11.35-11.43" *)
   output srclr_en;
   wire srclr_en;
-  (* src = "../src/main.v:31.15-31.28" *)
+  (* src = "../src/main.v:37.15-37.28" *)
   wire [15:0] target_number;
-  (* src = "../src/main.v:32.14-32.25" *)
-  (* unused_bits = "1 5" *)
+  (* src = "../src/main.v:38.14-38.25" *)
   wire [15:0] temp_number;
-  (* module_not_derived = 32'd1 *)
-  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:51.26-53.19" *)
-  LUT4 #(
-    .INIT(16'h0400)
-  ) _056_ (
-    .I0(counter[4]),
-    .I1(counter[3]),
-    .I2(counter[2]),
-    .I3(counter[1]),
-    .O(_049_[4])
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:56.26-58.30" *)
-  LUT5 #(
-    .INIT(32'd131072)
-  ) _057_ (
-    .I0(counter[11]),
-    .I1(counter[10]),
-    .I2(counter[9]),
-    .I3(counter[8]),
-    .I4(_049_[4]),
-    .O(_051_[0])
-  );
   (* module_not_derived = 32'd1 *)
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:43.26-44.30" *)
   LUT2 #(
     .INIT(4'h1)
-  ) _058_ (
+  ) _37_ (
     .I0(counter[2]),
     .I1(counter[1]),
-    .O(_052_[5])
+    .O(_35_[5])
   );
   (* module_not_derived = 32'd1 *)
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:43.26-44.30" *)
   LUT2 #(
     .INIT(4'h2)
-  ) _059_ (
+  ) _38_ (
     .I0(counter[4]),
     .I1(counter[3]),
-    .O(_052_[4])
+    .O(_35_[4])
   );
   (* module_not_derived = 32'd1 *)
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:61.26-63.41" *)
   LUT6 #(
     .INIT(64'h4000000000000000)
-  ) _060_ (
+  ) _39_ (
     .I0(counter[11]),
     .I1(counter[10]),
     .I2(counter[9]),
     .I3(counter[8]),
-    .I4(_052_[4]),
-    .I5(_052_[5]),
-    .O(_054_[0])
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:43.26-44.30" *)
-  LUT2 #(
-    .INIT(4'h4)
-  ) _061_ (
-    .I0(counter_16bit[2]),
-    .I1(segment_select[0]),
-    .O(_033_)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:43.26-44.30" *)
-  LUT2 #(
-    .INIT(4'h1)
-  ) _062_ (
-    .I0(counter_16bit[2]),
-    .I1(segment_select[0]),
-    .O(_034_)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:43.26-44.30" *)
-  LUT2 #(
-    .INIT(4'h2)
-  ) _063_ (
-    .I0(counter_16bit[2]),
-    .I1(segment_select[0]),
-    .O(_036_)
+    .I4(_35_[4]),
+    .I5(_35_[5]),
+    .O(_36_[1])
   );
   (* module_not_derived = 32'd1 *)
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:51.26-53.19" *)
   LUT4 #(
     .INIT(16'h0040)
-  ) _064_ (
+  ) _40_ (
     .I0(counter[7]),
     .I1(counter[6]),
     .I2(counter[5]),
     .I3(counter[0]),
-    .O(_050_[4])
+    .O(_32_[4])
   );
   (* module_not_derived = 32'd1 *)
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:56.26-58.30" *)
   LUT5 #(
     .INIT(32'd16777216)
-  ) _065_ (
+  ) _41_ (
     .I0(counter[15]),
     .I1(counter[14]),
     .I2(counter[13]),
     .I3(counter[12]),
-    .I4(_050_[4]),
-    .O(_051_[1])
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:47.26-48.41" *)
-  LUT3 #(
-    .INIT(8'h80)
-  ) _066_ (
-    .I0(sclk_reg),
-    .I1(_051_[0]),
-    .I2(_051_[1]),
-    .O(_038_)
+    .I4(_32_[4]),
+    .O(_34_[3])
   );
   (* module_not_derived = 32'd1 *)
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:51.26-53.19" *)
   LUT4 #(
-    .INIT(16'h8000)
-  ) _067_ (
-    .I0(sclk_reg),
-    .I1(_053_[2]),
-    .I2(_051_[0]),
-    .I3(_051_[1]),
-    .O(_039_)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:43.26-44.30" *)
-  LUT2 #(
-    .INIT(4'h8)
-  ) _068_ (
-    .I0(_051_[0]),
-    .I1(_051_[1]),
-    .O(_040_)
+    .INIT(16'h0400)
+  ) _42_ (
+    .I0(counter[4]),
+    .I1(counter[3]),
+    .I2(counter[2]),
+    .I3(counter[1]),
+    .O(_33_[4])
   );
   (* module_not_derived = 32'd1 *)
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:56.26-58.30" *)
   LUT5 #(
-    .INIT(32'd2147483648)
-  ) _069_ (
-    .I0(sclk_reg),
-    .I1(_053_[1]),
-    .I2(_053_[2]),
-    .I3(_051_[0]),
-    .I4(_051_[1]),
-    .O(_041_)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:43.26-44.30" *)
-  LUT2 #(
-    .INIT(4'h8)
-  ) _070_ (
-    .I0(_054_[0]),
-    .I1(_051_[1]),
-    .O(_042_)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:51.26-53.19" *)
-  LUT4 #(
-    .INIT(16'h0001)
-  ) _071_ (
-    .I0(counter_16bit[3]),
-    .I1(counter_16bit[2]),
-    .I2(counter_16bit[1]),
-    .I3(counter_16bit[0]),
-    .O(_053_[2])
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:43.26-44.30" *)
-  LUT2 #(
-    .INIT(4'h8)
-  ) _072_ (
-    .I0(digit_select[1]),
-    .I1(digit_select[0]),
-    .O(_053_[1])
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:36.13-36.48" *)
-  INV _073_ (
-    .I(counter_16bit[0]),
-    .O(_044_[0])
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:36.13-36.48" *)
-  INV _074_ (
-    .I(segment_select[0]),
-    .O(_001_)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:36.13-36.48" *)
-  INV _075_ (
-    .I(counter[0]),
-    .O(_045_[0])
+    .INIT(32'd131072)
+  ) _43_ (
+    .I0(counter[11]),
+    .I1(counter[10]),
+    .I2(counter[9]),
+    .I3(counter[8]),
+    .I4(_33_[4]),
+    .O(_34_[2])
   );
   (* module_not_derived = 32'd1 *)
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:51.26-53.19" *)
   LUT4 #(
     .INIT(16'hec00)
-  ) _076_ (
+  ) _44_ (
     .I0(sclk_reg),
-    .I1(_054_[0]),
-    .I2(_051_[0]),
-    .I3(_051_[1]),
-    .O(_037_)
+    .I1(_36_[1]),
+    .I2(_34_[2]),
+    .I3(_34_[3]),
+    .O(_22_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:61.26-63.41" *)
-  LUT6 #(
-    .INIT(64'hbeffffbe14555514)
-  ) _077_ (
-    .I0(counter_16bit[3]),
-    .I1(counter_16bit[1]),
-    .I2(digit_select[1]),
-    .I3(counter_16bit[0]),
-    .I4(digit_select[0]),
-    .I5(_055_[5]),
-    .O(_043_)
+  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:47.26-48.41" *)
+  LUT3 #(
+    .INIT(8'h80)
+  ) _45_ (
+    .I0(sclk_reg),
+    .I1(_34_[2]),
+    .I2(_34_[3]),
+    .O(_23_)
   );
   (* module_not_derived = 32'd1 *)
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:43.26-44.30" *)
   LUT2 #(
-    .INIT(4'he)
-  ) _078_ (
+    .INIT(4'h8)
+  ) _46_ (
+    .I0(_34_[2]),
+    .I1(_34_[3]),
+    .O(_24_)
+  );
+  (* module_not_derived = 32'd1 *)
+  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:43.26-44.30" *)
+  LUT2 #(
+    .INIT(4'h8)
+  ) _47_ (
+    .I0(_36_[1]),
+    .I1(_34_[3]),
+    .O(_25_)
+  );
+  (* module_not_derived = 32'd1 *)
+  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:51.26-53.19" *)
+  LUT4 #(
+    .INIT(16'h0001)
+  ) _48_ (
+    .I0(counter_16bit[3]),
+    .I1(counter_16bit[2]),
+    .I2(counter_16bit[1]),
+    .I3(counter_16bit[0]),
+    .O(_34_[1])
+  );
+  (* module_not_derived = 32'd1 *)
+  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:36.13-36.48" *)
+  INV _49_ (
+    .I(counter[0]),
+    .O(_27_[0])
+  );
+  (* module_not_derived = 32'd1 *)
+  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:36.13-36.48" *)
+  INV _50_ (
+    .I(counter_16bit[0]),
+    .O(_28_[0])
+  );
+  (* module_not_derived = 32'd1 *)
+  (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:61.26-63.41" *)
+  LUT6 #(
+    .INIT(64'h0bbcb3bbf73f8bf0)
+  ) _51_ (
     .I0(counter_16bit[2]),
-    .I1(segment_select[0]),
-    .O(_035_)
+    .I1(counter_16bit[3]),
+    .I2(counter_16bit[1]),
+    .I3(digit_select[1]),
+    .I4(counter_16bit[0]),
+    .I5(digit_select[0]),
+    .O(_26_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:63.28-63.48|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/arith_map.v:176.11-184.5" *)
-  CARRY4 _079_ (
+  (* src = "../src/main.v:100.18-100.32|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/arith_map.v:176.11-184.5" *)
+  CARRY4 _52_ (
     .CI(1'h0),
-    .CO({ _005_, _004_, _003_, _002_ }),
+    .CO({ _04_, _03_, _02_, _01_ }),
     .CYINIT(1'h0),
     .DI(4'h1),
-    .O({ _044_[3:1], _000_ }),
-    .S({ counter_16bit[3:1], _044_[0] })
+    .O({ _27_[3:1], _00_ }),
+    .S({ counter[3:1], _27_[0] })
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:93.18-93.32|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/arith_map.v:176.11-184.5" *)
-  CARRY4 _080_ (
-    .CI(1'h0),
-    .CO({ _010_, _009_, _008_, _007_ }),
-    .CYINIT(1'h0),
-    .DI(4'h1),
-    .O({ _045_[3:1], _006_ }),
-    .S({ counter[3:1], _045_[0] })
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:93.18-93.32|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/arith_map.v:186.14-194.8" *)
-  CARRY4 _081_ (
-    .CI(_010_),
-    .CO({ _014_, _013_, _012_, _011_ }),
+  (* src = "../src/main.v:100.18-100.32|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/arith_map.v:186.14-194.8" *)
+  CARRY4 _53_ (
+    .CI(_04_),
+    .CO({ _13_, _12_, _11_, _10_ }),
     .CYINIT(1'h0),
     .DI(4'h0),
-    .O(_045_[7:4]),
+    .O(_27_[7:4]),
     .S(counter[7:4])
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:93.18-93.32|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/arith_map.v:186.14-194.8" *)
-  CARRY4 _082_ (
-    .CI(_014_),
-    .CO({ _018_, _017_, _016_, _015_ }),
+  (* src = "../src/main.v:100.18-100.32|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/arith_map.v:186.14-194.8" *)
+  CARRY4 _54_ (
+    .CI(_13_),
+    .CO({ _17_, _16_, _15_, _14_ }),
     .CYINIT(1'h0),
     .DI(4'h0),
-    .O(_045_[11:8]),
+    .O(_27_[11:8]),
     .S(counter[11:8])
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:93.18-93.32|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/arith_map.v:186.14-194.8" *)
-  CARRY4 _083_ (
-    .CI(_018_),
-    .CO({ _022_, _021_, _020_, _019_ }),
+  (* src = "../src/main.v:100.18-100.32|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/arith_map.v:186.14-194.8" *)
+  CARRY4 _55_ (
+    .CI(_17_),
+    .CO({ _21_, _20_, _19_, _18_ }),
     .CYINIT(1'h0),
     .DI(4'h0),
-    .O(_045_[15:12]),
+    .O(_27_[15:12]),
     .S(counter[15:12])
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
-  FDRE #(
-    .INIT(1'h0)
-  ) _084_ (
-    .C(clk),
-    .CE(_039_),
-    .D(_053_[1]),
-    .Q(temp_number[12]),
-    .R(1'h0)
+  (* src = "../src/main.v:69.28-69.48|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/arith_map.v:176.11-184.5" *)
+  CARRY4 _56_ (
+    .CI(1'h0),
+    .CO({ _09_, _08_, _07_, _06_ }),
+    .CYINIT(1'h0),
+    .DI(4'h1),
+    .O({ _28_[3:1], _05_ }),
+    .S({ counter_16bit[3:1], _28_[0] })
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _085_ (
+  ) _57_ (
     .C(clk),
     .CE(1'h1),
-    .D(_045_[0]),
+    .D(_27_[0]),
     .Q(counter[0]),
-    .R(_040_)
+    .R(_24_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _086_ (
+  ) _58_ (
     .C(clk),
     .CE(1'h1),
-    .D(_045_[1]),
+    .D(_27_[1]),
     .Q(counter[1]),
-    .R(_040_)
+    .R(_24_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _087_ (
+  ) _59_ (
     .C(clk),
     .CE(1'h1),
-    .D(_045_[2]),
+    .D(_27_[2]),
     .Q(counter[2]),
-    .R(_040_)
+    .R(_24_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _088_ (
+  ) _60_ (
     .C(clk),
     .CE(1'h1),
-    .D(_045_[3]),
+    .D(_27_[3]),
     .Q(counter[3]),
-    .R(_040_)
+    .R(_24_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _089_ (
+  ) _61_ (
     .C(clk),
     .CE(1'h1),
-    .D(_045_[4]),
+    .D(_27_[4]),
     .Q(counter[4]),
-    .R(_040_)
+    .R(_24_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _090_ (
+  ) _62_ (
     .C(clk),
     .CE(1'h1),
-    .D(_045_[5]),
+    .D(_27_[5]),
     .Q(counter[5]),
-    .R(_040_)
+    .R(_24_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _091_ (
+  ) _63_ (
     .C(clk),
     .CE(1'h1),
-    .D(_045_[6]),
+    .D(_27_[6]),
     .Q(counter[6]),
-    .R(_040_)
+    .R(_24_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _092_ (
+  ) _64_ (
     .C(clk),
     .CE(1'h1),
-    .D(_045_[7]),
+    .D(_27_[7]),
     .Q(counter[7]),
-    .R(_040_)
+    .R(_24_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _093_ (
+  ) _65_ (
     .C(clk),
     .CE(1'h1),
-    .D(_045_[8]),
+    .D(_27_[8]),
     .Q(counter[8]),
-    .R(_040_)
+    .R(_24_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _094_ (
+  ) _66_ (
     .C(clk),
     .CE(1'h1),
-    .D(_045_[9]),
+    .D(_27_[9]),
     .Q(counter[9]),
-    .R(_040_)
+    .R(_24_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _095_ (
+  ) _67_ (
     .C(clk),
     .CE(1'h1),
-    .D(_045_[10]),
+    .D(_27_[10]),
     .Q(counter[10]),
-    .R(_040_)
+    .R(_24_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _096_ (
+  ) _68_ (
     .C(clk),
     .CE(1'h1),
-    .D(_045_[11]),
+    .D(_27_[11]),
     .Q(counter[11]),
-    .R(_040_)
+    .R(_24_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _097_ (
+  ) _69_ (
     .C(clk),
     .CE(1'h1),
-    .D(_045_[12]),
+    .D(_27_[12]),
     .Q(counter[12]),
-    .R(_040_)
+    .R(_24_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _098_ (
+  ) _70_ (
     .C(clk),
     .CE(1'h1),
-    .D(_045_[13]),
+    .D(_27_[13]),
     .Q(counter[13]),
-    .R(_040_)
+    .R(_24_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _099_ (
+  ) _71_ (
     .C(clk),
     .CE(1'h1),
-    .D(_045_[14]),
+    .D(_27_[14]),
     .Q(counter[14]),
-    .R(_040_)
+    .R(_24_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _100_ (
+  ) _72_ (
     .C(clk),
     .CE(1'h1),
-    .D(_045_[15]),
+    .D(_27_[15]),
     .Q(counter[15]),
-    .R(_040_)
+    .R(_24_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _101_ (
+  ) _73_ (
     .C(clk),
-    .CE(_037_),
-    .D(_053_[2]),
+    .CE(_22_),
+    .D(_34_[1]),
     .Q(rclk_reg),
-    .R(_042_)
+    .R(_25_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _102_ (
+  ) _74_ (
     .C(clk),
-    .CE(_038_),
-    .D(_044_[0]),
+    .CE(_23_),
+    .D(_28_[0]),
     .Q(counter_16bit[0]),
     .R(1'h0)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _103_ (
+  ) _75_ (
     .C(clk),
-    .CE(_038_),
-    .D(_044_[1]),
+    .CE(_23_),
+    .D(_28_[1]),
     .Q(counter_16bit[1]),
     .R(1'h0)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _104_ (
+  ) _76_ (
     .C(clk),
-    .CE(_038_),
-    .D(_044_[2]),
+    .CE(_23_),
+    .D(_28_[2]),
     .Q(counter_16bit[2]),
     .R(1'h0)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _105_ (
+  ) _77_ (
     .C(clk),
-    .CE(_038_),
-    .D(_044_[3]),
+    .CE(_23_),
+    .D(_28_[3]),
     .Q(counter_16bit[3]),
     .R(1'h0)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _106_ (
+  ) _78_ (
     .C(clk),
     .CE(1'h1),
-    .D(_046_),
+    .D(_29_),
     .Q(digit_select[0]),
     .R(1'h0)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _107_ (
+  ) _79_ (
     .C(clk),
     .CE(1'h1),
-    .D(_047_),
+    .D(_30_),
     .Q(digit_select[1]),
     .R(1'h0)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _108_ (
+  ) _80_ (
     .C(clk),
-    .CE(_039_),
-    .D(temp_number[4]),
-    .Q(temp_number[0]),
-    .R(_041_)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:79.41-79.95" *)
-  FDSE #(
-    .INIT(1'h0)
-  ) _109_ (
-    .C(clk),
-    .CE(_039_),
-    .D(1'h0),
-    .Q(temp_number[2]),
-    .S(_041_)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
-  FDRE #(
-    .INIT(1'h0)
-  ) _110_ (
-    .C(clk),
-    .CE(_039_),
-    .D(temp_number[7]),
-    .Q(temp_number[3]),
-    .R(_041_)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:79.41-79.95" *)
-  FDSE #(
-    .INIT(1'h0)
-  ) _111_ (
-    .C(clk),
-    .CE(_039_),
-    .D(temp_number[8]),
-    .Q(temp_number[4]),
-    .S(_041_)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
-  FDRE #(
-    .INIT(1'h0)
-  ) _112_ (
-    .C(clk),
-    .CE(_039_),
-    .D(temp_number[8]),
-    .Q(temp_number[7]),
-    .R(_041_)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
-  FDRE #(
-    .INIT(1'h0)
-  ) _113_ (
-    .C(clk),
-    .CE(_039_),
-    .D(temp_number[12]),
-    .Q(temp_number[8]),
-    .R(_041_)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
-  FDRE #(
-    .INIT(1'h0)
-  ) _114_ (
-    .C(clk),
-    .CE(_039_),
-    .D(temp_number[0]),
-    .Q(segment_select[0]),
-    .R(1'h0)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
-  FDRE #(
-    .INIT(1'h0)
-  ) _115_ (
-    .C(clk),
-    .CE(_039_),
-    .D(temp_number[2]),
-    .Q(segment_select[2]),
-    .R(1'h0)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
-  FDRE #(
-    .INIT(1'h0)
-  ) _116_ (
-    .C(clk),
-    .CE(_039_),
-    .D(temp_number[3]),
-    .Q(segment_select[3]),
-    .R(1'h0)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
-  FDRE #(
-    .INIT(1'h0)
-  ) _117_ (
-    .C(clk),
-    .CE(_038_),
-    .D(_043_),
+    .CE(_23_),
+    .D(_26_),
     .Q(data),
     .R(1'h0)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:50.3-97.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:56.3-104.6|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'h0)
-  ) _118_ (
+  ) _81_ (
     .C(clk),
     .CE(1'h1),
-    .D(_048_),
+    .D(_31_),
     .Q(sclk_reg),
     .R(1'h0)
   );
@@ -833,131 +622,42 @@ module digit8_7seg(clk, LED, LED_en, clk_en, pmod_s, pmod_s_en, rclk, rclk_en, s
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:36.13-36.48" *)
   LUT3 #(
     .INIT(8'h78)
-  ) _119_ (
-    .I0(_051_[1]),
-    .I1(_051_[0]),
+  ) _82_ (
+    .I0(_34_[3]),
+    .I1(_34_[2]),
     .I2(sclk_reg),
-    .O(_048_)
+    .O(_31_)
   );
   (* module_not_derived = 32'd1 *)
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:36.13-36.48" *)
   LUT5 #(
     .INIT(32'd2147450880)
-  ) _120_ (
-    .I0(_051_[1]),
-    .I1(_051_[0]),
-    .I2(_053_[2]),
+  ) _83_ (
+    .I0(_34_[3]),
+    .I1(_34_[2]),
+    .I2(_34_[1]),
     .I3(sclk_reg),
     .I4(digit_select[0]),
-    .O(_046_)
+    .O(_29_)
   );
   (* module_not_derived = 32'd1 *)
   (* src = "H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/lut_map.v:43.26-44.30" *)
   LUT6 #(
     .INIT(64'h7fff8000ffff0000)
-  ) _121_ (
-    .I0(_051_[1]),
-    .I1(_051_[0]),
-    .I2(_053_[2]),
+  ) _84_ (
+    .I0(_34_[3]),
+    .I1(_34_[2]),
+    .I2(_34_[1]),
     .I3(sclk_reg),
     .I4(digit_select[1]),
     .I5(digit_select[0]),
-    .O(_047_)
+    .O(_30_)
   );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:0.0-0.0|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:53.11-55.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:69.11-71.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:315.8-318.16|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:278.24-278.103|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:389.10-389.50" *)
-  MUXF7 _122_ (
-    .I0(_023_),
-    .I1(_025_),
-    .O(_026_),
-    .S(segment_select[3])
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:0.0-0.0|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:53.11-55.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:69.11-71.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:315.8-318.16|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:278.24-278.103|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:395.10-395.50" *)
-  MUXF7 _123_ (
-    .I0(_029_),
-    .I1(_031_),
-    .O(_032_),
-    .S(segment_select[3])
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:0.0-0.0|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:53.11-55.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:69.11-71.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:315.8-318.16|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:278.24-278.103|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:401.10-401.48" *)
-  MUXF8 _124_ (
-    .I0(_026_),
-    .I1(_032_),
-    .O(_055_[5]),
-    .S(segment_select[2])
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:0.0-0.0|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:53.11-55.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:69.11-71.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:304.10-308.9|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:290.24-290.103|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:401.10-401.48" *)
-  MUXF8 _125_ (
-    .I0(segment_select[0]),
-    .I1(_001_),
-    .O(_023_),
-    .S(counter_16bit[0])
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:0.0-0.0|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:53.11-55.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:69.11-71.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:304.10-308.9|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:290.24-290.103|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:389.10-389.50" *)
-  MUXF7 _126_ (
-    .I0(_034_),
-    .I1(1'h0),
-    .O(_027_),
-    .S(counter_16bit[1])
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:0.0-0.0|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:53.11-55.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:69.11-71.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:304.10-308.9|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:290.24-290.103|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:395.10-395.50" *)
-  MUXF7 _127_ (
-    .I0(1'h0),
-    .I1(_036_),
-    .O(_028_),
-    .S(counter_16bit[1])
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:0.0-0.0|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:53.11-55.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:69.11-71.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:304.10-308.9|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:290.24-290.103|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:401.10-401.48" *)
-  MUXF8 _128_ (
-    .I0(_027_),
-    .I1(_028_),
-    .O(_029_),
-    .S(counter_16bit[0])
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:0.0-0.0|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:53.11-55.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:69.11-71.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:304.10-308.9|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:290.24-290.103|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:389.10-389.50" *)
-  MUXF7 _129_ (
-    .I0(segment_select[0]),
-    .I1(_033_),
-    .O(_024_),
-    .S(counter_16bit[1])
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:0.0-0.0|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:53.11-55.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:69.11-71.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:304.10-308.9|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:290.24-290.103|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:401.10-401.48" *)
-  MUXF8 _130_ (
-    .I0(_024_),
-    .I1(1'h1),
-    .O(_025_),
-    .S(counter_16bit[0])
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:0.0-0.0|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:53.11-55.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:69.11-71.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:304.10-308.9|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:290.24-290.103|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:389.10-389.50" *)
-  MUXF7 _131_ (
-    .I0(_035_),
-    .I1(counter_16bit[2]),
-    .O(_030_),
-    .S(counter_16bit[1])
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:0.0-0.0|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:53.11-55.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/mux_map.v:69.11-71.10|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:304.10-308.9|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:290.24-290.103|H:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/cells_map.v:401.10-401.48" *)
-  MUXF8 _132_ (
-    .I0(_030_),
-    .I1(counter_16bit[2]),
-    .O(_031_),
-    .S(counter_16bit[0])
-  );
-  assign _049_[3:0] = { counter[8], counter[9], counter[10], counter[11] };
-  assign _050_[3:0] = { counter[12], counter[13], counter[14], counter[15] };
-  assign _052_[3:0] = { counter[8], counter[9], counter[10], counter[11] };
-  assign { _053_[4:3], _053_[0] } = { _051_, sclk_reg };
-  assign _054_[1] = _051_[1];
-  assign _055_[4:0] = { digit_select[0], counter_16bit[0], digit_select[1], counter_16bit[1], counter_16bit[3] };
+  assign _32_[3:0] = { counter[12], counter[13], counter[14], counter[15] };
+  assign _33_[3:0] = { counter[8], counter[9], counter[10], counter[11] };
+  assign _34_[0] = sclk_reg;
+  assign _35_[3:0] = { counter[8], counter[9], counter[10], counter[11] };
+  assign { _36_[3:2], _36_[0] } = { _34_[3:2], sclk_reg };
   assign LED = 1'h1;
   assign LED_en = 1'h1;
   assign clk_en = 1'h1;
@@ -965,11 +665,11 @@ module digit8_7seg(clk, LED, LED_en, clk_en, pmod_s, pmod_s_en, rclk, rclk_en, s
   assign pmod_s_en = 1'h1;
   assign rclk = rclk_reg;
   assign rclk_en = 1'h1;
-  assign segment_map = 80'h77f3f1f0bfaa008155aa;
+  assign segment_map = 128'h8ef27a9c3eeef6fee0beb666f2da60fc;
   assign serial_data = data;
   assign serial_data_en = 1'h1;
   assign srclr = 1'h1;
   assign srclr_en = 1'h1;
-  assign target_number = 16'h9234;
-  assign { temp_number[15:13], temp_number[11:9], temp_number[6] } = { temp_number[12], 2'h0, temp_number[8], 1'h0, temp_number[2], 1'h0 };
+  assign target_number = 16'h1234;
+  assign temp_number = 16'h0000;
 endmodule

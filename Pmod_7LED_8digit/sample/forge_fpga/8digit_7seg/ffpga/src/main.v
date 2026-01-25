@@ -13,22 +13,28 @@
   (* iopad_external_pin *) output serial_data_en
 );
 
-  wire [79:0] segment_map = { 8'b0111_0111,     //9
-                              8'b1111_0011,
-                              8'b1111_0001,
-                              8'b1111_0000,
-                              8'b1011_1111,     //5
-                              8'b1010_1010,
-                              8'b0000_0000,     //3
-                              8'b1000_0001,
-                              8'b0101_0101,
-                              8'b1010_1010};    //0
+  wire [127:0] segment_map = {8'b1000_1110,     //F
+                              8'b1111_0010,
+                              8'b0111_1010,
+                              8'b1001_1100,     //C
+                              8'b0011_1110,
+                              8'b1110_1110,     //A
+                              8'b1111_0110,     //9
+                              8'b1111_1110,
+                              8'b1110_0000,
+                              8'b1011_1110,
+                              8'b1011_0110,     //5
+                              8'b0110_0110,
+                              8'b1111_0010,     //3
+                              8'b1101_1010,
+                              8'b0110_0000,
+                              8'b1111_1100};    //0
 
   reg [3:0] counter_16bit=0;
   reg sys_clk;
   reg [1:0] digit_select=0;   // for 4digit
   reg [3:0] segment_select=0; // for 8segment LED(this is index of segment_map)  
-  wire [15:0] target_number = {4'b1001, 4'b0010, 4'b0011, 4'b0100};
+  wire [15:0] target_number = 16'h1234;
   reg [15:0] temp_number=0;
   reg data=0;
   reg sclk_reg=0;
@@ -65,18 +71,19 @@
           if(counter_16bit == 4'd0)begin  // submitting of every digit data uses 16 clocks
             digit_select <= digit_select + 2'b1;  // next digit
             
-            segment_select <= temp_number[3:0];
-            
-            if(digit_select == 2'd3)begin
-              temp_number <= target_number;
-            end else begin
+//            segment_select <= target_number >> (digit_select+2'b1)*4;
+//            segment_select <= 4'b0011;          
+//            if(digit_select == 2'd3)begin
+//              temp_number <= target_number;
+//            end else begin
 //              temp_number <= temp_number / 10;  // right shift in decimal(for next digit)
-                temp_number <= {4'b0000, temp_number[15:4]};
-            end
+//                temp_number <= {4'b0000, temp_number[15:4]};
+//            end
           end
   
           if(counter_16bit[3])begin
-            data <= segment_map[segment_select*8 + counter_16bit[2:0]];
+            segment_select = target_number >>(digit_select*4);
+            data <= segment_map[segment_select * 7'd8 + counter_16bit[2:0]];
           end else begin
             if((counter_16bit[1:0] == digit_select))begin
               data <= 1'b0;
@@ -97,7 +104,7 @@
   end
   
 endmodule
-
+/*
 module bcd_counter(
   input clk,
   input in,
@@ -125,4 +132,4 @@ assign carry=carry_reg;
       carry_reg <= 1;
     end
   end
-endmodule
+endmodule */
