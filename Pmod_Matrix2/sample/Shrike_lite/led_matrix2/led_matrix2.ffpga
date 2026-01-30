@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GPDProject version="40" oldestCompatibleVersion="32" GPDVersion="6.52.001" lastChange="30 Jan 2026 22:51:22" projectChecksumState="1" projectChecksum="75b0dd29">
+<GPDProject version="40" oldestCompatibleVersion="32" GPDVersion="6.51.002" lastChange="31 Jan 2026 02:26:33" projectChecksumState="1" projectChecksum="44c95aef">
     <generalProjectSettings/>
     <chip family="04" type="06" friendlyName="FFPGA" partNumber="67" package="26">
         <nvmData registerLenght="480">0 0 0 28 0 0 0 0 A5 A5 A5 A5 0 0 0 0 0 0 0 0 5A 5A 5A 5A 0 0 0 0 22 22 22 22 22 22 22 22 22 22 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</nvmData>
         <checksum crc32="0x451C1D42" version="2"/>
-        <virtualProperties/>
         <VDDItem id="0">
-            <item id="0" caption="VDDC (PIN 22)">
+            <item id="0" caption="VDD (PIN 22)">
                 <graphics pos="(1350.00,143.10)" angle="0" flipping="2" hidden="0" tOrigin="(20.00,10.00)"/>
             </item>
         </VDDItem>
@@ -653,9 +652,9 @@
         </settings>
         <openedTabs>
             <openedTab>main.v</openedTab>
-            <openedTab>PLL Configurator</openedTab>
             <openedTab>timer.v</openedTab>
             <openedTab>I/O Planner</openedTab>
+            <openedTab>PLL Configurator</openedTab>
         </openedTabs>
         <pipelineStagesStates>
             <pipelineStageState>
@@ -664,7 +663,7 @@
             </pipelineStageState>
             <pipelineStageState>
                 <pipelineStage>1</pipelineStage>
-                <pipelineState>0</pipelineState>
+                <pipelineState>3</pipelineState>
             </pipelineStageState>
         </pipelineStagesStates>
         <modules>
@@ -680,93 +679,60 @@
             <placement-constraints/>
         </modules>
         <io-spec-tool>
-            <records filter="18">
+            <records filter="64" filter1="16">
                 <record id="CLK_t[0:0]_W_in0">
                     <port-name>clk</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:11]_out0">
-                    <port-name>pll_clk_selection</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:11]_out1">
-                    <port-name>pll_bypass</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:12]_out0">
-                    <port-name>pll_fbdiv[0]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:12]_out1">
-                    <port-name>pll_fbdiv[1]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:13]_out0">
-                    <port-name>pll_fbdiv[2]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:13]_out1">
-                    <port-name>pll_fbdiv[3]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:14]_out0">
-                    <port-name>pll_fbdiv[4]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:14]_out1">
-                    <port-name>pll_fbdiv[5]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:15]_out0">
-                    <port-name>pll_fbdiv[6]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:15]_out1">
-                    <port-name>pll_fbdiv[7]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:16]_out0">
-                    <port-name>pll_fbdiv[8]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:16]_out1">
-                    <port-name>pll_fbdiv[9]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:17]_out0">
-                    <port-name>pll_fbdiv[10]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:17]_out1">
-                    <port-name>pll_fbdiv[11]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:18]_out0">
-                    <port-name>pll_en</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:19]_out0">
-                    <port-name>pll_postdiv1[0]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:19]_out1">
-                    <port-name>pll_postdiv1[1]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:20]_out0">
-                    <port-name>pll_postdiv1[2]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:20]_out1">
-                    <port-name>pll_postdiv2[0]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:21]_out0">
-                    <port-name>pll_postdiv2[1]</port-name>
-                </record>
-                <record id="IOB_t[0:0]_xy[0:21]_out1">
-                    <port-name>pll_postdiv2[2]</port-name>
                 </record>
                 <record id="IOB_t[0:0]_xy[0:25]_out0">
                     <port-name>clk_en</port-name>
                 </record>
-                <record id="IOB_t[0:0]_xy[31:19]_out0">
-                    <port-name>pll_refdiv[0]</port-name>
+                <record id="IOB_t[0:0]_xy[31:22]_out0">
+                    <port-name>CLR2</port-name>
                 </record>
-                <record id="IOB_t[0:0]_xy[31:19]_out1">
-                    <port-name>pll_refdiv[1]</port-name>
+                <record id="IOB_t[0:0]_xy[31:22]_out1">
+                    <port-name>CLR2_en</port-name>
                 </record>
-                <record id="IOB_t[0:0]_xy[31:20]_out0">
-                    <port-name>pll_refdiv[2]</port-name>
+                <record id="IOB_t[0:0]_xy[31:23]_out0">
+                    <port-name>COL_Red</port-name>
                 </record>
-                <record id="IOB_t[0:0]_xy[31:20]_out1">
-                    <port-name>pll_refdiv[3]</port-name>
+                <record id="IOB_t[0:0]_xy[31:23]_out1">
+                    <port-name>COL_Red_en</port-name>
                 </record>
-                <record id="IOB_t[0:0]_xy[31:21]_out0">
-                    <port-name>pll_refdiv[4]</port-name>
+                <record id="IOB_t[0:0]_xy[31:24]_out0">
+                    <port-name>CLR3</port-name>
                 </record>
-                <record id="IOB_t[0:0]_xy[31:21]_out1">
-                    <port-name>pll_refdiv[5]</port-name>
+                <record id="IOB_t[0:0]_xy[31:24]_out1">
+                    <port-name>CLR3_en</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:25]_out0">
+                    <port-name>CLR1</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:25]_out1">
+                    <port-name>CLR1_en</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:26]_out0">
+                    <port-name>mat_CLOCK</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:26]_out1">
+                    <port-name>mat_CLOCK_en</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:27]_out0">
+                    <port-name>mat_Ratch</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:27]_out1">
+                    <port-name>mat_Ratch_en</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:8]_out0">
+                    <port-name>COL_Green</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:8]_out1">
+                    <port-name>COL_Green_en</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:9]_out0">
+                    <port-name>ROW</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:9]_out1">
+                    <port-name>ROW_en</port-name>
                 </record>
             </records>
         </io-spec-tool>
@@ -944,11 +910,11 @@
                     <pllOutputChannels>
                         <pllOutputChannel>
                             <pllIsOutEnabled>1</pllIsOutEnabled>
-                            <pllRequiredFout>12.000000</pllRequiredFout>
-                            <pllRefDiv>4</pllRefDiv>
-                            <pllFbDiv>47</pllFbDiv>
-                            <pllPostDiv1>7</pllPostDiv1>
-                            <pllPostDiv2>7</pllPostDiv2>
+                            <pllRequiredFout>50.000000</pllRequiredFout>
+                            <pllRefDiv>1</pllRefDiv>
+                            <pllFbDiv>25</pllFbDiv>
+                            <pllPostDiv1>5</pllPostDiv1>
+                            <pllPostDiv2>5</pllPostDiv2>
                         </pllOutputChannel>
                     </pllOutputChannels>
                     <pllProperties>

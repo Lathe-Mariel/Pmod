@@ -1,0 +1,12 @@
+
+Min-placement step: Set up placement.
+There are 21 instances. After combining instances in chains, there are 14 instances to place.
+There are 27 nets in the design, 0 of which have fanout larger than 49. Average fanout is 1.67.
+There are 3 clocks in the design.
+Resource usages:
+ Type=L: Capacity=140 Utilized=7 NumInst=4. [ChainLen=1]=3 [ChainLen=4]=1
+ Type=M: Capacity=40 Utilized=0 NumInst=0.
+ Type=IOB: Capacity=184 Utilized=10 NumInst=10.
+Min-placement step: Global placement and legalization.
+
+FATAL ERROR: Pre-place has resulted in violations.
