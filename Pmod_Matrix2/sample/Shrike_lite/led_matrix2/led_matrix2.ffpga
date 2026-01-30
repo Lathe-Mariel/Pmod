@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GPDProject version="40" oldestCompatibleVersion="32" GPDVersion="6.52.001" lastChange="29 Jan 2026 22:42:08" projectChecksumState="1" projectChecksum="741e480f">
+<GPDProject version="40" oldestCompatibleVersion="32" GPDVersion="6.52.001" lastChange="30 Jan 2026 22:51:22" projectChecksumState="1" projectChecksum="75b0dd29">
     <generalProjectSettings/>
     <chip family="04" type="06" friendlyName="FFPGA" partNumber="67" package="26">
         <nvmData registerLenght="480">0 0 0 28 0 0 0 0 A5 A5 A5 A5 0 0 0 0 0 0 0 0 5A 5A 5A 5A 0 0 0 0 22 22 22 22 22 22 22 22 22 22 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</nvmData>
@@ -96,6 +96,12 @@
         <item id="28" caption="FPGA Core">
             <graphics pos="(340.90,49.43)" angle="0" flipping="0" hidden="0" tOrigin="(300.00,300.00)"/>
         </item>
+        <wire output="79" input="65" autoRouting="1" pen="#ff8000ff;1.00;1;32;128" lineType="2" protected="1" CWLid="4" wireText="NET4" wireState="0">
+            <points>(220.00,80.00); (236.00,80.00); (236.00,250.00); (220.00,250.00)</points>
+        </wire>
+        <wire output="2" input="66" autoRouting="1" pen="#ff8000ff;1.00;1;32;128" lineType="2" protected="1" CWLid="19" wireText="NET19" wireState="0">
+            <points>(97.00,510.00); (226.00,510.00); (226.00,383.00); (220.00,383.00)</points>
+        </wire>
         <wire output="83" input="85" autoRouting="1" pen="#ff8000ff;1.00;1;32;128" lineType="2" protected="1" CWLid="0" wireText="NET0" wireState="0">
             <points>(129.00,344.00); (116.00,344.00); (116.00,392.00); (308.00,392.00); (308.00,383.00); (320.00,383.00)</points>
         </wire>
@@ -107,9 +113,6 @@
         </wire>
         <wire output="86" input="88" autoRouting="1" pen="#ff8000ff;1.00;1;32;128" lineType="2" protected="1" CWLid="3" wireText="NET3" wireState="0">
             <points>(220.00,70.00); (320.00,70.00)</points>
-        </wire>
-        <wire output="79" input="65" autoRouting="1" pen="#ff8000ff;1.00;1;32;128" lineType="2" protected="1" CWLid="4" wireText="NET4" wireState="0">
-            <points>(220.00,80.00); (236.00,80.00); (236.00,250.00); (220.00,250.00)</points>
         </wire>
         <wire output="79" input="38" autoRouting="1" pen="#ff8000ff;1.00;1;32;128" lineType="2" protected="1" CWLid="4" wireText="NET4" wireState="0">
             <points>(220.00,80.00); (314.00,80.00); (314.00,87.00); (320.00,87.00)</points>
@@ -155,9 +158,6 @@
         </wire>
         <wire output="30" input="84" autoRouting="1" pen="#ff8000ff;1.00;1;32;128" lineType="2" protected="1" CWLid="18" wireText="NET18" wireState="0">
             <points>(695.00,669.00); (695.00,756.00)</points>
-        </wire>
-        <wire output="2" input="66" autoRouting="1" pen="#ff8000ff;1.00;1;32;128" lineType="2" protected="1" CWLid="19" wireText="NET19" wireState="0">
-            <points>(97.00,510.00); (226.00,510.00); (226.00,383.00); (220.00,383.00)</points>
         </wire>
         <wire output="80" input="39" autoRouting="1" pen="#ff8000ff;1.00;1;32;128" lineType="2" protected="1" CWLid="20" wireText="NET20" wireState="0">
             <points>(129.00,289.00); (116.00,289.00); (116.00,240.00); (308.00,240.00); (308.00,251.00); (320.00,251.00)</points>
@@ -653,12 +653,14 @@
         </settings>
         <openedTabs>
             <openedTab>main.v</openedTab>
+            <openedTab>PLL Configurator</openedTab>
+            <openedTab>timer.v</openedTab>
             <openedTab>I/O Planner</openedTab>
         </openedTabs>
         <pipelineStagesStates>
             <pipelineStageState>
                 <pipelineStage>0</pipelineStage>
-                <pipelineState>0</pipelineState>
+                <pipelineState>1</pipelineState>
             </pipelineStageState>
             <pipelineStageState>
                 <pipelineStage>1</pipelineStage>
@@ -668,6 +670,7 @@
         <modules>
             <scr>
                 <module filename="main.v"/>
+                <module filename="timer.v"/>
             </scr>
             <lib/>
             <sim/>
@@ -677,7 +680,95 @@
             <placement-constraints/>
         </modules>
         <io-spec-tool>
-            <records filter="16"/>
+            <records filter="18">
+                <record id="CLK_t[0:0]_W_in0">
+                    <port-name>clk</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:11]_out0">
+                    <port-name>pll_clk_selection</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:11]_out1">
+                    <port-name>pll_bypass</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:12]_out0">
+                    <port-name>pll_fbdiv[0]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:12]_out1">
+                    <port-name>pll_fbdiv[1]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:13]_out0">
+                    <port-name>pll_fbdiv[2]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:13]_out1">
+                    <port-name>pll_fbdiv[3]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:14]_out0">
+                    <port-name>pll_fbdiv[4]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:14]_out1">
+                    <port-name>pll_fbdiv[5]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:15]_out0">
+                    <port-name>pll_fbdiv[6]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:15]_out1">
+                    <port-name>pll_fbdiv[7]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:16]_out0">
+                    <port-name>pll_fbdiv[8]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:16]_out1">
+                    <port-name>pll_fbdiv[9]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:17]_out0">
+                    <port-name>pll_fbdiv[10]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:17]_out1">
+                    <port-name>pll_fbdiv[11]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:18]_out0">
+                    <port-name>pll_en</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:19]_out0">
+                    <port-name>pll_postdiv1[0]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:19]_out1">
+                    <port-name>pll_postdiv1[1]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:20]_out0">
+                    <port-name>pll_postdiv1[2]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:20]_out1">
+                    <port-name>pll_postdiv2[0]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:21]_out0">
+                    <port-name>pll_postdiv2[1]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:21]_out1">
+                    <port-name>pll_postdiv2[2]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[0:25]_out0">
+                    <port-name>clk_en</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:19]_out0">
+                    <port-name>pll_refdiv[0]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:19]_out1">
+                    <port-name>pll_refdiv[1]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:20]_out0">
+                    <port-name>pll_refdiv[2]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:20]_out1">
+                    <port-name>pll_refdiv[3]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:21]_out0">
+                    <port-name>pll_refdiv[4]</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:21]_out1">
+                    <port-name>pll_refdiv[5]</port-name>
+                </record>
+            </records>
         </io-spec-tool>
         <macrocell-mode-data>
             <scene-data>
@@ -853,11 +944,11 @@
                     <pllOutputChannels>
                         <pllOutputChannel>
                             <pllIsOutEnabled>1</pllIsOutEnabled>
-                            <pllRequiredFout>50.000000</pllRequiredFout>
-                            <pllRefDiv>1</pllRefDiv>
-                            <pllFbDiv>25</pllFbDiv>
-                            <pllPostDiv1>5</pllPostDiv1>
-                            <pllPostDiv2>5</pllPostDiv2>
+                            <pllRequiredFout>12.000000</pllRequiredFout>
+                            <pllRefDiv>4</pllRefDiv>
+                            <pllFbDiv>47</pllFbDiv>
+                            <pllPostDiv1>7</pllPostDiv1>
+                            <pllPostDiv2>7</pllPostDiv2>
                         </pllOutputChannel>
                     </pllOutputChannels>
                     <pllProperties>
