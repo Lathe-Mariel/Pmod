@@ -453,16 +453,6 @@
         )
       )
     )
-    (cell (rename id00005 "$__ABC9_SCC_BREAKER")
-      (cellType GENERIC)
-      (view VIEW_NETLIST
-        (viewType NETLIST)
-        (interface
-          (port (array I 2) (direction INPUT))
-          (port (array O 2) (direction OUTPUT))
-        )
-      )
-    )
     (cell FDSE
       (cellType GENERIC)
       (view VIEW_NETLIST
@@ -22194,7 +22184,7 @@
         )
       )
     )
-    (cell (rename id00006 "$__DFF_N__$abc9_flop")
+    (cell (rename id00005 "$__DFF_N__$abc9_flop")
       (cellType GENERIC)
       (view VIEW_NETLIST
         (viewType NETLIST)
@@ -22203,6 +22193,16 @@
           (port D (direction INPUT))
           (port Q (direction INPUT))
           (port n1 (direction OUTPUT))
+        )
+      )
+    )
+    (cell (rename id00006 "$__ABC9_SCC_BREAKER")
+      (cellType GENERIC)
+      (view VIEW_NETLIST
+        (viewType NETLIST)
+        (interface
+          (port (array I 2) (direction INPUT))
+          (port (array O 2) (direction OUTPUT))
         )
       )
     )
@@ -22279,90 +22279,90 @@
         (contents
           (instance GND (viewRef VIEW_NETLIST (cellRef GND (libraryRef LIB))))
           (instance VCC (viewRef VIEW_NETLIST (cellRef VCC (libraryRef LIB))))
-          (instance (rename id00010 "$abc$2507$lut$aiger2506$56")
+          (instance (rename id00010 "$abc$2520$lut$aiger2519$56")
             (viewRef VIEW_NETLIST (cellRef LUT4 (libraryRef LIB)))
             (property INIT (integer 64)))
-          (instance (rename id00011 "$abc$2507$lut$aiger2506$59")
+          (instance (rename id00011 "$abc$2520$lut$aiger2519$59")
             (viewRef VIEW_NETLIST (cellRef LUT4 (libraryRef LIB)))
             (property INIT (integer 32)))
-          (instance (rename id00012 "$abc$2507$lut$aiger2506$62")
+          (instance (rename id00012 "$abc$2520$lut$aiger2519$62")
             (viewRef VIEW_NETLIST (cellRef LUT4 (libraryRef LIB)))
             (property INIT (integer 256)))
-          (instance (rename id00013 "$abc$2507$lut$aiger2506$65")
+          (instance (rename id00013 "$abc$2520$lut$aiger2519$65")
             (viewRef VIEW_NETLIST (cellRef LUT4 (libraryRef LIB)))
             (property INIT (integer 2)))
-          (instance (rename id00014 "$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018")
+          (instance (rename id00014 "$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031")
             (viewRef VIEW_NETLIST (cellRef LUT4 (libraryRef LIB)))
             (property INIT (integer 32768)))
-          (instance (rename id00015 "$abc$2507$lut$not$aiger2506$1")
+          (instance (rename id00015 "$abc$2520$lut$not$aiger2519$1")
             (viewRef VIEW_NETLIST (cellRef INV (libraryRef LIB))))
-          (instance (rename id00016 "$abc$2507$lut$not$aiger2506$3")
+          (instance (rename id00016 "$abc$2520$lut$not$aiger2519$3")
             (viewRef VIEW_NETLIST (cellRef INV (libraryRef LIB))))
-          (instance (rename id00017 "$auto$alumacc.cc:485:replace_alu$1391.genblk1.slice[0].genblk1.carry4")
+          (instance (rename id00017 "$auto$alumacc.cc:485:replace_alu$1404.genblk1.slice[0].genblk1.carry4")
             (viewRef VIEW_NETLIST (cellRef CARRY4 (libraryRef LIB))))
-          (instance (rename id00018 "$auto$alumacc.cc:485:replace_alu$1391.genblk1.slice[1].genblk1.carry4")
+          (instance (rename id00018 "$auto$alumacc.cc:485:replace_alu$1404.genblk1.slice[1].genblk1.carry4")
             (viewRef VIEW_NETLIST (cellRef CARRY4 (libraryRef LIB))))
-          (instance (rename id00019 "$auto$alumacc.cc:485:replace_alu$1391.genblk1.slice[2].genblk1.carry4")
+          (instance (rename id00019 "$auto$alumacc.cc:485:replace_alu$1404.genblk1.slice[2].genblk1.carry4")
             (viewRef VIEW_NETLIST (cellRef CARRY4 (libraryRef LIB))))
-          (instance (rename id00020 "$auto$alumacc.cc:485:replace_alu$1391.genblk1.slice[3].genblk1.carry4")
+          (instance (rename id00020 "$auto$alumacc.cc:485:replace_alu$1404.genblk1.slice[3].genblk1.carry4")
             (viewRef VIEW_NETLIST (cellRef CARRY4 (libraryRef LIB))))
-          (instance (rename id00021 "$auto$clkbufmap.cc:261:execute$2522")
+          (instance (rename id00021 "$auto$clkbufmap.cc:261:execute$2535")
             (viewRef VIEW_NETLIST (cellRef BUFG (libraryRef LIB))))
-          (instance (rename id00022 "$auto$ff.cc:266:slice$1811")
+          (instance (rename id00022 "$auto$ff.cc:266:slice$1824")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00023 "$auto$ff.cc:266:slice$1812")
+            (property INIT (integer 0)))
+          (instance (rename id00023 "$auto$ff.cc:266:slice$1825")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00024 "$auto$ff.cc:266:slice$1813")
+            (property INIT (integer 0)))
+          (instance (rename id00024 "$auto$ff.cc:266:slice$1826")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00025 "$auto$ff.cc:266:slice$1814")
+            (property INIT (integer 0)))
+          (instance (rename id00025 "$auto$ff.cc:266:slice$1827")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00026 "$auto$ff.cc:266:slice$1815")
+            (property INIT (integer 0)))
+          (instance (rename id00026 "$auto$ff.cc:266:slice$1828")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00027 "$auto$ff.cc:266:slice$1816")
+            (property INIT (integer 0)))
+          (instance (rename id00027 "$auto$ff.cc:266:slice$1829")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00028 "$auto$ff.cc:266:slice$1817")
+            (property INIT (integer 0)))
+          (instance (rename id00028 "$auto$ff.cc:266:slice$1830")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00029 "$auto$ff.cc:266:slice$1818")
+            (property INIT (integer 0)))
+          (instance (rename id00029 "$auto$ff.cc:266:slice$1831")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00030 "$auto$ff.cc:266:slice$1819")
+            (property INIT (integer 0)))
+          (instance (rename id00030 "$auto$ff.cc:266:slice$1832")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00031 "$auto$ff.cc:266:slice$1820")
+            (property INIT (integer 0)))
+          (instance (rename id00031 "$auto$ff.cc:266:slice$1833")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00032 "$auto$ff.cc:266:slice$1821")
+            (property INIT (integer 0)))
+          (instance (rename id00032 "$auto$ff.cc:266:slice$1834")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00033 "$auto$ff.cc:266:slice$1822")
+            (property INIT (integer 0)))
+          (instance (rename id00033 "$auto$ff.cc:266:slice$1835")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00034 "$auto$ff.cc:266:slice$1823")
+            (property INIT (integer 0)))
+          (instance (rename id00034 "$auto$ff.cc:266:slice$1836")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00035 "$auto$ff.cc:266:slice$1824")
+            (property INIT (integer 0)))
+          (instance (rename id00035 "$auto$ff.cc:266:slice$1837")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00036 "$auto$ff.cc:266:slice$1825")
+            (property INIT (integer 0)))
+          (instance (rename id00036 "$auto$ff.cc:266:slice$1838")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00037 "$auto$ff.cc:266:slice$1826")
+            (property INIT (integer 0)))
+          (instance (rename id00037 "$auto$ff.cc:266:slice$1839")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00038 "$auto$ff.cc:266:slice$1873")
+            (property INIT (integer 0)))
+          (instance (rename id00038 "$auto$ff.cc:266:slice$1886")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00039 "$auto$ff.cc:266:slice$1874")
+            (property INIT (integer 0)))
+          (instance (rename id00039 "$auto$ff.cc:266:slice$1887")
             (viewRef VIEW_NETLIST (cellRef FDRE (libraryRef LIB)))
-            (property INIT (string "1'h0")))
-          (instance (rename id00040 "$auto$xilinx_dffopt.cc:338:execute$2520")
+            (property INIT (integer 0)))
+          (instance (rename id00040 "$auto$xilinx_dffopt.cc:338:execute$2533")
             (viewRef VIEW_NETLIST (cellRef LUT5 (libraryRef LIB)))
             (property INIT (integer 2147450880)))
           (net VCC_NET (joined
@@ -22478,270 +22478,270 @@
               (portRef clk)
             )
           )
-          (net (rename id00041 "timer_inst.timer_counter[12]") (joined
-              (portRef (member S 3) (instanceRef id00020))
-              (portRef I3 (instanceRef id00012))
-              (portRef Q (instanceRef id00034))
-            )
-          )
-          (net (rename id00042 "timer_inst.timer_counter[13]") (joined
-              (portRef (member S 2) (instanceRef id00020))
-              (portRef I2 (instanceRef id00012))
-              (portRef Q (instanceRef id00035))
-            )
-          )
-          (net (rename id00043 "timer_inst.timer_counter[14]") (joined
-              (portRef (member S 1) (instanceRef id00020))
-              (portRef I1 (instanceRef id00012))
-              (portRef Q (instanceRef id00036))
-            )
-          )
-          (net (rename id00044 "timer_inst.timer_counter[15]") (joined
-              (portRef (member S 0) (instanceRef id00020))
-              (portRef I0 (instanceRef id00012))
-              (portRef Q (instanceRef id00037))
-            )
-          )
-          (net (rename id00045 "timer_inst.timer_counter[8]") (joined
-              (portRef (member S 3) (instanceRef id00019))
-              (portRef I3 (instanceRef id00013))
-              (portRef Q (instanceRef id00030))
-            )
-          )
-          (net (rename id00046 "timer_inst.timer_counter[9]") (joined
-              (portRef (member S 2) (instanceRef id00019))
-              (portRef I2 (instanceRef id00013))
-              (portRef Q (instanceRef id00031))
-            )
-          )
-          (net (rename id00047 "timer_inst.timer_counter[10]") (joined
-              (portRef (member S 1) (instanceRef id00019))
-              (portRef I1 (instanceRef id00013))
-              (portRef Q (instanceRef id00032))
-            )
-          )
-          (net (rename id00048 "timer_inst.timer_counter[11]") (joined
-              (portRef (member S 0) (instanceRef id00019))
-              (portRef I0 (instanceRef id00013))
-              (portRef Q (instanceRef id00033))
-            )
-          )
-          (net (rename id00049 "timer_inst.timer_counter[4]") (joined
-              (portRef (member S 3) (instanceRef id00018))
-              (portRef I3 (instanceRef id00010))
-              (portRef Q (instanceRef id00026))
-            )
-          )
-          (net (rename id00050 "timer_inst.timer_counter[5]") (joined
-              (portRef (member S 2) (instanceRef id00018))
-              (portRef I2 (instanceRef id00010))
-              (portRef Q (instanceRef id00027))
-            )
-          )
-          (net (rename id00051 "timer_inst.timer_counter[6]") (joined
-              (portRef (member S 1) (instanceRef id00018))
-              (portRef I1 (instanceRef id00010))
-              (portRef Q (instanceRef id00028))
-            )
-          )
-          (net (rename id00052 "timer_inst.timer_counter[7]") (joined
-              (portRef (member S 0) (instanceRef id00018))
-              (portRef I0 (instanceRef id00010))
-              (portRef Q (instanceRef id00029))
-            )
-          )
-          (net (rename id00053 "timer_inst.timer_counter[0]") (joined
-              (portRef I (instanceRef id00016))
-              (portRef I3 (instanceRef id00011))
-              (portRef Q (instanceRef id00022))
-            )
-          )
-          (net (rename id00054 "timer_inst.timer_counter[1]") (joined
-              (portRef (member S 2) (instanceRef id00017))
-              (portRef I2 (instanceRef id00011))
-              (portRef Q (instanceRef id00023))
-            )
-          )
-          (net (rename id00055 "timer_inst.timer_counter[2]") (joined
-              (portRef (member S 1) (instanceRef id00017))
-              (portRef I1 (instanceRef id00011))
-              (portRef Q (instanceRef id00024))
-            )
-          )
-          (net (rename id00056 "timer_inst.timer_counter[3]") (joined
-              (portRef (member S 0) (instanceRef id00017))
-              (portRef I0 (instanceRef id00011))
-              (portRef Q (instanceRef id00025))
-            )
-          )
-          (net (rename id00057 "$auto$alumacc.cc:485:replace_alu$1391.Y[13]") (joined
+          (net (rename id00041 "$auto$alumacc.cc:485:replace_alu$1404.Y[13]") (joined
               (portRef (member O 2) (instanceRef id00020))
               (portRef D (instanceRef id00035))
             )
           )
-          (net (rename id00058 "$auto$alumacc.cc:485:replace_alu$1391.Y[12]") (joined
+          (net (rename id00042 "$auto$alumacc.cc:485:replace_alu$1404.Y[12]") (joined
               (portRef (member O 3) (instanceRef id00020))
               (portRef D (instanceRef id00034))
             )
           )
-          (net (rename id00059 "$auto$alumacc.cc:485:replace_alu$1391.Y[15]") (joined
+          (net (rename id00043 "$auto$alumacc.cc:485:replace_alu$1404.Y[15]") (joined
               (portRef (member O 0) (instanceRef id00020))
               (portRef D (instanceRef id00037))
             )
           )
-          (net (rename id00060 "$auto$alumacc.cc:485:replace_alu$1391.Y[14]") (joined
+          (net (rename id00044 "$auto$alumacc.cc:485:replace_alu$1404.Y[14]") (joined
               (portRef (member O 1) (instanceRef id00020))
               (portRef D (instanceRef id00036))
             )
           )
-          (net (rename id00061 "$auto$alumacc.cc:485:replace_alu$1391.Y[9]") (joined
+          (net (rename id00045 "$auto$alumacc.cc:485:replace_alu$1404.Y[9]") (joined
               (portRef (member O 2) (instanceRef id00019))
               (portRef D (instanceRef id00031))
             )
           )
-          (net (rename id00062 "$auto$alumacc.cc:485:replace_alu$1391.Y[8]") (joined
+          (net (rename id00046 "$auto$alumacc.cc:485:replace_alu$1404.Y[8]") (joined
               (portRef (member O 3) (instanceRef id00019))
               (portRef D (instanceRef id00030))
             )
           )
-          (net (rename id00063 "$auto$alumacc.cc:485:replace_alu$1391.Y[11]") (joined
+          (net (rename id00047 "$auto$alumacc.cc:485:replace_alu$1404.Y[11]") (joined
               (portRef (member O 0) (instanceRef id00019))
               (portRef D (instanceRef id00033))
             )
           )
-          (net (rename id00064 "$auto$alumacc.cc:485:replace_alu$1391.Y[10]") (joined
+          (net (rename id00048 "$auto$alumacc.cc:485:replace_alu$1404.Y[10]") (joined
               (portRef (member O 1) (instanceRef id00019))
               (portRef D (instanceRef id00032))
             )
           )
-          (net (rename id00065 "$auto$alumacc.cc:485:replace_alu$1391.Y[5]") (joined
+          (net (rename id00049 "$auto$alumacc.cc:485:replace_alu$1404.Y[5]") (joined
               (portRef (member O 2) (instanceRef id00018))
               (portRef D (instanceRef id00027))
             )
           )
-          (net (rename id00066 "$auto$alumacc.cc:485:replace_alu$1391.Y[4]") (joined
+          (net (rename id00050 "$auto$alumacc.cc:485:replace_alu$1404.Y[4]") (joined
               (portRef (member O 3) (instanceRef id00018))
               (portRef D (instanceRef id00026))
             )
           )
-          (net (rename id00067 "$auto$alumacc.cc:485:replace_alu$1391.Y[7]") (joined
+          (net (rename id00051 "$auto$alumacc.cc:485:replace_alu$1404.Y[7]") (joined
               (portRef (member O 0) (instanceRef id00018))
               (portRef D (instanceRef id00029))
             )
           )
-          (net (rename id00068 "$auto$alumacc.cc:485:replace_alu$1391.Y[6]") (joined
+          (net (rename id00052 "$auto$alumacc.cc:485:replace_alu$1404.Y[6]") (joined
               (portRef (member O 1) (instanceRef id00018))
               (portRef D (instanceRef id00028))
             )
           )
-          (net (rename id00069 "$auto$alumacc.cc:485:replace_alu$1391.Y[1]") (joined
+          (net (rename id00053 "$auto$alumacc.cc:485:replace_alu$1404.Y[1]") (joined
               (portRef (member O 2) (instanceRef id00017))
               (portRef D (instanceRef id00023))
             )
           )
-          (net (rename id00070 "$auto$alumacc.cc:485:replace_alu$1391.Y[0]") (joined
+          (net (rename id00054 "$auto$alumacc.cc:485:replace_alu$1404.Y[0]") (joined
               (portRef (member S 3) (instanceRef id00017))
               (portRef D (instanceRef id00022))
               (portRef O (instanceRef id00016))
             )
           )
-          (net (rename id00071 "$auto$alumacc.cc:485:replace_alu$1391.Y[3]") (joined
+          (net (rename id00055 "$auto$alumacc.cc:485:replace_alu$1404.Y[3]") (joined
               (portRef (member O 0) (instanceRef id00017))
               (portRef D (instanceRef id00025))
             )
           )
-          (net (rename id00072 "$auto$alumacc.cc:485:replace_alu$1391.Y[2]") (joined
+          (net (rename id00056 "$auto$alumacc.cc:485:replace_alu$1404.Y[2]") (joined
               (portRef (member O 1) (instanceRef id00017))
               (portRef D (instanceRef id00024))
             )
           )
-          (net (rename id00073 "$0mat_CLOCK_reg[0:0]") (joined
+          (net (rename id00057 "$0mat_CLOCK_reg[0:0]") (joined
               (portRef D (instanceRef id00039))
               (portRef O (instanceRef id00015))
             )
           )
-          (net (rename id00074 "$abc$2507$aiger2506$28") (joined
+          (net (rename id00058 "timer_inst.timer_counter[7]") (joined
+              (portRef (member S 0) (instanceRef id00018))
+              (portRef I0 (instanceRef id00010))
+              (portRef Q (instanceRef id00029))
+            )
+          )
+          (net (rename id00059 "timer_inst.timer_counter[6]") (joined
+              (portRef (member S 1) (instanceRef id00018))
+              (portRef I1 (instanceRef id00010))
+              (portRef Q (instanceRef id00028))
+            )
+          )
+          (net (rename id00060 "timer_inst.timer_counter[5]") (joined
+              (portRef (member S 2) (instanceRef id00018))
+              (portRef I2 (instanceRef id00010))
+              (portRef Q (instanceRef id00027))
+            )
+          )
+          (net (rename id00061 "timer_inst.timer_counter[4]") (joined
+              (portRef (member S 3) (instanceRef id00018))
+              (portRef I3 (instanceRef id00010))
+              (portRef Q (instanceRef id00026))
+            )
+          )
+          (net (rename id00062 "timer_inst.timer_counter[3]") (joined
+              (portRef (member S 0) (instanceRef id00017))
+              (portRef I0 (instanceRef id00011))
+              (portRef Q (instanceRef id00025))
+            )
+          )
+          (net (rename id00063 "timer_inst.timer_counter[2]") (joined
+              (portRef (member S 1) (instanceRef id00017))
+              (portRef I1 (instanceRef id00011))
+              (portRef Q (instanceRef id00024))
+            )
+          )
+          (net (rename id00064 "timer_inst.timer_counter[1]") (joined
+              (portRef (member S 2) (instanceRef id00017))
+              (portRef I2 (instanceRef id00011))
+              (portRef Q (instanceRef id00023))
+            )
+          )
+          (net (rename id00065 "timer_inst.timer_counter[0]") (joined
+              (portRef I (instanceRef id00016))
+              (portRef I3 (instanceRef id00011))
+              (portRef Q (instanceRef id00022))
+            )
+          )
+          (net (rename id00066 "timer_inst.timer_counter[15]") (joined
+              (portRef (member S 0) (instanceRef id00020))
+              (portRef I0 (instanceRef id00012))
+              (portRef Q (instanceRef id00037))
+            )
+          )
+          (net (rename id00067 "timer_inst.timer_counter[14]") (joined
+              (portRef (member S 1) (instanceRef id00020))
+              (portRef I1 (instanceRef id00012))
+              (portRef Q (instanceRef id00036))
+            )
+          )
+          (net (rename id00068 "timer_inst.timer_counter[13]") (joined
+              (portRef (member S 2) (instanceRef id00020))
+              (portRef I2 (instanceRef id00012))
+              (portRef Q (instanceRef id00035))
+            )
+          )
+          (net (rename id00069 "timer_inst.timer_counter[12]") (joined
+              (portRef (member S 3) (instanceRef id00020))
+              (portRef I3 (instanceRef id00012))
+              (portRef Q (instanceRef id00034))
+            )
+          )
+          (net (rename id00070 "timer_inst.timer_counter[11]") (joined
+              (portRef (member S 0) (instanceRef id00019))
+              (portRef I0 (instanceRef id00013))
+              (portRef Q (instanceRef id00033))
+            )
+          )
+          (net (rename id00071 "timer_inst.timer_counter[10]") (joined
+              (portRef (member S 1) (instanceRef id00019))
+              (portRef I1 (instanceRef id00013))
+              (portRef Q (instanceRef id00032))
+            )
+          )
+          (net (rename id00072 "timer_inst.timer_counter[9]") (joined
+              (portRef (member S 2) (instanceRef id00019))
+              (portRef I2 (instanceRef id00013))
+              (portRef Q (instanceRef id00031))
+            )
+          )
+          (net (rename id00073 "timer_inst.timer_counter[8]") (joined
+              (portRef (member S 3) (instanceRef id00019))
+              (portRef I3 (instanceRef id00013))
+              (portRef Q (instanceRef id00030))
+            )
+          )
+          (net (rename id00074 "$abc$2520$aiger2519$28") (joined
               (portRef (member CO 1) (instanceRef id00017))
             )
           )
-          (net (rename id00075 "$abc$2507$aiger2506$29") (joined
+          (net (rename id00075 "$abc$2520$aiger2519$29") (joined
               (portRef (member CO 0) (instanceRef id00017))
               (portRef CI (instanceRef id00018))
             )
           )
-          (net (rename id00076 "$abc$2507$aiger2506$34") (joined
+          (net (rename id00076 "$abc$2520$aiger2519$34") (joined
               (portRef (member CO 3) (instanceRef id00018))
             )
           )
-          (net (rename id00077 "$abc$2507$aiger2506$22") (joined
+          (net (rename id00077 "$abc$2520$aiger2519$22") (joined
               (portRef (member O 3) (instanceRef id00017))
             )
           )
-          (net (rename id00078 "$abc$2507$aiger2506$26") (joined
+          (net (rename id00078 "$abc$2520$aiger2519$26") (joined
               (portRef (member CO 3) (instanceRef id00017))
             )
           )
-          (net (rename id00079 "$abc$2507$aiger2506$27") (joined
+          (net (rename id00079 "$abc$2520$aiger2519$27") (joined
               (portRef (member CO 2) (instanceRef id00017))
             )
           )
-          (net (rename id00080 "$abc$2507$aiger2506$53") (joined
+          (net (rename id00080 "$abc$2520$aiger2519$53") (joined
               (portRef (member CO 0) (instanceRef id00020))
             )
           )
-          (net (rename id00081 "$abc$2507$aiger2506$50") (joined
+          (net (rename id00081 "$abc$2520$aiger2519$50") (joined
               (portRef (member CO 3) (instanceRef id00020))
             )
           )
-          (net (rename id00082 "$abc$2507$aiger2506$51") (joined
+          (net (rename id00082 "$abc$2520$aiger2519$51") (joined
               (portRef (member CO 2) (instanceRef id00020))
             )
           )
-          (net (rename id00083 "$abc$2507$aiger2506$52") (joined
+          (net (rename id00083 "$abc$2520$aiger2519$52") (joined
               (portRef (member CO 1) (instanceRef id00020))
             )
           )
-          (net (rename id00084 "$abc$2507$aiger2506$42") (joined
+          (net (rename id00084 "$abc$2520$aiger2519$42") (joined
               (portRef (member CO 3) (instanceRef id00019))
             )
           )
-          (net (rename id00085 "$abc$2507$aiger2506$43") (joined
+          (net (rename id00085 "$abc$2520$aiger2519$43") (joined
               (portRef (member CO 2) (instanceRef id00019))
             )
           )
-          (net (rename id00086 "$abc$2507$aiger2506$44") (joined
+          (net (rename id00086 "$abc$2520$aiger2519$44") (joined
               (portRef (member CO 1) (instanceRef id00019))
             )
           )
-          (net (rename id00087 "$abc$2507$aiger2506$45") (joined
+          (net (rename id00087 "$abc$2520$aiger2519$45") (joined
               (portRef (member CO 0) (instanceRef id00019))
               (portRef CI (instanceRef id00020))
             )
           )
-          (net (rename id00088 "$abc$2507$aiger2506$35") (joined
+          (net (rename id00088 "$abc$2520$aiger2519$35") (joined
               (portRef (member CO 2) (instanceRef id00018))
             )
           )
-          (net (rename id00089 "$abc$2507$aiger2506$36") (joined
+          (net (rename id00089 "$abc$2520$aiger2519$36") (joined
               (portRef (member CO 1) (instanceRef id00018))
             )
           )
-          (net (rename id00090 "$abc$2507$aiger2506$37") (joined
+          (net (rename id00090 "$abc$2520$aiger2519$37") (joined
               (portRef (member CO 0) (instanceRef id00018))
               (portRef CI (instanceRef id00019))
             )
           )
-          (net (rename id00091 "$auto$xilinx_dffopt.cc:347:execute$2521") (joined
+          (net (rename id00091 "$auto$xilinx_dffopt.cc:347:execute$2534") (joined
               (portRef D (instanceRef id00038))
               (portRef O (instanceRef id00040))
             )
           )
-          (net (rename id00092 "$auto$clkbufmap.cc:294:execute$2524") (joined
+          (net (rename id00092 "$auto$clkbufmap.cc:294:execute$2537") (joined
               (portRef C (instanceRef id00039))
               (portRef O (instanceRef id00021))
             )
           )
-          (net (rename id00093 "$abc$2507$auto$rtlil.cc:2660:NotGate$2018") (joined
+          (net (rename id00093 "$abc$2520$auto$rtlil.cc:2660:NotGate$2031") (joined
               (portRef O (instanceRef id00014))
               (portRef R (instanceRef id00022))
               (portRef R (instanceRef id00023))
@@ -22761,25 +22761,25 @@
               (portRef R (instanceRef id00037))
             )
           )
-          (net (rename id00094 "$techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[1]") (joined
+          (net (rename id00094 "$techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[1]") (joined
               (portRef I1 (instanceRef id00014))
               (portRef I2 (instanceRef id00040))
               (portRef O (instanceRef id00012))
             )
           )
-          (net (rename id00095 "$techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[0]") (joined
+          (net (rename id00095 "$techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[0]") (joined
               (portRef I0 (instanceRef id00014))
               (portRef I3 (instanceRef id00040))
               (portRef O (instanceRef id00013))
             )
           )
-          (net (rename id00096 "$techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[3]") (joined
+          (net (rename id00096 "$techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[3]") (joined
               (portRef I0 (instanceRef id00040))
               (portRef I3 (instanceRef id00014))
               (portRef O (instanceRef id00010))
             )
           )
-          (net (rename id00097 "$techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[2]") (joined
+          (net (rename id00097 "$techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[2]") (joined
               (portRef I1 (instanceRef id00040))
               (portRef I2 (instanceRef id00014))
               (portRef O (instanceRef id00011))

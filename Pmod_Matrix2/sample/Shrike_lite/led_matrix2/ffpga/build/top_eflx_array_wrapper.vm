@@ -742,7 +742,7 @@ module top_eflx_array_wrapper (
   input CHIP_RST
 )
 ;
-  wire \_$$_$auto$clkbufmap.cc:294:execute$2524  ;
+  wire \_$$_$auto$clkbufmap.cc:294:execute$2537  ;
   wire clk ;
   wire CLR1 ;
   wire CLR1_en ;
@@ -770,7 +770,7 @@ assign GND_NET = 1'b0 ;
 wire VCC_NET ;
 assign VCC_NET = 1'b1 ;
 assign clk = TILE_00_CLK_IN_W0;
-assign \_$$_$auto$clkbufmap.cc:294:execute$2524  = TILE_00_CLK_IN_N1;
+assign \_$$_$auto$clkbufmap.cc:294:execute$2537  = TILE_00_CLK_IN_N1;
 assign TILE_00_EFLX_OUT_0_25_0 = clk_en;
 assign TILE_00_EFLX_OUT_0_25_1 = sw_en;
 assign TILE_00_EFLX_OUT_31_8_0 = COL_Green;
@@ -875,7 +875,7 @@ defparam TILE_00_RBB_31_27.OsyncSRen=1'h0;
     .A3(1'b0),
     .A4(1'b0),
     .A5(1'b0),
-    .A6(\_$$_$abc$2507$auto$rtlil.cc:2660:NotGate$2018 ),
+    .A6(\_$$_$abc$2520$auto$rtlil.cc:2660:NotGate$2031 ),
     .AQ(\timer_inst.timer_counter[0] ),
     .B1(\timer_inst.timer_counter[1] ),
     .B2(1'b0),
@@ -894,16 +894,16 @@ defparam TILE_00_RBB_31_27.OsyncSRen=1'h0;
     .CHIP_RST(EFLX_CHIP_RST),
     .CIN(1'b0),
     .CLK(clk),
-    .CMUX(\_$$_$techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[0] ),
-    .COUT(_$$_$abc$2507$aiger2506$29),
+    .CMUX(\_$$_$techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[0] ),
+    .COUT(_$$_$abc$2520$aiger2519$29),
     .CQ(\timer_inst.timer_counter[2] ),
     .D1(\timer_inst.timer_counter[3] ),
-    .D2(\_$$_$techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[0] ),
-    .D3(\_$$_$techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[1] ),
-    .D4(\_$$_$techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[2] ),
-    .D5(\_$$_$techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[3] ),
+    .D2(\_$$_$techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[0] ),
+    .D3(\_$$_$techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[1] ),
+    .D4(\_$$_$techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[2] ),
+    .D5(\_$$_$techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[3] ),
     .D6(1'b0),
-    .DMUX(\_$$_$abc$2507$auto$rtlil.cc:2660:NotGate$2018 ),
+    .DMUX(\_$$_$abc$2520$auto$rtlil.cc:2660:NotGate$2031 ),
     .DQ(\timer_inst.timer_counter[3] ),
     .SRin(1'b0)
 );
@@ -987,9 +987,9 @@ defparam TILE_00_RBB_19_12.QasyncSRen=1'h0;
     .C6(1'b0),
     .CEin(1'b0),
     .CHIP_RST(EFLX_CHIP_RST),
-    .CIN(_$$_$abc$2507$aiger2506$29),
+    .CIN(_$$_$abc$2520$aiger2519$29),
     .CLK(clk),
-    .COUT(_$$_$abc$2507$aiger2506$37),
+    .COUT(_$$_$abc$2520$aiger2519$37),
     .CQ(\timer_inst.timer_counter[6] ),
     .D1(\timer_inst.timer_counter[7] ),
     .D2(1'b0),
@@ -998,7 +998,7 @@ defparam TILE_00_RBB_19_12.QasyncSRen=1'h0;
     .D5(1'b0),
     .D6(1'b0),
     .DQ(\timer_inst.timer_counter[7] ),
-    .SRin(\_$$_$abc$2507$auto$rtlil.cc:2660:NotGate$2018 )
+    .SRin(\_$$_$abc$2520$auto$rtlil.cc:2660:NotGate$2031 )
 );
 // Configuration for simulation:
 defparam TILE_00_RBB_22_12.A6_TIE=1'h0;
@@ -1080,9 +1080,9 @@ defparam TILE_00_RBB_22_12.QasyncSRen=1'h0;
     .C6(1'b0),
     .CEin(1'b0),
     .CHIP_RST(EFLX_CHIP_RST),
-    .CIN(_$$_$abc$2507$aiger2506$37),
+    .CIN(_$$_$abc$2520$aiger2519$37),
     .CLK(clk),
-    .COUT(_$$_$abc$2507$aiger2506$45),
+    .COUT(_$$_$abc$2520$aiger2519$45),
     .CQ(\timer_inst.timer_counter[10] ),
     .D1(\timer_inst.timer_counter[11] ),
     .D2(1'b0),
@@ -1091,7 +1091,7 @@ defparam TILE_00_RBB_22_12.QasyncSRen=1'h0;
     .D5(1'b0),
     .D6(1'b0),
     .DQ(\timer_inst.timer_counter[11] ),
-    .SRin(\_$$_$abc$2507$auto$rtlil.cc:2660:NotGate$2018 )
+    .SRin(\_$$_$abc$2520$auto$rtlil.cc:2660:NotGate$2031 )
 );
 // Configuration for simulation:
 defparam TILE_00_RBB_25_12.A6_TIE=1'h0;
@@ -1173,7 +1173,7 @@ defparam TILE_00_RBB_25_12.QasyncSRen=1'h0;
     .C6(1'b0),
     .CEin(1'b0),
     .CHIP_RST(EFLX_CHIP_RST),
-    .CIN(_$$_$abc$2507$aiger2506$45),
+    .CIN(_$$_$abc$2520$aiger2519$45),
     .CLK(clk),
     .CQ(\timer_inst.timer_counter[14] ),
     .D1(\timer_inst.timer_counter[15] ),
@@ -1183,7 +1183,7 @@ defparam TILE_00_RBB_25_12.QasyncSRen=1'h0;
     .D5(1'b0),
     .D6(1'b0),
     .DQ(\timer_inst.timer_counter[15] ),
-    .SRin(\_$$_$abc$2507$auto$rtlil.cc:2660:NotGate$2018 )
+    .SRin(\_$$_$abc$2520$auto$rtlil.cc:2660:NotGate$2031 )
 );
 // Configuration for simulation:
 defparam TILE_00_RBB_28_12.A6_TIE=1'h0;
@@ -1264,7 +1264,7 @@ defparam TILE_00_RBB_28_12.QasyncSRen=1'h0;
     .CEin(1'b0),
     .CHIP_RST(EFLX_CHIP_RST),
     .CIN(1'b0),
-    .CLK(\_$$_$auto$clkbufmap.cc:294:execute$2524 ),
+    .CLK(\_$$_$auto$clkbufmap.cc:294:execute$2537 ),
     .D(\_$$_$0mat_CLOCK_reg[0:0] ),
     .D1(_$w$_mat_CLOCK),
     .D2(1'b0),
@@ -1333,21 +1333,21 @@ defparam TILE_00_RBB_28_26.ODQsyncSRen=1'h0;
 defparam TILE_00_RBB_28_26.OQasyncSRen=1'h1;
 defparam TILE_00_RBB_28_26.QasyncSRen=1'h0;
   RBB6L TILE_00_RBB_19_10 (
-    .A(\_$$_$techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[1] ),
+    .A(\_$$_$techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[1] ),
     .A1(\timer_inst.timer_counter[15] ),
     .A2(\timer_inst.timer_counter[14] ),
     .A3(\timer_inst.timer_counter[13] ),
     .A4(\timer_inst.timer_counter[12] ),
     .A5(1'b0),
     .A6(1'b0),
-    .B(\_$$_$techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[2] ),
+    .B(\_$$_$techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[2] ),
     .B1(\timer_inst.timer_counter[3] ),
     .B2(\timer_inst.timer_counter[2] ),
     .B3(\timer_inst.timer_counter[1] ),
     .B4(\timer_inst.timer_counter[0] ),
     .B5(1'b0),
     .B6(1'b0),
-    .C(\_$$_$techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[3] ),
+    .C(\_$$_$techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[3] ),
     .C1(\timer_inst.timer_counter[7] ),
     .C2(\timer_inst.timer_counter[6] ),
     .C3(\timer_inst.timer_counter[5] ),
@@ -1358,11 +1358,11 @@ defparam TILE_00_RBB_28_26.QasyncSRen=1'h0;
     .CHIP_RST(EFLX_CHIP_RST),
     .CIN(1'b0),
     .CLK(clk),
-    .D(\_$$_$auto$xilinx_dffopt.cc:347:execute$2521 ),
-    .D1(\_$$_$techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[3] ),
-    .D2(\_$$_$techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[2] ),
-    .D3(\_$$_$techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[1] ),
-    .D4(\_$$_$techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[0] ),
+    .D(\_$$_$auto$xilinx_dffopt.cc:347:execute$2534 ),
+    .D1(\_$$_$techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[3] ),
+    .D2(\_$$_$techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[2] ),
+    .D3(\_$$_$techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[1] ),
+    .D4(\_$$_$techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[0] ),
     .D5(_$w$_clk_1k),
     .D6(1'b0),
     .DQ(_$w$_clk_1k),
@@ -1457,7 +1457,7 @@ defparam TILE_00_RBB_31_9.OsyncSRen=1'h0;
     .CLK(clk),
     .EFLX_IN({1'b0, 1'b0}),
     .EFLX_OUT({UNCON_RBB_3_EFLX_OUT_1, clk_1k}),
-    .O0(\_$$_$auto$xilinx_dffopt.cc:347:execute$2521 ),
+    .O0(\_$$_$auto$xilinx_dffopt.cc:347:execute$2534 ),
     .O1(1'b0),
     .SR(1'b0)
 );
@@ -1610,7 +1610,7 @@ defparam TILE_00_RBB_31_25.OsyncSRen=1'h0;
   RBBIO TILE_00_RBB_31_26 (
     .CE(1'b0),
     .CHIP_RST(EFLX_CHIP_RST),
-    .CLK(\_$$_$auto$clkbufmap.cc:294:execute$2524 ),
+    .CLK(\_$$_$auto$clkbufmap.cc:294:execute$2537 ),
     .EFLX_IN({1'b0, 1'b0}),
     .EFLX_OUT({mat_CLOCK_en, mat_CLOCK}),
     .O0(\_$$_$0mat_CLOCK_reg[0:0] ),

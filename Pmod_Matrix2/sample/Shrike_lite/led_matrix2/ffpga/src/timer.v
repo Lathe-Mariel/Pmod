@@ -5,8 +5,8 @@ module timer(
   output wire clk_out
 );
 
-reg[15:0] timer_counter;
-reg clk_out_reg;
+reg[15:0] timer_counter=0;
+reg clk_out_reg=0;
 
 assign clk_out = clk_out_reg;
 

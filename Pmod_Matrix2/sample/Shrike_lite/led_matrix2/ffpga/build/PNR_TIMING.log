@@ -5,8 +5,8 @@ Timing Summary
 
                                         Group  No. Clocks  No. Clock Pairs  WNS(ps)  TNS(ps)  TNS Endpoints      
                                   -----------  ----------  ---------------  -------  -------  -------------      
-                                   <UDEF_clk>           1                1    -5666  -182529             74      
-   <UDEF_$auto$clkbufmap.cc:294:execute$2524>           1                1    -2101    -3009              2      
+                                   <UDEF_clk>           1                1    -5620  -185134             74      
+   <UDEF_$auto$clkbufmap.cc:294:execute$2537>           1                1    -2101    -3009              2      
 
 
 
@@ -16,8 +16,8 @@ Clocks
 
                                  Clock                            Clock net                                       Group  Constrained Period(ps)      Waveform(ps)   Achievable Period(ps)  Achievable Frequency(MHz)
                         --------------                          -----------                                 -----------  ----------------------  -----------------  ---------------------  -------------------------
-                                   clk                                  clk                                  <UDEF_clk>           (auto) 2000            (0,1000)                   7665                    130.463 
-   $auto$clkbufmap.cc:294:execute$2524  $auto$clkbufmap.cc:294:execute$2524  <UDEF_$auto$clkbufmap.cc:294:execute$2524>           (auto) 2000            (0,1000)                   4100                    243.902 
+                                   clk                                  clk                                  <UDEF_clk>           (auto) 2000            (0,1000)                   7619                    131.251 
+   $auto$clkbufmap.cc:294:execute$2537  $auto$clkbufmap.cc:294:execute$2537  <UDEF_$auto$clkbufmap.cc:294:execute$2537>           (auto) 2000            (0,1000)                   4100                    243.902 
 
 
 
@@ -27,8 +27,8 @@ Clock Relationships
 
                             From Clock                             To Clock                                       Group    Endpoints     WNS(ps)    TNS(ps)  TNS Endpoints
                         --------------                       --------------                          ------------------  -----------  ----------  ---------  -------------
-                                   clk                                  clk                                  <UDEF_clk>           74       -5666    -182529             74
-   $auto$clkbufmap.cc:294:execute$2524  $auto$clkbufmap.cc:294:execute$2524  <UDEF_$auto$clkbufmap.cc:294:execute$2524>            2       -2101      -3009              2
+                                   clk                                  clk                                  <UDEF_clk>           74       -5620    -185134             74
+   $auto$clkbufmap.cc:294:execute$2537  $auto$clkbufmap.cc:294:execute$2537  <UDEF_$auto$clkbufmap.cc:294:execute$2537>            2       -2101      -3009              2
 
 
 
@@ -38,10 +38,10 @@ Timing Details for Clock Pair clk and clk
 
        From Clock        To Clock               Group    Endpoints     WNS(ps)    TNS(ps)  TNS Endpoints
    --------------  --------------  ------------------  -----------  ----------  ---------  -------------
-              clk             clk          <UDEF_clk>           74       -5666    -182529             74
+              clk             clk          <UDEF_clk>           74       -5620    -185134             74
 
-Path 25:
-   Slack (not met):                         -5666ps
+Path 28:
+   Slack (not met):                         -5620ps
      Path type:                               SETUP
      Group:                              <UDEF_clk>
      Launching clock:                           clk (rising edge)
@@ -51,9 +51,9 @@ Path 25:
    + Delay of the capturing clock:           2272ps
    - Clock uncertainty:                       150ps
    = Required time:                          4122ps
-   - Propagation time:                       7547ps (46.3% logic, 53.7% route, logic stage 5)
+   - Propagation time:                       7501ps (46.7% logic, 53.3% route, logic stage 5)
    - Delay of the launching clock:           2241ps
-   = Slack:                                 -5666ps
+   = Slack:                                 -5620ps
 
    Instance/Pin or Net Name                                        Type         ID     Location or Fanout   Delay(ps)  Edge  Arrival Time(ps)    Instance detail                                                        
    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -61,30 +61,30 @@ Path 25:
    clk                                                             Clock net     6           (fanout=225)       2241                     -                                                                              
    RBB_14/CLK                                                      RBB_6L       14  [TILE 0 0, RBB 28 12]          -     r            2241                                                                              
    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   RBB_14/CQ                                                       RBB_6L       14  [TILE 0 0, RBB 28 12]        800     r            3041     {inst51: $auto$ff.cc:266:slice$1825 (FDR,site=cff)}                      
-   timer_inst.timer_counter[14]                                    Net           9             (fanout=2)       1914                     -                                                                              
-   RBB_16/A2                                                       RBB_6L       16  [TILE 0 0, RBB 19 10]          -     r            4955                                                                              
-   RBB_16/A                                                        RBB_6L       16  [TILE 0 0, RBB 19 10]        759     r            5714     {inst27: $abc$2507$lut$aiger2506$62 (LUT,site=alut)}                     
-   $techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[1]  Net          60             (fanout=2)       1237                     -                                                                              
-   RBB_11/D3                                                       RBB_6L       11  [TILE 0 0, RBB 19 12]          -     r            6951                                                                              
-   RBB_11/DMUX                                                     RBB_6L       11  [TILE 0 0, RBB 19 12]        608     r            7559     {inst29: $abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018 (LUT,site=dluto)} 
-   $abc$2507$auto$rtlil.cc:2660:NotGate$2018                       Net          59             (fanout=1)        904                     -                                                                              
-   RBB_11/A6                                                       RBB_6L       11  [TILE 0 0, RBB 19 12]          -     r            8463                                                                              
-   RBB_11/SRout                                                    RBB_6L       11  [TILE 0 0, RBB 19 12]          2     r            8465                                                                              
-   $abc$2507$auto$rtlil.cc:2660:NotGate$2018                       Net          59             (fanout=1)          0                     -                                                                              
-   RBB_12/SRin                                                     RBB_6L       12  [TILE 0 0, RBB 22 12]          -     r            8465                                                                              
-   RBB_12/SRout                                                    RBB_6L       12  [TILE 0 0, RBB 22 12]          2     r            8467                                                                              
-   $abc$2507$auto$rtlil.cc:2660:NotGate$2018                       Net          59             (fanout=1)          0                     -                                                                              
-   RBB_13/SRin                                                     RBB_6L       13  [TILE 0 0, RBB 25 12]          -     r            8467     {<SR>inst48: $auto$ff.cc:266:slice$1822 (FDR,site=dff)}                  
+   RBB_14/BQ                                                       RBB_6L       14  [TILE 0 0, RBB 28 12]        800     r            3041     {inst50: $auto$ff.cc:266:slice$1837 (FDR,site=bff)}                      
+   timer_inst.timer_counter[13]                                    Net          34             (fanout=2)       1824                     -                                                                              
+   RBB_16/A3                                                       RBB_6L       16  [TILE 0 0, RBB 19 10]          -     r            4865                                                                              
+   RBB_16/A                                                        RBB_6L       16  [TILE 0 0, RBB 19 10]        763     r            5628     {inst27: $abc$2520$lut$aiger2519$62 (LUT,site=alut)}                     
+   $techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[1]  Net          60             (fanout=2)       1273                     -                                                                              
+   RBB_11/D3                                                       RBB_6L       11  [TILE 0 0, RBB 19 12]          -     r            6901                                                                              
+   RBB_11/DMUX                                                     RBB_6L       11  [TILE 0 0, RBB 19 12]        612     r            7513     {inst29: $abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031 (LUT,site=dluto)} 
+   $abc$2520$auto$rtlil.cc:2660:NotGate$2031                       Net          59             (fanout=1)        904                     -                                                                              
+   RBB_11/A6                                                       RBB_6L       11  [TILE 0 0, RBB 19 12]          -     r            8417                                                                              
+   RBB_11/SRout                                                    RBB_6L       11  [TILE 0 0, RBB 19 12]          2     r            8419                                                                              
+   $abc$2520$auto$rtlil.cc:2660:NotGate$2031                       Net          59             (fanout=1)          0                     -                                                                              
+   RBB_12/SRin                                                     RBB_6L       12  [TILE 0 0, RBB 22 12]          -     r            8419                                                                              
+   RBB_12/SRout                                                    RBB_6L       12  [TILE 0 0, RBB 22 12]          2     r            8421                                                                              
+   $abc$2520$auto$rtlil.cc:2660:NotGate$2031                       Net          59             (fanout=1)          0                     -                                                                              
+   RBB_13/SRin                                                     RBB_6L       13  [TILE 0 0, RBB 25 12]          -     r            8421     {<SR>inst48: $auto$ff.cc:266:slice$1835 (FDR,site=dff)}                  
    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   RBB_13/CLK                                                      RBB_6L       13  [TILE 0 0, RBB 25 12]       1321     r            9788                                                                              
+   RBB_13/CLK                                                      RBB_6L       13  [TILE 0 0, RBB 25 12]       1321     r            9742                                                                              
    clk                                                             Clock net     6           (fanout=225)      -2272                     -                                                                              
-   clk                                                             CLOCK-PORT    -                      -    capture     r            7516                                                                              
+   clk                                                             CLOCK-PORT    -                      -    capture     r            7470                                                                              
    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Path 26:
-   Slack (not met):                         -5652ps
+Path 29:
+   Slack (not met):                         -5606ps
      Path type:                               SETUP
      Group:                              <UDEF_clk>
      Launching clock:                           clk (rising edge)
@@ -94,9 +94,9 @@ Path 26:
    + Delay of the capturing clock:           2241ps
    - Clock uncertainty:                       150ps
    = Required time:                          4091ps
-   - Propagation time:                       7502ps (45.9% logic, 54.1% route, logic stage 6)
+   - Propagation time:                       7456ps (46.3% logic, 53.7% route, logic stage 6)
    - Delay of the launching clock:           2241ps
-   = Slack:                                 -5652ps
+   = Slack:                                 -5606ps
 
    Instance/Pin or Net Name                                        Type         ID     Location or Fanout   Delay(ps)  Edge  Arrival Time(ps)    Instance detail                                                        
    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -104,33 +104,33 @@ Path 26:
    clk                                                             Clock net     6           (fanout=225)       2241                     -                                                                              
    RBB_14/CLK                                                      RBB_6L       14  [TILE 0 0, RBB 28 12]          -     r            2241                                                                              
    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   RBB_14/CQ                                                       RBB_6L       14  [TILE 0 0, RBB 28 12]        800     r            3041     {inst51: $auto$ff.cc:266:slice$1825 (FDR,site=cff)}                      
-   timer_inst.timer_counter[14]                                    Net           9             (fanout=2)       1914                     -                                                                              
-   RBB_16/A2                                                       RBB_6L       16  [TILE 0 0, RBB 19 10]          -     r            4955                                                                              
-   RBB_16/A                                                        RBB_6L       16  [TILE 0 0, RBB 19 10]        759     r            5714     {inst27: $abc$2507$lut$aiger2506$62 (LUT,site=alut)}                     
-   $techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[1]  Net          60             (fanout=2)       1237                     -                                                                              
-   RBB_11/D3                                                       RBB_6L       11  [TILE 0 0, RBB 19 12]          -     r            6951                                                                              
-   RBB_11/DMUX                                                     RBB_6L       11  [TILE 0 0, RBB 19 12]        608     r            7559     {inst29: $abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018 (LUT,site=dluto)} 
-   $abc$2507$auto$rtlil.cc:2660:NotGate$2018                       Net          59             (fanout=1)        904                     -                                                                              
-   RBB_11/A6                                                       RBB_6L       11  [TILE 0 0, RBB 19 12]          -     r            8463                                                                              
-   RBB_11/SRout                                                    RBB_6L       11  [TILE 0 0, RBB 19 12]          2     r            8465                                                                              
-   $abc$2507$auto$rtlil.cc:2660:NotGate$2018                       Net          59             (fanout=1)          0                     -                                                                              
-   RBB_12/SRin                                                     RBB_6L       12  [TILE 0 0, RBB 22 12]          -     r            8465                                                                              
-   RBB_12/SRout                                                    RBB_6L       12  [TILE 0 0, RBB 22 12]          2     r            8467                                                                              
-   $abc$2507$auto$rtlil.cc:2660:NotGate$2018                       Net          59             (fanout=1)          0                     -                                                                              
-   RBB_13/SRin                                                     RBB_6L       13  [TILE 0 0, RBB 25 12]          -     r            8467                                                                              
-   RBB_13/SRout                                                    RBB_6L       13  [TILE 0 0, RBB 25 12]          2     r            8469                                                                              
-   $abc$2507$auto$rtlil.cc:2660:NotGate$2018                       Net          59             (fanout=1)          0                     -                                                                              
-   RBB_14/SRin                                                     RBB_6L       14  [TILE 0 0, RBB 28 12]          -     r            8469     {<SR>inst51: $auto$ff.cc:266:slice$1825 (FDR,site=cff)}                  
+   RBB_14/BQ                                                       RBB_6L       14  [TILE 0 0, RBB 28 12]        800     r            3041     {inst50: $auto$ff.cc:266:slice$1837 (FDR,site=bff)}                      
+   timer_inst.timer_counter[13]                                    Net          34             (fanout=2)       1824                     -                                                                              
+   RBB_16/A3                                                       RBB_6L       16  [TILE 0 0, RBB 19 10]          -     r            4865                                                                              
+   RBB_16/A                                                        RBB_6L       16  [TILE 0 0, RBB 19 10]        763     r            5628     {inst27: $abc$2520$lut$aiger2519$62 (LUT,site=alut)}                     
+   $techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[1]  Net          60             (fanout=2)       1273                     -                                                                              
+   RBB_11/D3                                                       RBB_6L       11  [TILE 0 0, RBB 19 12]          -     r            6901                                                                              
+   RBB_11/DMUX                                                     RBB_6L       11  [TILE 0 0, RBB 19 12]        612     r            7513     {inst29: $abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031 (LUT,site=dluto)} 
+   $abc$2520$auto$rtlil.cc:2660:NotGate$2031                       Net          59             (fanout=1)        904                     -                                                                              
+   RBB_11/A6                                                       RBB_6L       11  [TILE 0 0, RBB 19 12]          -     r            8417                                                                              
+   RBB_11/SRout                                                    RBB_6L       11  [TILE 0 0, RBB 19 12]          2     r            8419                                                                              
+   $abc$2520$auto$rtlil.cc:2660:NotGate$2031                       Net          59             (fanout=1)          0                     -                                                                              
+   RBB_12/SRin                                                     RBB_6L       12  [TILE 0 0, RBB 22 12]          -     r            8419                                                                              
+   RBB_12/SRout                                                    RBB_6L       12  [TILE 0 0, RBB 22 12]          2     r            8421                                                                              
+   $abc$2520$auto$rtlil.cc:2660:NotGate$2031                       Net          59             (fanout=1)          0                     -                                                                              
+   RBB_13/SRin                                                     RBB_6L       13  [TILE 0 0, RBB 25 12]          -     r            8421                                                                              
+   RBB_13/SRout                                                    RBB_6L       13  [TILE 0 0, RBB 25 12]          2     r            8423                                                                              
+   $abc$2520$auto$rtlil.cc:2660:NotGate$2031                       Net          59             (fanout=1)          0                     -                                                                              
+   RBB_14/SRin                                                     RBB_6L       14  [TILE 0 0, RBB 28 12]          -     r            8423     {<SR>inst51: $auto$ff.cc:266:slice$1838 (FDR,site=cff)}                  
    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   RBB_14/CLK                                                      RBB_6L       14  [TILE 0 0, RBB 28 12]       1274     r            9743                                                                              
+   RBB_14/CLK                                                      RBB_6L       14  [TILE 0 0, RBB 28 12]       1274     r            9697                                                                              
    clk                                                             Clock net     6           (fanout=225)      -2241                     -                                                                              
-   clk                                                             CLOCK-PORT    -                      -    capture     r            7502                                                                              
+   clk                                                             CLOCK-PORT    -                      -    capture     r            7456                                                                              
    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Path 27:
-   Slack (not met):                         -5625ps
+Path 2:
+   Slack (not met):                         -5579ps
      Path type:                               SETUP
      Group:                              <UDEF_clk>
      Launching clock:                           clk (rising edge)
@@ -140,9 +140,9 @@ Path 27:
    + Delay of the capturing clock:           2241ps
    - Clock uncertainty:                       150ps
    = Required time:                          4091ps
-   - Propagation time:                       7475ps (45.8% logic, 54.2% route, logic stage 6)
+   - Propagation time:                       7429ps (46.1% logic, 53.9% route, logic stage 6)
    - Delay of the launching clock:           2241ps
-   = Slack:                                 -5625ps
+   = Slack:                                 -5579ps
 
    Instance/Pin or Net Name                                        Type         ID     Location or Fanout   Delay(ps)  Edge  Arrival Time(ps)    Instance detail                                                        
    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -150,28 +150,28 @@ Path 27:
    clk                                                             Clock net     6           (fanout=225)       2241                     -                                                                              
    RBB_14/CLK                                                      RBB_6L       14  [TILE 0 0, RBB 28 12]          -     r            2241                                                                              
    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   RBB_14/CQ                                                       RBB_6L       14  [TILE 0 0, RBB 28 12]        800     r            3041     {inst51: $auto$ff.cc:266:slice$1825 (FDR,site=cff)}                      
-   timer_inst.timer_counter[14]                                    Net           9             (fanout=2)       1914                     -                                                                              
-   RBB_16/A2                                                       RBB_6L       16  [TILE 0 0, RBB 19 10]          -     r            4955                                                                              
-   RBB_16/A                                                        RBB_6L       16  [TILE 0 0, RBB 19 10]        759     r            5714     {inst27: $abc$2507$lut$aiger2506$62 (LUT,site=alut)}                     
-   $techmap2516$abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018.A[1]  Net          60             (fanout=2)       1237                     -                                                                              
-   RBB_11/D3                                                       RBB_6L       11  [TILE 0 0, RBB 19 12]          -     r            6951                                                                              
-   RBB_11/DMUX                                                     RBB_6L       11  [TILE 0 0, RBB 19 12]        608     r            7559     {inst29: $abc$2507$lut$auto$rtlil.cc:2660:NotGate$2018 (LUT,site=dluto)} 
-   $abc$2507$auto$rtlil.cc:2660:NotGate$2018                       Net          59             (fanout=1)        904                     -                                                                              
-   RBB_11/A6                                                       RBB_6L       11  [TILE 0 0, RBB 19 12]          -     r            8463                                                                              
-   RBB_11/SRout                                                    RBB_6L       11  [TILE 0 0, RBB 19 12]          2     r            8465                                                                              
-   $abc$2507$auto$rtlil.cc:2660:NotGate$2018                       Net          59             (fanout=1)          0                     -                                                                              
-   RBB_12/SRin                                                     RBB_6L       12  [TILE 0 0, RBB 22 12]          -     r            8465                                                                              
-   RBB_12/SRout                                                    RBB_6L       12  [TILE 0 0, RBB 22 12]          2     r            8467                                                                              
-   $abc$2507$auto$rtlil.cc:2660:NotGate$2018                       Net          59             (fanout=1)          0                     -                                                                              
-   RBB_13/SRin                                                     RBB_6L       13  [TILE 0 0, RBB 25 12]          -     r            8467                                                                              
-   RBB_13/SRout                                                    RBB_6L       13  [TILE 0 0, RBB 25 12]          2     r            8469                                                                              
-   $abc$2507$auto$rtlil.cc:2660:NotGate$2018                       Net          59             (fanout=1)          0                     -                                                                              
-   RBB_14/SRin                                                     RBB_6L       14  [TILE 0 0, RBB 28 12]          -     r            8469     {<SR>inst52: $auto$ff.cc:266:slice$1826 (FDR,site=dff)}                  
+   RBB_14/BQ                                                       RBB_6L       14  [TILE 0 0, RBB 28 12]        800     r            3041     {inst50: $auto$ff.cc:266:slice$1837 (FDR,site=bff)}                      
+   timer_inst.timer_counter[13]                                    Net          34             (fanout=2)       1824                     -                                                                              
+   RBB_16/A3                                                       RBB_6L       16  [TILE 0 0, RBB 19 10]          -     r            4865                                                                              
+   RBB_16/A                                                        RBB_6L       16  [TILE 0 0, RBB 19 10]        763     r            5628     {inst27: $abc$2520$lut$aiger2519$62 (LUT,site=alut)}                     
+   $techmap2529$abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031.A[1]  Net          60             (fanout=2)       1273                     -                                                                              
+   RBB_11/D3                                                       RBB_6L       11  [TILE 0 0, RBB 19 12]          -     r            6901                                                                              
+   RBB_11/DMUX                                                     RBB_6L       11  [TILE 0 0, RBB 19 12]        612     r            7513     {inst29: $abc$2520$lut$auto$rtlil.cc:2660:NotGate$2031 (LUT,site=dluto)} 
+   $abc$2520$auto$rtlil.cc:2660:NotGate$2031                       Net          59             (fanout=1)        904                     -                                                                              
+   RBB_11/A6                                                       RBB_6L       11  [TILE 0 0, RBB 19 12]          -     r            8417                                                                              
+   RBB_11/SRout                                                    RBB_6L       11  [TILE 0 0, RBB 19 12]          2     r            8419                                                                              
+   $abc$2520$auto$rtlil.cc:2660:NotGate$2031                       Net          59             (fanout=1)          0                     -                                                                              
+   RBB_12/SRin                                                     RBB_6L       12  [TILE 0 0, RBB 22 12]          -     r            8419                                                                              
+   RBB_12/SRout                                                    RBB_6L       12  [TILE 0 0, RBB 22 12]          2     r            8421                                                                              
+   $abc$2520$auto$rtlil.cc:2660:NotGate$2031                       Net          59             (fanout=1)          0                     -                                                                              
+   RBB_13/SRin                                                     RBB_6L       13  [TILE 0 0, RBB 25 12]          -     r            8421                                                                              
+   RBB_13/SRout                                                    RBB_6L       13  [TILE 0 0, RBB 25 12]          2     r            8423                                                                              
+   $abc$2520$auto$rtlil.cc:2660:NotGate$2031                       Net          59             (fanout=1)          0                     -                                                                              
+   RBB_14/SRin                                                     RBB_6L       14  [TILE 0 0, RBB 28 12]          -     r            8423     {<SR>inst52: $auto$ff.cc:266:slice$1839 (FDR,site=dff)}                  
    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   RBB_14/CLK                                                      RBB_6L       14  [TILE 0 0, RBB 28 12]       1247     r            9716                                                                              
+   RBB_14/CLK                                                      RBB_6L       14  [TILE 0 0, RBB 28 12]       1247     r            9670                                                                              
    clk                                                             Clock net     6           (fanout=225)      -2241                     -                                                                              
-   clk                                                             CLOCK-PORT    -                      -    capture     r            7475                                                                              
+   clk                                                             CLOCK-PORT    -                      -    capture     r            7429                                                                              
    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -179,19 +179,19 @@ Path 27:
 
 
 
-Timing Details for Clock Pair $auto$clkbufmap.cc:294:execute$2524 and $auto$clkbufmap.cc:294:execute$2524
+Timing Details for Clock Pair $auto$clkbufmap.cc:294:execute$2537 and $auto$clkbufmap.cc:294:execute$2537
 =========================================================================================================
 
                             From Clock                             To Clock                                       Group    Endpoints     WNS(ps)    TNS(ps)  TNS Endpoints
                         --------------                       --------------                          ------------------  -----------  ----------  ---------  -------------
-   $auto$clkbufmap.cc:294:execute$2524  $auto$clkbufmap.cc:294:execute$2524  <UDEF_$auto$clkbufmap.cc:294:execute$2524>            2       -2101      -3009              2
+   $auto$clkbufmap.cc:294:execute$2537  $auto$clkbufmap.cc:294:execute$2537  <UDEF_$auto$clkbufmap.cc:294:execute$2537>            2       -2101      -3009              2
 
 Path 3:
    Slack (not met):                         -2101ps
      Path type:                               SETUP
-     Group:              <UDEF_$auto$clkbufmap.cc:294:execute$2524>
-     Launching clock:    $auto$clkbufmap.cc:294:execute$2524 (rising edge)
-     Capturing clock:    $auto$clkbufmap.cc:294:execute$2524 (rising edge)
+     Group:              <UDEF_$auto$clkbufmap.cc:294:execute$2537>
+     Launching clock:    $auto$clkbufmap.cc:294:execute$2537 (rising edge)
+     Capturing clock:    $auto$clkbufmap.cc:294:execute$2537 (rising edge)
 
      Requested period:                       2000ps
    + Delay of the capturing clock:           2524ps
@@ -203,29 +203,29 @@ Path 3:
 
    Instance/Pin or Net Name             Type         ID     Location or Fanout   Delay(ps)  Edge  Arrival Time(ps)    Instance detail                                                             
    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   $auto$clkbufmap.cc:294:execute$2524  CLOCK-PORT    -                      -     launch     r               0                                                                                   
-   $auto$clkbufmap.cc:294:execute$2524  Clock net    58            (fanout=37)       2539                     -                                                                                   
+   $auto$clkbufmap.cc:294:execute$2537  CLOCK-PORT    -                      -     launch     r               0                                                                                   
+   $auto$clkbufmap.cc:294:execute$2537  Clock net    58            (fanout=37)       2539                     -                                                                                   
    RBB_15/CLK                           RBB_6L       15  [TILE 0 0, RBB 28 26]          -     r            2539                                                                                   
    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   RBB_15/DQ                            RBB_6L       15  [TILE 0 0, RBB 28 26]        800     r            3339     {inst54: $auto$ff.cc:266:slice$1874 (FD,site=dff)}                            
+   RBB_15/DQ                            RBB_6L       15  [TILE 0 0, RBB 28 26]        800     r            3339     {inst54: $auto$ff.cc:266:slice$1887 (FD,site=dff)}                            
    mat_CLOCK                            Net           3             (fanout=1)       1145                     -                                                                                   
    RBB_15/D1                            RBB_6L       15  [TILE 0 0, RBB 28 26]          -     r            4484                                                                                   
-   RBB_15/D                             RBB_6L       15  [TILE 0 0, RBB 28 26]        608     r            5092     {inst30: $abc$2507$lut$not$aiger2506$1 (LUT,site=dlut)}                       
-   $0mat_CLOCK_reg[0:0]                 Net          39             (fanout=1)        591                     -                                                                                   
+   RBB_15/D                             RBB_6L       15  [TILE 0 0, RBB 28 26]        608     r            5092     {inst30: $abc$2520$lut$not$aiger2519$1 (LUT,site=dlut)}                       
+   $0mat_CLOCK_reg[0:0]                 Net          23             (fanout=1)        591                     -                                                                                   
    RBB_9/O[0]                           IOB           9  [TILE 0 0, RBB 31 26]          -     r            5683     {inst79: mat_CLOCK_OUT (FD)} {(output_port) inst73: g_73_mat_CLOCK_obuf (IO)} 
    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
    RBB_9/CLK                            IOB           9  [TILE 0 0, RBB 31 26]        792     r            6475                                                                                   
-   $auto$clkbufmap.cc:294:execute$2524  Clock net    58            (fanout=37)      -2524                     -                                                                                   
-   $auto$clkbufmap.cc:294:execute$2524  CLOCK-PORT    -                      -    capture     r            3951                                                                                   
+   $auto$clkbufmap.cc:294:execute$2537  Clock net    58            (fanout=37)      -2524                     -                                                                                   
+   $auto$clkbufmap.cc:294:execute$2537  CLOCK-PORT    -                      -    capture     r            3951                                                                                   
    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 Path 4:
    Slack (not met):                          -908ps
      Path type:                               SETUP
-     Group:              <UDEF_$auto$clkbufmap.cc:294:execute$2524>
-     Launching clock:    $auto$clkbufmap.cc:294:execute$2524 (rising edge)
-     Capturing clock:    $auto$clkbufmap.cc:294:execute$2524 (rising edge)
+     Group:              <UDEF_$auto$clkbufmap.cc:294:execute$2537>
+     Launching clock:    $auto$clkbufmap.cc:294:execute$2537 (rising edge)
+     Capturing clock:    $auto$clkbufmap.cc:294:execute$2537 (rising edge)
 
      Requested period:                       2000ps
    + Delay of the capturing clock:           2539ps
@@ -237,17 +237,17 @@ Path 4:
 
    Instance/Pin or Net Name             Type         ID     Location or Fanout   Delay(ps)  Edge  Arrival Time(ps)    Instance detail                                                                                          
    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   $auto$clkbufmap.cc:294:execute$2524  CLOCK-PORT    -                      -     launch     r               0                                                                                                                
-   $auto$clkbufmap.cc:294:execute$2524  Clock net    58            (fanout=37)       2539                     -                                                                                                                
+   $auto$clkbufmap.cc:294:execute$2537  CLOCK-PORT    -                      -     launch     r               0                                                                                                                
+   $auto$clkbufmap.cc:294:execute$2537  Clock net    58            (fanout=37)       2539                     -                                                                                                                
    RBB_15/CLK                           RBB_6L       15  [TILE 0 0, RBB 28 26]          -     r            2539                                                                                                                
    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   RBB_15/DQ                            RBB_6L       15  [TILE 0 0, RBB 28 26]        800     r            3339     {inst54: $auto$ff.cc:266:slice$1874 (FD,site=dff)}                                                         
+   RBB_15/DQ                            RBB_6L       15  [TILE 0 0, RBB 28 26]        800     r            3339     {inst54: $auto$ff.cc:266:slice$1887 (FD,site=dff)}                                                         
    mat_CLOCK                            Net           3             (fanout=1)       1145                     -                                                                                                                
-   RBB_15/D1                            RBB_6L       15  [TILE 0 0, RBB 28 26]          -     r            4484     {inst30: $abc$2507$lut$not$aiger2506$1 (LUT,site=dlut)} {inst54: $auto$ff.cc:266:slice$1874 (FD,site=dff)} 
+   RBB_15/D1                            RBB_6L       15  [TILE 0 0, RBB 28 26]          -     r            4484     {inst30: $abc$2520$lut$not$aiger2519$1 (LUT,site=dlut)} {inst54: $auto$ff.cc:266:slice$1887 (FD,site=dff)} 
    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
    RBB_15/CLK                           RBB_6L       15  [TILE 0 0, RBB 28 26]        813     r            5297                                                                                                                
-   $auto$clkbufmap.cc:294:execute$2524  Clock net    58            (fanout=37)      -2539                     -                                                                                                                
-   $auto$clkbufmap.cc:294:execute$2524  CLOCK-PORT    -                      -    capture     r            2758                                                                                                                
+   $auto$clkbufmap.cc:294:execute$2537  Clock net    58            (fanout=37)      -2539                     -                                                                                                                
+   $auto$clkbufmap.cc:294:execute$2537  CLOCK-PORT    -                      -    capture     r            2758                                                                                                                
    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 

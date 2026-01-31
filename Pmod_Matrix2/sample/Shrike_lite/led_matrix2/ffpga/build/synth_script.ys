@@ -1,4 +1,4 @@
-read -sv "../src/main.v" "../src/timer.v"
+read -sv "../src/top.v" "../src/timer.v"
 synth_xilinx -nobram -noiopad -flatten -nodsp -abc9 
 clean
 write_verilog "post_synth_results.v"

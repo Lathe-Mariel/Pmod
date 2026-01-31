@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GPDProject version="40" oldestCompatibleVersion="32" GPDVersion="6.52.001" lastChange="31 Jan 2026 21:59:43" projectChecksumState="1" projectChecksum="f109a230">
+<GPDProject version="40" oldestCompatibleVersion="32" GPDVersion="6.51.002" lastChange="1 Feb 2026 01:50:42" projectChecksumState="1" projectChecksum="efcae0b4">
     <generalProjectSettings/>
     <chip family="04" type="06" friendlyName="FFPGA" partNumber="67" package="26">
         <nvmData registerLenght="480">0 0 0 28 0 0 0 0 A5 A5 A5 A5 0 0 0 0 0 0 0 0 5A 5A 5A 5A 0 0 0 0 22 22 22 22 22 22 22 22 22 22 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</nvmData>
         <checksum crc32="0x451C1D42" version="2"/>
-        <virtualProperties/>
         <VDDItem id="0">
-            <item id="0" caption="VDDC (PIN 22)">
+            <item id="0" caption="VDD (PIN 22)">
                 <graphics pos="(1350.00,143.10)" angle="0" flipping="2" hidden="0" tOrigin="(20.00,10.00)"/>
             </item>
         </VDDItem>
@@ -652,9 +651,10 @@
             </synthesize>
         </settings>
         <openedTabs>
-            <openedTab>main.v</openedTab>
+            <openedTab>top.v</openedTab>
             <openedTab>timer.v</openedTab>
             <openedTab>I/O Planner</openedTab>
+            <openedTab>top_tb.vt</openedTab>
         </openedTabs>
         <pipelineStagesStates>
             <pipelineStageState>
@@ -668,18 +668,20 @@
         </pipelineStagesStates>
         <modules>
             <scr>
-                <module filename="main.v"/>
+                <module filename="top.v"/>
                 <module filename="timer.v"/>
             </scr>
             <lib/>
-            <sim/>
+            <sim>
+                <module filename="top_tb.vt"/>
+            </sim>
             <netlists/>
             <timing-constraints/>
             <full-chip-simulation-models/>
             <placement-constraints/>
         </modules>
         <io-spec-tool>
-            <records filter="58" filter1="16">
+            <records filter="42" filter1="16">
                 <record id="CLK_t[0:0]_E_in0">
                     <port-name>clk0</port-name>
                 </record>

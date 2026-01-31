@@ -33,11 +33,11 @@ assign CLR2 = 1;
 assign CLR3 = 1;
 assign mat_CLOCK = mat_CLOCK_reg;
 
-reg mat_CLOCK_reg;
-reg mat_Ratch_reg;
-reg ROW_reg;
-reg COL_Red_reg;
-reg COL_Green_reg;
+reg mat_CLOCK_reg=0;
+reg mat_Ratch_reg=0;
+reg ROW_reg=0;
+reg COL_Red_reg=0;
+reg COL_Green_reg=0;
 
 
 reg[383:0] fb={6'o11,6'o11,6'o11,6'o11,6'o11,6'o11,6'o11,6'o11,
@@ -56,13 +56,13 @@ timer timer_inst(
   .clk_out(clk_1k)
 );
 
-reg [2:0] rowCounter;
-reg [5:0] columnCounter;  // [5:3] pwm  [2:0] columnCounter
-reg [8:0] address;
+reg [2:0] rowCounter=0;
+reg [5:0] columnCounter=0;  // [5:3] pwm  [2:0] columnCounter
+reg [8:0] address=0;
 
-reg [8:0] process_address;
-reg [5:0] tmp;
-reg [5:0] tmp2;
+reg [8:0] process_address=0;
+reg [5:0] tmp=0;
+reg [5:0] tmp2=0;
 
 always @(posedge clk)begin
     process_address <= process_address + 9'd6;
