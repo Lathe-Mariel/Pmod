@@ -18,9 +18,13 @@
 (* iopad_external_pin *) output wire mat_Ratch,  //transfering value of shift register to storage register
 (* iopad_external_pin *) output wire mat_Ratch_en,
 (* iopad_external_pin *) output wire mat_CLOCK,
-(* iopad_external_pin *) output wire mat_CLOCK_en
+(* iopad_external_pin *) output wire mat_CLOCK_en,
+(* iopad_external_pin *) output wire clk_1k,
+(* iopad_external_pin *) input wire clk0,
+(* iopad_external_pin *) output wire clk0_en
 );
 
+assign clk0_en = 1;
 assign CLR1_en = 1;
 assign CLR2_en = 1;
 assign CLR3_en = 1;
@@ -52,13 +56,11 @@ timer timer_inst(
   .clk_out(clk_1k)
 );
 
-reg clk_1k;
-
 reg [2:0] rowCounter;
 reg [2:0] columnCounter;
 reg [8:0] address;
 
-always @(posedge clk_1k)begin
+always @(posedge clk0)begin
     mat_CLOCK_reg <= ~mat_CLOCK_reg;
     if(mat_CLOCK_reg == 0)begin
 

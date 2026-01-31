@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GPDProject version="40" oldestCompatibleVersion="32" GPDVersion="6.51.002" lastChange="31 Jan 2026 02:26:33" projectChecksumState="1" projectChecksum="44c95aef">
+<GPDProject version="40" oldestCompatibleVersion="32" GPDVersion="6.52.001" lastChange="31 Jan 2026 17:52:20" projectChecksumState="1" projectChecksum="96c224a7">
     <generalProjectSettings/>
     <chip family="04" type="06" friendlyName="FFPGA" partNumber="67" package="26">
         <nvmData registerLenght="480">0 0 0 28 0 0 0 0 A5 A5 A5 A5 0 0 0 0 0 0 0 0 5A 5A 5A 5A 0 0 0 0 22 22 22 22 22 22 22 22 22 22 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</nvmData>
         <checksum crc32="0x451C1D42" version="2"/>
+        <virtualProperties/>
         <VDDItem id="0">
-            <item id="0" caption="VDD (PIN 22)">
+            <item id="0" caption="VDDC (PIN 22)">
                 <graphics pos="(1350.00,143.10)" angle="0" flipping="2" hidden="0" tOrigin="(20.00,10.00)"/>
             </item>
         </VDDItem>
@@ -654,7 +655,6 @@
             <openedTab>main.v</openedTab>
             <openedTab>timer.v</openedTab>
             <openedTab>I/O Planner</openedTab>
-            <openedTab>PLL Configurator</openedTab>
         </openedTabs>
         <pipelineStagesStates>
             <pipelineStageState>
@@ -663,7 +663,7 @@
             </pipelineStageState>
             <pipelineStageState>
                 <pipelineStage>1</pipelineStage>
-                <pipelineState>3</pipelineState>
+                <pipelineState>0</pipelineState>
             </pipelineStageState>
         </pipelineStagesStates>
         <modules>
@@ -679,12 +679,21 @@
             <placement-constraints/>
         </modules>
         <io-spec-tool>
-            <records filter="64" filter1="16">
+            <records filter="58" filter1="16">
+                <record id="CLK_t[0:0]_E_in0">
+                    <port-name>clk0</port-name>
+                </record>
                 <record id="CLK_t[0:0]_W_in0">
                     <port-name>clk</port-name>
                 </record>
                 <record id="IOB_t[0:0]_xy[0:25]_out0">
                     <port-name>clk_en</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:11]_out0">
+                    <port-name>clk_1k</port-name>
+                </record>
+                <record id="IOB_t[0:0]_xy[31:12]_out0">
+                    <port-name>clk0_en</port-name>
                 </record>
                 <record id="IOB_t[0:0]_xy[31:22]_out0">
                     <port-name>CLR2</port-name>

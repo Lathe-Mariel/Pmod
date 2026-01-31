@@ -1,0 +1,40 @@
+
+
+####   Resource Utilization Report   ####
+
+    Top level module name: top
+
+    Resource usage:
+       6 Logic 6-LUT CLBs
+           21 CLB LUTs utilized (up to 4 per CLB)
+                 2 of which are dual 5-input LUTs
+                23 LUTs total
+           18 CLB FFs utilized (up to 4 pairs per CLB)
+                18 of which are LUT-FF combination
+                18 FFs total
+      11 I/O CLBs
+           20 Output pins
+            2 Output FFs utilized
+       2 Clocks
+           Clock 0: net     7, clk, Fanout: 6 CLBs
+           Clock 1: net    58, $auto$clkbufmap.cc:294:execute$2462, Fanout: 2 CLBs
+           Total 2 unique clocks
+    need 0 DSP and 1 Logic-Memory FPGA 1K Tiles.
+
+ 
+####   Resource Utilization Complete   ####
+
+TILE-REQ:		0		0		0		2
+
+### Total FPGA resources from current floorplan: ###
+                       184 IOBs
+                       140 Logic 6-LUT CLBs
+                              40 CLBs support RAM/SR
+
+Usage of Logic CLBs is 4.3%.
+    Logic-Memory CLB for RAM/Shift-Register is 0.0%.
+Usage of LUTs is 3.8%.
+    dual-LUTs is 0.4%.
+Usage of FF is 3.2%.
+    dual-FF is 0.0%.
+Usage of IO CLB is 6.0%.
