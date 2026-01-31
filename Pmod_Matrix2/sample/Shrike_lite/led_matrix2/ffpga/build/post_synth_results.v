@@ -2,10 +2,10 @@
 
 (* hdlname = "\\top" *)
 (* top =  1  *)
-(* src = "../src/main.v:1.11-103.10" *)
+(* src = "../src/main.v:1.11-127.10" *)
 module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, COL_Red, COL_Red_en, COL_Green, COL_Green_en, ROW, ROW_en, mat_Ratch, mat_Ratch_en, mat_CLOCK, mat_CLOCK_en, clk_1k
 , clk0, clk0_en);
-  (* src = "../src/main.v:63.1-101.4" *)
+  (* src = "../src/main.v:85.1-125.4" *)
   wire _00_;
   (* unused_bits = "0" *)
   wire _01_;
@@ -274,17 +274,6 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
   ) _35_ (
     .C(clk),
     .CE(1'h1),
-    .D(_21_),
-    .Q(\timer_inst.clk_out_reg ),
-    .R(1'h0)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
-  FDRE #(
-    .INIT(1'hx)
-  ) _36_ (
-    .C(clk),
-    .CE(1'h1),
     .D(_19_[0]),
     .Q(\timer_inst.timer_counter [0]),
     .R(_18_)
@@ -293,7 +282,7 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
   (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'hx)
-  ) _37_ (
+  ) _36_ (
     .C(clk),
     .CE(1'h1),
     .D(_19_[1]),
@@ -304,7 +293,7 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
   (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'hx)
-  ) _38_ (
+  ) _37_ (
     .C(clk),
     .CE(1'h1),
     .D(_19_[2]),
@@ -315,7 +304,7 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
   (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'hx)
-  ) _39_ (
+  ) _38_ (
     .C(clk),
     .CE(1'h1),
     .D(_19_[3]),
@@ -326,7 +315,7 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
   (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'hx)
-  ) _40_ (
+  ) _39_ (
     .C(clk),
     .CE(1'h1),
     .D(_19_[4]),
@@ -337,7 +326,7 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
   (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'hx)
-  ) _41_ (
+  ) _40_ (
     .C(clk),
     .CE(1'h1),
     .D(_19_[5]),
@@ -348,7 +337,7 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
   (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'hx)
-  ) _42_ (
+  ) _41_ (
     .C(clk),
     .CE(1'h1),
     .D(_19_[6]),
@@ -359,7 +348,7 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
   (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'hx)
-  ) _43_ (
+  ) _42_ (
     .C(clk),
     .CE(1'h1),
     .D(_19_[7]),
@@ -370,7 +359,7 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
   (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'hx)
-  ) _44_ (
+  ) _43_ (
     .C(clk),
     .CE(1'h1),
     .D(_19_[8]),
@@ -381,7 +370,7 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
   (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'hx)
-  ) _45_ (
+  ) _44_ (
     .C(clk),
     .CE(1'h1),
     .D(_19_[9]),
@@ -392,7 +381,7 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
   (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'hx)
-  ) _46_ (
+  ) _45_ (
     .C(clk),
     .CE(1'h1),
     .D(_19_[10]),
@@ -403,7 +392,7 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
   (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'hx)
-  ) _47_ (
+  ) _46_ (
     .C(clk),
     .CE(1'h1),
     .D(_19_[11]),
@@ -414,7 +403,7 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
   (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'hx)
-  ) _48_ (
+  ) _47_ (
     .C(clk),
     .CE(1'h1),
     .D(_19_[12]),
@@ -425,7 +414,7 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
   (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'hx)
-  ) _49_ (
+  ) _48_ (
     .C(clk),
     .CE(1'h1),
     .D(_19_[13]),
@@ -436,7 +425,7 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
   (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'hx)
-  ) _50_ (
+  ) _49_ (
     .C(clk),
     .CE(1'h1),
     .D(_19_[14]),
@@ -447,7 +436,7 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
   (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'hx)
-  ) _51_ (
+  ) _50_ (
     .C(clk),
     .CE(1'h1),
     .D(_19_[15]),
@@ -455,7 +444,18 @@ module top(clk, clk_en, sw, sw_en, CLR1, CLR1_en, CLR2, CLR2_en, CLR3, CLR3_en, 
     .R(_18_)
   );
   (* module_not_derived = 32'd1 *)
-  (* src = "../src/main.v:63.1-101.4|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  (* src = "../src/main.v:54.7-57.2|../src/timer.v:13.5-20.8|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
+  FDRE #(
+    .INIT(1'hx)
+  ) _51_ (
+    .C(clk),
+    .CE(1'h1),
+    .D(_21_),
+    .Q(\timer_inst.clk_out_reg ),
+    .R(1'h0)
+  );
+  (* module_not_derived = 32'd1 *)
+  (* src = "../src/main.v:85.1-125.4|E:\\Program Files\\Renesas Electronics\\Go Configure Software Hub\\external\\yosys\\share\\xilinx/ff_map.v:68.41-68.95" *)
   FDRE #(
     .INIT(1'hx)
   ) _52_ (

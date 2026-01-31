@@ -1,9 +1,9 @@
-The current time is Sat Jan 31 17:52:33 2026
+The current time is Sat Jan 31 21:54:12 2026
 CPUs=4
 EXE="E:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23\eda-placer.exe"
 BuildDir=E:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23
 BuildPath="E:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23"
-CWD=C:\Users\n11ak\AppData\Local\Temp\KJYGwiRU\out\minplacer\00002_pa02_00004_repopt
+CWD=C:\Users\n11ak\AppData\Local\Temp\CmlTGwbQ\out\minplacer\00002_pa02_00004_repopt
 LogFile=minplacer_00002_pa02_00004.log
 PrintScreen=..\_00002_pa02_stdout.txt
 Command line: E:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23\eda-placer.exe -print_screen ..\_00002_pa02_stdout.txt -eflx_call_minplacer 00002_pa02_00004_repopt__out__top
@@ -134,8 +134,8 @@ Netlist=NETLIST_top NumInst=20 NumNet=31
 NumPinst=14
 	DontPlace=0, NonRootRbbChainMember=3, NonRootDspChainMember=0, Const=1, ClkBuf=2
 There are 20 instances. After combining instances in chains, there are 14 instances to place.
-	Clock[0] OrigClock[0] net (net_index=7) clk
-	Clock[1] OrigClock[1] net (net_index=58) $auto$clkbufmap.cc:294:execute$2462
+	Clock[0] OrigClock[0] net (net_index=6) clk
+	Clock[1] OrigClock[1] net (net_index=58) $auto$clkbufmap.cc:294:execute$2524
 NumPnet=25
 NumTrivial=0 NumDriverless=0
 AverageFO=1.80 #HifiNet=0 AverageFO_HifiNet=0.00
@@ -236,7 +236,7 @@ Placement timing:
                               Clock                                       Group  Achievable Frequency(MHz)
                      --------------                                 -----------  -------------------------
                                 clk                                  <UDEF_clk>                   242.542 
-$auto$clkbufmap.cc:294:execute$2462  <UDEF_$auto$clkbufmap.cc:294:execute$2462>                   380.952 
+$auto$clkbufmap.cc:294:execute$2524  <UDEF_$auto$clkbufmap.cc:294:execute$2524>                   380.952 
 
 
 pDelayLibFin
@@ -246,7 +246,7 @@ pProblemFin.
 Min-placement step ends: Replication (mode=1). Runtime: 0:0:10 (CPU time), 0:0:10 (real time); peak memory: 1337MB.
 
 
-The current time is Sat Jan 31 17:52:43 2026
+The current time is Sat Jan 31 21:54:22 2026
 
 
 

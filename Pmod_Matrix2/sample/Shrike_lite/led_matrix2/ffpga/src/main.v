@@ -57,21 +57,45 @@ timer timer_inst(
 );
 
 reg [2:0] rowCounter;
-reg [2:0] columnCounter;
+reg [5:0] columnCounter;  // [5:3] pwm  [2:0] columnCounter
 reg [8:0] address;
+
+reg [8:0] process_address;
+reg [5:0] tmp;
+reg [5:0] tmp2;
+
+always @(posedge clk)begin
+    process_address <= process_address + 9'd6;
+    tmp = {fb[process_address+5],fb[process_address+4],fb[process_address+3],fb[process_address+2],fb[process_address+1],fb[process_address]};
+
+    case(tmp)
+      6'd1:tmp2 = 6'd0;
+      6'd2:tmp2 = 6'd1;
+      6'd3:tmp2 = 6'd2;
+      6'd4:tmp2 = 6'd3;
+      6'd5:tmp2 = 6'd4;
+      6'd6:tmp2 = 6'd5;
+      6'd7:tmp2 = 6'd6;
+      default:;
+    endcase
+    {fb[process_address+5],fb[process_address+4],fb[process_address+3],fb[process_address+2],fb[process_address+1],fb[process_address]} <= tmp2;
+      
+end
 
 always @(posedge clk0)begin
     mat_CLOCK_reg <= ~mat_CLOCK_reg;
     if(mat_CLOCK_reg == 0)begin
 
-    if(columnCounter == 7) begin
+    if(columnCounter[2:0] == 3'b111) begin
         mat_Ratch_reg <= 1'b1;
-        rowCounter <= rowCounter + 3'b1;
+        if(columnCounter[5:3] == 3'b111)begin
+          rowCounter <= rowCounter + 3'b1;
+        end
     end else begin
         mat_Ratch_reg <= 1'b0;
     end
     
-    if(columnCounter == rowCounter)begin
+    if(columnCounter[2:0] == rowCounter)begin
       COL_Red_reg <= 1;
       COL_Green_reg <= 1;
     end else begin
@@ -80,7 +104,7 @@ always @(posedge clk0)begin
     end
 //red
     address = rowCounter*9'd8+columnCounter*9'd6;
-    if({fb[address+2],fb[address+1],fb[address]} == 1)begin
+    if({fb[address+2],fb[address+1],fb[address]} > columnCounter[5:3])begin
         ROW_reg <= 1'b1;
     end else begin
         ROW_reg <= 1'b0;
@@ -93,7 +117,7 @@ always @(posedge clk0)begin
     end
 */
     
-    columnCounter <= columnCounter + 3'b1;
+    columnCounter <= columnCounter + 6'b1;
 
     end else begin
 
