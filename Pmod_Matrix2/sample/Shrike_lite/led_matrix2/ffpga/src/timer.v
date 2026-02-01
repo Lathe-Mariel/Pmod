@@ -11,7 +11,7 @@ reg clk_out_reg=0;
 assign clk_out = clk_out_reg;
 
     always@ (posedge clk)begin
-      if (timer_counter == 6_250) begin  // 1000Hz
+      if (timer_counter == 300) begin  // Hz
           timer_counter <= 16'b0;
           clk_out_reg <= ~clk_out_reg;
       end else begin

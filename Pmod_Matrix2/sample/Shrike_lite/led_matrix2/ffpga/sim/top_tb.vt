@@ -4,9 +4,38 @@
 
 module top_tb;
 
+wire clk0;
+wire clk_1k;
+
 top top_inst(
-.clk(clk)
+.clk(clk),
+.clk_en(),
+.clk0(clk0),
+.clk0_en(),
+.clk_1k(clk_1k),
+.led(),
+.led_en(),
+.mat_CLOCK(),
+.mat_CLOCK_en(),
+.mat_Ratch(),
+.mat_Ratch_en(),
+.ROW(),
+.ROW_en(),
+.COL_Green(),
+.COL_Green_en(),
+.COL_Red(),
+.COL_Red_en(),
+.CLR3(),
+.CLR3_en(),
+.CLR2(),
+.CLR2_en(),
+.CLR1(),
+.CLR1_en(),
+.sw(),
+.sw_en()
 );
+
+assign clk0 = clk_1k;
 
 reg clk=0;
 
