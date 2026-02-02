@@ -51,7 +51,7 @@ reg[383:0] fb={6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b00
                6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,
                6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,
                6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,
-               6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,
+               6'b111111,6'b111111,6'b111111,6'b111111,6'b000000,6'b000000,6'b000000,6'b000000,
                6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,
                6'b000001,6'b000001,6'b000001,6'b000001,6'b000010,6'b000010,6'b000010,6'b000010
 };
@@ -63,18 +63,15 @@ timer timer_inst(
 
 reg [2:0] rowCounter=0;
 reg [5:0] columnCounter=0;  // [5:3] pwm  [2:0] columnCounter
-wire [8:0] address=0;
+reg [8:0] address=0;
 
 reg [8:0] process_address=0;
 reg [5:0] tmp=0;
 //reg [5:0] tmp2=0;
 
 
-assign address = rowCounter*9'd48+columnCounter*9'd6;
-
 /* dumper */
 always @(posedge clk)begin
-    tmp <= {fb[process_address+5],fb[process_address+4],fb[process_address+3],fb[process_address+2],fb[process_address+1],fb[process_address]}; 
     
     if(sw)begin
         fb[197:192] <= 6'b000111;
@@ -85,14 +82,15 @@ always @(posedge clk)begin
         process_address <= process_address + 9'd6;
       end
       
-      case(tmp)
-        6'd1:{fb[process_address+5],fb[process_address+4],fb[process_address+3],fb[process_address+2],fb[process_address+1],fb[process_address]} <= 6'd0;
-        6'd2:{fb[process_address+5],fb[process_address+4],fb[process_address+3],fb[process_address+2],fb[process_address+1],fb[process_address]} <= 6'd1;
-        6'd3:{fb[process_address+5],fb[process_address+4],fb[process_address+3],fb[process_address+2],fb[process_address+1],fb[process_address]} <= 6'd2;
-        6'd4:{fb[process_address+5],fb[process_address+4],fb[process_address+3],fb[process_address+2],fb[process_address+1],fb[process_address]} <= 6'd3;
-        6'd5:{fb[process_address+5],fb[process_address+4],fb[process_address+3],fb[process_address+2],fb[process_address+1],fb[process_address]} <= 6'd4;
-        6'd6:{fb[process_address+5],fb[process_address+4],fb[process_address+3],fb[process_address+2],fb[process_address+1],fb[process_address]} <= 6'd6;
-        default: {fb[process_address+5],fb[process_address+4],fb[process_address+3],fb[process_address+2],fb[process_address+1],fb[process_address]} <= tmp;
+      case({fb[process_address+2],fb[process_address+1],fb[process_address]})
+        3'd1:{fb[process_address+2],fb[process_address+1],fb[process_address]} <= 3'd0;
+        3'd2:{fb[process_address+2],fb[process_address+1],fb[process_address]} <= 3'd1;
+        3'd3:{fb[process_address+2],fb[process_address+1],fb[process_address]} <= 3'd2;
+        3'd4:{fb[process_address+2],fb[process_address+1],fb[process_address]} <= 3'd3;
+        3'd5:{fb[process_address+2],fb[process_address+1],fb[process_address]} <= 3'd4;
+        3'd6:{fb[process_address+2],fb[process_address+1],fb[process_address]} <= 3'd5;
+        3'd7:{fb[process_address+2],fb[process_address+1],fb[process_address]} <= 3'd6;
+        default: ;
       endcase
     
 //      {fb[process_address+5],fb[process_address+4],fb[process_address+3],fb[process_address+2],fb[process_address+1],fb[process_address]} <= tmp2;
@@ -100,6 +98,7 @@ always @(posedge clk)begin
 end
 
 always @(posedge clk0)begin
+address <= rowCounter*9'd48+columnCounter[2:0]*9'd6;
     mat_CLOCK_reg <= ~mat_CLOCK_reg;
     if(mat_CLOCK_reg == 0)begin
         if(columnCounter[2:0] == 3'b111) begin
