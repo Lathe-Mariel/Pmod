@@ -1,9 +1,9 @@
-The current time is Wed Feb  4 01:42:13 2026
+The current time is Fri Feb  6 00:58:40 2026
 CPUs=4
 EXE="H:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23\eda-placer.exe"
 BuildDir=H:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23
 BuildPath="H:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23"
-CWD=C:\Users\n11ak\AppData\Local\Temp\UMBrCHvT\out\minplacer\00000_pa00_00005_post
+CWD=C:\Users\n11ak\AppData\Local\Temp\KwxpsxHa\out\minplacer\00000_pa00_00005_post
 LogFile=minplacer_00000_pa00_00005.log
 PrintScreen=..\_00000_pa00_stdout.txt
 Command line: H:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23\eda-placer.exe -print_screen ..\_00000_pa00_stdout.txt -eflx_call_minplacer 00000_pa00_00005_post__out__top
@@ -144,69 +144,58 @@ GeometryDumpLayers starts.
 GeometryDumpLayers ends.
 pProblemIni. eramclkAsClock=1
 pProblemIniNetlist. skip_hifi=0, skip_pppff=2147483647
-Netlist=NETLIST_top NumInst=41 NumNet=110
-NumPinst=33
+Netlist=NETLIST_top NumInst=39 NumNet=85
+NumPinst=31
 	DontPlace=0, NonRootRbbChainMember=5, NonRootDspChainMember=0, Const=1, ClkBuf=2
-There are 41 instances. After combining instances in chains, there are 33 instances to place.
-	Clock[0] OrigClock[0] net (net_index=90) clk
-	Clock[1] OrigClock[1] net (net_index=63) clk0
-NumPnet=102
+There are 39 instances. After combining instances in chains, there are 31 instances to place.
+	Clock[0] OrigClock[0] net (net_index=94) clk
+	Clock[1] OrigClock[1] net (net_index=67) clk0
+NumPnet=77
 NumTrivial=0 NumDriverless=0
-AverageFO=3.21 #HifiNet=0 AverageFO_HifiNet=0.00
+AverageFO=4.09 #HifiNet=0 AverageFO_HifiNet=0.00
 NumClk=2 (with 0 inverted)
-There are 102 nets in the design. Average fanout is 3.21.
+There are 77 nets in the design. Average fanout is 4.09.
 There are 2 clocks in the design.
-NumInsts=33
+NumInsts=31
 Resource usages:
- Type=L: Capacity=140 Utilized=25 NumInst=20. [ChainLen=1]=17 [ChainLen=2]=2 [ChainLen=4]=1
+ Type=L: Capacity=140 Utilized=23 NumInst=18. [ChainLen=1]=15 [ChainLen=2]=2 [ChainLen=4]=1
  Type=M: Capacity=40 Utilized=0 NumInst=0.
  Type=IOB: Capacity=184 Utilized=13 NumInst=13.
 Min-placement step: Detaild placement (mode=2).
 POST STARTS (FINDER_DELAY)
 TileRange read: File is not given. Use whole chip.
-Read 38 RBB-locations from EFLX file.
+Read 36 RBB-locations from EFLX file.
 Reading timing_def file ..\..\minplacer\00000_pa00_00002_setup\minplacer.timing_def
 pPipeAlloc: OptMode=1 PppFfInsertDone=0 MinPipeRtDly=98 #Chain=0 AveChainLen=0.0 MaxChainLen=0 #Net=0 AveChainFan=0.0 MaxChainFan=0 #MixedZeroFan=0 Opt_UseLatency=0 OptLine_RightSlack_WorseThreshold=100
-(0) INI TWL = 7000(3430, 3570) ELAPSE=0
-CROSS-TILE STAT: [0]=327
-PANN_TILERANGE LayerMask=40 TileRange={0,1; 0,1} RangeDivider=4 WL=7000 (3430, 3570) StartingIter=0 NumIters=1
-PANN_TILERANGE  (iter=0) WL=7000 (3430, 3570) TIMESPENT=0
+(0) INI TWL = 5440(3030, 2410) ELAPSE=0
+CROSS-TILE STAT: [0]=315
+PANN_TILERANGE LayerMask=40 TileRange={0,1; 0,1} RangeDivider=4 WL=5440 (3030, 2410) StartingIter=0 NumIters=1
+PANN_TILERANGE  (iter=0) WL=5440 (3030, 2410) TIMESPENT=0
 PANN_TILERANGE ENDS TIMESPENT=0
-Long connection estimation: ..............
+Long connection estimation: ................
 Short connection estimation: ...........
-(1) IOS-ANN TWL = 7000(3430, 3570) ELAPSE=1
-[ITER=0] WNS=-9252,M=5.626 TNS=-219960 PathNumObj=2 ***&&&&&!@
-[ITER=1] WNS=-9252,M=5.626 TNS=-219960 x PathNumObj=5 ***&
-[ITER=2] WNS=-9206,M=5.603 TNS=-219720 PathNumObj=2 ***&&&&&!@
-[ITER=3] WNS=-9206,M=5.603 TNS=-219720 x PathNumObj=5 ***&
-[ITER=4] WNS=-9050,M=5.525 TNS=-223072 PathNumObj=2 ***&&&&&!@
-[ITER=5] WNS=-9050,M=5.525 TNS=-223072 x PathNumObj=5 ***&
-[ITER=6] WNS=-8981,M=5.490 TNS=-222996 PathNumObj=2 ***&&&&&!@
-[ITER=7] WNS=-8981,M=5.490 TNS=-222996 x PathNumObj=5 ***&
-[ITER=8] WNS=-8938,M=5.469 TNS=-222933 PathNumObj=2 ***&&&&&!@
-[ITER=9] WNS=-8938,M=5.469 TNS=-222933 x PathNumObj=5 *
-[ITER=10] WNS=-8934,M=5.467 TNS=-222576 PathNumObj=3 ***&&&&&!@
-[ITER=11] WNS=-8934,M=5.467 TNS=-222576 x PathNumObj=5 ***&
-[ITER=12] WNS=-8829,M=5.414 TNS=-222182 PathNumObj=3 *
-[ITER=13] WNS=-8720,M=5.360 TNS=-259489 PathNumObj=2 ***&&&&&!@
-[ITER=14] WNS=-8720,M=5.360 TNS=-259489 x PathNumObj=5 ***&&&&&!@
-[ITER=15] WNS=-8720,M=5.360 TNS=-259489 PathNumObj=2 ***&&&&&!@
-[ITER=16] WNS=-8720,M=5.360 TNS=-259489 x PathNumObj=5 ***&&&&&!@
-[ITER=17] WNS=-8720,M=5.360 TNS=-259489 PathNumObj=2 ***&&&&&!@
-[ITER=18] WNS=-8720,M=5.360 TNS=-259489 x PathNumObj=5 
-(2) IMPROVED TWL = 9110(4260, 4850) ELAPSE=2
-(3) FIN TWL = 9110(4260, 4850) ELAPSE=2
-CROSS-TILE STAT: [0]=327
-Wrote 20 RBB-locations out of 20 core insts and 5 chained insts to EFLX file ..\..\minplacer\00000_pa00_00005_post\minplacer_rbbloc.txt.
+(1) IOS-ANN TWL = 5440(3030, 2410) ELAPSE=1
+[ITER=0] WNS=-8005,M=5.002 TNS=-209252 PathNumObj=2 ***&&&&&!@
+[ITER=1] WNS=-8005,M=5.002 TNS=-209252 x PathNumObj=5 ***&
+[ITER=2] WNS=-7728,M=4.864 TNS=-213720 PathNumObj=2 ***&&&&&!@
+[ITER=3] WNS=-7728,M=4.864 TNS=-213720 x PathNumObj=4 ***&&&&&!@
+[ITER=4] WNS=-7728,M=4.864 TNS=-213720 PathNumObj=2 ***&&&&&!@
+[ITER=5] WNS=-7728,M=4.864 TNS=-213720 x PathNumObj=4 ***&&&&&!@
+[ITER=6] WNS=-7728,M=4.864 TNS=-213720 PathNumObj=2 ***&&&&&!@
+[ITER=7] WNS=-7728,M=4.864 TNS=-213720 x PathNumObj=4 
+(2) IMPROVED TWL = 5700(3290, 2410) ELAPSE=4
+(3) FIN TWL = 5700(3290, 2410) ELAPSE=4
+CROSS-TILE STAT: [0]=315
+Wrote 18 RBB-locations out of 18 core insts and 5 chained insts to EFLX file ..\..\minplacer\00000_pa00_00005_post\minplacer_rbbloc.txt.
 Wrote 13 RBB-locations out of 13 IOB insts to EFLX file ..\..\minplacer\00000_pa00_00005_post\minplacer_rbbloc.txt.
 Wrote 0 RBB-locations out of 13 INTIOB insts to EFLX file ..\..\minplacer\00000_pa00_00005_post\minplacer_rbbloc.txt.
-CLOCKPLAN_INI_NETLIST: NUM_CLOCKS=2 NUM_PINSTS=33
+CLOCKPLAN_INI_NETLIST: NUM_CLOCKS=2 NUM_PINSTS=31
 	 #Inst/Usage        L           M         DSP       SPRAM       UPRAM       2PRAM         IOB        ZIOB        NCLT        RCLT      
-	   CLOCK[ 0]*     3(    6)                                                                                                            
-	   CLOCK[ 1]*     8(   10)                                                                                                            
-	   NON_CLOCK      9(    9)                                                                                                            
+	   CLOCK[ 0]*     2(    5)                                                                                                            
+	   CLOCK[ 1]*     5(    7)                                                                                                            
+	   NON_CLOCK     11(   11)                                                                                                            
 CLOCKPLAN_INI_GEO: NUM_TILE_SLICES=1/1
-{Rsc/Util/MinThre={L=140/25/50 ,M=40/0/8 ,DSP=0/0/4 ,SPRAM=0/0/0 ,UPRAM=0/0/0 ,2PRAM=0/0/0 ,IOB=184/13/16 ,ZIOB=0/0/0 ,NCLT=0/0/0 ,RCLT=0/0/0}
+{Rsc/Util/MinThre={L=140/23/50 ,M=40/0/8 ,DSP=0/0/4 ,SPRAM=0/0/0 ,UPRAM=0/0/0 ,2PRAM=0/0/0 ,IOB=184/13/16 ,ZIOB=0/0/0 ,NCLT=0/0/0 ,RCLT=0/0/0}
 CLOCKPLAN_INI_PORTLOCKS
 	CLOCK[0]* port locks:
 		{IX0Y0S1I0}
@@ -226,28 +215,28 @@ ClockPortFile ..\..\minplacer\00000_pa00_00005_post\minplacer_clkloc.txt written
 *********************************** TILE REPORT ***************************************
 |------------------------|
 |TILE_X0Y0               |
-|#INST=33                |
+|#INST=31                |
 |#CLK=2 #INVCLK=0        |
 |#ERAM_CP    0           |
 |#         0   0         |
 |#           0           |
 |**                      |
 |nb1*sa0*                |
-|L=25,L8 C16             |
+|L=23,L8 C12             |
 |IOB=13 C6               |
 |------------------------|
-CLUSTER[0] LAYER0=L TILE=[0,0] CLK=<0,1> ERAMCLK=<25,0> REGION=<none>
- {L=25 C16 IOB=13 C6 LCHAIN=8 DCHAIN=0} #NEI=0 REACHABLES:
-CLOCK[0] #LockedPort=1 #AssignedPort=0 #OutputPort=0 TX0Y0={#Cluster=1 L=25 IOB=13}
-CLOCK[1] #LockedPort=1 #AssignedPort=0 #OutputPort=0 TX0Y0={#Cluster=1 L=25 IOB=13}
+CLUSTER[0] LAYER0=L TILE=[0,0] CLK=<0,1> ERAMCLK=<23,0> REGION=<none>
+ {L=23 C12 IOB=13 C6 LCHAIN=8 DCHAIN=0} #NEI=0 REACHABLES:
+CLOCK[0] #LockedPort=1 #AssignedPort=0 #OutputPort=0 TX0Y0={#Cluster=1 L=23 IOB=13}
+CLOCK[1] #LockedPort=1 #AssignedPort=0 #OutputPort=0 TX0Y0={#Cluster=1 L=23 IOB=13}
 *********************************** TILE REPORT ***************************************
 
 
 Placement timing:
          Clock        Group  Achievable Frequency(MHz)
 --------------  -----------  -------------------------
-           clk   <UDEF_clk>                   123.365 
-          clk0  <UDEF_clk0>                    93.292 
+           clk   <UDEF_clk>                   110.522 
+          clk0  <UDEF_clk0>                   102.807 
 
 
 POST ENDS
@@ -255,7 +244,7 @@ pProblemFin.
 Min-placement step ends: Detaild placement (mode=2). Runtime: 0:0:10 (CPU time), 0:0:10 (real time); peak memory: 1415MB.
 
 
-The current time is Wed Feb  4 01:42:23 2026
+The current time is Fri Feb  6 00:58:50 2026
 
 
 

@@ -38,7 +38,7 @@ assign mat_Ratch = mat_Ratch_reg; assign mat_Ratch_en = 1;
 assign ROW = ROW_reg;             assign ROW_en = 1;
 assign COL_Red = COL_Red_reg;     assign COL_Red_en = 1;
 assign COL_Green = COL_Green_reg; assign COL_Green_en = 1;
-assign sw_en = 1;
+assign sw_en = 0;
 
 reg mat_CLOCK_reg=0;
 reg mat_Ratch_reg=0;
@@ -48,7 +48,7 @@ reg COL_Green_reg=1;
 
 reg[383:0] fb={6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,
                6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,
-               6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,
+               6'b111000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,
                6'b011001,6'b101001,6'b001001,6'b000001,6'b101001,6'b111001,6'b011001,6'b001001,
                6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,
                6'b111111,6'b111111,6'b111111,6'b111111,6'b000000,6'b000000,6'b000000,6'b000000,
@@ -71,6 +71,7 @@ reg [5:0] tmp=0;
 
 
 /* dumper */
+/*
 always @(posedge clk)begin
     
     if(sw)begin
@@ -96,22 +97,17 @@ always @(posedge clk)begin
 //      {fb[process_address+5],fb[process_address+4],fb[process_address+3],fb[process_address+2],fb[process_address+1],fb[process_address]} <= tmp2;
     end  
 end
-
+*/
 always @(posedge clk0)begin
-address <= rowCounter*9'd48+columnCounter[2:0]*9'd6;
+address <= (rowCounter-3'b1)*9'd48+columnCounter[2:0]*9'd6;
     mat_CLOCK_reg <= ~mat_CLOCK_reg;
     if(mat_CLOCK_reg == 0)begin
-        if(columnCounter[2:0] == 3'b111) begin
-            mat_Ratch_reg <= 1'b1;
-            if(columnCounter[5:3] == 3'b111)begin
-              rowCounter <= rowCounter + 3'b1;
-            end
-        end else begin
-            mat_Ratch_reg <= 1'b0;
+        if(columnCounter[5:0] == 6'b111111) begin
+           rowCounter <= rowCounter + 3'b1;
         end
     
 /* Column (Anode)  Selecting Row */
-        if((columnCounter[2:0]+3'b1) == rowCounter)begin
+        if((columnCounter[2:0]+3'd2) == rowCounter)begin
           ROW_reg <= 1;
         end else begin
           ROW_reg <= 0;
@@ -134,7 +130,11 @@ address <= rowCounter*9'd48+columnCounter[2:0]*9'd6;
         columnCounter <= columnCounter + 6'b1;
 
     end else begin
-
+        if(columnCounter[2:0] == 3'b111) begin
+            mat_Ratch_reg <= 1'b1;
+        end else begin
+            mat_Ratch_reg <= 1'b0;
+        end
     end
 end
 
