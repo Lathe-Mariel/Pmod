@@ -10,9 +10,6 @@ wire clk_1k;
 top top_inst(
 .clk(clk),
 .clk_en(),
-.clk0(clk0),
-.clk0_en(),
-.clk_1k(clk_1k),
 .led(),
 .led_en(),
 .mat_CLOCK(),

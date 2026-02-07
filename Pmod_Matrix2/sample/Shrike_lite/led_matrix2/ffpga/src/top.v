@@ -19,16 +19,12 @@
 (* iopad_external_pin *) output wire mat_Ratch_en,
 (* iopad_external_pin *) output wire mat_CLOCK,
 (* iopad_external_pin *) output wire mat_CLOCK_en,
-(* iopad_external_pin *) output wire clk_1k,
-(* iopad_external_pin, clkbuf_inhibit *) input wire clk0,
-(* iopad_external_pin *) output wire clk0_en,
 (* iopad_external_pin *) output wire led_en,
 (* iopad_external_pin *) output wire led
 );
 
 assign led_en = 1; assign led =sw;
 
-assign clk0_en = 1;
 assign CLR1_en = 1; assign CLR2_en = 1; assign CLR3_en = 1;
 assign CLR1 = 1;    assign CLR2 = 1;    assign CLR3 = 1;
 
@@ -46,20 +42,16 @@ reg ROW_reg=0;
 reg COL_Red_reg=1;
 reg COL_Green_reg=1;
 
-reg[383:0] fb={6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,
+reg[383:0] fb={6'b001000,6'b001000,6'b001000,6'b001000,6'b001000,6'b001000,6'b001000,6'b101101,
                6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,6'b001001,
                6'b111000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,
                6'b011001,6'b101001,6'b001001,6'b000001,6'b101001,6'b111001,6'b011001,6'b001001,
-               6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,
+               6'b111100,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,
                6'b111111,6'b111111,6'b111111,6'b111111,6'b000000,6'b000000,6'b000000,6'b000000,
-               6'b000000,6'b000000,6'b000000,6'b000000,6'b000000,6'b000100,6'b000100,6'b000100,
+               6'b000100,6'b000000,6'b000000,6'b000000,6'b000100,6'b000100,6'b000100,6'b000100,
                6'b000001,6'b000001,6'b000001,6'b000001,6'b000010,6'b000010,6'b000010,6'b000010
 };
 
-timer timer_inst(
-  .clk(clk),
-  .clk_out(clk_1k)
-);
 
 reg [2:0] rowCounter=0;
 reg [5:0] columnCounter=0;  // [5:3] pwm  [2:0] columnCounter
@@ -98,23 +90,46 @@ always @(posedge clk)begin
     end  
 end
 */
-always @(posedge clk0)begin
-address <= (rowCounter-3'b1)*9'd48+columnCounter[2:0]*9'd6;
-    mat_CLOCK_reg <= ~mat_CLOCK_reg;
-    if(mat_CLOCK_reg == 0)begin
+
+reg[15:0] timer_counter=0;
+
+always @(posedge clk)begin
+
+    if (timer_counter == 250 && mat_CLOCK_reg == 0) begin  // Hz
+       if(columnCounter[2:0] == 3'b000) begin
+       mat_Ratch_reg <= 1'b1;
+       end else begin
+         mat_Ratch_reg <= 1'b0;
+       end
+       timer_counter <= timer_counter + 16'b1;
+    end else if(timer_counter == 300)begin
+      timer_counter <= 16'b0;
+      mat_CLOCK_reg <= ~mat_CLOCK_reg;
+                mat_Ratch_reg <= 1'b0;
+      if(mat_CLOCK_reg == 0)begin
+
+//address <= (rowCounter)*9'd48+(columnCounter[2:0]+4'b1)*9'd6;
+
         if(columnCounter[5:0] == 6'b111111) begin
            rowCounter <= rowCounter + 3'b1;
-        end
-    
-/* Column (Anode)  Selecting Row */
-        if((columnCounter[2:0]+3'd2) == rowCounter)begin
-          ROW_reg <= 1;
-        end else begin
-          ROW_reg <= 0;
-        end
-    
-// Column Red (Cathode)
+           address <= {rowCounter+3'b1, 3'b000} * 9'd6;
 
+        end else begin
+           address <= {rowCounter, columnCounter[2:0]+3'b001} * 9'd6;
+           /* Column (Anode)  Selecting Row */
+        end
+
+        if(columnCounter[5:0] == 6'b111111 && rowCounter == 3'b111)begin
+          ROW_reg <= 0;
+        end else begin
+          if((columnCounter[2:0]) == rowCounter)begin
+            ROW_reg <= 1;
+          end else begin
+            ROW_reg <= 0;
+          end
+        end
+        
+// Column Red (Cathode)
         if({fb[address+2],fb[address+1],fb[address]} > columnCounter[5:3])begin
           COL_Red_reg <= 0;
         end else begin
@@ -126,18 +141,12 @@ address <= (rowCounter-3'b1)*9'd48+columnCounter[2:0]*9'd6;
         end else begin
           COL_Green_reg <= 1;
         end
-    
-        columnCounter <= columnCounter + 6'b1;
 
-    end else begin
-        if(columnCounter[2:0] == 3'b111) begin
-            mat_Ratch_reg <= 1'b1;
-        end else begin
-            mat_Ratch_reg <= 1'b0;
-        end
-    end
+        columnCounter <= columnCounter + 6'b1;
+       end
+     end else begin
+       timer_counter <= timer_counter + 16'b1;
+     end
 end
 
 endmodule
-
-`default_nettype wire

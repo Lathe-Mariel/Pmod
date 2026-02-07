@@ -1,5 +1,3 @@
-EFLX_CLK chip_tile_x=0, chip_tile_y=0, clk_side=E
-    Input=1, pin=clk0
 EFLX_CLK chip_tile_x=0, chip_tile_y=0, clk_side=W
     Input=0, pin=clk
 EFLX_IOB chip_tile_x=0, chip_tile_y=0, chip_x=0, chip_y=0
@@ -172,9 +170,7 @@ EFLX_IOB chip_tile_x=0, chip_tile_y=0, chip_x=31, chip_y=9
    Output=1, pin=ROW_en, output_delay=-1
 EFLX_IOB chip_tile_x=0, chip_tile_y=0, chip_x=31, chip_y=10
 EFLX_IOB chip_tile_x=0, chip_tile_y=0, chip_x=31, chip_y=11
-   Output=1, pin=clk_1k, output_delay=-1
 EFLX_IOB chip_tile_x=0, chip_tile_y=0, chip_x=31, chip_y=12
-   Output=1, pin=clk0_en, output_delay=-1
 EFLX_IOB chip_tile_x=0, chip_tile_y=0, chip_x=31, chip_y=19
 EFLX_IOB chip_tile_x=0, chip_tile_y=0, chip_x=31, chip_y=20
 EFLX_IOB chip_tile_x=0, chip_tile_y=0, chip_x=31, chip_y=21
