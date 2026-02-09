@@ -1,21 +1,21 @@
 
 Min-placement step: Set up placement.
 There are 43 instances. After combining instances in chains, there are 36 instances to place.
-There are 86 nets in the design, 0 of which have fanout larger than 49. Average fanout is 3.79.
+There are 104 nets in the design, 0 of which have fanout larger than 49. Average fanout is 3.24.
 There is 1 clock in the design.
 Resource usages:
  Type=L: Capacity=140 Utilized=30 NumInst=25. [ChainLen=1]=22 [ChainLen=2]=2 [ChainLen=4]=1
  Type=M: Capacity=40 Utilized=0 NumInst=0.
  Type=IOB: Capacity=184 Utilized=11 NumInst=11.
 Min-placement step: Global placement and legalization.
-Legalizing chains on RBB-L: Legalizing chains of RBB-L:  Len=4.(1|0) Len=2.(6|0) *
-Legalizing non-chains of RBB-L: .(18,0|0,0)
+Legalizing chains on RBB-L: Legalizing chains of RBB-L:  Len=4.(1|0) Len=2.(11|0) *
+Legalizing non-chains of RBB-L: .(13,0|0,0)
 Improving the placement of 25 instances for resource type(s) of RBB-L RBB-M: ...............................................................................................................
 Min-placement step ends: Global placement and legalization. Runtime: 0:0:10 (CPU time), 0:0:10 (real time); peak memory: 1304MB.
 
 
 There are 43 instances. After combining instances in chains, there are 36 instances to place.
-There are 86 nets in the design. Average fanout is 3.79.
+There are 104 nets in the design. Average fanout is 3.24.
 There is 1 clock in the design.
 Resource usages:
  Type=L: Capacity=140 Utilized=30 NumInst=25. [ChainLen=1]=22 [ChainLen=2]=2 [ChainLen=4]=1
@@ -26,50 +26,52 @@ Min-placement step ends: Replication (mode=1). Runtime: 0:0:10 (CPU time), 0:0:1
 
 
 There are 43 instances. After combining instances in chains, there are 36 instances to place.
-There are 86 nets in the design. Average fanout is 3.79.
+There are 104 nets in the design. Average fanout is 3.24.
 There is 1 clock in the design.
 Resource usages:
  Type=L: Capacity=140 Utilized=30 NumInst=25. [ChainLen=1]=22 [ChainLen=2]=2 [ChainLen=4]=1
  Type=M: Capacity=40 Utilized=0 NumInst=0.
  Type=IOB: Capacity=184 Utilized=11 NumInst=11.
 Min-placement step: Detaild placement (mode=2).
-Long connection estimation: ............
+Long connection estimation: ...............
 Short connection estimation: ...........
-[ITER=0] WNS=-9195,M=5.597 TNS=-508187 PathNumObj=4 ***&
-[ITER=1] WNS=-9153,M=5.576 TNS=-507786 PathNumObj=2 ***&&&&&!@
-[ITER=2] WNS=-9153,M=5.576 TNS=-507786 x PathNumObj=4 *
-[ITER=3] WNS=-8766,M=5.383 TNS=-507351 PathNumObj=2 ***&&&&&!@
-[ITER=4] WNS=-8766,M=5.383 TNS=-507351 x PathNumObj=4 ***&
-[ITER=5] WNS=-8405,M=5.202 TNS=-495131 PathNumObj=4 *
-[ITER=6] WNS=-8382,M=5.191 TNS=-494819 PathNumObj=4 ***&
-[ITER=7] WNS=-8381,M=5.190 TNS=-491636 PathNumObj=2 ***&&&&&!@
-[ITER=8] WNS=-8381,M=5.190 TNS=-491636 x PathNumObj=4 ***&
-[ITER=9] WNS=-8285,M=5.142 TNS=-485341 PathNumObj=3 *
-[ITER=10] WNS=-8232,M=5.116 TNS=-499463 PathNumObj=3 ***&&&&&!@
-[ITER=11] WNS=-8232,M=5.116 TNS=-499463 PathNumObj=3 ***&&&&&!@
-[ITER=12] WNS=-8232,M=5.116 TNS=-499463 PathNumObj=3 ***&&&&&!@
-[ITER=13] WNS=-8232,M=5.116 TNS=-499463 PathNumObj=3 ***&&&&&!@
-[ITER=14] WNS=-8232,M=5.116 TNS=-499463 PathNumObj=3 ***&&&&&!@
-[ITER=15] WNS=-8232,M=5.116 TNS=-499463 PathNumObj=3 
+[ITER=0] WNS=-9557,M=5.778 TNS=-500477 PathNumObj=3 ***&
+[ITER=1] WNS=-9545,M=5.772 TNS=-508683 PathNumObj=2 ***&&&&&!@
+[ITER=2] WNS=-9545,M=5.772 TNS=-508683 x PathNumObj=4 ***&
+[ITER=3] WNS=-9459,M=5.729 TNS=-500036 PathNumObj=5 *
+[ITER=4] WNS=-9140,M=5.570 TNS=-490190 PathNumObj=2 ***&&&&&!@
+[ITER=5] WNS=-9140,M=5.570 TNS=-490190 x PathNumObj=4 ***&
+[ITER=6] WNS=-8813,M=5.406 TNS=-492850 PathNumObj=4 *
+[ITER=7] WNS=-8668,M=5.334 TNS=-492782 PathNumObj=2 ***&&&&&!@
+[ITER=8] WNS=-8668,M=5.334 TNS=-492782 x PathNumObj=5 *
+[ITER=9] WNS=-8481,M=5.240 TNS=-492435 PathNumObj=2 ***&&&&&!@
+[ITER=10] WNS=-8481,M=5.240 TNS=-492435 x PathNumObj=5 ***&
+[ITER=11] WNS=-8464,M=5.232 TNS=-494495 PathNumObj=3 ***&&&&&
+[ITER=12] WNS=-8321,M=5.160 TNS=-489292 PathNumObj=2 ***&&&&&!@
+[ITER=13] WNS=-8321,M=5.160 TNS=-489292 x PathNumObj=4 ***&&&&&!@
+[ITER=14] WNS=-8321,M=5.160 TNS=-489292 PathNumObj=2 ***&&&&&!@
+[ITER=15] WNS=-8321,M=5.160 TNS=-489292 x PathNumObj=4 ***&&&&&!@
+[ITER=16] WNS=-8321,M=5.160 TNS=-489292 PathNumObj=2 ***&&&&&!@
+[ITER=17] WNS=-8321,M=5.160 TNS=-489292 x PathNumObj=4 
 
 Placement timing:
          Clock        Group  Achievable Frequency(MHz)
 --------------  -----------  -------------------------
-           clk   <UDEF_clk>                    97.742 
+           clk   <UDEF_clk>                    96.899 
 
 
 Min-placement step ends: Detaild placement (mode=2). Runtime: 0:0:15 (CPU time), 0:0:15 (real time); peak memory: 1415MB.
 
 
 There are 43 instances. After combining instances in chains, there are 36 instances to place.
-There are 86 nets in the design. Average fanout is 3.79.
+There are 104 nets in the design. Average fanout is 3.24.
 There is 1 clock in the design.
 Resource usages:
  Type=L: Capacity=140 Utilized=30 NumInst=25. [ChainLen=1]=22 [ChainLen=2]=2 [ChainLen=4]=1
  Type=M: Capacity=40 Utilized=0 NumInst=0.
  Type=IOB: Capacity=184 Utilized=11 NumInst=11.
 Min-placement step: Delay and congestion estimation (fastest_delay=0 gentable=0 mode=1).
-Long connection estimation: ............
+Long connection estimation: ...........
 Short connection estimation: ...........
 Long connection estimation: (50)w---------(60)----------(70)----------(80)----------(90)----------(100)-
 Long connection estimation: (50)pxxxxxxxxx(60)xxxxxxxxxx(70)xxxxxxxxxx(80)xxxxxxxxxx(90)xxxxxxxxxx(100)x
@@ -77,7 +79,7 @@ Long connection estimation: (50)pxxxxxxxxx(60)xxxxxxxxxx(70)xxxxxxxxxx(80)xxxxxx
 Placement timing:
          Clock        Group  Achievable Frequency(MHz)
 --------------  -----------  -------------------------
-           clk   <UDEF_clk>                    97.742 
+           clk   <UDEF_clk>                    96.899 
 
 
 Min-placement step ends: Delay and congestion estimation (fastest_delay=0 gentable=0 mode=1). Runtime: 0:0:10 (CPU time), 0:0:10 (real time); peak memory: 1374MB.
