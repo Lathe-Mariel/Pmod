@@ -1,0 +1,27 @@
+[                                                  ][    3] Running placer flow WLTD (666).
+[              minplacer\00001_pa01_00001_character][    3] Step character
+[              minplacer\00001_pa01_00001_character][    3] Step MinPlacerChar minplacer_skip_dont_place=0 do_shortfd=0 do_shortfd_aggressive=0 do_precomb=0 do_precomb_aggressive=0 do_chain_to_tree=0 do_used_rbb_vacan=0 do_rep=1 do_reloc=0 do_repack=0 do_swabsorb=0 do_rplan=1
+[              minplacer\00001_pa01_00001_character][    3] RbbUsage=53 PrePlaceTiming=60941.
+[                  minplacer\00001_pa01_00002_setup][    3] Step setup
+[                  minplacer\00001_pa01_00002_setup][    5] Step setup ends.
+[                     minplacer\00001_pa01_00003_wl][    5] Step wl
+[                     minplacer\00001_pa01_00003_wl][   24] Step wl returns 0. (timing=6562 cg=0)
+[                     minplacer\00001_pa01_00003_wl][   24] Updating timing 6562 vs 2147483647.
+[                 minplacer\00001_pa01_00004_repopt][   24] Step repopt
+[                 minplacer\00001_pa01_00004_repopt][   34] Step repopt returns 0. (timing=6562 cg=0)
+[                 minplacer\00001_pa01_00004_repopt][   34] Step has netlist change. (timing=6562 cg=0)
+[                 minplacer\00001_pa01_00004_repopt][   34] Updating timing 6562 vs 6562.
+[      minplacer\00001_pa01_00005_committing_nledit][   34] Step committing_nledit
+[       minplacer\00001_pa01_00006_committed_nledit][   34] Step committed_nledit
+[       minplacer\00001_pa01_00006_committed_nledit][   34] Step setup ends.
+[       minplacer\00001_pa01_00006_committed_nledit][   34] Updating timing 6562 vs 6562.
+[                  minplacer\00001_pa01_00007_repwl][   34] Step repwl
+[                  minplacer\00001_pa01_00007_repwl][   44] Step repwl returns 0. (timing=6562 cg=0)
+[                  minplacer\00001_pa01_00007_repwl][   44] Updating timing 6562 vs 6562.
+[                   minplacer\00001_pa01_00008_post][   44] Step post
+[                   minplacer\00001_pa01_00008_post][  109] Step post returns 0. (timing=12377R cg=0)
+[                   minplacer\00001_pa01_00008_post][  109] Updating timing 12377R vs 6562.
+[                  minplacer\00001_pa01_00009_rplan][  109] Step rplan
+[                  minplacer\00001_pa01_00009_rplan][  119] Step rplan returns 0. (timing=12377R cg=50)
+[                  minplacer\00001_pa01_00009_rplan][  119] Updating timing 12377R vs 12377R.
+[                                                  ][  119] Running placer flow WLTD ends with TRUE.

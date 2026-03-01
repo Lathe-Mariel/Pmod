@@ -1,0 +1,26 @@
+# ============================================================
+# ピン制約ファイル
+# ボード    : Shrike-lite (SLG47910V)
+# LCDモジュール: Pmod_SC1602 (Lathe-Mariel/Pmod)
+# ツール    : Go Configure Software Hub (ForgeFPGA Workshop)
+# ============================================================
+#
+#  PMOD Pin  FPGA GPIO  ポート名  モジュール信号  SC1602 / 周辺
+#    1        GPIO 14   pmod1     D0 (DB4)        DB4 (pin 11)
+#    2        GPIO 12   pmod2     D2 (DB6)        DB6 (pin 13)
+#    3        GPIO 10   pmod3     RS              RS  (pin  4)
+#    4        GPIO  8   pmod4     E               E   (pin  6)
+#    5        GPIO 15   pmod5     D3 (DB7)        DB7 (pin 14)
+#    6        GPIO 13   pmod6     D1 (DB5)        DB5 (pin 12)
+#    7        GPIO 11   pmod7     Co              Q1（コントラストPWM 1kHz Duty50%）
+#    8        GPIO  9   pmod8     BL              Q2（バックライト）
+# ============================================================
+
+set_io pmod1  14  ;# GPIO 14  PMOD pin 1  D0 → DB4
+set_io pmod2  12  ;# GPIO 12  PMOD pin 2  D2 → DB6
+set_io pmod3  10  ;# GPIO 10  PMOD pin 3  RS
+set_io pmod4   8  ;# GPIO  8  PMOD pin 4  E
+set_io pmod5  15  ;# GPIO 15  PMOD pin 5  D3 → DB7
+set_io pmod6  13  ;# GPIO 13  PMOD pin 6  D1 → DB5
+set_io pmod7  11  ;# GPIO 11  PMOD pin 7  Co（コントラスト）
+set_io pmod8   9  ;# GPIO  9  PMOD pin 8  BL（バックライト）
