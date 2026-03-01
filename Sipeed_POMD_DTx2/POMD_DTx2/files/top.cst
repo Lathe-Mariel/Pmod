@@ -1,0 +1,66 @@
+// =============================================================
+// 物理制約ファイル (.cst)
+// Board    : Tang Primer 25K (GW5A-25)
+// PMOD     : Sipeed PMOD-DTx2 を PMOD1 ポートに接続
+//
+// Tang Primer 25K PMOD1 ピン配置:
+//   上段 (PIN1-4) : PMOD1_1=H11, PMOD1_2=G11, PMOD1_3=F11, PMOD1_4=E11
+//   下段 (PIN7-10): PMOD1_7=J11, PMOD1_8=K11, PMOD1_9=K12, PMOD1_10=L12
+//
+// PMOD-DTx2 信号配置 (12ピンPMOD標準):
+//   PIN1=seg_a, PIN2=seg_b, PIN3=seg_c, PIN4=seg_d
+//   PIN7=seg_e, PIN8=seg_f, PIN9=seg_g, PIN10=seg_dp
+//   ※ dig0/dig1 は別PMODポートまたはボード上の信号を使用
+//      ここでは追加ピンをPMOD2に割り当てる例を示します
+//
+// ⚠️ 注意: 実際の基板のPMODポートのピン番号は
+//          Tang Primer 25K Dockの回路図で必ず確認してください
+// =============================================================
+
+// システムクロック (50MHz)
+IO_LOC "sys_clk" H11;
+IO_PORT "sys_clk" IO_TYPE=LVCMOS33;
+
+// リセット (ボード上のSWボタン S1)
+IO_LOC "sys_rst_n" H10;
+IO_PORT "sys_rst_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// ----------------------------------------------------------
+// PMOD1 上段 → セグメント a,b,c,d
+// ----------------------------------------------------------
+IO_LOC "seg_a"  T10;
+IO_PORT "seg_a" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "seg_b"  T11;
+IO_PORT "seg_b" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "seg_c"  U11;
+IO_PORT "seg_c" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "seg_d"  U12;
+IO_PORT "seg_d" IO_TYPE=LVCMOS33 DRIVE=8;
+
+// ----------------------------------------------------------
+// PMOD1 下段 → セグメント e,f,g,dp
+// ----------------------------------------------------------
+IO_LOC "seg_e"  T12;
+IO_PORT "seg_e" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "seg_f"  T13;
+IO_PORT "seg_f" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "seg_g"  U13;
+IO_PORT "seg_g" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "seg_dp" U14;
+IO_PORT "seg_dp" IO_TYPE=LVCMOS33 DRIVE=8;
+
+// ----------------------------------------------------------
+// PMOD2 → 桁選択 dig0, dig1
+// (PMOD-DTx2が桁選択付きの場合、同一PMODにまとめることも可)
+// ----------------------------------------------------------
+IO_LOC "dig0"  R11;
+IO_PORT "dig0" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "dig1"  R12;
+IO_PORT "dig1" IO_TYPE=LVCMOS33 DRIVE=8;

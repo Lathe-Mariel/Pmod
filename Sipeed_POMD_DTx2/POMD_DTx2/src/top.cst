@@ -1,0 +1,56 @@
+// =============================================================
+// 物理制約ファイル (.cst)
+// Board    : Tang Primer 25K Dock (GW5A-LV25MG121NC1/I0)
+// PMOD     : Sipeed PMOD-DTx2 を PMOD1 に接続
+//
+// ■ PMOD1 ピン番号とPMOD-DTx2信号の対応:
+//   ピン番号:   0    1    2    3    4    5    6    7
+//   FPGAボール: G11  D11  B11  C11  G10  D10  B10  C10
+//   PMOD-DTx2: seg_f seg_e seg_b seg_c seg_g seg_d seg_a dig0
+//
+//   dig0=0: 一の位点灯 / dig0=1: 十の位点灯
+//
+// ■ その他:
+//   sys_clk  (50MHz):          H11
+//   sys_rst_n (S1, ActiveHigh): H10
+// =============================================================
+
+// ----------------------------------------------------------
+// システムクロック (50MHz)
+// ----------------------------------------------------------
+IO_LOC "sys_clk" E2;
+IO_PORT "sys_clk" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+// ----------------------------------------------------------
+// リセット: S1ボタン (H10, アクティブHigh)
+// top.v では posedge sys_rst_n でリセット
+// ----------------------------------------------------------
+IO_LOC "sys_rst_n" H11;
+IO_PORT "sys_rst_n" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+
+// ----------------------------------------------------------
+// PMOD1 → PMOD-DTx2 セグメント・桁選択信号
+// ----------------------------------------------------------
+IO_LOC "seg_f" G11;   // PMOD1 ピン0
+IO_PORT "seg_f" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "seg_e" D11;   // PMOD1 ピン1
+IO_PORT "seg_e" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "seg_b" B11;   // PMOD1 ピン2
+IO_PORT "seg_b" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "seg_c" C11;   // PMOD1 ピン3
+IO_PORT "seg_c" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "seg_g" G10;   // PMOD1 ピン4
+IO_PORT "seg_g" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "seg_d" D10;   // PMOD1 ピン5
+IO_PORT "seg_d" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "seg_a" B10;   // PMOD1 ピン6
+IO_PORT "seg_a" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "dig0"  C10;   // PMOD1 ピン7
+IO_PORT "dig0" IO_TYPE=LVCMOS33 DRIVE=8;
