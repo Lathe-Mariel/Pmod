@@ -63,24 +63,24 @@
     assign pmod4_en = 1'b1;
     assign pmod5_en = 1'b1;
     assign pmod6_en = 1'b1;
-    //assign pmod7_en = 1'b1;
-    assign pmod7 = 1'b1;
+    assign pmod7_en = 1'b0;
     assign pmod8_en = 1'b1;
     assign led_en = 1'b1;
     // -------------------------------------------------------------------------
     // コントローラからの論理信号
     // -------------------------------------------------------------------------
+
     wire lcd_rs;
     wire lcd_e;
     wire [3:0] lcd_db;   // lcd_db[3:0] = {DB7, DB6, DB5, DB4}
-
+/*
     lcd_scroll_ctrl u_ctrl (
         .clk    (sys_clk),
         .lcd_rs (lcd_rs),
         .lcd_e  (lcd_e),
         .lcd_db (lcd_db)
     );
-
+*/
     // -------------------------------------------------------------------------
     // PMOD ピンへの物理マッピング
     //   論理         PMOD Pin  FPGA GPIO
@@ -93,13 +93,15 @@
     //   Co (PWM)     7         GPIO 11
     //   E            8         GPIO  9
     // -------------------------------------------------------------------------
+
     assign pmod1 = lcd_db[0];   // DB4
     assign pmod2 = lcd_db[2];   // DB6
     assign pmod3 = lcd_rs;      // RS
     assign pmod4 = 1'b0;         // R/W 常時 LOW（Write only）
     assign pmod5 = lcd_db[3];   // DB7
     assign pmod6 = lcd_db[1];   // DB5
-
+    assign pmod8 = lcd_e;       // E
+    
     // コントラスト: Duty 20% PWM（約 1 kHz）
     // 50 MHz / 50_000 = 1 kHz  → 周期 50_000 サイクル
     // Hi期間: 0 〜 9_999（10_000サイクル = 20%）
@@ -107,18 +109,17 @@
     reg [15:0] pwm_cnt = 16'd0;
     reg        pwm_co  = 1'b1;
     always @(posedge sys_clk) begin
-        if (pwm_cnt == 16'd29_999) begin
+        if (pwm_cnt == 16'd49_999) begin
             pwm_cnt <= 16'd0;
             pwm_co  <= 1'b1;
         end else begin
             pwm_cnt <= pwm_cnt + 16'd1;
-            if (pwm_cnt == 16'd25_999)
+            if (pwm_cnt == 16'd3_000)
                 pwm_co <= 1'b0;
         end
     end
-//    assign pmod7 = pwm_co;      // Co（コントラスト）
-    assign pmod7_en = 1'b1;//pwm_co;
-    assign pmod8 = lcd_e;       // E
+
+    assign pmod7 = pwm_co;      // Co（コントラスト）
 
     // -------------------------------------------------------------------------
     // デバッグ用 LED: 1秒間隔点滅（0.5Hz トグル）
@@ -126,7 +127,7 @@
     reg [24:0] led_cnt = 25'd0;
     reg        led_reg = 1'b0;
     always @(posedge sys_clk) begin
-        if (led_cnt == 25'd24_999_999) begin
+        if (led_cnt == 25'd14_999_999) begin
             led_cnt <= 25'd0;
             led_reg <= ~led_reg;
         end else
@@ -135,7 +136,6 @@
     assign led = led_reg;
 
 endmodule
-
 
 // =============================================================================
 // lcd_scroll_ctrl
