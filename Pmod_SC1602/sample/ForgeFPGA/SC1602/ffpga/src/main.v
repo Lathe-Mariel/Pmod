@@ -44,8 +44,7 @@
   (* iopad_external_pin *) output pmod8,     // GPIO  9  E   → SC1602 E (pin 6)
   (* iopad_external_pin *) output pmod8_en,
   (* iopad_external_pin *) output led,           // GPIO 16  デバッグ用 LED（1秒間隔点滅）
-  (* iopad_external_pin *) output led_en
-  
+  (* iopad_external_pin *) output led_en           // GPIO 16  デバッグ用 LED（1秒間隔点滅）  
 );
 
     // -------------------------------------------------------------------------
@@ -63,24 +62,24 @@
     assign pmod4_en = 1'b1;
     assign pmod5_en = 1'b1;
     assign pmod6_en = 1'b1;
-    assign pmod7_en = 1'b0;
+    assign pmod7_en = 1'b1;
     assign pmod8_en = 1'b1;
     assign led_en = 1'b1;
+    
     // -------------------------------------------------------------------------
     // コントローラからの論理信号
     // -------------------------------------------------------------------------
-
     wire lcd_rs;
     wire lcd_e;
     wire [3:0] lcd_db;   // lcd_db[3:0] = {DB7, DB6, DB5, DB4}
-/*
+
     lcd_scroll_ctrl u_ctrl (
         .clk    (sys_clk),
         .lcd_rs (lcd_rs),
         .lcd_e  (lcd_e),
         .lcd_db (lcd_db)
     );
-*/
+
     // -------------------------------------------------------------------------
     // PMOD ピンへの物理マッピング
     //   論理         PMOD Pin  FPGA GPIO
@@ -93,15 +92,13 @@
     //   Co (PWM)     7         GPIO 11
     //   E            8         GPIO  9
     // -------------------------------------------------------------------------
-
     assign pmod1 = lcd_db[0];   // DB4
     assign pmod2 = lcd_db[2];   // DB6
     assign pmod3 = lcd_rs;      // RS
     assign pmod4 = 1'b0;         // R/W 常時 LOW（Write only）
     assign pmod5 = lcd_db[3];   // DB7
     assign pmod6 = lcd_db[1];   // DB5
-    assign pmod8 = lcd_e;       // E
-    
+
     // コントラスト: Duty 20% PWM（約 1 kHz）
     // 50 MHz / 50_000 = 1 kHz  → 周期 50_000 サイクル
     // Hi期間: 0 〜 9_999（10_000サイクル = 20%）
@@ -114,12 +111,13 @@
             pwm_co  <= 1'b1;
         end else begin
             pwm_cnt <= pwm_cnt + 16'd1;
-            if (pwm_cnt == 16'd3_000)
+            if (pwm_cnt == 16'd9_999)
                 pwm_co <= 1'b0;
         end
     end
-
     assign pmod7 = pwm_co;      // Co（コントラスト）
+
+    assign pmod8 = lcd_e;       // E
 
     // -------------------------------------------------------------------------
     // デバッグ用 LED: 1秒間隔点滅（0.5Hz トグル）
@@ -127,7 +125,7 @@
     reg [24:0] led_cnt = 25'd0;
     reg        led_reg = 1'b0;
     always @(posedge sys_clk) begin
-        if (led_cnt == 25'd14_999_999) begin
+        if (led_cnt == 25'd24_999_999) begin
             led_cnt <= 25'd0;
             led_reg <= ~led_reg;
         end else
@@ -136,6 +134,7 @@
     assign led = led_reg;
 
 endmodule
+
 
 // =============================================================================
 // lcd_scroll_ctrl
@@ -189,8 +188,10 @@ module lcd_scroll_ctrl (
         S_SC_CMD   = 6'd17,  // Display Shift Left 0x18
         S_TX       = 6'd20,  // バイト送信: ニブル分解
         S_TX_HI_E1 = 6'd21,  // 上位ニブル E High
+        S_TX_HI_EW = 6'd26,  // 上位ニブル E High 幅待ち（T_EPW）
         S_TX_HI_E0 = 6'd22,  // 上位ニブル E Low
         S_TX_LO_E1 = 6'd23,  // 下位ニブル E High
+        S_TX_LO_EW = 6'd27,  // 下位ニブル E High 幅待ち（T_EPW）
         S_TX_LO_E0 = 6'd24,  // 下位ニブル E Low
         S_TX_WAIT  = 6'd25,  // コマンド実行完了待ち
         S_WAIT     = 6'd30;  // 汎用タイマー待機
@@ -246,7 +247,9 @@ module lcd_scroll_ctrl (
             end
 
             // -----------------------------------------------------------------
-            // 初期化: 0x3 ニブル 1回目（E High → E Low → 5ms待機）
+            // 初期化: 0x3 ニブル 1回目
+            //   _HI : データをバスに乗せて E High、T_EPW カウント開始
+            //   _LO : E Low、所定時間待機後に次のステートへ
             // -----------------------------------------------------------------
             S_INIT1_HI: begin
                 lcd_rs <= 1'b0;
@@ -261,7 +264,8 @@ module lcd_scroll_ctrl (
                     timer     <= T_5MS;
                     ret_state <= S_INIT2_HI;
                     state     <= S_WAIT;
-                end else timer <= timer - 27'd1;
+                end else
+                    timer <= timer - 27'd1;
             end
 
             // 0x3 ニブル 2回目（→ 1ms待機）
@@ -278,7 +282,8 @@ module lcd_scroll_ctrl (
                     timer     <= T_1MS;
                     ret_state <= S_INIT3_HI;
                     state     <= S_WAIT;
-                end else timer <= timer - 27'd1;
+                end else
+                    timer <= timer - 27'd1;
             end
 
             // 0x3 ニブル 3回目（→ 1ms待機）
@@ -295,11 +300,12 @@ module lcd_scroll_ctrl (
                     timer     <= T_1MS;
                     ret_state <= S_4BIT_HI;
                     state     <= S_WAIT;
-                end else timer <= timer - 27'd1;
+                end else
+                    timer <= timer - 27'd1;
             end
 
             // -----------------------------------------------------------------
-            // 4ビットモード切替: 0x2 ニブルのみ送信
+            // 4ビットモード切替: 0x2 ニブルのみ送信（上位ニブルのみ、E1パルス）
             // -----------------------------------------------------------------
             S_4BIT_HI: begin
                 lcd_rs <= 1'b0;
@@ -311,12 +317,14 @@ module lcd_scroll_ctrl (
             S_4BIT_LO: begin
                 if (timer == 27'd0) begin
                     lcd_e     <= 1'b0;
+                    // ここから4ビットモード確立。以降は S_TX で上位+下位ニブルを送る
                     tx_rs     <= 1'b0;
                     tx_data   <= 8'h28;   // Function Set: 4bit/2line/5x8
                     timer     <= T_40US;
                     ret_state <= S_FUNC;
                     state     <= S_TX;
-                end else timer <= timer - 27'd1;
+                end else
+                    timer <= timer - 27'd1;
             end
 
             // -----------------------------------------------------------------
@@ -368,7 +376,7 @@ module lcd_scroll_ctrl (
             S_WR_CHAR: begin
                 if (cidx < 5'd16) begin
                     tx_rs     <= 1'b1;
-                    tx_data   <= msg[cidx[3:0]];
+                    tx_data   <= msg[cidx];
                     cidx      <= cidx + 5'd1;
                     timer     <= T_40US;
                     ret_state <= S_WR_CHAR;
@@ -415,10 +423,18 @@ module lcd_scroll_ctrl (
                 lcd_rs <= tx_rs;
                 lcd_db <= nib_h;
                 lcd_e  <= 1'b1;
-                state  <= S_TX_HI_E0;
+                timer  <= T_EPW;
+                state  <= S_TX_HI_EW;
             end
 
-            S_TX_HI_E0: begin   // E Low
+            S_TX_HI_EW: begin   // 上位ニブル E High 幅待ち
+                if (timer == 27'd0)
+                    state <= S_TX_HI_E0;
+                else
+                    timer <= timer - 27'd1;
+            end
+
+            S_TX_HI_E0: begin   // 上位ニブル E Low（E Low 後もセットアップ時間確保）
                 lcd_e <= 1'b0;
                 state <= S_TX_LO_E1;
             end
@@ -427,10 +443,18 @@ module lcd_scroll_ctrl (
                 lcd_rs <= tx_rs;
                 lcd_db <= nib_l;
                 lcd_e  <= 1'b1;
-                state  <= S_TX_LO_E0;
+                timer  <= T_EPW;
+                state  <= S_TX_LO_EW;
             end
 
-            S_TX_LO_E0: begin   // E Low
+            S_TX_LO_EW: begin   // 下位ニブル E High 幅待ち
+                if (timer == 27'd0)
+                    state <= S_TX_LO_E0;
+                else
+                    timer <= timer - 27'd1;
+            end
+
+            S_TX_LO_E0: begin   // 下位ニブル E Low
                 lcd_e <= 1'b0;
                 state <= S_TX_WAIT;
             end
