@@ -24,7 +24,7 @@ L型ダブルピンヘッダ（6列）L-2x6pinheader | 1
 ピンソケット 1x12 | 1（オプション）
 
 
-#Repository
+# Repository
 ## output
 Garber data made by KiCAD
 
