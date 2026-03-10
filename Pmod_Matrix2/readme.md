@@ -1,5 +1,5 @@
 # Pmod_MatrixLED2
-8×8　2色マトリクスLEDのモジュールです．  
+KiCADで設計した，8×8　2色マトリクスLEDのモジュールです．  
 コネクタのピン配置はPmod互換ですが，
 基板の幅がPmodの規格に入っていないので，なんちゃってPmodです．
 
@@ -22,3 +22,11 @@
 L型ダブルピンヘッダ（6列）L-2x6pinheader | 1
 2色LEDMatrix LTP-12188M-08 | 1
 ピンソケット 1x12 | 1（オプション）
+
+
+#Repository
+## output
+Garber data made by KiCAD
+
+## sample
+Sample Design Project
