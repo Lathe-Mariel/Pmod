@@ -103,6 +103,7 @@
     // 50 MHz / 50_000 = 1 kHz  → 周期 50_000 サイクル
     // Hi期間: 0 〜 9_999（10_000サイクル = 20%）
     // Lo期間: 10_000 〜 49_999（40_000サイクル = 80%）
+    /*
     reg [15:0] pwm_cnt = 16'd0;
     reg        pwm_co  = 1'b1;
     always @(posedge sys_clk) begin
@@ -111,11 +112,11 @@
             pwm_co  <= 1'b1;
         end else begin
             pwm_cnt <= pwm_cnt + 16'd1;
-            if (pwm_cnt == 16'd9_999)
+            if (pwm_cnt == 16'd45_999)
                 pwm_co <= 1'b0;
         end
-    end
-    assign pmod7 = pwm_co;      // Co（コントラスト）
+    end*/
+    assign pmod7 = 1'b0;//pwm_co;      // Co（コントラスト）
 
     assign pmod8 = lcd_e;       // E
 
@@ -125,7 +126,7 @@
     reg [24:0] led_cnt = 25'd0;
     reg        led_reg = 1'b0;
     always @(posedge sys_clk) begin
-        if (led_cnt == 25'd24_999_999) begin
+        if (led_cnt == 25'd14_999_999) begin
             led_cnt <= 25'd0;
             led_reg <= ~led_reg;
         end else
@@ -157,11 +158,11 @@ module lcd_scroll_ctrl (
     // -------------------------------------------------------------------------
     localparam [26:0]
         T_15MS   = 27'd750_000,    // 15 ms  電源投入後待機
-        T_5MS    = 27'd250_000,    // 5 ms   初期化ニブル1回目後
-        T_1MS    = 27'd50_000,     // 1 ms   初期化ニブル2・3回目後
-        T_2MS    = 27'd100_000,    // 2 ms   Clear Display 後待機
-        T_40US   = 27'd2_000,      // 40 us  通常コマンド実行待ち
-        T_EPW    = 27'd25,         // 500 ns Eパルス幅（最小230ns）
+        T_5MS    = 27'd500_000,    // 5 ms   初期化ニブル1回目後
+        T_1MS    = 27'd100_000,     // 1 ms   初期化ニブル2・3回目後
+        T_2MS    = 27'd200_000,    // 2 ms   Clear Display 後待機
+        T_40US   = 27'd8_000,      // 40 us  通常コマンド実行待ち
+        T_EPW    = 27'd100,         // 500 ns Eパルス幅（最小230ns）
         T_SCROLL = 27'd25_000_000; // 500 ms スクロール間隔
 
     // -------------------------------------------------------------------------
@@ -194,10 +195,17 @@ module lcd_scroll_ctrl (
         S_TX_LO_EW = 6'd27,  // 下位ニブル E High 幅待ち（T_EPW）
         S_TX_LO_E0 = 6'd24,  // 下位ニブル E Low
         S_TX_WAIT  = 6'd25,  // コマンド実行完了待ち
-        S_WAIT     = 6'd30;  // 汎用タイマー待機
+        S_WAIT     = 6'd30,  // 汎用タイマー待機
+        
+        S_STOP     = 6'd31,
+        S_DISP_ON  = 6'd32,
+        S_1        = 6'd33,
+        S_2        = 6'd34,
+        S_3        = 6'd35;
 
-    reg [5:0]  state, ret_state;
-    reg [26:0] timer;
+    reg [5:0]  state=S_PWRON;
+    reg [5:0]  ret_state;
+    reg [26:0] timer=T_SCROLL;
 
     // バイト送信パラメータ
     reg       tx_rs;
@@ -205,9 +213,9 @@ module lcd_scroll_ctrl (
     reg [3:0] nib_h, nib_l;   // 上位/下位ニブル（DB7〜DB4 の論理値）
 
     // 文字データ（"ForgeFPGA" + スペース7個 = 16文字）
-    reg [7:0] msg [0:15];
+    reg [7:0] msg [0:15]; //={8'h46, 8'h6F, 8'h72, 8'h67, 8'h65, 8'h46, 8'h50, 8'h47, 8'h41, 8'h20, 8'h20, 8'h20, 8'h20, 8'h20, 8'h20, 8'h20};
     reg [4:0] cidx;
-
+/*
     initial begin
         msg[0]  = 8'h46; // 'F'
         msg[1]  = 8'h6F; // 'o'
@@ -226,7 +234,7 @@ module lcd_scroll_ctrl (
         msg[14] = 8'h20; // ' '
         msg[15] = 8'h20; // ' '
     end
-
+*/
     // =========================================================================
     // ステートマシン
     // =========================================================================
@@ -237,6 +245,23 @@ module lcd_scroll_ctrl (
             // 電源投入後 15ms 待機
             // -----------------------------------------------------------------
             S_PWRON: begin
+                msg[0]  = 8'h46; // 'F'
+                msg[1]  = 8'h6F; // 'o'
+                msg[2]  = 8'h72; // 'r'
+                msg[3]  = 8'h67; // 'g'
+                msg[4]  = 8'h65; // 'e'
+                msg[5]  = 8'h46; // 'F'
+                msg[6]  = 8'h50; // 'P'
+                msg[7]  = 8'h47; // 'G'
+                msg[8]  = 8'h41; // 'A'
+                msg[9]  = 8'h20; // ' '
+                msg[10] = 8'h20; // ' '
+                msg[11] = 8'h20; // ' '
+                msg[12] = 8'h20; // ' '
+                msg[13] = 8'h20; // ' '
+                msg[14] = 8'h20; // ' '
+                msg[15] = 8'h20; // ' '
+                
                 lcd_rs <= 1'b0;
                 lcd_e  <= 1'b0;
                 lcd_db <= 4'b0000;
@@ -280,19 +305,22 @@ module lcd_scroll_ctrl (
                 if (timer == 27'd0) begin
                     lcd_e     <= 1'b0;
                     timer     <= T_1MS;
-                    ret_state <= S_INIT3_HI;
-                    state     <= S_WAIT;
+                    state <= S_INIT3_HI;
                 end else
                     timer <= timer - 27'd1;
             end
 
             // 0x3 ニブル 3回目（→ 1ms待機）
             S_INIT3_HI: begin
-                lcd_rs <= 1'b0;
-                lcd_db <= 4'b0011;
-                lcd_e  <= 1'b1;
-                timer  <= T_EPW;
-                state  <= S_INIT3_LO;
+                if(timer == 27'd0)begin
+                    lcd_e  <= 1'b1;
+                    lcd_rs <= 1'b0;
+                    lcd_db <= 4'b0011;
+                    timer  <= T_EPW;
+                    state  <= S_INIT3_LO;
+                end else begin
+                    timer <= timer - 27'd1;
+                end
             end
             S_INIT3_LO: begin
                 if (timer == 27'd0) begin
@@ -308,9 +336,9 @@ module lcd_scroll_ctrl (
             // 4ビットモード切替: 0x2 ニブルのみ送信（上位ニブルのみ、E1パルス）
             // -----------------------------------------------------------------
             S_4BIT_HI: begin
+                lcd_e  <= 1'b1;
                 lcd_rs <= 1'b0;
                 lcd_db <= 4'b0010;   // DB7〜DB4 = 0010（= 0x2）
-                lcd_e  <= 1'b1;
                 timer  <= T_EPW;
                 state  <= S_4BIT_LO;
             end
@@ -320,6 +348,44 @@ module lcd_scroll_ctrl (
                     // ここから4ビットモード確立。以降は S_TX で上位+下位ニブルを送る
                     tx_rs     <= 1'b0;
                     tx_data   <= 8'h28;   // Function Set: 4bit/2line/5x8
+                    timer     <= T_40US;
+                    ret_state <= S_1;
+                    state     <= S_TX;
+                end else
+                    timer <= timer - 27'd1;
+            end
+            
+            S_1: begin
+                if (timer == 27'd0) begin
+                    lcd_e     <= 1'b0;
+                    // ここから4ビットモード確立。以降は S_TX で上位+下位ニブルを送る
+                    tx_rs     <= 1'b0;
+                    tx_data   <= 8'h08;   // 
+                    timer     <= T_40US;
+                    ret_state <= S_2;
+                    state     <= S_TX;
+                end else
+                    timer <= timer - 27'd1;
+            end
+            
+            S_2: begin
+                if (timer == 27'd0) begin
+                    lcd_e     <= 1'b0;
+                    // ここから4ビットモード確立。以降は S_TX で上位+下位ニブルを送る
+                    tx_rs     <= 1'b0;
+                    tx_data   <= 8'h01;   // 
+                    timer     <= T_2MS;
+                    ret_state <= S_3;
+                    state     <= S_TX;
+                end else
+                    timer <= timer - 27'd1;
+            end
+            S_3: begin
+                if (timer == 27'd0) begin
+                    lcd_e     <= 1'b0;
+                    // ここから4ビットモード確立。以降は S_TX で上位+下位ニブルを送る
+                    tx_rs     <= 1'b0;
+                    tx_data   <= 8'h06;   // 
                     timer     <= T_40US;
                     ret_state <= S_FUNC;
                     state     <= S_TX;
@@ -341,24 +407,33 @@ module lcd_scroll_ctrl (
             S_DISP: begin
                 tx_rs     <= 1'b0;
                 tx_data   <= 8'h01;   // Clear Display（実行に1.64ms必要）
-                timer     <= T_2MS;
+                timer     <= T_40US;
                 ret_state <= S_CLR_WAIT;
+//                ret_state <= S_STOP;
                 state     <= S_TX;
             end
 
             S_CLR_WAIT: begin
                 // S_TX の timer に加えてさらに 2ms 待つ
                 timer     <= T_2MS;
-                ret_state <= S_ENTRY;
-                state     <= S_WAIT;
+                ret_state <= S_DISP_ON;
+//                state     <= S_WAIT;
             end
-
+            
+            S_DISP_ON: begin
+                tx_rs     <= 1'b0;
+                tx_data   <= 8'h0c;   // 
+                timer     <= T_40US;
+                ret_state <= S_ENTRY;
+                state     <= S_TX;                
+            end
+            
             S_ENTRY: begin
                 tx_rs     <= 1'b0;
                 tx_data   <= 8'h06;   // Entry Mode: DDRAM++, shift OFF
                 timer     <= T_40US;
                 ret_state <= S_WR_ADDR;
-                state     <= S_TX;
+                state     <= S_TX;                
             end
 
             // -----------------------------------------------------------------
@@ -368,7 +443,7 @@ module lcd_scroll_ctrl (
                 tx_rs     <= 1'b0;
                 tx_data   <= 8'h80;   // Set DDRAM Address = 0x00
                 cidx      <= 5'd0;
-                timer     <= T_40US;
+                timer     <= T_2MS;
                 ret_state <= S_WR_CHAR;
                 state     <= S_TX;
             end
@@ -376,15 +451,19 @@ module lcd_scroll_ctrl (
             S_WR_CHAR: begin
                 if (cidx < 5'd16) begin
                     tx_rs     <= 1'b1;
-                    tx_data   <= msg[cidx];
+                    tx_data   <= msg[cidx[3:0]];
                     cidx      <= cidx + 5'd1;
                     timer     <= T_40US;
                     ret_state <= S_WR_CHAR;
                     state     <= S_TX;
                 end else begin
                     timer <= T_SCROLL;
-                    state <= S_SC_WAIT;
+                    state <= S_SC_WAIT;                    
                 end
+            end
+            
+            S_STOP:begin
+            
             end
 
             // -----------------------------------------------------------------
@@ -414,9 +493,13 @@ module lcd_scroll_ctrl (
             //     tx_rs, tx_data, timer, ret_state をセットして state <= S_TX
             // =================================================================
             S_TX: begin
-                nib_h <= tx_data[7:4];   // 上位ニブル: DB7〜DB4 の論理値
-                nib_l <= tx_data[3:0];   // 下位ニブル: DB7〜DB4 の論理値
-                state <= S_TX_HI_E1;
+                if(timer == 27'd0)begin
+                    nib_h <= tx_data[7:4];   // 上位ニブル: DB7〜DB4 の論理値
+                    nib_l <= tx_data[3:0];   // 下位ニブル: DB7〜DB4 の論理値
+                    state <= S_TX_HI_E1;
+                end else begin
+                    timer <= timer - 27'd1;
+                end
             end
 
             S_TX_HI_E1: begin   // 上位ニブル出力 + E High
@@ -436,15 +519,20 @@ module lcd_scroll_ctrl (
 
             S_TX_HI_E0: begin   // 上位ニブル E Low（E Low 後もセットアップ時間確保）
                 lcd_e <= 1'b0;
+                timer <= T_40US;
                 state <= S_TX_LO_E1;
             end
 
             S_TX_LO_E1: begin   // 下位ニブル出力 + E High
-                lcd_rs <= tx_rs;
-                lcd_db <= nib_l;
-                lcd_e  <= 1'b1;
-                timer  <= T_EPW;
-                state  <= S_TX_LO_EW;
+                if(timer == 27'd0)begin
+                    lcd_rs <= tx_rs;
+                    lcd_db <= nib_l;
+                    lcd_e  <= 1'b1;
+                    timer  <= T_EPW;
+                    state  <= S_TX_LO_EW;
+                end else begin
+                    timer <= timer - 27'b1;
+                end
             end
 
             S_TX_LO_EW: begin   // 下位ニブル E High 幅待ち
@@ -457,6 +545,7 @@ module lcd_scroll_ctrl (
             S_TX_LO_E0: begin   // 下位ニブル E Low
                 lcd_e <= 1'b0;
                 state <= S_TX_WAIT;
+                timer <= T_40US;
             end
 
             S_TX_WAIT: begin    // コマンド実行完了待ち
@@ -486,7 +575,7 @@ module lcd_scroll_ctrl (
     initial begin
         state     = S_PWRON;
         ret_state = S_PWRON;
-        timer     = T_15MS;
+//        timer     = T_15MS;
         cidx      = 5'd0;
         tx_rs     = 1'b0;
         tx_data   = 8'h00;

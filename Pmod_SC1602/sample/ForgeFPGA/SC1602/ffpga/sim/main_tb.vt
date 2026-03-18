@@ -1,0 +1,48 @@
+// Custom testbench
+
+`timescale 10ns / 1ps
+
+module main_tb;
+
+top top_inst(
+.sys_clk(clk),
+
+.clk_en(),
+.led(),
+.led_en(),
+.pmod1(),
+.pmod1_en(),
+.pmod2(),
+.pmod2_en(),
+.pmod3(),
+.pmod3_en(),
+.pmod4(),
+.pmod4_en(),
+.pmod5(),
+.pmod5_en(),
+.pmod6(),
+.pmod6_en(),
+.pmod7(),
+.pmod7_en()
+);
+
+reg clk=0;
+
+  initial begin
+
+    $dumpfile ("main_tb.vcd");
+    $dumpvars (0, main_tb);
+    #100000000; $finish;
+
+  end
+  
+  always begin
+    #1 clk = ~clk;
+  end
+  
+endmodule
+
+
+
+
+

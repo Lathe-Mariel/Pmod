@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GPDProject version="40" oldestCompatibleVersion="32" GPDVersion="6.51.002" lastChange="7 Mar 2026 16:25:42" projectChecksumState="1" projectChecksum="07181b83">
+<GPDProject version="40" oldestCompatibleVersion="32" GPDVersion="6.51.002" lastChange="19 Mar 2026 00:38:35" projectChecksumState="1" projectChecksum="8ef05e1d">
     <generalProjectSettings/>
     <chip family="04" type="06" friendlyName="FFPGA" partNumber="67" package="26">
         <nvmData registerLenght="480">0 0 0 28 0 0 0 0 A5 A5 A5 A5 0 0 0 0 0 0 0 0 5A 5A 5A 5A 0 0 0 0 22 22 22 22 22 22 22 22 22 22 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</nvmData>
@@ -653,6 +653,7 @@
         <openedTabs>
             <openedTab>main.v</openedTab>
             <openedTab>I/O Planner</openedTab>
+            <openedTab>main_tb.vt</openedTab>
         </openedTabs>
         <pipelineStagesStates>
             <pipelineStageState>
@@ -669,7 +670,9 @@
                 <module filename="main.v"/>
             </scr>
             <lib/>
-            <sim/>
+            <sim>
+                <module filename="main_tb.vt"/>
+            </sim>
             <netlists/>
             <timing-constraints/>
             <full-chip-simulation-models/>
