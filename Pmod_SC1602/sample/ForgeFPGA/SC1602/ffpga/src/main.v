@@ -268,7 +268,7 @@ module lcd_scroll_ctrl (
             msg[12] <= 8'h20; // ' '
             msg[13] <= 8'h20; // ' '
             msg[14] <= 8'h20; // ' '
-            msg[15] <= 8'h39; // '@'  
+            msg[15] <= 8'h40; // '@'  
             timer   <= T_15MS;
             state   <= S_PWRON;
             ret_state <= S_PWRON;
