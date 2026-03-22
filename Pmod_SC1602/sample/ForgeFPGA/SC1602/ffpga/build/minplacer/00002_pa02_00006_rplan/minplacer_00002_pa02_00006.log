@@ -1,9 +1,9 @@
-The current time is Thu Mar 19 00:17:09 2026
+The current time is Sat Mar 21 00:22:16 2026
 CPUs=4
 EXE="H:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23\eda-placer.exe"
 BuildDir=H:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23
 BuildPath="H:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23"
-CWD=C:\Users\n11ak\AppData\Local\Temp\PrOdPIre\out\minplacer\00002_pa02_00006_rplan
+CWD=C:\Users\n11ak\AppData\Local\Temp\jArrSZkx\out\minplacer\00002_pa02_00006_rplan
 LogFile=minplacer_00002_pa02_00006.log
 PrintScreen=..\_00002_pa02_stdout.txt
 Command line: H:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23\eda-placer.exe -print_screen ..\_00002_pa02_stdout.txt -eflx_call_minplacer 00002_pa02_00006_rplan__out__top
@@ -135,32 +135,32 @@ GeometryDumpLayers starts.
 GeometryDumpLayers ends.
 pProblemIni. eramclkAsClock=1
 pProblemIniNetlist. skip_hifi=0, skip_pppff=2147483647
-Netlist=NETLIST_top NumInst=84 NumNet=263
-NumPinst=69
+Netlist=NETLIST_top NumInst=95 NumNet=354
+NumPinst=80
 	DontPlace=0, NonRootRbbChainMember=13, NonRootDspChainMember=0, Const=1, ClkBuf=1
-There are 84 instances. After combining instances in chains, there are 69 instances to place.
-	Clock[0] OrigClock[0] net (net_index=37) sys_clk
-NumPnet=244
-NumTrivial=4 NumDriverless=0
-AverageFO=3.21 #HifiNet=0 AverageFO_HifiNet=0.00
+There are 95 instances. After combining instances in chains, there are 80 instances to place.
+	Clock[0] OrigClock[0] net (net_index=31) sys_clk
+NumPnet=310
+NumTrivial=29 NumDriverless=0
+AverageFO=3.33 #HifiNet=0 AverageFO_HifiNet=0.00
 NumClk=1 (with 0 inverted)
-There are 244 nets in the design. Average fanout is 3.21.
+There are 310 nets in the design. Average fanout is 3.33.
 There is 1 clock in the design.
-NumInsts=69
+NumInsts=80
 Resource usages:
- Type=L: Capacity=140 Utilized=72 NumInst=59. [ChainLen=1]=56 [ChainLen=2]=1 [ChainLen=7]=2
+ Type=L: Capacity=140 Utilized=83 NumInst=70. [ChainLen=1]=67 [ChainLen=2]=1 [ChainLen=7]=2
  Type=M: Capacity=40 Utilized=0 NumInst=0.
  Type=IOB: Capacity=184 Utilized=10 NumInst=10.
 Min-placement step: Delay and congestion estimation (fastest_delay=0 gentable=0 mode=1).
 FINDER STARTS
-Read 82 RBB-locations from EFLX file.
+Read 93 RBB-locations from EFLX file.
 Reading timing_def file ..\..\minplacer\00002_pa02_00005_post\minplacer.timing_def
 pPipeAlloc: OptMode=1 PppFfInsertDone=0 MinPipeRtDly=98 #Chain=0 AveChainLen=0.0 MaxChainLen=0 #Net=0 AveChainFan=0.0 MaxChainFan=0 #MixedZeroFan=0 Opt_UseLatency=0 OptLine_RightSlack_WorseThreshold=100
 (0) INI ELAPSE=0
 
 FINDER COMPUTE-FULL.
 Long connection estimation: ...........
-Short connection estimation: ...........
+Short connection estimation: ..........
 Long connection estimation: (50)w---------(60)----------(70)----------(80)----------(90)----------(100)-
 Long connection estimation: (50)pxxxxxxxxx(60)xxxxxxxxxx(70)xxxxxxxxxx(80)xxxxxxxxxx(90)xxxxxxxxxx(100)x
 FINDER COMPUTE-FULL returns 0
@@ -168,15 +168,15 @@ FINDER COMPUTE-FULL returns 0
 
 (3) FIN ELAPSE=1
 
-Wrote 59 RBB-locations out of 59 core insts and 13 chained insts to EFLX file ..\..\minplacer\00002_pa02_00006_rplan\minplacer_rbbloc.txt.
+Wrote 70 RBB-locations out of 70 core insts and 13 chained insts to EFLX file ..\..\minplacer\00002_pa02_00006_rplan\minplacer_rbbloc.txt.
 Wrote 10 RBB-locations out of 10 IOB insts to EFLX file ..\..\minplacer\00002_pa02_00006_rplan\minplacer_rbbloc.txt.
 Wrote 0 RBB-locations out of 10 INTIOB insts to EFLX file ..\..\minplacer\00002_pa02_00006_rplan\minplacer_rbbloc.txt.
-CLOCKPLAN_INI_NETLIST: NUM_CLOCKS=1 NUM_PINSTS=69
+CLOCKPLAN_INI_NETLIST: NUM_CLOCKS=1 NUM_PINSTS=80
 	 #Inst/Usage        L           M         DSP       SPRAM       UPRAM       2PRAM         IOB        ZIOB        NCLT        RCLT      
-	   CLOCK[ 0]*    41(   48)                                                                                                            
-	   NON_CLOCK     18(   24)                                                                                                            
+	   CLOCK[ 0]*    39(   46)                                                                                                            
+	   NON_CLOCK     31(   37)                                                                                                            
 CLOCKPLAN_INI_GEO: NUM_TILE_SLICES=1/1
-{Rsc/Util/MinThre={L=140/72/50 ,M=40/0/8 ,DSP=0/0/4 ,SPRAM=0/0/0 ,UPRAM=0/0/0 ,2PRAM=0/0/0 ,IOB=184/10/16 ,ZIOB=0/0/0 ,NCLT=0/0/0 ,RCLT=0/0/0}
+{Rsc/Util/MinThre={L=140/83/50 ,M=40/0/8 ,DSP=0/0/4 ,SPRAM=0/0/0 ,UPRAM=0/0/0 ,2PRAM=0/0/0 ,IOB=184/10/16 ,ZIOB=0/0/0 ,NCLT=0/0/0 ,RCLT=0/0/0}
 CLOCKPLAN_INI_PORTLOCKS
 	CLOCK[0]* port locks:
 		{IX0Y0S1I0}
@@ -192,26 +192,26 @@ ClockPortFile ..\..\minplacer\00002_pa02_00006_rplan\minplacer_clkloc.txt writte
 *********************************** TILE REPORT ***************************************
 |------------------------|
 |TILE_X0Y0               |
-|#INST=69                |
+|#INST=80                |
 |#CLK=1 #INVCLK=0        |
 |#ERAM_CP    0           |
 |#         0   0         |
 |#           0           |
 |*                       |
 |sa0*                    |
-|L=72,L16 C48            |
+|L=83,L16 C46            |
 |IOB=10 C7               |
 |------------------------|
-CLUSTER[0] LAYER0=L TILE=[0,0] CLK=<0,-1> ERAMCLK=<72,0> REGION=<none>
- {L=72 C48 IOB=10 C7 LCHAIN=16 DCHAIN=0} #NEI=0 REACHABLES:
-CLOCK[0] #LockedPort=1 #AssignedPort=0 #OutputPort=0 TX0Y0={#Cluster=1 L=72 IOB=10}
+CLUSTER[0] LAYER0=L TILE=[0,0] CLK=<0,-1> ERAMCLK=<83,0> REGION=<none>
+ {L=83 C46 IOB=10 C7 LCHAIN=16 DCHAIN=0} #NEI=0 REACHABLES:
+CLOCK[0] #LockedPort=1 #AssignedPort=0 #OutputPort=0 TX0Y0={#Cluster=1 L=83 IOB=10}
 *********************************** TILE REPORT ***************************************
 
 
 Placement timing:
          Clock           Group  Achievable Frequency(MHz)
 --------------     -----------  -------------------------
-       sys_clk  <UDEF_sys_clk>                    73.915 
+       sys_clk  <UDEF_sys_clk>                    66.930 
 
 
 FINDER ENDS
@@ -219,7 +219,7 @@ pProblemFin.
 Min-placement step ends: Delay and congestion estimation (fastest_delay=0 gentable=0 mode=1). Runtime: 0:0:10 (CPU time), 0:0:10 (real time); peak memory: 1374MB.
 
 
-The current time is Thu Mar 19 00:17:19 2026
+The current time is Sat Mar 21 00:22:26 2026
 
 
 

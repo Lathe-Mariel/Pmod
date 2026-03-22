@@ -1,9 +1,9 @@
-The current time is Wed Mar 18 01:24:35 2026
+The current time is Sun Mar 22 18:38:00 2026
 CPUs=4
 EXE="H:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23\eda-placer.exe"
 BuildDir=H:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23
 BuildPath="H:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23"
-CWD=C:\Users\n11ak\AppData\Local\Temp\JhaCxWBJ\out\minplacer\00002_pa02_00008_post
+CWD=C:\Users\n11ak\AppData\Local\Temp\xDKhIPZh\out\minplacer\00002_pa02_00008_post
 LogFile=minplacer_00002_pa02_00008.log
 PrintScreen=..\_00002_pa02_stdout.txt
 Command line: H:\Program Files\Renesas Electronics\Go Configure Software Hub\external\eda-placer\v23\eda-placer.exe -print_screen ..\_00002_pa02_stdout.txt -eflx_call_minplacer 00002_pa02_00008_post__out__top
@@ -144,62 +144,115 @@ GeometryDumpLayers starts.
 GeometryDumpLayers ends.
 pProblemIni. eramclkAsClock=1
 pProblemIniNetlist. skip_hifi=0, skip_pppff=2147483647
-Netlist=NETLIST_top NumInst=75 NumNet=262
-NumPinst=60
-	DontPlace=0, NonRootRbbChainMember=13, NonRootDspChainMember=0, Const=1, ClkBuf=1
-There are 75 instances. After combining instances in chains, there are 60 instances to place.
+Netlist=NETLIST_top NumInst=82 NumNet=271
+NumPinst=66
+	DontPlace=0, NonRootRbbChainMember=14, NonRootDspChainMember=0, Const=1, ClkBuf=1
+There are 82 instances. After combining instances in chains, there are 66 instances to place.
 	Clock[0] OrigClock[0] net (net_index=31) sys_clk
-NumPnet=240
-NumTrivial=7 NumDriverless=0
-AverageFO=3.10 #HifiNet=0 AverageFO_HifiNet=0.00
+NumPnet=251
+NumTrivial=4 NumDriverless=0
+AverageFO=3.75 #HifiNet=0 AverageFO_HifiNet=0.00
 NumClk=1 (with 0 inverted)
-There are 240 nets in the design. Average fanout is 3.10.
+There are 251 nets in the design. Average fanout is 3.75.
 There is 1 clock in the design.
-NumInsts=60
+NumInsts=66
 Resource usages:
- Type=L: Capacity=140 Utilized=63 NumInst=50. [ChainLen=1]=47 [ChainLen=2]=1 [ChainLen=7]=2
+ Type=L: Capacity=140 Utilized=70 NumInst=56. [ChainLen=1]=52 [ChainLen=2]=2 [ChainLen=7]=2
  Type=M: Capacity=40 Utilized=0 NumInst=0.
  Type=IOB: Capacity=184 Utilized=10 NumInst=10.
 Min-placement step: Detaild placement (mode=2).
 POST STARTS (FINDER_DELAY)
 TileRange read: File is not given. Use whole chip.
-Read 73 RBB-locations from EFLX file.
+Read 80 RBB-locations from EFLX file.
 Reading timing_def file ..\..\minplacer\00002_pa02_00006_committed_nledit\minplacer.timing_def
 pPipeAlloc: OptMode=1 PppFfInsertDone=0 MinPipeRtDly=98 #Chain=0 AveChainLen=0.0 MaxChainLen=0 #Net=0 AveChainFan=0.0 MaxChainFan=0 #MixedZeroFan=0 Opt_UseLatency=0 OptLine_RightSlack_WorseThreshold=100
-(0) INI TWL = 19910(9360, 10550) ELAPSE=0
-CROSS-TILE STAT: [0]=744
-PANN_TILERANGE LayerMask=40 TileRange={0,1; 0,1} RangeDivider=4 WL=19910 (9360, 10550) StartingIter=0 NumIters=1
-PANN_TILERANGE  (iter=0) WL=19910 (9360, 10550) TIMESPENT=0
+(0) INI TWL = 24470(12650, 11820) ELAPSE=0
+CROSS-TILE STAT: [0]=942
+PANN_TILERANGE LayerMask=40 TileRange={0,1; 0,1} RangeDivider=4 WL=24470 (12650, 11820) StartingIter=0 NumIters=1
+PANN_TILERANGE  (iter=0) WL=24470 (12650, 11820) TIMESPENT=0
 PANN_TILERANGE ENDS TIMESPENT=0
 Long connection estimation: ...........
-Short connection estimation: ..........
-(1) IOS-ANN TWL = 19910(9360, 10550) ELAPSE=1
-[ITER=0] WNS=-13222,M=7.611 TNS=-2806562 PathNumObj=4 *
-[ITER=1] WNS=-11867,M=6.933 TNS=-2690265 PathNumObj=2 ***&&&&&!@
-[ITER=2] WNS=-11867,M=6.933 TNS=-2690265 x PathNumObj=6 *
-[ITER=3] WNS=-11617,M=6.808 TNS=-2684594 PathNumObj=2 *
-[ITER=4] WNS=-11568,M=6.784 TNS=-2663558 PathNumObj=2 *
-[ITER=5] WNS=-11554,M=6.777 TNS=-2661033 PathNumObj=2 ***&
-[ITER=6] WNS=-11551,M=6.775 TNS=-2673269 PathNumObj=2 ***
-[ITER=7] WNS=-11532,M=6.766 TNS=-2681397 PathNumObj=2 ***&&&&&!@
-[ITER=8] WNS=-11532,M=6.766 TNS=-2681397 x PathNumObj=6 ***&
-[ITER=9] WNS=-11506,M=6.753 TNS=-2686589 PathNumObj=2 ***
-[ITER=10] WNS=-11489,M=6.744 TNS=-2686126 PathNumObj=2 *
-[ITER=11] WNS=-11465,M=6.732 TNS=-2672887 PathNumObj=3 ***&&&&&!@
-[ITER=12] WNS=-11465,M=6.732 TNS=-2672887 x PathNumObj=6 ***&
-[ITER=13] WNS=-11436,M=6.718 TNS=-2666802 PathNumObj=4 ***
-[ITER=14] WNS=-11227,M=6.613 TNS=-2666838 PathNumObj=4 ***&
-[ITER=15] WNS=-11136,M=6.568 TNS=-2656548 PathNumObj=2 ***&&&&&!@
-[ITER=16] WNS=-11124,M=6.562 TNS=-2657481 PathNumObj=2 ***&&&&&!@
-[ITER=17] WNS=-11124,M=6.562 TNS=-2657481 x PathNumObj=6 ***&
-[ITER=18] WNS=-11113,M=6.556 TNS=-2635233 PathNumObj=3 ***
-[ITER=19] WNS=-11006,M=6.503 TNS=-2637244 PathNumObj=4 ***&&&&&!@
-[ITER=20] WNS=-10997,M=6.498 TNS=-2638151 PathNumObj=2 ***&&&&&!@
-[ITER=21] WNS=-10997,M=6.498 TNS=-2638151 x PathNumObj=4 ***&
-[ITER=22] WNS=-10994,M=6.497 TNS=-2637703 PathNumObj=4 ***&&&&&!@Memory=000002892422CD00 corruption at tail, allocated from line 63 in C:\fanmo\src\trunk\place\ppatsweep.cpp.
-FATAL ERROR: FreeMemory has crashed.
+Short connection estimation: ...........
+(1) IOS-ANN TWL = 24470(12650, 11820) ELAPSE=1
+[ITER=0] WNS=-12406,M=7.203 TNS=-2596707 PathNumObj=4 *
+[ITER=1] WNS=-11277,M=6.638 TNS=-2526313 PathNumObj=3 ***&&&&&!@
+[ITER=2] WNS=-11182,M=6.591 TNS=-2523153 PathNumObj=5 *
+[ITER=3] WNS=-11047,M=6.523 TNS=-2497940 PathNumObj=3 ***&&&&&!@
+[ITER=4] WNS=-11047,M=6.523 TNS=-2497940 x PathNumObj=5 *
+[ITER=5] WNS=-10691,M=6.345 TNS=-2494709 PathNumObj=3 *
+[ITER=6] WNS=-10682,M=6.341 TNS=-2506123 PathNumObj=4 *
+[ITER=7] WNS=-10597,M=6.298 TNS=-2497095 PathNumObj=3 *
+[ITER=8] WNS=-10563,M=6.281 TNS=-2473637 PathNumObj=2 ***&&&&&!@
+[ITER=9] WNS=-10563,M=6.281 TNS=-2473637 x PathNumObj=5 ***&
+[ITER=10] WNS=-10401,M=6.200 TNS=-2501947 PathNumObj=3 ***&
+[ITER=11] WNS=-10390,M=6.195 TNS=-2465132 PathNumObj=3 ***&&&&&!@
+[ITER=12] WNS=-10390,M=6.195 TNS=-2465132 x PathNumObj=5 *
+[ITER=13] WNS=-10376,M=6.188 TNS=-2466935 PathNumObj=3 ***&&&&&!@
+[ITER=14] WNS=-10376,M=6.188 TNS=-2466935 x PathNumObj=5 ***&
+[ITER=15] WNS=-10374,M=6.187 TNS=-2487514 PathNumObj=3 *
+[ITER=16] WNS=-10344,M=6.172 TNS=-2487005 PathNumObj=2 ***&&&&&!@
+[ITER=17] WNS=-10344,M=6.172 TNS=-2487005 x PathNumObj=5 ***&
+[ITER=18] WNS=-10205,M=6.102 TNS=-2486939 PathNumObj=3 ***&&&&&!@
+[ITER=19] WNS=-10205,M=6.102 TNS=-2486939 x PathNumObj=4 ***&&&&&!@
+[ITER=20] WNS=-10205,M=6.102 TNS=-2486939 PathNumObj=3 ***&&&&&!@
+[ITER=21] WNS=-10205,M=6.102 TNS=-2486939 x PathNumObj=4 ***&&&&&!@
+[ITER=22] WNS=-10205,M=6.102 TNS=-2486939 PathNumObj=3 ***&&&&&!@
+[ITER=23] WNS=-10205,M=6.102 TNS=-2486939 x PathNumObj=4 
+(2) IMPROVED TWL = 28580(15680, 12900) ELAPSE=44
+(3) FIN TWL = 28580(15680, 12900) ELAPSE=44
+CROSS-TILE STAT: [0]=942
+Wrote 56 RBB-locations out of 56 core insts and 14 chained insts to EFLX file ..\..\minplacer\00002_pa02_00008_post\minplacer_rbbloc.txt.
+Wrote 10 RBB-locations out of 10 IOB insts to EFLX file ..\..\minplacer\00002_pa02_00008_post\minplacer_rbbloc.txt.
+Wrote 0 RBB-locations out of 10 INTIOB insts to EFLX file ..\..\minplacer\00002_pa02_00008_post\minplacer_rbbloc.txt.
+CLOCKPLAN_INI_NETLIST: NUM_CLOCKS=1 NUM_PINSTS=66
+	 #Inst/Usage        L           M         DSP       SPRAM       UPRAM       2PRAM         IOB        ZIOB        NCLT        RCLT      
+	   CLOCK[ 0]*    26(   34)                                                                                                            
+	   NON_CLOCK     30(   36)                                                                                                            
+CLOCKPLAN_INI_GEO: NUM_TILE_SLICES=1/1
+{Rsc/Util/MinThre={L=140/70/50 ,M=40/0/8 ,DSP=0/0/4 ,SPRAM=0/0/0 ,UPRAM=0/0/0 ,2PRAM=0/0/0 ,IOB=184/10/16 ,ZIOB=0/0/0 ,NCLT=0/0/0 ,RCLT=0/0/0}
+CLOCKPLAN_INI_PORTLOCKS
+	CLOCK[0]* port locks:
+		{IX0Y0S1I0}
+BuildGaps
+	GAPS[0]: - -
+	GAPS[1]: - -
+CreateReachables:
+	CLOCK[0] reachables: [0,0]
+	CLOCK[0] distance: 0
+AssignPorts skipped as all clocks have locked ports.
+ClockPortFile ..\..\minplacer\00002_pa02_00008_post\minplacer_clkloc.txt written.
 
-Fatal error at line 206 in file C:\fanmo\src\trunk\base\bmem.cpp
+*********************************** TILE REPORT ***************************************
+|------------------------|
+|TILE_X0Y0               |
+|#INST=66                |
+|#CLK=1 #INVCLK=0        |
+|#ERAM_CP    0           |
+|#         0   0         |
+|#           0           |
+|*                       |
+|sa0*                    |
+|L=70,L18 C34            |
+|IOB=10 C7               |
+|------------------------|
+CLUSTER[0] LAYER0=L TILE=[0,0] CLK=<0,-1> ERAMCLK=<70,0> REGION=<none>
+ {L=70 C34 IOB=10 C7 LCHAIN=18 DCHAIN=0} #NEI=0 REACHABLES:
+CLOCK[0] #LockedPort=1 #AssignedPort=0 #OutputPort=0 TX0Y0={#Cluster=1 L=70 IOB=10}
+*********************************** TILE REPORT ***************************************
+
+
+Placement timing:
+         Clock           Group  Achievable Frequency(MHz)
+--------------     -----------  -------------------------
+       sys_clk  <UDEF_sys_clk>                    81.940 
+
+
+POST ENDS
+pProblemFin.
+Min-placement step ends: Detaild placement (mode=2). Runtime: 0:0:50 (CPU time), 0:0:50 (real time); peak memory: 1415MB.
+
+
+The current time is Sun Mar 22 18:38:50 2026
 
 
 

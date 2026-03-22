@@ -1,75 +1,93 @@
 
 Min-placement step: Set up placement.
-There are 84 instances. After combining instances in chains, there are 69 instances to place.
-There are 244 nets in the design, 0 of which have fanout larger than 49. Average fanout is 3.21.
+There are 79 instances. After combining instances in chains, there are 63 instances to place.
+There are 248 nets in the design, 0 of which have fanout larger than 49. Average fanout is 3.74.
 There is 1 clock in the design.
 Resource usages:
- Type=L: Capacity=140 Utilized=72 NumInst=59. [ChainLen=1]=56 [ChainLen=2]=1 [ChainLen=7]=2
+ Type=L: Capacity=140 Utilized=67 NumInst=53. [ChainLen=1]=49 [ChainLen=2]=2 [ChainLen=7]=2
  Type=M: Capacity=40 Utilized=0 NumInst=0.
  Type=IOB: Capacity=184 Utilized=10 NumInst=10.
 Min-placement step: Global placement and legalization.
-Legalizing chains on RBB-L: Legalizing chains of RBB-L:  Len=7.(2|0) Len=2.(16|0) *
-Legalizing non-chains of RBB-L: .(41,0|0,0)
-Improving the placement of 59 instances for resource type(s) of RBB-L RBB-M: ...............................................................................................................
-Min-placement step ends: Global placement and legalization. Runtime: 0:0:15 (CPU time), 0:0:15 (real time); peak memory: 1305MB.
+Legalizing chains on RBB-L: Legalizing chains of RBB-L:  Len=7.(2|0) Len=2.(24|0) *
+Legalizing non-chains of RBB-L: .(27,0|0,0)
+Improving the placement of 53 instances for resource type(s) of RBB-L RBB-M: ...............................................................................................................
+Min-placement step ends: Global placement and legalization. Runtime: 0:0:20 (CPU time), 0:0:20 (real time); peak memory: 1305MB.
 
 
-There are 84 instances. After combining instances in chains, there are 69 instances to place.
-There are 244 nets in the design. Average fanout is 3.21.
+There are 79 instances. After combining instances in chains, there are 63 instances to place.
+There are 248 nets in the design. Average fanout is 3.74.
 There is 1 clock in the design.
 Resource usages:
- Type=L: Capacity=140 Utilized=72 NumInst=59. [ChainLen=1]=56 [ChainLen=2]=1 [ChainLen=7]=2
+ Type=L: Capacity=140 Utilized=67 NumInst=53. [ChainLen=1]=49 [ChainLen=2]=2 [ChainLen=7]=2
  Type=M: Capacity=40 Utilized=0 NumInst=0.
  Type=IOB: Capacity=184 Utilized=10 NumInst=10.
 Min-placement step: Replication (mode=1).
 Min-placement step ends: Replication (mode=1). Runtime: 0:0:10 (CPU time), 0:0:10 (real time); peak memory: 1338MB.
 
 
-There are 84 instances. After combining instances in chains, there are 69 instances to place.
-There are 244 nets in the design. Average fanout is 3.21.
+There are 84 instances. After combining instances in chains, there are 68 instances to place.
+There are 253 nets in the design. Average fanout is 3.76.
 There is 1 clock in the design.
 Resource usages:
- Type=L: Capacity=140 Utilized=72 NumInst=59. [ChainLen=1]=56 [ChainLen=2]=1 [ChainLen=7]=2
+ Type=L: Capacity=140 Utilized=72 NumInst=58. [ChainLen=1]=54 [ChainLen=2]=2 [ChainLen=7]=2
+ Type=M: Capacity=40 Utilized=0 NumInst=0.
+ Type=IOB: Capacity=184 Utilized=10 NumInst=10.
+Min-placement step: Replication (mode=3).
+Improving the placement of 58 instances for resource type(s) of RBB-L RBB-M DSP Single-Port-RAM Dual-Port-RAM Two-Port-RAM IOB Internal-IOB: ......
+Min-placement step ends: Replication (mode=3). Runtime: 0:0:10 (CPU time), 0:0:10 (real time); peak memory: 1338MB.
+
+
+There are 84 instances. After combining instances in chains, there are 68 instances to place.
+There are 253 nets in the design. Average fanout is 3.76.
+There is 1 clock in the design.
+Resource usages:
+ Type=L: Capacity=140 Utilized=72 NumInst=58. [ChainLen=1]=54 [ChainLen=2]=2 [ChainLen=7]=2
  Type=M: Capacity=40 Utilized=0 NumInst=0.
  Type=IOB: Capacity=184 Utilized=10 NumInst=10.
 Min-placement step: Detaild placement (mode=2).
 Long connection estimation: ...........
 Short connection estimation: ...........
-[ITER=0] WNS=-13351,M=7.675 TNS=-2816217 PathNumObj=3 *
-[ITER=1] WNS=-12949,M=7.474 TNS=-2902652 PathNumObj=4 *
-[ITER=2] WNS=-12928,M=7.464 TNS=-2905932 PathNumObj=3 *
-[ITER=3] WNS=-12864,M=7.432 TNS=-2891401 PathNumObj=3 *
-[ITER=4] WNS=-12851,M=7.425 TNS=-2881843 PathNumObj=4 *
-[ITER=5] WNS=-12490,M=7.245 TNS=-2812115 PathNumObj=3 ***&&&&&!@
-[ITER=6] WNS=-12490,M=7.245 TNS=-2812115 x PathNumObj=4 ***&
-[ITER=7] WNS=-12457,M=7.228 TNS=-2824049 PathNumObj=3 ***&&&&&!@
-[ITER=8] WNS=-12457,M=7.228 TNS=-2824049 x PathNumObj=5 ***&
-[ITER=9] WNS=-12314,M=7.157 TNS=-2838576 PathNumObj=3 *
-[ITER=10] WNS=-12313,M=7.156 TNS=-2811597 PathNumObj=3 ***&&&&&!@
-[ITER=11] WNS=-12313,M=7.156 TNS=-2811597 x PathNumObj=5 ***&
-[ITER=12] WNS=-12179,M=7.089 TNS=-2816477 PathNumObj=3 *
-[ITER=13] WNS=-12087,M=7.043 TNS=-2790024 PathNumObj=3 *
-[ITER=14] WNS=-12079,M=7.039 TNS=-2794197 PathNumObj=2 ***&&&&&!@
-[ITER=15] WNS=-12079,M=7.039 TNS=-2794197 x PathNumObj=5 ***&&&&&!@
-[ITER=16] WNS=-12079,M=7.039 TNS=-2794197 PathNumObj=2 ***&&&&&!@
-[ITER=17] WNS=-12079,M=7.039 TNS=-2794197 x PathNumObj=5 ***&&&&&!@
-[ITER=18] WNS=-12079,M=7.039 TNS=-2794197 PathNumObj=2 ***&&&&&!@
-[ITER=19] WNS=-12079,M=7.039 TNS=-2794197 x PathNumObj=5 
+[ITER=0] WNS=-11583,M=6.791 TNS=-2535922 PathNumObj=4 *
+[ITER=1] WNS=-11038,M=6.519 TNS=-2455954 PathNumObj=3 *
+[ITER=2] WNS=-10890,M=6.445 TNS=-2531289 PathNumObj=4 ***&&&&
+[ITER=3] WNS=-10756,M=6.378 TNS=-2524365 PathNumObj=4 *
+[ITER=4] WNS=-10657,M=6.328 TNS=-2508173 PathNumObj=3 ***&&&&&!@
+[ITER=5] WNS=-10657,M=6.328 TNS=-2508173 x PathNumObj=5 *
+[ITER=6] WNS=-10590,M=6.295 TNS=-2507247 PathNumObj=2 ***&&&&&!@
+[ITER=7] WNS=-10590,M=6.295 TNS=-2507247 x PathNumObj=4 *
+[ITER=8] WNS=-10434,M=6.217 TNS=-2495129 PathNumObj=3 *
+[ITER=9] WNS=-10407,M=6.203 TNS=-2495826 PathNumObj=5 *
+[ITER=10] WNS=-10223,M=6.111 TNS=-2487506 PathNumObj=3 *
+[ITER=11] WNS=-10112,M=6.056 TNS=-2458409 PathNumObj=2 ***&&&&&!@
+[ITER=12] WNS=-10112,M=6.056 TNS=-2458409 x PathNumObj=3 *
+[ITER=13] WNS=-10096,M=6.048 TNS=-2454395 PathNumObj=4 *
+[ITER=14] WNS=-10068,M=6.034 TNS=-2455321 PathNumObj=2 ***
+[ITER=15] WNS=-10025,M=6.012 TNS=-2478024 PathNumObj=3 ***&&&&&!@
+[ITER=16] WNS=-10025,M=6.012 TNS=-2478024 x PathNumObj=5 *
+[ITER=17] WNS=-9969,M=5.984 TNS=-2477906 PathNumObj=3 ***&&&&&!@
+[ITER=18] WNS=-9969,M=5.984 TNS=-2477906 x PathNumObj=5 ***&
+[ITER=19] WNS=-9921,M=5.960 TNS=-2476723 PathNumObj=2 *
+[ITER=20] WNS=-9899,M=5.949 TNS=-2471268 PathNumObj=4 ***&&&&&!@
+[ITER=21] WNS=-9899,M=5.949 TNS=-2471268 x PathNumObj=5 ***&&&&&!@
+[ITER=22] WNS=-9899,M=5.949 TNS=-2471268 PathNumObj=4 ***&&&&&!@
+[ITER=23] WNS=-9899,M=5.949 TNS=-2471268 x PathNumObj=5 ***&&&&&!@
+[ITER=24] WNS=-9899,M=5.949 TNS=-2471268 PathNumObj=4 ***&&&&&!@
+[ITER=25] WNS=-9899,M=5.949 TNS=-2471268 x PathNumObj=5 
 
 Placement timing:
          Clock           Group  Achievable Frequency(MHz)
 --------------     -----------  -------------------------
-       sys_clk  <UDEF_sys_clk>                    71.033 
+       sys_clk  <UDEF_sys_clk>                    84.048 
 
 
-Min-placement step ends: Detaild placement (mode=2). Runtime: 0:0:25 (CPU time), 0:0:25 (real time); peak memory: 1415MB.
+Min-placement step ends: Detaild placement (mode=2). Runtime: 0:1:10 (CPU time), 0:1:10 (real time); peak memory: 1415MB.
 
 
-There are 84 instances. After combining instances in chains, there are 69 instances to place.
-There are 244 nets in the design. Average fanout is 3.21.
+There are 84 instances. After combining instances in chains, there are 68 instances to place.
+There are 253 nets in the design. Average fanout is 3.76.
 There is 1 clock in the design.
 Resource usages:
- Type=L: Capacity=140 Utilized=72 NumInst=59. [ChainLen=1]=56 [ChainLen=2]=1 [ChainLen=7]=2
+ Type=L: Capacity=140 Utilized=72 NumInst=58. [ChainLen=1]=54 [ChainLen=2]=2 [ChainLen=7]=2
  Type=M: Capacity=40 Utilized=0 NumInst=0.
  Type=IOB: Capacity=184 Utilized=10 NumInst=10.
 Min-placement step: Delay and congestion estimation (fastest_delay=0 gentable=0 mode=1).
@@ -81,7 +99,7 @@ Long connection estimation: (50)pxxxxxxxxx(60)xxxxxxxxxx(70)xxxxxxxxxx(80)xxxxxx
 Placement timing:
          Clock           Group  Achievable Frequency(MHz)
 --------------     -----------  -------------------------
-       sys_clk  <UDEF_sys_clk>                    71.033 
+       sys_clk  <UDEF_sys_clk>                    84.048 
 
 
 Min-placement step ends: Delay and congestion estimation (fastest_delay=0 gentable=0 mode=1). Runtime: 0:0:10 (CPU time), 0:0:10 (real time); peak memory: 1374MB.
