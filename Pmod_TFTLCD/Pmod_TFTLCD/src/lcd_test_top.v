@@ -26,7 +26,8 @@ lcd_ctrl u_lcd_ctrl (
     .lcd_cs   (lcd_cs),
     .lcd_mosi (lcd_mosi),
     .lcd_sck  (lcd_sck),
-    .lcd_dc   (lcd_dc)
+    .lcd_dc   (lcd_dc),
+    .btn_rst  (USER_KEY)
 );
 
 endmodule
