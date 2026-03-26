@@ -73,12 +73,12 @@ localparam [8:0]
     ROM_09 = 9'h0C7,  // VCOM Ctrl 2     CMD
     ROM_10 = 9'h186,  //                 DAT 0x86
     ROM_11 = 9'h036,  // Mem Access Ctrl CMD
-    ROM_12 = 9'h128,  //                 DAT 0x28 (MV=1, BGR=1, 320x240)
+    ROM_12 = 9'h148,  //                 DAT 0x28 (MV=1, BGR=1, 320x240)  !
     ROM_13 = 9'h03A,  // Pixel Format    CMD
     ROM_14 = 9'h155,  //                 DAT 0x55 (16bit RGB565)
     ROM_15 = 9'h0B1,  // Frame Rate      CMD
     ROM_16 = 9'h100,  //                 DAT 0x00
-    ROM_17 = 9'h11B,  //                 DAT 0x1B
+    ROM_17 = 9'h118,  //                 DAT 0x1B  !
     ROM_18 = 9'h0B6,  // Disp Func Ctrl  CMD
     ROM_19 = 9'h108,  //                 DAT 0x08
     ROM_20 = 9'h182,  //                 DAT 0x82
@@ -291,8 +291,8 @@ always @(posedge clk or negedge rst_n) begin
             S_INIT_TX: begin
                 if (init_idx < ROM_DEPTH) begin
                     if (!tx_busy && !tx_start) begin
-                        tx_byte   <= rom_read(init_idx)[7:0];
-                        tx_dc_reg <= rom_read(init_idx)[8];
+                        {tx_dc_reg, tx_byte} <= rom_read(init_idx);
+//                        tx_dc_reg <= rom_read(init_idx)[8];
                         tx_start  <= 1'b1;
                         state     <= S_INIT_WAIT;
                     end
@@ -307,7 +307,7 @@ always @(posedge clk or negedge rst_n) begin
             // ---- SPI 完了待ち & ディレイ判定 ----
             S_INIT_WAIT: begin
                 if (!tx_busy && !tx_start) begin
-                    case (rom_read(init_idx)[7:0])
+                    case (tx_byte)
                         8'h01: begin    // SW Reset → 5ms 待機
                             dly_cnt <= 24'd0;
                             state   <= S_SWRST_DLY;

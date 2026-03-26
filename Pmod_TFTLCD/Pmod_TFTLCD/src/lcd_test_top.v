@@ -21,13 +21,21 @@ module lcd_test_top (
     input wire USER_KEY
 );
 
+wire clkout0;
+
 lcd_ctrl u_lcd_ctrl (
-    .clk      (clk),
+    .clk      (clkout0),
     .lcd_cs   (lcd_cs),
     .lcd_mosi (lcd_mosi),
     .lcd_sck  (lcd_sck),
     .lcd_dc   (lcd_dc),
     .btn_rst  (USER_KEY)
+);
+
+
+Gowin_PLL your_instance_name(
+    .clkout0(clkout0), //output clkout0
+    .clkin(clk) //input clkin
 );
 
 endmodule
