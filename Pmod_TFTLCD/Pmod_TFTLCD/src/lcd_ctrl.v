@@ -58,9 +58,9 @@ wire rst_n = btn_r2;
 //     0x01 (SW Reset)  → 5ms 待機
 //     0x11 (Sleep Out) → 120ms 待機
 // ============================================================
-//localparam [6:0] ROM_DEPTH = 7'd68;
-localparam [6:0] ROM_DEPTH = 7'd105;
-/*
+localparam [6:0] ROM_DEPTH = 7'd68;
+//localparam [6:0] ROM_DEPTH = 7'd105;
+
 localparam [8:0]
     ROM_00 = 9'h001,  // SW Reset        CMD
     ROM_01 = 9'h011,  // Sleep Out       CMD
@@ -74,7 +74,7 @@ localparam [8:0]
     ROM_09 = 9'h0C7,  // VCOM Ctrl 2     CMD
     ROM_10 = 9'h186,  //                 DAT 0x86
     ROM_11 = 9'h036,  // Mem Access Ctrl CMD
-    ROM_12 = 9'h148,  //                 DAT 0x28 (MV=1, BGR=1, 320x240)  !
+    ROM_12 = 9'h1E8,  //                 DAT 0x28 (MV=1, BGR=1, 320x240)  !
     ROM_13 = 9'h03A,  // Pixel Format    CMD
     ROM_14 = 9'h155,  //                 DAT 0x55 (16bit RGB565)
     ROM_15 = 9'h0B1,  // Frame Rate      CMD
@@ -100,60 +100,60 @@ localparam [8:0]
     ROM_53 = 9'h131,  ROM_54 = 9'h136,  ROM_55 = 9'h10F,
     ROM_56 = 9'h02A,  // Column Addr Set CMD (0~239)
     ROM_57 = 9'h100,  ROM_58 = 9'h100,
-    ROM_59 = 9'h100,  ROM_60 = 9'h1EF,
+    ROM_59 = 9'h101,  ROM_60 = 9'h13F,
     ROM_61 = 9'h02B,  // Row Addr Set    CMD (0~319)
     ROM_62 = 9'h100,  ROM_63 = 9'h100,
-    ROM_64 = 9'h101,  ROM_65 = 9'h13F,
+    ROM_64 = 9'h100,  ROM_65 = 9'h1EF,
     ROM_66 = 9'h029,  // Display ON      CMD
     ROM_67 = 9'h02C;  // Memory Write    CMD (ピクセルデータ開始)
-*/
 
+/*
 localparam [8:0]
 ROM_00 = 9'h0CA,
 ROM_01 = 9'h1C3,
 ROM_02 = 9'h108,
 ROM_03 = 9'h150,
-ROM_04 = 9'h0CF, //LCD_POWERB 
+ROM_04 = 9'h0CF, //LCD_POWERB   Power control B
 ROM_05 = 9'h100,
 ROM_06 = 9'h1C1,
 ROM_07 = 9'h130,
-ROM_08 = 9'h0ED, //LCD_POWER_SEQ 
+ROM_08 = 9'h0ED, //LCD_POWER_SEQ  6 Power on sequence control
 ROM_09 = 9'h164,
 ROM_10 = 9'h103,
 ROM_11 = 9'h112,
 ROM_12 = 9'h181,
-ROM_13 = 9'h0E8, //LCD_DTCA 
+ROM_13 = 9'h0E8, //LCD_DTCA  Driver timing control A
 ROM_14 = 9'h185,
 ROM_15 = 9'h100,
 ROM_16 = 9'h178,
-ROM_17 = 9'h0CB, //LCD_POWERA 
+ROM_17 = 9'h0CB, //LCD_POWERA  Power control A
 ROM_18 = 9'h139,
 ROM_19 = 9'h12C,
 ROM_20 = 9'h100,
 ROM_21 = 9'h134,
 ROM_22 = 9'h102,
-ROM_23 = 9'h0F7, //LCD_PRC 
+ROM_23 = 9'h0F7, //LCD_PRC  Pump ratio control 
 ROM_24 = 9'h120,
-ROM_25 = 9'h0EA, //LCD_DTCB 
+ROM_25 = 9'h0EA, //LCD_DTCB  Driver timing control B
 ROM_26 = 9'h100,
 ROM_27 = 9'h100,
-ROM_28 = 9'h0B1, //LCD_FRMCTR1 
+ROM_28 = 9'h0B1, //LCD_FRMCTR1  Frame Rate Control (In Normal Mode/Full Colors) 
 ROM_29 = 9'h100,
 ROM_30 = 9'h11B,
-ROM_31 = 9'h0B6, //LCD_DFC 
+ROM_31 = 9'h0B6, //LCD_DFC  Display Function Control 
 ROM_32 = 9'h10A,
 ROM_33 = 9'h1A2,
-ROM_34 = 9'h0C0, //LCD_POWER1 
+ROM_34 = 9'h0C0, //LCD_POWER1  Power Control 1
 ROM_35 = 9'h110,
 ROM_36 = 9'h0C1, //LCD_POWER2 
 ROM_37 = 9'h110,
-ROM_38 = 9'h0C5, //LCD_VCOM1 
+ROM_38 = 9'h0C5, //LCD_VCOM1  VCOM Control 1
 ROM_39 = 9'h145,
 ROM_40 = 9'h115,
 ROM_41 = 9'h0C7, //LCD_VCOM2 
 ROM_42 = 9'h190,
-ROM_43 = 9'h036, //LCD_MAC 
-ROM_44 = 9'h1C8,
+ROM_43 = 9'h036, //LCD_MAC  Memory Access Control 
+ROM_44 = 9'h1C0, // C8
 ROM_45 = 9'h0F2, //LCD_3GAMMA_EN 
 ROM_46 = 9'h100,
 ROM_47 = 9'h0B0, //LCD_RGB_INTERFACE 
@@ -220,6 +220,7 @@ ROM_102 = 9'h10F,
 
 ROM_103 = 9'h029, //Display ON
 ROM_104 = 9'h02C; //LCD_GRAM 
+*/
 
 // ROMアクセス関数 (合成時はMUX/LUTに展開される)
 function [8:0] rom_read;
@@ -259,6 +260,7 @@ function [8:0] rom_read;
         7'd62: rom_read=ROM_62; 7'd63: rom_read=ROM_63;
         7'd64: rom_read=ROM_64; 7'd65: rom_read=ROM_65;
         7'd66: rom_read=ROM_66; 7'd67: rom_read=ROM_67;
+/*
         7'd68: rom_read=ROM_68; 7'd69: rom_read=ROM_69;
         7'd70: rom_read=ROM_70; 7'd71: rom_read=ROM_71;
         7'd72: rom_read=ROM_72; 7'd73: rom_read=ROM_73;
@@ -277,7 +279,7 @@ function [8:0] rom_read;
         7'd98: rom_read=ROM_98; 7'd99: rom_read=ROM_99;
         7'd100: rom_read=ROM_100; 7'd101: rom_read=ROM_101;
         7'd102: rom_read=ROM_102; 7'd103: rom_read=ROM_103;
-        7'd104: rom_read=ROM_104;
+        7'd104: rom_read=ROM_104;*/
         default: rom_read = 9'h000;
     endcase
 endfunction
@@ -507,11 +509,11 @@ always @(posedge clk or negedge rst_n) begin
 
             S_PIX_LO_W: begin
                 if (!tx_busy && !tx_start) begin
-                    col_cnt <= (col_cnt == 9'd319) ? 9'd0 : col_cnt + 1'b1;
+                    col_cnt <= (col_cnt == 9'd319) ? 9'd0 : col_cnt + 9'b1;
                     if (pix_cnt == 17'd76_799)
                         state <= S_DONE;
                     else begin
-                        pix_cnt <= pix_cnt + 1'b1;
+                        pix_cnt <= pix_cnt + 17'b1;
                         state   <= S_PIX_CALC;
                     end
                 end
