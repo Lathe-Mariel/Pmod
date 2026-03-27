@@ -79,7 +79,7 @@ localparam [8:0]
     ROM_14 = 9'h155,  //                 DAT 0x55 (16bit RGB565)
     ROM_15 = 9'h0B1,  // Frame Rate      CMD
     ROM_16 = 9'h100,  //                 DAT 0x00
-    ROM_17 = 9'h118,  //                 DAT 0x1B  !
+    ROM_17 = 9'h11B,  //                 DAT 0x1B  !
     ROM_18 = 9'h0B6,  // Disp Func Ctrl  CMD
     ROM_19 = 9'h108,  //                 DAT 0x08
     ROM_20 = 9'h182,  //                 DAT 0x82
