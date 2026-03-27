@@ -58,8 +58,9 @@ wire rst_n = btn_r2;
 //     0x01 (SW Reset)  → 5ms 待機
 //     0x11 (Sleep Out) → 120ms 待機
 // ============================================================
-localparam [6:0] ROM_DEPTH = 7'd68;
-
+//localparam [6:0] ROM_DEPTH = 7'd68;
+localparam [6:0] ROM_DEPTH = 7'd105;
+/*
 localparam [8:0]
     ROM_00 = 9'h001,  // SW Reset        CMD
     ROM_01 = 9'h011,  // Sleep Out       CMD
@@ -105,6 +106,120 @@ localparam [8:0]
     ROM_64 = 9'h101,  ROM_65 = 9'h13F,
     ROM_66 = 9'h029,  // Display ON      CMD
     ROM_67 = 9'h02C;  // Memory Write    CMD (ピクセルデータ開始)
+*/
+
+localparam [8:0]
+ROM_00 = 9'h0CA,
+ROM_01 = 9'h1C3,
+ROM_02 = 9'h108,
+ROM_03 = 9'h150,
+ROM_04 = 9'h0CF, //LCD_POWERB 
+ROM_05 = 9'h100,
+ROM_06 = 9'h1C1,
+ROM_07 = 9'h130,
+ROM_08 = 9'h0ED, //LCD_POWER_SEQ 
+ROM_09 = 9'h164,
+ROM_10 = 9'h103,
+ROM_11 = 9'h112,
+ROM_12 = 9'h181,
+ROM_13 = 9'h0E8, //LCD_DTCA 
+ROM_14 = 9'h185,
+ROM_15 = 9'h100,
+ROM_16 = 9'h178,
+ROM_17 = 9'h0CB, //LCD_POWERA 
+ROM_18 = 9'h139,
+ROM_19 = 9'h12C,
+ROM_20 = 9'h100,
+ROM_21 = 9'h134,
+ROM_22 = 9'h102,
+ROM_23 = 9'h0F7, //LCD_PRC 
+ROM_24 = 9'h120,
+ROM_25 = 9'h0EA, //LCD_DTCB 
+ROM_26 = 9'h100,
+ROM_27 = 9'h100,
+ROM_28 = 9'h0B1, //LCD_FRMCTR1 
+ROM_29 = 9'h100,
+ROM_30 = 9'h11B,
+ROM_31 = 9'h0B6, //LCD_DFC 
+ROM_32 = 9'h10A,
+ROM_33 = 9'h1A2,
+ROM_34 = 9'h0C0, //LCD_POWER1 
+ROM_35 = 9'h110,
+ROM_36 = 9'h0C1, //LCD_POWER2 
+ROM_37 = 9'h110,
+ROM_38 = 9'h0C5, //LCD_VCOM1 
+ROM_39 = 9'h145,
+ROM_40 = 9'h115,
+ROM_41 = 9'h0C7, //LCD_VCOM2 
+ROM_42 = 9'h190,
+ROM_43 = 9'h036, //LCD_MAC 
+ROM_44 = 9'h1C8,
+ROM_45 = 9'h0F2, //LCD_3GAMMA_EN 
+ROM_46 = 9'h100,
+ROM_47 = 9'h0B0, //LCD_RGB_INTERFACE 
+ROM_48 = 9'h1C2,
+ROM_49 = 9'h0B6, //LCD_DFC 
+ROM_50 = 9'h10A,
+ROM_51 = 9'h1A7,
+ROM_52 = 9'h127,
+ROM_53 = 9'h104,
+
+ROM_54 = 9'h02A, //LCD_COLUMN_ADDR 
+ROM_55 = 9'h100,
+ROM_56 = 9'h100,
+ROM_57 = 9'h100,
+ROM_58 = 9'h1EF,
+
+ROM_59 = 9'h02B, //LCD_PAGE_ADDR 
+ROM_60 = 9'h100,
+ROM_61 = 9'h100,
+ROM_62 = 9'h101,
+ROM_63 = 9'h13F,
+ROM_64 = 9'h0F6, //LCD_INTERFACE 
+ROM_65 = 9'h101,
+ROM_66 = 9'h100,
+ROM_67 = 9'h106,
+
+ROM_68 = 9'h02C, //LCD_GRAM 
+
+ROM_69 = 9'h026, //LCD_GAMMA 
+ROM_70 = 9'h101, 
+
+ROM_71 = 9'h0E0, //LCD_PGAMMA 
+ROM_72 = 9'h10F,
+ROM_73 = 9'h129,
+ROM_74 = 9'h124,
+ROM_75 = 9'h10C,
+ROM_76 = 9'h10E,
+ROM_77 = 9'h109,
+ROM_78 = 9'h14E,
+ROM_79 = 9'h178,
+ROM_80 = 9'h13C,
+ROM_81 = 9'h109,
+ROM_82 = 9'h113,
+ROM_83 = 9'h105,
+ROM_84 = 9'h117,
+ROM_85 = 9'h111,
+ROM_86 = 9'h100,
+ROM_87 = 9'h0E1, //LCD_NGAMMA 
+ROM_88 = 9'h100,
+ROM_89 = 9'h116,
+ROM_90 = 9'h11B,
+ROM_91 = 9'h104,
+ROM_92 = 9'h111,
+ROM_93 = 9'h107,
+ROM_94 = 9'h131,
+ROM_95 = 9'h133,
+ROM_96 = 9'h142,
+ROM_97 = 9'h105,
+ROM_98 = 9'h10C,
+ROM_99 = 9'h10A,
+ROM_100 = 9'h128,
+ROM_101 = 9'h12F,
+ROM_102 = 9'h10F,
+
+ROM_103 = 9'h029, //Display ON
+ROM_104 = 9'h02C; //LCD_GRAM 
 
 // ROMアクセス関数 (合成時はMUX/LUTに展開される)
 function [8:0] rom_read;
@@ -144,6 +259,25 @@ function [8:0] rom_read;
         7'd62: rom_read=ROM_62; 7'd63: rom_read=ROM_63;
         7'd64: rom_read=ROM_64; 7'd65: rom_read=ROM_65;
         7'd66: rom_read=ROM_66; 7'd67: rom_read=ROM_67;
+        7'd68: rom_read=ROM_68; 7'd69: rom_read=ROM_69;
+        7'd70: rom_read=ROM_70; 7'd71: rom_read=ROM_71;
+        7'd72: rom_read=ROM_72; 7'd73: rom_read=ROM_73;
+        7'd74: rom_read=ROM_74; 7'd75: rom_read=ROM_75;
+        7'd76: rom_read=ROM_76; 7'd77: rom_read=ROM_77;
+        7'd78: rom_read=ROM_78; 7'd79: rom_read=ROM_79;
+        7'd80: rom_read=ROM_80; 7'd81: rom_read=ROM_81;
+        7'd82: rom_read=ROM_82; 7'd83: rom_read=ROM_83;
+        7'd84: rom_read=ROM_84; 7'd85: rom_read=ROM_85;
+        7'd86: rom_read=ROM_86; 7'd87: rom_read=ROM_87;
+        7'd88: rom_read=ROM_88; 7'd89: rom_read=ROM_89;
+        7'd90: rom_read=ROM_90; 7'd91: rom_read=ROM_91;
+        7'd92: rom_read=ROM_92; 7'd93: rom_read=ROM_93;
+        7'd94: rom_read=ROM_94; 7'd94: rom_read=ROM_95;
+        7'd96: rom_read=ROM_96; 7'd97: rom_read=ROM_97;
+        7'd98: rom_read=ROM_98; 7'd99: rom_read=ROM_99;
+        7'd100: rom_read=ROM_100; 7'd101: rom_read=ROM_101;
+        7'd102: rom_read=ROM_102; 7'd103: rom_read=ROM_103;
+        7'd104: rom_read=ROM_104;
         default: rom_read = 9'h000;
     endcase
 endfunction
