@@ -24,7 +24,7 @@ module lcd_test_top (
 wire clkout0;
 
 lcd_ctrl u_lcd_ctrl (
-    .clk      (clkout0),
+    .clk      (clk),
     .lcd_cs   (lcd_cs),
     .lcd_mosi (lcd_mosi),
     .lcd_sck  (lcd_sck),

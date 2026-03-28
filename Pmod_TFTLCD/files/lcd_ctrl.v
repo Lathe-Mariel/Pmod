@@ -6,17 +6,19 @@
 // Interface: 4-wire SPI (CS, DC, MOSI, SCK)
 // SPI clock: 50MHz / 4 = 12.5MHz
 //
+// RST : ボード側VCC固定 → SW Reset(0x01)コマンドで代替
+// BLK : ボード側VCC固定 → FPGA未接続
+// リセット: ユーザボタン H11 (押下=Low) で非同期リセット
+//
 // 表示内容:
 //   背景: 8色縦縞テストパターン (各40px × 8 = 320px)
-//   アニメーション: ウサギ画像 (40x40px) が斜め移動・壁で跳ね返る
-//                   0.1秒ごとに1px移動 (X+Y同時)
-//
-// リセット: ユーザボタン H11 (押下=Low) で非同期リセット
+//   中央: ウサギ画像 (40x40px, RGB565, img_rom.v より)
+//         配置位置: col 140~179, row 100~139
 // ============================================================
 
 module lcd_ctrl (
     input  wire clk,       // 50 MHz
-    input  wire btn_rst,   // ユーザボタン H11 (押下=Low)
+    input  wire btn_rst,   // ユーザボタン H11 (押下=Low, 非同期リセット)
     output reg  lcd_cs,    // G5  Chip Select (Low有効)
     output reg  lcd_dc,    // K11 Data/Command (RS)
     output reg  lcd_mosi,  // G8  SPI MOSI
@@ -24,7 +26,7 @@ module lcd_ctrl (
 );
 
 // ============================================================
-// ユーザボタン 2段同期化 + 非同期リセット生成
+// ユーザボタン 2段同期化 + リセット生成
 // ============================================================
 reg btn_r1, btn_r2;
 always @(posedge clk) begin
@@ -34,21 +36,14 @@ end
 wire rst_n = btn_r2;
 
 // ============================================================
-// 画像パラメータ
-//   LCD  : 320(col) x 240(row)
-//   画像 : 40x40px
-//   移動範囲: X=0..(320-40-1)=279, Y=0..(240-40-1)=199
-// ============================================================
-localparam [8:0] IMG_W    = 9'd40;
-localparam [7:0] IMG_H    = 8'd40;
-localparam [8:0] LCD_COLS = 9'd320;
-localparam [7:0] LCD_ROWS = 8'd240;
-localparam [8:0] X_MAX    = 9'd279;  // 320-40-1
-localparam [7:0] Y_MAX    = 8'd199;  // 240-40-1
-
-// ============================================================
 // 画像ROM インスタンス
 // ============================================================
+// 画像パラメータ (img_rom.v と一致させること)
+localparam [8:0] IMG_W  = 9'd40;
+localparam [7:0] IMG_H  = 8'd40;
+localparam [8:0] IMG_OX = 9'd140;  // LCD col 開始位置
+localparam [7:0] IMG_OY = 8'd100;  // LCD row 開始位置
+
 reg  [10:0] img_addr;
 wire [15:0] img_data;
 
@@ -59,40 +54,56 @@ img_rom u_img_rom (
 
 // ============================================================
 // 初期化シーケンス ROM
-// bit[8]=0 → CMD (DC=Low), bit[8]=1 → DAT (DC=High)
+// bit[8]=0 → コマンド (DC=Low)
+// bit[8]=1 → データ   (DC=High)
 // ============================================================
 localparam [6:0] ROM_DEPTH = 7'd68;
 
 localparam [8:0]
-    ROM_00 = 9'h001,  ROM_01 = 9'h011,
-    ROM_02 = 9'h0C0,  ROM_03 = 9'h123,
-    ROM_04 = 9'h0C1,  ROM_05 = 9'h110,
-    ROM_06 = 9'h0C5,  ROM_07 = 9'h13E,  ROM_08 = 9'h128,
-    ROM_09 = 9'h0C7,  ROM_10 = 9'h186,
-    ROM_11 = 9'h036,  ROM_12 = 9'h128,
-    ROM_13 = 9'h03A,  ROM_14 = 9'h155,
-    ROM_15 = 9'h0B1,  ROM_16 = 9'h100,  ROM_17 = 9'h11B,
-    ROM_18 = 9'h0B6,  ROM_19 = 9'h108,  ROM_20 = 9'h182,  ROM_21 = 9'h127,
-    ROM_22 = 9'h026,  ROM_23 = 9'h101,
-    ROM_24 = 9'h0E0,
+    ROM_00 = 9'h001,  // SW Reset        CMD
+    ROM_01 = 9'h011,  // Sleep Out       CMD
+    ROM_02 = 9'h0C0,  // Power Ctrl 1    CMD
+    ROM_03 = 9'h123,  //                 DAT 0x23
+    ROM_04 = 9'h0C1,  // Power Ctrl 2    CMD
+    ROM_05 = 9'h110,  //                 DAT 0x10
+    ROM_06 = 9'h0C5,  // VCOM Ctrl 1     CMD
+    ROM_07 = 9'h13E,  //                 DAT 0x3E
+    ROM_08 = 9'h128,  //                 DAT 0x28
+    ROM_09 = 9'h0C7,  // VCOM Ctrl 2     CMD
+    ROM_10 = 9'h186,  //                 DAT 0x86
+    ROM_11 = 9'h036,  // Mem Access Ctrl CMD
+    ROM_12 = 9'h128,  //                 DAT 0x28 (MV=1, BGR=1, landscape)
+    ROM_13 = 9'h03A,  // Pixel Format    CMD
+    ROM_14 = 9'h155,  //                 DAT 0x55 (RGB565)
+    ROM_15 = 9'h0B1,  // Frame Rate      CMD
+    ROM_16 = 9'h100,  //                 DAT 0x00
+    ROM_17 = 9'h11B,  //                 DAT 0x1B
+    ROM_18 = 9'h0B6,  // Disp Func Ctrl  CMD
+    ROM_19 = 9'h108,  //                 DAT 0x08
+    ROM_20 = 9'h182,  //                 DAT 0x82
+    ROM_21 = 9'h127,  //                 DAT 0x27
+    ROM_22 = 9'h026,  // Gamma Set       CMD
+    ROM_23 = 9'h101,  //                 DAT 0x01
+    ROM_24 = 9'h0E0,  // Pos Gamma       CMD
     ROM_25 = 9'h10F,  ROM_26 = 9'h131,  ROM_27 = 9'h12B,
     ROM_28 = 9'h10C,  ROM_29 = 9'h10E,  ROM_30 = 9'h108,
     ROM_31 = 9'h14E,  ROM_32 = 9'h1F1,  ROM_33 = 9'h137,
     ROM_34 = 9'h107,  ROM_35 = 9'h110,  ROM_36 = 9'h103,
     ROM_37 = 9'h10E,  ROM_38 = 9'h109,  ROM_39 = 9'h100,
-    ROM_40 = 9'h0E1,
+    ROM_40 = 9'h0E1,  // Neg Gamma       CMD
     ROM_41 = 9'h100,  ROM_42 = 9'h10E,  ROM_43 = 9'h114,
     ROM_44 = 9'h103,  ROM_45 = 9'h111,  ROM_46 = 9'h107,
     ROM_47 = 9'h131,  ROM_48 = 9'h1C1,  ROM_49 = 9'h148,
     ROM_50 = 9'h108,  ROM_51 = 9'h10F,  ROM_52 = 9'h10C,
     ROM_53 = 9'h131,  ROM_54 = 9'h136,  ROM_55 = 9'h10F,
-    ROM_56 = 9'h02A,                              // Column Addr Set (0~239)
+    ROM_56 = 9'h02A,  // Column Addr Set CMD (0~239)
     ROM_57 = 9'h100,  ROM_58 = 9'h100,
-    ROM_59 = 9'h101,  ROM_60 = 9'h13F,
-    ROM_61 = 9'h02B,                              // Row Addr Set (0~319)
+    ROM_59 = 9'h100,  ROM_60 = 9'h1EF,
+    ROM_61 = 9'h02B,  // Row Addr Set    CMD (0~319)
     ROM_62 = 9'h100,  ROM_63 = 9'h100,
-    ROM_64 = 9'h100,  ROM_65 = 9'h1EF,
-    ROM_66 = 9'h029,  ROM_67 = 9'h02C;
+    ROM_64 = 9'h101,  ROM_65 = 9'h13F,
+    ROM_66 = 9'h029,  // Display ON      CMD
+    ROM_67 = 9'h02C;  // Memory Write    CMD
 
 function [8:0] rom_read;
     input [6:0] addr;
@@ -136,7 +147,7 @@ function [8:0] rom_read;
 endfunction
 
 // ============================================================
-// カラーパレット (RGB565) - 8色縦縞背景
+// カラーパレット関数 (RGB565) - 8色縦縞背景
 // ============================================================
 function [15:0] get_color;
     input [8:0] col;
@@ -156,6 +167,7 @@ endfunction
 // 電源ON後 150ms 待機
 // ============================================================
 localparam [23:0] POWERON_WAIT = 24'd7_500_000;
+
 reg [23:0] poweron_cnt;
 reg        init_start;
 
@@ -216,88 +228,6 @@ always @(posedge clk or negedge rst_n) begin
 end
 
 // ============================================================
-// アニメーション: 画像位置管理
-//
-//   img_x : 画像左端のLCD列位置 (0 .. X_MAX=279)
-//   img_y : 画像上端のLCD行位置 (0 .. Y_MAX=199)
-//   dir_x : X方向 (1'b0=+1, 1'b1=-1)
-//   dir_y : Y方向 (1'b0=+1, 1'b1=-1)
-//
-//   move_pulse: 0.1秒ごとの1クロックパルス
-//               50MHz × 0.1s = 5,000,000サイクル
-//
-//   描画開始時 (S_FRAME_START) に位置を確定し、
-//   描画中は位置を変えない (テアリング防止)
-// ============================================================
-localparam [22:0] MOVE_PERIOD = 23'd2_000_000;
-
-reg [22:0] move_cnt;
-reg        move_pulse;
-
-always @(posedge clk or negedge rst_n) begin
-    if (!rst_n) begin
-        move_cnt   <= 23'd0;
-        move_pulse <= 1'b0;
-    end else begin
-        if (move_cnt == MOVE_PERIOD - 1'b1) begin
-            move_cnt   <= 23'd0;
-            move_pulse <= 1'b1;
-        end else begin
-            move_cnt   <= move_cnt + 1'b1;
-            move_pulse <= 1'b0;
-        end
-    end
-end
-
-// 画像位置レジスタ (描画開始時にスナップショット)
-reg [8:0] img_x;      // 現在のX位置 (描画用、動かない)
-reg [7:0] img_y;      // 現在のY位置 (描画用、動かない)
-reg [8:0] next_x;     // 次フレームのX位置
-reg [7:0] next_y;     // 次フレームのY位置
-reg       dir_x;      // 0=右方向, 1=左方向
-reg       dir_y;      // 0=下方向, 1=上方向
-
-// 位置更新ロジック (move_pulse ごとに next_x/next_y を更新)
-always @(posedge clk or negedge rst_n) begin
-    if (!rst_n) begin
-        next_x <= 9'd140;   // 初期位置: 中央付近
-        next_y <= 8'd100;
-        dir_x  <= 1'b0;    // 初期方向: 右下
-        dir_y  <= 1'b0;
-    end else if (move_pulse) begin
-        // X方向移動 & 跳ね返り
-        if (!dir_x) begin
-            if (next_x >= X_MAX) begin
-                next_x <= next_x - 9'd1;
-                dir_x  <= 1'b1;
-            end else
-                next_x <= next_x + 9'd1;
-        end else begin
-            if (next_x == 9'd0) begin
-                next_x <= next_x + 9'd1;
-                dir_x  <= 1'b0;
-            end else
-                next_x <= next_x - 9'd1;
-        end
-
-        // Y方向移動 & 跳ね返り
-        if (!dir_y) begin
-            if (next_y >= Y_MAX) begin
-                next_y <= next_y - 8'd1;
-                dir_y  <= 1'b1;
-            end else
-                next_y <= next_y + 8'd1;
-        end else begin
-            if (next_y == 8'd0) begin
-                next_y <= next_y + 8'd1;
-                dir_y  <= 1'b0;
-            end else
-                next_y <= next_y - 8'd1;
-        end
-    end
-end
-
-// ============================================================
 // メインステートマシン
 // ============================================================
 localparam [3:0]
@@ -306,32 +236,32 @@ localparam [3:0]
     S_INIT_WAIT  = 4'd2,
     S_SWRST_DLY  = 4'd3,
     S_SLPOUT_DLY = 4'd4,
-    S_FRAME_START= 4'd5,   // フレーム開始: 位置スナップショット
-    S_PIX_CALC   = 4'd6,   // ピクセル色決定
-    S_PIX_ADDR_W = 4'd7,   // img_rom 読み出し待ち (1サイクル)
-    S_PIX_HI_TX  = 4'd8,
-    S_PIX_HI_W   = 4'd9,
-    S_PIX_LO_TX  = 4'd10,
-    S_PIX_LO_W   = 4'd11,
-    S_FRAME_END  = 4'd12,  // フレーム完了: 次フレーム待機
-    S_NEXT_FRAME = 4'd13;  // Memory Write 再発行
+    S_PIX_CALC   = 4'd5,   // img_addr セット (背景はcur_color確定)
+    S_PIX_ADDR_W = 4'd11,  // img_rom 読み出し待ち (1サイクル, 画像のみ)
+    S_PIX_HI_TX  = 4'd6,
+    S_PIX_HI_W   = 4'd7,
+    S_PIX_LO_TX  = 4'd8,
+    S_PIX_LO_W   = 4'd9,
+    S_DONE       = 4'd10;
 
 reg [3:0]  state;
 reg [6:0]  init_idx;
 reg [23:0] dly_cnt;
-reg [16:0] pix_cnt;   // 0..76799
-reg [8:0]  col_cnt;   // 0..319
-reg [7:0]  row_cnt;   // 0..239
+reg [16:0] pix_cnt;   // 0..76799 (320×240)
+reg [8:0]  col_cnt;   // 0..319  (列: ILI9341のColumn方向)
+reg [7:0]  row_cnt;   // 0..239  (行: ILI9341のRow方向)
 reg [15:0] cur_color;
 
-// 画像領域判定 (描画中は img_x/img_y を使用)
-wire in_img_col = (col_cnt >= img_x) && (col_cnt < (img_x + {1'b0, IMG_W[7:0]}));
-wire in_img_row = (row_cnt >= img_y) && (row_cnt < (img_y + IMG_H));
+// 画像領域判定
+// ILI9341のMAC=0x28(MV=1,BGR=1): Column=320方向, Row=240方向
+// col_cnt → 画面の横(0~319), row_cnt → 画面の縦(0~239)
+wire in_img_col = (col_cnt >= {1'b0, IMG_OX}) && (col_cnt < ({1'b0, IMG_OX} + {1'b0, IMG_W}));
+wire in_img_row = (row_cnt >= IMG_OY)          && (row_cnt < (IMG_OY + IMG_H));
 wire in_image   = in_img_col && in_img_row;
 
-// 画像ROM アドレス (img_x/img_y 基準の相対座標)
-wire [7:0] img_rel_col = col_cnt[7:0] - img_x[7:0];
-wire [7:0] img_rel_row = row_cnt      - img_y;
+// 画像ROM アドレス計算
+wire [8:0] img_rel_col = col_cnt[8:0] - {1'b0, IMG_OX};
+wire [7:0] img_rel_row = row_cnt      - IMG_OY;
 
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
@@ -346,14 +276,11 @@ always @(posedge clk or negedge rst_n) begin
         tx_byte   <= 8'd0;
         tx_dc_reg <= 1'b0;
         img_addr  <= 11'd0;
-        img_x     <= 9'd140;
-        img_y     <= 8'd100;
     end else begin
         tx_start <= 1'b0;
 
         case (state)
 
-            // ---- 電源ON 150ms 待機 ----
             S_WAIT: begin
                 if (init_start) begin
                     init_idx <= 7'd0;
@@ -361,7 +288,6 @@ always @(posedge clk or negedge rst_n) begin
                 end
             end
 
-            // ---- 初期化シーケンス送信 ----
             S_INIT_TX: begin
                 if (init_idx < ROM_DEPTH) begin
                     if (!tx_busy && !tx_start) begin
@@ -370,7 +296,10 @@ always @(posedge clk or negedge rst_n) begin
                         state    <= S_INIT_WAIT;
                     end
                 end else begin
-                    state <= S_FRAME_START;
+                    pix_cnt <= 17'd0;
+                    col_cnt <= 9'd0;
+                    row_cnt <= 8'd0;
+                    state   <= S_PIX_CALC;
                 end
             end
 
@@ -388,49 +317,41 @@ always @(posedge clk or negedge rst_n) begin
             end
 
             S_SWRST_DLY: begin
-                if (dly_cnt == 24'd250_000)
-                    begin init_idx <= init_idx + 1'b1; state <= S_INIT_TX; end
-                else dly_cnt <= dly_cnt + 1'b1;
+                if (dly_cnt == 24'd250_000) begin
+                    init_idx <= init_idx + 1'b1; state <= S_INIT_TX;
+                end else dly_cnt <= dly_cnt + 1'b1;
             end
 
             S_SLPOUT_DLY: begin
-                if (dly_cnt == 24'd6_000_000)
-                    begin init_idx <= init_idx + 1'b1; state <= S_INIT_TX; end
-                else dly_cnt <= dly_cnt + 1'b1;
-            end
-
-            // ---- フレーム開始: 位置スナップショット ----
-            // next_x/next_y を img_x/img_y に取り込んで描画開始
-            S_FRAME_START: begin
-                img_x   <= next_x;
-                img_y   <= next_y;
-                pix_cnt <= 17'd0;
-                col_cnt <= 9'd0;
-                row_cnt <= 8'd0;
-                state   <= S_PIX_CALC;
+                if (dly_cnt == 24'd6_000_000) begin
+                    init_idx <= init_idx + 1'b1; state <= S_INIT_TX;
+                end else dly_cnt <= dly_cnt + 1'b1;
             end
 
             // ---- ピクセル色決定 ----
+            // ---- ピクセル色決定 ----
+            // img_rom は組み合わせ回路出力のため、img_addr セットと同時に img_data 確定。
+            // row*40 = (row<<5)+(row<<3) でシフト加算 (乗算器不要)
+            // S_PIX_CALC: img_addr をレジスタに書き込む
+            // img_rom は組み合わせ回路なので次クロックで img_data 確定
             S_PIX_CALC: begin
                 if (in_image) begin
-                    // row*40 + col  (40=32+8 → シフト加算)
                     img_addr <= (({3'b000, img_rel_row} << 5)
                               +  ({3'b000, img_rel_row} << 3))
-                              +  {3'b000, img_rel_col[7:0]};
-                    state    <= S_PIX_ADDR_W;  // 1サイクル待機
+                              +  {5'b00000, img_rel_col[5:0]};
+                    state    <= S_PIX_ADDR_W; // 1サイクル待ってから読む
                 end else begin
                     cur_color <= get_color(col_cnt);
                     state     <= S_PIX_HI_TX;
                 end
             end
 
-            // ---- img_rom 読み出し待ち ----
+            // S_PIX_ADDR_W: img_addr 確定後 img_data をラッチ
             S_PIX_ADDR_W: begin
                 cur_color <= img_data;
                 state     <= S_PIX_HI_TX;
             end
 
-            // ---- SPI 送信 (上位バイト) ----
             S_PIX_HI_TX: begin
                 if (!tx_busy && !tx_start) begin
                     tx_byte   <= cur_color[15:8];
@@ -444,7 +365,6 @@ always @(posedge clk or negedge rst_n) begin
                 if (!tx_busy && !tx_start) state <= S_PIX_LO_TX;
             end
 
-            // ---- SPI 送信 (下位バイト) ----
             S_PIX_LO_TX: begin
                 if (!tx_busy && !tx_start) begin
                     tx_byte   <= cur_color[7:0];
@@ -453,44 +373,25 @@ always @(posedge clk or negedge rst_n) begin
                     state     <= S_PIX_LO_W;
                 end
             end
-
-            // ---- カウンタ更新 ----
             S_PIX_LO_W: begin
                 if (!tx_busy && !tx_start) begin
-                    // 列・行カウンタ更新
+                    // カラム・行カウンタ更新
                     if (col_cnt == 9'd319) begin
                         col_cnt <= 9'd0;
                         row_cnt <= row_cnt + 8'd1;
                     end else
                         col_cnt <= col_cnt + 9'd1;
 
-                    if (pix_cnt == 17'd76_799) begin
-                        // フレーム完了
-                        state <= S_FRAME_END;
-                    end else begin
+                    if (pix_cnt == 17'd76_799)
+                        state <= S_DONE;
+                    else begin
                         pix_cnt <= pix_cnt + 17'd1;
                         state   <= S_PIX_CALC;
                     end
                 end
             end
 
-            // ---- フレーム完了: 次フレームのタイミング待ち ----
-            // move_pulse が来たら次フレームを開始
-            S_FRAME_END: begin
-                if (move_pulse)
-                    state <= S_NEXT_FRAME;
-            end
-
-            // ---- 次フレーム: Memory Write コマンド再発行 ----
-            // ILI9341 は 0x2C を送るとアドレスポインタが先頭に戻る
-            S_NEXT_FRAME: begin
-                if (!tx_busy && !tx_start) begin
-                    tx_byte   <= 8'h2C;   // Memory Write
-                    tx_dc_reg <= 1'b0;    // Command
-                    tx_start  <= 1'b1;
-                    state     <= S_FRAME_START;
-                end
-            end
+            S_DONE: begin end
 
             default: state <= S_WAIT;
         endcase

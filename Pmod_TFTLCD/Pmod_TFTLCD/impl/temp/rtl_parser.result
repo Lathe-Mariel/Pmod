@@ -12,8 +12,18 @@
     "InstLine" : 26,
     "InstName" : "u_lcd_ctrl",
     "ModuleFile" : "H:/git/Pmod/Pmod_TFTLCD/Pmod_TFTLCD/src/lcd_ctrl.v",
-    "ModuleLine" : 27,
-    "ModuleName" : "lcd_ctrl"
+    "ModuleLine" : 17,
+    "ModuleName" : "lcd_ctrl",
+    "SubInsts" : [
+     {
+      "InstFile" : "H:/git/Pmod/Pmod_TFTLCD/Pmod_TFTLCD/src/lcd_ctrl.v",
+      "InstLine" : 55,
+      "InstName" : "u_img_rom",
+      "ModuleFile" : "H:/git/Pmod/Pmod_TFTLCD/Pmod_TFTLCD/src/img_rom.v",
+      "ModuleLine" : 8,
+      "ModuleName" : "img_rom"
+     }
+    ]
    },
    {
     "InstFile" : "H:/git/Pmod/Pmod_TFTLCD/Pmod_TFTLCD/src/lcd_test_top.v",
