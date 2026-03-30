@@ -1,0 +1,29 @@
+FPGAデザインを作る
+LCDにテストパターンを表示する
+テストパターンは7色の縦じま
+[hardware]
+FPGA board:Tang Primer 25K
+LCD:Pmod-LCD-0.96-1.0
+
+IDE:GOWIN EDA
+HDL:Verilog
+
+Pmodのピン情報は次の通りです．
+Pmodポートの仕様
+
+Port1：         Pmod1　A11 CS
+　　　　　　　　Pmod2　E11 MOSI
+　　　　　　　　Pmod3　K11 DC
+　　　　　　　　Pmod4　L5  CLK
+　　　　　　　　Pmod5　A10 NC
+　　　　　　　　Pmod6　E10 NC
+　　　　　　　　Pmod7　L11 NC
+　　　　　　　　Pmod8　K5  RESET
+
+
+
+LCDモジュールの仕様：
+液晶ドライバ：ST7735S
+解像度：132x162
+I/F：4ラインシリアル
+色深度：RGB565

@@ -1,0 +1,38 @@
+//Copyright (C)2014-2024 Gowin Semiconductor Corporation.
+//All rights reserved.
+//File Title: Physical Constraints File
+//Tool Version: V1.9.9
+//Part Number: GW5A-LV25MG121NES
+//Device: GW5A-25
+//Device Version: A
+//Created Time: lcd_test
+
+// --- System clock (27 MHz onboard oscillator) ---
+IO_LOC "clk"   H11;
+IO_PORT "clk"  PULL_MODE=NONE IO_TYPE=LVCMOS33;
+
+// --- Reset button (active low) ---
+// Tang Primer 25K uses the onboard button S1
+IO_LOC "rst_n"  E10;
+IO_PORT "rst_n" PULL_MODE=UP IO_TYPE=LVCMOS33;
+
+// --- Pmod Port1 ---
+// Pmod1  A11 → CS
+IO_LOC "lcd_cs"   A11;
+IO_PORT "lcd_cs"  PULL_MODE=NONE IO_TYPE=LVCMOS33;
+
+// Pmod2  E11 → MOSI
+IO_LOC "lcd_mosi" E11;
+IO_PORT "lcd_mosi" PULL_MODE=NONE IO_TYPE=LVCMOS33;
+
+// Pmod3  K11 → DC
+IO_LOC "lcd_dc"   K11;
+IO_PORT "lcd_dc"  PULL_MODE=NONE IO_TYPE=LVCMOS33;
+
+// Pmod4  L5  → CLK
+IO_LOC "lcd_clk"  L5;
+IO_PORT "lcd_clk" PULL_MODE=NONE IO_TYPE=LVCMOS33;
+
+// Pmod8  K5  → RESET
+IO_LOC "lcd_rst"  K5;
+IO_PORT "lcd_rst" PULL_MODE=NONE IO_TYPE=LVCMOS33;
