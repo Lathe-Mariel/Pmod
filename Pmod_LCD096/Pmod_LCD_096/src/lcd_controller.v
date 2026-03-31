@@ -4,8 +4,8 @@
 // 4-wire SPI (CPOL=0, CPHA=0)
 // ============================================================
 module lcd_controller (
-    input  wire        clk,        // 27 MHz system clock
-    output  wire       spi_clk,    // SPI bit clock (~13.5 MHz)
+    input  wire        clk,        // 50 MHz system clock
+    input  wire        spi_clk,    // SPI bit clock (25 MHz)
     input  wire        rst_n,
 
     // LCD SPI signals
@@ -16,21 +16,16 @@ module lcd_controller (
 
     // Pixel interface
     output reg         pixel_req,
-    output reg  [8:0]  pixel_x,
-    output reg  [8:0]  pixel_y,
+    output reg  [7:0]  pixel_x,   // 0..159
+    output reg  [6:0]  pixel_y,   // 0..79
     input  wire [15:0] pixel_data
 );
 
-    Gowin_PLL instance_1(
-        .clkout0(spi_clk), //output clkout0
-        .clkin(clk) //input clkin
-    );
-
 // ----------------------------------------------------------
-// LCD dimensions
+// LCD dimensions  160 x 80
 // ----------------------------------------------------------
-localparam LCD_W = 9'd132;
-localparam LCD_H = 9'd162;
+localparam LCD_W = 8'd160;
+localparam LCD_H = 7'd80;
 
 // ----------------------------------------------------------
 // State machine
@@ -45,12 +40,10 @@ reg [3:0]  state;
 reg [3:0]  next_state;
 
 // ----------------------------------------------------------
-// Reset timing: hold RESET low ≥ 10 ms
-// At 27 MHz, 10 ms = 270 000 cycles  → use 20-bit counter
-// Power-on delay: 120 ms = 3 240 000 → use 22-bit counter
+// Reset / delay timing  @ 50 MHz
+//   15  ms =    750_000 cycles
+//   150 ms =  7_500_000 cycles  (23-bit counter needed)
 // ----------------------------------------------------------
-reg [21:0] delay_cnt;
-reg        delay_done;
 
 // ----------------------------------------------------------
 // SPI transmit engine
@@ -59,13 +52,8 @@ reg        delay_done;
 // spi_clk domain edge detection
 reg spi_clk_r0, spi_clk_r1;
 always @(posedge clk or negedge rst_n) begin
-    if (!rst_n) begin
-        spi_clk_r0 <= 0;
-        spi_clk_r1 <= 0;
-    end else begin
-        spi_clk_r0 <= spi_clk;
-        spi_clk_r1 <= spi_clk_r0;
-    end
+    if (!rst_n) begin spi_clk_r0 <= 0; spi_clk_r1 <= 0; end
+    else        begin spi_clk_r0 <= spi_clk; spi_clk_r1 <= spi_clk_r0; end
 end
 wire spi_rise = ( spi_clk_r0 & ~spi_clk_r1);
 wire spi_fall = (~spi_clk_r0 &  spi_clk_r1);
@@ -231,14 +219,14 @@ initial begin
     init_rom2[8]  = {DAT, 8'h03};
     init_rom2[9]  = {DAT, 8'h10};
 
-    // --- Column set (0..131) ---
+    // --- Column set (0..159 = 0x9F) ---
     init_rom2[10] = {CMD, 8'h2A};
     init_rom2[11] = {DAT, 8'h00};
     init_rom2[12] = {DAT, 8'h00};
     init_rom2[13] = {DAT, 8'h00};
-    init_rom2[14] = {DAT, 8'h83};   // 131
+    init_rom2[14] = {DAT, 8'h9F};   // 159
 
-    // --- Row set (0..161) ---
+    // --- Row set (0..79 = 0x4F) ---
     init_rom2[15] = {CMD, 8'h2B};
 end
 
@@ -247,7 +235,7 @@ initial begin
     init_rom3[0] = {DAT, 8'h00};
     init_rom3[1] = {DAT, 8'h00};
     init_rom3[2] = {DAT, 8'h00};
-    init_rom3[3] = {DAT, 8'hA1};   // 161
+    init_rom3[3] = {DAT, 8'h4F};   // 79
 
     // --- Display ON ---
     init_rom3[4] = {CMD, 8'h29};
@@ -270,16 +258,14 @@ reg [21:0] wait_cnt;
 reg        wait_active;
 
 // Special indices in ROM1 that require delays after them
-// Index 0 = SWRESET → need 150ms delay
-// Index 1 = SLPOUT  → need 120ms delay
-// 150ms @ 27MHz = 4_050_000 → 22 bits needed
-// 120ms @ 27MHz = 3_240_000
+// Index 0 = SWRESET → need 150ms delay  (7_500_000 @ 50MHz)
+// Index 1 = SLPOUT  → need 120ms delay  (6_000_000 @ 50MHz)
 
 reg        swreset_sent;
 reg        slpout_sent;
 
-// pixel counters
-reg [16:0] pixel_cnt;   // 132*162 = 21384 → 15 bits enough
+// pixel counters: 160*80 = 12800 → 14 bits
+reg [13:0] pixel_cnt;
 
 // ----------------------------------------------------------
 // Main FSM
@@ -299,7 +285,7 @@ localparam F_IDLE      = 4'd15;
 
 reg [8:0]  cur_entry;
 reg        tx_start_r;
-reg [21:0] dly_cnt;
+reg [22:0] dly_cnt;   // 23-bit: up to 8_388_607 @ 50 MHz ≈ 167 ms
 
 // tx_start pulse
 always @(posedge clk) tx_start <= tx_start_r & ~tx_busy;
@@ -309,20 +295,20 @@ always @(posedge clk or negedge rst_n) begin
         fsm         <= F_RESET_LO;
         lcd_rst     <= 1'b0;
         lcd_dc      <= 1'b0;
-        //lcd_cs      <= 1'b1;
-        //lcd_mosi    <= 1'b0;
+//        lcd_cs      <= 1'b1;
+//        lcd_mosi    <= 1'b0;
         tx_start_r  <= 1'b0;
         tx_16bit    <= 1'b0;
         tx_data     <= 16'd0;
         phase       <= PHASE_ROM1;
         byte_idx    <= 7'd0;
-        dly_cnt     <= 22'd0;
+        dly_cnt     <= 23'd0;
         swreset_sent<= 1'b0;
         slpout_sent <= 1'b0;
-        pixel_cnt   <= 17'd0;
+        pixel_cnt   <= 14'd0;
         pixel_req   <= 1'b0;
-        pixel_x     <= 9'd0;
-        pixel_y     <= 9'd0;
+        pixel_x     <= 8'd0;
+        pixel_y     <= 7'd0;
     end else begin
         tx_start_r <= 1'b0;
         pixel_req  <= 1'b0;
@@ -332,19 +318,19 @@ always @(posedge clk or negedge rst_n) begin
         // ---- Hardware reset: RST low for 15 ms ----
         F_RESET_LO: begin
             lcd_rst <= 1'b0;
-            dly_cnt <= dly_cnt + 22'd1;
-            if (dly_cnt == 22'd405_000) begin   // 15 ms
+            dly_cnt <= dly_cnt + 23'd1;
+            if (dly_cnt == 23'd750_000) begin   // 15 ms @ 50 MHz
                 lcd_rst <= 1'b1;
-                dly_cnt <= 22'd0;
+                dly_cnt <= 23'd0;
                 fsm     <= F_RESET_HI;
             end
         end
 
         // ---- RST high, wait 150 ms ----
         F_RESET_HI: begin
-            dly_cnt <= dly_cnt + 22'd1;
-            if (dly_cnt == 22'd4_050_000) begin // 150 ms
-                dly_cnt  <= 22'd0;
+            dly_cnt <= dly_cnt + 23'd1;
+            if (dly_cnt == 23'd7_500_000) begin // 150 ms @ 50 MHz
+                dly_cnt  <= 23'd0;
                 byte_idx <= 7'd0;
                 phase    <= PHASE_ROM1;
                 fsm      <= F_SEND_BYTE;
@@ -381,13 +367,13 @@ always @(posedge clk or negedge rst_n) begin
             if (phase == PHASE_ROM1) begin
                 if (byte_idx == 7'd0 && !swreset_sent) begin
                     swreset_sent <= 1'b1;
-                    dly_cnt <= 22'd0;
-                    fsm <= F_DELAY;      // 150ms
+                    dly_cnt <= 23'd0;
+                    fsm <= F_DELAY;      // 150ms @ 50MHz
                     byte_idx <= byte_idx + 7'd1;
                 end else if (byte_idx == 7'd1 && !slpout_sent) begin
                     slpout_sent <= 1'b1;
-                    dly_cnt <= 22'd0;
-                    fsm <= F_DELAY;      // 120ms
+                    dly_cnt <= 23'd0;
+                    fsm <= F_DELAY;      // 150ms @ 50MHz (conservative)
                     byte_idx <= byte_idx + 7'd1;
                 end else begin
                     byte_idx <= byte_idx + 7'd1;
@@ -418,13 +404,11 @@ always @(posedge clk or negedge rst_n) begin
             end
         end
 
-        // ---- Delay state (reused for SWRESET/SLPOUT) ----
+        // ---- Delay state (150 ms @ 50 MHz = 7_500_000) ----
         F_DELAY: begin
-            dly_cnt <= dly_cnt + 22'd1;
-            // SWRESET needs 150ms, SLPOUT 120ms
-            // Use 150ms (conservative) for both
-            if (dly_cnt == 22'd4_050_000) begin
-                dly_cnt <= 22'd0;
+            dly_cnt <= dly_cnt + 23'd1;
+            if (dly_cnt == 23'd7_500_000) begin
+                dly_cnt <= 23'd0;
                 fsm     <= F_SEND_BYTE;
             end
         end
@@ -438,7 +422,7 @@ always @(posedge clk or negedge rst_n) begin
         // ---- Pixel: send 16-bit RGB565 ----
         F_PIXEL_TX: begin
             lcd_dc     <= 1'b1;
-            //lcd_cs     <= 1'b0;
+//            lcd_cs     <= 1'b0;
             tx_data    <= pixel_data;
             tx_16bit   <= 1'b1;
             tx_start_r <= 1'b1;
@@ -447,28 +431,27 @@ always @(posedge clk or negedge rst_n) begin
 
         F_PIXEL_NXT: begin
             if (!tx_busy && !tx_start_r) begin
-                pixel_cnt <= pixel_cnt + 17'd1;
+                pixel_cnt <= pixel_cnt + 14'd1;
                 // Advance x,y
-                if (pixel_x == LCD_W - 9'd1) begin
-                    pixel_x <= 9'd0;
-                    if (pixel_y == LCD_H - 9'd1)
-                        pixel_y <= 9'd0;   // wrap
+                if (pixel_x == LCD_W - 8'd1) begin
+                    pixel_x <= 8'd0;
+                    if (pixel_y == LCD_H - 7'd1)
+                        pixel_y <= 7'd0;   // wrap
                     else
-                        pixel_y <= pixel_y + 9'd1;
+                        pixel_y <= pixel_y + 7'd1;
                 end else begin
-                    pixel_x <= pixel_x + 9'd1;
+                    pixel_x <= pixel_x + 8'd1;
                 end
 
-                if (pixel_cnt == 17'd21383) begin
-                    // Full frame done → loop forever
-                    // Re-issue RAMWR (0x2C) and restart
+                if (pixel_cnt == 14'd12799) begin   // 160*80 - 1
+                    // Full frame done → re-issue RAMWR and loop
                     lcd_dc     <= 1'b0;
                     tx_data    <= 16'h002C;
                     tx_16bit   <= 1'b0;
                     tx_start_r <= 1'b1;
-                    pixel_cnt  <= 17'd0;
-                    pixel_x    <= 9'd0;
-                    pixel_y    <= 9'd0;
+                    pixel_cnt  <= 14'd0;
+                    pixel_x    <= 8'd0;
+                    pixel_y    <= 7'd0;
                     fsm        <= F_PIXEL_REQ;
                 end else begin
                     fsm <= F_PIXEL_REQ;

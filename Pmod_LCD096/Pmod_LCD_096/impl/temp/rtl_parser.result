@@ -1,29 +1,27 @@
 [
  {
+  "InstFile" : "H:/git/Pmod/Pmod_LCD096/Pmod_LCD_096/src/gowin_pll/gowin_pll.v",
+  "InstLine" : 10,
+  "InstName" : "Gowin_PLL",
+  "ModuleFile" : "H:/git/Pmod/Pmod_LCD096/Pmod_LCD_096/src/gowin_pll/gowin_pll.v",
+  "ModuleLine" : 10,
+  "ModuleName" : "Gowin_PLL"
+ },
+ {
   "InstFile" : "H:/git/Pmod/Pmod_LCD096/Pmod_LCD_096/src/top.v",
-  "InstLine" : 5,
+  "InstLine" : 7,
   "InstName" : "top",
   "ModuleFile" : "H:/git/Pmod/Pmod_LCD096/Pmod_LCD_096/src/top.v",
-  "ModuleLine" : 5,
+  "ModuleLine" : 7,
   "ModuleName" : "top",
   "SubInsts" : [
    {
     "InstFile" : "H:/git/Pmod/Pmod_LCD096/Pmod_LCD_096/src/top.v",
-    "InstLine" : 26,
+    "InstLine" : 46,
     "InstName" : "u_ctrl",
     "ModuleFile" : "H:/git/Pmod/Pmod_LCD096/Pmod_LCD_096/src/lcd_controller.v",
     "ModuleLine" : 6,
-    "ModuleName" : "lcd_controller",
-    "SubInsts" : [
-     {
-      "InstFile" : "H:/git/Pmod/Pmod_LCD096/Pmod_LCD_096/src/lcd_controller.v",
-      "InstLine" : 24,
-      "InstName" : "instance_1",
-      "ModuleFile" : "H:/git/Pmod/Pmod_LCD096/Pmod_LCD_096/src/gowin_pll/gowin_pll.v",
-      "ModuleLine" : 10,
-      "ModuleName" : "Gowin_PLL"
-     }
-    ]
+    "ModuleName" : "lcd_controller"
    }
   ]
  }

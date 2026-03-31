@@ -3,13 +3,11 @@ Running parser ...
 Analyzing Verilog file 'H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\src\gowin_pll\gowin_pll.v'
 Analyzing Verilog file 'H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\src\lcd_controller.v'
 Analyzing Verilog file 'H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\src\top.v'
-Undeclared symbol 'spi_clk', assumed default net type 'wire'("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\src\top.v":28)
-Compiling module 'top'("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\src\top.v":5)
+Compiling module 'top'("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\src\top.v":7)
 Compiling module 'lcd_controller'("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\src\lcd_controller.v":6)
-Extracting RAM for identifier 'init_rom'("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\src\lcd_controller.v":114)
-Extracting RAM for identifier 'init_rom2'("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\src\lcd_controller.v":221)
-Extracting RAM for identifier 'init_rom3'("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\src\lcd_controller.v":245)
-Compiling module 'Gowin_PLL'("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\src\gowin_pll\gowin_pll.v":10)
+Extracting RAM for identifier 'init_rom'("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\src\lcd_controller.v":102)
+Extracting RAM for identifier 'init_rom2'("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\src\lcd_controller.v":209)
+Extracting RAM for identifier 'init_rom3'("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\src\lcd_controller.v":233)
 NOTE  (EX0101) : Current top module is "top"
 [5%] Running netlist conversion ...
 Running device independent optimization ...
