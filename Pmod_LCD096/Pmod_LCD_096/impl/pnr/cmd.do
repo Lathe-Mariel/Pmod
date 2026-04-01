@@ -3,7 +3,7 @@
 -pn GW5A-LV25MG121NES
 -cst H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\src\lcd_test.cst
 -cfg H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\impl\pnr\device.cfg
--sdc H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\src\lcd_test.sdc
+-gao_crc 1001100100110010
 -bit
 -tr
 -ph
@@ -17,3 +17,4 @@
 -route_maxfan 23
 -global_freq 100.000
 -enable_dsrm 0
+-rtl_gao

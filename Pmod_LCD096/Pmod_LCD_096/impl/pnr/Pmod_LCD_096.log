@@ -7,6 +7,8 @@ Running placement......
 [10%] Placement Phase 0 completed
 [20%] Placement Phase 1 completed
 [30%] Placement Phase 2 completed
+WARN  (TA1132) :  'clk' was determined to be a clock but was not created.
+WARN  (TA1132) :  'tck_pad_i' was determined to be a clock but was not created.
 [50%] Placement Phase 3 completed
 Running routing......
 [60%] Routing Phase 0 completed
@@ -25,5 +27,5 @@ Generate file "H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\impl\pnr\Pmod_LCD_096.pin.ht
 Generate file "H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\impl\pnr\Pmod_LCD_096.rpt.html" completed
 Generate file "H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\impl\pnr\Pmod_LCD_096.rpt.txt" completed
 Generate file "H:\git\Pmod\Pmod_LCD096\Pmod_LCD_096\impl\pnr\Pmod_LCD_096.tr.html" completed
-Wed Apr  1 02:26:03 2026
+Thu Apr  2 02:14:41 2026
 
