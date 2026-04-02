@@ -1,0 +1,185 @@
+Timing Summary
+==============
+
+   POST-ROUTE
+
+         Group  No. Clocks  No. Clock Pairs  WNS(ps)   TNS(ps)  TNS Endpoints      
+   -----------  ----------  ---------------  -------   -------  -------------      
+    <UDEF_clk>           1                1   -23173  -3432018            362      
+
+
+
+
+Clocks
+======
+
+            Clock    Clock net        Group  Constrained Period(ps)      Waveform(ps)   Achievable Period(ps)  Achievable Frequency(MHz)
+   --------------  -----------  -----------  ----------------------  -----------------  ---------------------  -------------------------
+              clk          clk   <UDEF_clk>           (auto) 2000            (0,1000)                  25172                     39.727 
+
+
+
+
+Clock Relationships
+===================
+
+       From Clock        To Clock               Group    Endpoints     WNS(ps)    TNS(ps)  TNS Endpoints
+   --------------  --------------  ------------------  -----------  ----------  ---------  -------------
+              clk             clk          <UDEF_clk>          362      -23173   -3432018            362
+
+
+
+
+Timing Details for Clock Pair clk and clk
+=========================================
+
+       From Clock        To Clock               Group    Endpoints     WNS(ps)    TNS(ps)  TNS Endpoints
+   --------------  --------------  ------------------  -----------  ----------  ---------  -------------
+              clk             clk          <UDEF_clk>          362      -23173   -3432018            362
+
+   Slack (not met):                        -23173ps
+     Path type:                               SETUP
+     Group:                              <UDEF_clk>
+     Launching clock:                           clk (rising edge)
+     Capturing clock:                           clk (rising edge)
+
+     Requested period:                       2000ps
+   + Delay of the capturing clock:              0ps
+   - Clock uncertainty:                         0ps
+   = Required time:                          2000ps
+   - Propagation time:                      25173ps (76.1% logic, 23.9% route, logic stage 6)
+   - Delay of the launching clock:              0ps
+   = Slack:                                -23173ps
+
+   Instance/Pin or Net Name                                                                               Type         ID     Location or Fanout   Delay(ps)  Edge  Arrival Time(ps)
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   clk                                                                                                    CLOCK-PORT    -                      -     launch     r               0   
+   clk                                                                                                    Clock net    93          (fanout=1234)          0                     -   
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/CLK                              RBB_6L       23  [TILE 0 0, RBB 19 22]          -     r               0   
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/BQ                               RBB_6L       23  [TILE 0 0, RBB 19 22]       2700     r            2700   
+   sr_bit_cnt[1]                                                                                          Net          73             (fanout=1)       1239                     -   
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/B1                               RBB_6L       23  [TILE 0 0, RBB 19 22]          -     r            3939   
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/CMUX                             RBB_6L       23  [TILE 0 0, RBB 19 22]       3300     r            7239   
+   $auto$alumacc.cc:485:replace_alu$1665.Y[2]                                                             Net          91             (fanout=1)       1196                     -   
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/D2                               RBB_6L       23  [TILE 0 0, RBB 19 22]          -     r            8435   
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/DMUX                             RBB_6L       23  [TILE 0 0, RBB 19 22]       3200     r           11635   
+   $techmap8771$abc$8725$lut$auto$opt_dff.cc:219:make_patterns_logic$1596.A[1]                            Net         186             (fanout=4)          0                     -   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/B2                                                             RBB_6L       39  [TILE 0 0, RBB 16 22]          -     r           11635   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/B                                                              RBB_6L       39  [TILE 0 0, RBB 16 22]       1800     r           13435   
+   $techmap8772$auto$abc9_ops.cc:1550:reintegrate$8747.A[1]                                               Net         187             (fanout=9)       1196                     -   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/C4                                                             RBB_6L       39  [TILE 0 0, RBB 16 22]          -     r           14631   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/CMUX                                                           RBB_6L       39  [TILE 0 0, RBB 16 22]       2350     r           16981   
+   $abc$8725$auto$opt_dff.cc:219:make_patterns_logic$1603                                                 Net         158             (fanout=7)       1196                     -   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/C3                                                             RBB_6L       39  [TILE 0 0, RBB 16 22]          -     r           18177   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/C                                                              RBB_6L       39  [TILE 0 0, RBB 16 22]       1800     r           19977   
+   $abc$8725$auto$rtlil.cc:2660:NotGate$5451_SRCE_$abc$8725$auto$opt_dff.cc:219:make_patterns_logic$1603  Net         355             (fanout=1)       1196                     -   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/A6                                                             RBB_6L       39  [TILE 0 0, RBB 16 22]          -     r           21173   
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   $auto$abc9_ops.cc:1550:reintegrate$8730/CLK                                                            RBB_6L       39  [TILE 0 0, RBB 16 22]       4000     r           25173   
+   clk                                                                                                    Clock net    93          (fanout=1234)          0                     -   
+   clk                                                                                                    CLOCK-PORT    -                      -    capture     r           25173   
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+   Slack (not met):                        -23173ps
+     Path type:                               SETUP
+     Group:                              <UDEF_clk>
+     Launching clock:                           clk (rising edge)
+     Capturing clock:                           clk (rising edge)
+
+     Requested period:                       2000ps
+   + Delay of the capturing clock:              0ps
+   - Clock uncertainty:                         0ps
+   = Required time:                          2000ps
+   - Propagation time:                      25173ps (76.1% logic, 23.9% route, logic stage 6)
+   - Delay of the launching clock:              0ps
+   = Slack:                                -23173ps
+
+   Instance/Pin or Net Name                                                                               Type         ID     Location or Fanout   Delay(ps)  Edge  Arrival Time(ps)
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   clk                                                                                                    CLOCK-PORT    -                      -     launch     r               0   
+   clk                                                                                                    Clock net    93          (fanout=1234)          0                     -   
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/CLK                              RBB_6L       23  [TILE 0 0, RBB 19 22]          -     r               0   
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/BQ                               RBB_6L       23  [TILE 0 0, RBB 19 22]       2700     r            2700   
+   sr_bit_cnt[1]                                                                                          Net          73             (fanout=1)       1239                     -   
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/B1                               RBB_6L       23  [TILE 0 0, RBB 19 22]          -     r            3939   
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/CMUX                             RBB_6L       23  [TILE 0 0, RBB 19 22]       3300     r            7239   
+   $auto$alumacc.cc:485:replace_alu$1665.Y[2]                                                             Net          91             (fanout=1)       1196                     -   
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/D2                               RBB_6L       23  [TILE 0 0, RBB 19 22]          -     r            8435   
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/DMUX                             RBB_6L       23  [TILE 0 0, RBB 19 22]       3200     r           11635   
+   $techmap8771$abc$8725$lut$auto$opt_dff.cc:219:make_patterns_logic$1596.A[1]                            Net         186             (fanout=4)          0                     -   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/B2                                                             RBB_6L       39  [TILE 0 0, RBB 16 22]          -     r           11635   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/B                                                              RBB_6L       39  [TILE 0 0, RBB 16 22]       1800     r           13435   
+   $techmap8772$auto$abc9_ops.cc:1550:reintegrate$8747.A[1]                                               Net         187             (fanout=9)       1196                     -   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/C4                                                             RBB_6L       39  [TILE 0 0, RBB 16 22]          -     r           14631   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/CMUX                                                           RBB_6L       39  [TILE 0 0, RBB 16 22]       2350     r           16981   
+   $abc$8725$auto$opt_dff.cc:219:make_patterns_logic$1603                                                 Net         158             (fanout=7)       1196                     -   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/A3                                                             RBB_6L       39  [TILE 0 0, RBB 16 22]          -     r           18177   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/A                                                              RBB_6L       39  [TILE 0 0, RBB 16 22]       1800     r           19977   
+   $abc$8725$auto$rtlil.cc:2661:AndGate$5555_SRCE_$abc$8725$auto$opt_dff.cc:219:make_patterns_logic$1603  Net         356             (fanout=1)       1196                     -   
+   $abc$8725$lut$techmap$shl$../src/main.v:303$1179.$3\buffer[7:0]/A6                                     RBB_6L       40  [TILE 0 0, RBB 16 20]          -     r           21173   
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   $abc$8725$lut$techmap$shl$../src/main.v:303$1179.$3\buffer[7:0]/CLK                                    RBB_6L       40  [TILE 0 0, RBB 16 20]       4000     r           25173   
+   clk                                                                                                    Clock net    93          (fanout=1234)          0                     -   
+   clk                                                                                                    CLOCK-PORT    -                      -    capture     r           25173   
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+   Slack (not met):                        -23173ps
+     Path type:                               SETUP
+     Group:                              <UDEF_clk>
+     Launching clock:                           clk (rising edge)
+     Capturing clock:                           clk (rising edge)
+
+     Requested period:                       2000ps
+   + Delay of the capturing clock:              0ps
+   - Clock uncertainty:                         0ps
+   = Required time:                          2000ps
+   - Propagation time:                      25173ps (76.1% logic, 23.9% route, logic stage 6)
+   - Delay of the launching clock:              0ps
+   = Slack:                                -23173ps
+
+   Instance/Pin or Net Name                                                                               Type         ID     Location or Fanout   Delay(ps)  Edge  Arrival Time(ps)
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   clk                                                                                                    CLOCK-PORT    -                      -     launch     r               0   
+   clk                                                                                                    Clock net    93          (fanout=1234)          0                     -   
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/CLK                              RBB_6L       23  [TILE 0 0, RBB 19 22]          -     r               0   
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/BQ                               RBB_6L       23  [TILE 0 0, RBB 19 22]       2700     r            2700   
+   sr_bit_cnt[1]                                                                                          Net          73             (fanout=1)       1239                     -   
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/B1                               RBB_6L       23  [TILE 0 0, RBB 19 22]          -     r            3939   
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/CMUX                             RBB_6L       23  [TILE 0 0, RBB 19 22]       3300     r            7239   
+   $auto$alumacc.cc:485:replace_alu$1665.Y[2]                                                             Net          91             (fanout=1)       1196                     -   
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/D2                               RBB_6L       23  [TILE 0 0, RBB 19 22]          -     r            8435   
+   $auto$alumacc.cc:485:replace_alu$1665.genblk1.slice[0].genblk1.carry4/DMUX                             RBB_6L       23  [TILE 0 0, RBB 19 22]       3200     r           11635   
+   $techmap8771$abc$8725$lut$auto$opt_dff.cc:219:make_patterns_logic$1596.A[1]                            Net         186             (fanout=4)          0                     -   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/B2                                                             RBB_6L       39  [TILE 0 0, RBB 16 22]          -     r           11635   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/B                                                              RBB_6L       39  [TILE 0 0, RBB 16 22]       1800     r           13435   
+   $techmap8772$auto$abc9_ops.cc:1550:reintegrate$8747.A[1]                                               Net         187             (fanout=9)       1196                     -   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/B4                                                             RBB_6L       39  [TILE 0 0, RBB 16 22]          -     r           14631   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/BMUX                                                           RBB_6L       39  [TILE 0 0, RBB 16 22]       2350     r           16981   
+   $abc$8725$auto$rtlil.cc:2661:AndGate$5555                                                              Net         170             (fanout=2)       1196                     -   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/A1                                                             RBB_6L       39  [TILE 0 0, RBB 16 22]          -     r           18177   
+   $auto$abc9_ops.cc:1550:reintegrate$8730/A                                                              RBB_6L       39  [TILE 0 0, RBB 16 22]       1800     r           19977   
+   $abc$8725$auto$rtlil.cc:2661:AndGate$5555_SRCE_$abc$8725$auto$opt_dff.cc:219:make_patterns_logic$1603  Net         356             (fanout=1)       1196                     -   
+   $abc$8725$lut$techmap$shl$../src/main.v:303$1179.$3\buffer[7:0]/A6                                     RBB_6L       40  [TILE 0 0, RBB 16 20]          -     r           21173   
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   $abc$8725$lut$techmap$shl$../src/main.v:303$1179.$3\buffer[7:0]/CLK                                    RBB_6L       40  [TILE 0 0, RBB 16 20]       4000     r           25173   
+   clk                                                                                                    Clock net    93          (fanout=1234)          0                     -   
+   clk                                                                                                    CLOCK-PORT    -                      -    capture     r           25173   
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
