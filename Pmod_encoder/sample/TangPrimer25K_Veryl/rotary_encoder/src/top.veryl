@@ -1,0 +1,227 @@
+module Top #(
+    param CLK_HZ          : u32 = 50_000_000,
+    param ENCODER_FILTER  : u32 = 16_384    ,
+    param SCAN_DIVIDER_MAX: u32 = 8_333     ,
+) (
+    i_clk       : input  clock   ,
+    i_enc_a     : input  logic   ,
+    i_enc_b     : input  logic   ,
+    i_push_sw   : input  reset   ,
+    i_slide_sw  : input  logic   ,
+    o_seg_anode : output logic<8>,
+    o_digit_cath: output logic<6>,
+) {
+    var enc_a_meta      : logic    ;
+    var enc_a_sync      : logic    ;
+    var enc_b_meta      : logic    ;
+    var enc_b_sync      : logic    ;
+    var slide_meta      : logic    ;
+    var slide_sync      : logic    ;
+    var enc_raw         : logic<2> ;
+    var enc_stable      : logic<2> ;
+    var enc_stable_prev : logic<2> ;
+    var enc_filter_count: logic<15>;
+    var scan_count      : logic<14>;
+    var scan_digit      : logic<3> ;
+    var digit0          : logic<4> ;
+    var digit1          : logic<4> ;
+    var digit2          : logic<4> ;
+    var digit3          : logic<4> ;
+    var digit4          : logic<4> ;
+    var digit5          : logic<4> ;
+    var current_digit   : logic<4> ;
+    var step_up         : logic    ;
+    var step_down       : logic    ;
+
+    assign enc_raw = {enc_a_sync, enc_b_sync};
+
+    always_ff (i_clk, i_push_sw) {
+        if_reset {
+            enc_a_meta = 0;
+            enc_a_sync = 0;
+            enc_b_meta = 0;
+            enc_b_sync = 0;
+            slide_meta = 0;
+            slide_sync = 0;
+        } else {
+            enc_a_meta = i_enc_a;
+            enc_a_sync = enc_a_meta;
+            enc_b_meta = i_enc_b;
+            enc_b_sync = enc_b_meta;
+            slide_meta = i_slide_sw;
+            slide_sync = slide_meta;
+        }
+    }
+
+    always_ff (i_clk, i_push_sw) {
+        if_reset {
+            enc_stable       = 0;
+            enc_filter_count = 0;
+        } else if enc_raw == enc_stable {
+            enc_filter_count = 0;
+        } else if enc_filter_count == (ENCODER_FILTER - 1) {
+            enc_stable       = enc_raw;
+            enc_filter_count = 0;
+        } else {
+            enc_filter_count += 1;
+        }
+    }
+
+    always_comb {
+        step_up   = 0;
+        step_down = 0;
+
+        case {enc_stable_prev, enc_stable} {
+            4'b0001, 4'b0111, 4'b1110, 4'b1000: step_up   = ~slide_sync;
+            4'b0010, 4'b1011, 4'b1101, 4'b0100: step_down = ~slide_sync;
+            default                           : {}
+        }
+
+        case {enc_stable_prev, enc_stable} {
+            4'b0001, 4'b0111, 4'b1110, 4'b1000: step_down = slide_sync;
+            4'b0010, 4'b1011, 4'b1101, 4'b0100: step_up   = slide_sync;
+            default                           : {}
+        }
+    }
+
+    always_ff (i_clk, i_push_sw) {
+        if_reset {
+            enc_stable_prev = 0;
+            digit0          = 0;
+            digit1          = 0;
+            digit2          = 0;
+            digit3          = 0;
+            digit4          = 0;
+            digit5          = 0;
+        } else {
+            enc_stable_prev = enc_stable;
+
+            if step_up {
+                if digit0 == 9 {
+                    digit0 = 0;
+                    if digit1 == 9 {
+                        digit1 = 0;
+                        if digit2 == 9 {
+                            digit2 = 0;
+                            if digit3 == 9 {
+                                digit3 = 0;
+                                if digit4 == 9 {
+                                    digit4 = 0;
+                                    if digit5 == 9 {
+                                        digit5 = 0;
+                                    } else {
+                                        digit5 += 1;
+                                    }
+                                } else {
+                                    digit4 += 1;
+                                }
+                            } else {
+                                digit3 += 1;
+                            }
+                        } else {
+                            digit2 += 1;
+                        }
+                    } else {
+                        digit1 += 1;
+                    }
+                } else {
+                    digit0 += 1;
+                }
+            } else if step_down {
+                if digit0 == 0 {
+                    digit0 = 9;
+                    if digit1 == 0 {
+                        digit1 = 9;
+                        if digit2 == 0 {
+                            digit2 = 9;
+                            if digit3 == 0 {
+                                digit3 = 9;
+                                if digit4 == 0 {
+                                    digit4 = 9;
+                                    if digit5 == 0 {
+                                        digit5 = 9;
+                                    } else {
+                                        digit5 -= 1;
+                                    }
+                                } else {
+                                    digit4 -= 1;
+                                }
+                            } else {
+                                digit3 -= 1;
+                            }
+                        } else {
+                            digit2 -= 1;
+                        }
+                    } else {
+                        digit1 -= 1;
+                    }
+                } else {
+                    digit0 -= 1;
+                }
+            }
+        }
+    }
+
+    always_ff (i_clk, i_push_sw) {
+        if_reset {
+            scan_count = 0;
+            scan_digit = 0;
+        } else if scan_count == (SCAN_DIVIDER_MAX - 1) {
+            scan_count = 0;
+            if scan_digit == 5 {
+                scan_digit = 0;
+            } else {
+                scan_digit += 1;
+            }
+        } else {
+            scan_count += 1;
+        }
+    }
+
+    always_comb {
+        current_digit = 0;
+        o_digit_cath  = 6'b111111;
+
+        case scan_digit {
+            0: {
+                current_digit = digit0;
+                o_digit_cath  = 6'b111110;
+            }
+            1: {
+                current_digit = digit1;
+                o_digit_cath  = 6'b111101;
+            }
+            2: {
+                current_digit = digit2;
+                o_digit_cath  = 6'b111011;
+            }
+            3: {
+                current_digit = digit3;
+                o_digit_cath  = 6'b110111;
+            }
+            4: {
+                current_digit = digit4;
+                o_digit_cath  = 6'b101111;
+            }
+            5: {
+                current_digit = digit5;
+                o_digit_cath  = 6'b011111;
+            }
+            default: {}
+        }
+
+        case current_digit {
+            0      : o_seg_anode = 8'b00111111;
+            1      : o_seg_anode = 8'b00000110;
+            2      : o_seg_anode = 8'b01011011;
+            3      : o_seg_anode = 8'b01001111;
+            4      : o_seg_anode = 8'b01100110;
+            5      : o_seg_anode = 8'b01101101;
+            6      : o_seg_anode = 8'b01111101;
+            7      : o_seg_anode = 8'b00000111;
+            8      : o_seg_anode = 8'b01111111;
+            9      : o_seg_anode = 8'b01101111;
+            default: o_seg_anode = 8'b00000000;
+        }
+    }
+}
