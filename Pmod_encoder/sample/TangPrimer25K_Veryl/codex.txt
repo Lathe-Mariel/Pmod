@@ -1,0 +1,54 @@
+FPGAデザイン
+
+## 使用するHDL
+Veryl
+
+## 使用するFPGAボード
+Tang Primer 25K（Sipeed）
+
+## アプリケーション
+ロータリエンコーダの回転を読み取って，6桁の7セグLEDモジュールに10進数で表示する
+
+## ハードウェア
+### Rotary Encoder
+Pmod経由で接続するロータリエンコーダ・モジュールPmod ENC(Digilent)
+プッシュスイッチ付き
+
+#### ピン接続
+Pmodコネクタ3（J6）
+FPGA | Pmod | エンコーダ
+G5 | 1 | A相
+G8 | 2 | B相
+H7 | 3 | Push SW
+J5 | 4 | slide SW
+F5 | 5 | none
+G7 | 6 | none
+H8 | 7 | none
+H5 | 8 | none
+
+### 7Segment LED
+Pmodを2ポート使う自作モジュール
+LEDデバイスの型式：OSL60362-LR
+
+#### ピン接続
+Pmodコネクタ1（J4）
+FPGA | Pmod | 7Segment LED(Port1)
+G10 | 1 | Anode_A
+D10 | 2 | Anode_B
+B10 | 3 | Anode_C
+C10 | 4 | Anode_D
+G11 | 5 | Anode_E
+D11 | 6 | Anode_F
+B11 | 7 | Anode_G
+C11 | 8 | Anode_DP
+
+Pmodコネクタ2（J5）
+FPGA | Pmod | 7Segment LED(Port2)
+A10 | 1 | Cathode1
+E10 | 2 | Cathode2
+L11 | 3 | Cathode3
+K5  | 4 | Cathode4
+A11 | 5 | Cathode5
+E11 | 6 | Cathode6
+K11 | 7 | none
+L5  | 8 | none
