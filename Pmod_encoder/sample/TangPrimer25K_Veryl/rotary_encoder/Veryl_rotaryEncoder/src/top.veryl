@@ -1,6 +1,6 @@
 module Top #(
     param CLK_HZ          : u32 = 50_000_000,
-    param ENCODER_FILTER  : u32 = 16_384    ,
+    param DEBOUNCE_CYCLES : u32 = 250_000   ,
     param SCAN_DIVIDER_MAX: u32 = 8_333     ,
 ) (
     i_clk       : input  clock   ,
@@ -11,29 +11,31 @@ module Top #(
     o_seg_anode : output logic<8>,
     o_digit_cath: output logic<6>,
 ) {
-    var enc_a_meta      : logic    ;
-    var enc_a_sync      : logic    ;
-    var enc_b_meta      : logic    ;
-    var enc_b_sync      : logic    ;
-    var slide_meta      : logic    ;
-    var slide_sync      : logic    ;
-    var enc_raw         : logic<2> ;
-    var enc_stable      : logic<2> ;
-    var enc_stable_prev : logic<2> ;
-    var enc_filter_count: logic<15>;
-    var scan_count      : logic<14>;
-    var scan_digit      : logic<3> ;
-    var digit0          : logic<4> ;
-    var digit1          : logic<4> ;
-    var digit2          : logic<4> ;
-    var digit3          : logic<4> ;
-    var digit4          : logic<4> ;
-    var digit5          : logic<4> ;
-    var current_digit   : logic<4> ;
-    var step_up         : logic    ;
-    var step_down       : logic    ;
+    var enc_a_meta     : logic    ;
+    var enc_a_sync     : logic    ;
+    var enc_b_meta     : logic    ;
+    var enc_b_sync     : logic    ;
+    var slide_meta     : logic    ;
+    var slide_sync     : logic    ;
+    var enc_a_debounced: logic    ;
+    var enc_b_debounced: logic    ;
+    var enc_a_db_count : logic<20>;
+    var enc_b_db_count : logic<20>;
+    var enc_state      : logic<2> ;
+    var enc_state_prev : logic<2> ;
+    var scan_count     : logic<14>;
+    var scan_digit     : logic<3> ;
+    var digit0         : logic<4> ;
+    var digit1         : logic<4> ;
+    var digit2         : logic<4> ;
+    var digit3         : logic<4> ;
+    var digit4         : logic<4> ;
+    var digit5         : logic<4> ;
+    var current_digit  : logic<4> ;
+    var step_up        : logic    ;
+    var step_down      : logic    ;
 
-    assign enc_raw = {enc_a_sync, enc_b_sync};
+    assign enc_state = {enc_a_debounced, enc_b_debounced};
 
     always_ff (i_clk, i_push_sw) {
         if_reset {
@@ -55,15 +57,28 @@ module Top #(
 
     always_ff (i_clk, i_push_sw) {
         if_reset {
-            enc_stable       = 0;
-            enc_filter_count = 0;
-        } else if enc_raw == enc_stable {
-            enc_filter_count = 0;
-        } else if enc_filter_count == (ENCODER_FILTER - 1) {
-            enc_stable       = enc_raw;
-            enc_filter_count = 0;
+            enc_a_debounced = 0;
+            enc_a_db_count  = 0;
+            enc_b_debounced = 0;
+            enc_b_db_count  = 0;
         } else {
-            enc_filter_count += 1;
+            if enc_a_sync == enc_a_debounced {
+                enc_a_db_count = 0;
+            } else if enc_a_db_count == (DEBOUNCE_CYCLES - 1) {
+                enc_a_debounced = enc_a_sync;
+                enc_a_db_count  = 0;
+            } else {
+                enc_a_db_count += 1;
+            }
+
+            if enc_b_sync == enc_b_debounced {
+                enc_b_db_count = 0;
+            } else if enc_b_db_count == (DEBOUNCE_CYCLES - 1) {
+                enc_b_debounced = enc_b_sync;
+                enc_b_db_count  = 0;
+            } else {
+                enc_b_db_count += 1;
+            }
         }
     }
 
@@ -71,13 +86,13 @@ module Top #(
         step_up   = 0;
         step_down = 0;
 
-        case {enc_stable_prev, enc_stable} {
+        case {enc_state_prev, enc_state} {
             4'b0001, 4'b0111, 4'b1110, 4'b1000: step_up   = ~slide_sync;
             4'b0010, 4'b1011, 4'b1101, 4'b0100: step_down = ~slide_sync;
             default                           : {}
         }
 
-        case {enc_stable_prev, enc_stable} {
+        case {enc_state_prev, enc_state} {
             4'b0001, 4'b0111, 4'b1110, 4'b1000: step_down = slide_sync;
             4'b0010, 4'b1011, 4'b1101, 4'b0100: step_up   = slide_sync;
             default                           : {}
@@ -86,15 +101,15 @@ module Top #(
 
     always_ff (i_clk, i_push_sw) {
         if_reset {
-            enc_stable_prev = 0;
-            digit0          = 0;
-            digit1          = 0;
-            digit2          = 0;
-            digit3          = 0;
-            digit4          = 0;
-            digit5          = 0;
+            enc_state_prev = 0;
+            digit0         = 0;
+            digit1         = 0;
+            digit2         = 0;
+            digit3         = 0;
+            digit4         = 0;
+            digit5         = 0;
         } else {
-            enc_stable_prev = enc_stable;
+            enc_state_prev = enc_state;
 
             if step_up {
                 if digit0 == 9 {
