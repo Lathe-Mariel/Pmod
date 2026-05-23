@@ -4,6 +4,8 @@ Analyzing Verilog file 'H:\git\Pmod\Pmod_encoder\sample\TangPrimer25K_Veryl\rota
 Compiling module 'rotary_encoder_Top'("H:\git\Pmod\Pmod_encoder\sample\TangPrimer25K_Veryl\rotary_encoder\Veryl_rotaryEncoder\src\top.sv":1)
 WARN  (EX3791) : Expression size 21 truncated to fit in target size 20("H:\git\Pmod\Pmod_encoder\sample\TangPrimer25K_Veryl\rotary_encoder\Veryl_rotaryEncoder\src\top.sv":71)
 WARN  (EX3791) : Expression size 21 truncated to fit in target size 20("H:\git\Pmod\Pmod_encoder\sample\TangPrimer25K_Veryl\rotary_encoder\Veryl_rotaryEncoder\src\top.sv":80)
+WARN  (EX2420) : Latch inferred for net 'step_up'; We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("H:\git\Pmod\Pmod_encoder\sample\TangPrimer25K_Veryl\rotary_encoder\Veryl_rotaryEncoder\src\top.sv":103)
+WARN  (EX3101) : 'step_up' inside always_comb block does not represent combinational logic("H:\git\Pmod\Pmod_encoder\sample\TangPrimer25K_Veryl\rotary_encoder\Veryl_rotaryEncoder\src\top.sv":103)
 WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("H:\git\Pmod\Pmod_encoder\sample\TangPrimer25K_Veryl\rotary_encoder\Veryl_rotaryEncoder\src\top.sv":131)
 WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("H:\git\Pmod\Pmod_encoder\sample\TangPrimer25K_Veryl\rotary_encoder\Veryl_rotaryEncoder\src\top.sv":134)
 WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("H:\git\Pmod\Pmod_encoder\sample\TangPrimer25K_Veryl\rotary_encoder\Veryl_rotaryEncoder\src\top.sv":137)
@@ -20,6 +22,7 @@ WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("H:\git\Pmo
 WARN  (EX3791) : Expression size 15 truncated to fit in target size 14("H:\git\Pmod\Pmod_encoder\sample\TangPrimer25K_Veryl\rotary_encoder\Veryl_rotaryEncoder\src\top.sv":195)
 NOTE  (EX0101) : Current top module is "rotary_encoder_Top"
 [5%] Running netlist conversion ...
+WARN  (CV0016) : Input i_slide_sw is unused("H:\git\Pmod\Pmod_encoder\sample\TangPrimer25K_Veryl\rotary_encoder\Veryl_rotaryEncoder\src\top.sv":10)
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
 [15%] Optimizing Phase 1 completed
@@ -32,6 +35,8 @@ Running inference ...
 Running technical mapping ...
 [60%] Tech-Mapping Phase 0 completed
 [65%] Tech-Mapping Phase 1 completed
+WARN  (DI0003) : Latch inferred for net 'step_up';We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("H:\git\Pmod\Pmod_encoder\sample\TangPrimer25K_Veryl\rotary_encoder\Veryl_rotaryEncoder\src\top.sv":103)
+WARN  (DI0003) : Latch inferred for net 'step_down';We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("H:\git\Pmod\Pmod_encoder\sample\TangPrimer25K_Veryl\rotary_encoder\Veryl_rotaryEncoder\src\top.sv":103)
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed

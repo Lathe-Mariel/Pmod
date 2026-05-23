@@ -83,13 +83,13 @@ module rotary_encoder_Top #(
     end
 
     always_comb begin
-        step_up   = 0;
-        step_down = 0;
 
         case ({enc_state_prev, enc_state})
-            4'b0001, 4'b0111, 4'b1110, 4'b1000: step_up   = ~slide_sync;
-            4'b0010, 4'b1011, 4'b1101, 4'b0100: step_down = ~slide_sync;
+            4'b0001, 4'b0111, 4'b1110, 4'b1000: step_up   = 1; // ~slide_sync;
+            4'b0010, 4'b1011, 4'b1101, 4'b0100: step_down = 1; // ~slide_sync;
             default                           : begin
+                step_up   = 0;
+                step_down = 0;
             end
         endcase
 /*
