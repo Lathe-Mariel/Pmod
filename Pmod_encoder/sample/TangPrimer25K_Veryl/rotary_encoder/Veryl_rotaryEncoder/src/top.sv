@@ -1,6 +1,6 @@
 module rotary_encoder_Top #(
     parameter int unsigned CLK_HZ           = 50_000_000,
-    parameter int unsigned DEBOUNCE_CYCLES  = 250_000   ,
+    parameter int unsigned DEBOUNCE_CYCLES  = 50_000    ,
     parameter int unsigned SCAN_DIVIDER_MAX = 8_333 
 ) (
     input  var logic         i_clk       ,
@@ -11,29 +11,33 @@ module rotary_encoder_Top #(
     output var logic [8-1:0] o_seg_anode ,
     output var logic [6-1:0] o_digit_cath
 );
-    logic          enc_a_meta     ;
-    logic          enc_a_sync     ;
-    logic          enc_b_meta     ;
-    logic          enc_b_sync     ;
-    logic          slide_meta     ;
-    logic          slide_sync     ;
-    logic          enc_a_debounced;
-    logic          enc_b_debounced;
-    logic [20-1:0] enc_a_db_count ;
-    logic [20-1:0] enc_b_db_count ;
-    logic [2-1:0]  enc_state      ;
-    logic [2-1:0]  enc_state_prev ;
-    logic [14-1:0] scan_count     ;
-    logic [3-1:0]  scan_digit     ;
-    logic [4-1:0]  digit0         ;
-    logic [4-1:0]  digit1         ;
-    logic [4-1:0]  digit2         ;
-    logic [4-1:0]  digit3         ;
-    logic [4-1:0]  digit4         ;
-    logic [4-1:0]  digit5         ;
-    logic [4-1:0]  current_digit  ;
-    logic          step_up        ;
-    logic          step_down      ;
+    logic          enc_a_meta       ;
+    logic          enc_a_sync       ;
+    logic          enc_b_meta       ;
+    logic          enc_b_sync       ;
+    logic          slide_meta       ;
+    logic          slide_sync       ;
+    logic          enc_a_debounced  ;
+    logic          enc_b_debounced  ;
+    logic [20-1:0] enc_a_db_count   ;
+    logic [20-1:0] enc_b_db_count   ;
+    logic [2-1:0]  enc_state        ;
+    logic [2-1:0]  enc_state_prev   ;
+    logic          enc_state_changed;
+    logic [4-1:0]  step_accum       ;
+    logic [14-1:0] scan_count       ;
+    logic [3-1:0]  scan_digit       ;
+    logic [4-1:0]  digit0           ;
+    logic [4-1:0]  digit1           ;
+    logic [4-1:0]  digit2           ;
+    logic [4-1:0]  digit3           ;
+    logic [4-1:0]  digit4           ;
+    logic [4-1:0]  digit5           ;
+    logic [4-1:0]  current_digit    ;
+    logic          quad_up          ;
+    logic          quad_down        ;
+    logic          step_up          ;
+    logic          step_down        ;
 
     always_comb enc_state = {enc_a_debounced, enc_b_debounced};
 
@@ -83,28 +87,26 @@ module rotary_encoder_Top #(
     end
 
     always_comb begin
+        enc_state_changed = enc_state != enc_state_prev;
+        quad_up           = 0;
+        quad_down         = 0;
 
-        case ({enc_state_prev, enc_state})
-            4'b0001, 4'b0111, 4'b1110, 4'b1000: step_up   = 1; // ~slide_sync;
-            4'b0010, 4'b1011, 4'b1101, 4'b0100: step_down = 1; // ~slide_sync;
-            default                           : begin
-                step_up   = 0;
-                step_down = 0;
-            end
-        endcase
-/*
-        case ({enc_state_prev, enc_state})
-            4'b0001, 4'b0111, 4'b1110, 4'b1000: step_down = slide_sync;
-            4'b0010, 4'b1011, 4'b1101, 4'b0100: step_up   = slide_sync;
-            default                           : begin
-            end
-        endcase
-*/
+        if (enc_state_changed) begin
+            case ({enc_state_prev, enc_state})
+                4'b0010, 4'b1011, 4'b1101, 4'b0100: quad_up   = 1;
+                4'b0001, 4'b0111, 4'b1110, 4'b1000: quad_down = 1;
+                default                           : begin
+                end
+            endcase
+        end
     end
 
     always_ff @ (posedge i_clk) begin
         if (i_push_sw) begin
             enc_state_prev <= 0;
+            step_up        <= 0;
+            step_down      <= 0;
+            step_accum     <= 4;
             digit0         <= 0;
             digit1         <= 0;
             digit2         <= 0;
@@ -112,7 +114,27 @@ module rotary_encoder_Top #(
             digit4         <= 0;
             digit5         <= 0;
         end else begin
+            step_up        <= 0;
+            step_down      <= 0;
             enc_state_prev <= enc_state;
+
+            if (enc_state_changed && quad_up) begin
+                if (step_accum == 7) begin
+                    step_accum <= 4;
+                    step_up    <= ~slide_sync;
+                    step_down  <= slide_sync;
+                end else if (step_accum < 8) begin
+                    step_accum <= step_accum + (1);
+                end
+            end else if (enc_state_changed && quad_down) begin
+                if (step_accum == 1) begin
+                    step_accum <= 4;
+                    step_up    <= slide_sync;
+                    step_down  <= ~slide_sync;
+                end else if (step_accum > 0) begin
+                    step_accum <= step_accum - (1);
+                end
+            end
 
             if (step_up) begin
                 if (digit0 == 9) begin

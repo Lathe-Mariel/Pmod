@@ -1,0 +1,41 @@
+// Convert 20-bit binary (0..999999) to 6-digit BCD
+module bin2bcd6 (
+    i_clk : input  logic,
+    i_bin : input  u32,      // 0..999999
+    o_bcd : output logic[6,4],
+) {
+    var shift_reg : u32;
+    var bcd       : logic[6,4];
+    var bit_cnt   : u5;
+    var busy      : logic;
+
+    always_ff (i_clk) {
+        if (!busy) {
+            // Start conversion
+            shift_reg = i_bin;
+            bcd       = 0;
+            bit_cnt   = 20;   // 20 bits for 0..999999
+            busy      = 1;
+        } else {
+            // Adjust BCD digits
+            for (var i: u32 = 0; i < 6; i = i + 1) {
+                if (bcd[i] >= 5) {
+                    bcd[i] <= bcd[i] + 3;
+                }
+            }
+
+            // Shift left
+            {bcd, shift_reg} <= {bcd, shift_reg} << 1;
+
+            bit_cnt <= bit_cnt - 1;
+
+            if (bit_cnt == 1) {
+                busy <= 0;
+            }
+        }
+    }
+
+    always_comb {
+        o_bcd = bcd;
+    }
+}

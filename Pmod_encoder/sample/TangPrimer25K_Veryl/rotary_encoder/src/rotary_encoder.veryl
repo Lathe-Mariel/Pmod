@@ -1,0 +1,345 @@
+// Rotary encoder counter for Tang Primer 25K
+// Clock: 50 MHz
+// Pmod ENC: i_enc_a, i_enc_b
+// 6-digit 7-seg: o_seg_anode[7:0] (active-high), o_digit_cath[5:0] (active-low)
+
+pub module rotary_encoder (
+    i_clk       : input  clock,
+    i_enc_a     : input  logic,
+    i_enc_b     : input  logic,
+    i_push_sw   : input  logic,
+    i_slide_sw  : input  logic,
+    o_seg_anode : output logic<8>,
+    o_digit_cath: output logic<6>,
+) {
+    const DEBOUNCE_CYCLES: u32 = 50_000; // 1 ms at 50 MHz
+
+    // ============================================================
+    // Synchronizers
+    // ============================================================
+    var enc_a_sync : logic<2>;
+    var enc_b_sync : logic<2>;
+
+    always_ff (i_clk) {
+        enc_a_sync[0] = i_enc_a;
+        enc_a_sync[1] = enc_a_sync[0];
+
+        enc_b_sync[0] = i_enc_b;
+        enc_b_sync[1] = enc_b_sync[0];
+    }
+
+    // ============================================================
+    // Debounce for A/B
+    // ============================================================
+    var enc_a_db      : logic;
+    var enc_b_db      : logic;
+    var enc_a_cnt     : u32;
+    var enc_b_cnt     : u32;
+
+    always_ff (i_clk) {
+        // A
+        if (enc_a_sync[1] == enc_a_db) {
+            enc_a_cnt = 0;
+        } else {
+            if (enc_a_cnt == DEBOUNCE_CYCLES - 1) {
+                enc_a_db  = enc_a_sync[1];
+                enc_a_cnt = 0;
+            } else {
+                enc_a_cnt = enc_a_cnt + 1;
+            }
+        }
+
+        // B
+        if (enc_b_sync[1] == enc_b_db) {
+            enc_b_cnt = 0;
+        } else {
+            if (enc_b_cnt == DEBOUNCE_CYCLES - 1) {
+                enc_b_db  = enc_b_sync[1];
+                enc_b_cnt = 0;
+            } else {
+                enc_b_cnt = enc_b_cnt + 1;
+            }
+        }
+    }
+
+    // ============================================================
+    // Quadrature decoder with 4x accumulator
+    // ============================================================
+    var ab_prev      : logic<2>;
+    var ab_curr      : logic<2>;
+    var step_acc     : i8;      // -4..+3 is enough
+    var step_pulse   : logic;
+    var step_dir_up  : logic;   // 1: up, 0: down
+
+    always_ff (i_clk) {
+        ab_curr = {enc_a_db, enc_b_db};
+
+        step_pulse  = 0;
+        step_dir_up = step_dir_up;
+
+        if (ab_curr != ab_prev) {
+            // Valid Gray transitions: 00,01,11,10
+            // Direction table (prev -> curr):
+            // 00->01,01->11,11->10,10->00 : +1
+            // 00->10,10->11,11->01,01->00 : -1
+            var delta : i8;delta = 0;
+
+            case ab_prev {
+                00: {
+                    if (ab_curr == 01) {delta =  1;}
+                    else if (ab_curr == 10){ delta = -1;}
+                }
+                01: {
+                    if (ab_curr == 11) {delta =  1;}
+                    else if (ab_curr == 00) {delta = -1;}
+                }
+                11: {
+                    if (ab_curr == 10) {delta =  1;}
+                    else if (ab_curr == 01) {delta = -1;}
+                }
+                10: {
+                    if (ab_curr == 00) {delta =  1;}
+                    else if (ab_curr == 11) {delta = -1;}
+                }
+                default: { delta = 0; }
+            }
+
+            if (delta != 0) {
+                step_acc = step_acc + delta;
+
+                if (step_acc + delta == 4) {
+                    step_acc     = 0;
+                    step_pulse   = 1;
+                    step_dir_up  = 1;
+                } else if (step_acc + delta == -4) {
+                    step_acc     = 0;
+                    step_pulse   = 1;
+                    step_dir_up  = 0;
+                }
+            }
+        }
+
+        ab_prev = ab_curr;
+    }
+
+    // ============================================================
+    // Push switch debounce (reset)
+    // ============================================================
+    var push_sync : logic<2>;
+    var push_db   : logic;
+    var push_cnt  : u32;
+
+    always_ff (i_clk) {
+        push_sync[0] = i_push_sw;
+        push_sync[1] = push_sync[0];
+
+        if (push_sync[1] == push_db) {
+            push_cnt = 0;
+        } else {
+            if (push_cnt == DEBOUNCE_CYCLES - 1) {
+                push_db  = push_sync[1];
+                push_cnt = 0;
+            } else {
+                push_cnt = push_cnt + 1;
+            }
+        }
+    }
+
+    // ============================================================
+    // Slide switch (direction) – simple sync
+    // ============================================================
+    var slide_sync : logic<2>;
+    var dir_rev    : logic;
+
+    always_ff (i_clk) {
+        slide_sync[0] = i_slide_sw;
+        slide_sync[1] = slide_sync[0];
+        dir_rev       = slide_sync[1];
+    }
+
+    // ============================================================
+    // 6-digit decimal counter (000000–999999)
+    // ============================================================
+    var count      : u32; // 0..999999
+    var step_up    : logic;
+    var step_down  : logic;
+
+    always_comb {
+        // XOR with reverse switch
+        var dir_final : logic;
+        dir_final = step_dir_up ^ dir_rev;
+        step_up   = step_pulse & dir_final;
+        step_down = step_pulse & ~dir_final;
+    }
+
+    always_ff (i_clk) {
+        if (push_db) {
+            count = 0;
+        } else {
+            if (step_up) {
+                if (count == 999_999) {
+                    count = 0;
+                } else {
+                    count = count + 1;
+                }
+            } else if (step_down) {
+                if (count == 0) {
+                    count = 999_999;
+                } else {
+                    count = count - 1;
+                }
+            }
+        }
+    }
+
+    // ============================================================
+    // BCD extraction (6 digits)
+    // ============================================================
+var bcd : logic[6,4];
+
+inst b2b : bin2bcd6 (
+    i_clk: i_clk,
+    i_bin: count,
+    o_bcd: bcd,
+);
+
+
+    // ============================================================
+    // 7-seg multiplexing
+    // ============================================================
+    // Simple scan: ~1 kHz per digit (50 MHz / (6 * 8000) ≈ 1 kHz)
+    var scan_cnt   : u16;
+    var digit_idx  : u8;
+
+    always_ff (i_clk) {
+        if (scan_cnt == 7999) {
+            scan_cnt  = 0;
+            digit_idx = digit_idx + 1;
+        } else {
+            scan_cnt = scan_cnt + 1;
+        }
+    }
+
+    // 7-seg decode (abcdefg, active-high)
+    function seg7_decode (d: input logic<4>) -> logic<7> {
+        var seg : logic<7>;
+
+        case d{
+            0: seg = 7'b0111111;
+            1: seg = 7'b0000110;
+            2: seg = 7'b1011011;
+            3: seg = 7'b1001111;
+            4: seg = 7'b1100110;
+            5: seg = 7'b1101101;
+            6: seg = 7'b1111101;
+            7: seg = 7'b0000111;
+            8: seg = 7'b1111111;
+            9: seg = 7'b1101111;
+            default: seg = 7'b0000000;
+        }
+
+        return seg;
+    }
+
+    always_comb {
+        // Default: all digits off (active-low)
+        o_digit_cath = 6'b111111;
+        o_seg_anode  = 8'b00000000;
+
+        let seg : logic<7> = seg7_decode(bcd[digit_idx]);
+
+        // Map to outputs: o_seg_anode[6:0] = g..a, [7] unused
+        o_seg_anode[0] = seg[0]; // a
+        o_seg_anode[1] = seg[1]; // b
+        o_seg_anode[2] = seg[2]; // c
+        o_seg_anode[3] = seg[3]; // d
+        o_seg_anode[4] = seg[4]; // e
+        o_seg_anode[5] = seg[5]; // f
+        o_seg_anode[6] = seg[6]; // g
+        o_seg_anode[7] = 0;      // no decimal point
+
+        // Enable one digit (active-low)
+        case digit_idx{
+            3'd0: o_digit_cath[0] = 0;
+            3'd1: o_digit_cath[1] = 0;
+            3'd2: o_digit_cath[2] = 0;
+            3'd3: o_digit_cath[3] = 0;
+            3'd4: o_digit_cath[4] = 0;
+            3'd5: o_digit_cath[5] = 0;
+
+        }
+    }
+}
+
+module bin2bcd6 (
+    i_clk : input  clock,
+    i_bin : input  u32,      // 0..999999
+    o_bcd : output logic[6,4],
+) {
+    var shift_reg : u32;
+    var bcd0      : logic<4>;
+    var bcd1      : logic<4>;
+    var bcd2      : logic<4>;
+    var bcd3      : logic<4>;
+    var bcd4      : logic<4>;
+    var bcd5      : logic<4>;
+    var bit_cnt   : u8;
+    var busy      : logic;
+
+    always_ff (i_clk) {
+        if (!busy) {
+            // Start conversion
+            shift_reg = i_bin;
+            bcd0 = 0;
+            bcd1 = 0;
+            bcd2 = 0;
+            bcd3 = 0;
+            bcd4 = 0;
+            bcd5 = 0;
+            bit_cnt = 20;
+            busy = 1;
+        } else {
+            // ---- Adjust each BCD digit (no loops) ----
+            if (bcd0 >= 5){ bcd0 = bcd0 + 3;}
+            if (bcd1 >= 5){ bcd1 = bcd1 + 3;}
+            if (bcd2 >= 5){ bcd2 = bcd2 + 3;}
+            if (bcd3 >= 5){ bcd3 = bcd3 + 3;}
+            if (bcd4 >= 5){ bcd4 = bcd4 + 3;}
+            if (bcd5 >= 5){ bcd5 = bcd5 + 3;}
+
+            // ---- Shift left (no loops) ----
+            // Combine all BCD digits + shift_reg into one big shift
+            var big : logic<44>; // 6*4 + 20 = 44 bits
+
+                big = {bcd5, bcd4, bcd3, bcd2, bcd1, bcd0,
+                shift_reg
+            };
+
+            big = big << 1;
+
+            // Unpack
+            bcd5      = big[43:40];
+            bcd4      = big[39:36];
+            bcd3      = big[35:32];
+            bcd2      = big[31:28];
+            bcd1      = big[27:24];
+            bcd0      = big[23:20];
+            shift_reg = big[19:0];
+
+            bit_cnt = bit_cnt - 1;
+
+            if (bit_cnt == 1) {
+                busy = 0;
+            }
+        }
+    }
+
+    always_comb {
+        o_bcd[0] = bcd0;
+        o_bcd[1] = bcd1;
+        o_bcd[2] = bcd2;
+        o_bcd[3] = bcd3;
+        o_bcd[4] = bcd4;
+        o_bcd[5] = bcd5;
+    }
+}
