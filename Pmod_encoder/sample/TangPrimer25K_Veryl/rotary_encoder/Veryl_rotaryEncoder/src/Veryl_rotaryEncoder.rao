@@ -1,0 +1,64 @@
+<?xml version="1" encoding="UTF-8"?>
+<GAO_CONFIG>
+    <Version>3.0</Version>
+    <Mode>Lite</Mode>
+    <AoCore_Lite index="0" sample_clock="i_clk" trig_type="0" capture_amount="4096" implemention="0" input_register_enabled="0" capture_init_data_enabled="0" module_name="rotary_encoder_Top">
+        <SignalList>
+            <Signal capture_enable="true">i_enc_a</Signal>
+            <Signal capture_enable="true">i_enc_b</Signal>
+            <Bus capture_enable="true" name="enc_state[1:0]">
+                <Signal>enc_state[1]</Signal>
+                <Signal>enc_state[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="enc_state_prev[1:0]">
+                <Signal>enc_state_prev[1]</Signal>
+                <Signal>enc_state_prev[0]</Signal>
+            </Bus>
+            <Signal capture_enable="true">enc_a_sync</Signal>
+            <Signal capture_enable="true">enc_b_sync</Signal>
+            <Signal capture_enable="true">enc_a_debounced</Signal>
+            <Signal capture_enable="true">enc_b_debounced</Signal>
+            <Signal capture_enable="true">quad_up</Signal>
+            <Signal capture_enable="true">quad_down</Signal>
+            <Signal capture_enable="true">step_up</Signal>
+            <Signal capture_enable="true">step_down</Signal>
+            <Bus capture_enable="true" name="digit0[3:0]">
+                <Signal>digit0[3]</Signal>
+                <Signal>digit0[2]</Signal>
+                <Signal>digit0[1]</Signal>
+                <Signal>digit0[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="digit1[3:0]">
+                <Signal>digit1[3]</Signal>
+                <Signal>digit1[2]</Signal>
+                <Signal>digit1[1]</Signal>
+                <Signal>digit1[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="digit2[3:0]">
+                <Signal>digit2[3]</Signal>
+                <Signal>digit2[2]</Signal>
+                <Signal>digit2[1]</Signal>
+                <Signal>digit2[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="digit3[3:0]">
+                <Signal>digit3[3]</Signal>
+                <Signal>digit3[2]</Signal>
+                <Signal>digit3[1]</Signal>
+                <Signal>digit3[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="digit4[3:0]">
+                <Signal>digit4[3]</Signal>
+                <Signal>digit4[2]</Signal>
+                <Signal>digit4[1]</Signal>
+                <Signal>digit4[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="digit5[3:0]">
+                <Signal>digit5[3]</Signal>
+                <Signal>digit5[2]</Signal>
+                <Signal>digit5[1]</Signal>
+                <Signal>digit5[0]</Signal>
+            </Bus>
+        </SignalList>
+    </AoCore_Lite>
+    <GAO_ID>1011110110011100</GAO_ID>
+</GAO_CONFIG>
