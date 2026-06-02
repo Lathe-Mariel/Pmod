@@ -1,0 +1,20 @@
+FPGAデザインを作ってください
+
+## HDL
+Verilog HDL
+
+## FPGAボード
+AE-T8F81-DIP40（秋月電子）
+### Schematics
+https://akizukidenshi.com/goodsaffix/AE-T8F81-DIP40_20240809.pdf
+
+## アプリケーション
+Lチカ（1Hz）
+
+
+## インターフェース
+GPIO     | LED
+GPIOR_08 | D4
+GPIOR_10 | D3
+GPIOR_11 | D2
+GPIOR_12 | D1
