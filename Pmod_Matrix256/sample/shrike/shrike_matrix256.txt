@@ -1,0 +1,103 @@
+# FPGAデザインを作る
+
+## アプリケーション
+マトリクスLEDの制御
+RP2040からSPIで値を受け取り，フレームバッファに格納する
+マトリクスLEDはダイナミック駆動する
+マトリクスLEDへ表示させる内容はフレームバッファの値をもとにして決める
+
+
+## HDL
+Verilog HDL
+
+## HARDWARE
+### FPGAボード
+Shrike Lite(Vicharak)
+### Matrix LED Module
+OSLB56317-AC5 [https://akizukidenshi.com/goodsaffix/OSLB56317-XXX_D.1.1.pdf]
+74HC595 x 4
+
+#### 1行のデータは32ビット
+data | MatrixLED pin
+|---|---|
+Serial_data[31] | COL1
+Serial_data[30] | COL2
+Serial_data[29] | COL3
+Serial_data[28] | COL4
+Serial_data[27] | COL5
+Serial_data[26] | COL6
+Serial_data[25] | COL7
+Serial_data[24] | COL8
+Serial_data[23] | COL9
+Serial_data[22] | COL10
+Serial_data[21] | COL11
+Serial_data[20] | COL12
+Serial_data[19] | COL13
+Serial_data[18] | COL14
+Serial_data[17] | COL15
+Serial_data[16] | COL16
+
+Serial_data[15] | ROW16
+Serial_data[14] | ROW15
+Serial_data[13] | ROW14
+Serial_data[12] | ROW13
+Serial_data[11] | ROW12
+Serial_data[10] | ROW11
+Serial_data[9] | ROW10
+Serial_data[8] | ROW9
+Serial_data[7] | ROW8
+Serial_data[6] | ROW7
+Serial_data[5] | ROW6
+Serial_data[4] | ROW5
+Serial_data[3] | ROW4
+Serial_data[2] | ROW3
+Serial_data[1] | ROW2
+Serial_data[0] | ROW1
+
+
+## Interface
+### Pmod
+FPGA Board Pmod pin | FPGA chip gpio | Matrix LED pin
+Pmod1 | FPGA_IO14 | #SRCLR
+Pmod2 | FPGA_IO12 | SRCLK
+Pmod3 | FPGA_IO10 | RCLK
+Pmod4 | FPGA_IO08 | Serial_data
+Pmod5 | FPGA_IO15 | none
+Pmod6 | FPGA_IO13 | none
+Pmod7 | FPGA_IO11 | none
+Pmod8 | FPGA_IO09 | none
+
+### FPGA CPU Interconnect Pin-outs
+
+FPGA PIN | RP2350/RP2040 PIN | RP2350/RP2040 | FPGA
+|---|---|---|---|
+EN | 13 | GPIO | EN (Enable)
+PWR | 12 | GPIO | PWR
+3 | 2 | GPIO | SPI_SCLK
+4 | 1 | UART RX / GPIO | SPI_SS
+5 | 3 | GPIO | SPI_SI (MOSI)
+6 | 0 | UART TX / GPIO | SPI_SO (MISO) / CONFIG
+18 | 14 | GPIO / I2C 1 SDA | GPIO
+17 | 15 | GPIO / I2C 1 SCL | GPIO
+
+## 動作仕様
+### Register
+logic framebuffer[16][16] を用意する
+logic [3:0] receive_pos を用意する
+logic [3:0] show_pos を用意する
+
+### SPI通信回路
+・4ビットのreceive_posレジスタを0に初期化
+・SPIで受け取った値をframe_bufferのreceive_pos番目に入れる
+・receive_posをインクリメント
+
+### マトリクスLED表示回路
+framebuffer[show_pos + 1] を読み取り，ダイナミック駆動の1ライン分(32bit)データとして，マトリクスLEDに転送
+show_pos をインクリメント
+
+###
+
+## References
+
+### GitHub Official examples
+https://github.com/vicharak-in/shrike/tree/main/examples
