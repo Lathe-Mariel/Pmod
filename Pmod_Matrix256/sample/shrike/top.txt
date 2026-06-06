@@ -1,0 +1,55 @@
+(* top *) module top(
+(* iopad_external_pin, clkbuf_inhibit *) input wire clk,
+(* iopad_external_pin *) output wire clk_en,
+(* iopad_external_pin *) input wire rst,
+(* iopad_external_pin *) output wire rst_en,
+(* iopad_external_pin *) input wire spi_sclk,     // rp2040
+(* iopad_external_pin *) output wire spi_sclk_en, // rp2040
+(* iopad_external_pin *) input wire spi_mosi,     // rp2040
+(* iopad_external_pin *) output wire spi_mosi_en, // rp2040
+(* iopad_external_pin *) input wire spi_ss,       // rp2040
+(* iopad_external_pin *) output wire spi_ss_en,   // rp2040
+(* iopad_external_pin *) output wire srclk,       // matrix LED
+(* iopad_external_pin *) output wire srclk_en,    // matrix LED
+(* iopad_external_pin *) output wire rclk,        // matrix LED
+(* iopad_external_pin *) output wire rclk_en,     // matrix LED
+(* iopad_external_pin *) output wire ser,         // matrix LED
+(* iopad_external_pin *) output wire ser_en,      // matrix LED
+(* iopad_external_pin *) output wire srclr,       // matrix LED
+(* iopad_external_pin *) output wire srclr_en     // matrix LED
+);
+
+
+    wire [7:0] spi_data;
+    wire spi_valid;
+
+    spi_slave spi (
+        .clk(clk),
+        .rst(rst),
+        .sclk(spi_sclk),
+        .mosi(spi_mosi),
+        .ss(spi_ss),
+        .data(spi_data),
+        .valid(spi_valid)
+    );
+
+    logic [15:0] framebuffer [0:15];
+
+    framebuffer_ctrl fb (
+        .clk(clk),
+        .rst(rst),
+        .spi_data(spi_data),
+        .spi_valid(spi_valid),
+        .framebuffer(framebuffer)
+    );
+
+    led_driver led (
+        .clk(clk),
+        .rst(rst),
+        .framebuffer(framebuffer),
+        .srclk(srclk),
+        .rclk(rclk),
+        .ser(ser),
+        .srclr(srclr)
+    );
+endmodule

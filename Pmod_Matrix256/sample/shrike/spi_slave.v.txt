@@ -1,0 +1,45 @@
+module spi_slave (
+    input  wire clk,
+    input  wire rst,
+    input  wire sclk,
+    input  wire mosi,
+    input  wire ss,
+
+    output reg [7:0] data,
+    output reg       valid
+);
+
+    reg [2:0] bit_cnt;
+    reg [7:0] shift_reg;
+
+    reg sclk_d;
+
+    always @(posedge clk) begin
+        sclk_d <= sclk;
+    end
+
+    wire sclk_rise = (sclk && !sclk_d);
+
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            bit_cnt <= 0;
+            valid <= 0;
+        end else begin
+            valid <= 0;
+
+            if (!ss) begin
+                if (sclk_rise) begin
+                    shift_reg <= {shift_reg[6:0], mosi};
+                    bit_cnt <= bit_cnt + 1;
+
+                    if (bit_cnt == 3'd7) begin
+                        data <= {shift_reg[6:0], mosi};
+                        valid <= 1;
+                    end
+                end
+            end else begin
+                bit_cnt <= 0;
+            end
+        end
+    end
+endmodule

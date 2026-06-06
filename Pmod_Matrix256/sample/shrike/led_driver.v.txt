@@ -1,0 +1,70 @@
+module led_driver (
+    input  wire clk,
+    input  wire rst,
+
+    input  wire [15:0] framebuffer [0:15],
+
+    output reg srclk,
+    output reg rclk,
+    output reg ser,
+    output reg srclr
+);
+
+    reg [3:0] show_pos;
+    reg [5:0] bit_cnt;
+    reg [31:0] shift_data;
+
+    reg [15:0] row_select;
+
+    // 行選択（1-hot, active LOW）
+    always @(*) begin
+        row_select = ~(16'b1 << show_pos);
+    end
+
+    // シフトデータ
+    always @(*) begin
+        shift_data = {framebuffer[show_pos], row_select};
+    end
+
+    reg [2:0] state;
+
+    localparam IDLE  = 0;
+    localparam SHIFT = 1;
+    localparam LATCH = 2;
+
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            state <= IDLE;
+            bit_cnt <= 0;
+            show_pos <= 0;
+            srclr <= 1;
+        end else begin
+            case (state)
+            IDLE: begin
+                bit_cnt <= 0;
+                state <= SHIFT;
+            end
+
+            SHIFT: begin
+                ser <= shift_data[31 - bit_cnt];
+                srclk <= 1;
+                srclk <= 0;
+
+                bit_cnt <= bit_cnt + 1;
+
+                if (bit_cnt == 31) begin
+                    state <= LATCH;
+                end
+            end
+
+            LATCH: begin
+                rclk <= 1;
+                rclk <= 0;
+
+                show_pos <= show_pos + 1;
+                state <= IDLE;
+            end
+            endcase
+        end
+    end
+endmodule

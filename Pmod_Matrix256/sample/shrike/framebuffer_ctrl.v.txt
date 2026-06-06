@@ -1,0 +1,32 @@
+module framebuffer_ctrl (
+    input  wire clk,
+    input  wire rst,
+
+    input  wire [7:0] spi_data,
+    input  wire       spi_valid,
+
+    output reg [15:0] framebuffer [0:15]
+);
+
+    reg [3:0] receive_pos;
+    reg [7:0] byte_buf;
+    reg       half;
+
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            receive_pos <= 0;
+            half <= 0;
+        end else begin
+            if (spi_valid) begin
+                if (!half) begin
+                    byte_buf <= spi_data;
+                    half <= 1;
+                end else begin
+                    framebuffer[receive_pos] <= {byte_buf, spi_data};
+                    receive_pos <= receive_pos + 1;
+                    half <= 0;
+                end
+            end
+        end
+    end
+endmodule
