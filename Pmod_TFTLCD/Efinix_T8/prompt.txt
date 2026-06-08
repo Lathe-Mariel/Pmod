@@ -1,0 +1,45 @@
+# Make FPGA Design
+
+## Application
+8色のカラー・バーをLCDに表示する
+
+## HDL
+SystemVerilog
+
+## 動作仕様
+画面の向きなど実装依存になる部分は，HDL上に定数として実装しておく
+LCDを横長に見て，8色のカラー・バーを縦に表示（色は任意）
+
+## Hardware
+### FPGAボード
+AE-T8F81-DIP40（秋月電子）
+### LCD Module
+### Oo Board LEDs
+GPIO     | LED
+GPIOR_08 | D4
+GPIOR_10 | D3
+GPIOR_11 | D2
+GPIOR_12 | D1
+
+### Pmodポートの仕様
+Port0（Touch）：Pmod1　F5　NC
+　　　　　　　　Pmod2　G7　NC
+　　　　　　　　Pmod3　H8　NC
+　　　　　　　　Pmod4　H5　NC
+　　　　　　　　Pmod5　G5　CS
+　　　　　　　　Pmod6　G8　MOSI
+　　　　　　　　Pmod7　H7　MISO
+　　　　　　　　Pmod8　J5　CLK
+Port1（Touch）：Pmod1　A11　NC
+　　　　　　　　Pmod2　E11　NC
+　　　　　　　　Pmod3　K11　RS
+　　　　　　　　Pmod4　L5　NC
+　　　　　　　　Pmod5　A10　CS
+　　　　　　　　Pmod6　E10　MOSI
+　　　　　　　　Pmod7　L11　NC
+　　　　　　　　Pmod8　K5　CLK
+
+
+
+
+
