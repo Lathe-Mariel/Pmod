@@ -1,0 +1,35 @@
+
+Efinity Interface Designer Timing Report
+Version: 2026.1.132
+Date: 2026-06-08 01:20
+
+Copyright (C) 2013 - 2026 Efinix Inc. All rights reserved.
+
+Device: T8F81
+Project: blink
+Timing Model: C2 (final)
+
+---------- 1. GPIO Timing Report (begin) ----------
+
+Non-registered GPIO Configuration:
+===================================
+
++---------------+----------+-------------+----------+----------+
+| Instance Name | Pin Name |  Parameter  | Max (ns) | Min (ns) |
++---------------+----------+-------------+----------+----------+
+|      clk      |   clk    | GPIO_CLK_IN |  1.785   |  0.638   |
+|      led0     |   led0   |   GPIO_OUT  |  5.361   |  1.915   |
+|      led1     |   led1   |   GPIO_OUT  |  5.361   |  1.915   |
+|      led2     |   led2   |   GPIO_OUT  |  5.361   |  1.915   |
+|      led3     |   led3   |   GPIO_OUT  |  5.361   |  1.915   |
+|      led4     |   led4   |   GPIO_OUT  |  5.361   |  1.915   |
+|      led5     |   led5   |   GPIO_OUT  |  5.361   |  1.915   |
+|      led6     |   led6   |   GPIO_OUT  |  5.361   |  1.915   |
+|      led7     |   led7   |   GPIO_OUT  |  5.361   |  1.915   |
+|     led_d1    |  led_d1  |   GPIO_OUT  |  5.361   |  1.915   |
+|     led_d2    |  led_d2  |   GPIO_OUT  |  5.361   |  1.915   |
+|     led_d3    |  led_d3  |   GPIO_OUT  |  5.361   |  1.915   |
+|     led_d4    |  led_d4  |   GPIO_OUT  |  5.361   |  1.915   |
++---------------+----------+-------------+----------+----------+
+
+---------- GPIO Timing Report (end) ----------

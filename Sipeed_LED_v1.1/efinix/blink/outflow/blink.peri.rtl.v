@@ -1,0 +1,300 @@
+module t8_lchika (
+	input clk,
+	output led0,
+	output led1,
+	output led2,
+	output led3,
+	output led4,
+	output led5,
+	output led6,
+	output led7,
+	output led_d1,
+	output led_d2,
+	output led_d3,
+	output led_d4
+);
+wire \clk~ALT ;
+wire n10;
+wire n12;
+wire n14;
+wire n16;
+wire n18;
+wire n20;
+wire n22;
+wire n24;
+wire n26;
+wire n28;
+wire n30;
+wire n6;
+wire n8;
+
+
+
+
+EFX_GPIO_V1 #(
+.MODE ("INPUT"),
+.OUT_REG ("BYPASS"),
+.IN_REG ("BYPASS"),
+.OE_REG ("BYPASS"),
+.PULL_OPTION ("NONE"),
+.IS_OUTCLK_INVERTED (0),
+.IS_INCLK_INVERTED (0),
+.CONNECTION_TYPE ("GCLK"),
+.SCHMITT_TRIGGER (0),
+.DRIVE_STRENGTH (1),
+.SLEW_RATE (0),
+.IO_STANDARD ("3.3_V_LVTTL_LVCMOS")
+) \clk~EFX_GPIO_V1 (
+	.ALT ( \clk~ALT  ),
+	.I ( n6 ),
+	.IO ( clk )
+);
+
+
+EFX_GPIO_V1 #(
+.MODE ("OUTPUT"),
+.OUT_REG ("BYPASS"),
+.IN_REG ("BYPASS"),
+.OE_REG ("BYPASS"),
+.PULL_OPTION ("NONE"),
+.IS_OUTCLK_INVERTED (0),
+.IS_INCLK_INVERTED (0),
+.CONNECTION_TYPE ("NORMAL"),
+.SCHMITT_TRIGGER (0),
+.DRIVE_STRENGTH (1),
+.SLEW_RATE (0),
+.IO_STANDARD ("3.3_V_LVTTL_LVCMOS")
+) \led0~EFX_GPIO_V1 (
+	.IO ( led0 ),
+	.O ( n16 )
+);
+
+
+EFX_GPIO_V1 #(
+.MODE ("OUTPUT"),
+.OUT_REG ("BYPASS"),
+.IN_REG ("BYPASS"),
+.OE_REG ("BYPASS"),
+.PULL_OPTION ("NONE"),
+.IS_OUTCLK_INVERTED (0),
+.IS_INCLK_INVERTED (0),
+.CONNECTION_TYPE ("NORMAL"),
+.SCHMITT_TRIGGER (0),
+.DRIVE_STRENGTH (1),
+.SLEW_RATE (0),
+.IO_STANDARD ("3.3_V_LVTTL_LVCMOS")
+) \led1~EFX_GPIO_V1 (
+	.IO ( led1 ),
+	.O ( n18 )
+);
+
+
+EFX_GPIO_V1 #(
+.MODE ("OUTPUT"),
+.OUT_REG ("BYPASS"),
+.IN_REG ("BYPASS"),
+.OE_REG ("BYPASS"),
+.PULL_OPTION ("NONE"),
+.IS_OUTCLK_INVERTED (0),
+.IS_INCLK_INVERTED (0),
+.CONNECTION_TYPE ("NORMAL"),
+.SCHMITT_TRIGGER (0),
+.DRIVE_STRENGTH (1),
+.SLEW_RATE (0),
+.IO_STANDARD ("3.3_V_LVTTL_LVCMOS")
+) \led2~EFX_GPIO_V1 (
+	.IO ( led2 ),
+	.O ( n20 )
+);
+
+
+EFX_GPIO_V1 #(
+.MODE ("OUTPUT"),
+.OUT_REG ("BYPASS"),
+.IN_REG ("BYPASS"),
+.OE_REG ("BYPASS"),
+.PULL_OPTION ("NONE"),
+.IS_OUTCLK_INVERTED (0),
+.IS_INCLK_INVERTED (0),
+.CONNECTION_TYPE ("NORMAL"),
+.SCHMITT_TRIGGER (0),
+.DRIVE_STRENGTH (1),
+.SLEW_RATE (0),
+.IO_STANDARD ("3.3_V_LVTTL_LVCMOS")
+) \led3~EFX_GPIO_V1 (
+	.IO ( led3 ),
+	.O ( n22 )
+);
+
+
+EFX_GPIO_V1 #(
+.MODE ("OUTPUT"),
+.OUT_REG ("BYPASS"),
+.IN_REG ("BYPASS"),
+.OE_REG ("BYPASS"),
+.PULL_OPTION ("NONE"),
+.IS_OUTCLK_INVERTED (0),
+.IS_INCLK_INVERTED (0),
+.CONNECTION_TYPE ("NORMAL"),
+.SCHMITT_TRIGGER (0),
+.DRIVE_STRENGTH (1),
+.SLEW_RATE (0),
+.IO_STANDARD ("3.3_V_LVTTL_LVCMOS")
+) \led4~EFX_GPIO_V1 (
+	.IO ( led4 ),
+	.O ( n24 )
+);
+
+
+EFX_GPIO_V1 #(
+.MODE ("OUTPUT"),
+.OUT_REG ("BYPASS"),
+.IN_REG ("BYPASS"),
+.OE_REG ("BYPASS"),
+.PULL_OPTION ("NONE"),
+.IS_OUTCLK_INVERTED (0),
+.IS_INCLK_INVERTED (0),
+.CONNECTION_TYPE ("NORMAL"),
+.SCHMITT_TRIGGER (0),
+.DRIVE_STRENGTH (1),
+.SLEW_RATE (0),
+.IO_STANDARD ("3.3_V_LVTTL_LVCMOS")
+) \led5~EFX_GPIO_V1 (
+	.IO ( led5 ),
+	.O ( n26 )
+);
+
+
+EFX_GPIO_V1 #(
+.MODE ("OUTPUT"),
+.OUT_REG ("BYPASS"),
+.IN_REG ("BYPASS"),
+.OE_REG ("BYPASS"),
+.PULL_OPTION ("NONE"),
+.IS_OUTCLK_INVERTED (0),
+.IS_INCLK_INVERTED (0),
+.CONNECTION_TYPE ("NORMAL"),
+.SCHMITT_TRIGGER (0),
+.DRIVE_STRENGTH (1),
+.SLEW_RATE (0),
+.IO_STANDARD ("3.3_V_LVTTL_LVCMOS")
+) \led6~EFX_GPIO_V1 (
+	.IO ( led6 ),
+	.O ( n28 )
+);
+
+
+EFX_GPIO_V1 #(
+.MODE ("OUTPUT"),
+.OUT_REG ("BYPASS"),
+.IN_REG ("BYPASS"),
+.OE_REG ("BYPASS"),
+.PULL_OPTION ("NONE"),
+.IS_OUTCLK_INVERTED (0),
+.IS_INCLK_INVERTED (0),
+.CONNECTION_TYPE ("NORMAL"),
+.SCHMITT_TRIGGER (0),
+.DRIVE_STRENGTH (1),
+.SLEW_RATE (0),
+.IO_STANDARD ("3.3_V_LVTTL_LVCMOS")
+) \led7~EFX_GPIO_V1 (
+	.IO ( led7 ),
+	.O ( n30 )
+);
+
+
+EFX_GPIO_V1 #(
+.MODE ("OUTPUT"),
+.OUT_REG ("BYPASS"),
+.IN_REG ("BYPASS"),
+.OE_REG ("BYPASS"),
+.PULL_OPTION ("NONE"),
+.IS_OUTCLK_INVERTED (0),
+.IS_INCLK_INVERTED (0),
+.CONNECTION_TYPE ("NORMAL"),
+.SCHMITT_TRIGGER (0),
+.DRIVE_STRENGTH (1),
+.SLEW_RATE (0),
+.IO_STANDARD ("3.3_V_LVTTL_LVCMOS")
+) \led_d1~EFX_GPIO_V1 (
+	.IO ( led_d1 ),
+	.O ( n8 )
+);
+
+
+EFX_GPIO_V1 #(
+.MODE ("OUTPUT"),
+.OUT_REG ("BYPASS"),
+.IN_REG ("BYPASS"),
+.OE_REG ("BYPASS"),
+.PULL_OPTION ("NONE"),
+.IS_OUTCLK_INVERTED (0),
+.IS_INCLK_INVERTED (0),
+.CONNECTION_TYPE ("NORMAL"),
+.SCHMITT_TRIGGER (0),
+.DRIVE_STRENGTH (1),
+.SLEW_RATE (0),
+.IO_STANDARD ("3.3_V_LVTTL_LVCMOS")
+) \led_d2~EFX_GPIO_V1 (
+	.IO ( led_d2 ),
+	.O ( n10 )
+);
+
+
+EFX_GPIO_V1 #(
+.MODE ("OUTPUT"),
+.OUT_REG ("BYPASS"),
+.IN_REG ("BYPASS"),
+.OE_REG ("BYPASS"),
+.PULL_OPTION ("NONE"),
+.IS_OUTCLK_INVERTED (0),
+.IS_INCLK_INVERTED (0),
+.CONNECTION_TYPE ("NORMAL"),
+.SCHMITT_TRIGGER (0),
+.DRIVE_STRENGTH (1),
+.SLEW_RATE (0),
+.IO_STANDARD ("3.3_V_LVTTL_LVCMOS")
+) \led_d3~EFX_GPIO_V1 (
+	.IO ( led_d3 ),
+	.O ( n12 )
+);
+
+
+EFX_GPIO_V1 #(
+.MODE ("OUTPUT"),
+.OUT_REG ("BYPASS"),
+.IN_REG ("BYPASS"),
+.OE_REG ("BYPASS"),
+.PULL_OPTION ("NONE"),
+.IS_OUTCLK_INVERTED (0),
+.IS_INCLK_INVERTED (0),
+.CONNECTION_TYPE ("NORMAL"),
+.SCHMITT_TRIGGER (0),
+.DRIVE_STRENGTH (1),
+.SLEW_RATE (0),
+.IO_STANDARD ("3.3_V_LVTTL_LVCMOS")
+) \led_d4~EFX_GPIO_V1 (
+	.IO ( led_d4 ),
+	.O ( n14 )
+);
+
+
+\t8_lchika~core  \t8_lchika~core~inst (
+	.clk ( n6 ),
+	.led0 ( n16 ),
+	.led1 ( n18 ),
+	.led2 ( n20 ),
+	.led3 ( n22 ),
+	.led4 ( n24 ),
+	.led5 ( n26 ),
+	.led6 ( n28 ),
+	.led7 ( n30 ),
+	.led_d1 ( n8 ),
+	.led_d2 ( n10 ),
+	.led_d3 ( n12 ),
+	.led_d4 ( n14 )
+);
+
+
+
+endmodule

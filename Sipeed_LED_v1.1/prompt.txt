@@ -3,6 +3,9 @@ FPGAデザインを作ってください
 ## HDL
 Verilog HDL
 
+## IDE
+Efinity
+
 ## FPGAボード
 AE-T8F81-DIP40（秋月電子）
 ### Schematics
@@ -13,8 +16,31 @@ Lチカ（1Hz）
 
 
 ## インターフェース
+### on board leds
 GPIO     | LED
 GPIOR_08 | D4
 GPIOR_10 | D3
 GPIOR_11 | D2
 GPIOR_12 | D1
+
+### Pmod1(J7)
+GPIO | LED
+|---|---|
+GPIOR_26 | led0
+GPIOR_24 | led1
+GPIOR_21 | led2
+GPIOR_19 | led3
+GPIOR_27 | led4
+GPIOR_25 | led5
+GPIOR_22 | led6
+GPIOR_20 | led7
+
+### Pmod2(J6)
+GPIOL_17
+GPIOL_19
+GPIOR_00
+GPIOR_03
+GPIOL_15
+GPIOL_18
+GPIOL_21
+GPIOR_01

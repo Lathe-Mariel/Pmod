@@ -1,0 +1,130 @@
+CellSiteInst {
+  cell: "clk"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOL_16_CLK2"
+}
+CellSiteInst {
+  cell: "led0"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_26_CBSEL0"
+}
+CellSiteInst {
+  cell: "led1"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_24"
+}
+CellSiteInst {
+  cell: "led2"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_21_CLK4_CBSEL1"
+}
+CellSiteInst {
+  cell: "led3"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_19_CLK6"
+}
+CellSiteInst {
+  cell: "led4"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_27"
+}
+CellSiteInst {
+  cell: "led5"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_25"
+}
+CellSiteInst {
+  cell: "led6"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_22_CTRL5"
+}
+CellSiteInst {
+  cell: "led7"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOL_00"
+}
+CellSiteInst {
+  cell: "led_d1"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_12"
+}
+CellSiteInst {
+  cell: "led_d2"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_11"
+}
+CellSiteInst {
+  cell: "led_d3"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_10"
+}
+CellSiteInst {
+  cell: "led_d4"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_08"
+}
+CellSiteInst {
+  cell: "clk~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOL_16"
+}
+CellSiteInst {
+  cell: "led0~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_26"
+}
+CellSiteInst {
+  cell: "led1~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_24"
+}
+CellSiteInst {
+  cell: "led2~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_21"
+}
+CellSiteInst {
+  cell: "led3~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_19"
+}
+CellSiteInst {
+  cell: "led4~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_27"
+}
+CellSiteInst {
+  cell: "led5~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_25"
+}
+CellSiteInst {
+  cell: "led6~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_22"
+}
+CellSiteInst {
+  cell: "led7~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOL_00"
+}
+CellSiteInst {
+  cell: "led_d1~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_12"
+}
+CellSiteInst {
+  cell: "led_d2~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_11"
+}
+CellSiteInst {
+  cell: "led_d3~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_10"
+}
+CellSiteInst {
+  cell: "led_d4~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_08"
+}

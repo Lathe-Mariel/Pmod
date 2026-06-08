@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<efx:project name="t8_lchika" description="Alternating 1Hz L-chika for AE-T8F81-DIP40" last_change_date="Sun Jun  7 22:00:00 2026" location="C:/Users/n11ak/.gemini/antigravity/scratch/AE-T8F81-DIP40_Lchika" sw_version="2023.2" last_run_state="none" last_run_tool="none" last_run_flow="none" config_result_in_sync="true" design_ood="sync" place_ood="sync" route_ood="sync" xmlns:efx="http://www.efinixinc.com/enf_proj" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.efinixinc.com/enf_proj enf_proj.xsd">
+    <efx:device_info>
+        <efx:family name="Trion"/>
+        <efx:device name="T8F81"/>
+        <efx:timing_model name="C2"/>
+    </efx:device_info>
+    <efx:design_info def_veri_version="verilog_2k" def_vhdl_version="vhdl_2008">
+        <efx:top_module name="t8_lchika"/>
+        <efx:design_file name="t8_lchika.v" version="verilog_2k" library="default"/>
+        <efx:top_vhdl_arch name=""/>
+    </efx:design_info>
+    <efx:constraint_info>
+        <efx:sdc_file name="t8_lchika.sdc"/>
+        <efx:inter_file name="t8_lchika.peri.xml"/>
+    </efx:constraint_info>
+    <efx:sim_info/>
+    <efx:misc_info/>
+</efx:project>

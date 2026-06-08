@@ -1,0 +1,161 @@
+
+Efinity Interface Designer Report
+Version: 2026.1.132
+Date: 2026-06-08 01:20
+
+Copyright (C) 2013 - 2026 Efinix Inc. All rights reserved.
+
+Device: T8F81
+Project: blink
+
+Package: 81-ball FBGA (final)
+Timing Model: C2 (final)
+Configuration Mode: active (x1)
+
+---------- Table of Contents (begin) ----------
+   1. Periphery Usage Summary
+   2. Generated Output Files
+   3. I/O Banks Summary
+   4. Global Connection Summary
+   5. Clock Region Usage Summary
+   6. Dual-Function Configuration Pin Usage
+   7. GPIO Usage Summary
+   8. PLL Usage Summary
+   9. Oscillator Usage Summary
+   10. JTAG Usage Summary
+---------- Table of Contents (end) ------------
+
+---------- 1. Periphery Usage Summary (begin) ----------
+gpio: 13 / 55 (23.64%)
+jtag: 0 / 2 (0.0%)
+osc: 0 / 1 (0.0%)
+pll: 0 / 1 (0.0%)
+---------- Periphery Usage Summary (end) ----------
+
+---------- 2. Generated Output Files (begin) ----------
+Interface Configuration: blink.interface.csv
+Peripheral Block Configuration: blink.lpf
+Pinout Report: blink.pinout.rpt
+Pinout CSV: blink.pinout.csv
+Timing Report: blink.pt_timing.rpt
+Timing SDC Template: blink.pt.sdc
+Verilog Template: blink_template.v
+---------- Generated Output Files (end) ----------
+
+---------- 3. I/O Banks Summary (begin) ----------
+
++----------+-------------+
+| I/O Bank | I/O Voltage |
++----------+-------------+
+|    1A    |    3.3 V    |
+|    1B    |    3.3 V    |
+|    1C    |    1.1 V    |
+|    2A    |    3.3 V    |
+|    2B    |    3.3 V    |
++----------+-------------+
+
+---------- I/O Banks Summary (end) ----------
+
+---------- 4. Global Connection Summary (begin) ----------
+
++----------+--------------+------+
+| Pin Name |   Resource   | Type |
++----------+--------------+------+
+|   clk    | GPIOL_16.ALT | GCLK |
++----------+--------------+------+
+
+---------- Global Connection Summary (end) ----------
+
+---------- 5. Clock Region Usage Summary (begin) ----------
+
++--------------+----------------+
+| Clock Region | Used/Available |
++--------------+----------------+
+|      L0      |      0/4       |
+|      L1      |      0/4       |
+|      R0      |      0/4       |
+|      R1      |      0/4       |
++--------------+----------------+
+
+---------- Clock Region Usage Summary (end) ----------
+
+---------- 6. Dual-Function Configuration Pin Usage (begin) ----------
+
++---------------+----------+
+| Instance Name | Function |
++---------------+----------+
+|      led0     |  CBSEL0  |
+|      led2     |  CBSEL1  |
++---------------+----------+
+
+---------- Dual-Function Configuration Pin Usage (end) ----------
+
+---------- 7. GPIO Usage Summary (begin) ----------
+
+Global Unused Setting: input with weak pullup
+
++---------------+----------+--------+----------+--------------+----------+----------------------+----------------------+-------------+
+| Instance Name | Resource |  Mode  | Register | Clock Region | I/O Bank |     I/O Standard     |       Pad Name       | Package Pin |
++---------------+----------+--------+----------+--------------+----------+----------------------+----------------------+-------------+
+|      clk      | GPIOL_16 | input  |          |              |    1B    | 3.3 V LVTTL / LVCMOS |    GPIOL_16_CLK2     |      C2     |
+|      led0     | GPIOR_26 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |   GPIOR_26_CBSEL0    |      G9     |
+|      led1     | GPIOR_24 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |       GPIOR_24       |      F6     |
+|      led2     | GPIOR_21 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS | GPIOR_21_CLK4_CBSEL1 |      E7     |
+|      led3     | GPIOR_19 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |    GPIOR_19_CLK6     |      E8     |
+|      led4     | GPIOR_27 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |       GPIOR_27       |      H9     |
+|      led5     | GPIOR_25 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |       GPIOR_25       |      F5     |
+|      led6     | GPIOR_22 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |    GPIOR_22_CTRL5    |      F7     |
+|      led7     | GPIOL_00 | output |          |              |    1A    | 3.3 V LVTTL / LVCMOS |       GPIOL_00       |      G5     |
+|     led_d1    | GPIOR_12 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |       GPIOR_12       |      C8     |
+|     led_d2    | GPIOR_11 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |       GPIOR_11       |      B8     |
+|     led_d3    | GPIOR_10 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |       GPIOR_10       |      A9     |
+|     led_d4    | GPIOR_08 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |       GPIOR_08       |      A8     |
++---------------+----------+--------+----------+--------------+----------+----------------------+----------------------+-------------+
+
+
+Input GPIO Configuration:
+=========================
+
++---------------+-----------+---------------------+-----------------+--------------+-----------------+
+| Instance Name | Input Pin | Alternate Input Pin | Input Clock Pin | Pull Up/Down | Schmitt Trigger |
++---------------+-----------+---------------------+-----------------+--------------+-----------------+
+|      clk      |           |         clk         |                 |     none     |     Disable     |
++---------------+-----------+---------------------+-----------------+--------------+-----------------+
+
+Output GPIO Configuration:
+==========================
+
++---------------+------------+------------------+----------------+-----------+
+| Instance Name | Output Pin | Output Clock Pin | Drive Strength | Slew Rate |
++---------------+------------+------------------+----------------+-----------+
+|      led0     |    led0    |                  |       1        |  Disable  |
+|      led1     |    led1    |                  |       1        |  Disable  |
+|      led2     |    led2    |                  |       1        |  Disable  |
+|      led3     |    led3    |                  |       1        |  Disable  |
+|      led4     |    led4    |                  |       1        |  Disable  |
+|      led5     |    led5    |                  |       1        |  Disable  |
+|      led6     |    led6    |                  |       1        |  Disable  |
+|      led7     |    led7    |                  |       1        |  Disable  |
+|     led_d1    |   led_d1   |                  |       1        |  Disable  |
+|     led_d2    |   led_d2   |                  |       1        |  Disable  |
+|     led_d3    |   led_d3   |                  |       1        |  Disable  |
+|     led_d4    |   led_d4   |                  |       1        |  Disable  |
++---------------+------------+------------------+----------------+-----------+
+
+---------- GPIO Usage Summary (end) ----------
+
+---------- 8. PLL Usage Summary (begin) ----------
+
+No PLL was configured
+
+---------- 9. Oscillator Usage Summary (begin) ----------
+
+No Oscillator was configured
+
+---------- Oscillator Usage Summary (end) ----------
+
+---------- 10. JTAG Usage Summary (begin) ----------
+
+No JTAG was configured
+
+---------- JTAG Usage Summary (end) ----------
