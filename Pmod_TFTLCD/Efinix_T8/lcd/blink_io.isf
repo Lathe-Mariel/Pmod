@@ -1,0 +1,52 @@
+# Efinity Interface Configuration
+# Version: 2026.1.132
+# Date: 2026-06-11 02:00
+#
+# Copyright (C) 2013 - 2026 Efinix Inc. All rights reserved.
+#
+# Device: T8F81
+# Package: 81-ball FBGA (final)
+# Project: blink
+# Configuration mode: active (x1)
+# Timing Model: C2 (final)
+
+
+# Device setting
+design.set_device_property("1A","VOLTAGE","3.3","IOBANK")
+design.set_device_property("1B","VOLTAGE","3.3","IOBANK")
+design.set_device_property("1C","VOLTAGE","1.1","IOBANK")
+design.set_device_property("2A","VOLTAGE","3.3","IOBANK")
+design.set_device_property("2B","VOLTAGE","3.3","IOBANK")
+design.set_gpio_unused_state("INPUT_WEAK_PULLUP")
+
+# Create instance
+design.create_input_clock_gpio("clk")
+design.create_output_gpio("led0")
+design.create_output_gpio("led1")
+design.create_output_gpio("led2")
+design.create_output_gpio("led3")
+design.create_output_gpio("led4")
+design.create_output_gpio("led5")
+design.create_output_gpio("led6")
+design.create_output_gpio("led7")
+design.create_output_gpio("led_d1")
+design.create_output_gpio("led_d2")
+design.create_output_gpio("led_d3")
+design.create_output_gpio("led_d4")
+
+# Set property, non-defaults
+
+# Set resource assignment
+design.assign_pkg_pin("clk","C2")
+design.assign_pkg_pin("led0","G9")
+design.assign_pkg_pin("led1","F6")
+design.assign_pkg_pin("led2","E7")
+design.assign_pkg_pin("led3","E8")
+design.assign_pkg_pin("led4","H9")
+design.assign_pkg_pin("led5","F5")
+design.assign_pkg_pin("led6","F7")
+design.assign_pkg_pin("led7","G5")
+design.assign_pkg_pin("led_d1","C8")
+design.assign_pkg_pin("led_d2","B8")
+design.assign_pkg_pin("led_d3","A9")
+design.assign_pkg_pin("led_d4","A8")

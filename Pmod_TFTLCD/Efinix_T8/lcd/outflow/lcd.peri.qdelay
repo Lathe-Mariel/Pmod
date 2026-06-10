@@ -1,0 +1,340 @@
+route {
+  driver {
+    cell: "btn_rst"
+    port: "inpad"
+  }
+  sink {
+    cell: "btn_rst~GPIO"
+    port: "IO_inpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "btn_rst~GPIO"
+    port: "I"
+  }
+  sink {
+    cell: "btn_rst~GPIO~I"
+    port: "outpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "clk"
+    port: "inpad"
+  }
+  sink {
+    cell: "clk~GPIO"
+    port: "IO_inpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "clk~GPIO"
+    port: "I"
+  }
+  sink {
+    cell: "clk~GPIO~I"
+    port: "outpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "lcd_cs~GPIO"
+    port: "IO_outpad"
+  }
+  sink {
+    cell: "lcd_cs"
+    port: "outpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "lcd_cs~GPIO~O"
+    port: "inpad"
+  }
+  sink {
+    cell: "lcd_cs~GPIO"
+    port: "O"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "lcd_dc~GPIO"
+    port: "IO_outpad"
+  }
+  sink {
+    cell: "lcd_dc"
+    port: "outpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "lcd_dc~GPIO~O"
+    port: "inpad"
+  }
+  sink {
+    cell: "lcd_dc~GPIO"
+    port: "O"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "lcd_mosi~GPIO"
+    port: "IO_outpad"
+  }
+  sink {
+    cell: "lcd_mosi"
+    port: "outpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "lcd_mosi~GPIO~O"
+    port: "inpad"
+  }
+  sink {
+    cell: "lcd_mosi~GPIO"
+    port: "O"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "lcd_sck~GPIO"
+    port: "IO_outpad"
+  }
+  sink {
+    cell: "lcd_sck"
+    port: "outpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "lcd_sck~GPIO~O"
+    port: "inpad"
+  }
+  sink {
+    cell: "lcd_sck~GPIO"
+    port: "O"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "led_d1~GPIO"
+    port: "IO_outpad"
+  }
+  sink {
+    cell: "led_d1"
+    port: "outpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "led_d1~GPIO~O"
+    port: "inpad"
+  }
+  sink {
+    cell: "led_d1~GPIO"
+    port: "O"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "led_d2~GPIO"
+    port: "IO_outpad"
+  }
+  sink {
+    cell: "led_d2"
+    port: "outpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "led_d2~GPIO~O"
+    port: "inpad"
+  }
+  sink {
+    cell: "led_d2~GPIO"
+    port: "O"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "led_d3~GPIO"
+    port: "IO_outpad"
+  }
+  sink {
+    cell: "led_d3"
+    port: "outpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "led_d3~GPIO~O"
+    port: "inpad"
+  }
+  sink {
+    cell: "led_d3~GPIO"
+    port: "O"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "led_d4~GPIO"
+    port: "IO_outpad"
+  }
+  sink {
+    cell: "led_d4"
+    port: "outpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "led_d4~GPIO~O"
+    port: "inpad"
+  }
+  sink {
+    cell: "led_d4~GPIO"
+    port: "O"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+placed {
+  cell: "btn_rst"
+  custom_site: "PKG_PIN/PKG_PIN_INOUT"
+}
+placed {
+  cell: "clk"
+  custom_site: "PKG_PIN/PKG_PIN_INOUT"
+}
+placed {
+  cell: "lcd_cs"
+  custom_site: "PKG_PIN/PKG_PIN_INOUT"
+}
+placed {
+  cell: "lcd_dc"
+  custom_site: "PKG_PIN/PKG_PIN_INOUT"
+}
+placed {
+  cell: "lcd_mosi"
+  custom_site: "PKG_PIN/PKG_PIN_INOUT"
+}
+placed {
+  cell: "lcd_sck"
+  custom_site: "PKG_PIN/PKG_PIN_INOUT"
+}
+placed {
+  cell: "led_d1"
+  custom_site: "PKG_PIN/PKG_PIN_INOUT"
+}
+placed {
+  cell: "led_d2"
+  custom_site: "PKG_PIN/PKG_PIN_INOUT"
+}
+placed {
+  cell: "led_d3"
+  custom_site: "PKG_PIN/PKG_PIN_INOUT"
+}
+placed {
+  cell: "led_d4"
+  custom_site: "PKG_PIN/PKG_PIN_INOUT"
+}
+placed {
+  cell: "btn_rst~GPIO"
+  custom_site: "T8_GPIO/T8_GPIO_SLOT0"
+}
+placed {
+  cell: "clk~GPIO"
+  custom_site: "T8_GPIO/T8_GPIO_SLOT0"
+}
+placed {
+  cell: "lcd_cs~GPIO"
+  custom_site: "T8_GPIO/T8_GPIO_SLOT0"
+}
+placed {
+  cell: "lcd_dc~GPIO"
+  custom_site: "T8_GPIO/T8_GPIO_SLOT0"
+}
+placed {
+  cell: "lcd_mosi~GPIO"
+  custom_site: "T8_GPIO/T8_GPIO_SLOT0"
+}
+placed {
+  cell: "lcd_sck~GPIO"
+  custom_site: "T8_GPIO/T8_GPIO_SLOT0"
+}
+placed {
+  cell: "led_d1~GPIO"
+  custom_site: "T8_GPIO/T8_GPIO_SLOT0"
+}
+placed {
+  cell: "led_d2~GPIO"
+  custom_site: "T8_GPIO/T8_GPIO_SLOT0"
+}
+placed {
+  cell: "led_d3~GPIO"
+  custom_site: "T8_GPIO/T8_GPIO_SLOT0"
+}
+placed {
+  cell: "led_d4~GPIO"
+  custom_site: "T8_GPIO/T8_GPIO_SLOT0"
+}

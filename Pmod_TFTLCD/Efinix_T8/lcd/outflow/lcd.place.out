@@ -1,0 +1,197 @@
+           
+           Efinix FPGA Placement and Routing.
+           Version: 2026.1.132 
+           Compiled: May 29 2026.
+           
+           Copyright (C) 2013 - 2026 Efinix, Inc. All rights reserved.
+
+           
+           The Tool Is Based on VPR of University of Toronto,
+           a free open source code under MIT license.
+           
+           
+INFO     : Running Placement and Routing for Family "Trion", Device "T8F81" ...
+           
+           ***** Beginning stage netlist pre-processing ... *****
+INFO     : Successfully read in VDB netlist file H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.vdb [DBMsg::VdbFileRead]
+INFO     : ***** Beginning VDB Netlist Checker ... *****
+INFO     : VDB Netlist Checker took 0.0087795 seconds [FlowMsg::StageDuration]
+INFO     :     VDB Netlist Checker took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : VDB Netlist Checker virtual memory usage: begin = 99.308 MB, end = 99.888 MB, delta = 0.58 MB [FlowMsg::VMUsage]
+INFO     :     VDB Netlist Checker peak virtual memory usage = 99.896 MB [FlowMsg::VMUsage::Peak]
+INFO     : VDB Netlist Checker resident set memory usage: begin = 105.252 MB, end = 106.2 MB, delta = 0.948 MB [FlowMsg::RSSUsage]
+INFO     :     VDB Netlist Checker peak resident set memory usage = 106.204 MB [FlowMsg::RSSUsage::Peak]
+INFO     : ***** Ending VDB Netlist Checker ... *****
+INFO     : Reading core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
+INFO     : Successfully read core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
+INFO     : Found 0 constant generator nets [DBMsg::NetlistConstGeneratorCount]
+INFO     : Pass 0: Swept away 0 nets with no fanout [DBMsg::NetlistNetsSweptThisPass]
+INFO     : Pass 0: Swept away 0 blocks with no fanout [DBMsg::NetlistBlocksSweptThisPass]
+INFO     : Swept away 0 nets and 0 blocks in total [DBMsg::NetlistTotalSwept]
+INFO     : Removed 0 LUT buffers [DBMsg::NetlistRemovedLUTBuffers]
+INFO     : Successfully read in VDB netlist file H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.vdb [DBMsg::VdbFileRead]
+INFO     : Netlist pre-processing took 0.0570316 seconds [FlowMsg::StageDuration]
+INFO     :     Netlist pre-processing took 0.015625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Netlist pre-processing virtual memory usage: begin = 99.308 MB, end = 99.888 MB, delta = 0.58 MB [FlowMsg::VMUsage]
+INFO     :     Netlist pre-processing peak virtual memory usage = 99.896 MB [FlowMsg::VMUsage::Peak]
+INFO     : Netlist pre-processing resident set memory usage: begin = 104.712 MB, end = 106.752 MB, delta = 2.04 MB [FlowMsg::RSSUsage]
+INFO     :     Netlist pre-processing peak resident set memory usage = 106.756 MB [FlowMsg::RSSUsage::Peak]
+           ***** Ending stage netlist pre-processing *****
+           
+           ***** Beginning stage pre-packing ... *****
+           ***** Ending stage pre-packing *****
+           
+           ***** Beginning stage packing ... *****
+INFO     : Generate proto netlist for file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto" took 0.006 seconds
+INFO     : Creating IO constraints file 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.io_place'
+INFO     : Packing took 0.0187169 seconds [FlowMsg::StageDuration]
+INFO     :     Packing took 0.015625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Packing virtual memory usage: begin = 99.888 MB, end = 99.888 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     :     Packing peak virtual memory usage = 99.896 MB [FlowMsg::VMUsage::Peak]
+INFO     : Packing resident set memory usage: begin = 107.392 MB, end = 108.016 MB, delta = 0.624 MB [FlowMsg::RSSUsage]
+INFO     :     Packing peak resident set memory usage = 108.02 MB [FlowMsg::RSSUsage::Peak]
+           ***** Ending stage packing *****
+           
+INFO     : Read proto netlist file H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto
+INFO     : Read proto netlist for file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto" took 0.004 seconds
+INFO     : Setup net and block data structure took 0.054 seconds
+INFO     : Reading core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
+INFO     : Successfully read core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
+           ***** Beginning stage packed netlist loading ... *****
+INFO     : Read proto netlist file H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto
+INFO     : Read proto netlist for file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto" took 0.004 seconds
+INFO     : Setup net and block data structure took 0.053 seconds
+INFO     : Packed netlist loading took 0.0583044 seconds [FlowMsg::StageDuration]
+INFO     :     Packed netlist loading took 0.0625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Packed netlist loading virtual memory usage: begin = 100.5 MB, end = 100.5 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     :     Packed netlist loading peak virtual memory usage = 100.508 MB [FlowMsg::VMUsage::Peak]
+INFO     : Packed netlist loading resident set memory usage: begin = 111.328 MB, end = 111.352 MB, delta = 0.024 MB [FlowMsg::RSSUsage]
+INFO     :     Packed netlist loading peak resident set memory usage = 111.356 MB [FlowMsg::RSSUsage::Peak]
+           ***** Ending stage packed netlist loading *****
+           
+           ***** Beginning stage pre-placement ... *****
+           
+           ***** Ending stage pre-placement *****
+           
+INFO     : No SDC file found.  Using default timing constraint of 1 ns.
+INFO     : NOTE:  Use --sdc_file <SDC_FILE> to override this behavior.
+INFO     : Creating clock 'clk' with 1 sources
+           ***** Beginning stage initial placement ... *****
+INFO     : Reading core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
+INFO     : Successfully read core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
+INFO     : Writing IO placement constraints to "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow\lcd.interface.io" [DBMsg::IOPlacementConstraintsFileWriting]
+INFO     : Reading placement constraints from 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow\lcd.interface.io'.
+INFO     : Reading placement constraints from 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.io_place'.
+WARNING  : Clock source clk does not use a dedicated clock pad, so extra clock insertion delay is added
+           ***** Ending stage initial placement *****
+           
+           ***** Beginning stage placement ... *****
+INFO     : Chip::LoadDelayLookupTable
+INFO     : Starting Global Placer with 18 threads ...
+            ----------     -------  --------------     -------
+             Iteration       WHPWL Worst Slack (ps) Convergence
+            ----------     -------  --------------     -------
+INFO     :           1     4409831          -10376         0.6%
+INFO     :           2     4465923          -10376         0.6%
+INFO     :           3     4995877          -10376         0.9%
+INFO     :           4     3853375          -10376         1.1%
+INFO     :           5     1686191          -10666         1.5%
+INFO     :           6      908339          -12305         3.6%
+INFO     :           7      403233          -17754        11.1%
+INFO     :           8      209945          -21158        29.4%
+INFO     :           9      141625          -27177        49.7%
+INFO     :          10      149577          -28891        62.7%
+INFO     :          11      142193          -27934        62.7%
+INFO     :          12      136115          -29594        65.9%
+INFO     :          13      147808          -27109        66.8%
+INFO     :          14      137886          -27686        66.8%
+INFO     :          15      148293          -28463        72.7%
+INFO     :          16      136961          -29392        72.7%
+INFO     :          17      139784          -29659        77.2%
+INFO     :          18      140681          -26661        77.2%
+INFO     :          19      144776          -27430        77.2%
+INFO     :          20      146391          -26657        77.2%
+INFO     :          21      146979          -26536        77.2%
+INFO     :          22      144394          -28890        77.2%
+INFO     :          23      146038          -26731        77.5%
+INFO     :          24      149560          -26492        77.5%
+INFO     :          25      137766          -27883        77.5%
+INFO     :          26      144967          -28083        77.7%
+INFO     :          27      146012          -29063        77.7%
+INFO     :          28      147264          -28649        78.8%
+INFO     :          29      148835          -28224        80.5%
+INFO     :          30      148903          -28366        80.5%
+INFO     :          31      148452          -27987        81.0%
+INFO     :          32      147016          -28850        81.0%
+INFO     :          33      149452          -27949        83.4%
+INFO     :          34      147787          -27298        83.4%
+INFO     :          35      151888          -26873        83.4%
+INFO     :          36      145133          -28270        83.4%
+INFO     :          37      151839          -26867        85.0%
+INFO     : GP: best_placement: wpd: 24100.5
+INFO     : Starting Annealer
+            ----------     -------  --------------     -------
+             Iteration       WHPWL  Delay Max (ps)     R Limit
+            ----------     -------  --------------     -------
+INFO     :           0       69748           32470        30.0
+INFO     :           1       42781           34866        29.8
+INFO     :           2       36374           31681        29.0
+INFO     :           3       36717           29612        27.6
+INFO     :           4       36076           29376        26.2
+INFO     :           5       34574           28031        24.6
+INFO     :           6       34150           27163        23.1
+INFO     :           7       35088           28378        21.5
+INFO     :           8       34695           26220        20.0
+INFO     :           9       34919           24865        18.6
+INFO     :          10       36431           24484        17.3
+INFO     :          11       38849           25627        16.1
+INFO     :          12       38764           25149        15.0
+INFO     :          13       37086           26559        13.8
+INFO     :          14       36842           24635        12.8
+INFO     :          15       36086           24458        11.7
+INFO     :          16       35975           24458        10.8
+INFO     :          17       35947           24050         9.9
+INFO     :          18       36195           24504         9.1
+INFO     :          19       35680           24320         8.4
+INFO     :          20       35612           22788         7.8
+INFO     :          21       36335           23864         7.1
+INFO     :          22       36779           22831         6.6
+INFO     :          23       36933           23177         6.1
+INFO     :          24       36914           24754         5.6
+INFO     :          25       36582           24742         5.1
+INFO     :          26       35798           22106         4.7
+INFO     :          27       36785           24603         4.4
+INFO     :          28       36876           23581         4.0
+INFO     :          29       36782           23190         3.7
+INFO     :          30       36154           24073         3.4
+INFO     :          31       35943           25783         3.1
+INFO     :          32       35780           24950         2.9
+INFO     :          33       35239           23407         2.6
+INFO     :          34       34925           23411         2.4
+INFO     :          35       34728           23086         2.2
+INFO     :          36       34493           23768         2.1
+INFO     :          37       34197           23166         1.9
+INFO     :          38       33499           22531         1.8
+INFO     :          39       33667           24232         1.6
+INFO     :          40       33561           23307         1.5
+INFO     :          41       32719           24706         1.4
+INFO     :          42       31686           26409         1.3
+INFO     :          43       30212           28665         1.1
+INFO     : DP: best_placement: wpd: 20235.3
+INFO     : Placement successful: 2915 cells are placed
+INFO     : Peak congestion smeared over 4x4 of the chip is 0.742283 at 45,84
+INFO     : Peak congestion smeared over 1/16 of the chip is 0.742283 at 45,84
+INFO     : Peak congestion smeared over 1/4 of the chip is 0.561617 at 42,78
+INFO     : Congestion-weighted HPWL per net: 29.5926
+INFO     : Reading placement constraints from 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.qplace'.
+INFO     : Finished Realigning Types (1246 blocks needed type change)
+INFO     : Completed placement consistency check successfully.
+INFO     : Successfully created FPGA place file 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.place'
+INFO     : Placement took 5.8266842 seconds [FlowMsg::StageDuration]
+INFO     :     Placement took 14.328125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Placement virtual memory usage: begin = 100.5 MB, end = 128.084 MB, delta = 27.584 MB [FlowMsg::VMUsage]
+INFO     :     Placement peak virtual memory usage = 128.084 MB [FlowMsg::VMUsage::Peak]
+INFO     : Placement resident set memory usage: begin = 112.008 MB, end = 141.1 MB, delta = 29.092 MB [FlowMsg::RSSUsage]
+INFO     :     Placement peak resident set memory usage = 141.104 MB [FlowMsg::RSSUsage::Peak]
+           ***** Ending stage placement *****
+           

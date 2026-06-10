@@ -1,0 +1,20 @@
+INFO     : Efinix FPGA Bitstream Generator.
+INFO     : Version: 2026.1.132 
+INFO     : Copyright (C) 2013 - 2026 Efinix, Inc. All rights reserved.
+INFO     : Compiled: May 29 2026.
+INFO     : Using source file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr/lcd.lbf"
+INFO     : Generating HEX programming file for device "T8F81", family "Trion"
+INFO     : Using periphery source file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.lpf"
+INFO     : Generating bit file: "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.bit"
+INFO     : HEX Generation Options Summary:
+INFO     : 	Listing options specified to bitstream generation:
+INFO     : 	spi_low_power_mode                       = on
+INFO     : 	oscillator_clock_divider                 = DIV8
+INFO     : 	io_weak_pullup                           = on
+INFO     : Finished generating "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.hex"
+INFO     : Efinix Bitstream Generator took 1.1384523 seconds [FlowMsg::StageDuration]
+INFO     :     Efinix Bitstream Generator took 0.703125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Efinix Bitstream Generator virtual memory usage: begin = 2.548 MB, end = 11.436 MB, delta = 8.888 MB [FlowMsg::VMUsage]
+INFO     :     Efinix Bitstream Generator peak virtual memory usage = 43.512 MB [FlowMsg::VMUsage::Peak]
+INFO     : Efinix Bitstream Generator resident set memory usage: begin = 8.012 MB, end = 19.728 MB, delta = 11.716 MB [FlowMsg::RSSUsage]
+INFO     :     Efinix Bitstream Generator peak resident set memory usage = 48.772 MB [FlowMsg::RSSUsage::Peak]

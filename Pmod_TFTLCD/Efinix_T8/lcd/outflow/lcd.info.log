@@ -1,0 +1,443 @@
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 11, 2026 01:49:03
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0021 ERROR] Elaboration of module 'lcd' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 11, 2026 01:49:27
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0021 ERROR] Elaboration of module 'lcd' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 11, 2026 01:50:24
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 'top' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:1)
+[EFX-0012 VERI-INFO] compiling module 'img_rom' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:8)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:81)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:82)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:125)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:126)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'n480' select size : 7 output width: 9
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 288 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 1s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk' with 204 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 329 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 2806, ed: 10328, lv: 7, pw: 5083.83
+[EFX-0000 INFO] ... LUT mapping end (Real time : 15s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'clk~clk' with 204 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 0 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	97
+[EFX-0000 INFO] EFX_LUT4                : 	2804
+[EFX-0000 INFO] EFX_FF                  : 	203
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 11, 2026 02:10:41
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 'top' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:1)
+[EFX-0012 VERI-INFO] compiling module 'img_rom' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:8)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:81)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:82)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:125)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:126)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'n480' select size : 7 output width: 9
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 288 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 1s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk' with 204 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 329 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 2806, ed: 10328, lv: 7, pw: 5083.83
+[EFX-0000 INFO] ... LUT mapping end (Real time : 15s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'clk~clk' with 204 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 0 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	97
+[EFX-0000 INFO] EFX_LUT4                : 	2804
+[EFX-0000 INFO] EFX_FF                  : 	203
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 11, 2026 02:18:46
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 'top' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:1)
+[EFX-0012 VERI-INFO] compiling module 'img_rom' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:8)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:81)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:82)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:125)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:126)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'n480' select size : 7 output width: 9
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 288 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 1s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk' with 204 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 329 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 2806, ed: 10328, lv: 7, pw: 5083.83
+[EFX-0000 INFO] ... LUT mapping end (Real time : 15s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'clk~clk' with 204 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 0 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	97
+[EFX-0000 INFO] EFX_LUT4                : 	2804
+[EFX-0000 INFO] EFX_FF                  : 	203
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 1s)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 11, 2026 02:20:58
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 'top' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:1)
+[EFX-0012 VERI-INFO] compiling module 'img_rom' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:8)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:81)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:82)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:125)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:126)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'n480' select size : 7 output width: 9
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 288 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 1s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk' with 204 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 329 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 2806, ed: 10328, lv: 7, pw: 5083.83
+[EFX-0000 INFO] ... LUT mapping end (Real time : 15s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'clk~clk' with 204 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 0 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	97
+[EFX-0000 INFO] EFX_LUT4                : 	2804
+[EFX-0000 INFO] EFX_FF                  : 	203
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 11, 2026 02:22:46
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 'top' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:1)
+[EFX-0012 VERI-INFO] compiling module 'img_rom' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:8)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:81)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:82)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:125)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:126)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'n480' select size : 7 output width: 9
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 288 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 1s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk' with 204 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 329 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 2806, ed: 10328, lv: 7, pw: 5083.83
+[EFX-0000 INFO] ... LUT mapping end (Real time : 15s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'clk~clk' with 204 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 0 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	97
+[EFX-0000 INFO] EFX_LUT4                : 	2804
+[EFX-0000 INFO] EFX_FF                  : 	203
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 11, 2026 02:30:15
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 'top' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:1)
+[EFX-0012 VERI-INFO] compiling module 'img_rom' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:8)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:81)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:82)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:125)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:126)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'n480' select size : 7 output width: 9
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 288 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 1s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk' with 204 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 329 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 2806, ed: 10328, lv: 7, pw: 5083.83
+[EFX-0000 INFO] ... LUT mapping end (Real time : 15s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'clk~clk' with 204 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 0 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	97
+[EFX-0000 INFO] EFX_LUT4                : 	2804
+[EFX-0000 INFO] EFX_FF                  : 	203
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 11, 2026 03:49:53
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 'top' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:1)
+[EFX-0012 VERI-INFO] compiling module 'img_rom' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:8)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:81)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:82)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:125)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:126)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'n480' select size : 7 output width: 9
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 288 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 1s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk' with 204 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 329 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 2806, ed: 10328, lv: 7, pw: 5083.83
+[EFX-0000 INFO] ... LUT mapping end (Real time : 15s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'clk~clk' with 204 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 0 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	97
+[EFX-0000 INFO] EFX_LUT4                : 	2804
+[EFX-0000 INFO] EFX_FF                  : 	203
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s)

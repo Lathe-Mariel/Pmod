@@ -1,0 +1,100 @@
+CellSiteInst {
+  cell: "btn_rst"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_06"
+}
+CellSiteInst {
+  cell: "clk"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOL_00"
+}
+CellSiteInst {
+  cell: "lcd_cs"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_27"
+}
+CellSiteInst {
+  cell: "lcd_dc"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_21_CLK4_CBSEL1"
+}
+CellSiteInst {
+  cell: "lcd_mosi"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_25"
+}
+CellSiteInst {
+  cell: "lcd_sck"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_20_CLK5"
+}
+CellSiteInst {
+  cell: "led_d1"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_12"
+}
+CellSiteInst {
+  cell: "led_d2"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_11"
+}
+CellSiteInst {
+  cell: "led_d3"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_10"
+}
+CellSiteInst {
+  cell: "led_d4"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_08"
+}
+CellSiteInst {
+  cell: "btn_rst~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_06"
+}
+CellSiteInst {
+  cell: "clk~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOL_00"
+}
+CellSiteInst {
+  cell: "lcd_cs~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_27"
+}
+CellSiteInst {
+  cell: "lcd_dc~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_21"
+}
+CellSiteInst {
+  cell: "lcd_mosi~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_25"
+}
+CellSiteInst {
+  cell: "lcd_sck~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_20"
+}
+CellSiteInst {
+  cell: "led_d1~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_12"
+}
+CellSiteInst {
+  cell: "led_d2~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_11"
+}
+CellSiteInst {
+  cell: "led_d3~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_10"
+}
+CellSiteInst {
+  cell: "led_d4~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_08"
+}

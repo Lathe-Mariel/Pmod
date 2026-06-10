@@ -1,0 +1,1 @@
+"H:/Efinity/2026.1/bin/python.exe"  "H:/Efinity/2026.1/scripts/efx_run_pt_unified.py"  "lcd"  "Trion"  "T8F81" --peri_file "lcd.peri.xml"
