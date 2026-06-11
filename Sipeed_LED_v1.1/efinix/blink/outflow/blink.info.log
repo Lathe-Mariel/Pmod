@@ -210,3 +210,54 @@
 [EFX-0000 INFO] ======================================= 
 [EFX-0000 INFO] ... Post-Map Verilog Writer begin
 [EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 11, 2026 04:01:23
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 't8_lchika' (VERI-1018) (H:\git\Pmod\Sipeed_LED_v1.1\efinix\blink\t8_lchika.v:1)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "t8_lchika"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "t8_lchika" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "t8_lchika" end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk' with 56 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 8 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 0s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 1s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 16, ed: 57, lv: 3, pw: 103.93
+[EFX-0000 INFO] ... LUT mapping end (Real time : 0s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'clk~clk' with 51 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 1 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	45
+[EFX-0000 INFO] EFX_LUT4                : 	18
+[EFX-0000 INFO] EFX_FF                  : 	59
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] EFX_IBUF                : 	1
+[EFX-0000 INFO] EFX_OBUF                : 	12
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s)

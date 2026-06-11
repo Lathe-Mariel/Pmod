@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<efx:tool_report xmlns:efx="http://www.efinixinc.com/tool_report" date="2026-06-08T01:20:32+0900" project="blink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.efinixinc.com/tool_report tool_report.xsd">
+<efx:tool_report xmlns:efx="http://www.efinixinc.com/tool_report" date="2026-06-11T04:01:43+0900" project="blink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.efinixinc.com/tool_report tool_report.xsd">
 
   <efx:group name="System Resources">
     <efx:group_data info="runtime" name="packing" severity="info" value="0|0:0:0"/>
     <efx:group_data info="runtime" name="placement" severity="info" value="0|0:0:1"/>
-    <efx:group_data info="runtime" name="routing" severity="info" value="0|0:0:0"/>
-    <efx:group_data info="runtime" name="Latest PnR Run" severity="info" value="0|0:0:5"/>
-    <efx:group_data info="peak_rr" name="Peak RSS" severity="info" value="168.496 MB"/>
+    <efx:group_data info="runtime" name="routing" severity="info" value="0|0:0:3"/>
+    <efx:group_data info="runtime" name="Latest PnR Run" severity="info" value="0|0:0:8"/>
+    <efx:group_data info="peak_rr" name="Peak RSS" severity="info" value="169.828 MB"/>
   </efx:group>
 
   <efx:group name="Core Resources">
@@ -24,9 +24,9 @@
   </efx:group>
 
   <efx:group name="Timing (Final)">
-    <efx:group_data name="Worst Negative Slack (WNS)" severity="error" value="-11.063 ns"/>
+    <efx:group_data name="Worst Negative Slack (WNS)" severity="error" value="-10.371 ns"/>
     <efx:group_data name="Worst Hold Slack (WHS)" severity="info" value="0.643 ns"/>
-    <efx:group_data name="clk" severity="info" value="82.898 MHz"/>
+    <efx:group_data name="clk" severity="info" value="87.943 MHz"/>
   </efx:group>
 
 </efx:tool_report>

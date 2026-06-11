@@ -1,7 +1,7 @@
 
 Efinity Interface Designer Report
 Version: 2026.1.132
-Date: 2026-06-11 03:50
+Date: 2026-06-12 02:56
 
 Copyright (C) 2013 - 2026 Efinix Inc. All rights reserved.
 
@@ -26,10 +26,10 @@ Configuration Mode: active (x1)
 ---------- Table of Contents (end) ------------
 
 ---------- 1. Periphery Usage Summary (begin) ----------
-gpio: 10 / 55 (18.18%)
+gpio: 11 / 55 (20.0%)
 jtag: 0 / 2 (0.0%)
 osc: 0 / 1 (0.0%)
-pll: 0 / 1 (0.0%)
+pll: 1 / 1 (100.0%)
 ---------- Periphery Usage Summary (end) ----------
 
 ---------- 2. Generated Output Files (begin) ----------
@@ -58,7 +58,11 @@ Verilog Template: lcd_template.v
 
 ---------- 4. Global Connection Summary (begin) ----------
 
-No global connection was found in project.
++----------+---------------+------+
+| Pin Name |    Resource   | Type |
++----------+---------------+------+
+| pll_clk  | PLL_0.CLKOUT0 | GCLK |
++----------+---------------+------+
 
 ---------- Global Connection Summary (end) ----------
 
@@ -80,7 +84,7 @@ No global connection was found in project.
 +---------------+----------+
 | Instance Name | Function |
 +---------------+----------+
-|     lcd_dc    |  CBSEL1  |
+|     lcd_cs    |  CBSEL0  |
 +---------------+----------+
 
 ---------- Dual-Function Configuration Pin Usage (end) ----------
@@ -89,20 +93,21 @@ No global connection was found in project.
 
 Global Unused Setting: input with weak pullup
 
-+---------------+----------+--------+----------+--------------+----------+----------------------+----------------------+-------------+
-| Instance Name | Resource |  Mode  | Register | Clock Region | I/O Bank |     I/O Standard     |       Pad Name       | Package Pin |
-+---------------+----------+--------+----------+--------------+----------+----------------------+----------------------+-------------+
-|    btn_rst    | GPIOR_06 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS |       GPIOR_06       |      C6     |
-|      clk      | GPIOL_00 | input  |          |              |    1A    | 3.3 V LVTTL / LVCMOS |       GPIOL_00       |      G5     |
-|     lcd_cs    | GPIOR_27 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |       GPIOR_27       |      H9     |
-|     lcd_dc    | GPIOR_21 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS | GPIOR_21_CLK4_CBSEL1 |      E7     |
-|    lcd_mosi   | GPIOR_25 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |       GPIOR_25       |      F5     |
-|    lcd_sck    | GPIOR_20 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |    GPIOR_20_CLK5     |      F8     |
-|     led_d1    | GPIOR_12 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |       GPIOR_12       |      C8     |
-|     led_d2    | GPIOR_11 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |       GPIOR_11       |      B8     |
-|     led_d3    | GPIOR_10 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |       GPIOR_10       |      A9     |
-|     led_d4    | GPIOR_08 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |       GPIOR_08       |      A8     |
-+---------------+----------+--------+----------+--------------+----------+----------------------+----------------------+-------------+
++---------------+----------+--------+----------+--------------+----------+----------------------+-----------------+-------------+
+| Instance Name | Resource |  Mode  | Register | Clock Region | I/O Bank |     I/O Standard     |     Pad Name    | Package Pin |
++---------------+----------+--------+----------+--------------+----------+----------------------+-----------------+-------------+
+|    btn_rst    | GPIOR_06 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_06    |      C6     |
+|      clk      | GPIOL_20 | input  |          |              |    1B    | 3.3 V LVTTL / LVCMOS |  GPIOL_20_PLLIN |      C3     |
+|     lcd_cs    | GPIOR_26 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS | GPIOR_26_CBSEL0 |      G9     |
+|     lcd_dc    | GPIOR_22 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |  GPIOR_22_CTRL5 |      F7     |
+|    lcd_mosi   | GPIOR_24 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |     GPIOR_24    |      F6     |
+|    lcd_sck    | GPIOR_19 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |  GPIOR_19_CLK6  |      E8     |
+|     led_d1    | GPIOR_12 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_12    |      C8     |
+|     led_d2    | GPIOR_11 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_11    |      B8     |
+|     led_d3    | GPIOR_10 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_10    |      A9     |
+|     led_d4    | GPIOR_08 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_08    |      A8     |
+|    pll_rst    | GPIOR_07 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_07    |      C7     |
++---------------+----------+--------+----------+--------------+----------+----------------------+-----------------+-------------+
 
 
 Input GPIO Configuration:
@@ -111,8 +116,9 @@ Input GPIO Configuration:
 +---------------+-----------+---------------------+-----------------+--------------+-----------------+
 | Instance Name | Input Pin | Alternate Input Pin | Input Clock Pin | Pull Up/Down | Schmitt Trigger |
 +---------------+-----------+---------------------+-----------------+--------------+-----------------+
-|    btn_rst    |  btn_rst  |                     |                 |     none     |     Disable     |
-|      clk      |    clk    |                     |                 |     none     |     Disable     |
+|    btn_rst    |  btn_rst  |                     |                 | weak pullup  |     Disable     |
+|      clk      |           |         clk         |                 |     none     |     Disable     |
+|    pll_rst    |  pll_rst  |                     |                 |     none     |     Disable     |
 +---------------+-----------+---------------------+-----------------+--------------+-----------------+
 
 Output GPIO Configuration:
@@ -135,7 +141,39 @@ Output GPIO Configuration:
 
 ---------- 8. PLL Usage Summary (begin) ----------
 
-No PLL was configured
+Instance Name                 : pll_inst1
+Resource                      : PLL_0
+Reference Clock Resource      : GPIOL_20
+Reference Clock Frequency     : 25.0000 MHz
+Reference Clock Period        : 40.0000 ns
+Multiplier (M)                : 32
+Pre-Divider (N)               : 1
+VCO Frequency                 : 800.0000 MHz
+Post-Divider (O)              : 4
+PLL Frequency                 : 200.0000 MHz
+
+Output Clock 0
+Clock Pin Name                : pll_clk
+Output Divider                : 4
+Output Frequency              : 50.0000 MHz
+Output Period                 : 20.000 ns
+
+Frequency calculations:
+	VCO = REFCLK * (M/N)
+	    = 25.0000 MHz * (32/1)
+	    = 800.0000 MHz
+	PLL = VCO / O
+	    = 800.0000 MHz / 4
+	    = 200.0000 MHz
+
+	CLKOUT0 = PLL / CLKOUT0_DIV
+	        = 200.0000 MHz / 4
+	        = 50.0000 MHz
+
+SDC Constraints:
+	create_clock -period 20.000 -name pll_clk [get_ports {pll_clk}]
+
+---------- PLL Usage Summary (end) ----------
 
 ---------- 9. Oscillator Usage Summary (begin) ----------
 

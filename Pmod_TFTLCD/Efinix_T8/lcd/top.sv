@@ -1,21 +1,30 @@
 module top (
-    input  wire clk,       // 50 MHz
+    input  wire pll_clk,       // 25 MHz
     input  wire btn_rst,   // ユーザボタン H11 (押下=Low)
     output reg  lcd_cs,    // G5  Chip Select (Low有効)
     output reg  lcd_dc,    // K11 Data/Command (RS)
     output reg  lcd_mosi,  // G8  SPI MOSI
-    output reg  lcd_sck    // J5  SPI Clock
+    output reg  lcd_sck,    // J5  SPI Clock
+    output reg led_d1,
+    output reg led_d2,
+    output reg led_d3,
+    output reg led_d4
 );
 
 // ============================================================
 // ユーザボタン 2段同期化 + 非同期リセット生成
 // ============================================================
 reg btn_r1, btn_r2;
-always @(posedge clk) begin
+always @(posedge pll_clk) begin
     btn_r1 <= btn_rst;
     btn_r2 <= btn_r1;
 end
 wire rst_n = btn_r2;
+
+assign led_d1 = btn_rst;
+assign led_d2 = 1;
+assign led_d3 = 1;
+assign led_d4 = 1;
 
 // ============================================================
 // 画像パラメータ
@@ -143,7 +152,7 @@ localparam [23:0] POWERON_WAIT = 24'd7_500_000;
 reg [23:0] poweron_cnt;
 reg        init_start;
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge pll_clk or negedge rst_n) begin
     if (!rst_n) begin
         poweron_cnt <= 24'd0;
         init_start  <= 1'b0;
@@ -167,7 +176,7 @@ reg       tx_start;
 reg       tx_busy;
 reg [5:0] tx_cnt;
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge pll_clk or negedge rst_n) begin
     if (!rst_n) begin
         lcd_cs   <= 1'b1;
         lcd_sck  <= 1'b0;
@@ -213,12 +222,12 @@ end
 //   描画開始時 (S_FRAME_START) に位置を確定し、
 //   描画中は位置を変えない (テアリング防止)
 // ============================================================
-localparam [22:0] MOVE_PERIOD = 23'd2_000_000;
+localparam [22:0] MOVE_PERIOD = 23'd3_000_000;
 
 reg [22:0] move_cnt;
 reg        move_pulse;
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge pll_clk or negedge rst_n) begin
     if (!rst_n) begin
         move_cnt   <= 23'd0;
         move_pulse <= 1'b0;
@@ -242,7 +251,7 @@ reg       dir_x;      // 0=右方向, 1=左方向
 reg       dir_y;      // 0=下方向, 1=上方向
 
 // 位置更新ロジック (move_pulse ごとに next_x/next_y を更新)
-always @(posedge clk or negedge rst_n) begin
+always @(posedge pll_clk or negedge rst_n) begin
     if (!rst_n) begin
         next_x <= 9'd140;   // 初期位置: 中央付近
         next_y <= 8'd100;
@@ -317,7 +326,7 @@ wire in_image   = in_img_col && in_img_row;
 wire [7:0] img_rel_col = col_cnt[7:0] - img_x[7:0];
 wire [7:0] img_rel_row = row_cnt      - img_y;
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge pll_clk or negedge rst_n) begin
     if (!rst_n) begin
         state     <= S_WAIT;
         init_idx  <= 7'd0;

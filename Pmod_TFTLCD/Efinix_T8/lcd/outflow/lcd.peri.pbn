@@ -11,10 +11,6 @@ cell {
   type: "pkg_input"
 }
 cell {
-  name: "clk~GPIO~I"
-  type: "pt_output"
-}
-cell {
   name: "lcd_cs"
   type: "pkg_output"
 }
@@ -79,6 +75,18 @@ cell {
   type: "pt_input"
 }
 cell {
+  name: "pll_clk~PLL~CLKOUT0"
+  type: "pt_output"
+}
+cell {
+  name: "pll_rst"
+  type: "pkg_input"
+}
+cell {
+  name: "pll_rst~GPIO~I"
+  type: "pt_output"
+}
+cell {
   name: "btn_rst~GPIO"
   type: "EFX_GPIO_V1"
   parameters {
@@ -99,7 +107,7 @@ cell {
   }
   parameters {
     name: "PULL_OPTION"
-    enum_value: "NONE"
+    enum_value: "WEAK_PULLUP"
   }
   parameters {
     name: "IS_OUTCLK_INVERTED"
@@ -163,7 +171,7 @@ cell {
   }
   parameters {
     name: "CONNECTION_TYPE"
-    enum_value: "NORMAL"
+    enum_value: "PLL_CLKIN"
   }
   parameters {
     name: "SCHMITT_TRIGGER"
@@ -598,6 +606,90 @@ cell {
     enum_value: "3.3_V_LVTTL_LVCMOS"
   }
 }
+cell {
+  name: "pll_inst1~PLL"
+  type: "EFX_PLL_V1"
+  parameters {
+    name: "N"
+    mask_value: "1"
+  }
+  parameters {
+    name: "M"
+    mask_value: "32"
+  }
+  parameters {
+    name: "O"
+    mask_value: "4"
+  }
+  parameters {
+    name: "CLKOUT0_DIV"
+    mask_value: "4"
+  }
+  parameters {
+    name: "CLKOUT1_DIV"
+    mask_value: "2"
+  }
+  parameters {
+    name: "CLKOUT2_DIV"
+    mask_value: "2"
+  }
+  parameters {
+    name: "REFCLK_FREQ"
+    mask_value: "25"
+  }
+}
+cell {
+  name: "pll_rst~GPIO"
+  type: "EFX_GPIO_V1"
+  parameters {
+    name: "MODE"
+    enum_value: "INPUT"
+  }
+  parameters {
+    name: "OUT_REG"
+    enum_value: "BYPASS"
+  }
+  parameters {
+    name: "IN_REG"
+    enum_value: "BYPASS"
+  }
+  parameters {
+    name: "OE_REG"
+    enum_value: "BYPASS"
+  }
+  parameters {
+    name: "PULL_OPTION"
+    enum_value: "NONE"
+  }
+  parameters {
+    name: "IS_OUTCLK_INVERTED"
+    bool_value: false
+  }
+  parameters {
+    name: "IS_INCLK_INVERTED"
+    bool_value: false
+  }
+  parameters {
+    name: "CONNECTION_TYPE"
+    enum_value: "NORMAL"
+  }
+  parameters {
+    name: "SCHMITT_TRIGGER"
+    bool_value: false
+  }
+  parameters {
+    name: "DRIVE_STRENGTH"
+    enum_value: "1"
+  }
+  parameters {
+    name: "SLEW_RATE"
+    bool_value: false
+  }
+  parameters {
+    name: "IO_STANDARD"
+    enum_value: "3.3_V_LVTTL_LVCMOS"
+  }
+}
 net {
   name: "btn_rst"
   type: PERIPHERY
@@ -635,15 +727,15 @@ net {
   }
 }
 net {
-  name: "clk~GPIO~I"
+  name: "clk~GPIO~ALT"
   type: PERIPHERY
   terminal {
     cell: "clk~GPIO"
-    port: "I"
+    port: "ALT"
   }
   terminal {
-    cell: "clk~GPIO~I"
-    port: "outpad"
+    cell: "pll_inst1~PLL"
+    port: "CLKIN"
   }
 }
 net {
@@ -838,23 +930,59 @@ net {
     port: "O"
   }
 }
+net {
+  name: "pll_clk~PLL~CLKOUT0"
+  type: PERIPHERY
+  terminal {
+    cell: "pll_inst1~PLL"
+    port: "CLKOUT0"
+  }
+  terminal {
+    cell: "pll_clk~PLL~CLKOUT0"
+    port: "outpad"
+  }
+}
+net {
+  name: "pll_rst"
+  type: PERIPHERY
+  terminal {
+    cell: "pll_rst"
+    port: "inpad"
+  }
+  terminal {
+    cell: "pll_rst~GPIO"
+    port: "IO_inpad"
+  }
+}
+net {
+  name: "pll_rst~GPIO~I"
+  type: PERIPHERY
+  terminal {
+    cell: "pll_rst~GPIO"
+    port: "I"
+  }
+  terminal {
+    cell: "pll_rst~GPIO~I"
+    port: "outpad"
+  }
+}
 cell_annotations {
   string_annotation {
     name: "PT.MutatedCellOrigName"
     sparse: false
     default_value: ""
     ids: 1
-    ids: 3
-    ids: 5
-    ids: 7
-    ids: 9
-    ids: 11
-    ids: 13
-    ids: 15
-    ids: 17
+    ids: 4
+    ids: 6
+    ids: 8
+    ids: 10
+    ids: 12
+    ids: 14
+    ids: 16
+    ids: 18
     ids: 19
+    ids: 21
     values: "btn_rst"
-    values: "clk"
     values: "lcd_cs"
     values: "lcd_dc"
     values: "lcd_mosi"
@@ -863,5 +991,7 @@ cell_annotations {
     values: "led_d2"
     values: "led_d3"
     values: "led_d4"
+    values: "pll_clk"
+    values: "pll_rst"
   }
 }

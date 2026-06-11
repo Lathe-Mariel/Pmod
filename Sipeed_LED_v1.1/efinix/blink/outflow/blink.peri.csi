@@ -41,7 +41,7 @@ CellSiteInst {
 CellSiteInst {
   cell: "led7"
   block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
-  block_inst: "GPIOL_00"
+  block_inst: "GPIOR_20_CLK5"
 }
 CellSiteInst {
   cell: "led_d1"
@@ -106,7 +106,7 @@ CellSiteInst {
 CellSiteInst {
   cell: "led7~GPIO"
   block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
-  block_inst: "GPIOL_00"
+  block_inst: "GPIOR_20"
 }
 CellSiteInst {
   cell: "led_d1~GPIO"

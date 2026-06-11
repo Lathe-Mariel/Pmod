@@ -1,18 +1,20 @@
 
 # Efinity Interface Configuration
 # Version: 2026.1.132
-# Date: 2026-06-11 03:50
+# Date: 2026-06-12 02:56
 
 # Copyright (C) 2013 - 2026 Efinix Inc. All rights reserved.
 
 # [required | optional] (input|output|clkout), x, y, z, __bypass__|[~|!]<clock>, [[~|!]<pin_name>] | __vcc__ | __gnd__
 input, 78, 130, 1, __bypass__, btn_rst
-input, 0, 22, 1, __bypass__, clk
-output, 78, 52, 0, __bypass__, lcd_cs
-output, 78, 67, 0, __bypass__, lcd_dc
-output, 78, 57, 0, __bypass__, lcd_mosi
-output, 78, 70, 0, __bypass__, lcd_sck
+optional input, 0, 102, 1, __bypass__, clk
+output, 78, 55, 0, __bypass__, lcd_cs
+output, 78, 65, 0, __bypass__, lcd_dc
+output, 78, 60, 0, __bypass__, lcd_mosi
+output, 78, 92, 0, __bypass__, lcd_sck
 output, 78, 110, 0, __bypass__, led_d1
 output, 78, 112, 0, __bypass__, led_d2
 output, 78, 115, 0, __bypass__, led_d3
 output, 78, 125, 0, __bypass__, led_d4
+input, 0, 83, 1, __bypass__, pll_clk
+input, 78, 127, 1, __bypass__, pll_rst

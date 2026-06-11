@@ -1,7 +1,7 @@
 
 # Efinity Pinout Report
 # Version: 2026.1.132
-# Date: 2026-06-11 03:50
+# Date: 2026-06-12 02:56
 
 # Copyright (C) 2013 - 2026 Efinix Inc. All rights reserved.
 
@@ -31,11 +31,11 @@ B8,GPIOR_11,led_d2,Output,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
 B9,GPIOR_14,,Input,2A,3.3 V,,weak pullup,User IO
 C1,VCC,,Power,,,,,1.1 V VCC Power
 C2,GPIOL_16_CLK2,,Input,1B,3.3 V,,weak pullup,User IO/GCLK
-C3,GPIOL_20_PLLIN,,Input,1B,3.3 V,,weak pullup,User IO/PLL_CLKIN
+C3,GPIOL_20_PLLIN,clk,Input,1B,3.3 V,3.3 V LVTTL / LVCMOS,,User IO/PLL_CLKIN
 C4,TCK,,Input,1B,3.3 V,,,Configuration
 C5,GPIOR_02_RESERVED_OUT,,Input,2A,3.3 V,,weak pullup,User IO
-C6,GPIOR_06,btn_rst,Input,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
-C7,GPIOR_07,,Input,2A,3.3 V,,weak pullup,User IO
+C6,GPIOR_06,btn_rst,Input,2A,3.3 V,3.3 V LVTTL / LVCMOS,weak pullup,User IO
+C7,GPIOR_07,pll_rst,Input,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
 C8,GPIOR_12,led_d1,Output,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
 C9,GPIOR_15_CBUS0,,Input,2A,3.3 V,,weak pullup,User IO/Configuration
 D1,GND,,Power,,,,,Ground
@@ -53,27 +53,27 @@ E3,GPIOL_18_CTRL2,,Input,1B,3.3 V,,weak pullup,User IO/GCTRL
 E4,GND,,Power,,,,,Ground
 E5,VCC,,Power,,,,,1.1 V VCC Power
 E6,GPIOR_23_CTRL4,,Input,2B,3.3 V,,weak pullup,User IO/GCTRL
-E7,GPIOR_21_CLK4_CBSEL1,lcd_dc,Output,2B,3.3 V,3.3 V LVTTL / LVCMOS,,User IO/GCLK
-E8,GPIOR_19_CLK6,,Input,2A,3.3 V,,weak pullup,User IO/GCLK
+E7,GPIOR_21_CLK4_CBSEL1,,Input,2B,3.3 V,,weak pullup,User IO/GCLK
+E8,GPIOR_19_CLK6,lcd_sck,Output,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO/GCLK
 E9,GND,,Power,,,,,Ground
 F1,GPIOL_13_CTRL1,,Input,1A,3.3 V,,weak pullup,User IO/GCTRL
 F2,VCC,,Power,,,,,1.1 V VCC Power
 F3,GPIOL_11_CDI3,,Input,1A,3.3 V,,weak pullup,User IO
 F4,GPIOL_04_CDI0,,Input,1A,3.3 V,,weak pullup,User IO/Configuration
-F5,GPIOR_25,lcd_mosi,Output,2B,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
-F6,GPIOR_24,,Input,2B,3.3 V,,weak pullup,User IO
-F7,GPIOR_22_CTRL5,,Input,2B,3.3 V,,weak pullup,User IO/GCTRL
-F8,GPIOR_20_CLK5,lcd_sck,Output,2B,3.3 V,3.3 V LVTTL / LVCMOS,,User IO/GCLK
+F5,GPIOR_25,,Input,2B,3.3 V,,weak pullup,User IO
+F6,GPIOR_24,lcd_mosi,Output,2B,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
+F7,GPIOR_22_CTRL5,lcd_dc,Output,2B,3.3 V,3.3 V LVTTL / LVCMOS,,User IO/GCTRL
+F8,GPIOR_20_CLK5,,Input,2B,3.3 V,,weak pullup,User IO/GCLK
 F9,VCC,,Power,,,,,1.1 V VCC Power
 G1,GPIOL_12_CTRL0,,Input,1A,3.3 V,,weak pullup,User IO/GCTRL
 G2,GND,,Power,,,,,Ground
 G3,GPIOL_07_CDI6,,Input,1A,3.3 V,,weak pullup,User IO
 G4,GPIOL_03_CDI4,,Input,1A,3.3 V,,weak pullup,User IO
-G5,GPIOL_00,clk,Input,1A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
+G5,GPIOL_00,,Input,1A,3.3 V,,weak pullup,User IO
 G6,GPIOR_35_CSO,,Input,2B,3.3 V,,weak pullup,User IO/Configuration
 G7,GND,,Power,,,,,Ground
 G8,GPIOR_31,,Input,2B,3.3 V,,weak pullup,User IO
-G9,GPIOR_26_CBSEL0,,Input,2B,3.3 V,,weak pullup,User IO
+G9,GPIOR_26_CBSEL0,lcd_cs,Output,2B,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
 H1,GND,,Power,,,,,Ground
 H2,GPIOL_10_CDI7,,Input,1A,3.3 V,,weak pullup,User IO
 H3,GPIOL_06_CDI1,,Input,1A,3.3 V,,weak pullup,User IO/Configuration
@@ -82,7 +82,7 @@ H5,CDONE,,Bidirectional,1A,3.3 V,,,Configuration
 H6,GPIOR_36,,Input,2B,3.3 V,,weak pullup,User IO
 H7,VCCIO2B,,Power,2B,3.3 V,,,VCCIO Power
 H8,GPIOR_32,,Input,2B,3.3 V,,weak pullup,User IO
-H9,GPIOR_27,lcd_cs,Output,2B,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
+H9,GPIOR_27,,Input,2B,3.3 V,,weak pullup,User IO
 J1,VCCIO1A,,Power,1A,3.3 V,,,VCCIO Power
 J2,GPIOL_09_CDI2,,Input,1A,3.3 V,,weak pullup,User IO
 J3,GPIOL_05_CDI5,,Input,1A,3.3 V,,weak pullup,User IO

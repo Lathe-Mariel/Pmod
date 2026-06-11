@@ -1,5 +1,5 @@
 // Efinix verilog description of module t8_lchika
-// Date : Jun 8 2026  1:20
+// Date : Jun 11 2026  4:1
 // Copyright (C) 2013-2026 Efinix Inc. All rights reserved.
 
 module t8_lchika (clk, led_d1, led_d2, led_d3, led_d4, led0, led1, led2, led3, led4, led5, led6, led7);

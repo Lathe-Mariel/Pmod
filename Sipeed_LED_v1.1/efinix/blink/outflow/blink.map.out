@@ -12,30 +12,30 @@ INFO     : default VHDL library search path is now "H:/Efinity/2026.1/sim_models
 INFO     : Restoring all Verilog modules from file 'H:/Efinity/2026.1/sim_models/maplib/perilib_efxlib_parsetree.vdb' [VERI-2484]
 INFO     : Restoring all Verilog modules from file 'H:/Efinity/2026.1/sim_models/maplib/maplib_efxlib_parsetree.vdb' [VERI-2484]
 INFO     : Analyzing Verilog file 'H:\git\Pmod\Sipeed_LED_v1.1\efinix\blink\t8_lchika.v' [VERI-1482]
-INFO     : Analysis took 0.0123885 seconds [FlowMsg::StageDuration]
-INFO     :     Analysis took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Analysis virtual memory usage: begin = 59.508 MB, end = 59.528 MB, delta = 0.02 MB [FlowMsg::VMUsage]
-INFO     :     Analysis peak virtual memory usage = 59.536 MB [FlowMsg::VMUsage::Peak]
-INFO     : Analysis resident set memory usage: begin = 62.284 MB, end = 64.796 MB, delta = 2.512 MB [FlowMsg::RSSUsage]
-INFO     :     Analysis peak resident set memory usage = 64.8 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Analysis took 0.0289601 seconds [FlowMsg::StageDuration]
+INFO     :     Analysis took 0.015625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Analysis virtual memory usage: begin = 59.476 MB, end = 59.496 MB, delta = 0.02 MB [FlowMsg::VMUsage]
+INFO     :     Analysis peak virtual memory usage = 59.504 MB [FlowMsg::VMUsage::Peak]
+INFO     : Analysis resident set memory usage: begin = 62.272 MB, end = 64.784 MB, delta = 2.512 MB [FlowMsg::RSSUsage]
+INFO     :     Analysis peak resident set memory usage = 64.788 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending Analysis ... *****
 INFO     : ***** Beginning Elaboration ... *****
 INFO     : H:\git\Pmod\Sipeed_LED_v1.1\efinix\blink\t8_lchika.v(1): compiling module 't8_lchika' [VERI-1018]
-INFO     : Elaboration took 0.0036536 seconds [FlowMsg::StageDuration]
+INFO     : Elaboration took 0.0039378 seconds [FlowMsg::StageDuration]
 INFO     :     Elaboration took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Elaboration virtual memory usage: begin = 59.528 MB, end = 59.528 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     :     Elaboration peak virtual memory usage = 59.536 MB [FlowMsg::VMUsage::Peak]
-INFO     : Elaboration resident set memory usage: begin = 64.84 MB, end = 65.884 MB, delta = 1.044 MB [FlowMsg::RSSUsage]
-INFO     :     Elaboration peak resident set memory usage = 65.888 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Elaboration virtual memory usage: begin = 59.496 MB, end = 59.496 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     :     Elaboration peak virtual memory usage = 59.504 MB [FlowMsg::VMUsage::Peak]
+INFO     : Elaboration resident set memory usage: begin = 64.828 MB, end = 65.872 MB, delta = 1.044 MB [FlowMsg::RSSUsage]
+INFO     :     Elaboration peak resident set memory usage = 65.876 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending Elaboration ... *****
 INFO     : ... Setting Synthesis Option: mode=speed
 INFO     : ***** Beginning Reading Mapping Library ... *****
-INFO     : Reading Mapping Library took 0.0027052 seconds [FlowMsg::StageDuration]
+INFO     : Reading Mapping Library took 0.003228 seconds [FlowMsg::StageDuration]
 INFO     :     Reading Mapping Library took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Reading Mapping Library virtual memory usage: begin = 63.116 MB, end = 63.116 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     :     Reading Mapping Library peak virtual memory usage = 63.116 MB [FlowMsg::VMUsage::Peak]
-INFO     : Reading Mapping Library resident set memory usage: begin = 68.276 MB, end = 68.28 MB, delta = 0.004 MB [FlowMsg::RSSUsage]
-INFO     :     Reading Mapping Library peak resident set memory usage = 68.284 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Reading Mapping Library virtual memory usage: begin = 63.088 MB, end = 63.088 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     :     Reading Mapping Library peak virtual memory usage = 63.088 MB [FlowMsg::VMUsage::Peak]
+INFO     : Reading Mapping Library resident set memory usage: begin = 68.264 MB, end = 68.268 MB, delta = 0.004 MB [FlowMsg::RSSUsage]
+INFO     :     Reading Mapping Library peak resident set memory usage = 68.272 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending Reading Mapping Library ... *****
 INFO     : ... Pre-synthesis checks begin
 INFO     : ... Pre-synthesis checks end (Real time : 0s)
@@ -57,10 +57,10 @@ INFO     : ... Clock Network 'clk' with 56 loads will be considered for sequenti
 INFO     : ... Sequential Optimization deduced 8 equivalent points.
 INFO     : ... Sequential Optimization end (Real time : 0s)
 INFO     : ... Setup for logic synthesis begin
-INFO     : ... Setup for logic synthesis end (Real time : 0s)
+INFO     : ... Setup for logic synthesis end (Real time : 1s)
 INFO     : ... LUT mapping begin
 INFO     : ... LS, strategy: 3, nd: 16, ed: 57, lv: 3, pw: 103.93
-INFO     : ... LUT mapping end (Real time : 1s)
+INFO     : ... LUT mapping end (Real time : 0s)
 INFO     : ... Post-synthesis Verific netlist creation begin
 INFO     : ... Post-synthesis Verific netlist creation end (Real time : 0s)
 INFO     : ... Postmap Retiming Optimization begin
@@ -69,12 +69,12 @@ INFO     : ... Clock Network 'clk~clk' with 51 loads will be considered for reti
 INFO     : ... Performed 1 retime moves.
 INFO     : ... Postmap Retiming Optimization end (Real time : 0s)
 INFO     : ***** Beginning VDB Netlist Checker ... *****
-INFO     : VDB Netlist Checker took 0.0004504 seconds [FlowMsg::StageDuration]
+INFO     : VDB Netlist Checker took 0.0007046 seconds [FlowMsg::StageDuration]
 INFO     :     VDB Netlist Checker took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : VDB Netlist Checker virtual memory usage: begin = 60.888 MB, end = 60.976 MB, delta = 0.088 MB [FlowMsg::VMUsage]
-INFO     :     VDB Netlist Checker peak virtual memory usage = 103.84 MB [FlowMsg::VMUsage::Peak]
-INFO     : VDB Netlist Checker resident set memory usage: begin = 74.684 MB, end = 74.848 MB, delta = 0.164 MB [FlowMsg::RSSUsage]
-INFO     :     VDB Netlist Checker peak resident set memory usage = 108.54 MB [FlowMsg::RSSUsage::Peak]
+INFO     : VDB Netlist Checker virtual memory usage: begin = 60.832 MB, end = 61.024 MB, delta = 0.192 MB [FlowMsg::VMUsage]
+INFO     :     VDB Netlist Checker peak virtual memory usage = 103.832 MB [FlowMsg::VMUsage::Peak]
+INFO     : VDB Netlist Checker resident set memory usage: begin = 74.648 MB, end = 74.864 MB, delta = 0.216 MB [FlowMsg::RSSUsage]
+INFO     :     VDB Netlist Checker peak resident set memory usage = 108.424 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending VDB Netlist Checker ... *****
 INFO     : Resource Summary 
 INFO     : ======================================= 
@@ -86,11 +86,11 @@ INFO     : EFX_IBUF                : 	1
 INFO     : EFX_OBUF                : 	12
 INFO     : ======================================= 
 INFO     : ... Post-Map Verilog Writer begin
-INFO     : Writing netlist 't8_lchika~core' to Verilog file 'H:\git\Pmod\Sipeed_LED_v1.1\efinix\blink/outflow/blink.map.core.v' [VDB-1030]
+INFO     : Writing netlist 't8_lchika~core' to Verilog file 'H:/git/Pmod/Sipeed_LED_v1.1/efinix/blink/outflow/blink.map.core.v' [VDB-1030]
 INFO     : ... Post-Map Verilog Writer end (Real time : 0s)
-INFO     : The entire flow of EFX_MAP took 2.0957756 seconds [FlowMsg::StageDuration]
-INFO     :     The entire flow of EFX_MAP took 1.265625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : The entire flow of EFX_MAP virtual memory usage: begin = 18.972 MB, end = 65.368 MB, delta = 46.396 MB [FlowMsg::VMUsage]
-INFO     :     The entire flow of EFX_MAP peak virtual memory usage = 103.84 MB [FlowMsg::VMUsage::Peak]
-INFO     : The entire flow of EFX_MAP resident set memory usage: begin = 18.176 MB, end = 77.548 MB, delta = 59.372 MB [FlowMsg::RSSUsage]
-INFO     :     The entire flow of EFX_MAP peak resident set memory usage = 108.54 MB [FlowMsg::RSSUsage::Peak]
+INFO     : The entire flow of EFX_MAP took 2.2101043 seconds [FlowMsg::StageDuration]
+INFO     :     The entire flow of EFX_MAP took 1.671875 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : The entire flow of EFX_MAP virtual memory usage: begin = 18.948 MB, end = 65.264 MB, delta = 46.316 MB [FlowMsg::VMUsage]
+INFO     :     The entire flow of EFX_MAP peak virtual memory usage = 103.832 MB [FlowMsg::VMUsage::Peak]
+INFO     : The entire flow of EFX_MAP resident set memory usage: begin = 18.172 MB, end = 77.432 MB, delta = 59.26 MB [FlowMsg::RSSUsage]
+INFO     :     The entire flow of EFX_MAP peak resident set memory usage = 108.424 MB [FlowMsg::RSSUsage::Peak]

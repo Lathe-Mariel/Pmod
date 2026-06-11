@@ -1,7 +1,7 @@
 
 // Efinity Top-level template
 // Version: 2026.1.132
-// Date: 2026-06-11 03:50
+// Date: 2026-06-12 02:56
 
 // Copyright (C) 2013 - 2026 Efinix Inc. All rights reserved.
 
@@ -21,6 +21,8 @@ module lcd
 (
   (* syn_peri_port = 0 *) input btn_rst,
   (* syn_peri_port = 0 *) input clk,
+  (* syn_peri_port = 0 *) input pll_rst,
+  (* syn_peri_port = 0 *) input pll_clk,
   (* syn_peri_port = 0 *) output lcd_cs,
   (* syn_peri_port = 0 *) output lcd_dc,
   (* syn_peri_port = 0 *) output lcd_mosi,

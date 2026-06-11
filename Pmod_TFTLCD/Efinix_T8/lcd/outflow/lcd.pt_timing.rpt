@@ -1,7 +1,7 @@
 
 Efinity Interface Designer Timing Report
 Version: 2026.1.132
-Date: 2026-06-11 03:50
+Date: 2026-06-12 02:56
 
 Copyright (C) 2013 - 2026 Efinix Inc. All rights reserved.
 
@@ -9,7 +9,17 @@ Device: T8F81
 Project: lcd
 Timing Model: C2 (final)
 
----------- 1. GPIO Timing Report (begin) ----------
+---------- 1. PLL Timing Report (begin) ----------
+
++---------+-------------+
+|  Clock  | Period (ns) |
++---------+-------------+
+| pll_clk |    20.000   |
++---------+-------------+
+
+---------- PLL Timing Report (end) ----------
+
+---------- 2. GPIO Timing Report (begin) ----------
 
 Non-registered GPIO Configuration:
 ===================================
@@ -19,6 +29,7 @@ Non-registered GPIO Configuration:
 +---------------+----------+-----------+----------+----------+
 |    btn_rst    | btn_rst  |  GPIO_IN  |  1.954   |  0.698   |
 |      clk      |   clk    |  GPIO_IN  |  1.954   |  0.698   |
+|    pll_rst    | pll_rst  |  GPIO_IN  |  1.954   |  0.698   |
 |     lcd_cs    |  lcd_cs  |  GPIO_OUT |  5.361   |  1.915   |
 |     lcd_dc    |  lcd_dc  |  GPIO_OUT |  5.361   |  1.915   |
 |    lcd_mosi   | lcd_mosi |  GPIO_OUT |  5.361   |  1.915   |

@@ -50,7 +50,7 @@ port (
 
 	-- GPIO Pins
 
-	GPIOL_00                      : in bit;
+	GPIOL_00                      : linkage bit;
 	GPIOL_01_SS_N                 : linkage bit;
 	GPIOL_02_CCK                  : linkage bit;
 	GPIOL_03_CDI4                 : linkage bit;
@@ -69,7 +69,7 @@ port (
 	GPIOL_17_CLK3                 : linkage bit;
 	GPIOL_18_CTRL2                : linkage bit;
 	GPIOL_19_CTRL3                : linkage bit;
-	GPIOL_20_PLLIN                : linkage bit;
+	GPIOL_20_PLLIN                : in bit;
 	GPIOL_21_NSTATUS              : linkage bit;
 	GPIOR_00                      : linkage bit;
 	GPIOR_01                      : linkage bit;
@@ -77,7 +77,7 @@ port (
 	GPIOR_03                      : linkage bit;
 	GPIOR_05                      : linkage bit;
 	GPIOR_06                      : in bit;
-	GPIOR_07                      : linkage bit;
+	GPIOR_07                      : in bit;
 	GPIOR_08                      : out bit;
 	GPIOR_10                      : out bit;
 	GPIOR_11                      : out bit;
@@ -88,15 +88,15 @@ port (
 	GPIOR_16_CTRL7_CBUS1          : linkage bit;
 	GPIOR_17_CTRL6_CBUS2          : linkage bit;
 	GPIOR_18_CLK7                 : linkage bit;
-	GPIOR_19_CLK6                 : linkage bit;
-	GPIOR_20_CLK5                 : out bit;
-	GPIOR_21_CLK4_CBSEL1          : out bit;
-	GPIOR_22_CTRL5                : linkage bit;
+	GPIOR_19_CLK6                 : out bit;
+	GPIOR_20_CLK5                 : linkage bit;
+	GPIOR_21_CLK4_CBSEL1          : linkage bit;
+	GPIOR_22_CTRL5                : out bit;
 	GPIOR_23_CTRL4                : linkage bit;
-	GPIOR_24                      : linkage bit;
-	GPIOR_25                      : out bit;
-	GPIOR_26_CBSEL0               : linkage bit;
-	GPIOR_27                      : out bit;
+	GPIOR_24                      : out bit;
+	GPIOR_25                      : linkage bit;
+	GPIOR_26_CBSEL0               : out bit;
+	GPIOR_27                      : linkage bit;
 	GPIOR_28                      : linkage bit;
 	GPIOR_30                      : linkage bit;
 	GPIOR_31                      : linkage bit;
@@ -330,40 +330,40 @@ attribute BOUNDARY_REGISTER of T8F81 : entity is
 	"35 (BC_1, *, internal, X)," &
 
 	"36 (BC_1, *, internal, X)," &
-	"37 (BC_1, *, control, 1)," &
-	"38 (BC_1, GPIOR_27, output3, X, 37, 1, Z)," &
+	"37 (BC_1, *, internal, 1)," &
+	"38 (BC_1, *, internal, X)," &
 
 	"39 (BC_1, *, internal, X)," &
-	"40 (BC_1, *, internal, 1)," &
-	"41 (BC_1, *, internal, X)," &
+	"40 (BC_1, *, control, 1)," &
+	"41 (BC_1, GPIOR_26_CBSEL0, output3, X, 40, 1, Z)," &
 
 	"42 (BC_1, *, internal, X)," &
-	"43 (BC_1, *, control, 1)," &
-	"44 (BC_1, GPIOR_25, output3, X, 43, 1, Z)," &
+	"43 (BC_1, *, internal, 1)," &
+	"44 (BC_1, *, internal, X)," &
 
 	"45 (BC_1, *, internal, X)," &
-	"46 (BC_1, *, internal, 1)," &
-	"47 (BC_1, *, internal, X)," &
+	"46 (BC_1, *, control, 1)," &
+	"47 (BC_1, GPIOR_24, output3, X, 46, 1, Z)," &
 
 	"48 (BC_1, *, internal, X)," &
 	"49 (BC_1, *, internal, 1)," &
 	"50 (BC_1, *, internal, X)," &
 
 	"51 (BC_1, *, internal, X)," &
-	"52 (BC_1, *, internal, 1)," &
-	"53 (BC_1, *, internal, X)," &
+	"52 (BC_1, *, control, 1)," &
+	"53 (BC_1, GPIOR_22_CTRL5, output3, X, 52, 1, Z)," &
 
 	"54 (BC_1, *, internal, X)," &
-	"55 (BC_1, *, control, 1)," &
-	"56 (BC_1, GPIOR_21_CLK4_CBSEL1, output3, X, 55, 1, Z)," &
+	"55 (BC_1, *, internal, 1)," &
+	"56 (BC_1, *, internal, X)," &
 
 	"57 (BC_1, *, internal, X)," &
-	"58 (BC_1, *, control, 1)," &
-	"59 (BC_1, GPIOR_20_CLK5, output3, X, 58, 1, Z)," &
+	"58 (BC_1, *, internal, 1)," &
+	"59 (BC_1, *, internal, X)," &
 
 	"60 (BC_1, *, internal, X)," &
-	"61 (BC_1, *, internal, 1)," &
-	"62 (BC_1, *, internal, X)," &
+	"61 (BC_1, *, control, 1)," &
+	"62 (BC_1, GPIOR_19_CLK6, output3, X, 61, 1, Z)," &
 
 	"63 (BC_1, *, internal, X)," &
 	"64 (BC_1, *, internal, 1)," &
@@ -409,7 +409,7 @@ attribute BOUNDARY_REGISTER of T8F81 : entity is
 	"94 (BC_1, *, control, 1)," &
 	"95 (BC_1, GPIOR_08, output3, X, 94, 1, Z)," &
 
-	"96 (BC_1, *, internal, X)," &
+	"96 (BC_1, GPIOR_07, input, X)," &
 	"97 (BC_1, *, internal, 1)," &
 	"98 (BC_1, *, internal, X)," &
 
@@ -461,7 +461,7 @@ attribute BOUNDARY_REGISTER of T8F81 : entity is
 	"133 (BC_1, *, internal, 1)," &
 	"134 (BC_1, *, internal, X)," &
 
-	"135 (BC_1, *, internal, X)," &
+	"135 (BC_1, GPIOL_20_PLLIN, input, X)," &
 	"136 (BC_1, *, internal, 1)," &
 	"137 (BC_1, *, internal, X)," &
 
@@ -541,7 +541,7 @@ attribute BOUNDARY_REGISTER of T8F81 : entity is
 	"193 (BC_1, *, internal, 1)," &
 	"194 (BC_1, *, internal, X)," &
 
-	"195 (BC_1, GPIOL_00, input, X)," &
+	"195 (BC_1, *, internal, X)," &
 	"196 (BC_1, *, internal, 1)," &
 	"197 (BC_1, *, internal, X)," &
 

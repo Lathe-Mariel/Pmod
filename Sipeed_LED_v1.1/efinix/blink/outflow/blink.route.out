@@ -16,26 +16,26 @@ INFO     : Running Placement and Routing for Family "Trion", Device "T8F81" ...
 INFO     : Read ipin pattern from H:/Efinity/2026.1/arch/./routing/ipin_oph.xml
 INFO     : Finished parsing ipin pattern file 'H:/Efinity/2026.1/arch/./routing/ipin_oph.xdb'.
 INFO     : Finished parsing switch_block file 'H:/Efinity/2026.1/arch/.\routing\sb_connectivity_subset.xdb'.
-INFO     : BuildGraph process took 1.146606 seconds [FlowMsg::StageDuration]
-INFO     :     BuildGraph process took 1.09375 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : BuildGraph process virtual memory usage: begin = 99.148 MB, end = 141.14 MB, delta = 41.992 MB [FlowMsg::VMUsage]
-INFO     :     BuildGraph process peak virtual memory usage = 141.14 MB [FlowMsg::VMUsage::Peak]
-INFO     : BuildGraph process resident set memory usage: begin = 112.076 MB, end = 157.016 MB, delta = 44.94 MB [FlowMsg::RSSUsage]
-INFO     :     BuildGraph process peak resident set memory usage = 157.02 MB [FlowMsg::RSSUsage::Peak]
-INFO     : check rr_graph process took 0.0370751 seconds [FlowMsg::StageDuration]
+INFO     : BuildGraph process took 1.2056087 seconds [FlowMsg::StageDuration]
+INFO     :     BuildGraph process took 1.203125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : BuildGraph process virtual memory usage: begin = 99.136 MB, end = 141.1 MB, delta = 41.964 MB [FlowMsg::VMUsage]
+INFO     :     BuildGraph process peak virtual memory usage = 141.1 MB [FlowMsg::VMUsage::Peak]
+INFO     : BuildGraph process resident set memory usage: begin = 112.156 MB, end = 157.068 MB, delta = 44.912 MB [FlowMsg::RSSUsage]
+INFO     :     BuildGraph process peak resident set memory usage = 157.072 MB [FlowMsg::RSSUsage::Peak]
+INFO     : check rr_graph process took 0.0441763 seconds [FlowMsg::StageDuration]
 INFO     :     check rr_graph process took 0.046875 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : check rr_graph process virtual memory usage: begin = 141.14 MB, end = 141.14 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     :     check rr_graph process peak virtual memory usage = 141.14 MB [FlowMsg::VMUsage::Peak]
-INFO     : check rr_graph process resident set memory usage: begin = 157.028 MB, end = 157.084 MB, delta = 0.056 MB [FlowMsg::RSSUsage]
-INFO     :     check rr_graph process peak resident set memory usage = 157.088 MB [FlowMsg::RSSUsage::Peak]
+INFO     : check rr_graph process virtual memory usage: begin = 141.1 MB, end = 141.1 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     :     check rr_graph process peak virtual memory usage = 141.1 MB [FlowMsg::VMUsage::Peak]
+INFO     : check rr_graph process resident set memory usage: begin = 157.08 MB, end = 157.136 MB, delta = 0.056 MB [FlowMsg::RSSUsage]
+INFO     :     check rr_graph process peak resident set memory usage = 157.14 MB [FlowMsg::RSSUsage::Peak]
 INFO     : Generated 397509 RR nodes and 1462124 RR edges [DBMsg::DatabaseRoutingGraphStats]
-INFO     : This design has 0 global control net(s). See H:\git\Pmod\Sipeed_LED_v1.1\efinix\blink/outflow\blink.route.rpt for details.
-INFO     : Routing graph took 1.2431847 seconds [FlowMsg::StageDuration]
-INFO     :     Routing graph took 1.171875 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Routing graph virtual memory usage: begin = 99.148 MB, end = 141.14 MB, delta = 41.992 MB [FlowMsg::VMUsage]
-INFO     :     Routing graph peak virtual memory usage = 141.14 MB [FlowMsg::VMUsage::Peak]
-INFO     : Routing graph resident set memory usage: begin = 111.7 MB, end = 157.156 MB, delta = 45.456 MB [FlowMsg::RSSUsage]
-INFO     :     Routing graph peak resident set memory usage = 157.16 MB [FlowMsg::RSSUsage::Peak]
+INFO     : This design has 0 global control net(s). See H:/git/Pmod/Sipeed_LED_v1.1/efinix/blink/outflow\blink.route.rpt for details.
+INFO     : Routing graph took 1.3209694 seconds [FlowMsg::StageDuration]
+INFO     :     Routing graph took 1.28125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Routing graph virtual memory usage: begin = 99.136 MB, end = 141.1 MB, delta = 41.964 MB [FlowMsg::VMUsage]
+INFO     :     Routing graph peak virtual memory usage = 141.1 MB [FlowMsg::VMUsage::Peak]
+INFO     : Routing graph resident set memory usage: begin = 111.78 MB, end = 157.208 MB, delta = 45.428 MB [FlowMsg::RSSUsage]
+INFO     :     Routing graph peak resident set memory usage = 157.212 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage Routing graph generation *****
            
            ***** Beginning stage routing ... *****
@@ -45,32 +45,39 @@ INFO     : Creating clock 'clk' with 1 sources
 INFO     :  ---------      -------     --------------      -------------
 INFO     :  Iteration      Overuse     Crit Path (ns)      Calc Time (s)
 INFO     :  ---------      -------     --------------      -------------
-INFO     :          1           81               10.9             0.0379
-INFO     :          2           27               10.9             0.0358
-INFO     :          3           18               10.8             0.0273
-INFO     :          4            9               10.9             0.0223
-INFO     :          5            6               10.9             0.0202
-INFO     :          6            2               10.9               0.02
-INFO     :          7            2               10.9             0.0203
-INFO     :          8            1               10.9             0.0196
-INFO     :          9            1               10.9             0.0193
-INFO     :         10            1               10.9              0.019
-INFO     :         11            0              11.92             0.0199
+INFO     :          1           69              10.53             0.0375
+INFO     :          2           20              10.53              0.036
+INFO     :          3           16              10.53             0.0225
+INFO     :          4           14              10.53             0.0309
+INFO     :          5           10              10.71               0.03
+INFO     :          6            4              10.62             0.0164
+INFO     :          7            6              10.95             0.0153
+INFO     :          8            6              10.83             0.0167
+INFO     :          9            3              11.49             0.0184
+INFO     :         10            1              11.23             0.0183
+INFO     :         11            2              11.23             0.0198
+INFO     :         12            1              11.23              0.117
+INFO     :         13            1              11.23              0.163
+INFO     :         14            1              11.23              0.249
+INFO     :         15            1              11.23               1.41
+INFO     :         16            1              11.23              0.492
+INFO     :         17            1              11.23              0.556
+INFO     :         18            0              11.23             0.0141
            
-INFO     : Successfully routed netlist after 11 routing iterations and 540986 heapops
+INFO     : Successfully routed netlist after 18 routing iterations and 4436375 heapops
 INFO     : Completed net delay value cross check successfully.
            ***** Beginning stage routing check ... *****
            ***** Ending stage routing check *****
            
-INFO     : Serial number (magic cookie) for the routing is: 455822768
+INFO     : Serial number (magic cookie) for the routing is: 444870869
 INFO     : Netlist fully routed.
-INFO     : Successfully created FPGA route file 'H:\git\Pmod\Sipeed_LED_v1.1\efinix\blink/outflow/blink.route'
-INFO     : Routing took 0.4583555 seconds [FlowMsg::StageDuration]
-INFO     :     Routing took 0.4375 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Routing virtual memory usage: begin = 141.14 MB, end = 150.504 MB, delta = 9.364 MB [FlowMsg::VMUsage]
-INFO     :     Routing peak virtual memory usage = 150.504 MB [FlowMsg::VMUsage::Peak]
-INFO     : Routing resident set memory usage: begin = 157.156 MB, end = 167.236 MB, delta = 10.08 MB [FlowMsg::RSSUsage]
-INFO     :     Routing peak resident set memory usage = 167.24 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Successfully created FPGA route file 'H:/git/Pmod/Sipeed_LED_v1.1/efinix/blink/outflow/blink.route'
+INFO     : Routing took 3.4779625 seconds [FlowMsg::StageDuration]
+INFO     :     Routing took 3.703125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Routing virtual memory usage: begin = 141.1 MB, end = 156.748 MB, delta = 15.648 MB [FlowMsg::VMUsage]
+INFO     :     Routing peak virtual memory usage = 156.748 MB [FlowMsg::VMUsage::Peak]
+INFO     : Routing resident set memory usage: begin = 157.208 MB, end = 168.568 MB, delta = 11.36 MB [FlowMsg::RSSUsage]
+INFO     :     Routing peak resident set memory usage = 168.572 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage routing *****
            
            ***** Beginning stage final timing analysis ... *****
@@ -79,41 +86,41 @@ INFO     : NOTE:  Use --sdc_file <SDC_FILE> to override this behavior.
 INFO     : Creating clock 'clk' with 1 sources
 Maximum possible analyzed clocks frequency
  Clock Name  Period (ns)  Frequency (MHz)     Edge
-    clk         12.063        82.898         (R-R)
+    clk         11.371        87.943         (R-R)
 
-Geomean max period: 12.063
+Geomean max period: 11.371
 
 Setup (Max) Clock Relationship
   Launch Clock    Capture Clock   Constraint (ns)     Slack (ns)          Edge
-      clk              clk             1.000           -11.063           (R-R)
+      clk              clk             1.000           -10.371           (R-R)
 
 Hold (Min) Clock Relationship
   Launch Clock    Capture Clock   Constraint (ns)     Slack (ns)          Edge
       clk              clk             0.000            0.643            (R-R)
 
-WARNING  : Clock domain between clk (rising) and clk (rising) may not meet (slack: -11.063 ns) the setup (max) timing requirement
-INFO     : Write Timing Report to "H:\git\Pmod\Sipeed_LED_v1.1\efinix\blink/outflow\blink.timing.rpt" ...
-INFO     : final timing analysis took 0.1491445 seconds [FlowMsg::StageDuration]
-INFO     :     final timing analysis took 0.125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : final timing analysis virtual memory usage: begin = 150.504 MB, end = 150.504 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     :     final timing analysis peak virtual memory usage = 150.504 MB [FlowMsg::VMUsage::Peak]
-INFO     : final timing analysis resident set memory usage: begin = 167.256 MB, end = 167.792 MB, delta = 0.536 MB [FlowMsg::RSSUsage]
-INFO     :     final timing analysis peak resident set memory usage = 167.796 MB [FlowMsg::RSSUsage::Peak]
+WARNING  : Clock domain between clk (rising) and clk (rising) may not meet (slack: -10.371 ns) the setup (max) timing requirement
+INFO     : Write Timing Report to "H:/git/Pmod/Sipeed_LED_v1.1/efinix/blink/outflow\blink.timing.rpt" ...
+INFO     : final timing analysis took 0.1568531 seconds [FlowMsg::StageDuration]
+INFO     :     final timing analysis took 0.171875 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : final timing analysis virtual memory usage: begin = 156.748 MB, end = 156.748 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     :     final timing analysis peak virtual memory usage = 156.748 MB [FlowMsg::VMUsage::Peak]
+INFO     : final timing analysis resident set memory usage: begin = 168.588 MB, end = 169.124 MB, delta = 0.536 MB [FlowMsg::RSSUsage]
+INFO     :     final timing analysis peak resident set memory usage = 169.128 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage final timing analysis *****
            
            ***** Beginning stage bitstream generation ... *****
-INFO     : Reading core interface constraints file "H:\git\Pmod\Sipeed_LED_v1.1\efinix\blink/outflow/blink.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
-INFO     : Successfully read core interface constraints file "H:\git\Pmod\Sipeed_LED_v1.1\efinix\blink/outflow/blink.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
-INFO     : Finished writing bitstream file H:\git\Pmod\Sipeed_LED_v1.1\efinix\blink/work_pnr\blink.lbf.
-INFO     : Bitstream generation took 0.1720598 seconds [FlowMsg::StageDuration]
-INFO     :     Bitstream generation took 0.171875 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Bitstream generation virtual memory usage: begin = 150.504 MB, end = 150.504 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     :     Bitstream generation peak virtual memory usage = 150.504 MB [FlowMsg::VMUsage::Peak]
-INFO     : Bitstream generation resident set memory usage: begin = 167.852 MB, end = 168.428 MB, delta = 0.576 MB [FlowMsg::RSSUsage]
-INFO     :     Bitstream generation peak resident set memory usage = 168.432 MB [FlowMsg::RSSUsage::Peak]
-INFO     : The entire flow of EFX_PNR took 5.262447 seconds [FlowMsg::StageDuration]
-INFO     :     The entire flow of EFX_PNR took 5.46875 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : The entire flow of EFX_PNR virtual memory usage: begin = 20.028 MB, end = 150.504 MB, delta = 130.476 MB [FlowMsg::VMUsage]
-INFO     :     The entire flow of EFX_PNR peak virtual memory usage = 150.504 MB [FlowMsg::VMUsage::Peak]
-INFO     : The entire flow of EFX_PNR resident set memory usage: begin = 21.112 MB, end = 168.492 MB, delta = 147.38 MB [FlowMsg::RSSUsage]
-INFO     :     The entire flow of EFX_PNR peak resident set memory usage = 168.496 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Reading core interface constraints file "H:/git/Pmod/Sipeed_LED_v1.1/efinix/blink/outflow/blink.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
+INFO     : Successfully read core interface constraints file "H:/git/Pmod/Sipeed_LED_v1.1/efinix/blink/outflow/blink.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
+INFO     : Finished writing bitstream file H:/git/Pmod/Sipeed_LED_v1.1/efinix/blink/work_pnr\blink.lbf.
+INFO     : Bitstream generation took 0.1898546 seconds [FlowMsg::StageDuration]
+INFO     :     Bitstream generation took 0.1875 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Bitstream generation virtual memory usage: begin = 156.748 MB, end = 156.748 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     :     Bitstream generation peak virtual memory usage = 156.748 MB [FlowMsg::VMUsage::Peak]
+INFO     : Bitstream generation resident set memory usage: begin = 169.184 MB, end = 169.76 MB, delta = 0.576 MB [FlowMsg::RSSUsage]
+INFO     :     Bitstream generation peak resident set memory usage = 169.764 MB [FlowMsg::RSSUsage::Peak]
+INFO     : The entire flow of EFX_PNR took 8.3534328 seconds [FlowMsg::StageDuration]
+INFO     :     The entire flow of EFX_PNR took 9.328125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : The entire flow of EFX_PNR virtual memory usage: begin = 19.992 MB, end = 156.748 MB, delta = 136.756 MB [FlowMsg::VMUsage]
+INFO     :     The entire flow of EFX_PNR peak virtual memory usage = 156.748 MB [FlowMsg::VMUsage::Peak]
+INFO     : The entire flow of EFX_PNR resident set memory usage: begin = 21.088 MB, end = 169.824 MB, delta = 148.736 MB [FlowMsg::RSSUsage]
+INFO     :     The entire flow of EFX_PNR peak resident set memory usage = 169.828 MB [FlowMsg::RSSUsage::Peak]

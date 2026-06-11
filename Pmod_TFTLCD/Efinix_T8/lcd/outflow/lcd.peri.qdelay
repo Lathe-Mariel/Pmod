@@ -40,11 +40,11 @@ route {
 route {
   driver {
     cell: "clk~GPIO"
-    port: "I"
+    port: "ALT"
   }
   sink {
-    cell: "clk~GPIO~I"
-    port: "outpad"
+    cell: "pll_inst1~PLL"
+    port: "CLKIN"
   }
   delay_min: 0
   delay_max: 0
@@ -258,6 +258,45 @@ route {
   delay_max: 0
   type: FIXED_NET_DELAY
 }
+route {
+  driver {
+    cell: "pll_inst1~PLL"
+    port: "CLKOUT0"
+  }
+  sink {
+    cell: "pll_clk~PLL~CLKOUT0"
+    port: "outpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "pll_rst"
+    port: "inpad"
+  }
+  sink {
+    cell: "pll_rst~GPIO"
+    port: "IO_inpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "pll_rst~GPIO"
+    port: "I"
+  }
+  sink {
+    cell: "pll_rst~GPIO~I"
+    port: "outpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
 placed {
   cell: "btn_rst"
   custom_site: "PKG_PIN/PKG_PIN_INOUT"
@@ -299,6 +338,10 @@ placed {
   custom_site: "PKG_PIN/PKG_PIN_INOUT"
 }
 placed {
+  cell: "pll_rst"
+  custom_site: "PKG_PIN/PKG_PIN_INOUT"
+}
+placed {
   cell: "btn_rst~GPIO"
   custom_site: "T8_GPIO/T8_GPIO_SLOT0"
 }
@@ -336,5 +379,13 @@ placed {
 }
 placed {
   cell: "led_d4~GPIO"
+  custom_site: "T8_GPIO/T8_GPIO_SLOT0"
+}
+placed {
+  cell: "pll_inst1~PLL"
+  custom_site: "PLL/PLL_SLOT0"
+}
+placed {
+  cell: "pll_rst~GPIO"
   custom_site: "T8_GPIO/T8_GPIO_SLOT0"
 }

@@ -871,109 +871,109 @@ module \t8_lchika~core  (clk, led_d1, led_d2, led_d3, led_d4, led0,
 endmodule
 
 //
-// Verific Verilog Description of module EFX_LUT4_82f23a2a_0
+// Verific Verilog Description of module EFX_LUT4_ff3c3d44_0
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_82f23a2a_0
+// Verific Verilog Description of module EFX_FF_ff3c3d44_0
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_82f23a2a_1
+// Verific Verilog Description of module EFX_FF_ff3c3d44_1
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_82f23a2a_2
+// Verific Verilog Description of module EFX_FF_ff3c3d44_2
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_82f23a2a_3
+// Verific Verilog Description of module EFX_FF_ff3c3d44_3
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_ADD_82f23a2a_0
+// Verific Verilog Description of module EFX_ADD_ff3c3d44_0
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_82f23a2a_1
+// Verific Verilog Description of module EFX_LUT4_ff3c3d44_1
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_82f23a2a_2
+// Verific Verilog Description of module EFX_LUT4_ff3c3d44_2
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_82f23a2a_3
+// Verific Verilog Description of module EFX_LUT4_ff3c3d44_3
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_82f23a2a_4
+// Verific Verilog Description of module EFX_LUT4_ff3c3d44_4
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_82f23a2a_5
+// Verific Verilog Description of module EFX_LUT4_ff3c3d44_5
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_82f23a2a_6
+// Verific Verilog Description of module EFX_LUT4_ff3c3d44_6
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_82f23a2a_7
+// Verific Verilog Description of module EFX_LUT4_ff3c3d44_7
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_82f23a2a_8
+// Verific Verilog Description of module EFX_LUT4_ff3c3d44_8
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_82f23a2a_9
+// Verific Verilog Description of module EFX_LUT4_ff3c3d44_9
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_82f23a2a_10
+// Verific Verilog Description of module EFX_LUT4_ff3c3d44_10
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_82f23a2a_11
+// Verific Verilog Description of module EFX_LUT4_ff3c3d44_11
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_GBUFCE_82f23a2a_0
+// Verific Verilog Description of module EFX_GBUFCE_ff3c3d44_0
 // module not written out since it is a black box. 
 //
 

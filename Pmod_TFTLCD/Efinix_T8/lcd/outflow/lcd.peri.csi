@@ -6,27 +6,27 @@ CellSiteInst {
 CellSiteInst {
   cell: "clk"
   block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
-  block_inst: "GPIOL_00"
+  block_inst: "GPIOL_20_PLLIN"
 }
 CellSiteInst {
   cell: "lcd_cs"
   block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
-  block_inst: "GPIOR_27"
+  block_inst: "GPIOR_26_CBSEL0"
 }
 CellSiteInst {
   cell: "lcd_dc"
   block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
-  block_inst: "GPIOR_21_CLK4_CBSEL1"
+  block_inst: "GPIOR_22_CTRL5"
 }
 CellSiteInst {
   cell: "lcd_mosi"
   block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
-  block_inst: "GPIOR_25"
+  block_inst: "GPIOR_24"
 }
 CellSiteInst {
   cell: "lcd_sck"
   block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
-  block_inst: "GPIOR_20_CLK5"
+  block_inst: "GPIOR_19_CLK6"
 }
 CellSiteInst {
   cell: "led_d1"
@@ -49,6 +49,11 @@ CellSiteInst {
   block_inst: "GPIOR_08"
 }
 CellSiteInst {
+  cell: "pll_rst"
+  block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
+  block_inst: "GPIOR_07"
+}
+CellSiteInst {
   cell: "btn_rst~GPIO"
   block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
   block_inst: "GPIOR_06"
@@ -56,27 +61,27 @@ CellSiteInst {
 CellSiteInst {
   cell: "clk~GPIO"
   block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
-  block_inst: "GPIOL_00"
+  block_inst: "GPIOL_20"
 }
 CellSiteInst {
   cell: "lcd_cs~GPIO"
   block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
-  block_inst: "GPIOR_27"
+  block_inst: "GPIOR_26"
 }
 CellSiteInst {
   cell: "lcd_dc~GPIO"
   block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
-  block_inst: "GPIOR_21"
+  block_inst: "GPIOR_22"
 }
 CellSiteInst {
   cell: "lcd_mosi~GPIO"
   block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
-  block_inst: "GPIOR_25"
+  block_inst: "GPIOR_24"
 }
 CellSiteInst {
   cell: "lcd_sck~GPIO"
   block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
-  block_inst: "GPIOR_20"
+  block_inst: "GPIOR_19"
 }
 CellSiteInst {
   cell: "led_d1~GPIO"
@@ -97,4 +102,14 @@ CellSiteInst {
   cell: "led_d4~GPIO"
   block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
   block_inst: "GPIOR_08"
+}
+CellSiteInst {
+  cell: "pll_inst1~PLL"
+  block_and_site_inst: "PLL/PLL_SLOT0"
+  block_inst: "PLL_0"
+}
+CellSiteInst {
+  cell: "pll_rst~GPIO"
+  block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
+  block_inst: "GPIOR_07"
 }

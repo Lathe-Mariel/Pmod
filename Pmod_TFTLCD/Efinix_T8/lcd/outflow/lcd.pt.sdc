@@ -5,7 +5,7 @@
 
 # Efinity Interface Designer SDC
 # Version: 2026.1.132
-# Date: 2026-06-11 03:50
+# Date: 2026-06-12 02:56
 
 # Copyright (C) 2013 - 2026 Efinix Inc. All rights reserved.
 
@@ -13,12 +13,16 @@
 # Project: lcd
 # Timing Model: C2 (final)
 
+# PLL Constraints
+###################
+create_clock -waveform {10.000 20.000} -period 20.000 -name pll_clk [get_ports {pll_clk}]
+
 # GPIO Constraints
 ####################
 # set_input_delay -clock <CLOCK> [-reference_pin <clkout_pad>] -max <MAX CALCULATION> [get_ports {btn_rst}]
 # set_input_delay -clock <CLOCK> [-reference_pin <clkout_pad>] -min <MIN CALCULATION> [get_ports {btn_rst}]
-# set_input_delay -clock <CLOCK> [-reference_pin <clkout_pad>] -max <MAX CALCULATION> [get_ports {clk}]
-# set_input_delay -clock <CLOCK> [-reference_pin <clkout_pad>] -min <MIN CALCULATION> [get_ports {clk}]
+# set_input_delay -clock <CLOCK> [-reference_pin <clkout_pad>] -max <MAX CALCULATION> [get_ports {pll_rst}]
+# set_input_delay -clock <CLOCK> [-reference_pin <clkout_pad>] -min <MIN CALCULATION> [get_ports {pll_rst}]
 # set_output_delay -clock <CLOCK> [-reference_pin <clkout_pad>] -max <MAX CALCULATION> [get_ports {lcd_cs}]
 # set_output_delay -clock <CLOCK> [-reference_pin <clkout_pad>] -min <MIN CALCULATION> [get_ports {lcd_cs}]
 # set_output_delay -clock <CLOCK> [-reference_pin <clkout_pad>] -max <MAX CALCULATION> [get_ports {lcd_dc}]
