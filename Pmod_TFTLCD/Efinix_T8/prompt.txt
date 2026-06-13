@@ -137,7 +137,7 @@ GPIOR_11 | D2
 GPIOR_12 | D1
 
 ### Pmodポートの仕様
-Port0(LCD): Pmod1　GPIOR_26 | NC
+Port1(LCD): Pmod1　GPIOR_26 | NC
 　　　　　　　　Pmod2　GPIOR_24 | NC
 　　　　　　　　Pmod3　GPIOR_21 | NC
 　　　　　　　　Pmod4　GPIOR_19 | NC
@@ -145,11 +145,11 @@ Port0(LCD): Pmod1　GPIOR_26 | NC
 　　　　　　　　Pmod6　GPIOR_25 | MOSI
 　　　　　　　　Pmod7　GPIOR_22 | MISO
 　　　　　　　　Pmod8　GPOIR_20 | CLK
-Port1(Touch): Pmod1　GPIOL_17 | NC
+Port2(Touch):   Pmod1　GPIOL_17 | NC
 　　　　　　　　Pmod2　GPIOL_19 | NC
-　　　　　　　　Pmod3　GPIOR_00 | RS
+　　　　　　　　Pmod3　GPIOR_00 | NC
 　　　　　　　　Pmod4　GPIOR_03 | NC
 　　　　　　　　Pmod5　GPIOL_15 | CS
 　　　　　　　　Pmod6　GPIOL_18 | MOSI
-　　　　　　　　Pmod7　GPIOL_21 | NC
+　　　　　　　　Pmod7　GPIOL_21 | MISO
 　　　　　　　　Pmod8　GPIOR_01 | CLK

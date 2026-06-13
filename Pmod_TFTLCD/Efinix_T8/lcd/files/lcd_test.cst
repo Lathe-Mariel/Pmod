@@ -1,0 +1,64 @@
+// ============================================================
+// lcd_test.cst - Physical Constraints
+// Tang Primer 25K Dock (GW5A-LV25MG121) + PMOD-TFTLCD v1.1
+// GOWIN EDA format
+//
+// ピン配置まとめ:
+//
+//   Port1 J2 (LCD / ILI9341):
+//     Pmod3 (K11) → lcd_dc   RS: Data/Command
+//     Pmod5 (A10) → lcd_cs   Chip Select (Low有効)
+//     Pmod6 (E10) → lcd_mosi MOSI
+//     Pmod8 (K5)  → lcd_sck  SCK
+//
+//   Port0 (Touch / XPT2046):
+//     Pmod5 (G5)  → tc_cs    Chip Select (Low有効)
+//     Pmod6 (G8)  → tc_mosi  MOSI (DIN)
+//     Pmod7 (H7)  → tc_miso  MISO (DOUT)
+//     Pmod8 (J5)  → tc_clk   DCLK
+//
+//   LCDとタッチは独立したSPIバス (MISOはタッチのみ)
+//   RST / BLK : ボード側VCC固定 → FPGA未接続
+// ============================================================
+
+// ---- システムクロック (50MHz) ----
+IO_LOC "clk"      T10;
+IO_PORT "clk"      PULL_MODE=NONE IO_TYPE=LVCMOS33;
+
+// ---- ユーザボタン (Low有効, 内部プルアップ) ----
+IO_LOC "btn_rst"  H11;
+IO_PORT "btn_rst"  PULL_MODE=UP IO_TYPE=LVCMOS33;
+
+// ---- Port1 J2: LCD (ILI9341) ----
+// Pmod3 = DC/RS (Data/Command)
+IO_LOC "lcd_dc"   K11;
+IO_PORT "lcd_dc"   PULL_MODE=NONE IO_TYPE=LVCMOS33 DRIVE=8;
+
+// Pmod5 = CS (Chip Select)
+IO_LOC "lcd_cs"   A10;
+IO_PORT "lcd_cs"   PULL_MODE=UP IO_TYPE=LVCMOS33 DRIVE=8;
+
+// Pmod6 = MOSI
+IO_LOC "lcd_mosi" E10;
+IO_PORT "lcd_mosi" PULL_MODE=NONE IO_TYPE=LVCMOS33 DRIVE=8;
+
+// Pmod8 = SCK
+IO_LOC "lcd_sck"  K5;
+IO_PORT "lcd_sck"  PULL_MODE=NONE IO_TYPE=LVCMOS33 DRIVE=8;
+
+// ---- Port0: タッチ (XPT2046) ----
+// Pmod5 = CS (Chip Select)
+IO_LOC "tc_cs"    G5;
+IO_PORT "tc_cs"    PULL_MODE=UP IO_TYPE=LVCMOS33 DRIVE=8;
+
+// Pmod6 = MOSI (DIN)
+IO_LOC "tc_mosi"  G8;
+IO_PORT "tc_mosi"  PULL_MODE=NONE IO_TYPE=LVCMOS33 DRIVE=8;
+
+// Pmod7 = MISO (DOUT)
+IO_LOC "tc_miso"  H7;
+IO_PORT "tc_miso"  PULL_MODE=UP IO_TYPE=LVCMOS33;
+
+// Pmod8 = CLK (DCLK)
+IO_LOC "tc_clk"   J5;
+IO_PORT "tc_clk"   PULL_MODE=NONE IO_TYPE=LVCMOS33 DRIVE=8;

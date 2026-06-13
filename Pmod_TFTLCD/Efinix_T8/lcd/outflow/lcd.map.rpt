@@ -1,6 +1,6 @@
 Efinity Synthesis report for project lcd
 Version: 2026.1.132
-Generated at: Jun 12, 2026 02:43:08
+Generated at: Jun 14, 2026 00:19:32
 Copyright (C) 2013 - 2026  All rights reserved.
 
 Top-level Entity Name : top
@@ -29,6 +29,7 @@ File List:
 
 H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv
 H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v
+H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v
 
 ### ### Report Section Start ### ###
 
@@ -48,14 +49,14 @@ Total number of FFs with enable signals: 175
 |ceg_net33   |               16 |
 |ceg_net86   |                9 |
 |ceg_net87   |                8 |
-|ceg_net100  |                8 |
 |n483        |                8 |
+|ceg_net100  |                8 |
 |ceg_net102  |                7 |
 |ceg_net99   |                4 |
 |ceg_net14   |                2 |
-|n114        |                1 |
-|ceg_net67   |                1 |
 |ceg_net65   |                1 |
+|ceg_net67   |                1 |
+|n114        |                1 |
 |ceg_net101  |                1 |
 +------------+------------------+
 
@@ -112,5 +113,5 @@ EFX_FF                  : 	203
 EFX_GBUFCE              : 	1
 ### ### Resource Summary (end) ### ### ###
 
-Plain synthesis (without verilog dump and post-map checks) time : 18s
-Elapsed synthesis time : 18s
+Plain synthesis (without verilog dump and post-map checks) time : 17s
+Elapsed synthesis time : 17s

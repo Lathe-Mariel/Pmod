@@ -15,17 +15,12 @@
 // ============================================================
 
 module lcd_ctrl (
-    input  wire pll_clk,       // 50 MHz
+    input  wire clk,       // 50 MHz
     input  wire btn_rst,   // ユーザボタン H11 (押下=Low)
     output reg  lcd_cs,    // A10 Chip Select (Low有効)  Port1 J2 Pmod5
     output reg  lcd_dc,    // K11 Data/Command (RS)      Port1 J2 Pmod3
     output reg  lcd_mosi,  // E10 SPI MOSI               Port1 J2 Pmod6
     output reg  lcd_sck,   // K5  SPI Clock               Port1 J2 Pmod8
-    
-    output reg led_d1,
-    output reg led_d2,
-    output reg led_d3,
-    output reg led_d4,
 
     // タッチ座標入力 (touch_ctrl より)
     input  wire        touch_valid, // タッチ検出中
@@ -98,10 +93,10 @@ localparam [8:0]
     ROM_53 = 9'h131,  ROM_54 = 9'h136,  ROM_55 = 9'h10F,
     ROM_56 = 9'h02A,                              // Column Addr Set (0~239)
     ROM_57 = 9'h100,  ROM_58 = 9'h100,
-    ROM_59 = 9'h100,  ROM_60 = 9'h13F,
+    ROM_59 = 9'h100,  ROM_60 = 9'h1EF,
     ROM_61 = 9'h02B,                              // Row Addr Set (0~319)
     ROM_62 = 9'h100,  ROM_63 = 9'h100,
-    ROM_64 = 9'h100,  ROM_65 = 9'h1EF,
+    ROM_64 = 9'h101,  ROM_65 = 9'h13F,
     ROM_66 = 9'h029,  ROM_67 = 9'h02C;
 
 function [8:0] rom_read;

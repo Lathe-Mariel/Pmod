@@ -15,12 +15,12 @@ INFO     : Running Placement and Routing for Family "Trion", Device "T8F81" ...
            ***** Beginning stage netlist pre-processing ... *****
 INFO     : Successfully read in VDB netlist file H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.vdb [DBMsg::VdbFileRead]
 INFO     : ***** Beginning VDB Netlist Checker ... *****
-INFO     : VDB Netlist Checker took 0.0085106 seconds [FlowMsg::StageDuration]
+INFO     : VDB Netlist Checker took 0.0078921 seconds [FlowMsg::StageDuration]
 INFO     :     VDB Netlist Checker took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : VDB Netlist Checker virtual memory usage: begin = 99.276 MB, end = 99.848 MB, delta = 0.572 MB [FlowMsg::VMUsage]
-INFO     :     VDB Netlist Checker peak virtual memory usage = 99.856 MB [FlowMsg::VMUsage::Peak]
-INFO     : VDB Netlist Checker resident set memory usage: begin = 105.304 MB, end = 106.272 MB, delta = 0.968 MB [FlowMsg::RSSUsage]
-INFO     :     VDB Netlist Checker peak resident set memory usage = 106.276 MB [FlowMsg::RSSUsage::Peak]
+INFO     : VDB Netlist Checker virtual memory usage: begin = 99.36 MB, end = 99.928 MB, delta = 0.568 MB [FlowMsg::VMUsage]
+INFO     :     VDB Netlist Checker peak virtual memory usage = 99.936 MB [FlowMsg::VMUsage::Peak]
+INFO     : VDB Netlist Checker resident set memory usage: begin = 105.796 MB, end = 106.732 MB, delta = 0.936 MB [FlowMsg::RSSUsage]
+INFO     :     VDB Netlist Checker peak resident set memory usage = 106.736 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending VDB Netlist Checker ... *****
 INFO     : Reading core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
 INFO     : Successfully read core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
@@ -30,43 +30,43 @@ INFO     : Pass 0: Swept away 0 blocks with no fanout [DBMsg::NetlistBlocksSwept
 INFO     : Swept away 0 nets and 0 blocks in total [DBMsg::NetlistTotalSwept]
 INFO     : Removed 0 LUT buffers [DBMsg::NetlistRemovedLUTBuffers]
 INFO     : Successfully read in VDB netlist file H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.vdb [DBMsg::VdbFileRead]
-INFO     : Netlist pre-processing took 0.0452048 seconds [FlowMsg::StageDuration]
+INFO     : Netlist pre-processing took 0.0529884 seconds [FlowMsg::StageDuration]
 INFO     :     Netlist pre-processing took 0.03125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Netlist pre-processing virtual memory usage: begin = 99.276 MB, end = 99.848 MB, delta = 0.572 MB [FlowMsg::VMUsage]
-INFO     :     Netlist pre-processing peak virtual memory usage = 99.856 MB [FlowMsg::VMUsage::Peak]
-INFO     : Netlist pre-processing resident set memory usage: begin = 104.556 MB, end = 106.82 MB, delta = 2.264 MB [FlowMsg::RSSUsage]
-INFO     :     Netlist pre-processing peak resident set memory usage = 106.824 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Netlist pre-processing virtual memory usage: begin = 99.36 MB, end = 99.928 MB, delta = 0.568 MB [FlowMsg::VMUsage]
+INFO     :     Netlist pre-processing peak virtual memory usage = 99.936 MB [FlowMsg::VMUsage::Peak]
+INFO     : Netlist pre-processing resident set memory usage: begin = 105.048 MB, end = 107.28 MB, delta = 2.232 MB [FlowMsg::RSSUsage]
+INFO     :     Netlist pre-processing peak resident set memory usage = 107.284 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage netlist pre-processing *****
            
            ***** Beginning stage pre-packing ... *****
            ***** Ending stage pre-packing *****
            
            ***** Beginning stage packing ... *****
-INFO     : Generate proto netlist for file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto" took 0.005 seconds
+INFO     : Generate proto netlist for file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto" took 0.006 seconds
 INFO     : Creating IO constraints file 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.io_place'
-INFO     : Packing took 0.0185651 seconds [FlowMsg::StageDuration]
+INFO     : Packing took 0.0182541 seconds [FlowMsg::StageDuration]
 INFO     :     Packing took 0.015625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Packing virtual memory usage: begin = 99.848 MB, end = 99.848 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     :     Packing peak virtual memory usage = 99.856 MB [FlowMsg::VMUsage::Peak]
-INFO     : Packing resident set memory usage: begin = 107.416 MB, end = 108.036 MB, delta = 0.62 MB [FlowMsg::RSSUsage]
-INFO     :     Packing peak resident set memory usage = 108.04 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Packing virtual memory usage: begin = 99.928 MB, end = 99.928 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     :     Packing peak virtual memory usage = 99.936 MB [FlowMsg::VMUsage::Peak]
+INFO     : Packing resident set memory usage: begin = 107.876 MB, end = 108.496 MB, delta = 0.62 MB [FlowMsg::RSSUsage]
+INFO     :     Packing peak resident set memory usage = 108.5 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage packing *****
            
 INFO     : Read proto netlist file H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto
-INFO     : Read proto netlist for file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto" took 0.003 seconds
+INFO     : Read proto netlist for file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto" took 0.011 seconds
 INFO     : Setup net and block data structure took 0.053 seconds
 INFO     : Reading core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
 INFO     : Successfully read core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
            ***** Beginning stage packed netlist loading ... *****
 INFO     : Read proto netlist file H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto
-INFO     : Read proto netlist for file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto" took 0.004 seconds
-INFO     : Setup net and block data structure took 0.052 seconds
-INFO     : Packed netlist loading took 0.0570856 seconds [FlowMsg::StageDuration]
-INFO     :     Packed netlist loading took 0.0625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Packed netlist loading virtual memory usage: begin = 100.448 MB, end = 100.448 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     :     Packed netlist loading peak virtual memory usage = 100.456 MB [FlowMsg::VMUsage::Peak]
-INFO     : Packed netlist loading resident set memory usage: begin = 111.276 MB, end = 111.3 MB, delta = 0.024 MB [FlowMsg::RSSUsage]
-INFO     :     Packed netlist loading peak resident set memory usage = 111.304 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Read proto netlist for file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto" took 0.003 seconds
+INFO     : Setup net and block data structure took 0.054 seconds
+INFO     : Packed netlist loading took 0.0577603 seconds [FlowMsg::StageDuration]
+INFO     :     Packed netlist loading took 0.046875 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Packed netlist loading virtual memory usage: begin = 100.544 MB, end = 100.544 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     :     Packed netlist loading peak virtual memory usage = 100.552 MB [FlowMsg::VMUsage::Peak]
+INFO     : Packed netlist loading resident set memory usage: begin = 111.812 MB, end = 111.836 MB, delta = 0.024 MB [FlowMsg::RSSUsage]
+INFO     :     Packed netlist loading peak resident set memory usage = 111.84 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage packed netlist loading *****
            
            ***** Beginning stage pre-placement ... *****
@@ -204,11 +204,11 @@ INFO     : Reading placement constraints from 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8
 INFO     : Finished Realigning Types (1251 blocks needed type change)
 INFO     : Completed placement consistency check successfully.
 INFO     : Successfully created FPGA place file 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.place'
-INFO     : Placement took 6.5540053 seconds [FlowMsg::StageDuration]
-INFO     :     Placement took 13.046875 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Placement virtual memory usage: begin = 100.448 MB, end = 127.984 MB, delta = 27.536 MB [FlowMsg::VMUsage]
-INFO     :     Placement peak virtual memory usage = 127.984 MB [FlowMsg::VMUsage::Peak]
-INFO     : Placement resident set memory usage: begin = 111.96 MB, end = 141.996 MB, delta = 30.036 MB [FlowMsg::RSSUsage]
-INFO     :     Placement peak resident set memory usage = 142 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Placement took 6.6568275 seconds [FlowMsg::StageDuration]
+INFO     :     Placement took 12.78125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Placement virtual memory usage: begin = 100.544 MB, end = 128.704 MB, delta = 28.16 MB [FlowMsg::VMUsage]
+INFO     :     Placement peak virtual memory usage = 128.704 MB [FlowMsg::VMUsage::Peak]
+INFO     : Placement resident set memory usage: begin = 112.492 MB, end = 142.94 MB, delta = 30.448 MB [FlowMsg::RSSUsage]
+INFO     :     Placement peak resident set memory usage = 142.944 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage placement *****
            
