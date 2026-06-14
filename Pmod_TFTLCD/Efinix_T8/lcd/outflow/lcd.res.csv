@@ -1,8 +1,9 @@
 sep=\t
 Module Resource Usage Distribution Estimates
-Generated at: Jun 14, 2026 00:19:32
+Generated at: Jun 15, 2026 00:26:24
 
 Note: some resources maybe grouped under different hierarchy due to optimization and LUT mapping
 
 Module	       FFs	      ADDs	       LUTs	      RAMs	 DSP/MULTs
-top:top             	 203(203)	   97(97)	2815(2815)	     0(0)	     0(0)	
+top:top                      	 392(200)	 167(139)	3235(2900)	     0(0)	     4(0)	
+ +touch_ctrl_inst:touch_ctrl 	 192(192)	   28(28)	  335(335)	     0(0)	     4(4)	

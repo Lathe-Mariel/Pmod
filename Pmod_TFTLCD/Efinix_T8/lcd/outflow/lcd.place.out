@@ -15,12 +15,12 @@ INFO     : Running Placement and Routing for Family "Trion", Device "T8F81" ...
            ***** Beginning stage netlist pre-processing ... *****
 INFO     : Successfully read in VDB netlist file H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.vdb [DBMsg::VdbFileRead]
 INFO     : ***** Beginning VDB Netlist Checker ... *****
-INFO     : VDB Netlist Checker took 0.0078921 seconds [FlowMsg::StageDuration]
-INFO     :     VDB Netlist Checker took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : VDB Netlist Checker virtual memory usage: begin = 99.36 MB, end = 99.928 MB, delta = 0.568 MB [FlowMsg::VMUsage]
-INFO     :     VDB Netlist Checker peak virtual memory usage = 99.936 MB [FlowMsg::VMUsage::Peak]
-INFO     : VDB Netlist Checker resident set memory usage: begin = 105.796 MB, end = 106.732 MB, delta = 0.936 MB [FlowMsg::RSSUsage]
-INFO     :     VDB Netlist Checker peak resident set memory usage = 106.736 MB [FlowMsg::RSSUsage::Peak]
+INFO     : VDB Netlist Checker took 0.0099315 seconds [FlowMsg::StageDuration]
+INFO     :     VDB Netlist Checker took 0.03125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : VDB Netlist Checker virtual memory usage: begin = 99.376 MB, end = 99.956 MB, delta = 0.58 MB [FlowMsg::VMUsage]
+INFO     :     VDB Netlist Checker peak virtual memory usage = 99.964 MB [FlowMsg::VMUsage::Peak]
+INFO     : VDB Netlist Checker resident set memory usage: begin = 105.516 MB, end = 106.448 MB, delta = 0.932 MB [FlowMsg::RSSUsage]
+INFO     :     VDB Netlist Checker peak resident set memory usage = 106.452 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending VDB Netlist Checker ... *****
 INFO     : Reading core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
 INFO     : Successfully read core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
@@ -30,12 +30,12 @@ INFO     : Pass 0: Swept away 0 blocks with no fanout [DBMsg::NetlistBlocksSwept
 INFO     : Swept away 0 nets and 0 blocks in total [DBMsg::NetlistTotalSwept]
 INFO     : Removed 0 LUT buffers [DBMsg::NetlistRemovedLUTBuffers]
 INFO     : Successfully read in VDB netlist file H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.vdb [DBMsg::VdbFileRead]
-INFO     : Netlist pre-processing took 0.0529884 seconds [FlowMsg::StageDuration]
-INFO     :     Netlist pre-processing took 0.03125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Netlist pre-processing virtual memory usage: begin = 99.36 MB, end = 99.928 MB, delta = 0.568 MB [FlowMsg::VMUsage]
-INFO     :     Netlist pre-processing peak virtual memory usage = 99.936 MB [FlowMsg::VMUsage::Peak]
-INFO     : Netlist pre-processing resident set memory usage: begin = 105.048 MB, end = 107.28 MB, delta = 2.232 MB [FlowMsg::RSSUsage]
-INFO     :     Netlist pre-processing peak resident set memory usage = 107.284 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Netlist pre-processing took 0.0636461 seconds [FlowMsg::StageDuration]
+INFO     :     Netlist pre-processing took 0.0625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Netlist pre-processing virtual memory usage: begin = 99.376 MB, end = 99.956 MB, delta = 0.58 MB [FlowMsg::VMUsage]
+INFO     :     Netlist pre-processing peak virtual memory usage = 99.964 MB [FlowMsg::VMUsage::Peak]
+INFO     : Netlist pre-processing resident set memory usage: begin = 104.624 MB, end = 106.936 MB, delta = 2.312 MB [FlowMsg::RSSUsage]
+INFO     :     Netlist pre-processing peak resident set memory usage = 106.94 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage netlist pre-processing *****
            
            ***** Beginning stage pre-packing ... *****
@@ -44,38 +44,49 @@ INFO     :     Netlist pre-processing peak resident set memory usage = 107.284 M
            ***** Beginning stage packing ... *****
 INFO     : Generate proto netlist for file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto" took 0.006 seconds
 INFO     : Creating IO constraints file 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.io_place'
-INFO     : Packing took 0.0182541 seconds [FlowMsg::StageDuration]
+INFO     : Packing took 0.0220399 seconds [FlowMsg::StageDuration]
 INFO     :     Packing took 0.015625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Packing virtual memory usage: begin = 99.928 MB, end = 99.928 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     :     Packing peak virtual memory usage = 99.936 MB [FlowMsg::VMUsage::Peak]
-INFO     : Packing resident set memory usage: begin = 107.876 MB, end = 108.496 MB, delta = 0.62 MB [FlowMsg::RSSUsage]
-INFO     :     Packing peak resident set memory usage = 108.5 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Packing virtual memory usage: begin = 99.956 MB, end = 99.956 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     :     Packing peak virtual memory usage = 99.964 MB [FlowMsg::VMUsage::Peak]
+INFO     : Packing resident set memory usage: begin = 107.48 MB, end = 108.116 MB, delta = 0.636 MB [FlowMsg::RSSUsage]
+INFO     :     Packing peak resident set memory usage = 108.12 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage packing *****
            
 INFO     : Read proto netlist file H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto
 INFO     : Read proto netlist for file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto" took 0.011 seconds
-INFO     : Setup net and block data structure took 0.053 seconds
+INFO     : Setup net and block data structure took 0.069 seconds
 INFO     : Reading core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
 INFO     : Successfully read core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
            ***** Beginning stage packed netlist loading ... *****
 INFO     : Read proto netlist file H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto
-INFO     : Read proto netlist for file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto" took 0.003 seconds
-INFO     : Setup net and block data structure took 0.054 seconds
-INFO     : Packed netlist loading took 0.0577603 seconds [FlowMsg::StageDuration]
-INFO     :     Packed netlist loading took 0.046875 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Packed netlist loading virtual memory usage: begin = 100.544 MB, end = 100.544 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     :     Packed netlist loading peak virtual memory usage = 100.552 MB [FlowMsg::VMUsage::Peak]
-INFO     : Packed netlist loading resident set memory usage: begin = 111.812 MB, end = 111.836 MB, delta = 0.024 MB [FlowMsg::RSSUsage]
-INFO     :     Packed netlist loading peak resident set memory usage = 111.84 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Read proto netlist for file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.net_proto" took 0.004 seconds
+INFO     : Setup net and block data structure took 0.067 seconds
+INFO     : Packed netlist loading took 0.0738488 seconds [FlowMsg::StageDuration]
+INFO     :     Packed netlist loading took 0.0625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Packed netlist loading virtual memory usage: begin = 100.588 MB, end = 100.588 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     :     Packed netlist loading peak virtual memory usage = 100.596 MB [FlowMsg::VMUsage::Peak]
+INFO     : Packed netlist loading resident set memory usage: begin = 111.472 MB, end = 111.496 MB, delta = 0.024 MB [FlowMsg::RSSUsage]
+INFO     :     Packed netlist loading peak resident set memory usage = 111.5 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage packed netlist loading *****
            
            ***** Beginning stage pre-placement ... *****
            
            ***** Ending stage pre-placement *****
            
-WARNING  : [SDC H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/lcd.sdc:1] No valid object(s) found for 'clk'
-WARNING  : [SDC H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/lcd.sdc:1] No valid pin(s) found for clock
-WARNING  : [SDC H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/lcd.sdc:1] Unable to run 'create_clock' constraint due to warnings found
+WARNING  : 
+Error(s) found while executing SDC file H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/lcd.sdc
+invalid command name "//create_clock"
+    while executing
+"_real_unknown //create_clock -period 40 clk"
+    ("eval" body line 1)
+    invoked from within
+"eval _real_unknown $args"
+    (procedure "::unknown" line 8)
+    invoked from within
+"//create_clock -period 40 clk"
+    (file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/lcd.sdc" line 1)
+INFO     : SDC file 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/lcd.sdc' is missing or does not contain any valid constraint
+INFO     : Using default timing constraint of 1 ns
 INFO     : SDC file 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/lcd.sdc' parsed successfully.
            ***** Beginning stage initial placement ... *****
 INFO     : Reading core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
@@ -91,124 +102,120 @@ INFO     : Starting Global Placer with 18 threads ...
             ----------     -------  --------------     -------
              Iteration       WHPWL Worst Slack (ps) Convergence
             ----------     -------  --------------     -------
-INFO     :           1     4332669           -9198         0.6%
-INFO     :           2     4359159           -9198         0.6%
-INFO     :           3     4814666           -9198         0.9%
-INFO     :           4     4133272          -11020         1.0%
-INFO     :           5     1583801           -9457         1.5%
-INFO     :           6      731133          -12900         4.3%
-INFO     :           7      340985          -19065        13.4%
-INFO     :           8      175532          -23761        32.8%
-INFO     :           9      152340          -27282        56.5%
-INFO     :          10      132371          -27549        57.0%
-INFO     :          11      128698          -26027        59.2%
-INFO     :          12      128269          -25399        59.2%
-INFO     :          13      128482          -26810        62.6%
-INFO     :          14      131363          -25334        62.6%
-INFO     :          15      135698          -25234        62.6%
-INFO     :          16      130186          -25327        62.6%
-INFO     :          17      135677          -26117        64.7%
-INFO     :          18      129645          -26266        64.7%
-INFO     :          19      136899          -26540        66.1%
-INFO     :          20      126851          -27257        66.1%
-INFO     :          21      133993          -25857        69.2%
-INFO     :          22      130150          -26157        69.2%
-INFO     :          23      134418          -26638        70.3%
-INFO     :          24      123039          -27761        70.3%
-INFO     :          25      134897          -26591        75.5%
-INFO     :          26      123160          -29700        75.5%
-INFO     :          27      130959          -27621        80.5%
-INFO     :          28      128349          -26439        80.5%
-INFO     :          29      133925          -26823        80.5%
-INFO     :          30      126022          -26395        80.5%
-INFO     :          31      134608          -26318        81.6%
-INFO     :          32      125242          -26933        81.6%
-INFO     :          33      133268          -26739        84.5%
-INFO     :          34      122434          -27907        84.5%
-INFO     :          35      133012          -27099        87.0%
-INFO     :          36      123346          -27263        87.0%
-INFO     :          37      133561          -27085        88.2%
-INFO     :          38      125459          -27787        88.2%
-INFO     :          39      133969          -27289        89.6%
-INFO     :          40      123589          -27523        89.6%
-INFO     :          41      133431          -26908        91.2%
-INFO     :          42      125362          -27585        91.2%
-INFO     :          43      135359          -26597        91.6%
-INFO     :          44      124841          -26936        91.6%
-INFO     :          45      134370          -26423        93.2%
-INFO     :          46      126758          -27566        93.2%
-INFO     :          47      130732          -27906        93.2%
-INFO     :          48      129193          -27145        93.2%
-INFO     :          49      133634          -27920        93.2%
-INFO     :          50      127689          -27952        93.2%
-INFO     :          51      132177          -27561        95.7%
-INFO     :          52      134609          -27958        95.7%
-INFO     :          53      130322          -28183        95.7%
-INFO     : GP: best_placement: wpd: 25338.2
+INFO     :           1     5310744          -15267         0.8%
+INFO     :           2     6343542          -16297         1.0%
+INFO     :           3     6411979          -17328         1.2%
+INFO     :           4     5421925          -15316         1.7%
+INFO     :           5     1933656          -17328         2.0%
+INFO     :           6     1091150          -18920         3.0%
+INFO     :           7      570012          -17376         6.5%
+INFO     :           8      334245          -22169        22.9%
+INFO     :           9      232824          -31616        56.3%
+INFO     :          10      205940          -34394        65.0%
+INFO     :          11      195401          -34580        71.0%
+INFO     :          12      193735          -34723        72.2%
+INFO     :          13      200643          -33895        75.6%
+INFO     :          14      185172          -34540        75.6%
+INFO     :          15      195257          -35162        82.8%
+INFO     :          16      180469          -34084        82.8%
+INFO     :          17      190349          -37679        86.1%
+INFO     :          18      178222          -33929        86.1%
+INFO     :          19      189138          -35994        87.2%
+INFO     :          20      177264          -35972        87.2%
+INFO     :          21      184837          -35834        88.5%
+INFO     :          22      179239          -36003        88.5%
+INFO     :          23      188131          -37086        88.6%
+INFO     :          24      176883          -38171        88.6%
+INFO     :          25      180586          -36144        90.2%
+INFO     :          26      182887          -37688        90.2%
+INFO     :          27      179191          -38498        90.2%
+INFO     :          28      179094          -40004        90.2%
+INFO     :          29      181305          -37272        90.7%
+INFO     :          30      175159          -41115        90.7%
+INFO     :          31      175070          -39208        91.9%
+INFO     :          32      177946          -38880        91.9%
+INFO     :          33      177965          -36283        91.9%
+INFO     :          34      177203          -39785        91.9%
+INFO     :          35      177876          -38118        92.3%
+INFO     :          36      177673          -42252        93.6%
+INFO     :          37      178194          -40560        94.0%
+INFO     :          38      178711          -39361        94.5%
+INFO     :          39      178928          -39648        95.0%
+INFO     :          40      177543          -40655        96.1%
+INFO     :          41      175518          -40870        96.9%
+INFO     :          42      176343          -41389        98.4%
+INFO     :          43      176743          -46914        98.9%
+INFO     :          44      177082          -44990        99.1%
+INFO     :          45      177280          -44291        99.1%
+INFO     :          46      177699          -45034        99.1%
+INFO     :          47      178383          -44970        99.5%
+INFO     : GP: best_placement: wpd: 38266.1
 INFO     : Starting Annealer
             ----------     -------  --------------     -------
              Iteration       WHPWL  Delay Max (ps)     R Limit
             ----------     -------  --------------     -------
-INFO     :           0       63099           30367        30.0
-INFO     :           1       42843           35344        29.3
-INFO     :           2       37588           32270        28.1
-INFO     :           3       35595           30346        26.4
-INFO     :           4       34100           33120        24.9
-INFO     :           5       32746           30544        23.2
-INFO     :           6       32416           30260        21.7
-INFO     :           7       31957           27879        20.1
-INFO     :           8       32066           29037        18.7
-INFO     :           9       31040           27457        17.4
-INFO     :          10       31036           27377        16.2
-INFO     :          11       30853           27668        15.0
-INFO     :          12       30755           26509        13.9
-INFO     :          13       29936           27705        12.8
-INFO     :          14       29249           26490        11.8
-INFO     :          15       28975           26962        10.9
-INFO     :          16       28943           26823        10.1
-INFO     :          17       28626           26036         9.3
-INFO     :          18       28570           26913         8.6
-INFO     :          19       28489           25502         8.0
-INFO     :          20       28333           25238         7.4
-INFO     :          21       27793           24344         6.8
-INFO     :          22       28460           24871         6.3
-INFO     :          23       29251           24014         5.9
-INFO     :          24       28981           23295         5.4
-INFO     :          25       29419           24028         5.0
-INFO     :          26       29169           24383         4.7
-INFO     :          27       29016           23420         4.3
-INFO     :          28       28582           24146         4.0
-INFO     :          29       28093           23326         3.7
-INFO     :          30       28325           22964         3.4
-INFO     :          31       28345           25728         3.2
-INFO     :          32       28367           24052         2.9
-INFO     :          33       27985           23649         2.7
-INFO     :          34       27815           22843         2.5
-INFO     :          35       27819           23860         2.3
-INFO     :          36       27709           24260         2.1
-INFO     :          37       27276           25945         2.0
-INFO     :          38       27408           25056         1.8
-INFO     :          39       27367           22723         1.7
-INFO     :          40       27588           23527         1.5
-INFO     :          41       27619           24154         1.4
-INFO     :          42       27363           24608         1.3
-INFO     :          43       26291           27323         1.2
-INFO     :          44       25959           31183         1.1
-INFO     : DP: best_placement: wpd: 19949.9
-INFO     : Placement successful: 2926 cells are placed
-INFO     : Peak congestion smeared over 4x4 of the chip is 0.684672 at 38,71
-INFO     : Peak congestion smeared over 1/16 of the chip is 0.684672 at 38,71
-INFO     : Peak congestion smeared over 1/4 of the chip is 0.480126 at 37,71
-INFO     : Congestion-weighted HPWL per net: 24.7837
+INFO     :           0       90505           46418        30.0
+INFO     :           1       58456           43775        29.1
+INFO     :           2       53955           42497        28.4
+INFO     :           3       50872           39977        27.2
+INFO     :           4       51689           38649        26.1
+INFO     :           5       52752           38519        24.8
+INFO     :           6       51956           36909        23.6
+INFO     :           7       52086           39168        22.2
+INFO     :           8       52916           37165        20.9
+INFO     :           9       51996           38362        19.6
+INFO     :          10       51494           37891        18.3
+INFO     :          11       51462           37853        17.1
+INFO     :          12       51212           35650        15.9
+INFO     :          13       49824           35482        14.8
+INFO     :          14       49622           36954        13.7
+INFO     :          15       49118           35526        12.7
+INFO     :          16       48765           36148        11.8
+INFO     :          17       48905           36403        11.0
+INFO     :          18       48026           37146        10.2
+INFO     :          19       47941           36966         9.4
+INFO     :          20       47891           35267         8.7
+INFO     :          21       47919           35025         8.1
+INFO     :          22       47391           33945         7.5
+INFO     :          23       47044           35580         6.9
+INFO     :          24       47087           34431         6.5
+INFO     :          25       46645           36144         6.0
+INFO     :          26       45762           35275         5.6
+INFO     :          27       46181           37105         5.2
+INFO     :          28       46072           35750         4.8
+INFO     :          29       45540           35550         4.5
+INFO     :          30       44671           35197         4.1
+INFO     :          31       44815           34377         3.8
+INFO     :          32       44341           35038         3.6
+INFO     :          33       44205           34194         3.3
+INFO     :          34       44397           33657         3.1
+INFO     :          35       44088           35286         2.9
+INFO     :          36       44046           35832         2.7
+INFO     :          37       44208           35129         2.5
+INFO     :          38       43515           35342         2.3
+INFO     :          39       43132           34381         2.1
+INFO     :          40       43126           35018         2.0
+INFO     :          41       42986           34151         1.8
+INFO     :          42       43393           34082         1.7
+INFO     :          43       43196           33673         1.6
+INFO     :          44       42772           34312         1.5
+INFO     :          45       42204           35443         1.3
+INFO     :          46       41634           34838         1.2
+INFO     : DP: best_placement: wpd: 32414.7
+INFO     : Placement successful: 3546 cells are placed
+INFO     : Peak congestion smeared over 4x4 of the chip is 0.810664 at 32,99
+INFO     : Peak congestion smeared over 1/16 of the chip is 0.810664 at 32,99
+INFO     : Peak congestion smeared over 1/4 of the chip is 0.540951 at 36,97
+INFO     : Congestion-weighted HPWL per net: 30.1786
 INFO     : Reading placement constraints from 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.qplace'.
-INFO     : Finished Realigning Types (1251 blocks needed type change)
+INFO     : Finished Realigning Types (1410 blocks needed type change)
 INFO     : Completed placement consistency check successfully.
 INFO     : Successfully created FPGA place file 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.place'
-INFO     : Placement took 6.6568275 seconds [FlowMsg::StageDuration]
-INFO     :     Placement took 12.78125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Placement virtual memory usage: begin = 100.544 MB, end = 128.704 MB, delta = 28.16 MB [FlowMsg::VMUsage]
-INFO     :     Placement peak virtual memory usage = 128.704 MB [FlowMsg::VMUsage::Peak]
-INFO     : Placement resident set memory usage: begin = 112.492 MB, end = 142.94 MB, delta = 30.448 MB [FlowMsg::RSSUsage]
-INFO     :     Placement peak resident set memory usage = 142.944 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Placement took 7.5585262 seconds [FlowMsg::StageDuration]
+INFO     :     Placement took 15.4375 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Placement virtual memory usage: begin = 100.588 MB, end = 135 MB, delta = 34.412 MB [FlowMsg::VMUsage]
+INFO     :     Placement peak virtual memory usage = 140.452 MB [FlowMsg::VMUsage::Peak]
+INFO     : Placement resident set memory usage: begin = 112.156 MB, end = 148.952 MB, delta = 36.796 MB [FlowMsg::RSSUsage]
+INFO     :     Placement peak resident set memory usage = 156.008 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage placement *****
            

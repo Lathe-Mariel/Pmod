@@ -340,3 +340,307 @@
 [EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:91)
 [EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:134)
 [EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:135)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 15:50:14
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 15:51:08
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 15:51:25
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 15:52:20
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 15:53:52
+///////////////////////////////////
+
+[EFX-0256 WARNING] The primary output port 'tc_miso' wire 'tc_miso' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d1' wire 'led_d1' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d2' wire 'led_d2' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d3' wire 'led_d3' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d4' wire 'led_d4' is not driven.
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:109)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:127)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:150)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'tc_miso' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:27)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d1' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:29)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d2' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:30)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d3' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:31)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d4' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:32)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:192)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:195)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:112)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:113)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:156)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:157)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:193)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:194)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 16:12:28
+///////////////////////////////////
+
+[EFX-0256 WARNING] The primary output port 'led_d1' wire 'led_d1' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d2' wire 'led_d2' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d3' wire 'led_d3' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d4' wire 'led_d4' is not driven.
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:109)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:127)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:150)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d1' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:29)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d2' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:30)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d3' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:31)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d4' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:32)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:192)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:195)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:112)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:113)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:156)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:157)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:193)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:194)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 17:05:38
+///////////////////////////////////
+
+[EFX-0256 WARNING] The primary output port 'led_d1' wire 'led_d1' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d2' wire 'led_d2' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d3' wire 'led_d3' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d4' wire 'led_d4' is not driven.
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:109)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:127)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:150)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d1' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:29)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d2' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:30)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d3' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:31)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d4' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:32)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:192)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:195)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:112)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:113)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:156)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:157)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:193)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:194)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 17:09:33
+///////////////////////////////////
+
+[EFX-0256 WARNING] The primary output port 'led_d1' wire 'led_d1' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d2' wire 'led_d2' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d3' wire 'led_d3' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d4' wire 'led_d4' is not driven.
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:109)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:127)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:150)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d1' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:29)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d2' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:30)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d3' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:31)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d4' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:32)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:192)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:195)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:112)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:113)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:156)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:157)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:193)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:194)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 17:11:53
+///////////////////////////////////
+
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:109)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:127)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:150)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:198)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:201)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:118)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:119)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:162)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:163)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:199)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:200)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 17:21:18
+///////////////////////////////////
+
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:109)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:127)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:150)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:198)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:201)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:118)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:119)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:162)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:163)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:199)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:200)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 23:41:58
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 23:42:42
+///////////////////////////////////
+
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:109)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:127)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:150)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:198)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:201)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:118)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:119)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:162)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:163)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:199)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:200)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 23:52:03
+///////////////////////////////////
+
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:109)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:127)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:150)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:198)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:201)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:118)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:119)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:162)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:163)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:199)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:200)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 15, 2026 00:03:31
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 15, 2026 00:26:24
+///////////////////////////////////
+
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:112)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:130)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:152)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:152)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:152)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:202)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:205)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:120)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:121)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:164)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:165)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:203)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:204)

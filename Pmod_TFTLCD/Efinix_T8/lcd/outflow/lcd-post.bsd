@@ -67,14 +67,14 @@ port (
 	GPIOL_15_CLK1                 : linkage bit;
 	GPIOL_16_CLK2                 : linkage bit;
 	GPIOL_17_CLK3                 : linkage bit;
-	GPIOL_18_CTRL2                : linkage bit;
+	GPIOL_18_CTRL2                : out bit;
 	GPIOL_19_CTRL3                : linkage bit;
 	GPIOL_20_PLLIN                : in bit;
-	GPIOL_21_NSTATUS              : linkage bit;
+	GPIOL_21_NSTATUS              : in bit;
 	GPIOR_00                      : linkage bit;
-	GPIOR_01                      : linkage bit;
+	GPIOR_01                      : out bit;
 	GPIOR_02_RESERVED_OUT         : linkage bit;
-	GPIOR_03                      : linkage bit;
+	GPIOR_03                      : out bit;
 	GPIOR_05                      : linkage bit;
 	GPIOR_06                      : in bit;
 	GPIOR_07                      : in bit;
@@ -426,16 +426,16 @@ attribute BOUNDARY_REGISTER of T8F81 : entity is
 	"107 (BC_1, *, internal, X)," &
 
 	"108 (BC_1, *, internal, X)," &
-	"109 (BC_1, *, internal, 1)," &
-	"110 (BC_1, *, internal, X)," &
+	"109 (BC_1, *, control, 1)," &
+	"110 (BC_1, GPIOR_03, output3, X, 109, 1, Z)," &
 
 	"111 (BC_1, *, internal, X)," &
 	"112 (BC_1, *, internal, 1)," &
 	"113 (BC_1, *, internal, X)," &
 
 	"114 (BC_1, *, internal, X)," &
-	"115 (BC_1, *, internal, 1)," &
-	"116 (BC_1, *, internal, X)," &
+	"115 (BC_1, *, control, 1)," &
+	"116 (BC_1, GPIOR_01, output3, X, 115, 1, Z)," &
 
 	"117 (BC_1, *, internal, X)," &
 	"118 (BC_1, *, internal, 1)," &
@@ -457,7 +457,7 @@ attribute BOUNDARY_REGISTER of T8F81 : entity is
 	"130 (BC_1, *, internal, 1)," &
 	"131 (BC_1, *, internal, X)," &
 
-	"132 (BC_1, *, internal, X)," &
+	"132 (BC_1, GPIOL_21_NSTATUS, input, X)," &
 	"133 (BC_1, *, internal, 1)," &
 	"134 (BC_1, *, internal, X)," &
 
@@ -470,8 +470,8 @@ attribute BOUNDARY_REGISTER of T8F81 : entity is
 	"140 (BC_1, *, internal, X)," &
 
 	"141 (BC_1, *, internal, X)," &
-	"142 (BC_1, *, internal, 1)," &
-	"143 (BC_1, *, internal, X)," &
+	"142 (BC_1, *, control, 1)," &
+	"143 (BC_1, GPIOL_18_CTRL2, output3, X, 142, 1, Z)," &
 
 	"144 (BC_1, *, internal, X)," &
 	"145 (BC_1, *, internal, 1)," &

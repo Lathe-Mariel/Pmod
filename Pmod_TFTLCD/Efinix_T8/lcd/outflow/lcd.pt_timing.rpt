@@ -1,7 +1,7 @@
 
 Efinity Interface Designer Timing Report
 Version: 2026.1.132
-Date: 2026-06-14 00:19
+Date: 2026-06-15 00:26
 
 Copyright (C) 2013 - 2026 Efinix Inc. All rights reserved.
 
@@ -27,9 +27,10 @@ Non-registered GPIO Configuration:
 +---------------+----------+-----------+----------+----------+
 | Instance Name | Pin Name | Parameter | Max (ns) | Min (ns) |
 +---------------+----------+-----------+----------+----------+
+|     btn_1     |  btn_1   |  GPIO_IN  |  1.954   |  0.698   |
 |    btn_rst    | btn_rst  |  GPIO_IN  |  1.954   |  0.698   |
 |      clk      |   clk    |  GPIO_IN  |  1.954   |  0.698   |
-|    pll_rst    | pll_rst  |  GPIO_IN  |  1.954   |  0.698   |
+|    tc_miso    | tc_miso  |  GPIO_IN  |  1.954   |  0.698   |
 |     lcd_cs    |  lcd_cs  |  GPIO_OUT |  5.361   |  1.915   |
 |     lcd_dc    |  lcd_dc  |  GPIO_OUT |  5.361   |  1.915   |
 |    lcd_mosi   | lcd_mosi |  GPIO_OUT |  5.361   |  1.915   |
@@ -38,6 +39,9 @@ Non-registered GPIO Configuration:
 |     led_d2    |  led_d2  |  GPIO_OUT |  5.361   |  1.915   |
 |     led_d3    |  led_d3  |  GPIO_OUT |  5.361   |  1.915   |
 |     led_d4    |  led_d4  |  GPIO_OUT |  5.361   |  1.915   |
+|     tc_clk    |  tc_clk  |  GPIO_OUT |  5.361   |  1.915   |
+|     tc_cs     |  tc_cs   |  GPIO_OUT |  5.361   |  1.915   |
+|    tc_mosi    | tc_mosi  |  GPIO_OUT |  5.361   |  1.915   |
 +---------------+----------+-----------+----------+----------+
 
 ---------- GPIO Timing Report (end) ----------

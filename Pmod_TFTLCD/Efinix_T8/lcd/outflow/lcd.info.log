@@ -1642,3 +1642,799 @@
 [EFX-0000 INFO] ======================================= 
 [EFX-0000 INFO] ... Post-Map Verilog Writer begin
 [EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 1s)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 15:50:14
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0010 VERI-ERROR] syntax error near ')' (VERI-1137) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:34)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 15:51:08
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0010 VERI-ERROR] syntax error near ')' (VERI-1137) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:34)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 15:51:25
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0010 VERI-ERROR] 'clk' is not declared (VERI-1128) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:45)
+[EFX-0010 VERI-ERROR] module 'lcd_ctrl' is ignored due to previous errors (VERI-1072) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:565)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 15:52:20
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 15:53:52
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 'top' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:17)
+[EFX-0012 VERI-INFO] compiling module 'img_rom' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:8)
+[EFX-0012 VERI-INFO] compiling module 'touch_ctrl' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:32)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0256 WARNING] The primary output port 'tc_miso' wire 'tc_miso' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d1' wire 'led_d1' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d2' wire 'led_d2' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d3' wire 'led_d3' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d4' wire 'led_d4' is not driven.
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:109)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:127)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:150)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'tc_miso' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:27)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d1' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:29)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d2' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:30)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d3' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:31)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d4' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:32)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:192)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:195)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:112)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:113)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:156)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:157)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:193)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:194)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'n501' select size : 7 output width: 9
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 336 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 2s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'pll_clk' with 254 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 455 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 2921, ed: 10417, lv: 7, pw: 5061.66
+[EFX-0000 INFO] ... LUT mapping end (Real time : 14s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'pll_clk~pll_clk' with 247 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 0 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	116
+[EFX-0000 INFO] EFX_LUT4                : 	2918
+[EFX-0000 INFO] EFX_FF                  : 	238
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 16:12:28
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 'top' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:17)
+[EFX-0012 VERI-INFO] compiling module 'img_rom' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:8)
+[EFX-0012 VERI-INFO] compiling module 'touch_ctrl' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:32)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0256 WARNING] The primary output port 'led_d1' wire 'led_d1' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d2' wire 'led_d2' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d3' wire 'led_d3' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d4' wire 'led_d4' is not driven.
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:109)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:127)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:150)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d1' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:29)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d2' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:30)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d3' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:31)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d4' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:32)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:192)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:195)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:112)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:113)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:156)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:157)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:193)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:194)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'n501' select size : 7 output width: 9
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 336 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 1s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'pll_clk' with 399 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 396 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 3205, ed: 10982, lv: 9, pw: 5394.36
+[EFX-0000 INFO] ... LUT mapping end (Real time : 16s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'pll_clk~pll_clk' with 399 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 1 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	167
+[EFX-0000 INFO] EFX_LUT4                : 	3203
+[EFX-0000 INFO] EFX_MULT                : 	4
+[EFX-0000 INFO] EFX_FF                  : 	390
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 17:05:38
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 'top' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:17)
+[EFX-0012 VERI-INFO] compiling module 'img_rom' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:8)
+[EFX-0012 VERI-INFO] compiling module 'touch_ctrl' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:32)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0256 WARNING] The primary output port 'led_d1' wire 'led_d1' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d2' wire 'led_d2' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d3' wire 'led_d3' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d4' wire 'led_d4' is not driven.
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:109)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:127)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:150)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d1' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:29)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d2' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:30)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d3' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:31)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d4' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:32)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:192)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:195)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:112)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:113)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:156)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:157)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:193)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:194)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'n501' select size : 7 output width: 9
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 336 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 1s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'pll_clk' with 399 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 396 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 3205, ed: 10982, lv: 9, pw: 5394.36
+[EFX-0000 INFO] ... LUT mapping end (Real time : 16s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'pll_clk~pll_clk' with 399 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 1 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	167
+[EFX-0000 INFO] EFX_LUT4                : 	3203
+[EFX-0000 INFO] EFX_MULT                : 	4
+[EFX-0000 INFO] EFX_FF                  : 	390
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 17:09:33
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 'top' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:17)
+[EFX-0012 VERI-INFO] compiling module 'img_rom' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:8)
+[EFX-0012 VERI-INFO] compiling module 'touch_ctrl' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:32)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0256 WARNING] The primary output port 'led_d1' wire 'led_d1' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d2' wire 'led_d2' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d3' wire 'led_d3' is not driven.
+[EFX-0256 WARNING] The primary output port 'led_d4' wire 'led_d4' is not driven.
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:109)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:127)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:150)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d1' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:29)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d2' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:30)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d3' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:31)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net/port 'led_d4' in module 'top'. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:32)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:192)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:195)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:112)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:113)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:156)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:157)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:193)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:194)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'n501' select size : 7 output width: 9
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 336 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 1s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'pll_clk' with 399 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 396 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 3205, ed: 10982, lv: 9, pw: 5394.36
+[EFX-0000 INFO] ... LUT mapping end (Real time : 15s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'pll_clk~pll_clk' with 399 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 1 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 1s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	167
+[EFX-0000 INFO] EFX_LUT4                : 	3203
+[EFX-0000 INFO] EFX_MULT                : 	4
+[EFX-0000 INFO] EFX_FF                  : 	390
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 17:11:53
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 'top' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:17)
+[EFX-0012 VERI-INFO] compiling module 'img_rom' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:8)
+[EFX-0012 VERI-INFO] compiling module 'touch_ctrl' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:32)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:109)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:127)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:150)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:198)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:201)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:118)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:119)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:162)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:163)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:199)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:200)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'n505' select size : 7 output width: 9
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 336 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 1s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'pll_clk' with 399 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 394 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 1s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 3168, ed: 11053, lv: 9, pw: 5494.14
+[EFX-0000 INFO] ... LUT mapping end (Real time : 15s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'pll_clk~pll_clk' with 399 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 1 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	167
+[EFX-0000 INFO] EFX_LUT4                : 	3166
+[EFX-0000 INFO] EFX_MULT                : 	4
+[EFX-0000 INFO] EFX_FF                  : 	390
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 17:21:18
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 'top' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:17)
+[EFX-0012 VERI-INFO] compiling module 'img_rom' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:8)
+[EFX-0012 VERI-INFO] compiling module 'touch_ctrl' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:32)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:109)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:127)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:150)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:198)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:201)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:118)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:119)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:162)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:163)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:199)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:200)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'n505' select size : 7 output width: 9
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 336 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 1s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'pll_clk' with 399 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 394 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 3168, ed: 11053, lv: 9, pw: 5494.14
+[EFX-0000 INFO] ... LUT mapping end (Real time : 15s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 1s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'pll_clk~pll_clk' with 399 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 1 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	167
+[EFX-0000 INFO] EFX_LUT4                : 	3166
+[EFX-0000 INFO] EFX_MULT                : 	4
+[EFX-0000 INFO] EFX_FF                  : 	390
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 23:41:58
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0010 VERI-ERROR] 'is_touch_marker' is not valid in an expression (VERI-1130) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:38)
+[EFX-0010 VERI-ERROR] module 'top' is ignored due to previous errors (VERI-1072) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:571)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 23:42:42
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 'top' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:17)
+[EFX-0012 VERI-INFO] compiling module 'img_rom' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:8)
+[EFX-0012 VERI-INFO] compiling module 'touch_ctrl' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:32)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:109)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:127)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:150)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:198)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:201)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:118)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:119)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:162)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:163)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:199)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:200)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'n505' select size : 7 output width: 9
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 336 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 2s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'pll_clk' with 399 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 394 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 3168, ed: 11053, lv: 9, pw: 5495.14
+[EFX-0000 INFO] ... LUT mapping end (Real time : 16s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'pll_clk~pll_clk' with 399 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 1 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	167
+[EFX-0000 INFO] EFX_LUT4                : 	3166
+[EFX-0000 INFO] EFX_MULT                : 	4
+[EFX-0000 INFO] EFX_FF                  : 	390
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 14, 2026 23:52:03
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 'top' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:17)
+[EFX-0012 VERI-INFO] compiling module 'img_rom' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:8)
+[EFX-0012 VERI-INFO] compiling module 'touch_ctrl' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:32)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:109)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:127)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:150)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:198)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:201)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:118)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:119)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:162)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:163)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:199)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:200)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'n505' select size : 7 output width: 9
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 336 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 1s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 1s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'pll_clk' with 399 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 394 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 3156, ed: 11016, lv: 9, pw: 5460.79
+[EFX-0000 INFO] ... LUT mapping end (Real time : 16s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'pll_clk~pll_clk' with 399 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 1 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	167
+[EFX-0000 INFO] EFX_LUT4                : 	3156
+[EFX-0000 INFO] EFX_MULT                : 	4
+[EFX-0000 INFO] EFX_FF                  : 	390
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 15, 2026 00:03:31
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0010 VERI-ERROR] syntax error near 'end' (VERI-1137) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:272)
+[EFX-0010 VERI-ERROR] Verilog 2000 keyword 'end' used in incorrect context (VERI-2344) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:272)
+[EFX-0010 VERI-ERROR] module 'touch_ctrl' is ignored due to previous errors (VERI-1072) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:381)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jun 15, 2026 00:26:24
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "H:/Efinity/2026.1/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] compiling module 'top' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:17)
+[EFX-0012 VERI-INFO] compiling module 'img_rom' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:8)
+[EFX-0012 VERI-INFO] compiling module 'touch_ctrl' (VERI-1018) (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:32)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:112)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129)
+[EFX-0200 WARNING] Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:130)
+[EFX-0200 WARNING] Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151)
+[EFX-0200 WARNING] Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:152)
+[EFX-0200 WARNING] Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:152)
+[EFX-0200 WARNING] Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:152)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:202)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:205)
+[EFX-0200 WARNING] Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:120)
+[EFX-0200 WARNING] Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:121)
+[EFX-0200 WARNING] Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:164)
+[EFX-0200 WARNING] Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:165)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:203)
+[EFX-0200 WARNING] Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:204)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "touch_ctrl" end (Real time : 0s)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Wide MUX mapping to ram-net, output: 'n506' select size : 7 output width: 9
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 338 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 1s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'pll_clk' with 401 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 399 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 3236, ed: 11108, lv: 9, pw: 5441.16
+[EFX-0000 INFO] ... LUT mapping end (Real time : 16s)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Using advanced retiming technique.
+[EFX-0000 INFO] ... Clock Network 'pll_clk~pll_clk' with 401 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 1 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] EFX_ADD                 : 	167
+[EFX-0000 INFO] EFX_LUT4                : 	3235
+[EFX-0000 INFO] EFX_MULT                : 	4
+[EFX-0000 INFO] EFX_FF                  : 	392
+[EFX-0000 INFO] EFX_GBUFCE              : 	1
+[EFX-0000 INFO] ======================================= 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 1s)

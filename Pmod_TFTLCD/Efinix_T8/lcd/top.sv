@@ -14,7 +14,7 @@
 // リセット: ユーザボタン H11 (押下=Low) で非同期リセット
 // ============================================================
 
-module lcd_ctrl (
+module top (
     input  wire pll_clk,       // 50 MHz
     input  wire btn_rst,   // ユーザボタン H11 (押下=Low)
     output reg  lcd_cs,    // A10 Chip Select (Low有効)  Port1 J2 Pmod5
@@ -22,22 +22,35 @@ module lcd_ctrl (
     output reg  lcd_mosi,  // E10 SPI MOSI               Port1 J2 Pmod6
     output reg  lcd_sck,   // K5  SPI Clock               Port1 J2 Pmod8
     
+    output reg  tc_cs,
+    output reg  tc_mosi,
+    input wire  tc_miso,
+    output reg  tc_clk,    
     output reg led_d1,
     output reg led_d2,
     output reg led_d3,
     output reg led_d4,
+    input wire btn_1
+
+);
+
+wire test_probe;
+
+assign led_d1 = btn_1;
+assign led_d2 = !touch_valid;
+assign led_d3 = !test_probe;
+assign led_d4 = 1;
 
     // タッチ座標入力 (touch_ctrl より)
-    input  wire        touch_valid, // タッチ検出中
-    input  wire [8:0]  touch_x,     // LCD X座標 (0~319)
-    input  wire [7:0]  touch_y      // LCD Y座標 (0~239)
-);
+wire        touch_valid; // タッチ検出中
+wire [8:0]  touch_x;     // LCD X座標 (0~319)
+wire [7:0]  touch_y;     // LCD Y座標 (0~239)
 
 // ============================================================
 // ユーザボタン 2段同期化 + 非同期リセット生成
 // ============================================================
 reg btn_r1, btn_r2;
-always @(posedge clk) begin
+always @(posedge pll_clk) begin
     btn_r1 <= btn_rst;
     btn_r2 <= btn_r1;
 end
@@ -98,7 +111,7 @@ localparam [8:0]
     ROM_53 = 9'h131,  ROM_54 = 9'h136,  ROM_55 = 9'h10F,
     ROM_56 = 9'h02A,                              // Column Addr Set (0~239)
     ROM_57 = 9'h100,  ROM_58 = 9'h100,
-    ROM_59 = 9'h100,  ROM_60 = 9'h13F,
+    ROM_59 = 9'h101,  ROM_60 = 9'h13F,
     ROM_61 = 9'h02B,                              // Row Addr Set (0~319)
     ROM_62 = 9'h100,  ROM_63 = 9'h100,
     ROM_64 = 9'h100,  ROM_65 = 9'h1EF,
@@ -162,6 +175,23 @@ function [15:0] get_color;
     end
 endfunction
 
+touch_ctrl touch_ctrl_inst(
+    .clk(pll_clk),         // 50 MHz
+    .rst_n(rst_n),         // Low有効リセット
+
+    .tc_cs(tc_cs),         // Chip Select (Low有効)
+    .tc_mosi(tc_mosi),     // DIN
+    .tc_miso(tc_miso),     // DOUT
+    .tc_clk(tc_clk),       // DCLK
+    
+    .test_probe(test_probe),
+
+    // タッチ座標出力
+    .touch_valid(touch_valid), // タッチ検出中
+    .touch_x(touch_x),         // LCD X座標 (0~319)
+    .touch_y(touch_y)          // LCD Y座標 (0~239)
+);
+
 // ============================================================
 // タッチマーカー描画判定 (十字カーソル: 横11px × 縦11px)
 //   中心 = touch_x, touch_y
@@ -199,7 +229,7 @@ localparam [23:0] POWERON_WAIT = 24'd7_500_000;
 reg [23:0] poweron_cnt;
 reg        init_start;
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge pll_clk or negedge rst_n) begin
     if (!rst_n) begin
         poweron_cnt <= 24'd0;
         init_start  <= 1'b0;
@@ -223,7 +253,7 @@ reg       tx_start;
 reg       tx_busy;
 reg [5:0] tx_cnt;
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge pll_clk or negedge rst_n) begin
     if (!rst_n) begin
         lcd_cs   <= 1'b1;
         lcd_sck  <= 1'b0;
@@ -274,7 +304,7 @@ localparam [22:0] MOVE_PERIOD = 23'd5_000_000;
 reg [22:0] move_cnt;
 reg        move_pulse;
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge pll_clk or negedge rst_n) begin
     if (!rst_n) begin
         move_cnt   <= 23'd0;
         move_pulse <= 1'b0;
@@ -298,7 +328,7 @@ reg       dir_x;      // 0=右方向, 1=左方向
 reg       dir_y;      // 0=下方向, 1=上方向
 
 // 位置更新ロジック (move_pulse ごとに next_x/next_y を更新)
-always @(posedge clk or negedge rst_n) begin
+always @(posedge pll_clk or negedge rst_n) begin
     if (!rst_n) begin
         next_x <= 9'd140;   // 初期位置: 中央付近
         next_y <= 8'd100;
@@ -373,7 +403,7 @@ wire in_image   = in_img_col && in_img_row;
 wire [7:0] img_rel_col = col_cnt[7:0] - img_x[7:0];
 wire [7:0] img_rel_row = row_cnt      - img_y;
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge pll_clk or negedge rst_n) begin
     if (!rst_n) begin
         state     <= S_WAIT;
         init_idx  <= 7'd0;

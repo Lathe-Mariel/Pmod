@@ -14,39 +14,55 @@ INFO     : Restoring all Verilog modules from file 'H:/Efinity/2026.1/sim_models
 INFO     : Analyzing Verilog file 'H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv' [VERI-1482]
 INFO     : Analyzing Verilog file 'H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v' [VERI-1482]
 INFO     : Analyzing Verilog file 'H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v' [VERI-1482]
-INFO     : Analysis took 0.06086 seconds [FlowMsg::StageDuration]
+INFO     : Analysis took 0.0286657 seconds [FlowMsg::StageDuration]
 INFO     :     Analysis took 0.03125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Analysis virtual memory usage: begin = 59.492 MB, end = 59.512 MB, delta = 0.02 MB [FlowMsg::VMUsage]
-INFO     :     Analysis peak virtual memory usage = 59.52 MB [FlowMsg::VMUsage::Peak]
-INFO     : Analysis resident set memory usage: begin = 72.82 MB, end = 75.548 MB, delta = 2.728 MB [FlowMsg::RSSUsage]
-INFO     :     Analysis peak resident set memory usage = 75.552 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Analysis virtual memory usage: begin = 59.476 MB, end = 59.496 MB, delta = 0.02 MB [FlowMsg::VMUsage]
+INFO     :     Analysis peak virtual memory usage = 59.504 MB [FlowMsg::VMUsage::Peak]
+INFO     : Analysis resident set memory usage: begin = 62.264 MB, end = 65.036 MB, delta = 2.772 MB [FlowMsg::RSSUsage]
+INFO     :     Analysis peak resident set memory usage = 65.04 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending Analysis ... *****
 INFO     : ***** Beginning Elaboration ... *****
-INFO     : H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv(1): compiling module 'top' [VERI-1018]
+INFO     : H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv(17): compiling module 'top' [VERI-1018]
 INFO     : H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v(8): compiling module 'img_rom' [VERI-1018]
-INFO     : Elaboration took 0.0830359 seconds [FlowMsg::StageDuration]
-INFO     :     Elaboration took 0.078125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Elaboration virtual memory usage: begin = 59.512 MB, end = 86.188 MB, delta = 26.676 MB [FlowMsg::VMUsage]
-INFO     :     Elaboration peak virtual memory usage = 86.188 MB [FlowMsg::VMUsage::Peak]
-INFO     : Elaboration resident set memory usage: begin = 75.592 MB, end = 102.832 MB, delta = 27.24 MB [FlowMsg::RSSUsage]
-INFO     :     Elaboration peak resident set memory usage = 102.836 MB [FlowMsg::RSSUsage::Peak]
+INFO     : H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v(32): compiling module 'touch_ctrl' [VERI-1018]
+INFO     : Elaboration took 0.1016631 seconds [FlowMsg::StageDuration]
+INFO     :     Elaboration took 0.0625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Elaboration virtual memory usage: begin = 59.496 MB, end = 89.252 MB, delta = 29.756 MB [FlowMsg::VMUsage]
+INFO     :     Elaboration peak virtual memory usage = 89.252 MB [FlowMsg::VMUsage::Peak]
+INFO     : Elaboration resident set memory usage: begin = 65.08 MB, end = 95.46 MB, delta = 30.38 MB [FlowMsg::RSSUsage]
+INFO     :     Elaboration peak resident set memory usage = 95.464 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending Elaboration ... *****
 INFO     : ... Setting Synthesis Option: mode=speed
 INFO     : ***** Beginning Reading Mapping Library ... *****
-INFO     : Reading Mapping Library took 0.0123491 seconds [FlowMsg::StageDuration]
-INFO     :     Reading Mapping Library took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Reading Mapping Library virtual memory usage: begin = 93.368 MB, end = 93.368 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     :     Reading Mapping Library peak virtual memory usage = 93.368 MB [FlowMsg::VMUsage::Peak]
-INFO     : Reading Mapping Library resident set memory usage: begin = 110.56 MB, end = 110.572 MB, delta = 0.012 MB [FlowMsg::RSSUsage]
-INFO     :     Reading Mapping Library peak resident set memory usage = 110.576 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Reading Mapping Library took 0.003802 seconds [FlowMsg::StageDuration]
+INFO     :     Reading Mapping Library took 0.015625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Reading Mapping Library virtual memory usage: begin = 96.432 MB, end = 96.432 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     :     Reading Mapping Library peak virtual memory usage = 96.432 MB [FlowMsg::VMUsage::Peak]
+INFO     : Reading Mapping Library resident set memory usage: begin = 103.912 MB, end = 103.92 MB, delta = 0.008 MB [FlowMsg::RSSUsage]
+INFO     :     Reading Mapping Library peak resident set memory usage = 103.924 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending Reading Mapping Library ... *****
 INFO     : ... Pre-synthesis checks begin
 WARNING  : Removing redundant signal : rom_read[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:20) [EFX-0200]
 WARNING  : Removing redundant signal : rom_read.a[10:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\img_rom.v:21) [EFX-0200]
-WARNING  : Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:90) [EFX-0200]
-WARNING  : Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:91) [EFX-0200]
-WARNING  : Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:134) [EFX-0200]
-WARNING  : Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:135) [EFX-0200]
+WARNING  : Removing redundant signal : adc_to_lcd_x[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:110) [EFX-0200]
+WARNING  : Removing redundant signal : adc_to_lcd_x.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:111) [EFX-0200]
+WARNING  : Removing redundant signal : adc_to_lcd_x.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:112) [EFX-0200]
+WARNING  : Removing redundant signal : adc_to_lcd_y[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:128) [EFX-0200]
+WARNING  : Removing redundant signal : adc_to_lcd_y.raw[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:129) [EFX-0200]
+WARNING  : Removing redundant signal : adc_to_lcd_y.tmp[23:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:130) [EFX-0200]
+WARNING  : Removing redundant signal : median3[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:151) [EFX-0200]
+WARNING  : Removing redundant signal : median3.a[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:152) [EFX-0200]
+WARNING  : Removing redundant signal : median3.b[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:152) [EFX-0200]
+WARNING  : Removing redundant signal : median3.c[11:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:152) [EFX-0200]
+WARNING  : Removing redundant signal : is_touch_marker. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:202) [EFX-0200]
+WARNING  : Removing redundant signal : is_touch_marker.valid. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:205) [EFX-0200]
+WARNING  : Removing redundant signal : rom_read[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:120) [EFX-0200]
+WARNING  : Removing redundant signal : rom_read.addr[6:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:121) [EFX-0200]
+WARNING  : Removing redundant signal : get_color[15:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:164) [EFX-0200]
+WARNING  : Removing redundant signal : get_color.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:165) [EFX-0200]
+WARNING  : Removing redundant signal : is_touch_marker.col[8:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:203) [EFX-0200]
+WARNING  : Removing redundant signal : is_touch_marker.row[7:0]. (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\top.sv:204) [EFX-0200]
+WARNING  : (The above message was generated too many times, subsequent similar messages will be muted.) [EFX-0200]
 INFO     : ... Pre-synthesis checks end (Real time : 0s)
 INFO     : ... NameSpace init begin
 INFO     : ... NameSpace init end (Real time : 0s)
@@ -54,9 +70,11 @@ INFO     : ... Mapping design "top"
 INFO     : ... Hierarchical pre-synthesis "img_rom" begin
 INFO     : ... Wide MUX mapping to ram-net, output: 'data' select size : 11 output width: 16
 INFO     : ... Hierarchical pre-synthesis "img_rom" end (Real time : 0s)
+INFO     : ... Hierarchical pre-synthesis "touch_ctrl" begin
+INFO     : ... Hierarchical pre-synthesis "touch_ctrl" end (Real time : 0s)
 INFO     : ... Hierarchical pre-synthesis "top" begin
-INFO     : ... Wide MUX mapping to ram-net, output: 'n484' select size : 7 output width: 9
-INFO     : ... Clock Enable Synthesis Performed on 288 flops.
+INFO     : ... Wide MUX mapping to ram-net, output: 'n506' select size : 7 output width: 9
+INFO     : ... Clock Enable Synthesis Performed on 338 flops.
 INFO     : ... Hierarchical pre-synthesis "top" end (Real time : 1s)
 INFO     : ... Flat optimizations begin
 INFO     : ... Flat optimizations end (Real time : 0s)
@@ -67,42 +85,43 @@ INFO     : ... Flat optimizations end (Real time : 0s)
 INFO     : ... Check and break combinational loops begin
 INFO     : ... Check and break combinational loops end (Real time : 0s)
 INFO     : ... Sequential Optimization begin
-INFO     : ... Clock Network 'pll_clk' with 204 loads will be considered for sequential optimization.
-INFO     : ... Sequential Optimization deduced 330 equivalent points.
+INFO     : ... Clock Network 'pll_clk' with 401 loads will be considered for sequential optimization.
+INFO     : ... Sequential Optimization deduced 399 equivalent points.
 INFO     : ... Sequential Optimization end (Real time : 1s)
 INFO     : ... Setup for logic synthesis begin
 INFO     : ... Setup for logic synthesis end (Real time : 0s)
 INFO     : ... LUT mapping begin
-INFO     : ... LS, strategy: 3, nd: 2816, ed: 10378, lv: 7, pw: 5122.19
-INFO     : ... LUT mapping end (Real time : 15s)
+INFO     : ... LS, strategy: 3, nd: 3236, ed: 11108, lv: 9, pw: 5441.16
+INFO     : ... LUT mapping end (Real time : 16s)
 INFO     : ... Post-synthesis Verific netlist creation begin
 INFO     : ... Post-synthesis Verific netlist creation end (Real time : 0s)
 INFO     : ... Postmap Retiming Optimization begin
 INFO     : ... Using advanced retiming technique.
-INFO     : ... Clock Network 'pll_clk~pll_clk' with 204 loads will be considered for retiming optimization.
-INFO     : ... Performed 0 retime moves.
+INFO     : ... Clock Network 'pll_clk~pll_clk' with 401 loads will be considered for retiming optimization.
+INFO     : ... Performed 1 retime moves.
 INFO     : ... Postmap Retiming Optimization end (Real time : 0s)
 INFO     : ***** Beginning VDB Netlist Checker ... *****
-INFO     : VDB Netlist Checker took 0.0073666 seconds [FlowMsg::StageDuration]
+INFO     : VDB Netlist Checker took 0.0085277 seconds [FlowMsg::StageDuration]
 INFO     :     VDB Netlist Checker took 0.03125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : VDB Netlist Checker virtual memory usage: begin = 179.968 MB, end = 179.968 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     :     VDB Netlist Checker peak virtual memory usage = 295.304 MB [FlowMsg::VMUsage::Peak]
-INFO     : VDB Netlist Checker resident set memory usage: begin = 196.048 MB, end = 196.088 MB, delta = 0.04 MB [FlowMsg::RSSUsage]
-INFO     :     VDB Netlist Checker peak resident set memory usage = 289.288 MB [FlowMsg::RSSUsage::Peak]
+INFO     : VDB Netlist Checker virtual memory usage: begin = 190.408 MB, end = 190.408 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     :     VDB Netlist Checker peak virtual memory usage = 300.328 MB [FlowMsg::VMUsage::Peak]
+INFO     : VDB Netlist Checker resident set memory usage: begin = 201.272 MB, end = 201.312 MB, delta = 0.04 MB [FlowMsg::RSSUsage]
+INFO     :     VDB Netlist Checker peak resident set memory usage = 284.228 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending VDB Netlist Checker ... *****
 INFO     : Resource Summary 
 INFO     : ======================================= 
-INFO     : EFX_ADD                 : 	97
-INFO     : EFX_LUT4                : 	2815
-INFO     : EFX_FF                  : 	203
+INFO     : EFX_ADD                 : 	167
+INFO     : EFX_LUT4                : 	3235
+INFO     : EFX_MULT                : 	4
+INFO     : EFX_FF                  : 	392
 INFO     : EFX_GBUFCE              : 	1
 INFO     : ======================================= 
 INFO     : ... Post-Map Verilog Writer begin
 INFO     : Writing netlist 'top' to Verilog file 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.map.v' [VDB-1030]
 INFO     : ... Post-Map Verilog Writer end (Real time : 1s)
-INFO     : The entire flow of EFX_MAP took 18.8977688 seconds [FlowMsg::StageDuration]
-INFO     :     The entire flow of EFX_MAP took 33.5625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : The entire flow of EFX_MAP virtual memory usage: begin = 18.96 MB, end = 208.056 MB, delta = 189.096 MB [FlowMsg::VMUsage]
-INFO     :     The entire flow of EFX_MAP peak virtual memory usage = 295.304 MB [FlowMsg::VMUsage::Peak]
-INFO     : The entire flow of EFX_MAP resident set memory usage: begin = 18.156 MB, end = 222.512 MB, delta = 204.356 MB [FlowMsg::RSSUsage]
-INFO     :     The entire flow of EFX_MAP peak resident set memory usage = 289.288 MB [FlowMsg::RSSUsage::Peak]
+INFO     : The entire flow of EFX_MAP took 20.7979077 seconds [FlowMsg::StageDuration]
+INFO     :     The entire flow of EFX_MAP took 32.828125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : The entire flow of EFX_MAP virtual memory usage: begin = 18.952 MB, end = 205.96 MB, delta = 187.008 MB [FlowMsg::VMUsage]
+INFO     :     The entire flow of EFX_MAP peak virtual memory usage = 300.328 MB [FlowMsg::VMUsage::Peak]
+INFO     : The entire flow of EFX_MAP resident set memory usage: begin = 18.164 MB, end = 215.276 MB, delta = 197.112 MB [FlowMsg::RSSUsage]
+INFO     :     The entire flow of EFX_MAP peak resident set memory usage = 284.228 MB [FlowMsg::RSSUsage::Peak]

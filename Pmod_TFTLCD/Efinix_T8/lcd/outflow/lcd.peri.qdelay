@@ -1,5 +1,31 @@
 route {
   driver {
+    cell: "btn_1"
+    port: "inpad"
+  }
+  sink {
+    cell: "btn_1~GPIO"
+    port: "IO_inpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "btn_1~GPIO"
+    port: "I"
+  }
+  sink {
+    cell: "btn_1~GPIO~I"
+    port: "outpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
     cell: "btn_rst"
     port: "inpad"
   }
@@ -273,11 +299,63 @@ route {
 }
 route {
   driver {
-    cell: "pll_rst"
+    cell: "tc_clk~GPIO"
+    port: "IO_outpad"
+  }
+  sink {
+    cell: "tc_clk"
+    port: "outpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "tc_clk~GPIO~O"
     port: "inpad"
   }
   sink {
-    cell: "pll_rst~GPIO"
+    cell: "tc_clk~GPIO"
+    port: "O"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "tc_cs~GPIO"
+    port: "IO_outpad"
+  }
+  sink {
+    cell: "tc_cs"
+    port: "outpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "tc_cs~GPIO~O"
+    port: "inpad"
+  }
+  sink {
+    cell: "tc_cs~GPIO"
+    port: "O"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "tc_miso"
+    port: "inpad"
+  }
+  sink {
+    cell: "tc_miso~GPIO"
     port: "IO_inpad"
   }
   delay_min: 0
@@ -286,16 +364,46 @@ route {
 }
 route {
   driver {
-    cell: "pll_rst~GPIO"
+    cell: "tc_miso~GPIO"
     port: "I"
   }
   sink {
-    cell: "pll_rst~GPIO~I"
+    cell: "tc_miso~GPIO~I"
     port: "outpad"
   }
   delay_min: 0
   delay_max: 0
   type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "tc_mosi~GPIO"
+    port: "IO_outpad"
+  }
+  sink {
+    cell: "tc_mosi"
+    port: "outpad"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+route {
+  driver {
+    cell: "tc_mosi~GPIO~O"
+    port: "inpad"
+  }
+  sink {
+    cell: "tc_mosi~GPIO"
+    port: "O"
+  }
+  delay_min: 0
+  delay_max: 0
+  type: FIXED_NET_DELAY
+}
+placed {
+  cell: "btn_1"
+  custom_site: "PKG_PIN/PKG_PIN_INOUT"
 }
 placed {
   cell: "btn_rst"
@@ -338,8 +446,24 @@ placed {
   custom_site: "PKG_PIN/PKG_PIN_INOUT"
 }
 placed {
-  cell: "pll_rst"
+  cell: "tc_clk"
   custom_site: "PKG_PIN/PKG_PIN_INOUT"
+}
+placed {
+  cell: "tc_cs"
+  custom_site: "PKG_PIN/PKG_PIN_INOUT"
+}
+placed {
+  cell: "tc_miso"
+  custom_site: "PKG_PIN/PKG_PIN_INOUT"
+}
+placed {
+  cell: "tc_mosi"
+  custom_site: "PKG_PIN/PKG_PIN_INOUT"
+}
+placed {
+  cell: "btn_1~GPIO"
+  custom_site: "T8_GPIO/T8_GPIO_SLOT0"
 }
 placed {
   cell: "btn_rst~GPIO"
@@ -386,6 +510,18 @@ placed {
   custom_site: "PLL/PLL_SLOT0"
 }
 placed {
-  cell: "pll_rst~GPIO"
+  cell: "tc_clk~GPIO"
+  custom_site: "T8_GPIO/T8_GPIO_SLOT0"
+}
+placed {
+  cell: "tc_cs~GPIO"
+  custom_site: "T8_GPIO/T8_GPIO_SLOT0"
+}
+placed {
+  cell: "tc_miso~GPIO"
+  custom_site: "T8_GPIO/T8_GPIO_SLOT0"
+}
+placed {
+  cell: "tc_mosi~GPIO"
   custom_site: "T8_GPIO/T8_GPIO_SLOT0"
 }

@@ -1,6 +1,6 @@
 Efinity Synthesis report for project lcd
 Version: 2026.1.132
-Generated at: Jun 14, 2026 00:19:32
+Generated at: Jun 15, 2026 00:26:24
 Copyright (C) 2013 - 2026  All rights reserved.
 
 Top-level Entity Name : top
@@ -36,54 +36,94 @@ H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v
 
 ### ### EFX_FF CE enables (begin) ### ### ###
 
-Total number of enable signals: 17
-Total number of FFs with enable signals: 175
-+------------+------------------+
-|CE Signal   |Number of FF loads|
-+------------+------------------+
-|ceg_net32   |               27 |
-|ceg_net59   |               24 |
-|equal_14/n47|               24 |
-|move_pulse  |               17 |
-|ceg_net85   |               17 |
-|ceg_net33   |               16 |
-|ceg_net86   |                9 |
-|ceg_net87   |                8 |
-|n483        |                8 |
-|ceg_net100  |                8 |
-|ceg_net102  |                7 |
-|ceg_net99   |                4 |
-|ceg_net14   |                2 |
-|ceg_net65   |                1 |
-|ceg_net67   |                1 |
-|n114        |                1 |
-|ceg_net101  |                1 |
-+------------+------------------+
+Total number of enable signals: 36
+Total number of FFs with enable signals: 345
++---------------------+------------------+
+|CE Signal            |Number of FF loads|
++---------------------+------------------+
+|ceg_net66            |               27 |
+|touch_ctrl_inst/n3220|               24 |
+|ceg_net122           |               24 |
+|equal_14/n47         |               24 |
+|touch_ctrl_inst/n3316|               24 |
+|touch_ctrl_inst/n3205|               24 |
+|move_pulse           |               17 |
+|touch_ctrl_inst/n3537|               17 |
+|ceg_net170           |               17 |
+|ceg_net67            |               16 |
+|touch_ctrl_inst/n3457|               12 |
+|ceg_net44            |               12 |
+|touch_ctrl_inst/n3404|               12 |
+|touch_ctrl_inst/n1576|               12 |
+|touch_ctrl_inst/n3492|               10 |
+|ceg_net171           |                9 |
+|n505                 |                8 |
+|ceg_net197           |                8 |
+|ceg_net172           |                8 |
+|ceg_net201           |                7 |
+|ceg_net38            |                6 |
+|ceg_net195           |                4 |
+|~ceg_net136          |                3 |
+|touch_ctrl_inst/n96  |                3 |
+|ceg_net140           |                2 |
+|ceg_net42            |                2 |
+|ceg_net199           |                2 |
+|ceg_net196           |                2 |
+|ceg_net14            |                2 |
+|ceg_net135           |                1 |
+|ceg_net130           |                1 |
+|ceg_net128           |                1 |
+|ceg_net134           |                1 |
+|touch_ctrl_inst/n371 |                1 |
+|n136                 |                1 |
+|ceg_net198           |                1 |
++---------------------+------------------+
 
 ### ### EFX_FF CE enables (end) ### ### ###
 
 ### ### EFX_FF SR set/reset (begin) ### ### ###
 
 Total number of set/reset signals: 1
-Total number of FFs with set/reset signals: 201
+Total number of FFs with set/reset signals: 390
 +---------+------------------+
 |SR Signal|Number of FF loads|
 +---------+------------------+
-|btn_r2   |              201 |
+|btn_r2   |              390 |
 +---------+------------------+
 
 ### ### EFX_FF SR set/reset (end) ### ### ###
+
+### ### Sequential Elements/Signals Trimming Report (begin) ### ### ### 
+'touch_ctrl_inst/spi_cmd[0]' (touch_ctrl.v:175) (optimized to 0)
+'touch_ctrl_inst/shift_out[0]' (touch_ctrl.v:180) (optimized to 0)
+'touch_ctrl_inst/spi_cmd[1]' (touch_ctrl.v:175) (optimized to 0)
+'touch_ctrl_inst/spi_cmd[2]' (touch_ctrl.v:175) (optimized to 0)
+'touch_ctrl_inst/spi_cmd[3]' (touch_ctrl.v:175) (optimized to 0)
+'touch_ctrl_inst/shift_out[1]' (touch_ctrl.v:180) (optimized to 0)
+'touch_ctrl_inst/shift_out[2]' (touch_ctrl.v:180) (optimized to 0)
+'touch_ctrl_inst/shift_out[3]' (touch_ctrl.v:180) (optimized to 0)
+'touch_ctrl_inst/spi_cmd[4]' (touch_ctrl.v:175) (merged to equivalence)
+'touch_ctrl_inst/shift_out[4]' (touch_ctrl.v:180) (merged to equivalence)
+### ### Sequential Elements Trimming Report (end) ### ### ### 
 
 ### ### Module Resource Usage Distribution Estimates (begin) ### ###
 
 **Note: some resources maybe grouped under different hierarchy due to optimization and LUT mapping
 
-Module                     FFs      ADDs       LUTs      RAMs DSP/MULTs
---------------------       ---      ----       ----      ---- ---------
-top:top               203(203)    97(97) 2815(2815)      0(0)      0(0)
+Module                              FFs      ADDs       LUTs      RAMs DSP/MULTs
+-----------------------------       ---      ----       ----      ---- ---------
+top:top                        392(200)  167(139) 3235(2900)      0(0)      4(0)
+ +touch_ctrl_inst:touch_ctrl   192(192)    28(28)   335(335)      0(0)      4(4)
 
 ### ### Module Resource Usage Distribution Estimates (end) ### ###
 
+
+### ### Wide Multiplier Decomposition Report (begin) ### ### ### 
+
+'mult_169' (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:119) 22x9 decomposed into 2 partial products.
+'mult_177' (H:\git\Pmod\Pmod_TFTLCD\Efinix_T8\lcd\touch_ctrl.v:137) 21x8 decomposed into 2 partial products.
+
+### ### Wide Multiplier Decomposition Report (end) ### ### ### 
 
 ### ### DSP Usage Report (begin) ### ### ### 
 
@@ -94,24 +134,25 @@ top:top               203(203)    97(97) 2815(2815)      0(0)      0(0)
 +-------+----------+------------+----------------+
 |Clock  |Flip-Flops|Memory Ports|Multipliers/DSPs|
 +-------+----------+------------+----------------+
-|pll_clk|      203 |          0 |              0 |
+|pll_clk|      392 |          0 |              0 |
 +-------+----------+------------+----------------+
 
 ### ### Clock Load Distribution Report (end) ### ###
 
 ### ### Resource Summary (begin) ### ### ### 
 
-INPUT  PORTS    : 	2
-OUTPUT PORTS    : 	8
+INPUT  PORTS    : 	4
+OUTPUT PORTS    : 	11
 
-EFX_ADD                 : 	97
-EFX_LUT4                : 	2815
-   1-2  Inputs          : 	205
-   3    Inputs          : 	473
-   4    Inputs          : 	2137
-EFX_FF                  : 	203
+EFX_ADD                 : 	167
+EFX_LUT4                : 	3235
+   1-2  Inputs          : 	490
+   3    Inputs          : 	852
+   4    Inputs          : 	1893
+EFX_MULT                : 	4
+EFX_FF                  : 	392
 EFX_GBUFCE              : 	1
 ### ### Resource Summary (end) ### ### ###
 
-Plain synthesis (without verilog dump and post-map checks) time : 17s
-Elapsed synthesis time : 17s
+Plain synthesis (without verilog dump and post-map checks) time : 19s
+Elapsed synthesis time : 19s

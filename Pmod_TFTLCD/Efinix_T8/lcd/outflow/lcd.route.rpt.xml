@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<efx:tool_report xmlns:efx="http://www.efinixinc.com/tool_report" date="2026-06-14T00:20:21+0900" project="lcd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.efinixinc.com/tool_report tool_report.xsd">
+<efx:tool_report xmlns:efx="http://www.efinixinc.com/tool_report" date="2026-06-15T00:27:17+0900" project="lcd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.efinixinc.com/tool_report tool_report.xsd">
 
   <efx:group name="System Resources">
     <efx:group_data info="runtime" name="packing" severity="info" value="0|0:0:0"/>
-    <efx:group_data info="runtime" name="placement" severity="info" value="0|0:0:6"/>
-    <efx:group_data info="runtime" name="routing" severity="info" value="0|0:0:9"/>
-    <efx:group_data info="runtime" name="Latest PnR Run" severity="info" value="0|0:0:20"/>
-    <efx:group_data info="peak_rr" name="Peak RSS" severity="info" value="203.748 MB"/>
+    <efx:group_data info="runtime" name="placement" severity="info" value="0|0:0:7"/>
+    <efx:group_data info="runtime" name="routing" severity="info" value="0|0:0:13"/>
+    <efx:group_data info="runtime" name="Latest PnR Run" severity="info" value="0|0:0:24"/>
+    <efx:group_data info="peak_rr" name="Peak RSS" severity="info" value="222.204 MB"/>
   </efx:group>
 
   <efx:group name="Core Resources">
-    <efx:group_data name="Inputs" severity="info" value="2 / 96"/>
-    <efx:group_data name="Outputs" severity="info" value="8 / 223"/>
+    <efx:group_data name="Inputs" severity="info" value="4 / 96"/>
+    <efx:group_data name="Outputs" severity="info" value="11 / 223"/>
     <efx:group_data name="Clocks" severity="info" value="1 / 16"/>
-    <efx:group_data name="Logic Elements" severity="info" value="2926 / 7384"/>
+    <efx:group_data name="Logic Elements" severity="info" value="3542 / 7384"/>
     <efx:group_data name="Memory Blocks" severity="info" value="0 / 24"/>
-    <efx:group_data name="Multipliers" severity="info" value="0 / 8"/>
+    <efx:group_data name="Multipliers" severity="info" value="4 / 8"/>
   </efx:group>
 
   <efx:group name="Interface">
-    <efx:group_data name="Missing Interface Pins" severity="info" value="1"/>
+    <efx:group_data name="Missing Interface Pins" severity="info" value="0"/>
     <efx:group_data name="Unassigned Core Pins" severity="info" value="0"/>
   </efx:group>
 
   <efx:group name="Timing (Final)">
-    <efx:group_data name="Worst Negative Slack (WNS)" severity="info" value="NA"/>
-    <efx:group_data name="Worst Hold Slack (WHS)" severity="info" value="NA"/>
+    <efx:group_data name="Worst Negative Slack (WNS)" severity="error" value="-36.681 ns"/>
+    <efx:group_data name="Worst Hold Slack (WHS)" severity="info" value="0.643 ns"/>
+    <efx:group_data name="pll_clk" severity="info" value="26.539 MHz"/>
   </efx:group>
 
 </efx:tool_report>

@@ -39,6 +39,7 @@ module touch_ctrl (
     input  wire        tc_miso,     // H7  DOUT
     output reg         tc_clk,      // K5  DCLK
 
+    output reg         test_probe,
     // タッチ座標出力
     output reg         touch_valid, // タッチ検出中
     output reg  [8:0]  touch_x,     // LCD X座標 (0~319)
@@ -88,7 +89,7 @@ end
 // Z1 タッチ判定閾値
 //   XPT2046 のZ1測定: タッチなし≒0、タッチあり≒200~4095
 // ============================================================
-localparam [11:0] TOUCH_THRESH = 12'd200;
+localparam [11:0] TOUCH_THRESH = 12'd100;
 
 // ============================================================
 // XPT2046 ADCロー値 → LCD座標変換
@@ -266,6 +267,8 @@ always @(posedge clk or negedge rst_n) begin
         y_samples[0]<= 12'd0;
         y_samples[1]<= 12'd0;
         y_samples[2]<= 12'd0;
+        
+        test_probe <= 0;
     end else begin
         spi_start <= 1'b0;
 
@@ -280,6 +283,8 @@ always @(posedge clk or negedge rst_n) begin
             // ---- Z1 (タッチ圧力) 計測 ----
             S_Z1_START: begin
                 if (!spi_busy && !spi_start) begin
+                    test_probe <= 0;
+                
                     spi_cmd   <= CMD_Z1;
                     spi_start <= 1'b1;
                     state     <= S_Z1_WAIT;
@@ -295,9 +300,11 @@ always @(posedge clk or negedge rst_n) begin
 
             // ---- タッチ判定 ----
             S_Z1_CHECK: begin
-                if (raw_z1 >= TOUCH_THRESH)
+                if (raw_z1 >= TOUCH_THRESH)begin
                     state <= S_X_START;    // タッチあり → 座標取得
-                else
+                    test_probe <= 1;
+
+                end else
                     state <= S_NO_TOUCH;   // タッチなし
             end
 
