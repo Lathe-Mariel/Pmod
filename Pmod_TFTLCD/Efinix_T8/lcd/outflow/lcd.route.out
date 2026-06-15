@@ -16,26 +16,26 @@ INFO     : Running Placement and Routing for Family "Trion", Device "T8F81" ...
 INFO     : Read ipin pattern from H:/Efinity/2026.1/arch/./routing/ipin_oph.xml
 INFO     : Finished parsing ipin pattern file 'H:/Efinity/2026.1/arch/./routing/ipin_oph.xdb'.
 INFO     : Finished parsing switch_block file 'H:/Efinity/2026.1/arch/.\routing\sb_connectivity_subset.xdb'.
-INFO     : BuildGraph process took 1.1487816 seconds [FlowMsg::StageDuration]
-INFO     :     BuildGraph process took 1.125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : BuildGraph process virtual memory usage: begin = 135 MB, end = 165.792 MB, delta = 30.792 MB [FlowMsg::VMUsage]
-INFO     :     BuildGraph process peak virtual memory usage = 165.792 MB [FlowMsg::VMUsage::Peak]
-INFO     : BuildGraph process resident set memory usage: begin = 149.1 MB, end = 182.736 MB, delta = 33.636 MB [FlowMsg::RSSUsage]
-INFO     :     BuildGraph process peak resident set memory usage = 182.74 MB [FlowMsg::RSSUsage::Peak]
-INFO     : check rr_graph process took 0.0354206 seconds [FlowMsg::StageDuration]
+INFO     : BuildGraph process took 1.195107 seconds [FlowMsg::StageDuration]
+INFO     :     BuildGraph process took 1.171875 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : BuildGraph process virtual memory usage: begin = 134.856 MB, end = 165.888 MB, delta = 31.032 MB [FlowMsg::VMUsage]
+INFO     :     BuildGraph process peak virtual memory usage = 165.888 MB [FlowMsg::VMUsage::Peak]
+INFO     : BuildGraph process resident set memory usage: begin = 149.408 MB, end = 183.244 MB, delta = 33.836 MB [FlowMsg::RSSUsage]
+INFO     :     BuildGraph process peak resident set memory usage = 183.248 MB [FlowMsg::RSSUsage::Peak]
+INFO     : check rr_graph process took 0.0378785 seconds [FlowMsg::StageDuration]
 INFO     :     check rr_graph process took 0.03125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : check rr_graph process virtual memory usage: begin = 165.792 MB, end = 167.744 MB, delta = 1.952 MB [FlowMsg::VMUsage]
-INFO     :     check rr_graph process peak virtual memory usage = 167.744 MB [FlowMsg::VMUsage::Peak]
-INFO     : check rr_graph process resident set memory usage: begin = 182.748 MB, end = 184.756 MB, delta = 2.008 MB [FlowMsg::RSSUsage]
-INFO     :     check rr_graph process peak resident set memory usage = 184.76 MB [FlowMsg::RSSUsage::Peak]
+INFO     : check rr_graph process virtual memory usage: begin = 165.888 MB, end = 167.84 MB, delta = 1.952 MB [FlowMsg::VMUsage]
+INFO     :     check rr_graph process peak virtual memory usage = 167.84 MB [FlowMsg::VMUsage::Peak]
+INFO     : check rr_graph process resident set memory usage: begin = 183.256 MB, end = 185.264 MB, delta = 2.008 MB [FlowMsg::RSSUsage]
+INFO     :     check rr_graph process peak resident set memory usage = 185.268 MB [FlowMsg::RSSUsage::Peak]
 INFO     : Generated 397753 RR nodes and 1459333 RR edges [DBMsg::DatabaseRoutingGraphStats]
 INFO     : This design has 0 global control net(s). See H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow\lcd.route.rpt for details.
-INFO     : Routing graph took 1.2407018 seconds [FlowMsg::StageDuration]
-INFO     :     Routing graph took 1.203125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Routing graph virtual memory usage: begin = 135 MB, end = 167.744 MB, delta = 32.744 MB [FlowMsg::VMUsage]
-INFO     :     Routing graph peak virtual memory usage = 167.744 MB [FlowMsg::VMUsage::Peak]
-INFO     : Routing graph resident set memory usage: begin = 148.964 MB, end = 184.828 MB, delta = 35.864 MB [FlowMsg::RSSUsage]
-INFO     :     Routing graph peak resident set memory usage = 184.832 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Routing graph took 1.2999506 seconds [FlowMsg::StageDuration]
+INFO     :     Routing graph took 1.265625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Routing graph virtual memory usage: begin = 134.856 MB, end = 167.84 MB, delta = 32.984 MB [FlowMsg::VMUsage]
+INFO     :     Routing graph peak virtual memory usage = 167.84 MB [FlowMsg::VMUsage::Peak]
+INFO     : Routing graph resident set memory usage: begin = 149.228 MB, end = 185.336 MB, delta = 36.108 MB [FlowMsg::RSSUsage]
+INFO     :     Routing graph peak resident set memory usage = 185.34 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage Routing graph generation *****
            
            ***** Beginning stage routing ... *****
@@ -57,34 +57,34 @@ INFO     : SDC file 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/lcd.sdc' parsed succe
 INFO     :  ---------      -------     --------------      -------------
 INFO     :  Iteration      Overuse     Crit Path (ns)      Calc Time (s)
 INFO     :  ---------      -------     --------------      -------------
-INFO     :          1        12498              36.63                1.5
-INFO     :          2         3032              36.03               1.74
-INFO     :          3         1596              36.05                1.9
-INFO     :          4          573              36.22               2.16
-INFO     :          5          223              36.22               1.31
-INFO     :          6          131               36.3               1.28
-INFO     :          7           69              36.87              0.753
-INFO     :          8           46              36.59              0.763
-INFO     :          9           24              37.51              0.525
-INFO     :         10            5              37.14              0.532
-INFO     :         11            4              37.54               0.14
-INFO     :         12            2              37.54              0.135
-INFO     :         13            0              37.54              0.136
+INFO     :          1        12982              34.88               1.58
+INFO     :          2         3510              34.57               1.91
+INFO     :          3         1923              34.57               2.14
+INFO     :          4          779              34.57               2.07
+INFO     :          5          363              34.82               1.41
+INFO     :          6          197              34.72               1.57
+INFO     :          7          120              35.58               1.14
+INFO     :          8           54              36.03              0.608
+INFO     :          9           37              36.82              0.366
+INFO     :         10            9              37.96              0.243
+INFO     :         11            1              37.04              0.278
+INFO     :         12            3              36.87               0.14
+INFO     :         13            0              37.52               0.14
            
-INFO     : Successfully routed netlist after 13 routing iterations and 45829210 heapops
+INFO     : Successfully routed netlist after 13 routing iterations and 45731162 heapops
 INFO     : Completed net delay value cross check successfully.
            ***** Beginning stage routing check ... *****
            ***** Ending stage routing check *****
            
-INFO     : Serial number (magic cookie) for the routing is: 1268231698
+INFO     : Serial number (magic cookie) for the routing is: 1314845533
 INFO     : Netlist fully routed.
 INFO     : Successfully created FPGA route file 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.route'
-INFO     : Routing took 13.499181 seconds [FlowMsg::StageDuration]
-INFO     :     Routing took 13.734375 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Routing virtual memory usage: begin = 167.744 MB, end = 204.956 MB, delta = 37.212 MB [FlowMsg::VMUsage]
-INFO     :     Routing peak virtual memory usage = 204.956 MB [FlowMsg::VMUsage::Peak]
-INFO     : Routing resident set memory usage: begin = 184.828 MB, end = 220.932 MB, delta = 36.104 MB [FlowMsg::RSSUsage]
-INFO     :     Routing peak resident set memory usage = 220.936 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Routing took 14.2576298 seconds [FlowMsg::StageDuration]
+INFO     :     Routing took 14.515625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Routing virtual memory usage: begin = 167.84 MB, end = 201.76 MB, delta = 33.92 MB [FlowMsg::VMUsage]
+INFO     :     Routing peak virtual memory usage = 201.76 MB [FlowMsg::VMUsage::Peak]
+INFO     : Routing resident set memory usage: begin = 185.336 MB, end = 218.812 MB, delta = 33.476 MB [FlowMsg::RSSUsage]
+INFO     :     Routing peak resident set memory usage = 218.816 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage routing *****
            
            ***** Beginning stage final timing analysis ... *****
@@ -105,41 +105,41 @@ INFO     : Using default timing constraint of 1 ns
 INFO     : SDC file 'H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/lcd.sdc' parsed successfully.
 Maximum possible analyzed clocks frequency
  Clock Name  Period (ns)  Frequency (MHz)     Edge
-  pll_clk       37.681        26.539         (R-R)
+  pll_clk       37.662        26.552         (R-R)
 
-Geomean max period: 37.681
+Geomean max period: 37.662
 
 Setup (Max) Clock Relationship
   Launch Clock    Capture Clock   Constraint (ns)     Slack (ns)          Edge
-    pll_clk          pll_clk           1.000           -36.681           (R-R)
+    pll_clk          pll_clk           1.000           -36.662           (R-R)
 
 Hold (Min) Clock Relationship
   Launch Clock    Capture Clock   Constraint (ns)     Slack (ns)          Edge
     pll_clk          pll_clk           0.000            0.643            (R-R)
 
-WARNING  : Clock domain between pll_clk (rising) and pll_clk (rising) may not meet (slack: -36.681 ns) the setup (max) timing requirement
+WARNING  : Clock domain between pll_clk (rising) and pll_clk (rising) may not meet (slack: -36.662 ns) the setup (max) timing requirement
 INFO     : Write Timing Report to "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow\lcd.timing.rpt" ...
-INFO     : final timing analysis took 0.3597809 seconds [FlowMsg::StageDuration]
-INFO     :     final timing analysis took 0.34375 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : final timing analysis virtual memory usage: begin = 204.956 MB, end = 204.956 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     :     final timing analysis peak virtual memory usage = 204.956 MB [FlowMsg::VMUsage::Peak]
-INFO     : final timing analysis resident set memory usage: begin = 220.952 MB, end = 221.496 MB, delta = 0.544 MB [FlowMsg::RSSUsage]
-INFO     :     final timing analysis peak resident set memory usage = 221.5 MB [FlowMsg::RSSUsage::Peak]
+INFO     : final timing analysis took 0.3857361 seconds [FlowMsg::StageDuration]
+INFO     :     final timing analysis took 0.390625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : final timing analysis virtual memory usage: begin = 201.76 MB, end = 201.76 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     :     final timing analysis peak virtual memory usage = 201.76 MB [FlowMsg::VMUsage::Peak]
+INFO     : final timing analysis resident set memory usage: begin = 218.832 MB, end = 219.384 MB, delta = 0.552 MB [FlowMsg::RSSUsage]
+INFO     :     final timing analysis peak resident set memory usage = 219.388 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage final timing analysis *****
            
            ***** Beginning stage bitstream generation ... *****
 INFO     : Reading core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
 INFO     : Successfully read core interface constraints file "H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/outflow/lcd.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
 INFO     : Finished writing bitstream file H:/git/Pmod/Pmod_TFTLCD/Efinix_T8/lcd/work_pnr\lcd.lbf.
-INFO     : Bitstream generation took 0.1653511 seconds [FlowMsg::StageDuration]
-INFO     :     Bitstream generation took 0.15625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Bitstream generation virtual memory usage: begin = 204.956 MB, end = 204.956 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     :     Bitstream generation peak virtual memory usage = 204.956 MB [FlowMsg::VMUsage::Peak]
-INFO     : Bitstream generation resident set memory usage: begin = 221.556 MB, end = 222.136 MB, delta = 0.58 MB [FlowMsg::RSSUsage]
-INFO     :     Bitstream generation peak resident set memory usage = 222.14 MB [FlowMsg::RSSUsage::Peak]
-INFO     : The entire flow of EFX_PNR took 24.8518206 seconds [FlowMsg::StageDuration]
-INFO     :     The entire flow of EFX_PNR took 32.390625 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : The entire flow of EFX_PNR virtual memory usage: begin = 20.052 MB, end = 204.956 MB, delta = 184.904 MB [FlowMsg::VMUsage]
-INFO     :     The entire flow of EFX_PNR peak virtual memory usage = 204.956 MB [FlowMsg::VMUsage::Peak]
-INFO     : The entire flow of EFX_PNR resident set memory usage: begin = 21.144 MB, end = 222.2 MB, delta = 201.056 MB [FlowMsg::RSSUsage]
-INFO     :     The entire flow of EFX_PNR peak resident set memory usage = 222.204 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Bitstream generation took 0.1730899 seconds [FlowMsg::StageDuration]
+INFO     :     Bitstream generation took 0.171875 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Bitstream generation virtual memory usage: begin = 201.76 MB, end = 201.76 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     :     Bitstream generation peak virtual memory usage = 201.76 MB [FlowMsg::VMUsage::Peak]
+INFO     : Bitstream generation resident set memory usage: begin = 219.444 MB, end = 220.028 MB, delta = 0.584 MB [FlowMsg::RSSUsage]
+INFO     :     Bitstream generation peak resident set memory usage = 220.032 MB [FlowMsg::RSSUsage::Peak]
+INFO     : The entire flow of EFX_PNR took 26.0128813 seconds [FlowMsg::StageDuration]
+INFO     :     The entire flow of EFX_PNR took 33.125 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : The entire flow of EFX_PNR virtual memory usage: begin = 20 MB, end = 201.76 MB, delta = 181.76 MB [FlowMsg::VMUsage]
+INFO     :     The entire flow of EFX_PNR peak virtual memory usage = 201.76 MB [FlowMsg::VMUsage::Peak]
+INFO     : The entire flow of EFX_PNR resident set memory usage: begin = 21.116 MB, end = 220.088 MB, delta = 198.972 MB [FlowMsg::RSSUsage]
+INFO     :     The entire flow of EFX_PNR peak resident set memory usage = 220.092 MB [FlowMsg::RSSUsage::Peak]

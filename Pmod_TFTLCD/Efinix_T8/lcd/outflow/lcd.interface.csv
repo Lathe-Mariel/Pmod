@@ -1,7 +1,7 @@
 
 # Efinity Interface Configuration
 # Version: 2026.1.132
-# Date: 2026-06-15 00:26
+# Date: 2026-06-16 01:30
 
 # Copyright (C) 2013 - 2026 Efinix Inc. All rights reserved.
 
@@ -18,7 +18,7 @@ output, 78, 112, 0, __bypass__, led_d2
 output, 78, 115, 0, __bypass__, led_d3
 output, 78, 125, 0, __bypass__, led_d4
 input, 0, 83, 1, __bypass__, pll_clk
-output, 78, 152, 0, __bypass__, tc_clk
-output, 78, 142, 0, __bypass__, tc_cs
-input, 0, 105, 1, __bypass__, tc_miso
-output, 0, 97, 0, __bypass__, tc_mosi
+output, 78, 142, 0, __bypass__, tc_clk
+output, 0, 95, 0, __bypass__, tc_cs
+input, 78, 155, 1, __bypass__, tc_miso
+output, 0, 100, 0, __bypass__, tc_mosi

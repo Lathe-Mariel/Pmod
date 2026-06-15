@@ -56,22 +56,22 @@ CellSiteInst {
 CellSiteInst {
   cell: "tc_clk"
   block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
-  block_inst: "GPIOR_01"
+  block_inst: "GPIOR_03"
 }
 CellSiteInst {
   cell: "tc_cs"
   block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
-  block_inst: "GPIOR_03"
+  block_inst: "GPIOL_17_CLK3"
 }
 CellSiteInst {
   cell: "tc_miso"
   block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
-  block_inst: "GPIOL_21_NSTATUS"
+  block_inst: "GPIOR_00"
 }
 CellSiteInst {
   cell: "tc_mosi"
   block_and_site_inst: "PKG_PIN/PKG_PIN_INOUT"
-  block_inst: "GPIOL_18_CTRL2"
+  block_inst: "GPIOL_19_CTRL3"
 }
 CellSiteInst {
   cell: "btn_1~GPIO"
@@ -136,20 +136,20 @@ CellSiteInst {
 CellSiteInst {
   cell: "tc_clk~GPIO"
   block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
-  block_inst: "GPIOR_01"
+  block_inst: "GPIOR_03"
 }
 CellSiteInst {
   cell: "tc_cs~GPIO"
   block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
-  block_inst: "GPIOR_03"
+  block_inst: "GPIOL_17"
 }
 CellSiteInst {
   cell: "tc_miso~GPIO"
   block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
-  block_inst: "GPIOL_21"
+  block_inst: "GPIOR_00"
 }
 CellSiteInst {
   cell: "tc_mosi~GPIO"
   block_and_site_inst: "T8_GPIO/T8_GPIO_SLOT0"
-  block_inst: "GPIOL_18"
+  block_inst: "GPIOL_19"
 }

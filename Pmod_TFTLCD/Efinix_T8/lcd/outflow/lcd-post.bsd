@@ -66,13 +66,13 @@ port (
 	GPIOL_14_CLK0                 : linkage bit;
 	GPIOL_15_CLK1                 : linkage bit;
 	GPIOL_16_CLK2                 : linkage bit;
-	GPIOL_17_CLK3                 : linkage bit;
-	GPIOL_18_CTRL2                : out bit;
-	GPIOL_19_CTRL3                : linkage bit;
+	GPIOL_17_CLK3                 : out bit;
+	GPIOL_18_CTRL2                : linkage bit;
+	GPIOL_19_CTRL3                : out bit;
 	GPIOL_20_PLLIN                : in bit;
-	GPIOL_21_NSTATUS              : in bit;
-	GPIOR_00                      : linkage bit;
-	GPIOR_01                      : out bit;
+	GPIOL_21_NSTATUS              : linkage bit;
+	GPIOR_00                      : in bit;
+	GPIOR_01                      : linkage bit;
 	GPIOR_02_RESERVED_OUT         : linkage bit;
 	GPIOR_03                      : out bit;
 	GPIOR_05                      : linkage bit;
@@ -434,10 +434,10 @@ attribute BOUNDARY_REGISTER of T8F81 : entity is
 	"113 (BC_1, *, internal, X)," &
 
 	"114 (BC_1, *, internal, X)," &
-	"115 (BC_1, *, control, 1)," &
-	"116 (BC_1, GPIOR_01, output3, X, 115, 1, Z)," &
+	"115 (BC_1, *, internal, 1)," &
+	"116 (BC_1, *, internal, X)," &
 
-	"117 (BC_1, *, internal, X)," &
+	"117 (BC_1, GPIOR_00, input, X)," &
 	"118 (BC_1, *, internal, 1)," &
 	"119 (BC_1, *, internal, X)," &
 
@@ -457,7 +457,7 @@ attribute BOUNDARY_REGISTER of T8F81 : entity is
 	"130 (BC_1, *, internal, 1)," &
 	"131 (BC_1, *, internal, X)," &
 
-	"132 (BC_1, GPIOL_21_NSTATUS, input, X)," &
+	"132 (BC_1, *, internal, X)," &
 	"133 (BC_1, *, internal, 1)," &
 	"134 (BC_1, *, internal, X)," &
 
@@ -466,16 +466,16 @@ attribute BOUNDARY_REGISTER of T8F81 : entity is
 	"137 (BC_1, *, internal, X)," &
 
 	"138 (BC_1, *, internal, X)," &
-	"139 (BC_1, *, internal, 1)," &
-	"140 (BC_1, *, internal, X)," &
+	"139 (BC_1, *, control, 1)," &
+	"140 (BC_1, GPIOL_19_CTRL3, output3, X, 139, 1, Z)," &
 
 	"141 (BC_1, *, internal, X)," &
-	"142 (BC_1, *, control, 1)," &
-	"143 (BC_1, GPIOL_18_CTRL2, output3, X, 142, 1, Z)," &
+	"142 (BC_1, *, internal, 1)," &
+	"143 (BC_1, *, internal, X)," &
 
 	"144 (BC_1, *, internal, X)," &
-	"145 (BC_1, *, internal, 1)," &
-	"146 (BC_1, *, internal, X)," &
+	"145 (BC_1, *, control, 1)," &
+	"146 (BC_1, GPIOL_17_CLK3, output3, X, 145, 1, Z)," &
 
 	"147 (BC_1, *, internal, X)," &
 	"148 (BC_1, *, internal, 1)," &

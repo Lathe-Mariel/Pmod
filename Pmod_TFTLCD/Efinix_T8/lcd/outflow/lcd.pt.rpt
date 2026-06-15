@@ -1,7 +1,7 @@
 
 Efinity Interface Designer Report
 Version: 2026.1.132
-Date: 2026-06-15 00:26
+Date: 2026-06-16 01:30
 
 Copyright (C) 2013 - 2026 Efinix Inc. All rights reserved.
 
@@ -85,7 +85,6 @@ Verilog Template: lcd_template.v
 | Instance Name | Function |
 +---------------+----------+
 |     lcd_cs    |  CBSEL0  |
-|    tc_miso    | NSTATUS  |
 +---------------+----------+
 
 ---------- Dual-Function Configuration Pin Usage (end) ----------
@@ -94,25 +93,25 @@ Verilog Template: lcd_template.v
 
 Global Unused Setting: input with weak pullup
 
-+---------------+----------+--------+----------+--------------+----------+----------------------+------------------+-------------+
-| Instance Name | Resource |  Mode  | Register | Clock Region | I/O Bank |     I/O Standard     |     Pad Name     | Package Pin |
-+---------------+----------+--------+----------+--------------+----------+----------------------+------------------+-------------+
-|     btn_1     | GPIOR_07 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_07     |      C7     |
-|    btn_rst    | GPIOR_06 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_06     |      C6     |
-|      clk      | GPIOL_20 | input  |          |              |    1B    | 3.3 V LVTTL / LVCMOS |  GPIOL_20_PLLIN  |      C3     |
-|     lcd_cs    | GPIOR_26 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS | GPIOR_26_CBSEL0  |      G9     |
-|     lcd_dc    | GPIOR_22 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |  GPIOR_22_CTRL5  |      F7     |
-|    lcd_mosi   | GPIOR_24 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |     GPIOR_24     |      F6     |
-|    lcd_sck    | GPIOR_19 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |  GPIOR_19_CLK6   |      E8     |
-|     led_d1    | GPIOR_12 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_12     |      C8     |
-|     led_d2    | GPIOR_11 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_11     |      B8     |
-|     led_d3    | GPIOR_10 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_10     |      A9     |
-|     led_d4    | GPIOR_08 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_08     |      A8     |
-|     tc_clk    | GPIOR_01 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_01     |      B5     |
-|     tc_cs     | GPIOR_03 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_03     |      A6     |
-|    tc_miso    | GPIOL_21 | input  |          |              |    1B    | 3.3 V LVTTL / LVCMOS | GPIOL_21_NSTATUS |      B3     |
-|    tc_mosi    | GPIOL_18 | output |          |              |    1B    | 3.3 V LVTTL / LVCMOS |  GPIOL_18_CTRL2  |      E3     |
-+---------------+----------+--------+----------+--------------+----------+----------------------+------------------+-------------+
++---------------+----------+--------+----------+--------------+----------+----------------------+-----------------+-------------+
+| Instance Name | Resource |  Mode  | Register | Clock Region | I/O Bank |     I/O Standard     |     Pad Name    | Package Pin |
++---------------+----------+--------+----------+--------------+----------+----------------------+-----------------+-------------+
+|     btn_1     | GPIOR_07 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_07    |      C7     |
+|    btn_rst    | GPIOR_06 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_06    |      C6     |
+|      clk      | GPIOL_20 | input  |          |              |    1B    | 3.3 V LVTTL / LVCMOS |  GPIOL_20_PLLIN |      C3     |
+|     lcd_cs    | GPIOR_26 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS | GPIOR_26_CBSEL0 |      G9     |
+|     lcd_dc    | GPIOR_22 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |  GPIOR_22_CTRL5 |      F7     |
+|    lcd_mosi   | GPIOR_24 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |     GPIOR_24    |      F6     |
+|    lcd_sck    | GPIOR_19 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |  GPIOR_19_CLK6  |      E8     |
+|     led_d1    | GPIOR_12 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_12    |      C8     |
+|     led_d2    | GPIOR_11 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_11    |      B8     |
+|     led_d3    | GPIOR_10 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_10    |      A9     |
+|     led_d4    | GPIOR_08 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_08    |      A8     |
+|     tc_clk    | GPIOR_03 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_03    |      A6     |
+|     tc_cs     | GPIOL_17 | output |          |              |    1B    | 3.3 V LVTTL / LVCMOS |  GPIOL_17_CLK3  |      D2     |
+|    tc_miso    | GPIOR_00 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_00    |      A5     |
+|    tc_mosi    | GPIOL_19 | output |          |              |    1B    | 3.3 V LVTTL / LVCMOS |  GPIOL_19_CTRL3 |      D3     |
++---------------+----------+--------+----------+--------------+----------+----------------------+-----------------+-------------+
 
 
 Input GPIO Configuration:
