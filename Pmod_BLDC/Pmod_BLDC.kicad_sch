@@ -2037,6 +2037,16 @@
 	)
 	(wire
 		(pts
+			(xy 97.155 154.94) (xy 99.695 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0836c5fa-402c-4d27-b22e-1c9a65a5527c")
+	)
+	(wire
+		(pts
 			(xy 46.355 52.705) (xy 34.29 52.705)
 		)
 		(stroke
@@ -2074,6 +2084,16 @@
 			(type default)
 		)
 		(uuid "1396833c-aa71-47e9-8aa0-087ca69734a0")
+	)
+	(wire
+		(pts
+			(xy 47.625 155.575) (xy 50.8 155.575)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1594c370-83e4-4833-b896-58393b5db6a6")
 	)
 	(wire
 		(pts
@@ -2234,6 +2254,16 @@
 			(type default)
 		)
 		(uuid "35eea139-28a3-42fc-af96-08405412fcdc")
+	)
+	(wire
+		(pts
+			(xy 96.52 126.365) (xy 99.06 126.365)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35ff2f5d-677f-402b-bded-6aa1992de397")
 	)
 	(wire
 		(pts
@@ -2404,6 +2434,16 @@
 			(type default)
 		)
 		(uuid "57dffd8f-ca50-4bed-af1e-a1bd68f0d831")
+	)
+	(wire
+		(pts
+			(xy 46.99 127) (xy 50.165 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "593565e8-3f97-4e40-b190-53ba25ad5efb")
 	)
 	(wire
 		(pts
@@ -2687,6 +2727,16 @@
 	)
 	(wire
 		(pts
+			(xy 142.875 154.94) (xy 146.685 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c411dcfd-7762-412f-aa02-66a33916997b")
+	)
+	(wire
+		(pts
 			(xy 120.65 81.915) (xy 120.65 83.82)
 		)
 		(stroke
@@ -2704,6 +2754,16 @@
 			(type default)
 		)
 		(uuid "d397ef24-f45f-4055-9e03-8533b634679e")
+	)
+	(wire
+		(pts
+			(xy 142.875 126.365) (xy 146.05 126.365)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4c247e7-ce26-41ed-81dc-889ac2232112")
 	)
 	(wire
 		(pts
@@ -2797,7 +2857,7 @@
 	)
 	(symbol
 		(lib_id "samacsys:TK25S06N1L")
-		(at 130.81 126.365 0)
+		(at 146.05 126.365 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2806,7 +2866,7 @@
 		(fields_autoplaced yes)
 		(uuid "11fca6f9-6968-43b3-ab45-0ce38fcdb48f")
 		(property "Reference" "Q6"
-			(at 142.875 122.5549 0)
+			(at 158.115 122.5549 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2815,7 +2875,7 @@
 			)
 		)
 		(property "Value" "TK25S06N1L"
-			(at 142.875 125.0949 0)
+			(at 158.115 125.0949 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2824,7 +2884,7 @@
 			)
 		)
 		(property "Footprint" "TK7S10N1ZLXHQ"
-			(at 142.24 225.095 0)
+			(at 157.48 225.095 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2834,7 +2894,7 @@
 			)
 		)
 		(property "Datasheet" "https://toshiba.semicon-storage.com/info/docget.jsp?did=29750&prodName=TK25S06N1L"
-			(at 142.24 325.095 0)
+			(at 157.48 325.095 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2844,7 +2904,7 @@
 			)
 		)
 		(property "Description" "N-ch MOSFET, 60 V, 25 A, 0.0185 @10V, DPAK+"
-			(at 130.81 126.365 0)
+			(at 146.05 126.365 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2853,7 +2913,7 @@
 			)
 		)
 		(property "Height" "2.7"
-			(at 142.24 525.095 0)
+			(at 157.48 525.095 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2863,7 +2923,7 @@
 			)
 		)
 		(property "RS Part Number" ""
-			(at 142.24 625.095 0)
+			(at 157.48 625.095 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2873,7 +2933,7 @@
 			)
 		)
 		(property "RS Price/Stock" ""
-			(at 142.24 725.095 0)
+			(at 157.48 725.095 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2883,7 +2943,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Toshiba"
-			(at 142.24 825.095 0)
+			(at 157.48 825.095 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2893,7 +2953,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "TK25S06N1L"
-			(at 142.24 925.095 0)
+			(at 157.48 925.095 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2903,7 +2963,7 @@
 			)
 		)
 		(property "Simulation Data" "https://toshiba.semicon-storage.com/info/docget.jsp?did=30381&prodName=TK25S06N1L&displang=en&returnFlg=true"
-			(at 142.24 1025.095 0)
+			(at 157.48 1025.095 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3263,6 +3323,73 @@
 			(project "Pmod_BLDC"
 				(path "/e9d36755-5365-4172-8ccc-0cc3d30653c9"
 					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 92.71 126.365 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "32cdcc5f-d3a2-46e2-8b00-cae05b49f498")
+		(property "Reference" "R12"
+			(at 92.71 126.365 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22"
+			(at 92.71 123.19 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 92.71 128.143 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 92.71 126.365 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 92.71 126.365 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "bf698a65-a99b-4e0b-88d4-55f2eb1c5bb0")
+		)
+		(pin "1"
+			(uuid "2b7a4e94-75fc-4fe8-ba8e-bf7962ab9c80")
+		)
+		(instances
+			(project "Pmod_BLDC"
+				(path "/e9d36755-5365-4172-8ccc-0cc3d30653c9"
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -4069,6 +4196,73 @@
 	)
 	(symbol
 		(lib_id "Device:R")
+		(at 139.065 154.94 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8dd858ff-ebb9-41fa-b3c3-226bccf14c8f")
+		(property "Reference" "R11"
+			(at 139.065 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22"
+			(at 139.065 151.765 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 139.065 156.718 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 139.065 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 139.065 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d7bcbc1c-cfd4-4dfe-81a4-cca78a8f928e")
+		)
+		(pin "1"
+			(uuid "98790fbd-5dc1-4927-85ab-33ff368847f0")
+		)
+		(instances
+			(project "Pmod_BLDC"
+				(path "/e9d36755-5365-4172-8ccc-0cc3d30653c9"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
 		(at 108.585 83.82 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4261,6 +4455,73 @@
 			(project ""
 				(path "/e9d36755-5365-4172-8ccc-0cc3d30653c9"
 					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 43.18 127 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9f125485-946d-4915-8ebe-b1bdeabcc928")
+		(property "Reference" "R14"
+			(at 43.18 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22"
+			(at 43.18 123.825 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 43.18 128.778 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 43.18 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 43.18 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "7fef365a-87f3-4672-9bc3-6b066aca2150")
+		)
+		(pin "1"
+			(uuid "3cf40204-9796-4bd0-8069-1d888d99cf9a")
+		)
+		(instances
+			(project "Pmod_BLDC"
+				(path "/e9d36755-5365-4172-8ccc-0cc3d30653c9"
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -4591,6 +4852,73 @@
 	)
 	(symbol
 		(lib_id "Device:R")
+		(at 139.065 126.365 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b8337f2d-56e3-435e-937b-fe9602e00b63")
+		(property "Reference" "R10"
+			(at 139.065 126.365 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22"
+			(at 139.065 123.19 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 139.065 128.143 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 139.065 126.365 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 139.065 126.365 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f367ac5e-8715-4a20-82eb-25f76921fcba")
+		)
+		(pin "1"
+			(uuid "2473f83d-5faf-466e-8702-9272ef9af1f1")
+		)
+		(instances
+			(project ""
+				(path "/e9d36755-5365-4172-8ccc-0cc3d30653c9"
+					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
 		(at 82.55 58.42 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4651,6 +4979,73 @@
 			(project "Pmod_BLDC"
 				(path "/e9d36755-5365-4172-8ccc-0cc3d30653c9"
 					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 43.815 155.575 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c4932f56-d6a7-4a02-aad5-44c446402ab3")
+		(property "Reference" "R15"
+			(at 43.815 155.575 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22"
+			(at 43.815 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 43.815 157.353 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 43.815 155.575 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 43.815 155.575 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "026c81ab-6300-4433-acc0-1550775a4fb4")
+		)
+		(pin "1"
+			(uuid "d3aea0e5-58be-49a0-9c32-42017fb483db")
+		)
+		(instances
+			(project "Pmod_BLDC"
+				(path "/e9d36755-5365-4172-8ccc-0cc3d30653c9"
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -4979,7 +5374,7 @@
 	)
 	(symbol
 		(lib_id "samacsys:TK25S06N1L")
-		(at 64.77 154.94 0)
+		(at 50.8 155.575 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4988,7 +5383,7 @@
 		(fields_autoplaced yes)
 		(uuid "e0c8e5c1-7359-4f43-983c-838a500bc268")
 		(property "Reference" "Q3"
-			(at 76.835 151.1299 0)
+			(at 62.865 151.7649 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4997,7 +5392,7 @@
 			)
 		)
 		(property "Value" "TK25S06N1L"
-			(at 76.835 153.6699 0)
+			(at 62.865 154.3049 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5006,7 +5401,7 @@
 			)
 		)
 		(property "Footprint" "TK7S10N1ZLXHQ"
-			(at 76.2 253.67 0)
+			(at 62.23 254.305 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5016,7 +5411,7 @@
 			)
 		)
 		(property "Datasheet" "https://toshiba.semicon-storage.com/info/docget.jsp?did=29750&prodName=TK25S06N1L"
-			(at 76.2 353.67 0)
+			(at 62.23 354.305 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5026,7 +5421,7 @@
 			)
 		)
 		(property "Description" "N-ch MOSFET, 60 V, 25 A, 0.0185 @10V, DPAK+"
-			(at 64.77 154.94 0)
+			(at 50.8 155.575 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5035,7 +5430,7 @@
 			)
 		)
 		(property "Height" "2.7"
-			(at 76.2 553.67 0)
+			(at 62.23 554.305 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5045,7 +5440,7 @@
 			)
 		)
 		(property "RS Part Number" ""
-			(at 76.2 653.67 0)
+			(at 62.23 654.305 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5055,7 +5450,7 @@
 			)
 		)
 		(property "RS Price/Stock" ""
-			(at 76.2 753.67 0)
+			(at 62.23 754.305 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5065,7 +5460,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Toshiba"
-			(at 76.2 853.67 0)
+			(at 62.23 854.305 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5075,7 +5470,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "TK25S06N1L"
-			(at 76.2 953.67 0)
+			(at 62.23 954.305 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5085,7 +5480,7 @@
 			)
 		)
 		(property "Simulation Data" "https://toshiba.semicon-storage.com/info/docget.jsp?did=30381&prodName=TK25S06N1L&displang=en&returnFlg=true"
-			(at 76.2 1053.67 0)
+			(at 62.23 1054.305 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5312,6 +5707,73 @@
 			(project ""
 				(path "/e9d36755-5365-4172-8ccc-0cc3d30653c9"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 93.345 154.94 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e7ef9b8e-04e6-4546-9f84-75fa669a9802")
+		(property "Reference" "R13"
+			(at 93.345 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22"
+			(at 93.345 151.765 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 93.345 156.718 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 93.345 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 93.345 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e9055cea-af6b-4944-9692-1e9719ba9faa")
+		)
+		(pin "1"
+			(uuid "2715f10b-a909-41e0-9491-fd0d47ff3b0d")
+		)
+		(instances
+			(project "Pmod_BLDC"
+				(path "/e9d36755-5365-4172-8ccc-0cc3d30653c9"
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -5757,7 +6219,7 @@
 	)
 	(symbol
 		(lib_id "samacsys:TK25S06N1L")
-		(at 64.135 126.365 0)
+		(at 50.165 127 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5766,7 +6228,7 @@
 		(fields_autoplaced yes)
 		(uuid "f9693db0-563c-4cf7-89dc-5658e2917dd1")
 		(property "Reference" "Q4"
-			(at 76.2 122.5549 0)
+			(at 62.23 123.1899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5775,7 +6237,7 @@
 			)
 		)
 		(property "Value" "TK25S06N1L"
-			(at 76.2 125.0949 0)
+			(at 62.23 125.7299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5784,7 +6246,7 @@
 			)
 		)
 		(property "Footprint" "TK7S10N1ZLXHQ"
-			(at 75.565 225.095 0)
+			(at 61.595 225.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5794,7 +6256,7 @@
 			)
 		)
 		(property "Datasheet" "https://toshiba.semicon-storage.com/info/docget.jsp?did=29750&prodName=TK25S06N1L"
-			(at 75.565 325.095 0)
+			(at 61.595 325.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5804,7 +6266,7 @@
 			)
 		)
 		(property "Description" "N-ch MOSFET, 60 V, 25 A, 0.0185 @10V, DPAK+"
-			(at 64.135 126.365 0)
+			(at 50.165 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5813,7 +6275,7 @@
 			)
 		)
 		(property "Height" "2.7"
-			(at 75.565 525.095 0)
+			(at 61.595 525.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5823,7 +6285,7 @@
 			)
 		)
 		(property "RS Part Number" ""
-			(at 75.565 625.095 0)
+			(at 61.595 625.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5833,7 +6295,7 @@
 			)
 		)
 		(property "RS Price/Stock" ""
-			(at 75.565 725.095 0)
+			(at 61.595 725.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5843,7 +6305,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Toshiba"
-			(at 75.565 825.095 0)
+			(at 61.595 825.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5853,7 +6315,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "TK25S06N1L"
-			(at 75.565 925.095 0)
+			(at 61.595 925.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5863,7 +6325,7 @@
 			)
 		)
 		(property "Simulation Data" "https://toshiba.semicon-storage.com/info/docget.jsp?did=30381&prodName=TK25S06N1L&displang=en&returnFlg=true"
-			(at 75.565 1025.095 0)
+			(at 61.595 1025.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5961,7 +6423,7 @@
 	)
 	(symbol
 		(lib_id "samacsys:TK25S06N1L")
-		(at 131.445 154.94 0)
+		(at 146.685 154.94 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5970,7 +6432,7 @@
 		(fields_autoplaced yes)
 		(uuid "fd0e0af7-7413-4bf6-be18-e20f9a1e96ed")
 		(property "Reference" "Q1"
-			(at 143.51 151.1299 0)
+			(at 158.75 151.1299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5979,7 +6441,7 @@
 			)
 		)
 		(property "Value" "TK25S06N1L"
-			(at 143.51 153.6699 0)
+			(at 158.75 153.6699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5988,7 +6450,7 @@
 			)
 		)
 		(property "Footprint" "TK7S10N1ZLXHQ"
-			(at 142.875 253.67 0)
+			(at 158.115 253.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5998,7 +6460,7 @@
 			)
 		)
 		(property "Datasheet" "https://toshiba.semicon-storage.com/info/docget.jsp?did=29750&prodName=TK25S06N1L"
-			(at 142.875 353.67 0)
+			(at 158.115 353.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6008,7 +6470,7 @@
 			)
 		)
 		(property "Description" "N-ch MOSFET, 60 V, 25 A, 0.0185 @10V, DPAK+"
-			(at 131.445 154.94 0)
+			(at 146.685 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6017,7 +6479,7 @@
 			)
 		)
 		(property "Height" "2.7"
-			(at 142.875 553.67 0)
+			(at 158.115 553.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6027,7 +6489,7 @@
 			)
 		)
 		(property "RS Part Number" ""
-			(at 142.875 653.67 0)
+			(at 158.115 653.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6037,7 +6499,7 @@
 			)
 		)
 		(property "RS Price/Stock" ""
-			(at 142.875 753.67 0)
+			(at 158.115 753.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6047,7 +6509,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Toshiba"
-			(at 142.875 853.67 0)
+			(at 158.115 853.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6057,7 +6519,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "TK25S06N1L"
-			(at 142.875 953.67 0)
+			(at 158.115 953.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6067,7 +6529,7 @@
 			)
 		)
 		(property "Simulation Data" "https://toshiba.semicon-storage.com/info/docget.jsp?did=30381&prodName=TK25S06N1L&displang=en&returnFlg=true"
-			(at 142.875 1053.67 0)
+			(at 158.115 1053.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
