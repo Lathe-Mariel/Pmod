@@ -296,7 +296,7 @@ always @(posedge clk or negedge rst_n) begin
         lcd_rst     <= 1'b0;
         lcd_dc      <= 1'b0;
 //        lcd_cs      <= 1'b1;
-//        lcd_mosi    <= 1'b0;
+        lcd_mosi    <= 1'b0;
         tx_start_r  <= 1'b0;
         tx_16bit    <= 1'b0;
         tx_data     <= 16'd0;

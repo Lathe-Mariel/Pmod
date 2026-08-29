@@ -22,15 +22,22 @@ module top (
 // Reset: release only after PLL locked AND button released
 // ----------------------------------------------------------
 
+    Gowin_PLL your_instance_name(
+        .clkout0(clkdiv), //output clkout0
+        .clkin(clk) //input clkin
+    );
 
 // ----------------------------------------------------------
 // Clock divider: 50 MHz -> 25 MHz SPI clock
 // ----------------------------------------------------------
 reg clk_div;
+
+/*
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) clk_div <= 1'b0;
     else        clk_div <= ~clk_div;
 end
+*/
 
 wire spi_clk = clk_div;   // 25 MHz
 
