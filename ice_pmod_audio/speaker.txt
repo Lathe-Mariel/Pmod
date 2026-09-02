@@ -1,0 +1,29 @@
+FPGAデザインを作る
+
+# Application
+インテル入っているCMの効果音を鳴らす
+
+# Hardware
+## FPGA Board
+Tang Primer 25K
+
+### System Clock
+50MHz
+
+## Speaker
+PMOD-AUDIO-v1.2
+(https://github.com/wuxx/icesugar/blob/master/schematic/pmod-audio-v1.2.pdf)
+(https://github.com/wuxx/icesugar/blob/master/src/basic/verilog/music4/music.v)
+
+# HDL
+SystemVerilog
+
+# Physical constraint file
+Port1 | G11 | Input_L
+Port2 | D11 | none
+Port3 | B11 | none
+Port4 | C11 | none
+Port5 | G10 | none
+Port6 | D10 | none
+Port7 | B10 | none
+Port8 | C10 | none
