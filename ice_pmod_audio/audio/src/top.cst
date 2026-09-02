@@ -1,0 +1,24 @@
+// =============================================================================
+// top.cst - Gowin physical constraints
+// Tang Primer 25K (GW5A-LV25MG121) + PMOD-AUDIO v1.2
+// =============================================================================
+
+// System clock: 50MHz core-board oscillator
+IO_LOC  "clk" E2;
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=OFF BANK_VCCIO=3.3;
+
+// PMOD audio drive -> PMOD-AUDIO v1.2 "IL" pin (board Port1 / "Input_L")
+IO_LOC  "pmod_audio" G10;
+IO_PORT "pmod_audio" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+
+// ------------------------------------------------------------------
+// Remaining PMOD header pins (not used by this design) — kept here for
+// reference so the full connector mapping stays in one place:
+//   Port2  D11   (unused)
+//   Port3  B11   (unused)
+//   Port4  C11   (unused)
+//   Port5  G10   (unused)
+//   Port6  D10   (unused)
+//   Port7  B10   (unused)
+//   Port8  C10   (unused)
+// ------------------------------------------------------------------

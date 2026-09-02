@@ -1,0 +1,29 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'H:\git\Pmod\ice_pmod_audio\audio\src\jingle_player.sv'
+WARN  (EX3792) : Literal value 'd200_000_000 truncated to fit in 27 bits("H:\git\Pmod\ice_pmod_audio\audio\src\jingle_player.sv":44)
+Analyzing Verilog file 'H:\git\Pmod\ice_pmod_audio\audio\src\por_reset.sv'
+Analyzing Verilog file 'H:\git\Pmod\ice_pmod_audio\audio\src\top.sv'
+Compiling module 'top'("H:\git\Pmod\ice_pmod_audio\audio\src\top.sv":5)
+Compiling module 'por_reset'("H:\git\Pmod\ice_pmod_audio\audio\src\por_reset.sv":11)
+Compiling module 'jingle_player'("H:\git\Pmod\ice_pmod_audio\audio\src\jingle_player.sv":11)
+NOTE  (EX0101) : Current top module is "top"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "H:\git\Pmod\ice_pmod_audio\audio\impl\gwsynthesis\audio.vg" completed
+[100%] Generate report file "H:\git\Pmod\ice_pmod_audio\audio\impl\gwsynthesis\audio_syn.rpt.html" completed
+GowinSynthesis finish

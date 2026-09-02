@@ -1,0 +1,28 @@
+[
+ {
+  "InstFile" : "H:/git/Pmod/ice_pmod_audio/audio/src/top.sv",
+  "InstLine" : 5,
+  "InstName" : "top",
+  "ModuleFile" : "H:/git/Pmod/ice_pmod_audio/audio/src/top.sv",
+  "ModuleLine" : 5,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "H:/git/Pmod/ice_pmod_audio/audio/src/top.sv",
+    "InstLine" : 13,
+    "InstName" : "u_por",
+    "ModuleFile" : "H:/git/Pmod/ice_pmod_audio/audio/src/por_reset.sv",
+    "ModuleLine" : 11,
+    "ModuleName" : "por_reset"
+   },
+   {
+    "InstFile" : "H:/git/Pmod/ice_pmod_audio/audio/src/top.sv",
+    "InstLine" : 19,
+    "InstName" : "u_jingle",
+    "ModuleFile" : "H:/git/Pmod/ice_pmod_audio/audio/src/jingle_player.sv",
+    "ModuleLine" : 11,
+    "ModuleName" : "jingle_player"
+   }
+  ]
+ }
+]
