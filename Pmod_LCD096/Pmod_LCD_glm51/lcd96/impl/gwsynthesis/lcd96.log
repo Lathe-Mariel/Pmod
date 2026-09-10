@@ -1,0 +1,33 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'H:\git\Pmod\Pmod_LCD096\Pmod_LCD_glm51\lcd96\src\top.sv'
+Compiling module 'top'("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_glm51\lcd96\src\top.sv":1)
+Extracting RAM for identifier 'init_type'("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_glm51\lcd96\src\top.sv":96)
+Extracting RAM for identifier 'init_data_rom'("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_glm51\lcd96\src\top.sv":97)
+WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_glm51\lcd96\src\top.sv":50)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 3("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_glm51\lcd96\src\top.sv":60)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_glm51\lcd96\src\top.sv":265)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_glm51\lcd96\src\top.sv":274)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_glm51\lcd96\src\top.sv":282)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_glm51\lcd96\src\top.sv":357)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("H:\git\Pmod\Pmod_LCD096\Pmod_LCD_glm51\lcd96\src\top.sv":360)
+NOTE  (EX0101) : Current top module is "top"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "H:\git\Pmod\Pmod_LCD096\Pmod_LCD_glm51\lcd96\impl\gwsynthesis\lcd96.vg" completed
+[100%] Generate report file "H:\git\Pmod\Pmod_LCD096\Pmod_LCD_glm51\lcd96\impl\gwsynthesis\lcd96_syn.rpt.html" completed
+GowinSynthesis finish
